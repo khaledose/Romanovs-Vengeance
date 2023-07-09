@@ -1,0 +1,61 @@
+naradr:
+	Inherits: ^Radar
+	Inherits@Special: SpyPlaneSpecial
+	Inherits@SHAPE: ^2x2Shape
+	Inherits@AI: ^AIMicroManagable
+	Buildable:
+		Queue: Building.Shared, Building.Soviets
+		Prerequisites: ~building.soviets, narefn, ~techlevel.2, ~!ai.naradr
+		Description: Provides radar.\nResearches basic upgrades.\n\nProvides a different support power depening on the subfaction:\n- Tesla Drop (Soviet Union)\n- Radiation Missile (Iraq)\n- Instant Bunker (Vietnam)\n- Death Bombs (Cuba)\n- Ambush (Libya)
+	ProvidesPrerequisite@AIbuildinglimit:
+		RequiresCondition: ai-control
+		Prerequisite: ai.naradr
+	Tooltip:
+	Tooltip@NoRow:
+		Name: Radar Tower
+	ProvidesPrerequisite@russia:
+		Prerequisite: radar.russia
+		Factions: russia
+	ProvidesPrerequisite@iraq:
+		Prerequisite: radar.iraq
+		Factions: iraq
+	ProvidesPrerequisite@vietnam:
+		Prerequisite: radar.vietnam
+		Factions: vietnam
+	ProvidesPrerequisite@cuba:
+		Prerequisite: radar.cuba
+		Factions: cuba
+	ProvidesPrerequisite@libya:
+		Prerequisite: radar.libya
+		Factions: libya
+	ProvidesPrerequisite@upgrade.russia:
+		Prerequisite: upgrade.russia
+		Factions: russia
+	ProvidesPrerequisite@upgrade.iraq:
+		Prerequisite: upgrade.iraq
+		Factions: iraq
+	ProvidesPrerequisite@upgrade.vietnam:
+		Prerequisite: upgrade.vietnam
+		Factions: vietnam
+	ProvidesPrerequisite@upgrade.cuba:
+		Prerequisite: upgrade.cuba
+		Factions: cuba
+	ProvidesPrerequisite@upgrade.libya:
+		Prerequisite: upgrade.libya
+		Factions: libya
+	ProvidesPrerequisite@upgrade.soviets:
+		Prerequisite: upgrade.soviets
+	ProvidesPrerequisite@upgrade.soviets:
+		Prerequisite: upgrade.soviets
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	WithIdleOverlay@dish:
+		Sequence: idle-dish
+		PauseOnCondition: disabled || chronodisable
+		RequiresCondition: !build-incomplete
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower || powerdown || emp
+	IsometricSelectable:
+		DecorationHeight: 90
+

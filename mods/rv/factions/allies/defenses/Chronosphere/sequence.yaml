@@ -1,0 +1,137 @@
+gacsph:
+	Defaults:
+		Offset: -15, -50
+	idle:
+		Filename: ggcsph.shp
+		TilesetFilenames:
+			SNOW: gacsph.shp
+			SIMPLETERRAIN: gtcsph.shp
+		ShadowStart: 3
+		ZOffset: -1c0
+	damaged-idle:
+		Filename: ggcsph.shp
+		TilesetFilenames:
+			SNOW: gacsph.shp
+			SIMPLETERRAIN: gtcsph.shp
+		Start: 1
+		ShadowStart: 4
+		ZOffset: -1c0
+	idle-dome:
+		Filename: ggcsph_e.shp
+		TilesetFilenames:
+			SNOW: gacsph_e.shp
+			SIMPLETERRAIN: gtcsph_e.shp
+		ShadowStart: 2
+		ZOffset: -1c0
+	damaged-idle-dome:
+		Filename: ggcsph_e.shp
+		TilesetFilenames:
+			SNOW: gacsph_e.shp
+			SIMPLETERRAIN: gtcsph_e.shp
+		Start: 1
+		ShadowStart: 3
+		ZOffset: -1c0
+	idle-fans:
+		Filename: ggcsph_a.shp
+		TilesetFilenames:
+			SNOW: gacsph_a.shp
+			SIMPLETERRAIN: gtcsph_a.shp
+		Length: 6
+		Tick: 120
+		ZOffset: -1c0
+	damaged-idle-fans:
+		Filename: ggcsph_a.shp
+		TilesetFilenames:
+			SNOW: gacsph_a.shp
+			SIMPLETERRAIN: gtcsph_a.shp
+		Start: 6
+		Length: 6
+		Tick: 120
+		ZOffset: -1c0
+	charged:
+		Filename: ggcsph_f.shp
+		TilesetFilenames:
+			SNOW: gacsph_f.shp
+			SIMPLETERRAIN: gtcsph_f.shp
+		Length: 12
+		ShadowStart: 24
+		Tick: 120
+	damaged-charged:
+		Filename: ggcsph_f.shp
+		TilesetFilenames:
+			SNOW: gacsph_f.shp
+			SIMPLETERRAIN: gtcsph_f.shp
+		Start: 12
+		Length: 12
+		ShadowStart: 36
+		Tick: 120
+	loop:
+		Filename: ggcsph_g.shp
+		TilesetFilenames:
+			SNOW: gacsph_g.shp
+			SIMPLETERRAIN: gtcsph_g.shp
+		Length: 6
+		ShadowStart: 12
+		Tick: 120
+	damaged-loop:
+		Filename: ggcsph_g.shp
+		TilesetFilenames:
+			SNOW: gacsph_g.shp
+			SIMPLETERRAIN: gtcsph_g.shp
+		Start: 6
+		Length: 6
+		ShadowStart: 18
+		Tick: 120
+	end:
+		Filename: ggcsph_h.shp
+		TilesetFilenames:
+			SNOW: gacsph_h.shp
+			SIMPLETERRAIN: gtcsph_h.shp
+		Length: 15
+		ShadowStart: 30
+		Tick: 120
+	damaged-end:
+		Filename: ggcsph_h.shp
+		TilesetFilenames:
+			SNOW: gacsph_h.shp
+			SIMPLETERRAIN: gtcsph_h.shp
+		Start: 15
+		Length: 15
+		ShadowStart: 45
+		Tick: 120
+	#dead: ggcsphdm # SHP broken & unused
+	#	Length: 25
+	#	ShadowStart: 25
+	#	Tick: 50
+	idle-waves:
+		Filename: bits/structures/water/ggcsph_w.shp
+		Tick: 200
+		ZOffset: -1c0
+	damaged-idle-waves:
+		Filename: bits/structures/water/ggcsph_w.shp
+		Start: 1
+		Tick: 200
+		ZOffset: -1c0
+	make:
+		Filename: gtcsphmk.shp
+		TilesetFilenames:
+			SNOW: gacsphmk.shp
+			URBAN: gucsphmk.shp
+			NEWURBAN: gncsphmk.shp
+			DESERT: gdcsphmk.shp
+			LUNAR: glcsphmk.shp
+			DUNE: gdcsphmk.shp
+		Length: 25
+		ShadowStart: 25
+	icon:
+		Filename: cameo|csphicon.shp
+		Offset: 0,0
+
+gacspb:
+	Inherits: gacsph
+	Defaults:
+		FlipX: true
+		Offset: 15, -50
+	icon:
+		Filename: cameo|csphicon.shp
+		FlipX: false

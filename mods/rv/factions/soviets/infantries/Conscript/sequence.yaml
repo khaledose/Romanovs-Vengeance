@@ -1,0 +1,77 @@
+e2:
+	Inherits: ^ArmedInfantry
+	Defaults:
+		Filename: conquer|cons.shp
+	run:
+		Tick: 120
+	paradrop:
+		Start: 292
+	stand-bulletproof:
+		Filename: bits/infantry/consu.shp
+		Facings: 8
+	run-bulletproof:
+		Filename: bits/infantry/consu.shp
+		Start: 8
+		Length: 6
+		Facings: 8
+		Tick: 120
+	idle1-bulletproof:
+		Filename: bits/infantry/consu.shp
+		Start: 56
+		Length: 15
+		Tick: 120
+	idle2-bulletproof:
+		Filename: bits/infantry/consu.shp
+		Start: 71
+		Length: 15
+		Tick: 120
+	cheer-bulletproof:
+		Filename: bits/infantry/consu.shp
+		Start: 293
+		Length: 8
+		Tick: 120
+	die-bulletproof1:
+		Filename: bits/infantry/consu.shp
+		Start: 134
+		Length: 15
+	die-bulletproof2:
+		Filename: bits/infantry/consu.shp
+		Start: 149
+		Length: 15
+	liedown-bulletproof:
+		Filename: bits/infantry/consu.shp
+		Start: 260
+		Length: 2
+		Facings: 8
+	standup-bulletproof:
+		Filename: bits/infantry/consu.shp
+		Start: 276
+		Length: 2
+		Facings: 8
+	prone-stand-bulletproof:
+		Filename: bits/infantry/consu.shp
+		Frames: 86, 92, 98, 104, 110, 116, 122, 128
+		Facings: 8
+	prone-run-bulletproof:
+		Filename: bits/infantry/consu.shp
+		Start: 86
+		Length: 6
+		Facings: 8
+		Tick: 100
+	shoot-bulletproof:
+		Filename: bits/infantry/consu.shp
+		Start: 164
+		Length: 6
+		Facings: 8
+		Tick: 80
+	prone-shoot-bulletproof:
+		Filename: bits/infantry/consu.shp
+		Start: 212
+		Length: 6
+		Facings: 8
+		Tick: 80
+	paradrop-bulletproof:
+		Filename: bits/infantry/consu.shp
+		Start: 292
+	icon:
+		Filename: cameo|e2icon.shp

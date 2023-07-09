@@ -1,0 +1,6 @@
+ytnk:
+	Inherits@MUZZLE: ^WithGatlingMuzzle
+	icon:
+		Filename: bits/cameos/ytnkicon.shp
+	muzzle:
+		Filename: ytnk.shp

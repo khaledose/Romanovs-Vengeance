@@ -1,0 +1,38 @@
+TerrorBomb:
+	Inherits@1: ^BreakPointDefenseDrones
+	ReloadDelay: 20
+	Range: 4c0
+	Report: gexpbara.wav, gexpbarb.wav, gexpbarc.wav
+	Projectile: BulletAS
+		Speed: 1c682
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c512
+		Damage: 45000 # 22500
+		Falloff: 100, 73, 47, 20, 0
+		Versus:
+			None: 150
+			Flak: 100
+			Plate: 100
+			Light: 90
+			Medium: 50
+			Heavy: 50
+			Wood: 100
+			Steel: 150
+			Concrete: 30
+			Drone: 100
+			Rocket: 100
+		AffectsParent: true
+		DamageTypes: Prone70Percent, TriggerProne, FlameDeath, SuppressTerrorDrone, NonTemporal
+	Warhead@2Eff: CreateEffect
+		Explosions: terrorist_explosion
+		ImpactSounds: gexpapoa.wav
+		ValidTargets: Ground, Water, Air
+	Warhead@3Smu: LeaveSmudge
+		SmudgeType: SmallCrater
+
+TargetedTerrorBomb:
+	Inherits: TerrorBomb
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c768
+		ValidRelationships: Enemy, Neutral
+

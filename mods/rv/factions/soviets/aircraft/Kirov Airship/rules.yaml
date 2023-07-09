@@ -1,0 +1,215 @@
+zep:
+	Inherits: ^Helicopter
+	Inherits@ADVIRRAD: ^AffectedByAdvancedIrradiators
+	Inherits@AIRPROP: ^AffectedByAerialPropaganda
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@RADBOMBS: ^AffectedByRadioactiveBombs
+	Inherits@AI: ^AIMicroManagable
+	Valued:
+		Cost: 2000
+	DeliversCash:
+		Payload: 2000
+		Voice: Move
+	Tooltip:
+	Tooltip@NoRow:
+		Name: Kirov Airship
+	Buildable:
+		Queue: Aircraft.Shared, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya
+		BuildPaletteOrder: 50
+		Prerequisites: ~aircraft.soviets, natech, ~techlevel.4
+		Description: Massive zeppelins that are the aerial terror of the Soviet force.\n\n  Strong vs Buildings\n  Weak vs Infantry, Vehicles\n\nUpgradeable with:\n- Radioactive Warheads\n- Advanced Irradiators (Iraq)\n- Aerial Propaganda (Vietnam)
+		BuildDuration: 1000
+		BuildDurationModifier: 100
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Selectable:
+		Bounds: 2413, 2896, 0, -482
+	Aircraft:
+		CruiseAltitude: 5c852
+		TurnSpeed: 20
+		Speed: 30
+		Voice: Move
+		Repulsable: false
+		AltitudeVelocity: 200
+		AirborneCondition: airborne
+	Repairable:
+		Voice: Move
+		RepairActors: gadept, nadept, nadepb, yadept, yadepb, caoutp, caoutb
+	RepairableNear:
+		Voice: Move
+		CloseEnough: 3c0
+		RepairActors: gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead, gayard, nayard, yayard, gaairc, gaairb, baairf, baairb, naheli, yadisk
+	Health:
+		HP: 400000
+	Armor:
+		Type: Light
+	ChangesHealth:
+		PercentageStep: 1
+		Step: 0
+		Delay: 100
+		DamageCooldown: 100
+		StartIfBelow: 100
+	RevealsShroud:
+		Range: 10c0
+	RevealsShroud@Ground:
+		Range: 10c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 10c0
+	#	Types: SatelliteScan
+	#	Type: GroundPosition
+	Armament:
+		Weapon: BlimpBomb
+		Damage: 750
+		RequiresCondition: !rank-elite && !radbombs
+	Armament@elite:
+		Weapon: BlimpBombE
+		Damage: 825
+		RequiresCondition: rank-elite && !radbombs
+	Armament@rad:
+		Weapon: BlimpBombRad
+		Damage: 750
+		RequiresCondition: !rank-elite && radbombs && !advirrad
+	Armament@eliterad:
+		Weapon: BlimpBombRadE
+		Damage: 825
+		RequiresCondition: rank-elite && radbombs && !advirrad
+	Armament@rad-orange:
+		Weapon: BlimpBombRadOrange
+		Damage: 750
+		RequiresCondition: !rank-elite && radbombs && advirrad
+	Armament@eliterad-orange:
+		Weapon: BlimpBombRadOrangeE
+		Damage: 825
+		RequiresCondition: rank-elite && radbombs && advirrad
+	AttackAircraft:
+		Voice: Attack
+		AttackType: Hover
+		FacingTolerance: 512
+	AutoTarget:
+	RenderSprites:
+	RenderVoxels:
+	WithVoxelBody:
+		ShowShadow: false
+		RequiresCondition: !airprop && !radbombs
+	WithVoxelBody@propaganda:
+		ShowShadow: false
+		Sequence: idle-propaganda
+		RequiresCondition: airprop && !radbombs
+	WithVoxelBody@rad:
+		ShowShadow: false
+		Sequence: idle-rad
+		RequiresCondition: !airprop && radbombs && !advirrad
+	WithVoxelBody@rad-orange:
+		ShowShadow: false
+		Sequence: idle-rad-orange
+		RequiresCondition: !airprop && radbombs && advirrad
+	WithVoxelBody@propaganda-rad:
+		ShowShadow: false
+		Sequence: idle-propaganda-rad
+		RequiresCondition: airprop && radbombs && !advirrad
+	WithVoxelBody@propaganda-rad-orange:
+		ShowShadow: false
+		Sequence: idle-propaganda-rad-orange
+		RequiresCondition: airprop && radbombs && advirrad
+	WithFacingSpriteBody:
+		Sequence: shadow
+		ForceToGround: true
+	Hovers:
+		BobDistance: -10
+	Explodes:
+		DeathTypes: NonTemporal
+		Weapon: UnitExplode
+		Chance: 75
+	AutoTarget:
+		ScanRadius: 5
+		InitialStance: ReturnFire
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	NotificationAnnouncement:
+		RequiresCondition: produced
+		Notification: KirovReporting
+	Voiced:
+		VoiceSet: KirovVoice
+	# AmbientSound@Move:
+	#	SoundFiles: vkirlo2a.wav, vkirlo2b.wav, vkirlo2c.wav
+	#	Volume: 0.40
+	#	RequiresCondition: moving
+	# SoundAnnouncement@end:
+	#	SoundFiles: vkirlo3.wav
+	#	Volume: 0.40
+	#	RequiresCondition: !moving
+	# GrantConditionOnMovement:
+	#	Condition: moving
+	SpawnActorOnDeath:
+		DeathType: NonTemporal
+		Actor: zephusk
+	HitShape:
+	GrantConditionOnActivity@AI:
+		Condition: AIattack
+	RejectsOrders@AI: ## Make AI zep more offensive when attack
+		Reject: Move, Attack, ReturnToBase
+		RequiresCondition: ai-control && AIattack
+	ActorStatValues:
+		Upgrades: upgrade.advanced_irradiators, upgrade.aerial_propaganda, upgrade.radioactive_bombs
+
+zephusk:
+	Inherits: ^HelicopterHusk
+	Inherits@ADVIRRAD: ^AffectedByAdvancedIrradiators
+	Inherits@AIRPROP: ^AffectedByAerialPropaganda
+	Inherits@RADBOMBS: ^AffectedByRadioactiveBombs
+	Tooltip:
+	Tooltip@NoRow:
+		Name: Kirov Airship
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 30
+	FallsToEarth:
+		Explosion: KirovExplode
+		Velocity: 120
+		MaximumSpinSpeed: 0
+	RevealsShroud:
+		Range: 10c0
+		Type: GroundPosition
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 10c0
+	#	Types: SatelliteScan
+	#	Type: GroundPosition
+	RevealOnDeath:
+		Radius: 10c0
+		Duration: 125
+	-ProximityExternalCondition@AIRPROP:
+	WithVoxelBody:
+		ShowShadow: false
+		RequiresCondition: !airprop && !radbombs
+	WithVoxelBody@propaganda:
+		ShowShadow: false
+		Sequence: idle-propaganda
+		RequiresCondition: airprop && !radbombs
+	WithVoxelBody@rad:
+		ShowShadow: false
+		Sequence: idle-rad
+		RequiresCondition: !airprop && radbombs && !advirrad
+	WithVoxelBody@rad-orange:
+		ShowShadow: false
+		Sequence: idle-rad-orange
+		RequiresCondition: !airprop && radbombs && advirrad
+	WithVoxelBody@propaganda-rad:
+		ShowShadow: false
+		Sequence: idle-propaganda-rad
+		RequiresCondition: airprop && radbombs && !advirrad
+	WithVoxelBody@propaganda-rad-orange:
+		ShowShadow: false
+		Sequence: idle-propaganda-rad-orange
+		RequiresCondition: airprop && radbombs && advirrad
+	RenderVoxels:
+		Image: zep
+	RenderSprites:
+		Image: zep
+	WithFacingSpriteBody:
+		Sequence: shadow
+		ForceToGround: true
+	BodyOrientation:
+		UseClassicPerspectiveFudge: false
+

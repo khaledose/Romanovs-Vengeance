@@ -1,0 +1,6 @@
+ptroop:
+	Inherits: yuri
+	Defaults:
+		Filename: conquer|ptroop.shp
+	icon:
+		Filename: cameo|psicicon.shp

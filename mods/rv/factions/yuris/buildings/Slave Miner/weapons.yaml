@@ -1,0 +1,5 @@
+RefineryExplode:
+	Inherits: BuildingExplode
+	Warhead@2Res: CreateResource
+		AddsResourceType: Ore
+		Size: 1,1

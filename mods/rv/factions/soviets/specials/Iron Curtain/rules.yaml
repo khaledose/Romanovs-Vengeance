@@ -1,0 +1,39 @@
+IronCurtainSpecial:
+	GrantExternalConditionPower@IRONCURTAIN:
+		Icons:
+			1: invuln
+		Prerequisites:
+			1: nairon
+		Cursor: iron-curtain
+		ChargeInterval: 6000
+		Names:
+			1: Invulnerability
+		Descriptions:
+			1: Makes a group of units invulnerable\nfor 20 seconds.\n\nKills infantry.
+		AllowMultiple: true
+		Durations:
+			1: 500
+		Conditions:
+			1: invulnerability
+		Dimensions:
+			1: 3,3
+		Footprints:
+			1: xxx xxx xxx
+		ValidRelationships: Ally, Neutral, Enemy
+		SelectTargetSpeechNotification: SelectTarget
+		SelectTargetTextNotification: Select target.
+		EndChargeSpeechNotification: IronCurtainReady
+		EndChargeTextNotification: Iron Curtain ready.
+		LaunchSpeechNotification: IronCurtainActivated
+		LaunchTextNotification: Warning: Iron Curtain activated.
+		IncomingSpeechNotification: IronCurtainActivated
+		IncomingTextNotification: Warning: Iron Curtain activated.
+		EndChargeSound: siroread.wav
+		OnFireSound: siroon.wav
+		EffectImage: explosion
+		EffectSequence: ironblast
+		EffectPalette: effect
+		DisplayTimerRelationships: Ally, Neutral, Enemy
+		DisplayRadarPing: True
+		PauseOnCondition: disabled || chronodisable
+	

@@ -1,0 +1,146 @@
+gacnst:
+	Inherits: ^ConstructionYard
+	Buildable:
+		BuildPaletteOrder: 10
+	ProvidesPrerequisite@building.allies:
+		Prerequisite: building.allies
+	ProvidesPrerequisite@building.france:
+		Prerequisite: building.france
+		Factions: france
+	Production:
+		Produces: Building.Allies, Support.Allies, Support.France
+	ProductionQueue@Building:
+		Type: Building.Allies
+	ProductionQueue@Support:
+		Type: Support.Allies
+		Factions: america, germany, england, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, cuba, libya, iraq, russia, vietnam, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon, transcaucus, turkmen, tuva, russianfed, serbia
+	ProductionQueue@SupportFrance:
+		Type: Support.France
+		Group: Support
+		DisplayOrder: 5
+		LowPowerModifier: 200
+		Factions: france
+		ReadyAudio: ConstructionComplete
+		ReadyTextNotification: Construction complete.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionBar@Building:
+		ProductionType: Building.Allies
+	ProductionBar@Support:
+		ProductionType: Support.Allies
+	ProductionBar@SupportFrance:
+		ProductionType: Support.France
+		Color: 8A8A8A
+	Transforms:
+		IntoActor: amcv
+	WithIdleOverlay@fans:
+		Sequence: idle-fans
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete
+	WithIdleOverlay@waves:
+		RequiresCondition: !build-incomplete && in_water
+	WithBuildingPlacedOverlay:
+		RequiresCondition: !build-incomplete && !chronodisable
+	GrantConditionOnFaction@America:
+		Condition: america
+		Factions: america
+	GrantConditionOnFaction@England:
+		Condition: england
+		Factions: england
+	GrantConditionOnFaction@France:
+		Condition: france
+		Factions: france
+	GrantConditionOnFaction@Germany:
+		Condition: germany
+		Factions: germany
+	GrantConditionOnFaction@Korea:
+		Condition: korea
+		Factions: korea
+	GrantConditionOnFaction@Japan:
+		Condition: japan
+		Factions: japan
+	GrantConditionOnFaction@Belarus:
+		Condition: belarus
+		Factions: belarus
+	GrantConditionOnFaction@Poland:
+		Condition: poland
+		Factions: poland
+	GrantConditionOnFaction@Ukraine:
+		Condition: ukraine
+		Factions: ukraine
+	GrantConditionOnFaction@Australia:
+		Condition: aussie
+		Factions: aussie
+	GrantConditionOnFaction@China:
+		Condition: china
+		Factions: china
+	GrantConditionOnFaction@Turkey:
+		Condition: turkey
+		Factions: turkey
+	GrantConditionOnFaction@Canada:
+		Condition: canada
+		Factions: canada
+	WithIdleOverlay@America:
+		Sequence: flag-usa
+		Palette: allcyardflags
+		RequiresCondition: !build-incomplete && america
+	WithIdleOverlay@England:
+		Sequence: flag-uk
+		Palette: allcyardflags
+		RequiresCondition: !build-incomplete && england
+	WithIdleOverlay@France:
+		Sequence: flag-france
+		Palette: allcyardflags
+		RequiresCondition: !build-incomplete && france
+	WithIdleOverlay@Germany:
+		Sequence: flag-germany
+		Palette: allcyardflags
+		RequiresCondition: !build-incomplete && germany
+	WithIdleOverlay@Korea:
+		Sequence: flag-korea
+		Palette: allcyardflags
+		IsPlayerPalette: false
+		RequiresCondition: !build-incomplete && korea
+	WithIdleOverlay@Japan:
+		Sequence: flag-japan
+		Palette: allcyardflags
+		RequiresCondition: !build-incomplete && japan
+	WithIdleOverlay@Belarus:
+		Sequence: flag-belarus
+		Palette: allcyardflags
+		RequiresCondition: !build-incomplete && belarus
+	WithIdleOverlay@Poland:
+		Sequence: flag-poland
+		Palette: allcyardflags
+		RequiresCondition: !build-incomplete && poland
+	WithIdleOverlay@Ukraine:
+		Sequence: flag-ukraine
+		Palette: allcyardflags
+		RequiresCondition: !build-incomplete && ukraine
+	WithIdleOverlay@Australia:
+		Sequence: flag-aussie
+		Palette: allcyardflags
+		RequiresCondition: !build-incomplete && aussie
+	WithIdleOverlay@China:
+		Sequence: flag-china
+		Palette: allcyardflags
+		RequiresCondition: !build-incomplete && china
+	WithIdleOverlay@Turkey:
+		Sequence: flag-turkey
+		Palette: allcyardflags
+		RequiresCondition: !build-incomplete && turkey
+	WithIdleOverlay@Canada:
+		Sequence: flag-canada
+		Palette: allcyardflags
+		RequiresCondition: !build-incomplete && canada
+	IsometricSelectable:
+		DecorationHeight: 60
+	Voiced:
+		VoiceSet: AlliedConstructionYardVoice
+	RenderSprites:
+		Image: gacnst

@@ -1,0 +1,4 @@
+v3rocket:
+	idle: bits/vehicles/replace/v3rocket
+	idle-rad: bits/vehicles/upgrades/v3urocket
+	idle-rad-orange: bits/vehicles/upgrades/v3uorocket

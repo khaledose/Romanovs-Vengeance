@@ -1,0 +1,23 @@
+nairon:
+	Inherits: ^SecondarySuperWeapon
+	Inherits@Special: IronCurtainSpecial
+	Buildable:
+		Queue: Support.Shared, Support.Soviets
+		Prerequisites: ~building.soviets, natech, !enoughiron, ~techlevel.5
+		Description: Grants invulnerability to vehicles and structures.\nKills infantry.\n\n  Requires power to operate.
+	Tooltip:
+	Tooltip@NoRow:
+		Name: Iron Curtain Device
+	WithSpriteBody:
+		PauseOnCondition: chronodisable
+	ProvidesPrerequisite@swlimit:
+		Prerequisite: enoughiron
+	NotificationAnnouncement:
+		Notification: IronCurtainDetected
+		TextNotification: Warning: Iron Curtain detected.
+	IsometricSelectable:
+		DecorationHeight: 75
+	Voiced:
+		VoiceSet: IronCurtainDeviceVoice
+		Volume: 0.8
+

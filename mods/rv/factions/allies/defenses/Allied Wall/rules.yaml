@@ -1,0 +1,19 @@
+gawall:
+	Inherits: ^Wall
+	Buildable:
+		Queue: Support.Shared, Support.Allies
+		Prerequisites: ~building.allies, gapile, ~techlevel.1
+		BuildPaletteOrder: 10
+		Description: Heavy wall capable of blocking units and projectiles.\n\nUpgradeable with:\n- Grand Cannon Protocols (France)\n\n  Cannot be placed on water.
+	Tooltip:
+	Tooltip@NoRow:
+		Name: Allied Wall
+	LineBuild:
+		NodeTypes: gawall
+	LineBuildNode:
+		Types: gawall
+	WithWallSpriteBody:
+		Type: gawall
+	Replaceable:
+		Types: AlliedGate
+

@@ -1,0 +1,4 @@
+htk:
+	Inherits@MUZZLE: ^WithFlakMuzzle
+	icon:
+		Filename: cameo|htkicon.shp

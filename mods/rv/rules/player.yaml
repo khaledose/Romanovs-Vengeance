@@ -540,4 +540,4 @@ Player:
 		NotificationInterval: 125
 	RangedGpsWatcher:
 	PlayerRadarTerrain:
-	Inherits@1: ^CommandersPowers
+	# Inherits@1: ^CommandersPowers

@@ -1,0 +1,26 @@
+AlligatorBite:
+	ReloadDelay: 30
+	Range: 1c512
+	Report: galiatta.wav, galiattb.wav
+	ValidTargets: Ground
+	Projectile: InstantHit
+	Warhead@1Dam: SpreadDamage
+		Spread: 213
+		Damage: 3000
+		DamageTypes: BulletDeath, NonTemporal
+
+BearBite:
+	Inherits: AlligatorBite
+	Report: gbeaatta.wav, gbeaattb.wav
+
+ChimpBite:
+	Inherits: AlligatorBite
+	Report: gchiatta.wav, gchiattb.wav, gchiattc.wav
+
+CorpseSpawner:
+	Projectile: InstantExplode
+	Warhead@1Eff: CreateEffect
+		Image: corpse
+		Explosions: death_a, death_b, death_c, death_d, death_e, death_f
+		ValidTargets: Ground
+		Delay: 12

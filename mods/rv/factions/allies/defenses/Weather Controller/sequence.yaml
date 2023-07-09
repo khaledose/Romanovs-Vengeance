@@ -1,0 +1,90 @@
+gaweat:
+	Defaults:
+		Offset: 0, -45
+	idle:
+		Filename: ggweth.shp
+		TilesetFilenames:
+			SNOW: gaweth.shp
+			SIMPLETERRAIN: gtweth.shp
+		ShadowStart: 3
+	damaged-idle:
+		Filename: ggweth.shp
+		TilesetFilenames:
+			SNOW: gaweth.shp
+			SIMPLETERRAIN: gtweth.shp
+		Start: 1
+		ShadowStart: 4
+	charged:
+		Filename: ggweth_f.shp
+		TilesetFilenames:
+			SNOW: gaweth_f.shp
+			SIMPLETERRAIN: gtweth_f.shp
+		Length: 12
+		ShadowStart: 24
+		Tick: 150
+	damaged-charged:
+		Filename: ggweth_f.shp
+		TilesetFilenames:
+			SNOW: gaweth_f.shp
+			SIMPLETERRAIN: gtweth_f.shp
+		Start: 12
+		Length: 12
+		ShadowStart: 36
+		Tick: 150
+	loop:
+		Filename: ggweth_g.shp
+		TilesetFilenames:
+			SNOW: gaweth_g.shp
+			SIMPLETERRAIN: gtweth_g.shp
+		Length: 12
+		ShadowStart: 24
+		Tick: 150
+	damaged-loop:
+		Filename: ggweth_g.shp
+		TilesetFilenames:
+			SNOW: gaweth_g.shp
+			SIMPLETERRAIN: gtweth_g.shp
+		Start: 12
+		Length: 12
+		ShadowStart: 36
+		Tick: 150
+	end:
+		Filename: ggweth_h.shp
+		TilesetFilenames:
+			SNOW: gaweth_h.shp
+			SIMPLETERRAIN: gtweth_h.shp
+		Length: 12
+		ShadowStart: 24
+		Tick: 150
+	damaged-end:
+		Filename: ggweth_h.shp
+		TilesetFilenames:
+			SNOW: gaweth_h.shp
+			SIMPLETERRAIN: gtweth_h.shp
+		Start: 12
+		Length: 12
+		ShadowStart: 36
+		Tick: 150
+	idle-waves:
+		Filename: bits/structures/water/ggweth_w.shp
+		Tick: 200
+		ZOffset: -1c0
+	damaged-idle-waves:
+		Filename: bits/structures/water/ggweth_w.shp
+		Start: 1
+		Tick: 200
+		ZOffset: -1c0
+	make:
+		Filename: gtwethmk.shp
+		TilesetFilenames:
+			SNOW: gawethmk.shp
+			URBAN: guwethmk.shp
+			NEWURBAN: gnwethmk.shp
+			DESERT: gdwethmk.shp
+			LUNAR: glwethmk.shp
+			DUNE: gdwethmk.shp
+		Length: 25
+		ShadowStart: 25
+	icon:
+		Filename: cameo|wethicon.shp
+		Offset: 0,0

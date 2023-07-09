@@ -167,7 +167,7 @@ caairp:
 			1: e1,e1,e1,e1,e1,e1,e1
 		QuantizedFacings: 8
 		UnitTypes:
-			1: alplane
+			1: pdplane
 		SquadSizes:
 			1: 2
 		CameraActor: camera
@@ -235,7 +235,7 @@ caairp:
 			1: init,init,init,init,init,init,init
 		QuantizedFacings: 8
 		UnitTypes:
-			1: pcplane
+			1: pdplane
 		SquadSizes:
 			1: 2
 		CameraActor: camera

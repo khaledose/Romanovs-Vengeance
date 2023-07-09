@@ -1,0 +1,9 @@
+smcv:
+	Inherits: ^ConstructionVehicle
+	Buildable:
+		Queue: Vehicle.Shared, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Ship.Shared, Ship.Soviets
+		Prerequisites: ~vehicleorship.soviets, nadept, ~techlevel.2, ~!global-suddendeath, ~!ai.mcv
+	Transforms:
+		IntoActor: nacnst
+	Voiced:
+		VoiceSet: SovietConstructionVehicleVoice

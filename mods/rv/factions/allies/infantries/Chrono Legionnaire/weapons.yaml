@@ -1,0 +1,46 @@
+NeutronRifle:
+	ReloadDelay: 1
+	Range: 5c0
+	TargetActorCenter: true
+	ValidTargets: ChronoDisable
+	InvalidTargets: Air
+	Projectile: TeslaZap
+		Palette: highlight
+	Warhead@Damage: Temporal
+		Damage: 800
+		Spread: 1
+		ValidTargets: ChronoDisable
+		InvalidTargets: Air
+		DamageTypes: Temporal
+	Warhead@Stars: CreateEffect
+		Explosions: chronosk
+		ValidTargets: Ground, Water
+
+NeutronRifleE:
+	Inherits: NeutronRifle
+	Warhead@Damage: Temporal
+		Damage: 1600
+
+NeutronRifleSound:
+	ReloadDelay: 120
+	Range: 5c0
+	Report: ichratta.wav
+	TargetActorCenter: true
+	ValidTargets: ChronoDisable
+	InvalidTargets: Air
+	Projectile: InstantHit
+	Warhead@Target: TargetDamage
+		ValidTargets: ChronoDisable
+		InvalidTargets: Air
+
+UCNeutronRifle:
+	Inherits: NeutronRifle
+	Range: 7c0
+
+UCNeutronRifleE:
+	Inherits: NeutronRifleE
+	Range: 7c0
+
+UCNeutronRifleSound:
+	Inherits: NeutronRifleSound
+	Range: 7c0

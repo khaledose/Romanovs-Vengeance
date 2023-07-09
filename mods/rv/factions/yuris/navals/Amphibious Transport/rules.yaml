@@ -1,0 +1,9 @@
+yhvr:
+	Inherits: ^AmphibiousTransport
+	Inherits@GRINDER: ^AffectedByGrinderTreads
+	Buildable:
+		Queue: Ship.Shared, Ship.Yuri
+		Prerequisites: ~ship.yuri, ~techlevel.1
+		Description: General-purpose naval transport.\nCan carry infantry and vehicles.\n\n  Unarmed\n\nUpgradeable with:\n- Grinder Treads
+	Voiced:
+		VoiceSet: YuriAmphibiousTransportVoice

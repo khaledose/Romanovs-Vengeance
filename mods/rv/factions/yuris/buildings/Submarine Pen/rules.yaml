@@ -1,0 +1,56 @@
+yayard:
+	Inherits: ^Shipyard
+	Tooltip:
+	Tooltip@NoRow:
+		Name: Submarine Pen
+	Buildable:
+		Queue: Building.Shared, Building.Yuri
+		Prerequisites: ~building.yuri, power, yarefn, ~techlevel.1
+		Description: Produces Psi-Corps submarines, and other naval units.\n\nAbilities:\n- Comes with 3 repair drones.\n\n  Can only be placed on water.
+	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@ship.yuri:
+		Prerequisite: ship.yuri
+	ProvidesPrerequisite@vehicleorship.yuri:
+		Prerequisite: vehicleorship.yuri
+	Production:
+		Produces: Ship.Yuri
+	ProductionQueue:
+		Type: Ship.Yuri
+		DisplayOrder: 23
+	ProductionBar:
+		ProductionType: Ship.Yuri
+	ParatroopersPower@sensorbuoy:
+		OrderName: PsiCorpsSensorBuoy
+		PauseOnCondition: disabled || chronodisable
+		Prerequisites:
+			1: disabled # yayard
+		Icons:
+			1: buoy
+		ChargeInterval: 9000
+		Names:
+			1: Sensor Buoy
+		Descriptions:
+			1: A Toxin Bomber paradrops a Sensor Buoy\nanywhere on the map.
+		SelectTargetSpeechNotification: SelectTarget
+		SelectTargetTextNotification: Select target.
+		EndChargeSpeechNotification: ParatroopersReady
+		EndChargeTextNotification: Paratroopers ready.
+		DropItems:
+			1: buoy
+		SquadSizes:
+			1: 1
+		SquadOffset: -2048, 2048, 0
+		QuantizedFacings: 8
+		UnitTypes:
+			1: txbmbdrop
+		CameraActor: camera
+		DisplayBeacon: True
+		BeaconPosters:
+			1: buoyicon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: swdirection
+		DirectionArrowPalette: mouse
+	IsometricSelectable:
+		DecorationHeight: 120

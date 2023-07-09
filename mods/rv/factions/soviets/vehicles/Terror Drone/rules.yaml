@@ -1,0 +1,148 @@
+dron:
+	Inherits: ^Vehicle
+	Inherits@EXPERIENCE: ^GainsExperience
+	WithColoredOverlay@ChronoDisable:
+		Color: 0060C040
+	WithColoredOverlay@MagneFreeze:
+		Color: FF50F580
+	WithColoredOverlay@MagneSlow:
+		Color: FF50F540
+	WithColoredOverlay@Cryo1:
+		Color: 00F5FF40
+	WithColoredOverlay@Cryo2:
+		Color: 00F5FF60
+	WithColoredOverlay@Cryo3:
+		Color: 00F5FF80
+	WithColoredOverlay@Cryo4:
+		Color: 00F5FFA0
+	Valued:
+		Cost: 500
+	DeliversCash:
+		Payload: 500
+		Voice: Move
+	Tooltip:
+	Tooltip@NoRow:
+		Name: Terror Drone
+	Buildable:
+		Queue: Vehicle.Shared, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya
+		Prerequisites: ~vehicle.soviets, ~techlevel.2
+		BuildPaletteOrder: 40
+		Description: Small vehicle that can infect enemy vehicles and slowly kill them.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nAbilities:\n- Immune to Radiation\n- Cannot be mind controlled
+		BuildDuration: 175
+		BuildDurationModifier: 100
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Mobile:
+		Speed: 150
+		TurnSpeed: 1023
+		TerrainOrientationAdjustmentMargin: -1
+		RequiresCondition: !chronodisable && !emp && !magnefreeze
+	Health:
+		HP: 10000
+	Armor:
+		Type: Drone
+	RevealsShroud:
+		Range: 6c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 6c0
+	RevealOnDeath:
+		Radius: 6c0
+	Passenger:
+		CargoType: SmallVehicle
+		Weight: 2
+	RenderSprites:
+	-InfectableRV:
+	-Targetable@DRONE:
+	-SpeedMultiplier@DRONE:
+	-RevealsShroud@DRONE:
+	-ExplodeWeapon@dronesparks:
+	-RenderVoxels:
+	-Carryable:
+	-CaptureManager:
+	-Capturable:
+	WithInfantryBody:
+		StandSequences: stand
+		DefaultAttackSequence: jump
+		RequiresCondition: !jousting
+	WithFacingSpriteBody:
+		Sequence: shoot
+		RequiresCondition: jousting
+	GrantConditionOnTerrain@Water:
+		TerrainTypes: Water, Beach
+		Condition: in_water
+	KillsSelf@LowPowerOnWater:
+		DamageTypes: NonTemporal
+		RequiresCondition: in_water
+	Armament@primary:
+		Weapon: DroneJump
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: DroneJumpE
+		RequiresCondition: rank-elite
+	AttackInfectRV:
+		Voice: Attack
+		Damage: 4000
+		DamageInterval: 45
+		DamageTypes: DroneInfection, BulletDeath, NonTemporal
+		SurviveHostDamageTypes: DroneInfection
+		JoustRange: 1c768
+		RequiresCondition: !chronodisable && !emp
+	RejectsOrders:
+		RequiresCondition: jousting
+	SpeedMultiplier@JOUSTING:
+		Modifier: 150
+		RequiresCondition: jousting
+	AttackMove:
+		Voice: Move
+	AutoTarget:
+		ScanRadius: 5
+		InitialStance: AttackAnything
+	AutoTargetPriority@DEFAULT:
+		ValidTargets: TerrorDronable
+	Targetable:
+		TargetTypes: Ground, TerrorDrone, DetonateAttack, ImmuneToRadiation
+		RequiresCondition: !parachute && !chronodisable && !jousting
+	-DelayedWeaponAttachable@TANYAC4:
+	-Targetable@TANYAC4:
+	-Targetable@TANYAC4CLEANER:
+	-WithDecoration@TANYAC4:
+	-AmbientSound@TANYAC4:
+	Explodes:
+		Weapon: InfantryExplode
+		EmptyWeapon: InfantryExplode
+	Voiced:
+		VoiceSet: TerrorDroneVoice
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidRelationships: None
+	# AmbientSound@Walk:
+	#	SoundFiles: vterlo1a.wav, vterlo1b.wav, vterlo1c.wav, vterlo2a.wav, vterlo2b.wav, vterlo2c.wav
+	#	Volume: 0.50
+	#	RequiresCondition: walking
+	# SoundAnnouncement@end:
+	#	SoundFiles: vterlo3.wav
+	#	Volume: 0.50
+	#	RequiresCondition: !walking
+	# GrantConditionOnMovement:
+	#	Condition: walking
+	ProducibleWithLevel@1:
+		Prerequisites: warfactory.infiltratedorbaacdm
+	WithProductionIconOverlay@1:
+		Prerequisites: warfactory.infiltratedorbaacdm
+		Types: chevron-veteran
+	ProducibleWithLevel@2:
+		Prerequisites: warfactory.infiltrated, baacdm
+	WithProductionIconOverlay@2:
+		Prerequisites: warfactory.infiltrated, baacdm
+		Types: chevron-elite
+	DeathSounds:
+		DeathTypes: NonTemporal
+	HitShape:
+	ActorStatValues:
+		Damage: 40
+		ReloadDelay: 45
+

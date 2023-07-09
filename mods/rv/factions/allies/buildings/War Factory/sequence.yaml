@@ -1,0 +1,226 @@
+gaweap:
+	Defaults:
+		Filename: ggweap.shp
+		TilesetFilenames:
+			SNOW: gaweap.shp
+			SIMPLETERRAIN: gtweap.shp
+		Offset: -30, -60
+	idle:
+		ShadowStart: 3
+		ZOffset: -1024
+	damaged-idle:
+		Start: 1
+		ShadowStart: 4
+		ZOffset: -1024
+	build-front:
+		Filename: ggweap_1.shp
+		TilesetFilenames:
+			SNOW: gaweap_1.shp
+			SIMPLETERRAIN: gtweap_1.shp
+		ShadowStart: 2
+	damaged-build-front:
+		Filename: ggweap_1.shp
+		TilesetFilenames:
+			SNOW: gaweap_1.shp
+			SIMPLETERRAIN: gtweap_1.shp
+		Start: 1
+		ShadowStart: 3
+	build-top:
+		Filename: ggweap_2.shp
+		TilesetFilenames:
+			SNOW: gaweap_2.shp
+			SIMPLETERRAIN: gtweap_2.shp
+		ShadowStart: 2
+		ZOffset: 1024
+	damaged-build-top:
+		Filename: ggweap_2.shp
+		TilesetFilenames:
+			SNOW: gaweap_2.shp
+			SIMPLETERRAIN: gtweap_2.shp
+		Start: 1
+		ShadowStart: 3
+		ZOffset: 1024
+	# TODO: ggweap_3 and ggweap_4 are used for producing flying actors
+	build-air-open:
+		Filename: ggweap_3.shp
+		TilesetFilenames:
+			SNOW: gaweap_3.shp
+			SIMPLETERRAIN: gtweap_3.shp
+		ShadowStart: 2
+	damaged-air-open:
+		Filename: ggweap_3.shp
+		TilesetFilenames:
+			SNOW: gaweap_3.shp
+			SIMPLETERRAIN: gtweap_3.shp
+		Start: 1
+		ShadowStart: 3
+	build-air-inside:
+		Filename: ggweap_4.shp
+		TilesetFilenames:
+			SNOW: gaweap_4.shp
+			SIMPLETERRAIN: gtweap_4.shp
+		ShadowStart: 2
+	damaged-air-inside:
+		Filename: ggweap_4.shp
+		TilesetFilenames:
+			SNOW: gaweap_4.shp
+			SIMPLETERRAIN: gtweap_4.shp
+		Start: 1
+		ShadowStart: 3
+	bib:
+		Filename: ggweapbb.shp
+		TilesetFilenames:
+			SNOW: gaweapbb.shp
+			SIMPLETERRAIN: gtweapbb.shp
+		ShadowStart: 2
+		ZOffset: -1024
+	damaged-bib:
+		Filename: ggweapbb.shp
+		TilesetFilenames:
+			SNOW: gaweapbb.shp
+			SIMPLETERRAIN: gtweapbb.shp
+		Start: 1
+		ShadowStart: 3
+		ZOffset: -1024
+	idle-flag:
+		Filename: ggweap_a.shp
+		TilesetFilenames:
+			SNOW: gaweap_a.shp
+			SIMPLETERRAIN: gtweap_a.shp
+		Length: 14
+		ShadowStart: 31
+	damaged-idle-flag:
+		Filename: ggweap_a.shp
+		TilesetFilenames:
+			SNOW: gaweap_a.shp
+			SIMPLETERRAIN: gtweap_a.shp
+		Start: 15
+		Length: 14
+		ShadowStart: 45
+	overlay-fan:
+		Filename: ggweap_b.shp
+		TilesetFilenames:
+			SNOW: gaweap_b.shp
+			SIMPLETERRAIN: gtweap_b.shp
+		Length: 5
+		ShadowStart: 6
+	make:
+		Filename: gtweapmk.shp
+		TilesetFilenames:
+			SNOW: gaweapmk.shp
+			URBAN: guweapmk.shp
+			NEWURBAN: gnweapmk.shp
+			DESERT: gdweapmk.shp
+			LUNAR: glweapmk.shp
+			DUNE: gdweapmk.shp
+		Length: 25
+		ShadowStart: 25
+	icon:
+		Filename: cameo|gwepicon.shp
+		TilesetFilenames:
+		Offset: 0,0
+
+gaweab:
+	Inherits: gaweap
+	Defaults:
+		Filename: ggweap.shp
+		TilesetFilenames:
+			SNOW: gaweap.shp
+			SIMPLETERRAIN: gtweap.shp
+		FlipX: true
+		Offset: 30,-60
+	icon:
+		Filename: cameo|gwepicon.shp
+		TilesetFilenames:
+		FlipX: false
+
+gaweac:
+	Inherits: gaweap
+	Defaults:
+		Offset: -18,-54
+	idle:
+		Filename: ctnewy21.shp
+		TilesetFilenames:
+			SNOW: canewy21.shp
+			URBAN: cunewy21.shp
+			NEWURBAN: cnnewy21.shp
+			DESERT: cdnewy21.shp
+			LUNAR: clnewy21.shp
+			DUNE: cdnewy21.shp
+		ShadowStart: 4
+	damaged-idle:
+		Filename: ctnewy21.shp
+		TilesetFilenames:
+			SNOW: canewy21.shp
+			URBAN: cunewy21.shp
+			NEWURBAN: cnnewy21.shp
+			DESERT: cdnewy21.shp
+			LUNAR: clnewy21.shp
+			DUNE: cdnewy21.shp
+		ShadowStart: 5
+	idle-flag:
+		Filename: ggpile_a.shp
+		TilesetFilenames:
+			SNOW: gapile_a.shp
+			SIMPLETERRAIN: gtpile_a.shp
+		Length: 16
+		ShadowStart: 32
+	damaged-idle-flag:
+		Filename: ggpile_a.shp
+		TilesetFilenames:
+			SNOW: gapile_a.shp
+			SIMPLETERRAIN: gtpile_a.shp
+		Start: 16
+		Length: 16
+		ShadowStart: 48
+
+gawead:
+	Inherits: gaweap
+	Defaults:
+		Offset: 18,-54
+	idle:
+		Filename: ctnewy20.shp
+		TilesetFilenames:
+			SNOW: canewy20.shp
+			URBAN: cunewy20.shp
+			NEWURBAN: cnnewy20.shp
+			DESERT: cdnewy20.shp
+			LUNAR: clnewy20.shp
+			DUNE: cdnewy20.shp
+		ShadowStart: 4
+	damaged-idle:
+		Filename: ctnewy20.shp
+		TilesetFilenames:
+			SNOW: canewy20.shp
+			URBAN: cunewy20.shp
+			NEWURBAN: cnnewy20.shp
+			DESERT: cdnewy20.shp
+			LUNAR: clnewy20.shp
+			DUNE: cdnewy20.shp
+		ShadowStart: 5
+	idle-flag:
+		Filename: ggpile_a.shp
+		TilesetFilenames:
+			SNOW: gapile_a.shp
+			SIMPLETERRAIN: gtpile_a.shp
+		Length: 16
+		ShadowStart: 32
+	damaged-idle-flag:
+		Filename: ggpile_a.shp
+		TilesetFilenames:
+			SNOW: gapile_a.shp
+			SIMPLETERRAIN: gtpile_a.shp
+		Start: 16
+		Length: 16
+		ShadowStart: 48
+	make:
+		Filename: gtweapmk.shp
+		TilesetFilenames:
+			SNOW: gaweapmk.shp
+			URBAN: guweapmk.shp
+			NEWURBAN: gnweapmk.shp
+			DESERT: gdweapmk.shp
+			LUNAR: glweapmk.shp
+			DUNE: gdweapmk.shp
+		FlipX: true
+

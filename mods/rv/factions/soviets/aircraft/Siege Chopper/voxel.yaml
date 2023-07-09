@@ -1,0 +1,4 @@
+schp:
+	idle: localmd|schp
+	deployed: localmd|schd
+	turret: localmd|schdtur

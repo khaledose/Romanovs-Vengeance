@@ -1,0 +1,47 @@
+dlph:
+	Inherits: ^SeaAnimal
+	Buildable:
+		Queue: Ship.Shared, Ship.Allies
+		BuildPaletteOrder: 20
+		Prerequisites: ~ship.allies, gatech, ~techlevel.1
+		Description: Trained dolphin armed with sonic beams.\n\n  Strong vs Ships\n\nAbilities:\n- Can remove Squids from ships by attacking them\n- Can detect Stealth units
+		BuildDuration: 250
+	Valued:
+		Cost: 500
+	Tooltip:
+		GenericName: Dolphin
+	Tooltip@NoRow:
+		Name: Dolphin
+		GenericName: Dolphin
+	Health:
+		HP: 20000
+	Mobile:
+		Speed: 150
+	Selectable:
+		Bounds: 965, 1930
+	Voiced:
+		VoiceSet: DolphinVoice
+	Armament@primary:
+		Weapon: SonicZap
+		Damage: 17
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: SonicZapE
+		Damage: 25
+		RequiresCondition: rank-elite
+	AttackFollowFrontal:
+		Voice: Attack
+		FacingTolerance: 2
+		MustFaceTarget: true
+		PauseOnCondition: chronodisable
+	Targetable:
+		TargetTypes: Ground, Water, SeaAnimal, Underwater, ImmuneToAllySonic
+	WithInfantryBody:
+		MinIdleDelay: 1
+		MaxIdleDelay: 2
+		IdleSequences: idle
+		StandSequences: stand
+		DefaultAttackSequence: shoot
+	WithDeathAnimation:
+		UseDeathTypeSuffix: false
+

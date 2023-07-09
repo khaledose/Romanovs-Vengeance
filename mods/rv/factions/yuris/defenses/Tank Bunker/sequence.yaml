@@ -1,0 +1,75 @@
+natbnk:
+	Defaults:
+		Offset: 0, -30
+	idle:
+		Filename: ngtbnkbb.shp
+		TilesetFilenames:
+			SNOW: natbnkbb.shp
+			SIMPLETERRAIN: nttbnkbb.shp
+		Length: 1
+		ShadowStart: 3
+	damaged-idle:
+		Filename: ngtbnkbb.shp
+		TilesetFilenames:
+			SNOW: natbnkbb.shp
+			SIMPLETERRAIN: nttbnkbb.shp
+		Start: 1
+		Length: 1
+		ShadowStart: 4
+	idle-garrisoned:
+		Filename: ngtbnk_b.shp
+		TilesetFilenames:
+			SNOW: natbnk_b.shp
+			SIMPLETERRAIN: nttbnk_b.shp
+		Start: 9
+		Length: 1
+		ShadowStart: 19
+	damaged-idle-garrisoned:
+		Filename: ngtbnk_b.shp
+		TilesetFilenames:
+			SNOW: natbnk_b.shp
+			SIMPLETERRAIN: nttbnk_b.shp
+		Start: 19
+		Length: 1
+		ShadowStart: 29
+	idle-garrisoned-front:
+		Filename: ngtbnk_a.shp
+		TilesetFilenames:
+			SNOW: natbnk_a.shp
+			SIMPLETERRAIN: nttbnk_a.shp
+		Start: 9
+		Length: 1
+		ZOffset: 128
+	damaged-idle-garrisoned-front:
+		Filename: ngtbnk_a.shp
+		TilesetFilenames:
+			SNOW: natbnk_a.shp
+			SIMPLETERRAIN: nttbnk_a.shp
+		Start: 19
+		Length: 1
+		ZOffset: 128
+	build:
+		Filename: ngtbnk_b.shp
+		TilesetFilenames:
+			SNOW: natbnk_b.shp
+			SIMPLETERRAIN: nttbnk_b.shp
+		Length: 10
+		ShadowStart: 20
+	damaged-build:
+		Filename: ngtbnk_b.shp
+		TilesetFilenames:
+			SNOW: natbnk_b.shp
+			SIMPLETERRAIN: nttbnk_b.shp
+		Start: 10
+		Length: 10
+		ShadowStart: 30
+	make:
+		Filename: ngtbnkmk.shp
+		TilesetFilenames:
+			SNOW: natbnkmk.shp
+			SIMPLETERRAIN: nttbnkmk.shp
+		Length: 10
+		ShadowStart: 10
+	icon:
+		Filename: cameomd|tbnkicon.shp
+		Offset: 0,0

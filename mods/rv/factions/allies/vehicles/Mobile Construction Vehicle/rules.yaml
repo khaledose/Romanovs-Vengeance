@@ -1,0 +1,11 @@
+amcv:
+	Inherits: ^ConstructionVehicle
+	Buildable:
+		Queue: Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Vehicle.France, Vehicle.Korea, Ship.Shared, Ship.Allies
+		Prerequisites: ~vehicleorship.allies, gadept, ~techlevel.2, ~!global-suddendeath, ~!ai.mcv
+	Selectable:
+		Bounds: 1641, 2702, 0, -337
+	Transforms:
+		IntoActor: gacnst
+	Voiced:
+		VoiceSet: AlliedConstructionVehicleVoice

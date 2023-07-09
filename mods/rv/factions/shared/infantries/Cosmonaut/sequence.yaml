@@ -1,0 +1,120 @@
+lunr:
+	Defaults:
+		Filename: conqmd|lunr.shp
+		Length: 6
+		Facings: 8
+	stand:
+		Length: 1
+	run:
+		Start: 8
+		Tick: 120
+	idle1:
+		Start: 56
+		Length: 15
+		Facings: 1
+		Tick: 100
+	idle2:
+		Start: 71
+		Length: 15
+		Facings: 1
+		Tick: 100
+	# prone-stand:
+	#	Frames: 86, 92, 98, 104, 110, 116, 122, 128
+	#	Length: 1
+	#	Facings: 8
+	# prone-run:
+	#	Start: 86
+	#	Tick: 100
+	die1: # copied from die-air
+		# Start: 134
+		# Length: 14
+		Start: 340
+		Length: 15
+		Facings: 2
+		Tick: 80
+	die2: # copied from die-air
+		# Start: 149
+		# Length: 14
+		Start: 340
+		Length: 15
+		Facings: 2
+		Tick: 80
+	die4:
+		Filename: nukedie.shp
+		Length: *
+		Facings: 1
+		Tick: 50
+	die5:
+		Filename: yuridie.shp
+		Length: *
+		Facings: 1
+		Tick: 80
+	die6:
+		Filename: electro.shp
+		Length: *
+		Facings: 1
+		Tick: 80
+	die7:
+		Filename: virusd.shp
+		Length: *
+		Facings: 1
+		Tick: 80
+	die8:
+		Filename: brutdie.shp
+		Length: *
+		Facings: 1
+		Tick: 80
+	die9:
+		Filename: gendeath.shp
+		Length: *
+		Facings: 1
+		Tick: 80
+	die10:
+		Filename: bits/animations/nukedieorange.shp
+		Length: *
+		Facings: 1
+		Tick: 80
+	shoot:
+		Start: 164
+		Tick: 80
+	# prone-shoot:
+	#	Start: 212
+	#	Tick: 80
+	fly:
+		Start: 292
+		Tick: 100
+	die-air:
+		Start: 340
+		Length: 16
+		Facings: 2
+		Tick: 80
+	shoot-air:
+		Start: 370
+		Tick: 80
+	idle-air:
+		Start: 419
+		Length: 8
+		Facings: 1
+		Tick: 100
+	paradrop:
+		Start: 418
+	shadow:
+		Filename: infshdw.shp
+		Start: 1
+		Length: 1
+		Facings: 1
+	icon:
+		Filename: cameomd|lunricon.shp
+		Length: 1
+		Facings: 1
+
+lunr.husk:
+	idle:
+		Filename: conqmd|lunr.shp
+		Start: 340
+		Length: 16
+		Facings: 2
+		Tick: 120
+	shadow:
+		Filename: infshdw.shp
+		Start: 1

@@ -1,0 +1,52 @@
+MP5:
+	Inherits: ^MG
+	ReloadDelay: 15
+	Range: 5c0
+	Report: iseaatta.wav, iseaattb.wav
+	InvalidTargets: Bridge, Wall, Fence, Tree, Structure, WaterStructure #, Ship
+	Warhead@1Dam: SpreadDamage
+		InvalidTargets: Bridge, Wall, Fence, Tree, Structure, WaterStructure #, Ship
+		Damage: 7000
+		Versus:
+			None: 200
+			Flak: 150
+			Plate: 100
+			Light: 50
+			Medium: 35
+			Heavy: 35
+			Drone: 50
+	Warhead@2Eff: CreateEffect
+		Explosions: piff
+
+MP5E:
+	Inherits: MP5
+	ReloadDelay: 10
+	Warhead@2Eff: CreateEffect
+		Explosions: piffred
+
+UCMP5:
+	Inherits: MP5
+	Range: 7c0
+	Projectile: InstantHit
+		Blockable: false
+
+UCMP5E:
+	Inherits: MP5E
+	Range: 7c0
+	Projectile: InstantHit
+		Blockable: false
+
+SealC4Attacher:
+	Inherits: IvanBombAttacher
+	ValidTargets: SEALC4
+	InvalidTargets: Barrel, Mine
+	Report: iseaseta.wav
+	Warhead@1Att: AttachDelayedWeapon
+		Weapon: SEALC4
+		Type: SEALC4
+		TriggerTime: 50
+
+SealC4AttacherE:
+	Inherits: SealC4Attacher
+	Warhead@1Att: AttachDelayedWeapon
+		Weapon: SEALC4E

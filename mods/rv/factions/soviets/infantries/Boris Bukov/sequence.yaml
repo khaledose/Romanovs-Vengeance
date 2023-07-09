@@ -1,0 +1,65 @@
+boris:
+	Inherits: ^ArmedInfantry
+	Defaults:
+		Filename: conqmd|boris.shp
+	idle2:
+		Length: 20
+	die1:
+		Start: 139
+	die2:
+		Start: 154
+	prone-stand:
+		Frames: 91, 97, 103, 109, 105, 121, 127, 133
+	prone-run:
+		Start: 91
+	shoot:
+		Start: 169
+	prone-shoot:
+		Start: 217
+	shoot-flare:
+		Start: 401
+		Facings: 8
+		Tick: 80
+	prone-shoot-flare:
+		Start: 401
+		Facings: 8
+		Tick: 80
+	swim-stand:
+		Filename: bits/infantry/borisboat.shp
+		Start: 0
+		Facings: 8
+		Length: 3
+		Tick: 160
+	swim-run:
+		Filename: bits/infantry/borisboat.shp
+		Start: 24
+		Facings: 8
+		Length: 5
+		Tick: 120
+	swim-die1:
+		Filename: bits/infantry/borisboat.shp
+		Start: 64
+		Length: 12
+	swim-die2:
+		Filename: bits/infantry/borisboat.shp
+		Start: 64
+		Length: 12
+	swim-shoot:
+		Filename: bits/infantry/borisboat.shp
+		Start: 76
+		Length: 2
+		Facings: 8
+		Tick: 160
+	swim-shoot-flare:
+		Filename: bits/infantry/borisboat.shp
+		Start: 92
+		Facings: 8
+		Tick: 80
+	liedown:
+		Start: 265
+	standup:
+		Start: 281
+	cheer:
+		Start: 297
+	icon:
+		Filename: cameomd|brisicon.shp

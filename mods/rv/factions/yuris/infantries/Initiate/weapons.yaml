@@ -1,0 +1,43 @@
+PsychicJab:
+	Inherits: ^MG
+	ReloadDelay: 15
+	Range: 4c0
+	Report: iiniatta.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 1500
+		Versus:
+			Wood: 45
+			Concrete: 40
+		DamageTypes: Prone50Percent, TriggerProne, FlameDeath, NonTemporal
+	Warhead@2Eff: CreateEffect
+		Explosions: largefire
+
+PsychicJabE:
+	Inherits: PsychicJab
+	Range: 5c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 2000
+	Warhead@2Eff: CreateEffect
+		Explosions: largefirepink
+
+UCPsychicJab:
+	Inherits: PsychicJab
+	Range: 7c0
+	Projectile: InstantHit
+		Blockable: false
+
+UCPsychicJabE:
+	Inherits: PsychicJabE
+	Range: 7c0
+	Projectile: InstantHit
+		Blockable: false
+
+PsychicJabHolo:
+	Inherits: PsychicJab
+	Warhead@1Dam: SpreadDamage
+		Damage: 0
+
+PsychicJabHoloE:
+	Inherits: PsychicJabE
+	Warhead@1Dam: SpreadDamage
+		Damage: 0

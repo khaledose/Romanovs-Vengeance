@@ -1,0 +1,89 @@
+nairon:
+	Defaults:
+		Offset: 0, -45
+	idle:
+		Filename: ngiron_a.shp
+		TilesetFilenames:
+			SNOW: nairon_a.shp
+			SIMPLETERRAIN: ntiron_a.shp
+		Length: 11
+		ShadowStart: 22
+		Tick: 120
+	damaged-idle:
+		Filename: ngiron_a.shp
+		TilesetFilenames:
+			SNOW: nairon_a.shp
+			SIMPLETERRAIN: ntiron_a.shp
+		Start: 11
+		Length: 11
+		ShadowStart: 33
+		Tick: 120
+	charged:
+		Filename: ngiron_f.shp
+		TilesetFilenames:
+			SNOW: nairon_f.shp
+			SIMPLETERRAIN: ntiron_f.shp
+		Length: 21
+		Tick: 120
+	damaged-charged:
+		Filename: ngiron_f.shp
+		TilesetFilenames:
+			SNOW: nairon_f.shp
+			SIMPLETERRAIN: ntiron_f.shp
+		Start: 21
+		Length: 21
+		Tick: 120
+	loop:
+		Filename: ngiron_f.shp
+		TilesetFilenames:
+			SNOW: nairon_f.shp
+			SIMPLETERRAIN: ntiron_f.shp
+		Start: 10
+		Length: 10
+		Tick: 120
+	damaged-loop:
+		Filename: ngiron_f.shp
+		TilesetFilenames:
+			SNOW: nairon_f.shp
+			SIMPLETERRAIN: ntiron_f.shp
+		Start: 31
+		Length: 10
+		Tick: 120
+	end:
+		Filename: ngiron_h.shp
+		TilesetFilenames:
+			SNOW: nairon_h.shp
+			SIMPLETERRAIN: ntiron_h.shp
+		Length: 12
+		ShadowStart: 24
+		Tick: 120
+	damaged-end:
+		Filename: ngiron_h.shp
+		TilesetFilenames:
+			SNOW: nairon_h.shp
+			SIMPLETERRAIN: ntiron_h.shp
+		Start: 12
+		Length: 12
+		ShadowStart: 36
+		Tick: 120
+	idle-waves:
+		Filename: bits/structures/water/ngiron_w.shp
+		Tick: 200
+		ZOffset: -1c0
+	make:
+		Filename: ntironmk.shp
+		TilesetFilenames:
+			SNOW: naironmk.shp
+			URBAN: nuironmk.shp
+			NEWURBAN: nnironmk.shp
+			DESERT: ndironmk.shp
+			LUNAR: nlironmk.shp
+			DUNE: ndironmk.shp
+		Length: 25
+		ShadowStart: 25
+	active:
+		Filename: dot.shp
+		ZOffset: -9999
+	icon:
+		Filename: cameo|ironicon.shp
+		Offset: 0,0

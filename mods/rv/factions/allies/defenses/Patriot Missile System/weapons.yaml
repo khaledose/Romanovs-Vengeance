@@ -1,0 +1,37 @@
+RedEye2:
+	Inherits: ^AAMissile
+	ReloadDelay: 30
+	Range: 10c0
+	Burst: 2
+	Projectile: Missile
+		TrailImage: smokey2
+		LockOnProbability: 100
+		Speed: 640
+		MinimumLaunchAngle: 255
+		MaximumLaunchAngle: 255
+		MaximumLaunchSpeed: 512
+		MinimumLaunchSpeed: 512
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c307
+		Falloff: 100, 0
+		Damage: 3000
+		ValidTargets: Air
+		Versus:
+			None: 100
+			Flak: 100
+			Plate: 100
+			Light: 100
+			Medium: 60
+			Heavy: 100
+			Wood: 0
+			Steel: 0
+			Concrete: 0
+			Drone: 100
+
+RedEye2Boosted:
+	Inherits: RedEye2
+	Projectile: Missile
+		Speed: 960
+		ContrailStartColor: 00b6ff
+	Warhead@1Dam: SpreadDamage
+		Damage: 4500

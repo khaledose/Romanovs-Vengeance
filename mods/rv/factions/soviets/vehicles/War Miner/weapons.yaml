@@ -1,0 +1,15 @@
+20mmrapidLine:
+	Inherits: ^LineProjectile
+	ReloadDelay: 20
+	Range: 6c0
+	ValidTargets: Ground, Water
+	InvalidTargets: Air
+	Warhead@Line: TargetDamage
+		ValidTargets: Ground, Water
+		InvalidTargets: Air
+
+20mmrapidLineE:
+	Inherits: 20mmrapidLine
+	ReloadDelay: 15
+	Projectile: BulletAS
+		ContrailStartColor: FF2200

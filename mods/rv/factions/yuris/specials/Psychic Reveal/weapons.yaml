@@ -1,0 +1,12 @@
+PsychicReveal:
+	ReloadDelay: 25
+	Projectile: InstantExplode
+	Warhead@1Spa: SpawnActor
+		Actors: camera.psychicreveal
+		Range: 1
+		ValidTargets: Ground, OreDrill, Water, Air
+	Warhead@2Eff: CreateEffect
+		Explosions: scananim
+		ExplosionPalette: tseffect
+		ImpactActors: false
+		ValidTargets: Ground, Water, Air

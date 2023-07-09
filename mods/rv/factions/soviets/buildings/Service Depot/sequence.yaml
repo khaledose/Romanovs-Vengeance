@@ -1,0 +1,102 @@
+nadept:
+	Defaults:
+		Offset: -15, -53
+	idle:
+		Filename: ngdept_b.shp
+		TilesetFilenames:
+			SNOW: nadept_b.shp
+			SIMPLETERRAIN: ntdept_b.shp
+		Length: 10
+		ShadowStart: 20
+		Tick: 180
+	damaged-idle:
+		Filename: ngdept_b.shp
+		TilesetFilenames:
+			SNOW: nadept_b.shp
+			SIMPLETERRAIN: ntdept_b.shp
+		Start: 10
+		Length: 10
+		ShadowStart: 29
+	idle-normal:
+		Filename: ngdept.shp
+		TilesetFilenames:
+			SNOW: nadept.shp
+			SIMPLETERRAIN: ntdept.shp
+		ShadowStart: 3
+	damaged-idle-normal:
+		Filename: ngdept.shp
+		TilesetFilenames:
+			SNOW: nadept.shp
+			SIMPLETERRAIN: ntdept.shp
+		Start: 2
+		ShadowStart: 4
+	bib:
+		Filename: ngdeptbb.shp
+		TilesetFilenames:
+			SNOW: nadeptbb.shp
+			SIMPLETERRAIN: ntdeptbb.shp
+		ShadowStart: 2
+		ZOffset: -512
+	damaged-bib:
+		Filename: ngdeptbb.shp
+		TilesetFilenames:
+			SNOW: nadeptbb.shp
+			SIMPLETERRAIN: ntdeptbb.shp
+		Start: 1
+		ShadowStart: 3
+	idle-waves:
+		Filename: bits/structures/water/ngdept_w.shp
+		Tick: 200
+		ZOffset: -1c0
+	damaged-idle-waves:
+		Filename: bits/structures/water/ngdept_w.shp
+		Start: 1
+		Tick: 200
+		ZOffset: -1c0
+	make:
+		Filename: ntdeptmk.shp
+		TilesetFilenames:
+			SNOW: nadeptmk.shp
+			URBAN: nudeptmk.shp
+			NEWURBAN: nndeptmk.shp
+			DESERT: nddeptmk.shp
+			LUNAR: nldeptmk.shp
+			DUNE: nddeptmk.shp
+		Length: 25
+		ShadowStart: 25
+	make-water:
+		Filename: ngdept_wmk.shp
+		TilesetFilenames:
+			SNOW: nadept_wmk.shp
+			SIMPLETERRAIN: ntdept_wmk.shp
+		Length: 25
+		ShadowStart: 25
+	repair:
+		Filename: ngdept_c.shp
+		TilesetFilenames:
+			SNOW: nadept_c.shp
+			SIMPLETERRAIN: ntdept_c.shp
+		Length: 50
+		ShadowStart: 100
+		Tick: 120
+	damaged-repair:
+		Filename: ngdept_c.shp
+		TilesetFilenames:
+			SNOW: nadept_c.shp
+			SIMPLETERRAIN: ntdept_c.shp
+		Start: 50
+		Length: 50
+		ShadowStart: 150
+		Tick: 120
+	icon:
+		Filename: cameo|rfixicon.shp
+		Offset: 0,0
+
+nadepb:
+	Inherits: nadept
+	Defaults:
+		FlipX: true
+		Offset: 15, -53
+	icon:
+		Filename: cameo|rfixicon.shp
+		FlipX: false

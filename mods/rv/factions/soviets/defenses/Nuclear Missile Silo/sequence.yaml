@@ -1,0 +1,74 @@
+namisl:
+	Defaults:
+		Offset: 0, -42
+	idle:
+		Filename: ngmisl_e.shp
+		ShadowStart: 2
+	damaged-idle:
+		Filename: ngmisl_e.shp
+		Start: 1
+		ShadowStart: 3
+	charged:
+		Filename: ngmisl_f.shp
+		Length: 16
+		ShadowStart: 32
+		Tick: 150
+	damaged-charged:
+		Filename: ngmisl_f.shp
+		Start: 16
+		Length: 16
+		ShadowStart: 48
+		Tick: 120
+	loop:
+		Filename: ngmisl_g.shp
+		ShadowStart: 2
+		Tick: 120
+	damaged-loop:
+		Filename: ngmisl_g.shp
+		Start: 1
+		ShadowStart: 3
+		Tick: 120
+	end:
+		Filename: ngmisl_h.shp
+		Length: 16
+		ShadowStart: 32
+		Tick: 150
+	damaged-end:
+		Filename: ngmisl_h.shp
+		Start: 16
+		Length: 16
+		ShadowStart: 48
+		Tick: 120
+	smoke:
+		Filename: nuketo.shp
+		Length: *
+		Tick: 120
+		Offset: 0, 0
+	steam: # TODO: unused
+		Filename: nukestm.shp
+		Length: *
+		Tick: 120
+	idle-waves:
+		Filename: bits/structures/water/ngmisl_w.shp
+		Tick: 200
+		ZOffset: -1c0
+	make:
+		Filename: ntmislmk.shp
+		TilesetFilenames:
+			SNOW: namislmk.shp
+			URBAN: numislmk.shp
+			NEWURBAN: nnmislmk.shp
+			DESERT: ndmislmk.shp
+			LUNAR: nlmislmk.shp
+			DUNE: ndmislmk.shp
+		Length: 26
+		ShadowStart: 26
+	icon:
+		Filename: cameo|msslicon.shp
+		Offset: 0,0
+
+atomic:
+	up:
+		Filename: conquer|nkmslup.shp
+	down:
+		Filename: conquer|nkmsldn.shp

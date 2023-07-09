@@ -1,0 +1,144 @@
+bplndrop:
+	Inherits: pdplane
+	Tooltip:
+	Tooltip@NoRow:
+		Name: MiG
+	-Targetable@Airborne:
+	Aircraft:
+		Repulsable: false
+		Speed: 525
+	ParaDrop:
+		DropRange: 3c0
+		DropInterval: 1
+	SpawnActorOnDeath:
+		Actor: bplnhusk
+	RenderVoxels:
+		Image: bpln
+	# AmbientSound@Ambient:
+	#	SoundFiles: vblelo2a.wav, vblelo2b.wav, vblelo2c.wav
+	-Voiced:
+	-DeathSounds:
+	Contrail@1:
+		Offset: -600,100,100
+		TrailLength: 15
+		StartColor: 88888880
+		StartColorAlpha: 128
+		StartColorUsePlayerColor: False
+		EndColorUsePlayerColor: true
+	Contrail@2:
+		Offset: -600,-100,100
+		TrailLength: 15
+		StartColor: 88888880
+		StartColorAlpha: 128
+		StartColorUsePlayerColor: False
+		EndColorUsePlayerColor: true
+
+bpln:
+	Inherits: orca
+	Valued:
+		Cost: 1250
+	DeliversCash:
+		Payload: 1250
+	Tooltip:
+	Tooltip@NoRow:
+		Name: MiG
+	-Buildable:
+	-RevealsShroud:
+	-RevealsShroud@Ground:
+	# -RevealsShroudToIntelligenceOwner:
+	-Selectable:
+	-SelectionDecorations:
+	ProducibleWithLevel@1:
+		Prerequisites: baacdm
+	WithProductionIconOverlay@1:
+		Prerequisites: baacdm
+		Types: chevron-veteran
+	-ProducibleWithLevel@2:
+	-WithProductionIconOverlay@2:
+	-ProducibleWithLevel@3:
+	-WithProductionIconOverlay@3:
+	-ExternalCondition@PRODUCED:
+	-GrantExternalConditionToOwner:
+	-DeliversCash:
+	VoiceAnnouncement:
+		Voice: Attack
+		-RequiresCondition:
+	RejectsOrders:
+	Interactable:
+	Aircraft:
+		Repulsable: false
+		Speed: 240
+		IdleBehavior: LeaveMap
+		-TakeoffSounds:
+		-LandingSounds:
+	SpawnActorOnDeath:
+		DeathType: NonTemporal
+		Actor: bplnhusk
+	SpawnActorOnDeath@VTOL:
+		Actor: bplnhusk.VTOL
+	Armament:
+		Weapon: Maverick3
+		Damage: 300
+	Armament@Elite:
+		Weapon: Maverick3E
+		Damage: 1000
+	-Armament@AA:
+	-Armament@EliteAA:
+	-GrantConditionOnPrerequisite@A2AMISSILES:
+	-FirepowerMultiplier@PREDATOR_MISSILES:
+	-GrantConditionOnPrerequisite@PREDATOR_MISSILES:
+	WithVoxelBody:
+		-RequiresCondition:
+	-WithVoxelBody@A2A:
+	-WithVoxelBody@PREDATOR:
+	-WithVoxelBody@A2A_PREDATOR:
+	AttackAircraft:
+		RequiresCondition: ammo
+	Health:
+		HP: 10000
+	AmmoPool:
+		Ammo: 2
+	AirstrikeSlave:
+		LandingDistance: 1c0
+	Voiced:
+		VoiceSet: MiGVoice
+	RenderSprites:
+		Image: bpln
+	RenderVoxels:
+		Image: bpln
+	HitShape:
+	# AmbientSound@Ambient:
+	#	SoundFiles: vblelo2a.wav, vblelo2b.wav, vblelo2c.wav
+	#	Volume: 0.35
+	Contrail@1:
+		Offset: -600,100,100
+		TrailLength: 15
+		StartColor: 88888880
+		StartColorAlpha: 128
+		StartColorUsePlayerColor: False
+		EndColorUsePlayerColor: true
+	Contrail@2:
+		Offset: -600,-100,100
+		TrailLength: 15
+		StartColor: 88888880
+		StartColorAlpha: 128
+		StartColorUsePlayerColor: False
+		EndColorUsePlayerColor: true
+	Rearmable:
+		RearmActors: boris
+	ActorStatValues:
+		-Upgrades:
+
+bplnhusk:
+	Inherits: ^PlaneHusk
+	Tooltip:
+	Tooltip@NoRow:
+		Name: MiG
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 240
+		AltitudeVelocity: 240
+	RenderVoxels:
+		Image: bpln
+	FallsToEarth:
+		Explosion: UnitExplode

@@ -1,0 +1,48 @@
+garobo:
+	Defaults:
+		Offset: 0, -30
+	idle:
+		Filename: ggrobo.shp
+		TilesetFilenames:
+			SNOW: garobo.shp
+			SIMPLETERRAIN: gtrobo.shp
+		ShadowStart: 3
+		Tick: 180
+	damaged-idle:
+		Filename: ggrobo.shp
+		TilesetFilenames:
+			SNOW: garobo.shp
+			SIMPLETERRAIN: gtrobo.shp
+		Start: 1
+		ShadowStart: 4
+		Tick: 180
+	idle-dish:
+		Filename: ggrobo_a.shp
+		TilesetFilenames:
+			SNOW: garobo_a.shp
+			SIMPLETERRAIN: gtrobo_a.shp
+		Length: 20
+		Tick: 180
+	damaged-idle-dish:
+		Filename: ggrobo_a.shp
+		TilesetFilenames:
+			SNOW: garobo_a.shp
+			SIMPLETERRAIN: gtrobo_a.shp
+		Start: 20
+		Length: 20
+		Tick: 180
+	idle-waves:
+		Filename: bits/structures/water/ggrobo_w.shp
+		Tick: 200
+		ZOffset: -1c0
+	make:
+		Filename: ggrobomk.shp
+		TilesetFilenames:
+			SNOW: garobomk.shp
+			SIMPLETERRAIN: gtrobomk.shp
+		Length: 20
+		ShadowStart: 20
+		Tick: 90
+	icon:
+		Filename: cameomd|rbccicon.shp
+		Offset: 0,0

@@ -1,0 +1,85 @@
+yappet:
+	Defaults:
+		Offset: 0, -45
+	idle-waves:
+		Filename: bits/structures/water/ygppet_w.shp
+		Tick: 200
+		ZOffset: -1c0
+	make:
+		Filename: ygppetmk.shp
+		TilesetFilenames:
+			SNOW: yappetmk.shp
+			SIMPLETERRAIN: ytppetmk.shp
+		Length: 24
+		ShadowStart: 24
+	idle:
+		Filename: ygppet_e.shp
+		TilesetFilenames:
+			SNOW: yappet_e.shp
+			SIMPLETERRAIN: ytppet_e.shp
+		Length: 1
+		ShadowStart: 2
+		Tick: 150
+	damaged-idle:
+		Filename: ygppet_e.shp
+		TilesetFilenames:
+			SNOW: yappet_e.shp
+			SIMPLETERRAIN: ytppet_e.shp
+		Start: 1
+		Length: 1
+		ShadowStart: 3
+		Tick: 150
+	charged:
+		Filename: ygppet_f.shp
+		TilesetFilenames:
+			SNOW: yappet_f.shp
+			SIMPLETERRAIN: ytppet_f.shp
+		Length: 19
+		ShadowStart: 38
+		Tick: 150
+	damaged-charged:
+		Filename: ygppet_f.shp
+		TilesetFilenames:
+			SNOW: yappet_f.shp
+			SIMPLETERRAIN: ytppet_f.shp
+		Start: 19
+		Length: 19
+		ShadowStart: 57
+		Tick: 150
+	loop:
+		Filename: ygppet_g.shp
+		TilesetFilenames:
+			SNOW: yappet_g.shp
+			SIMPLETERRAIN: ytppet_g.shp
+		Length: 8
+		ShadowStart: 16
+		Tick: 150
+	damaged-loop:
+		Filename: ygppet_g.shp
+		TilesetFilenames:
+			SNOW: yappet_g.shp
+			SIMPLETERRAIN: ytppet_g.shp
+		Start: 8
+		Length: 8
+		ShadowStart: 24
+		Tick: 150
+	end:
+		Filename: ygppet_h.shp
+		TilesetFilenames:
+			SNOW: yappet_h.shp
+			SIMPLETERRAIN: ytppet_h.shp
+		Length: 19
+		ShadowStart: 38
+		Tick: 150
+	damaged-end:
+		Filename: ygppet_h.shp
+		TilesetFilenames:
+			SNOW: yappet_h.shp
+			SIMPLETERRAIN: ytppet_h.shp
+		Start: 19
+		Length: 19
+		ShadowStart: 57
+		Tick: 150
+	icon:
+		Filename: cameomd|pupticon.shp
+		Offset: 0,0

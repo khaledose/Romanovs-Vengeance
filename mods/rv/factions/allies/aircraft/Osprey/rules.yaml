@@ -1,0 +1,103 @@
+asw:
+	Inherits: ^Plane
+	Inherits@EXPERIENCE: ^GainsExperience
+	-GivesExperience:
+	Valued:
+		Cost: 200
+	Tooltip:
+	Tooltip@NoRow:
+		Name: Osprey
+	Health:
+		HP: 13500
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 4c0
+		RevealGeneratedShroud: False
+	RevealsShroud@Ground:
+		Range: 4c0
+		RevealGeneratedShroud: False
+	Armament:
+		Weapon: ASWBomb
+		PauseOnCondition: !ammo
+		RequiresCondition: !rank-elite
+	Armament@Elite:
+		Weapon: ASWBombE
+		PauseOnCondition: !ammo
+		RequiresCondition: rank-elite
+	AttackAircraft:
+		FacingTolerance: 20
+		RequiresCondition: ammo
+	Aircraft:
+		AltitudeVelocity: 240
+		InitialFacing: 768
+		TurnSpeed: 32
+		Speed: 210
+		RepulsionSpeed: 40
+		TakeoffSounds: vospstaa.wav
+		LandingSounds: vosplana.wav
+		SoundVolume: 0.35
+		TakeUpCellWhenLand: false
+	AmmoPool:
+		Ammo: 5
+		AmmoCondition: ammo
+	RejectsOrders:
+	GrantConditionOnMovement@V:
+		Condition: vmove
+		ValidMovementTypes: Vertical
+	GrantConditionOnMovement@H:
+		Condition: hmove
+		ValidMovementTypes: Horizontal
+	SpawnActorOnDeath:
+		DeathType: NonTemporal
+		Actor: aswhusk
+		RequiresCondition: !vmove || hmove
+	SpawnActorOnDeath@VTOL:
+		Actor: aswhusk.VTOL
+		RequiresCondition: vmove && !hmove
+	-Selectable:
+	-ActorLostNotification:
+	CarrierSlave:
+		LandingDistance: 8c0
+	HitShape:
+	Interactable:
+	RenderVoxels:
+		NormalsPalette: ts-normals
+	RenderSprites:
+	#Rearmable:
+	#	RearmActors: dest, cdest
+	WithAmmoPipsDecoration:
+		Margin: 4, 3
+		Palette: ra
+		Position: BottomLeft
+		RequiresSelection: true
+
+aswhusk:
+	Inherits: ^PlaneHusk
+	Tooltip:
+	Tooltip@NoRow:
+		Name: Osprey
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 180
+		AltitudeVelocity: 240
+	FallsToEarth:
+		Explosion: HornetExplode
+	RenderVoxels:
+		Image: asw
+		NormalsPalette: ts-normals
+
+aswhusk.VTOL:
+	Inherits: ^HelicopterHusk
+	Tooltip:
+	Tooltip@NoRow:
+		Name: Osprey
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 180
+		AltitudeVelocity: 240
+	FallsToEarth:
+		Explosion: HornetExplode
+	RenderVoxels:
+		Image: asw
+		NormalsPalette: ts-normals

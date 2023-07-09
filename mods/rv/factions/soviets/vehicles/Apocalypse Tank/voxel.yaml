@@ -1,0 +1,13 @@
+apoc:
+	idle: bits/vehicles/replace/mtnk
+	idle-nuke: bits/vehicles/upgrades/mtnku
+	idle-nuke-orange: bits/vehicles/upgrades/mtnkuo
+	turret: bits/vehicles/replace/mtnktur
+	barrel: bits/vehicles/replace/mtnkbarl
+	barrel-uranium: bits/vehicles/upgrades/mtnkubarl
+	barrel-uranium-orange: bits/vehicles/upgrades/mtnkuobarl
+	barrel-cryo: bits/vehicles/upgrades/mtnkucbarl
+	barrel2: bits/vehicles/replace/mtnkbarl2
+	barrel2-uranium: bits/vehicles/upgrades/mtnkubarl2
+	barrel2-uranium-orange: bits/vehicles/upgrades/mtnkuobarl2
+	barrel2-cryo: bits/vehicles/upgrades/mtnkucbarl2

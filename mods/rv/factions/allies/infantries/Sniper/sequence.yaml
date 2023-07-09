@@ -1,0 +1,8 @@
+snipe:
+	Inherits: ^ArmedInfantry
+	Defaults:
+		Filename: conquer|snipe.shp
+	paradrop:
+		Start: 292
+	icon:
+		Filename: cameo|snipicon.shp

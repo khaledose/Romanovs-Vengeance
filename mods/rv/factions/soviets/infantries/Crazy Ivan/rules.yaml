@@ -1,0 +1,87 @@
+ivan:
+	Inherits: ^Infantry
+	Inherits@CHAOS: ^Berserkable
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@MC: ^MindControllable
+	Buildable:
+		Queue: Infantry.Shared, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Libya
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 80
+		Description: Specialist for explosives. Can plant a Bomb on anything, even Cows.\n\nUpgradeable with:\n- Targeted Explosives (Cuba)\n- High Explosive Bombs (Libya)
+		Prerequisites: ~infantry.soviets, naradr, ~techlevel.3
+		BuildDuration: 250
+		BuildDurationModifier: 100
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Valued:
+		Cost: 600
+	DeliversCash:
+		Payload: 300
+		Voice: Move
+	Tooltip:
+	Tooltip@NoRow:
+		Name: Crazy Ivan
+	Selectable:
+		Bounds: 482, 1448, 0, -530
+	Voiced:
+		VoiceSet: CrazyIvanVoice
+	Health:
+		HP: 12500
+	Mobile:
+		Speed: 75
+	Garrisoner:
+		Voice: Move
+		GarrisonType: Garrisoner
+	RevealsShroud:
+		Range: 6c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 6c0
+	RevealOnDeath:
+		Radius: 6c0
+	Armor:
+		Type: None
+	Passenger:
+	Explodes:
+		Weapon: IvanBomber
+		EmptyWeapon: IvanBomber
+		RequiresCondition: !targetedexp
+	Explodes@Targeted:
+		Weapon: TargetedIvanBomber
+		EmptyWeapon: TargetedIvanBomber
+		RequiresCondition: targetedexp
+	Armament@primary:
+		Weapon: IvanBombAttacher
+		Damage: 600
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: IvanBombAttacherE
+		Damage: 1500
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: rank-elite
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 2
+		Cursor: bomb
+		OutsideRangeCursor: bomb
+	TakeCover:
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+	AutoTarget:
+		ScanRadius: 8
+		InitialStance: HoldFire
+		InitialStanceAI: AttackAnything
+	-TakeCover:
+	ProducibleWithLevel@1:
+		Prerequisites: barracks.infiltratedorbaacdm
+	WithProductionIconOverlay@1:
+		Prerequisites: barracks.infiltratedorbaacdm
+		Types: chevron-veteran
+	ProducibleWithLevel@2:
+		Prerequisites: barracks.infiltrated, baacdm
+	WithProductionIconOverlay@2:
+		Prerequisites: barracks.infiltrated, baacdm
+		Types: chevron-elite
+

@@ -1,0 +1,83 @@
+yapowr:
+	Inherits: ^PowerPlant
+	Inherits@SHAPE: ^2x2Shape
+	Buildable:
+		Queue: Building.Shared, Building.Yuri
+		Description: Provides power for other structures.\nCan be occupied with up to 5 infantry for 50 more power each.
+		Prerequisites: ~building.yuri, ~techlevel.1
+	Tooltip:
+	Tooltip@NoRow:
+		Name: Bio Reactor
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	WithIdleOverlay@empty:
+		Sequence: empty
+		PauseOnCondition: chronodisable
+		RequiresCondition: !loaded && !build-incomplete
+	WithIdleOverlay@loaded:
+		Sequence: loaded
+		PauseOnCondition: chronodisable
+		RequiresCondition: loaded && !build-incomplete
+	WithIdleOverlay@lights:
+		Sequence: idle-lights
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete
+	Power@1:
+		Amount: 50
+		RequiresCondition: !chronodisable && !forceshieldnopower && !disabled && loaded >= 1
+	Power@2:
+		Amount: 50
+		RequiresCondition: !chronodisable && !forceshieldnopower && !disabled && loaded >= 2
+	Power@3:
+		Amount: 50
+		RequiresCondition: !chronodisable && !forceshieldnopower && !disabled && loaded >= 3
+	Power@4:
+		Amount: 50
+		RequiresCondition: !chronodisable && !forceshieldnopower && !disabled && loaded >= 4
+	Power@5:
+		Amount: 50
+		RequiresCondition: !chronodisable && !forceshieldnopower && !disabled && loaded >= 5
+	Power@6:
+		Amount: 100
+		RequiresCondition: !chronodisable && !forceshieldnopower && !disabled && loadedvehicle
+	Cargo:
+		Types: Infantry, Garrisoner, NaturalVehicle
+		MaxWeight: 5
+		AfterLoadDelay: 0
+		BeforeUnloadDelay: 0
+		AfterUnloadDelay: 0
+		EjectOnDeath: true
+		LoadedCondition: loaded
+		PassengerConditions:
+			spider: loadedvehicle
+	WithCargoPipsDecoration:
+		FullSequence: pip-building-green
+		EmptySequence: pip-building-empty
+		Palette: ra
+		Margin: 8, 2
+		PipStride: 4, 2
+		Position: BottomLeft
+		RequiresSelection: true
+		CustomPipSequences:
+			gray: pip-building-gray
+			yellow: pip-building-yellow
+			blue: pip-building-blue
+			red: pip-building-red
+	WithCargoSounds:
+		EnterSound: bbioenta.wav
+		ExitSound: bbioenta.wav
+		SoundVolume: 0.5
+	InstantlyRepairable:
+		RequiresCondition: !ivanbomb && !sealC4 && !commandoC4 && !teslabomb && !toxinbomb && damaged
+	GrantConditionOnDamageState@DAMAGED:
+		Condition: damaged
+		ValidDamageStates: Light, Medium, Heavy, Critical
+	IsometricSelectable:
+		Class: yapowr
+		DecorationHeight: 60
+	Voiced:
+		VoiceSet: PowerPlantVoice
+		Volume: 0.8
+	RenderSprites:
+		Image: yapowr

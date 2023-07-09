@@ -1,0 +1,44 @@
+DogJaw:
+	ValidTargets: Infantry
+	InvalidTargets: DogImmune
+	ReloadDelay: 40
+	Range: 1c256
+	Report: idogatta.wav, idogatca.wav
+	Projectile: InstantHit
+	Warhead@1Dam: SpreadDamage
+		Spread: 64
+		Falloff: 100, 0
+		Damage: 100000
+		ValidTargets: Infantry
+		InvalidTargets: DogImmune
+		Versus:
+			None: 100
+			Flak: 100
+			Plate: 100
+			Light: 0
+			Medium: 0
+			Heavy: 0
+			Wood: 0
+			Steel: 0
+			Concrete: 0
+			Drone: 0
+			Rocket: 0
+		DamageTypes: BulletDeath, NonTemporal
+
+DogBark:
+	ReloadDelay: 100
+	Range: 2c0
+	Report: idogbaa.wav, idogbab.wav
+	ValidTargets: DogStun
+	Projectile: InstantExplode
+	Warhead@1Con: GrantExternalCondition
+		ValidTargets: DogStun
+		ValidRelationships: Enemy, Neutral
+		Condition: dogstun
+		Range: 3c0
+		Duration: 125
+	Warhead@2Eff: CreateEffect
+		Explosions: barkflash
+		ExplosionPalette: jascredalpha
+		ValidTargets: Ground, Water, Air
+		ImpactActors: false

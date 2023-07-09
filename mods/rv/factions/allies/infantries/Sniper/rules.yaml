@@ -1,0 +1,132 @@
+snipe:
+	Inherits: ^Infantry
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@CHAOS: ^Berserkable
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@MC: ^MindControllable
+	Inherits@VOICES: ^WithFeedbackVoicelines
+	Valued:
+		Cost: 600
+	DeliversCash:
+		Payload: 300
+		Voice: Move
+	Tooltip:
+	Tooltip@NoRow:
+		Name: Sniper
+	Buildable:
+		Queue: Infantry.Shared, Infantry.UK
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 100
+		Prerequisites: ~infantry.england, gaairc, ~techlevel.3
+		Description: Special anti-infantry unit.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can kill garrisoned infantry
+		BuildDuration: 375
+		BuildDurationModifier: 100
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Selectable:
+		Bounds: 482, 1448, 0, -530
+	Health:
+		HP: 7500
+	Garrisoner:
+		Voice: Move
+		CustomPipType: gray
+		GarrisonType: Garrisoner
+	Passenger:
+		CustomPipType: gray
+	RevealsShroud:
+		Range: 6c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 6c0
+	RevealOnDeath:
+		Radius: 6c0
+	Armor:
+		Type: None
+	Armament@primary:
+		Weapon: awp
+		ReloadingCondition: reload-ap
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-at
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: AWPE
+		ReloadingCondition: reload-ap
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-at
+		RequiresCondition: rank-elite
+	Armament@secondary:
+		Weapon: awpat
+		ReloadingCondition: reload-at
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ap
+		RequiresCondition: !rank-elite && highcaliber
+	Armament@secondary-elite:
+		Weapon: awpatE
+		ReloadingCondition: reload-at
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ap
+		RequiresCondition: rank-elite && highcaliber
+	Armament@opentopped:
+		Name: opentopped
+		Weapon: awp
+		ReloadingCondition: reload-ap
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-at
+		RequiresCondition: !rank-elite
+	Armament@elite-opentopped:
+		Name: opentopped
+		Weapon: AWPE
+		ReloadingCondition: reload-ap
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-at
+		RequiresCondition: rank-elite
+	Armament@secondary-opentopped:
+		Name: opentopped
+		Weapon: awpat
+		ReloadingCondition: reload-at
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ap
+		RequiresCondition: !rank-elite && highcaliber
+	Armament@secondary-elite-opentopped:
+		Name: opentopped
+		Weapon: awpatE
+		ReloadingCondition: reload-at
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ap
+		RequiresCondition: rank-elite && highcaliber
+	Armament@garrisoned:
+		Name: garrisoned
+		Weapon: UCawp
+		ReloadingCondition: reload-ap
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-at
+		RequiresCondition: !rank-elite
+	Armament@elite-garrisoned:
+		Name: garrisoned
+		Weapon: UCAWPE
+		ReloadingCondition: reload-ap
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-at
+		RequiresCondition: rank-elite
+	Armament@secondary-garrisoned:
+		Name: garrisoned
+		Weapon: UCawpat
+		ReloadingCondition: reload-at
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ap
+		RequiresCondition: !rank-elite && highcaliber
+	Armament@secondary-elite-garrisoned:
+		Name: garrisoned
+		Weapon: UCawpatE
+		ReloadingCondition: reload-at
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ap
+		RequiresCondition: rank-elite && highcaliber
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 2
+		TargetFrozenActors: true
+	Voiced:
+		VoiceSet: SniperVoice
+	ProducibleWithLevel@1:
+		Prerequisites: barracks.infiltratedorbaacdm
+	WithProductionIconOverlay@1:
+		Prerequisites: barracks.infiltratedorbaacdm
+		Types: chevron-veteran
+	ProducibleWithLevel@2:
+		Prerequisites: barracks.infiltrated, baacdm
+	WithProductionIconOverlay@2:
+		Prerequisites: barracks.infiltrated, baacdm
+		Types: chevron-elite
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+	ActorStatValues:
+		Damage: 200
+

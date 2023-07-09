@@ -1,0 +1,50 @@
+nalasr:
+	Inherits@MUZZLE: ^WithMachineGunMuzzle
+	Defaults:
+		Filename: ngsnty.shp
+		TilesetFilenames:
+			SNOW: nasnty.shp
+			SIMPLETERRAIN: ntsnty.shp
+		Offset: 0, -15
+		ZOffset: -512
+	idle:
+		Filename: ngsnty.shp
+		TilesetFilenames:
+			SNOW: nasnty.shp
+			SIMPLETERRAIN: ntsnty.shp
+		ShadowStart: 3
+	damaged-idle:
+		Filename: ngsnty.shp
+		TilesetFilenames:
+			SNOW: nasnty.shp
+			SIMPLETERRAIN: ntsnty.shp
+		Start: 1
+		ShadowStart: 4
+	turret:
+		Filename: ngsntytur.shp
+		TilesetFilenames:
+			SNOW: nasntytur.shp
+			SIMPLETERRAIN: ntsntytur.shp
+		Facings: 32
+		ShadowStart: 32
+	make:
+		Filename: ngsntymk.shp
+		TilesetFilenames:
+			SNOW: nasntymk.shp
+			SIMPLETERRAIN: ntsntymk.shp
+		Length: 21
+		ShadowStart: 21
+		ZOffset: 0
+	idle-waves:
+		Filename: gauwat.shp
+		TilesetFilenames:
+		Length: 15
+		Tick: 200
+		ZOffset: -1c0
+	icon:
+		Filename: cameo|plticon.shp
+		TilesetFilenames:
+		Offset: 0,0
+	muzzle:
+		Filename: nasnty.shp
+		TilesetFilenames:

@@ -1,0 +1,102 @@
+hornet:
+	Inherits: ^Plane
+	Inherits@EXPERIENCE: ^GainsExperience
+	-GivesExperience:
+	Valued:
+		Cost: 200
+	Tooltip:
+	Tooltip@NoRow:
+		Name: Hornet
+	Health:
+		HP: 7500
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 4c0
+		RevealGeneratedShroud: False
+	RevealsShroud@Ground:
+		Range: 4c0
+		RevealGeneratedShroud: False
+	Armament:
+		Weapon: HornetBomb
+		PauseOnCondition: !ammo
+		RequiresCondition: !rank-elite
+	Armament@Elite:
+		Weapon: HornetBombE
+		PauseOnCondition: !ammo
+		RequiresCondition: rank-elite
+	AttackAircraft:
+		FacingTolerance: 20
+		RequiresCondition: ammo
+	Aircraft:
+		AltitudeVelocity: 240
+		InitialFacing: 768
+		TurnSpeed: 32
+		Speed: 210
+		Repulsable: false
+		TakeoffSounds: vhortaka.wav, vhortakb.wav
+		LandingSounds: vhorlana.wav, vhorlanb.wav
+		SoundVolume: 0.45
+		TakeUpCellWhenLand: false
+	AmmoPool:
+		Ammo: 3
+		AmmoCondition: ammo
+	RejectsOrders:
+	GrantConditionOnMovement@V:
+		Condition: vmove
+		ValidMovementTypes: Vertical
+	GrantConditionOnMovement@H:
+		Condition: hmove
+		ValidMovementTypes: Horizontal
+	SpawnActorOnDeath:
+		DeathType: NonTemporal
+		Actor: hornethusk
+		RequiresCondition: !vmove || hmove
+	SpawnActorOnDeath@VTOL:
+		Actor: hornethusk.VTOL
+		RequiresCondition: vmove && !hmove
+	-Selectable:
+	-ActorLostNotification:
+	CarrierSlave:
+		LandingDistance: 8c0
+	HitShape:
+	Interactable:
+	RenderVoxels:
+		NormalsPalette: ts-normals
+	RenderSprites:
+	WithAmmoPipsDecoration:
+		Margin: 4, 3
+		Palette: ra
+		Position: BottomLeft
+		RequiresSelection: true
+
+hornethusk:
+	Inherits: ^PlaneHusk
+	Tooltip:
+	Tooltip@NoRow:
+		Name: Hornet
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 210
+		AltitudeVelocity: 240
+	FallsToEarth:
+		Explosion: HornetExplode
+	RenderVoxels:
+		Image: hornet
+		NormalsPalette: ts-normals
+
+hornethusk.VTOL:
+	Inherits: ^HelicopterHusk
+	Tooltip:
+	Tooltip@NoRow:
+		Name: Hornet
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 210
+		AltitudeVelocity: 240
+	FallsToEarth:
+		Explosion: HornetExplode
+	RenderVoxels:
+		Image: hornet
+		NormalsPalette: ts-normals
+

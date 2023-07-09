@@ -1,0 +1,7 @@
+mtnk:
+	idle: bits/vehicles/replace/gtnk
+	idle-armor: bits/vehicles/upgrades/gtnku
+	turret: bits/vehicles/replace/gtnktur
+	turret-armor: bits/vehicles/upgrades/gtnkutur
+	barrel: bits/vehicles/replace/gtnkbarl
+	barrel-advanced: bits/vehicles/upgrades/gtnkubarl

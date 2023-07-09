@@ -1,0 +1,100 @@
+ttnk:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BUNKER: ^TankBunkerable
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@NOGUNNER: ^GunnerKillable
+	Inherits@RADIATON: ^DamagedByRadiation10Percent
+	Valued:
+		Cost: 1200
+	DeliversCash:
+		Payload: 1200
+		Voice: Move
+	Tooltip:
+	Tooltip@NoRow:
+		Name: Tesla Tank
+	Buildable:
+		Queue: Vehicle.Shared, Vehicle.USSR
+		BuildPaletteOrder: 90
+		Prerequisites: ~vehicle.russia, naradr, ~techlevel.3
+		Description: Russian special tank armed with dual small Tesla Coils.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nUpgradeable with:\n- Overcharge (Soviet Union)
+		BuildDuration: 625
+		BuildDurationModifier: 100
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Mobile:
+		Speed: 90
+		TurnSpeed: 32
+		Locomotor: heavytracked
+	Health:
+		HP: 30000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 6c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 6c0
+	RevealOnDeath:
+		Radius: 6c0
+	Turreted:
+		TurnSpeed: 28
+	Armament@primary:
+		Weapon: TankBolt
+		Damage: 140
+		LocalOffset: 280,196,640, 280,-196,640
+		RequiresCondition: !overcharge && !rank-elite
+	Armament@elite:
+		Weapon: TankBoltE
+		Damage: 160
+		LocalOffset: 280,196,640, 280,-196,640
+		RequiresCondition: !overcharge && rank-elite
+	Armament@primary-overcharge:
+		Weapon: TankBoltCharged
+		Damage: 140
+		LocalOffset: 280,196,640, 280,-196,640
+		RequiresCondition: overcharge && !rank-elite
+	Armament@elite-overcharge:
+		Weapon: TankBoltChargedE
+		Damage: 160
+		LocalOffset: 280,196,640, 280,-196,640
+		RequiresCondition: overcharge && rank-elite
+	AttackTurreted:
+		Voice: Attack
+		PauseOnCondition: chronodisable || emp || nogunner || parachute
+	AutoTarget:
+	RenderSprites:
+	Selectable:
+		Bounds: 1544, 2509, 0, -289
+	RenderVoxels:
+	WithVoxelBody:
+	WithVoxelTurret:
+	Voiced:
+		VoiceSet: TeslaTankVoice
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidRelationships: None
+	ProducibleWithLevel@1:
+		Prerequisites: warfactory.infiltratedorbaacdm
+	WithProductionIconOverlay@1:
+		Prerequisites: warfactory.infiltratedorbaacdm
+		Types: chevron-veteran
+	ProducibleWithLevel@2:
+		Prerequisites: warfactory.infiltrated, baacdm
+	WithProductionIconOverlay@2:
+		Prerequisites: warfactory.infiltrated, baacdm
+		Types: chevron-elite
+	HitShape:
+	# GrantConditionOnMovement@MoveStart:
+	#	Condition: moving
+	#	ValidMovementTypes: Horizontal, Turn
+	# SoundAnnouncement:
+	#	SoundFiles: vtesstaa.wav, vtesstab.wav
+	#	Volume: 0.35
+	#	RequiresCondition: moving
+

@@ -1,0 +1,63 @@
+dmisl:
+	Inherits: ^ShootableMissile
+	Valued:
+		Cost: 50
+	Tooltip:
+	Tooltip@NoRow:
+		Name: Dreadnought Missile
+	Health:
+		HP: 5000
+	Armor:
+		Type: Rocket
+	BallisticMissile:
+		LaunchAngle: 192
+		Speed: 250
+		LaunchAcceleration: 16
+		HitAcceleration: 30
+		LaunchSounds: vdreatta.wav, vdreattb.wav
+		SoundVolume: 0.6
+		AirborneCondition: airborne
+	LeavesTrails:
+		Image: smokey2
+		MovingInterval: 2
+		SpawnAtLastPosition: false
+		Type: CenterPosition
+	MissileSpawnerSlave:
+	SpawnedExplodes:
+		Weapon: DredWeapon
+		EmptyWeapon: DredWeapon
+		RequiresCondition: !airborne && !radbombs && !rank-elite
+	SpawnedExplodes@Elite:
+		Weapon: DredWeaponE
+		EmptyWeapon: DredWeaponE
+		RequiresCondition: !airborne && !radbombs && rank-elite
+	SpawnedExplodes@Rad:
+		Weapon: DredWeaponRad
+		EmptyWeapon: DredWeaponRad
+		RequiresCondition: !airborne && radbombs && !advirrad && !rank-elite
+	SpawnedExplodes@EliteRad:
+		Weapon: DredWeaponRadE
+		EmptyWeapon: DredWeaponRadE
+		RequiresCondition: !airborne && radbombs && !advirrad && rank-elite
+	SpawnedExplodes@RadOrange:
+		Weapon: DredWeaponRadOrange
+		EmptyWeapon: DredWeaponRadOrange
+		RequiresCondition: !airborne && radbombs && advirrad && !rank-elite
+	SpawnedExplodes@EliteRadOrange:
+		Weapon: DredWeaponRadOrangeE
+		EmptyWeapon: DredWeaponRadOrangeE
+		RequiresCondition: !airborne && radbombs && advirrad && rank-elite
+	SpawnedExplodes@Airborne:
+		Weapon: UnitExplode
+		EmptyWeapon: UnitExplode
+		RequiresCondition: airborne
+	WithVoxelBody:
+		RequiresCondition: !radbombs
+	WithVoxelBody@RADBOMBS:
+		Sequence: idle-rad
+		RequiresCondition: radbombs && !advirrad
+	WithVoxelBody@RADBOMBS-ORANGE:
+		Sequence: idle-rad-orange
+		RequiresCondition: radbombs && advirrad
+	ExternalCondition@RANK-ELITE:
+		Condition: rank-elite

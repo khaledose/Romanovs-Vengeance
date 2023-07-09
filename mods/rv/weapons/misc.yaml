@@ -907,32 +907,32 @@ AmbushSpawnerFlakt:
 		Actors: flakt
 		Delay: 25
 
-HologramSpawner:
-	Warhead@1Sha: FireShrapnel
-		Weapon: HologramSpawnerInit
-		Amount: 6
-		ValidTargets: Ground, OreDrill, Water, Air
-	Warhead@2Sha: FireShrapnel
-		Weapon: HologramSpawnerBrute
-		Amount: 2
-		ValidTargets: Ground, OreDrill, Water, Air
-	Warhead@3Sha: FireShrapnel
-		Weapon: HologramSpawnerGtrp
-		Amount: 2
-		ValidTargets: Ground, OreDrill, Water, Air
-	Warhead@4Sha: FireShrapnel
-		Weapon: HologramSpawnerLtnk
-		Amount: 1
-		ValidTargets: Ground, OreDrill, Water, Air
-	Warhead@5Sha: FireShrapnel
-		Weapon: HologramSpawnerYtnk
-		Amount: 1
-		ValidTargets: Ground, OreDrill, Water, Air
-	Warhead@TargetValidation: TargetDamage
-	Warhead@6Eff: CreateEffect
-		ImpactSounds: holoinit.aud
-		ImpactActors: false
-		ValidTargets: Ground, Water, Air
+# HologramSpawner:
+# 	Warhead@1Sha: FireShrapnel
+# 		Weapon: HologramSpawnerInit
+# 		Amount: 6
+# 		ValidTargets: Ground, OreDrill, Water, Air
+# 	Warhead@2Sha: FireShrapnel
+# 		Weapon: HologramSpawnerBrute
+# 		Amount: 2
+# 		ValidTargets: Ground, OreDrill, Water, Air
+# 	Warhead@3Sha: FireShrapnel
+# 		Weapon: HologramSpawnerGtrp
+# 		Amount: 2
+# 		ValidTargets: Ground, OreDrill, Water, Air
+# 	Warhead@4Sha: FireShrapnel
+# 		Weapon: HologramSpawnerLtnk
+# 		Amount: 1
+# 		ValidTargets: Ground, OreDrill, Water, Air
+# 	Warhead@5Sha: FireShrapnel
+# 		Weapon: HologramSpawnerYtnk
+# 		Amount: 1
+# 		ValidTargets: Ground, OreDrill, Water, Air
+# 	Warhead@TargetValidation: TargetDamage
+# 	Warhead@6Eff: CreateEffect
+# 		ImpactSounds: holoinit.aud
+# 		ImpactActors: false
+# 		ValidTargets: Ground, Water, Air
 
 ^HologramSpawnerDefault:
 	Range: 5c0
@@ -942,30 +942,30 @@ HologramSpawner:
 		ExplosionPalette: cyanjascpal
 		ValidTargets: Ground, OreDrill, Water, Air
 
-HologramSpawnerInit:
-	Inherits: ^HologramSpawnerDefault
-	Warhead@1Spa: SpawnActor
-		Actors: init.holo
+# HologramSpawnerInit:
+# 	Inherits: ^HologramSpawnerDefault
+# 	Warhead@1Spa: SpawnActor
+# 		Actors: init.holo
 
-HologramSpawnerBrute:
-	Inherits: ^HologramSpawnerDefault
-	Warhead@1Spa: SpawnActor
-		Actors: brute.holo
+# HologramSpawnerBrute:
+# 	Inherits: ^HologramSpawnerDefault
+# 	Warhead@1Spa: SpawnActor
+# 		Actors: brute.holo
 
-HologramSpawnerGtrp:
-	Inherits: ^HologramSpawnerDefault
-	Warhead@1Spa: SpawnActor
-		Actors: gtrp.holo
+# HologramSpawnerGtrp:
+# 	Inherits: ^HologramSpawnerDefault
+# 	Warhead@1Spa: SpawnActor
+# 		Actors: gtrp.holo
 
-HologramSpawnerLtnk:
-	Inherits: ^HologramSpawnerDefault
-	Warhead@1Spa: SpawnActor
-		Actors: ltnk.holo
+# HologramSpawnerLtnk:
+# 	Inherits: ^HologramSpawnerDefault
+# 	Warhead@1Spa: SpawnActor
+# 		Actors: ltnk.holo
 
-HologramSpawnerYtnk:
-	Inherits: ^HologramSpawnerDefault
-	Warhead@1Spa: SpawnActor
-		Actors: ytnk.holo
+# HologramSpawnerYtnk:
+# 	Inherits: ^HologramSpawnerDefault
+# 	Warhead@1Spa: SpawnActor
+# 		Actors: ytnk.holo
 
 LethocerusSpawnerSpawnerSpawner:
 	Warhead@1Sha: FireShrapnel

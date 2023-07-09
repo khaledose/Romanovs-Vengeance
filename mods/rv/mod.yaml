@@ -87,10 +87,156 @@ Packages:
 	rv|scripts
 
 MapFolders:
-	rv|maps: System
+	rv|shellmaps: System
 	~^SupportDir|maps/rv/{DEV_VERSION}: User
 
 Rules:
+	rv|factions/allies/aircraft/Black Eagle/rules.yaml
+	rv|factions/allies/aircraft/Harrier/rules.yaml
+	rv|factions/allies/aircraft/Hornet/rules.yaml
+	rv|factions/allies/aircraft/Night Hawk/rules.yaml
+	rv|factions/allies/aircraft/Osprey/rules.yaml
+	rv|factions/allies/buildings/Airforce Command Headquarters/rules.yaml
+	rv|factions/allies/buildings/Barracks/rules.yaml
+	rv|factions/allies/buildings/Battle Lab/rules.yaml
+	rv|factions/allies/buildings/Construction Yard/rules.yaml
+	rv|factions/allies/buildings/Naval Shipyard/rules.yaml
+	rv|factions/allies/buildings/Ore Purifier/rules.yaml
+	rv|factions/allies/buildings/Ore Refinery/rules.yaml
+	rv|factions/allies/buildings/Power Plant/rules.yaml
+	rv|factions/allies/buildings/Robot Control Center/rules.yaml
+	rv|factions/allies/buildings/Service Depot/rules.yaml
+	rv|factions/allies/buildings/War Factory/rules.yaml
+	rv|factions/allies/defenses/Allied Wall/rules.yaml
+	rv|factions/allies/defenses/Chronosphere/rules.yaml
+	rv|factions/allies/defenses/Gap Generator/rules.yaml
+	rv|factions/allies/defenses/Grand Cannon/rules.yaml
+	rv|factions/allies/defenses/Patriot Missile System/rules.yaml
+	rv|factions/allies/defenses/Pill Box/rules.yaml
+	rv|factions/allies/defenses/Prism Tower/rules.yaml
+	rv|factions/allies/defenses/Spy Satellite Uplink/rules.yaml
+	rv|factions/allies/defenses/Weather Controller/rules.yaml
+	rv|factions/allies/infantries/Attack Dog/rules.yaml
+	rv|factions/allies/infantries/Chrono Commando/rules.yaml
+	rv|factions/allies/infantries/Chrono Legionnaire/rules.yaml
+	rv|factions/allies/infantries/G.I/rules.yaml
+	rv|factions/allies/infantries/Guardian G.I/rules.yaml
+	rv|factions/allies/infantries/Navy SEAL/rules.yaml
+	rv|factions/allies/infantries/Rocketeer/rules.yaml
+	rv|factions/allies/infantries/Sniper/rules.yaml
+	rv|factions/allies/infantries/Spy/rules.yaml
+	rv|factions/allies/infantries/Tanya Adams/rules.yaml
+	rv|factions/allies/navals/Aegis Cruiser/rules.yaml
+	rv|factions/allies/navals/Aircraft Carrier/rules.yaml
+	rv|factions/allies/navals/Amphibious Transport/rules.yaml
+	rv|factions/allies/navals/Destroyer/rules.yaml
+	rv|factions/allies/navals/Dolphin/rules.yaml
+	rv|factions/allies/specials/Airborne/rules.yaml
+	rv|factions/allies/specials/Chronosphere/rules.yaml
+	rv|factions/allies/specials/Lightning Storm/rules.yaml
+	rv|factions/allies/vehicles/Battle Fortress/rules.yaml
+	rv|factions/allies/vehicles/Chrono Miner/rules.yaml
+	rv|factions/allies/vehicles/Grizzly Battle Tank/rules.yaml
+	rv|factions/allies/vehicles/Infantry Fighting Vehicle/rules.yaml
+	rv|factions/allies/vehicles/Mirage Tank/rules.yaml
+	rv|factions/allies/vehicles/Mobile Construction Vehicle/rules.yaml
+	rv|factions/allies/vehicles/Prism Tank/rules.yaml
+	rv|factions/allies/vehicles/Robot Tank/rules.yaml
+	rv|factions/allies/vehicles/Tank Destroyer/rules.yaml
+	rv|factions/animals/rules.yaml
+	rv|factions/shared/aircraft/rules.yaml
+	rv|factions/shared/buildings/rules.yaml
+	rv|factions/shared/infantries/Attack Dog/rules.yaml
+	rv|factions/shared/infantries/Cosmonaut/rules.yaml
+	rv|factions/shared/infantries/Engineer/rules.yaml
+	rv|factions/shared/infantries/Psi Commando/rules.yaml
+	rv|factions/shared/specials/Force Shield/rules.yaml
+	rv|factions/soviets/aircraft/Kirov Airship/rules.yaml
+	rv|factions/soviets/aircraft/MiG/rules.yaml
+	rv|factions/soviets/aircraft/Siege Chopper/rules.yaml
+	rv|factions/soviets/aircraft/Spy Plane/rules.yaml
+	rv|factions/soviets/buildings/Barracks/rules.yaml
+	rv|factions/soviets/buildings/Battle Lab/rules.yaml
+	rv|factions/soviets/buildings/Construction Yard/rules.yaml
+	rv|factions/soviets/buildings/Industrial Plant/rules.yaml
+	rv|factions/soviets/buildings/Naval Shipyard/rules.yaml
+	rv|factions/soviets/buildings/Nuclear Reactor/rules.yaml
+	rv|factions/soviets/buildings/Ore Refinery/rules.yaml
+	rv|factions/soviets/buildings/Radar Tower/rules.yaml
+	rv|factions/soviets/buildings/Service Depot/rules.yaml
+	rv|factions/soviets/buildings/Tesla Reactor/rules.yaml
+	rv|factions/soviets/buildings/War Factory/rules.yaml
+	rv|factions/soviets/defenses/Battle Bunker/rules.yaml
+	rv|factions/soviets/defenses/Flak Cannon/rules.yaml
+	rv|factions/soviets/defenses/Iron Curtain Device/rules.yaml
+	rv|factions/soviets/defenses/Nuclear Missile Silo/rules.yaml
+	rv|factions/soviets/defenses/Sentry Gun/rules.yaml
+	rv|factions/soviets/defenses/Soviet Wall/rules.yaml
+	rv|factions/soviets/defenses/Tesla Coil/rules.yaml
+	rv|factions/soviets/infantries/Attack Dog/rules.yaml
+	rv|factions/soviets/infantries/Boris Bukov/rules.yaml
+	rv|factions/soviets/infantries/Chrono Ivan/rules.yaml
+	rv|factions/soviets/infantries/Conscript/rules.yaml
+	rv|factions/soviets/infantries/Crazy Ivan/rules.yaml
+	rv|factions/soviets/infantries/Desolator/rules.yaml
+	rv|factions/soviets/infantries/Flak Trooper/rules.yaml
+	rv|factions/soviets/infantries/Terrorist/rules.yaml
+	rv|factions/soviets/infantries/Tesla Trooper/rules.yaml
+	rv|factions/soviets/navals/Amphibious Transport/rules.yaml
+	rv|factions/soviets/navals/Dreadnought/rules.yaml
+	rv|factions/soviets/navals/Dreadnought Missile/rules.yaml
+	rv|factions/soviets/navals/Giant Squid/rules.yaml
+	rv|factions/soviets/navals/Sea Scorpion/rules.yaml
+	rv|factions/soviets/navals/Typhoon Attack Submarine/rules.yaml
+	rv|factions/soviets/specials/Iron Curtain/rules.yaml
+	rv|factions/soviets/specials/Nuke/rules.yaml
+	rv|factions/soviets/specials/Spy Plane/rules.yaml
+	rv|factions/soviets/vehicles/Apocalypse Tank/rules.yaml
+	rv|factions/soviets/vehicles/Demolition Truck/rules.yaml
+	rv|factions/soviets/vehicles/Flak Track/rules.yaml
+	rv|factions/soviets/vehicles/Mobile Construction Vehicle/rules.yaml
+	rv|factions/soviets/vehicles/Rhino Heavy Tank/rules.yaml
+	rv|factions/soviets/vehicles/Terror Drone/rules.yaml
+	rv|factions/soviets/vehicles/Tesla Tank/rules.yaml
+	rv|factions/soviets/vehicles/V3 Launcher/rules.yaml
+	rv|factions/soviets/vehicles/V3 Rocket/rules.yaml
+	rv|factions/soviets/vehicles/War Miner/rules.yaml
+	rv|factions/yuris/aircraft/Leech Disc/rules.yaml
+	rv|factions/yuris/buildings/Barracks/rules.yaml
+	rv|factions/yuris/buildings/Battle Lab/rules.yaml
+	rv|factions/yuris/buildings/Bio Reactor/rules.yaml
+	rv|factions/yuris/buildings/Construction Yard/rules.yaml
+	rv|factions/yuris/buildings/Grinder/rules.yaml
+	rv|factions/yuris/buildings/Psychic Sensor/rules.yaml
+	rv|factions/yuris/buildings/Slave Miner/rules.yaml
+	rv|factions/yuris/buildings/Submarine Pen/rules.yaml
+	rv|factions/yuris/buildings/War Factory/rules.yaml
+	rv|factions/yuris/defenses/Citadel Wall/rules.yaml
+	rv|factions/yuris/defenses/Cloning Vats/rules.yaml
+	rv|factions/yuris/defenses/Gatling Cannon/rules.yaml
+	rv|factions/yuris/defenses/Genetic Mutator/rules.yaml
+	rv|factions/yuris/defenses/Psychic Dominator/rules.yaml
+	rv|factions/yuris/defenses/Psychic Tower/rules.yaml
+	rv|factions/yuris/defenses/Tank Bunker/rules.yaml
+	rv|factions/yuris/infantries/Brute/rules.yaml
+	rv|factions/yuris/infantries/Initiate/rules.yaml
+	rv|factions/yuris/infantries/Slave/rules.yaml
+	rv|factions/yuris/infantries/Virus/rules.yaml
+	rv|factions/yuris/infantries/Yuri Clone/rules.yaml
+	rv|factions/yuris/infantries/Yuri Prime/rules.yaml
+	rv|factions/yuris/navals/Amphibious Transport/rules.yaml
+	rv|factions/yuris/navals/Boomer Submarine/rules.yaml
+	rv|factions/yuris/navals/Cruise Missile/rules.yaml
+	rv|factions/yuris/specials/Genetic Mutator/rules.yaml
+	rv|factions/yuris/specials/Psychic Dominator/rules.yaml
+	rv|factions/yuris/specials/Psychic Reveal/rules.yaml
+	rv|factions/yuris/vehicles/Chaos Drone/rules.yaml
+	rv|factions/yuris/vehicles/Gatling Tank/rules.yaml
+	rv|factions/yuris/vehicles/Lasher Light Tank/rules.yaml
+	rv|factions/yuris/vehicles/Magnetron/rules.yaml
+	rv|factions/yuris/vehicles/Master Mind/rules.yaml
+	rv|factions/yuris/vehicles/Mobile Construction Vehicle/rules.yaml
+	rv|factions/yuris/vehicles/Slave Miner/rules.yaml
 	rv|rules/proxy-actors.yaml
 	rv|rules/misc.yaml
 	rv|rules/ai.yaml
@@ -98,70 +244,253 @@ Rules:
 	rv|rules/world.yaml
 	rv|rules/palettes.yaml
 	rv|rules/defaults.yaml
-	rv|rules/allied-infantry.yaml
-	rv|rules/bakuvian-infantry.yaml
-	rv|rules/soviet-infantry.yaml
-	rv|rules/yuri-infantry.yaml
+	# rv|rules/allied-infantry.yaml
+	# rv|rules/bakuvian-infantry.yaml
+	# rv|rules/soviet-infantry.yaml
+	# rv|rules/yuri-infantry.yaml
 	rv|rules/civilians.yaml
 	rv|rules/bridges.yaml
 	rv|rules/animals.yaml
 	rv|rules/default-structures.yaml
-	rv|rules/allied-structures.yaml
-	rv|rules/bakuvian-structures.yaml
-	rv|rules/soviet-structures.yaml
-	rv|rules/yuri-structures.yaml
+	# rv|rules/allied-structures.yaml
+	# rv|rules/bakuvian-structures.yaml
+	# rv|rules/soviet-structures.yaml
+	# rv|rules/yuri-structures.yaml
 	rv|rules/civilian-structures.yaml
 	rv|rules/tech-structures.yaml
 	rv|rules/civilian-flags.yaml
 	rv|rules/civilian-props.yaml
 	rv|rules/default-vehicles.yaml
-	rv|rules/allied-vehicles.yaml
-	rv|rules/bakuvian-vehicles.yaml
-	rv|rules/soviet-vehicles.yaml
-	rv|rules/yuri-vehicles.yaml
+	# rv|rules/allied-vehicles.yaml
+	# rv|rules/bakuvian-vehicles.yaml
+	# rv|rules/soviet-vehicles.yaml
+	# rv|rules/yuri-vehicles.yaml
 	rv|rules/civilian-vehicles.yaml
-	rv|rules/old-vehicles.yaml
+	# rv|rules/old-vehicles.yaml
 	rv|rules/default-naval.yaml
-	rv|rules/allied-naval.yaml
-	rv|rules/bakuvian-naval.yaml
-	rv|rules/soviet-naval.yaml
-	rv|rules/yuri-naval.yaml
+	# rv|rules/allied-naval.yaml
+	# rv|rules/bakuvian-naval.yaml
+	# rv|rules/soviet-naval.yaml
+	# rv|rules/yuri-naval.yaml
 	rv|rules/civilian-naval.yaml
 	rv|rules/arrakis.yaml
-	rv|rules/aircraft.yaml
+	# rv|rules/aircraft.yaml
 	rv|rules/trees.yaml
-	rv|rules/cpowers.yaml
-	rv|rules/upgrades.yaml
-	rv|rules/debug-structures.yaml
-	rv|rules/ai-only-units.yaml
+	# rv|rules/cpowers.yaml
+	# rv|rules/upgrades.yaml
+	# rv|rules/debug-structures.yaml
+	# rv|rules/ai-only-units.yaml
 
 Sequences:
+	rv|sequences/defaults.yaml
+	rv|factions/allies/aircraft/Black Eagle/sequence.yaml
+	rv|factions/allies/aircraft/Harrier/sequence.yaml
+	rv|factions/allies/aircraft/Hornet/sequence.yaml
+	rv|factions/allies/aircraft/Night Hawk/sequence.yaml
+	rv|factions/allies/aircraft/Osprey/sequence.yaml
+	rv|factions/allies/buildings/Airforce Command Headquarters/sequence.yaml
+	rv|factions/allies/buildings/Barracks/sequence.yaml
+	rv|factions/allies/buildings/Battle Lab/sequence.yaml
+	rv|factions/allies/buildings/Construction Yard/sequence.yaml
+	rv|factions/allies/buildings/Naval Shipyard/sequence.yaml
+	rv|factions/allies/buildings/Ore Purifier/sequence.yaml
+	rv|factions/allies/buildings/Ore Refinery/sequence.yaml
+	rv|factions/allies/buildings/Power Plant/sequence.yaml
+	rv|factions/allies/buildings/Robot Control Center/sequence.yaml
+	rv|factions/allies/buildings/Service Depot/sequence.yaml
+	rv|factions/allies/buildings/War Factory/sequence.yaml
+	rv|factions/allies/defenses/Allied Wall/sequence.yaml
+	rv|factions/allies/defenses/Chronosphere/sequence.yaml
+	rv|factions/allies/defenses/Gap Generator/sequence.yaml
+	rv|factions/allies/defenses/Grand Cannon/sequence.yaml
+	rv|factions/allies/defenses/Patriot Missile System/sequence.yaml
+	rv|factions/allies/defenses/Pill Box/sequence.yaml
+	rv|factions/allies/defenses/Prism Tower/sequence.yaml
+	rv|factions/allies/defenses/Spy Satellite Uplink/sequence.yaml
+	rv|factions/allies/defenses/Weather Controller/sequence.yaml
+	rv|factions/allies/infantries/Attack Dog/sequence.yaml
+	rv|factions/allies/infantries/Chrono Commando/sequence.yaml
+	rv|factions/allies/infantries/Chrono Legionnaire/sequence.yaml
+	rv|factions/allies/infantries/G.I/sequence.yaml
+	rv|factions/allies/infantries/Guardian G.I/sequence.yaml
+	rv|factions/allies/infantries/Navy SEAL/sequence.yaml
+	rv|factions/allies/infantries/Rocketeer/sequence.yaml
+	rv|factions/allies/infantries/Sniper/sequence.yaml
+	rv|factions/allies/infantries/Spy/sequence.yaml
+	rv|factions/allies/infantries/Tanya Adams/sequence.yaml
+	rv|factions/allies/navals/Aegis Cruiser/sequence.yaml
+	rv|factions/allies/navals/Aircraft Carrier/sequence.yaml
+	rv|factions/allies/navals/Amphibious Transport/sequence.yaml
+	rv|factions/allies/navals/Destroyer/sequence.yaml
+	rv|factions/allies/navals/Dolphin/sequence.yaml
+	rv|factions/allies/vehicles/Battle Fortress/sequence.yaml
+	rv|factions/allies/vehicles/Chrono Miner/sequence.yaml
+	rv|factions/allies/vehicles/Grizzly Battle Tank/sequence.yaml
+	rv|factions/allies/vehicles/Infantry Fighting Vehicle/sequence.yaml
+	rv|factions/allies/vehicles/Mirage Tank/sequence.yaml
+	rv|factions/allies/vehicles/Mobile Construction Vehicle/sequence.yaml
+	rv|factions/allies/vehicles/Prism Tank/sequence.yaml
+	rv|factions/allies/vehicles/Robot Tank/sequence.yaml
+	rv|factions/allies/vehicles/Tank Destroyer/sequence.yaml
+	rv|factions/animals/sequence.yaml
+	rv|factions/shared/aircraft/sequence.yaml
+	rv|factions/shared/infantries/Cosmonaut/sequence.yaml
+	rv|factions/shared/infantries/Engineer/sequence.yaml
+	rv|factions/shared/infantries/Psi Commando/sequence.yaml
+	rv|factions/soviets/aircraft/Kirov Airship/sequence.yaml
+	rv|factions/soviets/aircraft/MiG/sequence.yaml
+	rv|factions/soviets/aircraft/Siege Chopper/sequence.yaml
+	rv|factions/soviets/aircraft/Spy Plane/sequence.yaml
+	rv|factions/soviets/buildings/Barracks/sequence.yaml
+	rv|factions/soviets/buildings/Battle Lab/sequence.yaml
+	rv|factions/soviets/buildings/Construction Yard/sequence.yaml
+	rv|factions/soviets/buildings/Industrial Plant/sequence.yaml
+	rv|factions/soviets/buildings/Naval Shipyard/sequence.yaml
+	rv|factions/soviets/buildings/Nuclear Reactor/sequence.yaml
+	rv|factions/soviets/buildings/Ore Refinery/sequence.yaml
+	rv|factions/soviets/buildings/Radar Tower/sequence.yaml
+	rv|factions/soviets/buildings/Service Depot/sequence.yaml
+	rv|factions/soviets/buildings/Tesla Reactor/sequence.yaml
+	rv|factions/soviets/buildings/War Factory/sequence.yaml
+	rv|factions/soviets/defenses/Battle Bunker/sequence.yaml
+	rv|factions/soviets/defenses/Flak Cannon/sequence.yaml
+	rv|factions/soviets/defenses/Iron Curtain Device/sequence.yaml
+	rv|factions/soviets/defenses/Nuclear Missile Silo/sequence.yaml
+	rv|factions/soviets/defenses/Sentry Gun/sequence.yaml
+	rv|factions/soviets/defenses/Soviet Wall/sequence.yaml
+	rv|factions/soviets/defenses/Tesla Coil/sequence.yaml
+	rv|factions/soviets/infantries/Attack Dog/sequence.yaml
+	rv|factions/soviets/infantries/Boris Bukov/sequence.yaml
+	rv|factions/soviets/infantries/Chrono Ivan/sequence.yaml
+	rv|factions/soviets/infantries/Conscript/sequence.yaml
+	rv|factions/soviets/infantries/Crazy Ivan/sequence.yaml
+	rv|factions/soviets/infantries/Desolator/sequence.yaml
+	rv|factions/soviets/infantries/Flak Trooper/sequence.yaml
+	rv|factions/soviets/infantries/Terrorist/sequence.yaml
+	rv|factions/soviets/infantries/Tesla Trooper/sequence.yaml
+	rv|factions/soviets/navals/Amphibious Transport/sequence.yaml
+	rv|factions/soviets/navals/Dreadnought/sequence.yaml
+	rv|factions/soviets/navals/Giant Squid/sequence.yaml
+	rv|factions/soviets/navals/Sea Scorpion/sequence.yaml
+	rv|factions/soviets/navals/Typhoon Attack Submarine/sequence.yaml
+	rv|factions/soviets/vehicles/Apocalypse Tank/sequence.yaml
+	rv|factions/soviets/vehicles/Demolition Truck/sequence.yaml
+	rv|factions/soviets/vehicles/Flak Track/sequence.yaml
+	rv|factions/soviets/vehicles/Mobile Construction Vehicle/sequence.yaml
+	rv|factions/soviets/vehicles/Rhino Heavy Tank/sequence.yaml
+	rv|factions/soviets/vehicles/Terror Drone/sequence.yaml
+	rv|factions/soviets/vehicles/Tesla Tank/sequence.yaml
+	rv|factions/soviets/vehicles/V3 Launcher/sequence.yaml
+	rv|factions/soviets/vehicles/War Miner/sequence.yaml
+	rv|factions/yuris/aircraft/Leech Disc/sequence.yaml
+	rv|factions/yuris/buildings/Barracks/sequence.yaml
+	rv|factions/yuris/buildings/Battle Lab/sequence.yaml
+	rv|factions/yuris/buildings/Bio Reactor/sequence.yaml
+	rv|factions/yuris/buildings/Construction Yard/sequence.yaml
+	rv|factions/yuris/buildings/Grinder/sequence.yaml
+	rv|factions/yuris/buildings/Psychic Sensor/sequence.yaml
+	rv|factions/yuris/buildings/Slave Miner/sequence.yaml
+	rv|factions/yuris/buildings/Submarine Pen/sequence.yaml
+	rv|factions/yuris/buildings/War Factory/sequence.yaml
+	rv|factions/yuris/defenses/Citadel Wall/sequence.yaml
+	rv|factions/yuris/defenses/Cloning Vats/sequence.yaml
+	rv|factions/yuris/defenses/Gatling Cannon/sequence.yaml
+	rv|factions/yuris/defenses/Genetic Mutator/sequence.yaml
+	rv|factions/yuris/defenses/Psychic Dominator/sequence.yaml
+	rv|factions/yuris/defenses/Psychic Tower/sequence.yaml
+	rv|factions/yuris/defenses/Tank Bunker/sequence.yaml
+	rv|factions/yuris/infantries/Brute/sequence.yaml
+	rv|factions/yuris/infantries/Initiate/sequence.yaml
+	rv|factions/yuris/infantries/Slave/sequence.yaml
+	rv|factions/yuris/infantries/Virus/sequence.yaml
+	rv|factions/yuris/infantries/Yuri Clone/sequence.yaml
+	rv|factions/yuris/infantries/Yuri Prime/sequence.yaml
+	rv|factions/yuris/navals/Amphibious Transport/sequence.yaml
+	rv|factions/yuris/navals/Boomer Submarine/sequence.yaml
+	rv|factions/yuris/vehicles/Chaos Drone/sequence.yaml
+	rv|factions/yuris/vehicles/Gatling Tank/sequence.yaml
+	rv|factions/yuris/vehicles/Lasher Light Tank/sequence.yaml
+	rv|factions/yuris/vehicles/Magnetron/sequence.yaml
+	rv|factions/yuris/vehicles/Master Mind/sequence.yaml
+	rv|factions/yuris/vehicles/Mobile Construction Vehicle/sequence.yaml
+	rv|factions/yuris/vehicles/Slave Miner/sequence.yaml
 	rv|sequences/misc.yaml
-	rv|sequences/aircraft.yaml
-	rv|sequences/allied-infantry.yaml
-	rv|sequences/allied-structures.yaml
+	# rv|sequences/aircraft.yaml
+	# rv|sequences/allied-infantry.yaml
+	# rv|sequences/allied-structures.yaml
 	rv|sequences/animals.yaml
-	rv|sequences/bakuvian-infantry.yaml
-	rv|sequences/bakuvian-structures.yaml
+	# rv|sequences/bakuvian-infantry.yaml
+	# rv|sequences/bakuvian-structures.yaml
 	rv|sequences/bridges.yaml
 	rv|sequences/civilians.yaml
 	rv|sequences/civilian-flags.yaml
 	rv|sequences/civilian-props.yaml
 	rv|sequences/civilian-structures.yaml
-	rv|sequences/defaults.yaml
-	rv|sequences/soviet-infantry.yaml
-	rv|sequences/soviet-structures.yaml
+	# rv|sequences/soviet-infantry.yaml
+	# rv|sequences/soviet-structures.yaml
 	rv|sequences/tech-structures.yaml
 	rv|sequences/trees.yaml
 	rv|sequences/arrakis.yaml
-	rv|sequences/vehicles.yaml
-	rv|sequences/yuri-infantry.yaml
-	rv|sequences/yuri-structures.yaml
+	# rv|sequences/vehicles.yaml
+	# rv|sequences/yuri-infantry.yaml
+	# rv|sequences/yuri-structures.yaml
 	rv|sequences/cpowers.yaml
 	rv|sequences/upgrades.yaml
 
 ModelSequences:
-	rv|sequences/voxels.yaml
+	rv|factions/allies/defenses/Patriot Missile System/voxel.yaml
+	rv|factions/allies/defenses/Grand Cannon/voxel.yaml
+	rv|factions/allies/aircraft/Black Eagle/voxel.yaml
+	rv|factions/allies/aircraft/Harrier/voxel.yaml
+	rv|factions/allies/aircraft/Hornet/voxel.yaml
+	rv|factions/allies/aircraft/Night Hawk/voxel.yaml
+	rv|factions/allies/aircraft/Osprey/voxel.yaml
+	rv|factions/allies/navals/Aegis Cruiser/voxel.yaml
+	rv|factions/allies/navals/Aircraft Carrier/voxel.yaml
+	rv|factions/allies/navals/Amphibious Transport/voxel.yaml
+	rv|factions/allies/navals/Destroyer/voxel.yaml
+	rv|factions/allies/vehicles/Battle Fortress/voxel.yaml
+	rv|factions/allies/vehicles/Chrono Miner/voxel.yaml
+	rv|factions/allies/vehicles/Grizzly Battle Tank/voxel.yaml
+	rv|factions/allies/vehicles/Infantry Fighting Vehicle/voxel.yaml
+	rv|factions/allies/vehicles/Mirage Tank/voxel.yaml
+	rv|factions/allies/vehicles/Mobile Construction Vehicle/voxel.yaml
+	rv|factions/allies/vehicles/Prism Tank/voxel.yaml
+	rv|factions/allies/vehicles/Robot Tank/voxel.yaml
+	rv|factions/allies/vehicles/Tank Destroyer/voxel.yaml
+	rv|factions/shared/aircraft/voxel.yaml
+	rv|factions/soviets/aircraft/Kirov Airship/voxel.yaml
+	rv|factions/soviets/aircraft/MiG/voxel.yaml
+	rv|factions/soviets/aircraft/Siege Chopper/voxel.yaml
+	rv|factions/soviets/aircraft/Spy Plane/voxel.yaml
+	rv|factions/soviets/defenses/Flak Cannon/voxel.yaml
+	rv|factions/soviets/defenses/Sentry Gun/voxel.yaml
+	rv|factions/soviets/navals/Amphibious Transport/voxel.yaml
+	rv|factions/soviets/navals/Dreadnought/voxel.yaml
+	rv|factions/soviets/navals/Dreadnought Missile/voxel.yaml
+	rv|factions/soviets/navals/Sea Scorpion/voxel.yaml
+	rv|factions/soviets/navals/Typhoon Attack Submarine/voxel.yaml
+	rv|factions/soviets/vehicles/Apocalypse Tank/voxel.yaml
+	rv|factions/soviets/vehicles/Demolition Truck/voxel.yaml
+	rv|factions/soviets/vehicles/Flak Track/voxel.yaml
+	rv|factions/soviets/vehicles/Mobile Construction Vehicle/voxel.yaml
+	rv|factions/soviets/vehicles/Rhino Heavy Tank/voxel.yaml
+	rv|factions/soviets/vehicles/Tesla Tank/voxel.yaml
+	rv|factions/soviets/vehicles/V3 Launcher/voxel.yaml
+	rv|factions/soviets/vehicles/V3 Rocket/voxel.yaml
+	rv|factions/soviets/vehicles/War Miner/voxel.yaml
+	rv|factions/yuris/aircraft/Leech Disc/voxel.yaml
+	rv|factions/yuris/defenses/Gatling Cannon/voxel.yaml
+	rv|factions/yuris/navals/Amphibious Transport/voxel.yaml
+	rv|factions/yuris/navals/Boomer Submarine/voxel.yaml
+	rv|factions/yuris/vehicles/Chaos Drone/voxel.yaml
+	rv|factions/yuris/vehicles/Gatling Tank/voxel.yaml
+	rv|factions/yuris/vehicles/Lasher Light Tank/voxel.yaml
+	rv|factions/yuris/vehicles/Magnetron/voxel.yaml
+	rv|factions/yuris/vehicles/Master Mind/voxel.yaml
+	rv|factions/yuris/vehicles/Mobile Construction Vehicle/voxel.yaml
+	rv|factions/yuris/vehicles/Slave Miner/voxel.yaml
+	# rv|sequences/voxels.yaml
 
 Cursors:
 	rv|cursors.yaml
@@ -238,19 +567,102 @@ Translations:
 	rv|languages/tr.ftl
 
 Weapons:
-	rv|weapons/bullets.yaml
-	rv|weapons/debris.yaml
-	rv|weapons/defaults.yaml
+	rv|factions/allies/aircraft/Black Eagle/weapons.yaml
+	rv|factions/allies/aircraft/Harrier/weapons.yaml
+	rv|factions/allies/aircraft/Hornet/weapons.yaml
+	rv|factions/allies/aircraft/Night Hawk/weapons.yaml
+	rv|factions/allies/aircraft/Osprey/weapons.yaml
+	rv|factions/allies/defenses/Grand Cannon/weapons.yaml
+	rv|factions/allies/defenses/Patriot Missile System/weapons.yaml
+	rv|factions/allies/defenses/Pill Box/weapons.yaml
+	rv|factions/allies/defenses/Prism Tower/weapons.yaml
+	rv|factions/allies/infantries/Chrono Legionnaire/weapons.yaml
+	rv|factions/allies/infantries/G.I/weapons.yaml
+	rv|factions/allies/infantries/Guardian G.I/weapons.yaml
+	rv|factions/allies/infantries/Navy SEAL/weapons.yaml
+	rv|factions/allies/infantries/Rocketeer/weapons.yaml
+	rv|factions/allies/infantries/Sniper/weapons.yaml
+	rv|factions/allies/infantries/Tanya Adams/weapons.yaml
+	rv|factions/allies/navals/Aegis Cruiser/weapons.yaml
+	rv|factions/allies/navals/Aircraft Carrier/weapons.yaml
+	rv|factions/allies/navals/Destroyer/weapons.yaml
+	rv|factions/allies/navals/Dolphin/weapons.yaml
+	rv|factions/allies/specials/Lightning Storm/weapons.yaml
+	rv|factions/allies/vehicles/Grizzly Battle Tank/weapons.yaml
+	rv|factions/allies/vehicles/Infantry Fighting Vehicle/weapons.yaml
+	rv|factions/allies/vehicles/Mirage Tank/weapons.yaml
+	rv|factions/allies/vehicles/Prism Tank/weapons.yaml
+	rv|factions/allies/vehicles/Robot Tank/weapons.yaml
+	rv|factions/allies/vehicles/Tank Destroyer/weapons.yaml
+	rv|factions/animals/weapons.yaml
+	rv|factions/shared/weapons.yaml
+	rv|factions/shared/infantries/Attack Dog/weapons.yaml
+	rv|factions/shared/infantries/Cosmonaut/weapons.yaml
+	rv|factions/shared/infantries/Engineer/weapons.yaml
+	rv|factions/soviets/aircraft/Kirov Airship/weapons.yaml
+	rv|factions/soviets/aircraft/MiG/weapons.yaml
+	rv|factions/soviets/aircraft/Siege Chopper/weapons.yaml
+	rv|factions/soviets/aircraft/Spy Plane/weapons.yaml
+	rv|factions/soviets/buildings/Nuclear Reactor/weapons.yaml
+	rv|factions/soviets/buildings/Tesla Reactor/weapons.yaml
+	rv|factions/soviets/defenses/Flak Cannon/weapons.yaml
+	rv|factions/soviets/defenses/Sentry Gun/weapons.yaml
+	rv|factions/soviets/defenses/Tesla Coil/weapons.yaml
+	rv|factions/soviets/infantries/Boris Bukov/weapons.yaml
+	rv|factions/soviets/infantries/Conscript/weapons.yaml
+	rv|factions/soviets/infantries/Crazy Ivan/weapons.yaml
+	rv|factions/soviets/infantries/Desolator/weapons.yaml
+	rv|factions/soviets/infantries/Flak Trooper/weapons.yaml
+	rv|factions/soviets/infantries/Terrorist/weapons.yaml
+	rv|factions/soviets/infantries/Tesla Trooper/weapons.yaml
+	rv|factions/soviets/navals/Dreadnought/weapons.yaml
+	rv|factions/soviets/navals/Dreadnought Missile/weapons.yaml
+	rv|factions/soviets/navals/Giant Squid/weapons.yaml
+	rv|factions/soviets/navals/Sea Scorpion/weapons.yaml
+	rv|factions/soviets/navals/Typhoon Attack Submarine/weapons.yaml
+	rv|factions/soviets/specials/Nuke/weapons.yaml
+	rv|factions/soviets/vehicles/Apocalypse Tank/weapons.yaml
+	rv|factions/soviets/vehicles/Demolition Truck/weapons.yaml
+	rv|factions/soviets/vehicles/Flak Track/weapons.yaml
+	rv|factions/soviets/vehicles/Rhino Heavy Tank/weapons.yaml
+	rv|factions/soviets/vehicles/Terror Drone/weapons.yaml
+	rv|factions/soviets/vehicles/Tesla Tank/weapons.yaml
+	rv|factions/soviets/vehicles/V3 Launcher/weapons.yaml
+	rv|factions/soviets/vehicles/V3 Rocket/weapons.yaml
+	rv|factions/soviets/vehicles/War Miner/weapons.yaml
+	rv|factions/yuris/aircraft/Leech Disc/weapons.yaml
+	rv|factions/yuris/buildings/Slave Miner/weapons.yaml
+	rv|factions/yuris/defenses/Gatling Cannon/weapons.yaml
+	rv|factions/yuris/defenses/Psychic Tower/weapons.yaml
+	rv|factions/yuris/infantries/Brute/weapons.yaml
+	rv|factions/yuris/infantries/Initiate/weapons.yaml
+	rv|factions/yuris/infantries/Slave/weapons.yaml
+	rv|factions/yuris/infantries/Virus/weapons.yaml
+	rv|factions/yuris/infantries/Yuri Clone/weapons.yaml
+	rv|factions/yuris/infantries/Yuri Prime/weapons.yaml
+	rv|factions/yuris/navals/Boomer Submarine/weapons.yaml
+	rv|factions/yuris/navals/Cruise Missile/weapons.yaml
+	rv|factions/yuris/specials/Genetic Mutator/weapons.yaml
+	rv|factions/yuris/specials/Psychic Dominator/weapons.yaml
+	rv|factions/yuris/specials/Psychic Reveal/weapons.yaml
+	rv|factions/yuris/vehicles/Chaos Drone/weapons.yaml
+	rv|factions/yuris/vehicles/Gatling Tank/weapons.yaml
+	rv|factions/yuris/vehicles/Lasher Light Tank/weapons.yaml
+	rv|factions/yuris/vehicles/Magnetron/weapons.yaml
+	rv|factions/yuris/vehicles/Master Mind/weapons.yaml
+	# rv|weapons/bullets.yaml
+	# rv|weapons/debris.yaml
+	# rv|weapons/defaults.yaml
 	rv|weapons/explosions.yaml
-	rv|weapons/flaks.yaml
-	rv|weapons/gatling.yaml
-	rv|weapons/gravitybombs.yaml
-	rv|weapons/ifvweapons.yaml
-	rv|weapons/ivanbombs.yaml
-	rv|weapons/melee.yaml
-	rv|weapons/mgs.yaml
+	# rv|weapons/flaks.yaml
+	# rv|weapons/gatling.yaml
+	# rv|weapons/gravitybombs.yaml
+	# rv|weapons/ifvweapons.yaml
+	# rv|weapons/ivanbombs.yaml
+	# rv|weapons/melee.yaml
+	# rv|weapons/mgs.yaml
 	rv|weapons/misc.yaml
-	rv|weapons/missiles.yaml
+	# rv|weapons/missiles.yaml
 	rv|weapons/zaps.yaml
 
 Voices:
@@ -367,7 +779,7 @@ AssetBrowser:
 	VideoExtensions: .vqa
 
 GameSpeeds:
-	DefaultSpeed: default
+	DefaultSpeed: ludicrous
 	Speeds:
 		slowest:
 			Name: options-game-speed.slowest

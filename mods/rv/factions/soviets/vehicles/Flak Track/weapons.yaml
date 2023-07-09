@@ -1,0 +1,13 @@
+FlakTrackAAGun:
+	Inherits: ^AAFlak
+	ValidTargets: Air
+	Range: 8c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 2500
+		Versus:
+			Flak: 80
+			Light: 100
+
+FlakTrackAAGunE:
+	Inherits: FlakTrackAAGun
+	Burst: 2

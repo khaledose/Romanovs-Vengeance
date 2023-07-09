@@ -1,0 +1,68 @@
+virus:
+	Inherits: ^Infantry
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@CHAOS: ^Berserkable
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@MC: ^MindControllable
+	Inherits@VOICES: ^WithFeedbackVoicelines
+	Buildable:
+		Queue: Infantry.Shared, Infantry.Yuri
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 80
+		Prerequisites: ~infantry.yuri, yapsis, ~techlevel.2
+		Description: Sniper infantry armed with toxic bullets.\nKilled units leave toxin clouds.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can kill garrisoned infantry\n\nUpgradeable with:\n- Camouflage
+		BuildDuration: 250
+		BuildDurationModifier: 100
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Valued:
+		Cost: 600
+	Tooltip:
+	Tooltip@NoRow:
+		Name: Virus
+	DeliversCash:
+		Payload: 300
+		Voice: Move
+	Selectable:
+		Bounds: 482, 1448, 0, -530
+	Health:
+		HP: 7500
+	Garrisoner:
+		Voice: Move
+		GarrisonType: Garrisoner
+	Passenger:
+	RevealsShroud:
+		Range: 6c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 6c0
+	RevealOnDeath:
+		Radius: 6c0
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 2
+		TargetFrozenActors: true
+	Armament@primary:
+		Weapon: Virusgun
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: VirusgunE
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: rank-elite
+	Armament@garrisoned:
+		Name: garrisoned
+		Weapon: UCVirusgun
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: !rank-elite
+	Armament@elite-garrisoned:
+		Name: garrisoned
+		Weapon: UCVirusgunE
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: rank-elite
+	Voiced:
+		VoiceSet: VirusVoice
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+	ActorStatValues:
+		Damage: 200
+

@@ -1,0 +1,79 @@
+deso:
+	Inherits: ^ArmedInfantry
+	Defaults:
+		Filename: conquer|deso.shp
+	dot:
+		Filename: dot.shp
+		ZOffset: -9999
+	run:
+		Tick: 120
+	deploy:
+		Start: 299
+		Length: 15
+		Tick: 70
+	deployed:
+		Start: 292
+	deployed-shoot:
+		Start: 292
+		Length: 7
+		Tick: 70
+	cheer:
+		Start: 314
+	paradrop:
+		Filename: bits/infantry/desofix.shp
+	stand-orange:
+		Filename: bits/infantry/desoorange.shp
+		Facings: 8
+	run-orange:
+		Filename: bits/infantry/desoorange.shp
+		Start: 8
+		Length: 6
+		Facings: 8
+		Tick: 120
+	idle1-orange:
+		Filename: bits/infantry/desoorange.shp
+		Start: 56
+		Length: 15
+		Tick: 120
+	idle2-orange:
+		Filename: bits/infantry/desoorange.shp
+		Start: 71
+		Length: 15
+		Tick: 120
+	cheer-orange:
+		Filename: bits/infantry/desoorange.shp
+		Start: 314
+		Length: 8
+		Tick: 120
+	die-orange1:
+		Filename: bits/infantry/desoorange.shp
+		Start: 134
+		Length: 15
+	die-orange2:
+		Filename: bits/infantry/desoorange.shp
+		Start: 149
+		Length: 15
+	shoot-orange:
+		Filename: bits/infantry/desoorange.shp
+		Start: 164
+		Length: 6
+		Facings: 8
+		Tick: 80
+	deploy-orange:
+		Filename: bits/infantry/desoorange.shp
+		Start: 299
+		Length: 15
+		Tick: 70
+	deployed-orange:
+		Filename: bits/infantry/desoorange.shp
+		Start: 292
+	deployed-shoot-orange:
+		Filename: bits/infantry/desoorange.shp
+		Start: 292
+		Length: 7
+		Tick: 70
+	paradrop-orange:
+		Filename: bits/infantry/desofix.shp
+		Start: 1
+	icon:
+		Filename: cameo|desoicon.shp

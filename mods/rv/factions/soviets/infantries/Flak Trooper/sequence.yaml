@@ -1,0 +1,92 @@
+flakt:
+	Inherits: ^ArmedInfantry
+	Inherits@MUZZLE: ^WithFlakMuzzle
+	Defaults:
+		Filename: conquer|flakt.shp
+	run:
+		Tick: 120
+	die1:
+		Start: 86
+	die2:
+		Start: 101
+	shoot:
+		Start: 116
+	liedown:
+		Start: 213
+	standup:
+		Start: 229
+	prone-stand:
+		Frames: 165, 171, 177, 183, 189, 195, 201, 207
+	prone-run:
+		Start: 165
+	prone-shoot:
+		Start: 245
+	stand-bulletproof:
+		Filename: bits/infantry/flaktu.shp
+		Facings: 8
+	run-bulletproof:
+		Filename: bits/infantry/flaktu.shp
+		Start: 8
+		Length: 6
+		Facings: 8
+		Tick: 120
+	idle1-bulletproof:
+		Filename: bits/infantry/flaktu.shp
+		Start: 56
+		Length: 15
+		Tick: 120
+	idle2-bulletproof:
+		Filename: bits/infantry/flaktu.shp
+		Start: 71
+		Length: 15
+		Tick: 120
+	cheer-bulletproof:
+		Filename: bits/infantry/flaktu.shp
+		Start: 293
+		Length: 8
+		Tick: 120
+	die-bulletproof1:
+		Filename: bits/infantry/flaktu.shp
+		Start: 86
+		Length: 15
+	die-bulletproof2:
+		Filename: bits/infantry/flaktu.shp
+		Start: 101
+		Length: 15
+	liedown-bulletproof:
+		Filename: bits/infantry/flaktu.shp
+		Start: 213
+		Length: 2
+		Facings: 8
+	standup-bulletproof:
+		Filename: bits/infantry/flaktu.shp
+		Start: 229
+		Length: 2
+		Facings: 8
+	prone-stand-bulletproof:
+		Filename: bits/infantry/flaktu.shp
+		Frames: 165, 171, 177, 183, 189, 195, 201, 207
+		Facings: 8
+	prone-run-bulletproof:
+		Filename: bits/infantry/flaktu.shp
+		Start: 165
+		Length: 6
+		Facings: 8
+		Tick: 100
+	shoot-bulletproof:
+		Filename: bits/infantry/flaktu.shp
+		Start: 116
+		Length: 6
+		Facings: 8
+		Tick: 80
+	prone-shoot-bulletproof:
+		Filename: bits/infantry/flaktu.shp
+		Start: 245
+		Length: 6
+		Facings: 8
+		Tick: 80
+	paradrop-bulletproof:
+		Filename: bits/infantry/flaktu.shp
+		Start: 292
+	icon:
+		Filename: cameo|flkticon.shp

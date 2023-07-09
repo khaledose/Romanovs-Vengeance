@@ -12,7 +12,6 @@
 using System;
 using System.Collections.Generic;
 using OpenRA.GameRules;
-using OpenRA.Mods.AS.Warheads;
 using OpenRA.Mods.Common.Effects;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Traits;

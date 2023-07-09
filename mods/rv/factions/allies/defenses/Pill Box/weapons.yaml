@@ -1,0 +1,15 @@
+vulcan:
+	Inherits: ^MG
+	ReloadDelay: 35
+	Range: 6c0
+	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 6500
+		Versus:
+			None: 120
+			Flak: 110
+			Plate: 100
+
+vulcan2:
+	Inherits: vulcan
+	Report: bpilatta.wav, bpilattb.wav, bpilattc.wav, bpilattd.wav, bpilattc.wav

@@ -1,0 +1,165 @@
+naweap:
+	Inherits: ^WarFactory
+	Buildable:
+		Queue: Building.Shared, Building.Soviets
+		Description: Produces Soviet vehicles.\n\nAbilities:\n- Comes with 3 repair drones.\n\n  Cannot be placed on water.\n  Can be rotated.
+		Prerequisites: ~building.soviets, barracks, refinery, ~techlevel.1
+	ProvidesPrerequisite@buildingname:
+		Prerequisite: naweap
+	ProvidesPrerequisite@vehicle.soviets:
+		Prerequisite: vehicle.soviets
+		Factions: america, france, england, germany, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, russia, iraq, vietnam, cuba, libya, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon
+	ProvidesPrerequisite@vehicle.russia:
+		Prerequisite: vehicle.russia
+		Factions: russia
+	ProvidesPrerequisite@vehicle.iraq:
+		Prerequisite: vehicle.iraq
+		Factions: iraq
+	ProvidesPrerequisite@vehicle.cuba:
+		Prerequisite: vehicle.cuba
+		Factions: cuba
+	ProvidesPrerequisite@vehicle.libya:
+		Prerequisite: vehicle.libya
+		Factions: libya
+	ProvidesPrerequisite@vehicle.soviets:
+		Prerequisite: vehicle.soviets
+	ProvidesPrerequisite@vehicleorship.soviets:
+		Prerequisite: vehicleorship.soviets
+	Production:
+		Produces: Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Aircraft.Soviets, Aircraft.USSR, Aircraft.Iraq, Aircraft.Cuba, Aircraft.Libya
+	ProductionQueue:
+		Type: Vehicle.Soviets
+		DisplayOrder: 18
+		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, vietnam, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon
+	ProductionQueue@USSR:
+		Type: Vehicle.USSR
+		Group: Vehicle
+		DisplayOrder: 18
+		LowPowerModifier: 200
+		Factions: russia
+		ReadyAudio: UnitReady
+		ReadyTextNotification: Unit ready.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionQueue@Iraq:
+		Type: Vehicle.Iraq
+		Group: Vehicle
+		DisplayOrder: 18
+		LowPowerModifier: 200
+		Factions: iraq
+		ReadyAudio: UnitReady
+		ReadyTextNotification: Unit ready.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionQueue@Cuba:
+		Type: Vehicle.Cuba
+		Group: Vehicle
+		DisplayOrder: 18
+		LowPowerModifier: 200
+		Factions: cuba
+		ReadyAudio: UnitReady
+		ReadyTextNotification: Unit ready.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionQueue@Libya:
+		Type: Vehicle.Libya
+		Group: Vehicle
+		DisplayOrder: 18
+		LowPowerModifier: 200
+		Factions: libya
+		ReadyAudio: UnitReady
+		ReadyTextNotification: Unit ready.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionBar:
+		ProductionType: Vehicle.Soviets
+	ProductionBar@USSR:
+		ProductionType: Vehicle.USSR
+	ProductionBar@Iraq:
+		ProductionType: Vehicle.Iraq
+	ProductionBar@Cuba:
+		ProductionType: Vehicle.Cuba
+	ProductionBar@Libya:
+		ProductionType: Vehicle.Libya
+	WithIdleOverlay@lights:
+		Sequence: idle-lights
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete
+	PlaceBuildingVariants:
+		Actors: naweap #, naweac, nawead
+	IsometricSelectable:
+		Class: naweap
+		DecorationHeight: 90
+
+naweab:
+	Inherits: naweap
+	Inherits@SHAPE: ^FlippedFactoryXShape
+	-Buildable:
+	-PlaceBuildingVariants:
+	Building:
+		Footprint: xxx xxx xxx xxx +++
+		Dimensions: 3,5
+	RallyPoint:
+		Path: 1,6
+	Exit@1:
+		ExitCell: 1,4
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome
+		TooltipActor: naweap
+
+naweac:
+	Inherits: naweap
+	Inherits@SHAPE: ^FlippedFactoryShape
+	-Buildable:
+	-PlaceBuildingVariants:
+	-WithExitOverlay@front:
+	-WithExitOverlay@top:
+	-WithIdleOverlay@bib:
+	WithIdleOverlay@lights:
+		Sequence: idle-flag
+	Building:
+		Footprint: +xxxx +xxxx +xxxx
+	RallyPoint:
+		Path: -2,1
+	Exit@1:
+		ExitCell: 0,1
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome
+		TooltipActor: naweap
+
+nawead:
+	Inherits: naweab
+	Inherits@SHAPE: ^FlippedFactoryYShape
+	-WithExitOverlay@front:
+	-WithExitOverlay@top:
+	-WithIdleOverlay@bib:
+	WithIdleOverlay@lights:
+		Sequence: idle-flag
+	Building:
+		Footprint: +++ xxx xxx xxx xxx
+	RallyPoint:
+		Path: 1,-2
+	Exit@1:
+		ExitCell: 1,0

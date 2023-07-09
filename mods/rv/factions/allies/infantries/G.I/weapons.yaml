@@ -1,0 +1,47 @@
+M60:
+	Inherits: ^MG
+	ReloadDelay: 25
+	Range: 4c0
+	Warhead@1Dam: SpreadDamage
+		Spread: 64
+		Damage: 1500
+
+M60E:
+	Inherits: M60
+	ReloadDelay: 20
+	Range: 5c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 2000
+	Warhead@2Eff: CreateEffect
+		Explosions: piffpiffred
+
+para:
+	Inherits: ^MG
+	Range: 5c0
+	ReloadDelay: 20
+	Report: igiat2a.wav, igiat2b.wav, igiat2c.wav, igiat2d.wav, igiat2c.wav, igiat2d.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 2000
+		Versus:
+			Flak: 100
+
+paraE:
+	Inherits: para
+	Range: 5c0
+	ReloadDelay: 15
+	Warhead@1Dam: SpreadDamage
+		Damage: 2500
+	Warhead@2Eff: CreateEffect
+		Explosions: piffpiffred
+
+UCpara:
+	Inherits: para
+	Range: 7c0
+	Projectile: InstantHit
+		Blockable: false
+
+UCparaE:
+	Inherits: paraE
+	Range: 7c0
+	Projectile: InstantHit
+		Blockable: false

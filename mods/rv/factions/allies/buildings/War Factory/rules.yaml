@@ -1,0 +1,147 @@
+gaweap:
+	Inherits: ^WarFactory
+	Buildable:
+		Queue: Building.Shared, Building.Allies
+		Description: Produces Allied vehicles.\n\nAbilities:\n- Comes with 3 repair drones.\n\n  Cannot be placed on water.\n  Can be rotated.
+		Prerequisites: ~building.allies, barracks, refinery, ~techlevel.1
+	ProvidesPrerequisite@buildingname:
+		Prerequisite: gaweap
+	ProvidesPrerequisite@vehicle.allies:
+		Prerequisite: vehicle.allies
+	ProvidesPrerequisite@vehicle.america:
+		Prerequisite: vehicle.america
+		Factions: america
+	ProvidesPrerequisite@vehicle.england:
+		Prerequisite: vehicle.england
+		Factions: england
+	ProvidesPrerequisite@vehicle.germany:
+		Prerequisite: vehicle.germany
+		Factions: germany
+	ProvidesPrerequisite@vehicleorship.allies:
+		Prerequisite: vehicleorship.allies
+	ProvidesPrerequisite@powered:
+		Prerequisite: powered_robo
+		RequiresCondition: !chronodisable
+	Production:
+		Produces: Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany
+	ProductionQueue:
+		Type: Vehicle.Allies
+		Factions: france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, cuba, libya, iraq, russia, vietnam, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon, transcaucus, turkmen, tuva, russianfed, serbia
+	ProductionQueue@USA:
+		Type: Vehicle.USA
+		Group: Vehicle
+		DisplayOrder: 17
+		LowPowerModifier: 200
+		Factions: america
+		ReadyAudio: UnitReady
+		ReadyTextNotification: Unit ready.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionQueue@UK:
+		Type: Vehicle.UK
+		Group: Vehicle
+		DisplayOrder: 17
+		LowPowerModifier: 200
+		Factions: england
+		ReadyAudio: UnitReady
+		ReadyTextNotification: Unit ready.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionQueue@Germany:
+		Type: Vehicle.Germany
+		Group: Vehicle
+		DisplayOrder: 17
+		LowPowerModifier: 200
+		Factions: germany
+		ReadyAudio: UnitReady
+		ReadyTextNotification: Unit ready.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionBar:
+		ProductionType: Vehicle.Allies
+	ProductionBar@USA:
+		ProductionType: Vehicle.USA
+	ProductionBar@UK:
+		ProductionType: Vehicle.UK
+	ProductionBar@Germany:
+		ProductionType: Vehicle.Germany
+	WithIdleOverlay@flag:
+		Sequence: idle-flag
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete
+	WithIdleOverlay@fan:
+		Sequence: overlay-fan
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete
+	PlaceBuildingVariants:
+		Actors: gaweab #, gaweac, gawead
+	IsometricSelectable:
+		Class: gaweap
+		DecorationHeight: 60
+
+gaweab:
+	Inherits: gaweap
+	Inherits@SHAPE: ^FlippedFactoryXShape
+	-Buildable:
+	-PlaceBuildingVariants:
+	Building:
+		Footprint: xxx xxx xxx xxx +++
+		Dimensions: 3,5
+	RallyPoint:
+		Path: 1,6
+	Exit@1:
+		ExitCell: 1,4
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome
+		TooltipActor: gaweap
+
+gaweac:
+	Inherits: gaweap
+	Inherits@SHAPE: ^FlippedFactoryShape
+	-Buildable:
+	-PlaceBuildingVariants:
+	-WithExitOverlay@front:
+	-WithExitOverlay@top:
+	-WithIdleOverlay@bib:
+	-WithIdleOverlay@fan:
+	Building:
+		Footprint: +xxxx +xxxx +xxxx
+	RallyPoint:
+		Path: -2,1
+	Exit@1:
+		ExitCell: 0,1
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome
+		TooltipActor: gaweap
+
+gawead:
+	Inherits: gaweab
+	Inherits@SHAPE: ^FlippedFactoryYShape
+	-WithExitOverlay@front:
+	-WithExitOverlay@top:
+	-WithIdleOverlay@bib:
+	-WithIdleOverlay@fan:
+	Building:
+		Footprint: +++ xxx xxx xxx xxx
+	RallyPoint:
+		Path: 1,-2
+	Exit@1:
+		ExitCell: 1,0
+

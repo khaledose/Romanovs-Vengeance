@@ -1,0 +1,63 @@
+nanrct:
+	Inherits: ^PowerPlant
+	Inherits@ADVIRRAD: ^AffectedByAdvancedIrradiators
+	Inherits@SHAPE: ^4x4Shape
+	Buildable:
+		Queue: Building.Shared, Building.Soviets
+		BuildPaletteOrder: 110
+		Prerequisites: ~building.soviets, natech, ~techlevel.3
+		Description: Provides a large amount of power for other structures.\n\nUpgradeable with:\n- Advanced Irradiators (Iraq)\n\n  Can be rotated.
+		BuildDuration: 1000
+	Valued:
+		Cost: 1500
+	Tooltip:
+	Tooltip@NoRow:
+		Name: Nuclear Reactor
+	Building:
+		Footprint: xxxx xxxx xxxx _xx_
+		Dimensions: 4,4
+	Health:
+		HP: 100000
+	Armor:
+		Type: Concrete
+	WithIdleOverlay@lights:
+		Sequence: idle-lights
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete && !advirrad
+	WithIdleOverlay@lights-orange:
+		Sequence: idle-lights-orange
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete && advirrad
+	WithIdleOverlay@waves:
+		RequiresCondition: !build-incomplete && in_water
+	Explodes:
+		Type: CenterPosition
+		Weapon: NukePayload
+		EmptyWeapon: NukePayload
+		RequiresCondition: !advirrad
+	Explodes@Orange:
+		Type: CenterPosition
+		Weapon: NukePayloadOrange
+		EmptyWeapon: NukePayloadOrange
+		RequiresCondition: advirrad
+	Power:
+		Amount: 1000
+	IsometricSelectable:
+		Class: nanrct
+		DecorationHeight: 60
+	PlaceBuildingVariants:
+		Actors: nanrcb
+	Voiced:
+		VoiceSet: NuclearReactorVoice
+		Volume: 0.8
+
+nanrcb:
+	Inherits: nanrct
+	-Buildable:
+	-PlaceBuildingVariants:
+	Building:
+		Footprint: xxx_ xxxx xxxx xxx_
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome
+		TooltipActor: nanrct

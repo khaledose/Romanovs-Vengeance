@@ -1,0 +1,9 @@
+htnk:
+	idle: bits/vehicles/replace/htnk
+	idle-nuke: bits/vehicles/upgrades/htnku
+	idle-nuke-orange: bits/vehicles/upgrades/htnkuo
+	turret: bits/vehicles/replace/htnktur
+	barrel: bits/vehicles/replace/htnkbarl
+	barrel-uranium: bits/vehicles/upgrades/htnkubarl
+	barrel-uranium-orange: bits/vehicles/upgrades/htnkuobarl
+	barrel-cryo: bits/vehicles/upgrades/htnkucbarl

@@ -1,0 +1,973 @@
+^BreakPointDefenseDrones:
+	Warhead@ShieldUpgrade: GrantExternalCondition
+		Condition: breakpointdefense
+		Range: 96
+		Duration: 500
+		ValidTargets: Ground, Water, Air
+
+^LineProjectile:
+	ValidTargets: Ground, Water, Air
+	Projectile: BulletAS
+		Speed: 0c800
+		Inaccuracy: 0c512
+		Palette: effect
+		Blockable: true
+		ContrailDelay: 0
+		ContrailStartColor: FFDD00
+		ContrailEndColor: EEEE00
+		ContrailLength: 3
+		ContrailWidth: 26
+	Warhead@Line: TargetDamage
+		ValidTargets: Ground, Water, Air
+
+^Flak:
+	Inherits@1: ^BreakPointDefenseDrones
+	ReloadDelay: 25
+	Range: 5c0
+	Report: vflaat1a.wav, vflaat1b.wav
+	InvalidTargets: Bridge, Wall, Fence, Tree
+	Projectile: BulletAS
+		Image: 120mm
+		Palette: ra
+		LaunchAngle: 128
+		Speed: 800
+	Warhead@1Dam: SpreadDamage
+		InvalidTargets: Bridge, Wall, Fence, Tree
+		Spread: 0c256
+		Damage: 2000
+		Versus:
+			None: 150
+			Flak: 150
+			Plate: 125
+			Light: 100
+			Medium: 10
+			Heavy: 10
+			Wood: 35
+			Steel: 10
+			Concrete: 30
+			Drone: 100
+			Rocket: 100
+		DamageTypes: Prone100Percent, TriggerProne, BulletDeath, NonTemporal
+	Warhead@2Eff: CreateEffect
+		Explosions: flak_puff
+		ValidTargets: Ground, Air
+	Warhead@3EffWater: CreateEffect
+		Explosions: small_watersplash
+		ImpactSounds: gexpwasa.wav
+		ValidTargets: Water
+
+^AAFlak:
+	Inherits: ^Flak
+	Report: vflaat2a.wav, vflaat2b.wav, vflaat2c.wav, vflaat2d.wav
+	-Projectile:
+	Projectile: InstantHit
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c256
+		Damage: 2000
+		ValidTargets: Air
+		Versus:
+			Light: 80
+			Medium: 35
+			Heavy: 35
+			Wood: 0
+			Steel: 0
+			Concrete: 0
+		DamageTypes: BulletDeath, NonTemporal
+	Warhead@2Eff: CreateEffect
+		Explosions: flak_puff_AA
+
+^LargeBullet:
+	Inherits@1: ^BreakPointDefenseDrones
+	Projectile: BulletAS
+		Speed: 40c0
+		Image: 120mm
+		Palette: ra
+		Shadow: true
+		LaunchAngle: 62
+	Warhead@1Dam: SpreadDamage
+		Spread: 128
+		Versus:
+			None: 20
+			Flak: 20
+			Plate: 15
+			Light: 100
+			Medium: 100
+			Heavy: 75
+			Wood: 55
+			Steel: 65
+			Concrete: 50
+			Drone: 60
+			Rocket: 100
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, SuppressTerrorDrone, NonTemporal
+	Warhead@2Eff: CreateEffect
+		Explosions: medium_clsn
+		ImpactSounds: gexp14a.wav
+		ValidTargets: Ground, Air
+	Warhead@3EffWater: CreateEffect
+		Explosions: small_watersplash
+		ImpactSounds: gexpwasa.wav
+		ValidTargets: Water
+
+^Missile:
+	Inherits@1: ^BreakPointDefenseDrones
+	ReloadDelay: 60
+	Range: 12c0
+	Report: bpatatta.wav
+	Projectile: Missile
+		Blockable: false
+		Shadow: true
+		Image: DRAGON
+		Palette: ra
+		ContrailLength: 8
+		ContrailWidth: 38
+		ContrailWidthFadeRate: 1
+		ContrailEndColorUsePlayerColor: true
+		CruiseAltitude: 4352
+		VerticalRateOfTurn: 220
+		HorizontalRateOfTurn: 220
+		Speed: 100
+		RangeLimit: 14c409
+		TerrainHeightAware: true
+		AllowSnapping: true
+
+^AAMissile:
+	Inherits: ^Missile
+	ValidTargets: Air
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c307
+		Falloff: 100, 0
+		Damage: 7500
+		ValidTargets: Air
+		Versus:
+			None: 100
+			Flak: 100
+			Plate: 100
+			Light: 100
+			Medium: 100
+			Heavy: 100
+			Wood: 0
+			Steel: 0
+			Concrete: 0
+			Drone: 100
+			Rocket: 200
+		DamageTypes: BulletDeath, NonTemporal
+	Warhead@2Eff: CreateEffect
+		Explosions: small_bang
+		ImpactSounds: gexp10a.wav
+		ValidTargets: Ground, Air
+	Warhead@3EffWater: CreateEffect
+		Explosions: small_watersplash
+		ImpactSounds: gexpwasa.wav
+		ValidTargets: Water
+
+^MG:
+	Inherits@1: ^BreakPointDefenseDrones
+	ReloadDelay: 20
+	Range: 4c0
+	Report: igiat1a.wav, igiat1b.wav, igiat1c.wav
+	InvalidTargets: Bridge, Wall, Fence, Tree
+	Projectile: InstantHit
+		Blockable: true
+	Warhead@1Dam: SpreadDamage
+		InvalidTargets: Bridge, Wall, Fence, Tree
+		Spread: 64
+		Damage: 1500
+		Versus:
+			None: 100
+			Flak: 90
+			Plate: 80
+			Light: 40
+			Medium: 25
+			Heavy: 25
+			Wood: 35
+			Steel: 25
+			Concrete: 30
+			Drone: 100
+			Rocket: 100
+		DamageTypes: Prone70Percent, TriggerProne, BulletDeath, NonTemporal
+	Warhead@2Eff: CreateEffect
+		Explosions: piffpiff
+		ImpactActors: false
+		ValidTargets: Ground, Water, Air
+
+^TeslaZap:
+	Inherits@1: ^BreakPointDefenseDrones
+	Range: 3c0
+	ReloadDelay: 60
+	Report: itesatta.wav
+	Projectile: TeslaZap
+		Duration: 6
+	Warhead@1Dam: SpreadDamage
+		Spread: 120
+		Damage: 5000
+		Versus:
+			None: 100
+			Flak: 100
+			Plate: 100
+			Light: 100
+			Medium: 100
+			Heavy: 100
+			Wood: 50
+			Steel: 85
+			Concrete: 40
+			Drone: 200
+			Rocket: 100
+		DamageTypes: ElectroDeath, SuppressTerrorDrone, NonTemporal
+	Warhead@2Eff: CreateEffect
+		Explosions: tesla_impact
+		ImpactActors: false
+		ValidTargets: Ground, Water, Air
+	Warhead@spark: FireShrapnel
+		Weapon: TeslaSpark
+		Amount: 6
+		AffectsParent: true
+
+^FireWeapon:
+	Inherits@1: ^BreakPointDefenseDrones
+	ReloadDelay: 65
+	Range: 5c0
+	InvalidTargets: Wall
+	Warhead@1Dam: SpreadDamage
+		InvalidTargets: Wall
+		Spread: 213
+		Damage: 15000
+		Versus:
+			None: 150
+			Flak: 150
+			Plate: 150
+			Light: 100
+			Medium: 15
+			Heavy: 15
+			Wood: 150
+			Steel: 35
+			Concrete: 60
+			Drone: 100
+			Rocket: 100
+		DamageTypes: Prone50Percent, TriggerProne, FlameDeath, NonTemporal
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Scorch
+		InvalidTargets: Structure, Barrel, Mine, Wall
+	Warhead@3Eff: CreateEffect
+		Explosions: largefire
+		ImpactActors: false
+
+^Debris:
+	Range: 3c512
+	Projectile: BulletAS
+		Speed: 125, 166
+		LaunchAngle: 70, 190
+		Image: debris
+		Sequences: small1
+	Warhead@Validation: TargetDamage
+
+^Gatling:
+	Inherits: ^MG
+	ReloadDelay: 16
+	Range: 7c0
+	Burst: 2
+	BurstDelays: 8
+	Report: bgatweaa.wav, bgatweab.wav, bgatweac.wav, bgatwead.wav
+	Projectile: InstantHit
+		Blockable: true
+	Warhead@1Dam: SpreadDamage
+		Damage: 1500
+		Versus:
+			None: 100
+			Flak: 90
+			Plate: 80
+			Light: 40
+			Medium: 20
+			Heavy: 20
+			Wood: 20
+			Steel: 15
+			Concrete: 15
+			Drone: 200
+			Rocket: 50
+		ValidTargets: Ground, Water, Air
+	Warhead@2Eff: CreateEffect
+		Explosions: piffpiff
+
+^Spark:
+	Range: 1c512
+	MinRange: 640
+	ReloadDelay: 1
+	Projectile: BulletAS
+		Speed: 62
+		LaunchAngle: 165, 215
+		Image: particles
+		Sequences: damagespark
+	Warhead@1Dam: SpreadDamage
+
+^SparkSpawner:
+	Range: 1
+	Projectile: InstantExplode
+	Warhead@TargetValidation: SpreadDamage
+	Warhead@op: FireShrapnel
+		Weapon: DamageSpark
+		AffectsParent: true
+
+^HologramSpawnerDefault:
+	Range: 5c0
+	Projectile: InstantHit
+	Warhead@2Eff: CreateEffect
+		Explosions: holosmoke1, holosmoke2, holosmoke3, holosmoke4
+		ExplosionPalette: cyanjascpal
+		ValidTargets: Ground, OreDrill, Water, Air
+
+TemporalExplode:
+	Warhead@1Eff: CreateEffect
+		Explosions: temporal_explosion
+		ValidTargets: Ground, Water, Air
+
+DroneSparkSpawner:
+	Inherits: ^SparkSpawner
+	ReloadDelay: 60
+	Warhead@op: FireShrapnel
+		Amount: 18
+
+DeathBombExplode:
+	Inherits: TerrorBomb
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: Ground, Water, Air
+
+SmallDebris:
+	Inherits: ^Debris
+	Projectile: BulletAS
+		Sequences: small1, small2, small3, small4, small5, small6, small7, small8, small9
+
+LargeDebris:
+	Inherits: ^Debris
+	Projectile: BulletAS
+		Sequences: large1, large2, large3, large4, large5, large6, large7, large8, large9, large10
+	Warhead@2Eff: CreateEffect
+		Explosions: tiny_bang
+		ImpactSounds: gexp07a.wav
+		InvalidTargets: Water
+		ValidTargets: Ground, Air
+	Warhead@3EffWater: CreateEffect
+		Explosions: small_watersplash
+		ImpactSounds: gexpwasa.wav
+		ValidTargets: Water
+
+UnitExplode:
+	Warhead@1Eff: CreateEffect
+		Explosions: large_twlt, large_bang, large_brnl, large_tumu, verylarge_clsn
+		ImpactSounds: gexp11a.wav, gexp14b.wav, gexp14c.wav, gexp14d.wav
+		ImpactActors: false
+		ValidTargets: Ground, Water, Air
+	Warhead@DebrisSpawn: FireShrapnel
+		Weapon: SmallDebris
+		Amount: 1,4
+		AffectsParent: true
+
+UnitExplodeSmall:
+	Inherits: UnitExplode
+	Warhead@1Eff: CreateEffect
+		Explosions: medium_brnl
+		ImpactSounds: gexp06a.wav, gexp07a.wav
+		ValidTargets: Ground, Water, Air
+	Warhead@3Smu: LeaveSmudge
+		SmudgeType: SmallCrater
+
+BuildingExplode:
+	Inherits: UnitExplodeSmall
+	Warhead@1Eff: CreateEffect
+		Explosions: large_twlt, large_bang, large_brnl, verylarge_clsn, large_tumu
+	Warhead@DebrisSpawn: FireShrapnel
+		Weapon: LargeDebris
+	Warhead@3Smu: LeaveSmudge
+		SmudgeType: MediumCrater, MediumScorch
+
+DemoTruckTargeting:
+	ValidTargets: DetonateAttack
+	Range: 2c0
+	Projectile: InstantHit
+	Warhead@1Dam: TargetDamage
+		ValidTargets: DetonateAttack
+	Warhead@3Smu: LeaveSmudge
+		SmudgeType: SmallCrater
+
+SealC4:
+	Inherits: TanyaC4
+	Warhead@1Dam: SpreadDamage
+		Damage: 40000
+		Versus:
+			Wood: 100
+			Steel: 100
+			Concrete: 75
+
+SealC4E:
+	Inherits: SealC4
+	Warhead@1Dam: SpreadDamage
+		Damage: 100000
+
+CommandoC4Attacher:
+	Inherits: IvanBombAttacher
+	ValidTargets: CommandoC4
+	InvalidTargets: Barrel, Mine
+	Report: iseaseta.wav
+	Warhead@1Att: AttachDelayedWeapon
+		Weapon: SEALC4
+		Type: CommandoC4
+		TriggerTime: 50
+
+CommandoC4AttacherE:
+	Inherits: CommandoC4Attacher
+	Warhead@1Att: AttachDelayedWeapon
+		Weapon: SEALC4E
+
+PsiWaveMastery:
+	Inherits: PsiWave
+	ValidTargets: Infantry, Vehicle, Ship, TerrorDrone
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: Infantry, Vehicle, Ship, TerrorDrone
+		Versus:
+			Light: 10
+			Medium: 10
+			Heavy: 10
+	-Warhead@2Dam:
+
+FlakTrackGun:
+	Inherits: ^Flak
+	Range: 5c0
+	ValidTargets: Ground, Water
+	Warhead@1Dam: SpreadDamage
+		Damage: 2500
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: SmallCrater
+
+FlakTrackGunE:
+	Inherits: FlakTrackGun
+	Burst: 2
+	Range: 6c0
+
+FlakTrackGunInsta:
+	Inherits: FlakTrackGun
+	-Projectile:
+	Projectile: InstantHit
+
+FlakTrackGunInstaE:
+	Inherits: FlakTrackGunE
+	-Projectile:
+	Projectile: InstantHit
+
+CloudDamage:
+	ReloadDelay: 7
+	Projectile: InstantExplode
+	Warhead@1Dam: SpreadDamage
+		Spread: 196
+		Damage: 400
+		DamageTypes: VirusDeath, NonTemporal
+		InvalidTargets: ImmuneToToxin
+		Versus:
+			None: 100
+			Flak: 100
+			Plate: 100
+			Light: 30
+			Medium: 15
+			Heavy: 15
+			Wood: 0
+			Steel: 0
+			Concrete: 0
+			Drone: 100
+			Rocket: 0
+
+TeslaFragment:
+	Inherits: TankBolt
+	Range: 3c0
+	ValidTargets: Infantry, Vehicle, TerrorDrone, Ship, Structure, Barrel, Mine, Wall
+	Warhead@1Dam: SpreadDamage
+		Damage: 3000
+		Versus:
+			None: 100
+			Flak: 100
+			Plate: 100
+
+TeslaFragmentCharged:
+	Inherits: TeslaFragment
+	Warhead@1Dis: GrantExternalCondition
+		Range: 0c512
+		Duration: 30
+		Condition: emp
+		ValidTargets: EMPulse
+		InvalidTargets: Structure
+
+TeslaSpark:
+	Inherits: ^Spark
+	Projectile: BulletAS
+		Palette: highlight
+
+20mmrapid:
+	Inherits: ^MG
+	ReloadDelay: 20
+	Range: 6c0
+	Report: vwaratta.wav, vwarattb.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 3000
+		Versus:
+			Medium: 20
+			Heavy: 20
+			Wood: 20
+			Steel: 20
+			Concrete: 15
+			Drone: 200
+
+20mmrapidE:
+	Inherits: 20mmrapid
+	ReloadDelay: 15
+	Warhead@1Dam: SpreadDamage
+		Damage: 5000
+	Warhead@2Eff: CreateEffect
+		Explosions: piffpiffred
+
+20mmrapidLine:
+	Inherits: ^LineProjectile
+	ReloadDelay: 20
+	Range: 6c0
+	ValidTargets: Ground, Water
+	InvalidTargets: Air
+	Warhead@Line: TargetDamage
+		ValidTargets: Ground, Water
+		InvalidTargets: Air
+
+20mmrapidLineE:
+	Inherits: 20mmrapidLine
+	ReloadDelay: 15
+	Projectile: BulletAS
+		ContrailStartColor: FF2200
+
+CruiserStrikeInit:
+	Projectile: InstantExplode
+	ReloadDelay: 1
+	#Warhead@1Eff: CreateEffect
+	#	Volume: 6
+	#	AudibleThroughFog: true
+	#	ImpactSounds: scruweaa.wav
+	#	ImpactActors: false
+	#	ValidTargets: Ground, Water, Air
+	Warhead@1Clu: FireCluster
+		Weapon: CruiserCloud
+		Dimensions: 7,7
+		Footprint: ____X__ ___X___ __X____ _X_____ X______ _______ _______
+		ValidTargets: Ground, Water, Air
+		Delay: 100
+	Warhead@2Clu: FireCluster
+		Weapon: CruiserCloud
+		Dimensions: 7,7
+		Footprint: _______ _______ ______X _____X_ ____X__ ___X___ __X____
+		ValidTargets: Ground, Water, Air
+		Delay: 115
+	Warhead@3Clu: FireCluster
+		Weapon: CruiserCloud
+		Dimensions: 7,7
+		Footprint: _______ _______ _______ _______ _______ ______X _____X_
+		ValidTargets: Ground, Water, Air
+		Delay: 130
+	Warhead@4Clu: FireCluster
+		Weapon: CruiserCloud
+		Dimensions: 7,7
+		Footprint: _X_____ X______ _______ _______ _______ _______ _______
+		ValidTargets: Ground, Water, Air
+		Delay: 145
+	Warhead@5Clu: FireCluster
+		Weapon: CruiserCloud
+		Dimensions: 7,7
+		Footprint: ______X _____X_ ____X__ ___X___ __X____ _X_____ X______
+		ValidTargets: Ground, Water, Air
+		Delay: 160
+	Warhead@6Clu: FireCluster
+		Weapon: CruiserCloud
+		Dimensions: 7,7
+		Footprint: _______ _______ _______ _______ ______X _____X_ ____X__
+		ValidTargets: Ground, Water, Air
+		Delay: 175
+	Warhead@7Clu: FireCluster
+		Weapon: CruiserCloud
+		Dimensions: 7,7
+		Footprint: __X____ _X_____ X______ _______ _______ _______ _______
+		ValidTargets: Ground, Water, Air
+		Delay: 190
+
+CruiserCloud:
+	ReloadDelay: 120
+	Range: 7c0
+	Projectile: AthenaProjectile
+		Altitude: 25c0
+	Warhead@1: FireFragment
+		UseZOffsetAsAbsoluteHeight: true
+		Weapon: CruiserStrike
+		ValidTargets: Ground, Water, Air
+		Delay: 15
+	Warhead@TargetValidation: SpreadDamage
+
+CruiserStrike:
+	Inherits: ^LargeBullet
+	Range: 2c0
+	ReloadDelay: 10
+	Report: bgraatta.wav
+	Projectile: BulletAS
+		Image: 160mm
+		Speed: 768
+		Blockable: false
+		ContrailLength: 14
+		ContrailWidth: 24
+		Shadow: true
+		Palette: ra
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c512
+		Falloff: 100, 75, 50, 25, 0
+		Damage: 7500
+		Versus:
+			None: 150
+			Flak: 150
+			Plate: 150
+			Light: 150
+			Medium: 150
+			Heavy: 150
+			Wood: 100
+			Steel: 200
+			Concrete: 50
+			Drone: 100
+			Rocket: 100
+	Warhead@2Eff: CreateEffect
+		Explosions: large_twlt
+		ImpactSounds: gexpapoa.wav
+	Warhead@3Smu: LeaveSmudge
+		SmudgeType: MediumCrater, MediumScorch
+		InvalidTargets: Vehicle, Building, Wall
+
+V3StormInit:
+	Projectile: InstantExplode
+	ReloadDelay: 1
+	#Warhead@1Eff: CreateEffect
+	#	Volume: 4
+	#	AudibleThroughFog: true
+	#	ImpactSounds: sv3sweaa.wav
+	#	ValidTargets: Ground, Water, Air
+	Warhead@1Clu: FireCluster
+		Weapon: V3StormCloud
+		Dimensions: 7,7
+		Footprint: ______X __X____ _______ _______ _______ ____X__ _______
+		ValidTargets: Ground, Water, Air
+		Delay: 100
+	Warhead@2Clu: FireCluster
+		Weapon: V3StormCloud
+		Dimensions: 7,7
+		Footprint: _______ _______ _____X_ _______ _X_____ _______ ______X
+		ValidTargets: Ground, Water, Air
+		Delay: 115
+	Warhead@3Clu: FireCluster
+		Weapon: V3StormCloud
+		Dimensions: 7,7
+		Footprint: _______ _______ _______ ___X___ _______ _______ _______
+		ValidTargets: Ground, Water, Air
+		Delay: 130
+	Warhead@4Clu: FireCluster
+		Weapon: V3StormCloud
+		Dimensions: 7,7
+		Footprint: _______ _______ _X_____ _______ _____X_ _______ X______
+		ValidTargets: Ground, Water, Air
+		Delay: 145
+	Warhead@5Clu: FireCluster
+		Weapon: V3StormCloud
+		Dimensions: 7,7
+		Footprint: X______ ____X__ _______ _______ _______ __X____ _______
+		ValidTargets: Ground, Water, Air
+		Delay: 160
+	Warhead@6Clu: FireCluster
+		Weapon: V3StormCloud
+		Dimensions: 7,7
+		Footprint: _______ _______ _______ ___X___ _______ _______ _______
+		ValidTargets: Ground, Water, Air
+		Delay: 175
+
+V3StormCloud:
+	ReloadDelay: 120
+	Range: 7c0
+	Projectile: AthenaProjectile
+		Altitude: 25c0
+	Warhead@1: FireFragment
+		UseZOffsetAsAbsoluteHeight: true
+		Weapon: V3StormStrike
+		ValidTargets: Air, Ground, Water
+		Delay: 15
+	Warhead@TargetValidation: SpreadDamage
+
+V3StormStrike:
+	Inherits: ^LargeBullet
+	Range: 2c0
+	ReloadDelay: 10
+	Report: vv3latta.wav, vv3lattb.wav
+	Projectile: BulletAS
+		Image: radiationmissile
+		Sequences: down
+		Palette: player
+		IsPlayerPalette: true
+		Shadow: false
+		Speed: 640
+		TrailImage: smokeyv3
+		TrailInterval: 1
+		Blockable: false
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c768
+		Falloff: 100, 75, 50, 25, 0
+		Damage: 15000
+		Versus:
+			None: 100
+			Flak: 100
+			Plate: 100
+			Light: 100
+			Medium: 100
+			Heavy: 100
+			Wood: 100
+			Steel: 100
+			Concrete: 40
+			Drone: 100
+			Rocket: 100
+	Warhead@2Eff: CreateEffect
+		Explosions: terrorist_explosion
+		ImpactSounds: gexpapoa.wav
+	Warhead@3EffWater: CreateEffect
+		Explosions: large_watersplash
+		ImpactSounds: gexpwala.wav
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: MediumCrater, MediumScorch
+		InvalidTargets: Vehicle, Building, Wall
+
+OrbitalDropInit:
+	Projectile: InstantExplode
+	ReloadDelay: 1
+	#Warhead@1Eff: CreateEffect
+	#	Volume: 6
+	#	AudibleThroughFog: true
+	#	ImpactSounds: sorbsata.wav, sorbsatb.wav
+	#	ImpactActors: false
+	#	ValidTargets: Ground, Water, Air
+	Warhead@1Clu: FireCluster
+		Weapon: OrbitalDrop
+		Dimensions: 7,7
+		Footprint: _______ ___X___ _______ _X___X_ _______ ___X___ _______
+		ValidTargets: Ground, Water, Air
+		Delay: 100
+	Warhead@2Clu: FireCluster
+		Weapon: OrbitalDrop
+		Dimensions: 7,7
+		Footprint: _______ _X___X_ _______ _______ _______ _X___X_ _______
+		ValidTargets: Ground, Water, Air
+		Delay: 115
+	Warhead@3Clu: FireCluster
+		Weapon: OrbitalDrop
+		Dimensions: 7,7
+		Footprint: _______ _______ ___X___ __X_X__ ___X___ _______ _______
+		ValidTargets: Ground, Water, Air
+		Delay: 130
+	Warhead@4Clu: FireCluster
+		Weapon: OrbitalDrop
+		Dimensions: 7,7
+		Footprint: X_____X _______ _______ _______ _______ _______ X_____X
+		ValidTargets: Ground, Water, Air
+		Delay: 145
+	Warhead@5Clu: FireCluster
+		Weapon: OrbitalDrop
+		Dimensions: 7,7
+		Footprint: _______ _______ __X_X__ _______ __X_X__ _______ _______
+		ValidTargets: Ground, Water, Air
+		Delay: 160
+	Warhead@6Clu: FireCluster
+		Weapon: OrbitalDrop
+		Dimensions: 7,7
+		Footprint: ___X___ _______ _______ X_____X _______ _______ ___X___
+		ValidTargets: Ground, Water, Air
+		Delay: 175
+
+OrbitalCloud:
+	ReloadDelay: 120
+	Range: 7c0
+	Projectile: AthenaProjectile
+		Altitude: 25c0
+	Warhead@1: FireFragment
+		UseZOffsetAsAbsoluteHeight: true
+		Weapon: OrbitalDrop
+		ValidTargets: Ground, Water, Air
+		Delay: 15
+	Warhead@TargetValidation: SpreadDamage
+
+OrbitalDrop:
+	Inherits: ^LargeBullet
+	Range: 7c0
+	ReloadDelay: 10
+	Report: sorbfira.wav, sorbfirb.wav, sorbfirc.wav, sorbfird.wav, sorbfire.wav, sorbfirf.wav, sorbfirg.wav, sorbmeta.wav, sorbmetb.wav, sorbmetc.wav, sorbmetd.wav, sorbmete.wav, sorbmetf.wav, sorbmetg.wav, sorbmeth.wav
+	SoundVolume: 5
+	Projectile: BulletAS
+		Image: debris
+		Sequences: meteor2, meteor2, meteor2, large1, large2, large3, large4, large5, large6, large7, large8, large9, large10, rock1, rock2, rock3
+		Speed: 640
+		TrailImage: meteortrail
+		TrailPalette: tseffect50alpha
+		TrailInterval: 1
+		Blockable: false
+		ContrailLength: 18
+		ContrailStartColor: 8888FF55
+		ContrailWidth: 250
+		ContrailDelay: 10
+		Shadow: true
+		Palette: effect
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c512
+		Falloff: 100, 75, 50, 25, 0
+		Damage: 8500
+		Versus:
+			None: 150
+			Flak: 150
+			Plate: 150
+			Light: 150
+			Medium: 150
+			Heavy: 150
+			Wood: 100
+			Steel: 200
+			Concrete: 50
+			Drone: 100
+			Rocket: 100
+	Warhead@2Eff: CreateEffect
+		Explosions: large_twlt
+		ImpactSounds: gexpapoa.wav
+	Warhead@3Smu: LeaveSmudge
+		SmudgeType: MediumCrater, MediumScorch
+		InvalidTargets: Vehicle, Building, Wall
+
+MummyPunch:
+	Inherits: Punch
+	Report: gmumatta.wav, gmumattb.wav, gmumattc.wav
+
+MummySmash:
+	Inherits: Smash
+	Report: gmumatta.wav, gmumattb.wav, gmumattc.wav
+
+OutpostMissile:
+	Inherits: HoverMissile
+	ReloadDelay: 50
+	Burst: 4
+	Range: 12c0
+	Report: vifvatta.wav
+	ValidTargets: Ground, Water, Air
+	Projectile: Missile
+		Speed: 512
+		Arm: 2
+		RangeLimit: 18c512
+		ContrailStartColor: D8D8FF
+		MinimumLaunchAngle: 255
+		MaximumLaunchAngle: 255
+		MaximumLaunchSpeed: 384
+		MinimumLaunchSpeed: 384
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c128
+		Falloff: 100, 83, 67, 50, 0
+		Damage: 3000
+		ValidTargets: Ground, Water, Air
+		Versus:
+			None: 80
+			Flak: 80
+			Plate: 70
+			Light: 70
+			Medium: 50
+			Heavy: 50
+			Wood: 75
+			Steel: 40
+			Concrete: 65
+			Drone: 20
+			Rocket: 200
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: SmallCrater
+
+ToxinBomb:
+	Inherits@1: ^BreakPointDefenseDrones
+	ReloadDelay: 7
+	Range: 3c0
+	Report: vkiratta.wav
+	Projectile: GravityBomb
+		Velocity: 0, 0, -25
+		Acceleration: 0, 0, -10
+		Image: 160mm
+		Shadow: true
+		Palette: ra
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c768
+		Damage: 15000
+		Versus:
+			None: 150
+			Flak: 150
+			Plate: 150
+			Light: 100
+			Medium: 100
+			Heavy: 100
+			Wood: 40
+			Steel: 100
+			Concrete: 40
+			Drone: 100
+			Rocket: 100
+		DamageTypes: Prone50Percent, TriggerProne, VirusDeath, NonTemporal
+	Warhead@2Shr: FireShrapnel
+		Weapon: ToxinSplash
+		AffectsParent: true
+		Amount: 3
+	Warhead@3Smu: LeaveSmudge
+		SmudgeType: Crater
+		InvalidTargets: Vehicle, TerrorDrone, Structure, Barrel, Mine, Wall, Husk, Trees
+	Warhead@4Eff: CreateEffect
+		Explosions: medium_toxin_explosion
+		ExplosionPalette: player
+		ImpactSounds: gexpapoa.wav
+		ValidTargets: Ground, Air
+	Warhead@4EffWater: CreateEffect
+		Explosions: large_watersplash
+		ImpactSounds: gexpwasa.wav
+		ValidTargets: Water
+
+ToxinSplash:
+	Inherits@1: ^BreakPointDefenseDrones
+	Range: 1c512
+	MinRange: 0c640
+	ReloadDelay: 1
+	Projectile: BulletAS
+		Speed: 32
+		LaunchAngle: 165, 215
+		Image: 120mm
+		Shadow: true
+		Palette: ra
+	Warhead@1Dam: SpreadDamage
+		Spread: 1c0
+		Damage: 2000
+		Versus:
+			None: 150
+			Flak: 150
+			Plate: 150
+			Light: 100
+			Medium: 100
+			Heavy: 100
+			Wood: 40
+			Steel: 100
+			Concrete: 40
+			Drone: 100
+			Rocket: 100
+		DamageTypes: Prone50Percent, TriggerProne, VirusDeath, NonTemporal
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Crater
+		InvalidTargets: Vehicle, TerrorDrone, Structure, Barrel, Mine, Wall, Husk, Trees
+	Warhead@3Eff: CreateEffect
+		Explosions: small_toxin_explosion
+		ExplosionPalette: player
+		ImpactSounds: gexpapoa.wav
+		ValidTargets: Ground, Air
+	Warhead@3EffWater: CreateEffect
+		Explosions: large_watersplash
+		ImpactSounds: gexpwasa.wav
+		ValidTargets: Water
+	Warhead@4Par: SpawnSmokeParticle
+		ValidTargets: Ground, Air, Water
+		Image: txgasg
+		Sequences: idle
+		Palette: effect
+		Weapon: CloudDamage
+		Duration: 250
+		Speed: 0, 25
+		TurnRate: 10

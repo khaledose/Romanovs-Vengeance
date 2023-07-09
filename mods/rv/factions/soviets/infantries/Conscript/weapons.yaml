@@ -1,0 +1,172 @@
+M1Carbine:
+	Inherits: ^MG
+	Range: 4c0
+	ReloadDelay: 25
+	Warhead@1Dam: SpreadDamage
+		Spread: 64
+		Damage: 1500
+	Report: iconatta.wav, iconattb.wav, iconattc.wav, iconattd.wav, iconatte.wav
+
+M1CarbineE:
+	Inherits: M1Carbine
+	ReloadDelay: 20
+	Range: 5c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 2000
+	Warhead@2Eff: CreateEffect
+		Explosions: piffpiffred
+
+UCM1Carbine:
+	Inherits: M1Carbine
+	Range: 7c0
+	Projectile: InstantHit
+		Blockable: false
+
+UCM1CarbineE:
+	Inherits: M1CarbineE
+	Range: 7c0
+	Projectile: InstantHit
+		Blockable: false
+
+M1CarbineLine:
+	Inherits: ^LineProjectile
+	ReloadDelay: 25
+	Range: 4c0
+	ValidTargets: Ground, Water
+	InvalidTargets: Air
+	Warhead@Line: TargetDamage
+		ValidTargets: Ground, Water
+		InvalidTargets: Air
+
+M1CarbineLineE:
+	Inherits: M1CarbineLine
+	ReloadDelay: 20
+	Range: 5c0
+	Projectile: BulletAS
+		ContrailStartColor: FF2200
+
+UCM1CarbineLine:
+	Inherits: M1CarbineLine
+	Range: 7c0
+	Projectile: BulletAS
+		Blockable: false
+
+UCM1CarbineLineE:
+	Inherits: M1CarbineLineE
+	Range: 7c0
+	Projectile: BulletAS
+		Blockable: false
+
+Flamer:
+	Inherits: ^FireWeapon
+	ReloadDelay: 50
+	Range: 5c0
+	Burst: 5
+	BurstDelays: 0
+	Report: flamtnk1.aud
+	Projectile: BulletAS
+		Speed: 250
+		Image: fireball
+		TrailImage: fireball
+		TrailSequences: trailer
+		TrailInterval: 1
+		LaunchAngle: 62
+		Inaccuracy: 0c512
+	Warhead@1Dam: SpreadDamage
+		Spread: 341
+		Damage: 1000
+	Warhead@1Gar: OpenToppedDamage
+		ValidTargets: GarrisonedStructure
+		InvalidTargets: IronCurtained, ForceShielded
+		Spread: 341
+		Damage: 1000
+		Amount: 3
+		DamageTypes: FlameDeath, NonTemporal
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: SmallScorch
+	Warhead@3Eff: CreateEffect
+		ImpactSounds: firebl3.aud
+
+FlamerE:
+	Inherits: Flamer
+	Burst: 10
+	Warhead@1Dam: SpreadDamage
+		Damage: 1400
+	Warhead@1Gar: OpenToppedDamage
+		Damage: 1400
+
+MolotovCocktail:
+	Inherits: Flamer
+	Burst: 1
+	Range: 4c0
+	ReloadDelay: 100
+	Report: grenade1.aud
+	ValidTargets: Structure, Tree, Barrel, Mine
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: Structure, Tree, Barrel, Mine
+
+MolotovCocktailE:
+	Inherits: FlamerE
+	Burst: 1
+	Range: 5c0
+	ReloadDelay: 80
+	Report: grenade1.aud
+	ValidTargets: Structure, Tree, Barrel, Mine
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: Structure, Tree, Barrel, Mine
+
+UCMolotovCocktail:
+	Inherits: MolotovCocktail
+	Range: 7c0
+	Projectile: BulletAS
+		Blockable: false
+
+UCMolotovCocktailE:
+	Inherits: MolotovCocktailE
+	Range: 7c0
+	Projectile: BulletAS
+		Blockable: false
+
+SmokeGrenade:
+	Inherits: MolotovCocktail
+	ValidTargets: Ground, Water
+	InvalidTargets: NonGarrisonableStructure, Wall, Fence, Tree, Bridge
+	Projectile: BulletAS
+		Image: smokegren
+		Palette: effect75alpha
+		TrailPalette: effect75alpha
+		TrailImage: smokegren
+	-Warhead@1Dam:
+	Warhead@1Con: GrantExternalCondition
+		Condition: smoked
+		Range: 0c512
+		Duration: 75
+		ValidTargets: Ground, Water
+		ValidRelationships: Neutral, Enemy
+	Warhead@1Gar: OpenToppedDamage
+		DamageTypes: BulletDeath, NonTemporal
+	-Warhead@2Smu:
+	Warhead@3Eff: CreateEffect
+		Image: largesmoke
+		Explosions: idle
+		-ImpactSounds:
+
+SmokeGrenadeE:
+	Inherits: SmokeGrenade
+	Range: 5c0
+	ReloadDelay: 80
+	Warhead@1Gar: OpenToppedDamage
+		Damage: 1400
+
+UCSmokeGrenade:
+	Inherits: SmokeGrenade
+	Range: 7c0
+	Projectile: BulletAS
+		Blockable: false
+
+UCSmokeGrenadeE:
+	Inherits: SmokeGrenadeE
+	Range: 7c0
+	Projectile: BulletAS
+		Blockable: false
+

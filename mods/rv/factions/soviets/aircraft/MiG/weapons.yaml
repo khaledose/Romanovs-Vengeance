@@ -1,0 +1,103 @@
+Maverick2:
+	Inherits: Maverick
+	Report: vmigatta.wav
+	Projectile: Missile
+		Image: ra1patriot
+	Warhead@1Dam: SpreadDamage
+		Damage: 22500
+	Warhead@1Gar: OpenToppedDamage
+		Damage: 22500
+	Warhead@2Eff: CreateEffect
+		Explosions: ra1_atomic
+		ExplosionPalette: ra
+		ImpactSounds: gexpbara.wav, gexpbarb.wav, gexpbarc.wav
+
+Maverick2E:
+	Inherits: Maverick2
+	Range: 7c0
+	ReloadDelay: 10
+	Projectile: Missile
+		RangeLimit: 22c204
+		ContrailStartColor: EA0000
+	Warhead@1Dam: SpreadDamage
+		Damage: 35000
+	Warhead@1Gar: OpenToppedDamage
+		Damage: 35000
+
+Maverick2AA:
+	Inherits: Maverick2
+	Range: 8c0
+	ValidTargets: Air
+	Projectile: Missile
+		Speed: 640
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: Air
+
+Maverick2AAE:
+	Inherits: Maverick2E
+	Range: 9c0
+	ValidTargets: Air
+	Projectile: Missile
+		Speed: 640
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: Air
+
+Maverick2Cryo:
+	Inherits: Maverick2
+	Warhead@4Con: GrantExternalCondition
+		Range: 256
+		Duration: 500
+		Condition: cryo
+		ValidTargets: Ground, Water
+		InvalidTargets: IronCurtained, ForceShielded
+
+Maverick2CryoE:
+	Inherits: Maverick2E
+	Warhead@4Con: GrantExternalCondition
+		Range: 256
+		Duration: 500
+		Condition: cryo
+		ValidTargets: Ground, Water
+		InvalidTargets: IronCurtained, ForceShielded
+
+Maverick2AACryo:
+	Inherits: Maverick2AA
+	Warhead@4Con: GrantExternalCondition
+		Range: 256
+		Duration: 500
+		Condition: cryo
+		ValidTargets: Air
+		InvalidTargets: IronCurtained, ForceShielded
+
+Maverick2AACryoE:
+	Inherits: Maverick2AAE
+	Warhead@4Con: GrantExternalCondition
+		Range: 256
+		Duration: 500
+		Condition: cryo
+		ValidTargets: Air
+		InvalidTargets: IronCurtained, ForceShielded
+
+Maverick3:
+	Inherits: Maverick
+	Report: vmigatta.wav
+	Projectile: Missile
+		Image: ra1patriot
+	Warhead@1Dam: SpreadDamage
+		Damage: 30000
+		-InvalidTargets:
+		Versus:
+			Wood: 100
+			Steel: 100
+			Concrete: 100
+	-Warhead@1Gar:
+	Warhead@2Eff: CreateEffect
+		Explosions: ra1_atomic
+		ExplosionPalette: ra
+		ImpactSounds: gexpbara.wav, gexpbarb.wav, gexpbarc.wav
+
+Maverick3E:
+	Inherits: Maverick3
+	Range: 7c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 100000

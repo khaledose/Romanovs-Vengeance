@@ -1,0 +1,33 @@
+demobomb:
+	Inherits: NukePayload
+	ValidTargets: Ground, Water
+	Warhead@1Dam_impact: SpreadDamage
+		Spread: 2c0
+		Damage: 120000 # 30000
+		Falloff: 100, 70, 40, 10, 0
+		ValidTargets: Ground, Water
+		Versus:
+			Light: 100
+			Medium: 50
+			Heavy: 50
+			Wood: 80
+			Steel: 150
+			Concrete: 80 # 10
+	Warhead@2Eff_impact: CreateEffect
+		Explosions: demotruck_explosion
+		ImpactSounds: vdemdiea.wav
+	Warhead@3Radiation: CreateTintedCells
+		Spread: 6c0
+		Level: 100
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: MediumCrater, MediumScorch
+
+demobombOrange:
+	Inherits: demobomb
+	Warhead@1Dam_impact: SpreadDamage
+		DamageTypes: OrangeRadiationDeath, SuppressTerrorDrone, NonTemporal
+	Warhead@2Eff_impact: CreateEffect
+		Explosions: demotruck_explosion_orange
+	Warhead@3Radiation: CreateTintedCells
+		LayerName: radioactivityorange
+

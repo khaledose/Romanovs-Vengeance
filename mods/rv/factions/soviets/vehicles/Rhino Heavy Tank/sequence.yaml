@@ -1,0 +1,4 @@
+htnk:
+	Inherits@MUZZLE: ^WithCannonMuzzle
+	icon:
+		Filename: cameo|htnkicon.shp

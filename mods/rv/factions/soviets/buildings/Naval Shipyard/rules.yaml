@@ -1,0 +1,56 @@
+nayard:
+	Inherits: ^Shipyard
+	Buildable:
+		Queue: Building.Shared, Building.Soviets
+		Prerequisites: ~building.soviets, power, refinery, ~techlevel.1
+		Description: Produces Soviet ships, submarines, and other naval units.\n\nAbilities:\n- Comes with 3 repair drones.\n\n  Can only be placed on water.
+	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@ship.soviets:
+		Prerequisite: ship.soviets
+		Factions: america, france, england, germany, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, russia, iraq, vietnam, cuba, libya, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon
+	ProvidesPrerequisite@ship.soviets:
+		Prerequisite: ship.soviets
+	ProvidesPrerequisite@vehicleorship.soviets:
+		Prerequisite: vehicleorship.soviets
+	Production:
+		Produces: Ship.Soviets
+	ProductionQueue:
+		Type: Ship.Soviets
+		DisplayOrder: 22
+		Factions: america, france, england, germany, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, russia, iraq, vietnam, cuba, libya, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon
+	ProductionBar:
+		ProductionType: Ship.Soviets
+	WithIdleOverlay@lights:
+		Sequence: idle-lights
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete
+	AirstrikePower@navalmines:
+		OrderName: SovietNavalMines
+		PauseOnCondition: disabled || chronodisable
+		Icons:
+			1: navalmines
+		Prerequisites:
+			1: disabled # nayard
+		ChargeInterval: 3000
+		Names:
+			1: Naval Mines
+		Descriptions:
+			1: A Cargo plane drops 5 naval mines\nanywhere on the map.
+		SelectTargetSpeechNotification: SelectTarget
+		SelectTargetTextNotification: Select target.
+		UnitTypes:
+			1: pdplane.naval_mines
+		SquadSizes:
+			1: 1
+		QuantizedFacings: 8
+		CameraActor: camera.5c0
+		DisplayBeacon: True
+		BeaconPosters:
+			1: nmineicon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: swdirection
+		DirectionArrowPalette: mouse
+	IsometricSelectable:
+		DecorationHeight: 120

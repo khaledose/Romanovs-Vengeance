@@ -1,0 +1,58 @@
+gatech:
+	Defaults:
+		Offset: -15, -40
+	idle:
+		Filename: ggtech.shp
+		TilesetFilenames:
+			SNOW: gatech.shp
+			SIMPLETERRAIN: gttech.shp
+		ShadowStart: 3
+	damaged-idle:
+		Filename: ggtech.shp
+		TilesetFilenames:
+			SNOW: gatech.shp
+			SIMPLETERRAIN: gttech.shp
+		Start: 1
+		ShadowStart: 4
+	idle-lights:
+		Filename: ggtech_a.shp
+		TilesetFilenames:
+			SNOW: gatech_a.shp
+			SIMPLETERRAIN: gttech_a.shp
+		Length: 12
+		ShadowStart: 24
+	damaged-idle-ights:
+		Filename: ggtech_a.shp
+		TilesetFilenames:
+			SNOW: gatech_a.shp
+			SIMPLETERRAIN: gttech_a.shp
+		Start: 12
+		Length: 12
+		ShadowStart: 36
+	idle-waves:
+		Filename: bits/structures/water/ggtech_w.shp
+		Tick: 200
+		ZOffset: -1c0
+	make:
+		Filename: gttechmk.shp
+		TilesetFilenames:
+			SNOW: gatechmk.shp
+			URBAN: gutechmk.shp
+			NEWURBAN: gntechmk.shp
+			DESERT: gdtechmk.shp
+			LUNAR: gltechmk.shp
+			DUNE: gdtechmk.shp
+		Length: 25
+		ShadowStart: 25
+	icon:
+		Filename: cameo|techicon.shp
+		Offset: 0,0
+
+gatecb:
+	Inherits: gatech
+	Defaults:
+		FlipX: true
+		Offset: 15, -40
+	icon:
+		Filename: cameo|techicon.shp
+		FlipX: false

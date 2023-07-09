@@ -1,0 +1,123 @@
+gaairc:
+	Defaults:
+		Offset: -14, -38
+	idle:
+		Filename: ggairc.shp
+		TilesetFilenames:
+			SNOW: gaairc.shp
+			SIMPLETERRAIN: gtairc.shp
+		Length: 1
+	damaged-idle:
+		Filename: ggairc.shp
+		TilesetFilenames:
+			SNOW: gaairc.shp
+			SIMPLETERRAIN: gtairc.shp
+		Start: 1
+		Length: 2
+	idle-bottom:
+		Filename: ggaircbb.shp
+		TilesetFilenames:
+			SNOW: gaaircbb.shp
+			SIMPLETERRAIN: gtaircbb.shp
+		Length: 1
+		ZOffset: -512
+	damaged-idle-bottom:
+		Filename: ggaircbb.shp
+		TilesetFilenames:
+			SNOW: gaaircbb.shp
+			SIMPLETERRAIN: gtaircbb.shp
+		Start: 1
+		Length: 1
+		ZOffset: -512
+	idle-pad-lights:
+		Filename: ggairc_a.shp
+		TilesetFilenames:
+			SNOW: gaairc_a.shp
+			SIMPLETERRAIN: gtairc_a.shp
+		Length: 4
+		Tick: 120
+		ZOffset: -512
+	damaged-idle-pad-lights:
+		Filename: ggairc_a.shp
+		TilesetFilenames:
+			SNOW: gaairc_a.shp
+			SIMPLETERRAIN: gtairc_a.shp
+		Start: 5
+		Length: 4
+		Tick: 120
+		ZOffset: -512
+	idle-mid:
+		Filename: ggairc_b1.shp
+		TilesetFilenames:
+			SNOW: gaairc_b1.shp
+			SIMPLETERRAIN: gtairc_b1.shp
+		Length: 6
+		Tick: 120
+	damage-idle-mid:
+		Filename: ggairc_b1.shp
+		TilesetFilenames:
+			SNOW: gaairc_b1.shp
+			SIMPLETERRAIN: gtairc_b1.shp
+		Start: 7
+		Length: 6
+		Tick: 120
+	idle-bottom-lights:
+		Filename: ggairc_b2.shp
+		TilesetFilenames:
+			SNOW: gaairc_b2.shp
+			SIMPLETERRAIN: gtairc_b2.shp
+		Length: 6
+		Tick: 120
+		ZOffset: -512
+	damage-bottom-lights:
+		Filename: ggairc_b2.shp
+		TilesetFilenames:
+			SNOW: gaairc_b2.shp
+			SIMPLETERRAIN: gtairc_b2.shp
+		Start: 7
+		Length: 6
+		Tick: 120
+		ZOffset: -512
+	idle-dish:
+		Filename: ggairc_c.shp
+		TilesetFilenames:
+			SNOW: gaairc_c.shp
+			SIMPLETERRAIN: gtairc_c.shp
+		Length: 16
+		ShadowStart: 16
+		Tick: 320
+	idle-waves:
+		Filename: bits/structures/water/ggairc_w.shp
+		Tick: 200
+		ZOffset: -1c0
+	damaged-idle-waves:
+		Filename: bits/structures/water/ggairc_w.shp
+		Start: 1
+		Tick: 200
+		ZOffset: -1c0
+	make:
+		Filename: gtaircmk.shp
+		TilesetFilenames:
+			SNOW: gaaircmk.shp
+			URBAN: guaircmk.shp
+			NEWURBAN: gnaircmk.shp
+			DESERT: gdaircmk.shp
+			LUNAR: glaircmk.shp
+			DUNE: gdaircmk.shp
+		Length: 25
+		ShadowStart: 25
+	active:
+		Filename: dot.shp
+		ZOffset: -9999
+	icon:
+		Filename: cameo|heliicon.shp
+		Offset: 0,0
+
+gaairb:
+	Inherits: gaairc
+	Defaults:
+		FlipX: true
+		Offset: 14, -38
+	icon:
+		Filename: cameo|heliicon.shp
+		FlipX: false

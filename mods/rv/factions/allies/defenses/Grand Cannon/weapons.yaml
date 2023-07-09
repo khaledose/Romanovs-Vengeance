@@ -1,0 +1,34 @@
+GrandCannonWeapon:
+	Inherits: ^LargeBullet
+	ReloadDelay: 100
+	Report: bgraatta.wav
+	Range: 15c0
+	MinRange: 4c0
+	Projectile: BulletAS
+		Image: 160mm
+		Blockable: false
+		Speed: 1024
+		ContrailLength: 10
+		ContrailStartColor: FFFFFF
+		ContrailWidth: 0c48
+		ContrailWidthFadeRate: 1
+	Warhead@1Dam: SpreadDamage
+		Damage: 15000
+		Spread: 0c512
+		Falloff: 100, 73, 47, 20, 0
+		Versus:
+			None: 100
+			Flak: 100
+			Plate: 100
+			Light: 100
+			Medium: 100
+			Heavy: 100
+			Wood: 100
+			Steel: 100
+			Concrete: 90
+			Drone: 100
+			Rocket: 100
+	Warhead@2Eff: CreateEffect
+		Explosions: medium_explosion
+	Warhead@3Smu: LeaveSmudge
+		SmudgeType: MediumCrater, MediumScorch

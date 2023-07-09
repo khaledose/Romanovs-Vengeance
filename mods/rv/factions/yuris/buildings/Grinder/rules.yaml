@@ -1,0 +1,50 @@
+yagrnd:
+	Inherits: ^BaseBuilding
+	Inherits@MC: ^MindControllableBuilding
+	Inherits@SHAPE: ^3x3Shape
+	Buildable:
+		Queue: Building.Shared, Building.Yuri
+		BuildPaletteOrder: 110
+		Prerequisites: ~building.yuri, yaweap, yapsis, ~techlevel.1
+		Description: Converts Infantry and Vehicles back to credits.
+		BuildDuration: 125
+		BuildDurationModifier: 100
+	Health:
+		HP: 90000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 8c0
+	Valued:
+		Cost: 600
+	Tooltip:
+	Tooltip@NoRow:
+		Name: Grinder
+	Building:
+		Footprint: xxx xxx xxx
+		Dimensions: 3,3
+	RevealsShroud:
+		Range: 6c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 6c0
+	ProvidesPrerequisite@default:
+	ProvidesPrerequisite@repairpad:
+		Prerequisite: repairpad
+	AcceptsDeliveredCash:
+	WithAcceptDeliveredCashAnimation:
+		Sequence: grind
+	WithAcceptDeliveredCashSound:
+		Sound: bgrinda.wav
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
+	Power:
+		Amount: -50
+		RequiresCondition: !chronodisable
+	IsometricSelectable:
+		DecorationHeight: 75
+	Voiced:
+		VoiceSet: GrinderVoice
+		Volume: 0.8
+

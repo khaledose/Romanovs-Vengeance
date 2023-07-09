@@ -1,0 +1,34 @@
+AmericanParaDropSpecial:
+	ParatroopersPower@paratroopers:
+		OrderName: AmericanParatroopers
+		PauseOnCondition: disabled || chronodisable
+		Prerequisites:
+			1: radar.america
+		Icons:
+			1: paradrop
+		Cursor: praradrop
+		ChargeInterval: 4500
+		Names:
+			1: Airborne
+		Descriptions:
+			1: 2 Cargo Planes drop 5 GIs and 5 Guardian GIs\nanywhere on the map.
+		SelectTargetSpeechNotification: SelectTarget
+		SelectTargetTextNotification: Select target.
+		EndChargeSpeechNotification: ParatroopersReady
+		EndChargeTextNotification: Paratroopers ready.
+		DropItems:
+			1: e1,e1,e1,e1,e1,e1,e1,e1
+		SquadSizes:
+			1: 1
+		QuantizedFacings: 8
+		UnitTypes:
+			1: pdplane
+		CameraActor: camera
+		DisplayBeacon: True
+		BeaconPosters:
+			1: paraicon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: swdirection
+		DirectionArrowPalette: mouse
