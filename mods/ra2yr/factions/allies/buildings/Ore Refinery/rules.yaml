@@ -1,0 +1,60 @@
+garefn:
+	Inherits: ^Refinery
+	Inherits@MC: ^MindControllableBuilding
+	Inherits@SHAPE: ^NormalRefineryShape
+	Buildable:
+		Queue: Building.Shared, Building.Allies
+		Prerequisites: ~building.allies, gapowr, ~!global-megawealth, ~techlevel.1, ~AIantiRush
+	IsometricSelectable:
+		DecorationHeight: 60
+	Power:
+		Amount: -50
+	Health:
+		HP: 100000
+	Armor:
+		Type: Wood
+	Valued:
+		Cost: 2000
+	CustomSellValue:
+		Value: 300
+	RevealsShroud:
+		Range: 6c0
+	Tooltip:
+		Name: Allied Ore Refinery
+	Tooltip@NoRow:
+		Name: Allied Ore Refinery
+	FreeActor:
+		Actor: cmin
+		SpawnOffset: 3,1
+		Facing: 640
+	WithDockedOverlay:
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete
+	WithIdleOverlay@bib:
+		Sequence: idle-bib
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete
+	WithIdleOverlay@drill:
+		Sequence: idle-drill
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete
+	SmokeParticleEmitter@refinerysmoke1:
+		Offset: -1024,-512,3456
+		RequiresCondition: resource-delivered
+		Image: smallsmoke
+		Sequences: idle
+		Palette: effect50alpha
+		SpawnFrequency: 1,2
+		Speed: 0, 36
+		Gravity: 27, 54
+		Duration: 39
+	SmokeParticleEmitter@refinerysmoke2:
+		Offset: -64,-1280,3456
+		RequiresCondition: resource-delivered
+		Image: smallsmoke
+		Sequences: idle
+		Palette: effect50alpha
+		SpawnFrequency: 1,2
+		Speed: 0, 36
+		Gravity: 27, 54
+		Duration: 39

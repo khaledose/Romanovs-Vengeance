@@ -81,7 +81,7 @@ namespace OpenRA.Mods.RA2.Traits
 				WeaponInfo weaponInfo;
 				var weaponToLower = weapon.Value.ToLowerInvariant();
 				if (!rules.Weapons.TryGetValue(weaponToLower, out weaponInfo))
-					throw new YamlException("Weapons Ruleset does not contain an entry '{0}'".F(weaponToLower));
+					throw new YamlException($"Weapons Ruleset does not contain an entry '{weaponToLower}'");
 
 				if (!WeaponInfos.ContainsKey(weapon.Key))
 					WeaponInfos.Add(weapon.Key, rules.Weapons[weaponToLower]);
@@ -169,16 +169,16 @@ namespace OpenRA.Mods.RA2.Traits
 					() => FractionComplete);
 
 				Action removeBeacon = () => self.World.AddFrameEndTask(w =>
-					{
-						w.Remove(beacon);
-						beacon = null;
-					});
+				{
+					w.Remove(beacon);
+					beacon = null;
+				});
 
 				self.World.AddFrameEndTask(w =>
-					{
-						w.Add(beacon);
-						w.Add(new DelayedAction(Info.ActivationDelay - Info.BeaconRemoveAdvance, removeBeacon));
-					});
+				{
+					w.Add(beacon);
+					w.Add(new DelayedAction(Info.ActivationDelay - Info.BeaconRemoveAdvance, removeBeacon));
+				});
 			}
 		}
 

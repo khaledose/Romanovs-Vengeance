@@ -1,0 +1,62 @@
+atesla:
+	Inherits: ^DefenseStructure
+	Inherits@SHAPE: ^1x1Shape
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@DRAIN: ^DiskDefenseDrainable
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@MC: ^MindControllableBuilding
+	Buildable:
+		Queue: Support.Shared, Support.Allies
+		Prerequisites: ~building.allies, gaairc, ~techlevel.3
+		Description: Advanced base defense.\nCan buff at most 3 other Prism Towers nearby.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nAbilities:\n- Can detect Steath units\n\nUpgradeable with:\n- Grand Cannon Protocols (France)\n\n  Requires power to operate.
+		BuildPaletteOrder: 60
+	RequiresBuildableArea:
+		Adjacent: 2
+	IsometricSelectable:
+		DecorationHeight: 90
+	Power:
+		Amount: -75
+	Health:
+		HP: 60000
+	Armor:
+		Type: Steel
+	Valued:
+		Cost: 1500
+	RevealsShroud:
+		Range: 8c0
+	Tooltip:
+		Name: Allied Prism Tower
+	Tooltip@NoRow:
+		Name: Allied Prism Tower
+	Armament:
+		Weapon: PrismShot
+		LocalOffset: 0,0,3584
+	Armament@Support:
+		Name: support
+		Weapon: PrismSupport
+		LocalOffset: 0,0,3584
+	AttackPrismSupported:
+		MaxSupportersPerAttacker: 8
+		ReloadDelay: 45
+		ChargeDelay: 0
+		InitialChargeDelay: 25
+		TicksPerHop: 0
+		MaxHops: 0
+		ReceiverOffset: 0,0,3584
+		ChargeAudio: bpripow.wav
+		SupportArmament: support
+		BuffCondition: prism-stack
+		PauseOnCondition: build-incomplete || disabled || chronodisable
+	PrismSupportModifier:
+		Modifier: 150
+		RequiresCondition: prism-stack
+	WithIdleOverlay@powered:
+		Sequence: powered
+		PauseOnCondition: disabled || chronodisable
+		RequiresCondition: !build-incomplete && !charging
+	WithPrismChargingOverlay:
+		ChargingCondition: charging
+		PauseOnCondition: disabled || chronodisable
+	Voiced:
+		VoiceSet: PrismTowerVoice
+		Volume: 0.8

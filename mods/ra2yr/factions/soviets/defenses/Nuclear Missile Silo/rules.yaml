@@ -1,0 +1,37 @@
+namisl:
+	Inherits: ^SuperWeapon
+	Inherits@SPECIAL: ^NukeSpecial
+	Inherits@SHAPE: ^3x3Shape 
+	Buildable:
+		Queue: Support.Shared, Support.Soviets
+		Prerequisites: ~building.soviets, natech, !enoughnuke, ~techlevel.5
+		Description: Provides an atomic bomb.\n\nUpgradeable with:\n- Advanced Irradiators (Iraq)\n\n  Requires power to operate.
+		BuildPaletteOrder: 990
+	IsometricSelectable:
+		DecorationHeight: 120
+	Power:
+		Amount: -200
+	Health:
+		HP: 100000
+	Armor:
+		Type: Concrete
+	Valued:
+		Cost: 5000
+	RevealsShroud:
+		Range: 4c0
+	Tooltip:
+		Name: Soviet Nuclear Missile Silo
+	Tooltip@NoRow:
+		Name: Soviet Nuclear Missile Silo
+	ProvidesPrerequisite@swlimit:
+		Prerequisite: enoughnuke
+	WithSupportPowerActivationOverlay:
+		Sequence: smoke
+		Palette: effect75alpha
+	NotificationAnnouncement:
+		Notification: NuclearSiloDetected
+		TextNotification: Warning: Nuclear Silo detected.
+	Voiced:
+		VoiceSet: NuclearSiloVoice
+		Volume: 0.8
+

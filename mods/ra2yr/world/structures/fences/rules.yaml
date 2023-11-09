@@ -1,0 +1,120 @@
+cafncb:
+	Inherits: ^Fence
+	Tooltip:
+		Name: Black Fence
+	Tooltip@NoRow:
+		Name: Black Fence
+	LineBuild:
+		NodeTypes: cafncb
+	LineBuildNode:
+		Types: cafncb
+	WithWallSpriteBody:
+		Type: cafncb
+
+cafncw:
+	Inherits: ^Fence
+	Tooltip:
+		Name: White Fence
+	Tooltip@NoRow:
+		Name: White Fence
+	LineBuild:
+		NodeTypes: cafncw
+	LineBuildNode:
+		Types: cafncw
+	WithWallSpriteBody:
+		Type: cafncw
+
+cafnck:
+	Inherits: ^Fence
+	Tooltip:
+		Name: Brown Fence
+	Tooltip@NoRow:
+		Name: Brown Fence
+	LineBuild:
+		NodeTypes: cafnck
+	LineBuildNode:
+		Types: cafnck
+	WithWallSpriteBody:
+		Type: cafnck
+
+cafncy:
+	Inherits: ^Fence
+	Tooltip:
+		Name: Yellow Fence
+	Tooltip@NoRow:
+		Name: Yellow Fence
+	LineBuild:
+		NodeTypes: cafncy
+	LineBuildNode:
+		Types: cafncy
+	WithWallSpriteBody:
+		Type: cafncy
+
+cafncg:
+	Inherits: ^Fence
+	Tooltip:
+		Name: Green Fence
+	Tooltip@NoRow:
+		Name: Green Fence
+	LineBuild:
+		NodeTypes: cafncg
+	LineBuildNode:
+		Types: cafncg
+	WithWallSpriteBody:
+		Type: cafncg
+
+cafncm:
+	Inherits: ^Fence
+	Tooltip:
+		Name: Purple Fence
+	Tooltip@NoRow:
+		Name: Purple Fence
+	LineBuild:
+		NodeTypes: cafncm
+	LineBuildNode:
+		Types: cafncm
+	WithWallSpriteBody:
+		Type: cafncm
+
+cabarb:
+	Inherits: ^Fence
+	Tooltip:
+		Name: Barbed Wire Fence
+	Tooltip@NoRow:
+		Name: Barbed Wire Fence
+	LineBuild:
+		NodeTypes: cabarb
+	LineBuildNode:
+		Types: cabarb
+	WithWallSpriteBody:
+		Type: cabarb
+
+gasand:
+	Inherits: ^Fence
+	Tooltip:
+		Name: Sandbags
+	Tooltip@NoRow:
+		Name: Sandbags
+	SoundOnDamageTransition:
+		DamagedSounds: gsancrua.wav, gsancrub.wav
+		DestroyedSounds: gsancrua.wav, gsancrub.wav
+	LineBuild:
+		NodeTypes: gasand
+	LineBuildNode:
+		Types: gasand
+	WithWallSpriteBody:
+		Type: gasand
+
+cafncp:
+	Inherits: ^Fence
+	Tooltip:
+		Name: Prison Camp Fence
+	Tooltip@NoRow:
+		Name: Prison Camp Fence
+	BlocksProjectiles:
+	LineBuild:
+		NodeTypes: cafncp
+	LineBuildNode:
+		Types: cafncp
+	WithWallSpriteBody:
+		Type: cafncp

@@ -1,0 +1,124 @@
+# ccomand:
+# 	Inherits: ^ChronoInfantry
+# 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+# 	Inherits@CHAOS: ^Berserkable
+# 	Inherits@EXPERIENCE: ^GainsExperience
+# 	Inherits@VETERAN: ^ProducibleAsVeteranInfantry
+# 	Inherits@MC: ^MindControllable
+# 	Inherits@SAPPER: ^C4Attacher
+# 	Buildable:
+# 		Queue: Infantry.Shared, Infantry.Allies, Infantry.Soviets, Infantry.Yuri
+# 		BuildPaletteOrder: 960
+# 		Prerequisites: ~barracks, ~allies.tech.infiltrated, ~techlevel.4
+# 		Description: Elite commando infantry, armed with\na sub machine gun and C4 charges.\n\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can place C4 on buildings\n- Can teleport anywhere on the map\n\nUpgradeable with:\n- Advanced Training
+# 		BuildDuration: 375
+# 		BuildDurationModifier: 100
+# 	Tooltip:
+# 	Tooltip@NoRow:
+# 		Name: Chrono Commando
+# 	Valued:
+# 		Cost: 2000
+# 	DeliversCash:
+# 		Payload: 1000
+# 	Health:
+# 		HP: 12500
+# 	Selectable:
+# 		Bounds: 482, 1448, 0, -530
+# 	Passenger:
+# 		CustomPipType: gray
+# 	RevealsShroud:
+# 		Range: 8c0
+# 	RevealOnDeath:
+# 		Radius: 8c0
+# 	Armor:
+# 		Type: Flak
+# 	Armament@primary:
+# 		Weapon: MP5
+# 		PauseOnCondition: chronodisable
+# 		RequiresCondition: !rank-elite
+# 	Armament@elite:
+# 		Weapon: MP5E
+# 		PauseOnCondition: chronodisable
+# 		RequiresCondition: rank-elite
+# 	Armament@opentopped:
+# 		Name: opentopped
+# 		Weapon: MP5
+# 		PauseOnCondition: chronodisable
+# 		RequiresCondition: !rank-elite
+# 	Armament@elite-opentopped:
+# 		Name: opentopped
+# 		Weapon: MP5E
+# 		PauseOnCondition: chronodisable
+# 		RequiresCondition: rank-elite
+# 	AttackFrontal:
+# 		Voice: Attack
+# 		FacingTolerance: 2
+# 		PauseOnCondition: chronodisable
+# 	Voiced:
+# 		VoiceSet: SealVoice
+# 	QuantizeFacingsFromSequence:
+# 		Sequence: stand
+# 	ActorStatValues:
+# 		Armaments: primary
+# 		Damage: 70
+
+^CCOMAND:
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@VETERAN: ^InfantryPromotable
+	Inherits@SAPPER: ^C4Attacher
+	Health:
+		HP: 10000
+	Armor:
+		Type: None
+	Valued:
+		Cost: 2000
+	DeliversCash:
+		Payload: 1000
+	RevealsShroud:
+		Range: 8c0
+	Tooltip:
+		Name: Chrono Commando
+	Tooltip@NoRow:
+		Name: Chrono Commando
+	Armament@primary:
+		Weapon: MP5E
+		PauseOnCondition: chronodisable
+	Armament@opentopped:
+		Name: opentopped
+		Weapon: MP5E
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite
+	Armament@elite-opentopped:
+		Name: opentopped
+		Weapon: MP5E
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite
+	Voiced:
+		VoiceSet: SealVoice
+	Transforms:
+		Voice: Move
+		PauseOnCondition: chronodisable || affectedbytemporal || chronoed || parachute
+
+ccomand.chrono:
+	Inherits: ^ChronoInfantry
+	Inherits@SELF: ^CCOMAND
+	Buildable:
+		Queue: Infantry.Shared, Infantry.Allies, Infantry.Soviets, Infantry.Yuri
+		Prerequisites: ~barracks, ~allies.tech.infiltrated, ~techlevel.4
+		Description: Elite commando infantry, armed with\na sub machine gun and C4 charges.\n\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can place C4 on buildings\n- Can teleport anywhere on the map\n\nUpgradeable with:\n- Advanced Training
+		BuildPaletteOrder: 11
+	Transforms:
+		IntoActor: ccomand.foot
+	RenderSprites:
+		Image: ccomand
+
+ccomand.foot:
+	Inherits: ^GroundInfantry
+	Inherits@SELF: ^CCOMAND
+	Mobile:
+		Speed: 60
+	Transforms:
+		IntoActor: ccomand.chrono
+	RenderSprites:
+		Image: ccomand
+

@@ -1,0 +1,7 @@
+MummyPunch:
+	Inherits: Punch
+	Report: gmumatta.wav, gmumattb.wav, gmumattc.wav
+
+MummySmash:
+	Inherits: Smash
+	Report: gmumatta.wav, gmumattb.wav, gmumattc.wav

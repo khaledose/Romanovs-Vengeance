@@ -1,0 +1,74 @@
+yapsyt:
+	Inherits: ^SupportBuilding
+	Inherits@DRAIN: ^DiskDefenseDrainable
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Buildable:
+		Queue: Support.Shared, Support.Yuri
+		BuildPaletteOrder: 60
+		Prerequisites: ~building.yuri, yapsis, ~techlevel.3
+		Description: Tower capable of mind controlling up to 3 enemy units.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Buildings, Aircraft\n\nAbilities:\n- Can detect Steath units\n\n  Requires power to operate.
+		BuildDuration: 625
+		BuildDurationModifier: 100
+	Health:
+		HP: 60000
+	Armor:
+		Type: Steel
+	RevealsShroud:
+		Range: 8c0
+	Valued:
+		Cost: 1500
+	Tooltip:
+	Tooltip@NoRow:
+		Name: Psychic Tower
+	AttackTurreted:
+		PauseOnCondition: build-incomplete || disabled || chronodisable
+	Turreted:
+		TurnSpeed: 1023
+	WithIdleOverlay@top:
+		Sequence: idle-top
+		PauseOnCondition: disabled || chronodisable
+		RequiresCondition: !build-incomplete
+	Armament:
+		Weapon: TowerMindControl
+		MuzzleSequence: muzzle
+		LocalOffset: 0,0,960
+	WithMuzzleOverlay:
+	MindController:
+		Capacity: 3
+		ControllingCondition: controlling
+		Sounds: iyurat1a.wav
+		RequiresCondition: !disabled && !chronodisable
+	WithMindControllerPipsDecoration:
+		FullSequence: pip-building-green
+		EmptySequence: pip-building-empty
+		Palette: ra
+		Margin: 8, 2
+		PipStride: 4, 2
+		Position: BottomLeft
+		RequiresSelection: true
+	WithMindControlArc:
+		UsePlayerColor: true
+		Offset: 0,0,960
+	AutoTarget:
+	AutoTargetPriority@DEFAULT:
+		ValidTargets: MindControl
+		RequiresCondition: controlling < 3
+	Power:
+		Amount: -100
+		RequiresCondition: !chronodisable
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower || powerdown || diskdrain
+	IsometricSelectable:
+		Class: yapsyt
+		DecorationHeight: 120
+	DetectCloaked:
+		Range: 6c0
+		RequiresCondition: !disabled
+	RenderDetectionCircle:
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
+	Voiced:
+		VoiceSet: PsychicTowerVoice
+		Volume: 0.8
+

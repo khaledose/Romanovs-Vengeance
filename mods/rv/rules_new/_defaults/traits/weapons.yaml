@@ -1,0 +1,10 @@
+TemporalExplode:
+	Warhead@1Eff: CreateEffect
+		Explosions: temporal_explosion
+		ValidTargets: Ground, Water, Air
+
+DroneSparkSpawner:
+	Inherits: ^SparkSpawner
+	ReloadDelay: 60
+	Warhead@op: FireShrapnel
+		Amount: 18

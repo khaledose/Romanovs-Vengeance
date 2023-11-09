@@ -1,0 +1,3 @@
+dest:
+	idle: local|dest
+	empty: local|destwo

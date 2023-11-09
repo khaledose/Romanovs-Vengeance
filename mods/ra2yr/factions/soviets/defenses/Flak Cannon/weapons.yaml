@@ -1,0 +1,19 @@
+FlakWeapon:
+	Inherits: ^AAFlak
+	ReloadDelay: 20
+	Range: 12c0
+	Report: bflaatta.wav, bflaattb.wav, bflaattc.wav, bflaattd.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 4000
+		Versus:
+			None: 150
+			Flak: 80
+			Plate: 50
+			Light: 100
+			Medium: 100
+			Heavy: 20
+			Wood: 0
+			Steel: 0
+			Concrete: 0
+			Drone: 100
+			Rocket: 100

@@ -1,0 +1,8 @@
+TeslaTrooperVoice:
+	Inherits: ^InfantryDeath
+	Voices:
+		Select: itessea, itesseb, itessec, itessed, itessee
+		Move: itesmoa, itesmob, itesmoc, itesmod, itesmoe, itesmof
+		Attack: itesata, itesatb, itesatc, itesatd, itesate, itesatf
+		Feedback: itesfea, itesfeb, itesfec
+		Die: itesdia, itesdib, itesdic, itesdid

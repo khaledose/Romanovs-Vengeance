@@ -1,0 +1,13 @@
+ATGUN:
+	Inherits: 105mm
+	Range: 6c0
+	ReloadDelay: 60
+	Report: vlasatta.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 6500
+
+ATGUNE:
+	Inherits: 105mmE
+	Range: 6c0
+	ReloadDelay: 50
+	Report: vlasatta.wav

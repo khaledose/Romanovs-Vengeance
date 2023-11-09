@@ -1,0 +1,44 @@
+v3rocket:
+	Inherits: ^ShootableMissile
+	Valued:
+		Cost: 50
+	Tooltip:
+	Tooltip@NoRow:
+		Name: V3 Rocket
+	Health:
+		HP: 5000
+	Armor:
+		Type: Rocket
+	BallisticMissile:
+		CreateAngle: 64
+		PrepareTick: 25
+		LaunchAngle: 160
+		Speed: 250
+		LazyCurve: true
+		LaunchSounds: vv3latta.wav, vv3lattb.wav
+		SoundVolume: 0.7
+		AirborneCondition: airborne
+	LeavesTrails:
+		Image: smokey2
+		MovingInterval: 2
+		SpawnAtLastPosition: false
+		Type: CenterPosition
+	MissileSpawnerSlave:
+	SpawnedExplodes:
+		Weapon: V3Weapon
+		EmptyWeapon: V3Weapon
+		RequiresCondition: !airborne && !rank-elite
+	SpawnedExplodes@Elite:
+		Weapon: V3WeaponE
+		EmptyWeapon: V3WeaponE
+		RequiresCondition: !airborne && rank-elite
+	SpawnedExplodes@Airborne:
+		Weapon: UnitExplode
+		EmptyWeapon: UnitExplode
+		RequiresCondition: airborne
+	ExternalCondition@RANK-ELITE:
+		Condition: rank-elite
+	WithVoxelBody:
+	RenderVoxels:
+		Image: v3rocket
+

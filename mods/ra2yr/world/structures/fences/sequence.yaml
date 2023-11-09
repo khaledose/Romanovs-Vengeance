@@ -1,0 +1,118 @@
+# Black Fence
+cafncb:
+	Inherits: ^Fence
+	Defaults:
+		Filename: ctfncb.shp
+		TilesetFilenames:
+			SNOW: cafncb.shp
+			URBAN: cufncb.shp
+			NEWURBAN: cnfncb.shp
+			DESERT: cdfncb.shp
+			LUNAR: clfncb.shp
+			DUNE: cdfncb.shp
+
+# White Fence
+cafncw:
+	Inherits: ^Fence
+	Defaults:
+		Filename: ctfncw.shp
+		TilesetFilenames:
+			SNOW: cafncw.shp
+			URBAN: cufncw.shp
+			NEWURBAN: cnfncw.shp
+			DESERT: cdfncw.shp
+			LUNAR: clfncw.shp
+			DUNE: cdfncw.shp
+
+# Brown Fence
+cafnck:
+	Inherits: ^Fence
+	Defaults:
+		Filename: bits/structures/fences/cgfnck.shp
+
+# Yellow Fence
+cafncy:
+	Inherits: ^Fence
+	Defaults:
+		Filename: bits/structures/fences/cgfncy.shp
+
+# Green Fence
+cafncg:
+	Inherits: ^Fence
+	Defaults:
+		Filename: bits/structures/fences/cgfncg.shp
+
+# Purple Fence
+cafncm:
+	Inherits: ^Fence
+	Defaults:
+		Filename: bits/structures/fences/cgfncm.shp
+
+# Barbed Wire Fence
+cabarb:
+	Inherits: ^Fence
+	Defaults:
+		Filename: bits/structures/fences/cgbarb.shp
+		Offset: 0,0
+
+gasand:
+	Defaults:
+		Offset: 0,-15
+		Filename: gtsand.shp
+		TilesetFilenames:
+			SNOW: gasand.shp
+			URBAN: gusand.shp
+			NEWURBAN: gnsand.shp
+			DESERT: gdsand.shp
+			LUNAR: glsand.shp
+			DUNE: gdsand.shp
+	idle:
+		Length: 16
+		ShadowStart: 32
+	damaged-idle:
+		Start: 16
+		Length: 16
+		ShadowStart: 48
+	icon:
+		Filename: bits/cameos/sbagicon.shp
+		TilesetFilenames:
+			TEMPERATE: bits/cameos/sbagicon.shp
+			SNOW: bits/cameos/sbagicon.shp
+			URBAN: bits/cameos/sbagicon.shp
+			NEWURBAN: bits/cameos/sbagicon.shp
+			DESERT: bits/cameos/sbagicon.shp
+			LUNAR: bits/cameos/sbagicon.shp
+			DUNE: bits/cameos/sbagicon.shp
+			SIMPLETERRAIN: bits/cameos/sbagicon.shp
+		Offset: 0,0
+
+cafncp:
+	Defaults:
+		Offset: 0,-15
+		Filename: ctfncp.shp
+		TilesetFilenames:
+			SNOW: cafncp.shp
+			URBAN: cufncp.shp
+			NEWURBAN: cnfncp.shp
+			DESERT: cdfncp.shp
+			LUNAR: clfncp.shp
+			DUNE: cdfncp.shp
+	idle:
+		Length: 16
+		ShadowStart: 32
+	damaged-idle:
+		Start: 16
+		Length: 16
+		ShadowStart: 48
+	icon:
+		Filename: cameo|wallicon.shp
+		TilesetFilenames:
+			TEMPERATE: cameo|wallicon.shp
+			SNOW: cameo|wallicon.shp
+			URBAN: cameo|wallicon.shp
+			NEWURBAN: cameo|wallicon.shp
+			DESERT: cameo|wallicon.shp
+			LUNAR: cameo|wallicon.shp
+			DUNE: cameo|wallicon.shp
+			SIMPLETERRAIN: cameo|wallicon.shp
+		Offset: 0,0

@@ -1,0 +1,56 @@
+flakt:
+	Inherits: ^BasicInfantry
+	Inherits@DEATH: ^DeathAnimation
+	Inherits@SHOOTER: ^Shooter
+	Inherits@PRONE: ^ProneShooter
+	Inherits@MUZZLE: ^WithFlakMuzzle
+	Defaults:
+		Filename: conquer|flakt.shp
+	icon:
+		Filename: cameo|flkticon.shp
+	die1:
+		Start: 86
+	die2:
+		Start: 101
+	shoot:
+		Start: 116
+	liedown:
+		Start: 213
+	prone-stand:
+		Frames: 165, 171, 177, 183, 189, 195, 201, 207
+	prone-run:
+		Start: 165
+	prone-shoot:
+		Start: 245
+	standup:
+		Start: 229
+	cheer:
+		Start: 293
+	paradrop:
+		Start: 164
+
+# flakt:
+# 	Inherits: ^ArmedInfantry
+# 	Inherits@MUZZLE: ^WithFlakMuzzle
+# 	Defaults:
+# 		Filename: conquer|flakt.shp
+# 	run:
+# 		Tick: 120
+# 	die1:
+# 		Start: 86
+# 	die2:
+# 		Start: 101
+# 	shoot:
+# 		Start: 116
+# 	liedown:
+# 		Start: 213
+# 	standup:
+# 		Start: 229
+# 	prone-stand:
+# 		Frames: 165, 171, 177, 183, 189, 195, 201, 207
+# 	prone-run:
+# 		Start: 165
+# 	prone-shoot:
+# 		Start: 245
+# 	icon:
+# 		Filename: cameo|flkticon.shp

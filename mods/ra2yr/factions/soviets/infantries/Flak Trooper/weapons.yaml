@@ -1,0 +1,47 @@
+FlakGuyGun:
+	Inherits: ^Flak
+	ReloadDelay: 20
+	Range: 5c0
+	Report: vflaat1a.wav, vflaat1b.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 2000
+		Versus:
+			None: 150
+			Flak: 125
+			Plate: 100
+			Light: 60
+			Medium: 10
+			Heavy: 10
+			Wood: 30
+			Steel: 20
+			Concrete: 10
+			Drone: 100
+			Rocket: 100
+
+FlakGuyGunE:
+	Inherits: FlakGuyGun
+	Burst: 2
+
+FlakGuyAAGun:
+	Inherits: ^AAFlak
+	ReloadDelay: 25
+	Range: 8c0
+	Report: vflaat2a.wav, vflaat2b.wav, vflaat2c.wav, vflaat2d.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 2000
+		Versus:
+			None: 150
+			Flak: 100
+			Plate: 50
+			Light: 80
+			Medium: 80
+			Heavy: 20
+			Wood: 0
+			Steel: 0
+			Concrete: 0
+			Drone: 100
+			Rocket: 100
+
+FlakGuyAAGunE:
+	Inherits: FlakGuyAAGun
+	Burst: 2

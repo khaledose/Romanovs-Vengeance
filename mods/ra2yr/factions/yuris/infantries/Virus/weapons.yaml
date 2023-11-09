@@ -1,0 +1,15 @@
+VirusGun:
+	Inherits: ^HollowPoint
+	ReloadDelay: 100
+	Range: 10c0
+	Report: iviratta.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 12500
+		Versus:
+			None: 100
+		DamageTypes: Prone100Percent, TriggerProne, VirusDeath, NonTemporal
+
+VirusGunE:
+	Inherits: VirusGun
+	ReloadDelay: 80
+	Range: 16c0

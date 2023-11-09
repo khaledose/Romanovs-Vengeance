@@ -1,0 +1,15 @@
+sdog:
+	Inherits: ^Dog
+	Buildable:
+		Queue: Infantry.Shared, Infantry.Soviets
+		BuildAtProductionType: Soldier
+		Prerequisites: ~infantry.soviets, ~techlevel.1
+		BuildPaletteOrder: 40
+		Description: Anti-infantry unit.\nCan be deployed to stun nearby infantry for a short while.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can swim\n- Can detect Stealth units\n- Can detect Spies
+		BuildDuration: 50
+		BuildDurationModifier: 100
+	GrantConditionOnFaction@Soviet:
+		Condition: soviet
+		Factions: cuba, libya, iraq, russia
+	RenderSprites:
+		Image: sdog

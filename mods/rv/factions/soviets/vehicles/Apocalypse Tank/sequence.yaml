@@ -1,4 +1,0 @@
-apoc:
-	Inherits@MUZZLE: ^WithApocMuzzle
-	icon:
-		Filename: bits/cameos/mtnkicon.shp

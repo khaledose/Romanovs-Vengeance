@@ -1,0 +1,1103 @@
+^Object:
+	Inherits@1: ^ExistsInWorld
+	Inherits@2: ^SpriteActor
+	Inherits@3: ^WithTooltip
+	Inherits@SHAPE: ^1x1Shape
+	Interactable:
+	FrozenUnderFog:
+	AppearsOnRadar:
+	AppearsOnMapPreview:
+
+^Building:
+	Inherits: ^Object
+	Inherits@1: ^SelectableBuilding
+	Inherits@2: ^IronCurtainable
+	Inherits@3: ^ForceShieldable
+	Inherits@4: ^AcceptsIvanBomb
+	Inherits@5: ^AcceptsC4
+	Inherits@6: ^BuildingParticles
+	Inherits@7: ^ChronoDisableDisabledWithICorForceShield
+	Inherits@8: ^AffectedByBorisAirStrike
+	Inherits@HANDICAPS: ^PlayerHandicaps
+	Targetable:
+		TargetTypes: Ground, DetonateAttack, Structure
+	RevealsShroud:
+		Range: 6c0
+		MaxHeightDelta: 3
+	Building:
+		TerrainTypes: Clear, Rough, Road, DirtRoad
+	ActorPreviewPlaceBuildingPreview:
+		PreviewAlpha: 0.55
+		Palette: placefootprint
+		LineBuildFootprintAlpha: 0.5
+		FootprintUnderPreview: Valid, LineBuild, Invalid
+		FootprintOverPreview: None
+	SoundOnDamageTransition:
+		DamageTypes: NonTemporal
+		DamagedSounds: gdamag1a.wav, gdamag1b.wav, gdamag1c.wav, gdamag1d.wav, gdamag1e.wav
+		DestroyedSounds: bgendiea.wav, bgendieb.wav, bgendiec.wav, bgendied.wav, bgendiee.wav, bgendief.wav
+	WithSpriteBody:
+		PauseOnCondition: chronodisable
+	Explodes:
+		DeathTypes: NonTemporal
+		Weapon: BuildingExplosion
+		Type: Footprint
+	ProximityCaptor:
+		Types: Building
+	Guardable:
+		Range: 3c0
+	Demolishable:
+		RequiresCondition: !invulnerability && !forceshield && !chronodisable
+	RangedGpsDot:
+		Sequence: Structure
+
+^BuildableStructure:
+	Inherits: ^Building
+	Inherits@1: ^Repairable
+	Inherits@2: ^SuddenDeathModifier
+	Building:
+		BuildSounds: uplace.wav
+		UndeploySounds: uselbuil.wav
+	Buildable:
+		BuildAtProductionType: Building
+		BuildDurationModifier: 100
+	Power:
+		RequiresCondition: !chronodisable
+	Sellable:
+		SellSounds: uselbuil.wav
+		Notification: StructureSold
+		RequiresCondition: !build-incomplete && !chronodisable
+	OwnerLostAction:
+		Action: Kill
+		DeathTypes: BulletDeath, NonTemporal
+	WithMakeAnimation:
+		Condition: build-incomplete
+
+^BaseStructure:
+	Inherits: ^BuildableStructure
+	ProvidesPrerequisite@default:
+		RequiresCondition: !chronodisable
+	GivesBuildableArea:
+		AreaTypes: building, defense
+	RequiresBuildableArea:
+		AreaTypes: building
+		Adjacent: 4
+	SpawnActorsOnSell@allies:
+		ActorTypes: e1, e1, e1
+		Factions: america, germany, england, france, korea
+	SpawnActorsOnSell@soviets:
+		ActorTypes: e2, e2, e2, e2
+		Factions: cuba, libya, iraq, russia
+	SpawnActorsOnSell@psicorps:
+		ActorTypes: init, init, init
+		Factions: psicorps
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	ShakeOnDeath:
+		DeathTypes: NonTemporal
+	MapEditorData:
+		Categories: Building - Base
+
+^DefenseStructure:
+	Inherits: ^BuildableStructure
+	RequiresBuildableArea:
+		AreaTypes: defense
+		Adjacent: 4
+	RevealOnFire:
+		ArmamentNames: primary, secondary, gatling, support, garrisoned
+		Duration: 50
+	Targetable@DEFENSE:
+		TargetTypes: Defense
+	RangedGpsDot:
+		Sequence: Defense
+	MapEditorData:
+		Categories: Building - Defense
+
+^Factory:
+	Inherits: ^BaseStructure
+	Inherits@PRIMARY: ^PrimaryBuilding
+	ProductionQueue:
+		LowPowerModifier: 200
+		ReadyAudio: UnitReady
+		ReadyTextNotification: Unit ready.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionQueue@Shared:
+		LowPowerModifier: 200
+		ReadyAudio: UnitReady
+		ReadyTextNotification: Unit ready.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	Production:
+		PauseOnCondition: chronodisable
+		RequiresCondition: multiqueue
+	Production@Shared:
+		PauseOnCondition: chronodisable
+		RequiresCondition: !multiqueue
+	ProductionBar:
+	ProductionBar@Shared:
+	RallyPoint:
+		Palette: mouse
+		IsPlayerPalette: false
+	ExitsDebugOverlay:
+	GrantExternalConditionToProduced:
+		Condition: produced
+
+^TechBuilding:
+	Inherits: ^Building
+	Inherits@REPAIR: ^Repairable
+	Inherits@CAPTURE: ^Capturable
+	GrantConditionOnCombatantOwner:
+		Condition: enabled
+	OwnerLostAction:
+		Action: ChangeOwner
+	Capturable:
+		Types: tech
+		RequiresCondition: !invulnerability
+	CaptureNotification:
+		Notification: TechBuildingCaptured
+		TextNotification: Tech building captured.
+		LoseNotification: TechBuildingLost
+		LoseTextNotification: Tech building lost.
+	GivesBuildableArea:
+		AreaTypes: building, defense
+		RequiresCondition: techbuild
+	GrantConditionOnPrerequisite@BUILD:
+		Condition: techbuild
+		Prerequisites: global-techbuildarea
+	MapEditorData:
+		Categories: Building - Tech
+
+^CivBuilding:
+	Inherits: ^Building
+	Inherits@SHAPE: ^1x1Shape
+	Buildable:
+		Queue: Building.Civilian
+	Health:
+		HP: 40000
+	Armor:
+		Type: Steel
+	RevealsShroud:
+		Range: 6c0
+	Tooltip:
+		Name: Civilian Building
+	Tooltip@NoRow:
+		Name: Civilian Building
+	InstantlyRepairable:
+		Types: civilian
+	MapEditorData:
+		Categories: Building - Civilian
+
+^Decoration:
+	Inherits: ^Building
+	Inherits@SHAPE: ^1x1Shape
+	Buildable:
+		Queue: Building.Allies
+	Targetable:
+		TargetTypes: Ground, DetonateAttack, NoAutoTarget
+	Tooltip:
+		Name: Decoration
+	Tooltip@NoRow:
+		Name: Decoration
+	MapEditorData:
+		Categories: Building - Decoration
+
+^Rubble:
+	Inherits: ^Object
+	Inherits@shape: ^1x1Rubble
+	Tooltip:
+		Name: Rubble
+	Tooltip@NoRow:
+		Name: Rubble
+	RenderSprites:
+		Palette: rubble
+	WithSpriteBody:
+		Sequence: rubble
+	MapEditorData:
+		Categories: Building - Rubble
+
+^ConstructionYard:
+	Inherits: ^BaseStructure
+	Inherits@CAPTURE: ^Capturable
+	Inherits@MC: ^MindControllableBuilding
+	Inherits@SHAPE: ^4x4Shape
+	Inherits@AICash: ^AICashCheat
+	Inherits@AI: ^AIMicroManagable
+	Buildable:
+		Queue: Building.Unused
+		Description: Allows construction of base structures.
+	Health:
+		HP: 100000
+	Armor:
+		Type: Concrete
+	Valued:
+		Cost: 3000
+	RevealsShroud:
+		Range: 8c0
+	Tooltip:
+		Name: Construction Yard
+	Tooltip@NoRow:
+		Name: Construction Yard
+	ProductionQueue@Building:
+		Group: Building
+		DisplayOrder: 1
+		LowPowerModifier: 200
+		ReadyAudio: ConstructionComplete
+		ReadyTextNotification: Construction complete.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionQueue@Support:
+		Group: Support
+		DisplayOrder: 5
+		LowPowerModifier: 200
+		ReadyAudio: ConstructionComplete
+		ReadyTextNotification: Construction complete.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionQueue@Building.Shared:
+		Type: Building.Shared
+		Group: Building
+		DisplayOrder: 1
+		LowPowerModifier: 200
+		ReadyAudio: ConstructionComplete
+		ReadyTextNotification: Construction complete.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionQueue@Support.Shared:
+		Type: Support.Shared
+		Group: Support
+		DisplayOrder: 5
+		LowPowerModifier: 200
+		ReadyAudio: ConstructionComplete
+		ReadyTextNotification: Construction complete.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	Production:
+		PauseOnCondition: chronodisable || disabled
+		RequiresCondition: multiqueue
+	Production@Shared:
+		Produces: Building.Shared, Support.Shared
+		PauseOnCondition: chronodisable || disabled
+		RequiresCondition: !multiqueue
+	ProductionBar@Building:
+	ProductionBar@Support:
+		Color: 8A8A8A
+	ProductionBar@Building.Shared:
+		ProductionType: Building.Shared
+	ProductionBar@Support.Shared:
+		ProductionType: Support.Shared
+		Color: 8A8A8A
+	GrantConditionOnPrerequisite@multiqueue:
+		Condition: multiqueue
+		Prerequisites: global-multiqueue
+	BaseBuilding:
+	Transforms:
+		Offset: 1,1
+		Facing: 384
+		Voice: Move
+		DeployCursor: undeploy
+		PauseOnCondition: chronodisable || controlled || disabled
+		RequiresCondition: factundeploy && !build-incomplete
+	TransformsIntoMobile:
+		RequiresCondition: factundeploy && !build-incomplete && !chronodisable && !controlled
+		Locomotor: heavytracked
+		Voice: Move
+	TransformsIntoRepairable:
+		RequiresCondition: factundeploy && !build-incomplete && !chronodisable && !controlled
+		RepairActors: gadept, nadept, nadepb, caoutp, caoutb
+		Voice: Move
+		RequiresForceMove: true
+	TransformsIntoPassenger:
+		RequiresCondition: factundeploy && !build-incomplete && !chronodisable && !controlled
+		CargoType: Vehicle
+		Voice: Move
+		RequiresForceMove: true
+	GrantConditionOnPrerequisite@GLOBALFACTUNDEPLOY:
+		Condition: factundeploy
+		Prerequisites: global-factundeploy
+	Capturable:
+		RequiresCondition: !suddendeath
+	Targetable@MC:
+		RequiresCondition: !controlled && !suddendeath
+	MustBeDestroyed:
+		-RequiresCondition:
+	TransferTimedExternalConditionOnTransform@INVULNERABILITY:
+		Condition: invulnerability
+	ProvidesPrerequisite@AIantiRush:
+		RequiresCondition: !ai-control
+		Prerequisite: AIantiRush ## Hack: AI Building control. AI build refinary only when it has a combat producing line.
+	-RequiresBuildableArea:
+
+^PowerPlant:
+	Inherits: ^BaseStructure
+	Inherits@CAPTURE: ^Capturable
+	Inherits@DRAIN: ^DiskDrainable
+	Inherits@MC: ^MindControllableBuilding
+	Inherits@POWEROUTAGE: ^DisabledByPowerOutage
+	Inherits@SPY: ^Spyable
+	Buildable:
+		Description: Provides power for other structures.
+		BuildPaletteOrder: 10
+	Power:
+		RequiresCondition: !chronodisable && !disabled
+	PowerTooltip:
+	ScalePowerWithHealth:
+	SoundOnDamageTransition:
+		DestroyedSounds: bpowdiea.wav, bpowdieb.wav
+
+^Barracks:
+	Inherits: ^Factory
+	Inherits@CAPTURE: ^Capturable
+	Inherits@MC: ^MindControllableBuilding
+	Inherits@SPY: ^Spyable
+	Buildable:
+		Description: Trains infantry.\nCan heal nearby infantry.\n\n  Cannot be placed on water.\n  Can be rotated.
+		BuildPaletteOrder: 20
+	Power:
+		Amount: -10
+	Health:
+		HP: 50000
+	Armor:
+		Type: Steel
+	Valued:
+		Cost: 500
+	RevealsShroud:
+		Range: 5c0
+	CommandBarBlacklist:
+		DisableStop: false
+	ProductionQueue:
+		Group: Infantry
+		DisplayOrder: 13
+	ProductionQueue@Shared:
+		Type: Infantry.Shared
+		Group: Infantry
+		DisplayOrder: 13
+	Production@Shared:
+		Produces: Infantry.Shared
+	ProductionBar@Shared:
+		ProductionType: Infantry.Shared
+	InfiltrateForSupportPower:
+		Types: SpyInfiltrate
+		Proxy: barracks.infiltrated
+		InfiltratedNotification: TechnologyStolen
+		InfiltrationNotification: BuildingInfiltratedTechnologyStolen
+	GrantConditionOnPrerequisite@megawealth:
+		Condition: megawealth
+		Prerequisites: global-megawealth
+	Voiced:
+		VoiceSet: BarracksVoice
+		Volume: 0.8
+	ProvidesPrerequisite@AIantiRush:
+		Prerequisite: AIantiRush ## Hack: AI Building control. AI build refinary only when it has a combat producing line.
+
+barracks.infiltrated:
+	AlwaysVisible:
+	ProvidesPrerequisite:
+		Prerequisite: barracks.infiltrated
+
+^Refinery:
+	Inherits: ^BaseStructure
+	Inherits@CAPTURE: ^Capturable
+	Inherits@DISK: ^DiskStealable
+	Inherits@SPY: ^Spyable
+	Inherits@AICash: ^AICashCheat
+	Buildable:
+		Description: Processes ore into credits.\n\n  Can be rotated.
+		BuildPaletteOrder: 30
+	Refinery:
+		ShowTicks: True
+		TickLifetime: 30
+		TickVelocity: 1
+		TickRate: 10
+		UseStorage: false
+	DockHost:
+		Type: Unload
+		DockAngle: 640
+		DockOffset: 1c0, 1c0, 0
+	InfiltrateForCash:
+		Types: SpyInfiltrate
+		Percentage: 20
+		InfiltratedNotification: CashStolen
+		InfiltrationNotification: BuildingInfiltratedCashStolen
+		Minimum: 500
+	GrantConditionOnResourceDelivery:
+		Condition: resource-delivered
+		Duration: 3
+	Voiced:
+		VoiceSet: RefineryVoice
+		Volume: 0.8
+
+^Silo:
+	Inherits: ^BaseStructure
+	Inherits@DISK: ^DiskStealable
+	Inherits@SHAPE: ^2x2Shape
+	IsometricSelectable:
+		DecorationHeight: 30
+	Buildable:
+		Queue: Support
+		BuildPaletteOrder: 30
+		Prerequisites: refinery, ~!global-megawealth, ~techlevel.1
+		Description: Stores excess Ore.
+		BuildDuration: 125
+		BuildDurationModifier: 100
+	Valued:
+		Cost: 300
+	Tooltip:
+		Name: Ore Silo
+	Tooltip@NoRow:
+		Name: Ore Silo
+	Health:
+		HP: 30000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 4c0
+	-WithSpriteBody:
+	WithResourceLevelSpriteBody:
+		Stages: 4
+	StoresResources:
+		Capacity: 2000
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
+	Power:
+		Amount: -10
+		RequiresCondition: !chronodisable
+	Explodes:
+		RequiresCondition: !spawn-ore
+	Explodes@Ore:
+		Type: Footprint
+		DeathTypes: NonTemporal
+		Weapon: RefineryExplode
+		RequiresCondition: spawn-ore
+	GrantConditionOnPlayerResources:
+		Condition: spawn-ore
+	WithResourceStoragePipsDecoration:
+		FullSequence: pip-building-yellow
+		EmptySequence: pip-building-empty
+		Palette: ra
+		Margin: 8, 2
+		PipStride: 4, 2
+		Position: BottomLeft
+		RequiresSelection: true
+		PipCount: 12
+	Voiced:
+		VoiceSet: SiloVoice
+		Volume: 0.8
+
+^WarFactory:
+	Inherits: ^Factory
+	Inherits@CAPTURE: ^Capturable
+	Inherits@MC: ^MindControllableBuilding
+	Inherits@SPY: ^Spyable
+	Inherits@SHAPE: ^NormalFactoryShape
+	Buildable:
+		Description: Produces vehicles.\n\nAbilities:\n- Comes with 3 repair drones.\n\n  Cannot be placed on water.\n  Can be rotated.
+		BuildPaletteOrder: 50
+	Power:
+		Amount: -25
+	Health:
+		HP: 100000
+	Armor:
+		Type: Wood
+	Valued:
+		Cost: 2000
+	RevealsShroud:
+		Range: 4c0
+	ProductionQueue:
+		Group: Vehicle
+		DisplayOrder: 17
+	ProductionQueue@Shared:
+		Type: Vehicle.Shared
+		Group: Vehicle
+		DisplayOrder: 17
+	ProductionQueue@Aircraft:
+		Group: Aircraft
+		DisplayOrder: 18
+		LowPowerModifier: 200
+		ReadyAudio: UnitReady
+		ReadyTextNotification: Unit ready.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	Production@Shared:
+		Produces: Vehicle.Shared, Aircraft.Shared
+	ProductionBar@Aircraft:
+	ProductionBar@Shared:
+		ProductionType: Vehicle.Shared
+	RallyPoint:
+		Path: 6, 1
+	Exit@1:
+		ExitCell: 4,1
+	WithExitOverlay@front:
+		Sequence: build-front
+		RequiresCondition: !build-incomplete && !chronodisable
+	WithExitOverlay@top:
+		Sequence: build-top
+		RequiresCondition: !build-incomplete && !chronodisable
+	WithIdleOverlay@bib:
+		Sequence: bib
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete
+	GrantConditionOnProduction@aircraft:
+		Actors: zep, shad, schp, disk
+		Condition: roof-open
+		Duration: 50
+		ShowSelectionBar: false
+	WithExitOverlay@door:
+		Sequence: build-front
+		RequiresCondition: !roof-open && !build-incomplete
+	WithExitOverlay@top-vehicles:
+		Sequence: build-top
+		RequiresCondition: !roof-open && !build-incomplete
+	WithIdleOverlay@air-open:
+		Sequence: build-air-open
+		RequiresCondition: roof-open && !build-incomplete
+	WithIdleOverlay@air-inside:
+		Sequence: build-air-inside
+		RequiresCondition: roof-open && !build-incomplete
+	InfiltrateForSupportPower:
+		Types: SpyInfiltrate
+		Proxy: warfactory.infiltrated
+		InfiltratedNotification: TechnologyStolen
+		InfiltrationNotification: BuildingInfiltratedTechnologyStolen
+	CommandBarBlacklist:
+		DisableStop: false
+	Voiced:
+		VoiceSet: WarFactoryVoice
+		Volume: 0.8
+	ProvidesPrerequisite@AIantiRush:
+		Prerequisite: AIantiRush ## Hack: AI Building control. AI build refinary only when it has a combat producing line.
+
+warfactory.infiltrated:
+	AlwaysVisible:
+	ProvidesPrerequisite:
+		Prerequisite: warfactory.infiltrated
+
+^Shipyard:
+	Inherits: ^Factory
+	Inherits@MC: ^MindControllableBuilding
+	Inherits@REPAIR: ^RepairsUnits
+	Inherits@SHAPE: ^4x4Shape
+	Buildable:
+		Description: Produces ships, submarines, and other naval units.\n\nAbilities:\n- Comes with 3 repair drones.\n\n  Can only be placed on water.
+		BuildPaletteOrder: 60
+	Building:
+		Footprint: xxxx xxxx xxxx xxxx
+		Dimensions: 4,4
+		TerrainTypes: Water
+	RequiresBuildableArea:
+		Adjacent: 12
+	Power:
+		Amount: -25
+	Health:
+		HP: 150000
+	Armor:
+		Type: Concrete
+	Valued:
+		Cost: 1000
+	RevealsShroud:
+		Range: 10c0
+	Targetable:
+		TargetTypes: Ground, Water, WaterStructure
+	RallyPoint:
+		Path: 5, 1
+	ProductionQueue:
+		Group: Ship
+		DisplayOrder: 21
+	ProductionQueue@Shared:
+		Type: Ship.Shared
+		Group: Ship
+		DisplayOrder: 21
+	Production@Shared:
+		Produces: Ship.Shared
+	ProductionBar@Shared:
+		ProductionType: Ship.Shared
+	Exit@n2_n2:
+		ExitCell: -2,-2
+	Exit@n2_n1:
+		ExitCell: -2,-1
+	Exit@n2_0:
+		ExitCell: -2,0
+	Exit@n2_1:
+		ExitCell: -2,1
+	Exit@n2_2:
+		ExitCell: -2,2
+	Exit@n2_3:
+		ExitCell: -2,3
+	Exit@n2_4:
+		ExitCell: -2,4
+	Exit@n2_5:
+		ExitCell: -2,5
+	# X -1 column
+	Exit@n1_n2:
+		ExitCell: -1,-2
+	Exit@n1_5:
+		ExitCell: -1,5
+	# X 0 column
+	Exit@0_n2:
+		ExitCell: 0,-2
+	Exit@0_5:
+		ExitCell: 0,5
+	# X 1 column
+	Exit@1_n2:
+		ExitCell: 1,-2
+	Exit@1_5:
+		ExitCell: 1,5
+	# X 2 column
+	Exit@2_n2:
+		ExitCell: 2,-2
+	Exit@2_5:
+		ExitCell: 2,5
+	# X 3 column
+	Exit@3_n2:
+		ExitCell: 3,-2
+	Exit@3_5:
+		ExitCell: 3,5
+	# X 4 column
+	Exit@4_n2:
+		ExitCell: 4,-2
+	Exit@4_5:
+		SpawnOffset: 0,-113,0
+		Facing: 640
+		ExitCell: 4,5
+	# X 5 column
+	Exit@5_n2:
+		ExitCell: 5,-2
+	Exit@5_n1:
+		ExitCell: 5,-1
+	Exit@5_0:
+		ExitCell: 5,0
+	Exit@5_1:
+		ExitCell: 5,1
+	Exit@5_2:
+		ExitCell: 5,2
+	Exit@5_3:
+		ExitCell: 5,3
+	Exit@5_4:
+		SpawnOffset: 0,-113,0
+		Facing: 384
+		ExitCell: 5,4
+	Exit@5_5:
+		ExitCell: 5,5
+	CommandBarBlacklist:
+		DisableStop: false
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete
+	WithUnitProducedOverlay:
+		PauseOnCondition: chronodisable
+		ProductionCondition: producing
+		RequiresCondition: !resupplying
+	AmbientSound:
+		SoundFiles: awav03a.wav, awav03b.wav, awav03c.wav, awav03d.wav, awav03e.wav
+		Interval: 150, 250
+		Volume: 0.45
+	Voiced:
+		VoiceSet: ShipyardVoice
+		Volume: 0.8
+	ProvidesPrerequisite@AIantiRush:
+		Prerequisite: AIantiRush ## Hack: AI Building control. AI build refinary only when it has a combat producing line.
+
+^BattleLab:
+	Inherits: ^BaseStructure
+	Inherits@CAPTURE: ^Capturable
+	Inherits@AI: ^AIMicroManagable
+	Inherits@MC: ^MindControllableBuilding
+	Inherits@SPY: ^Spyable
+	Buildable:
+		Description: Allows deployment of advanced units.\n\n  Can be rotated.
+		BuildPaletteOrder: 90
+	Power:
+		Amount: -100
+	Health:
+		HP: 50000
+	Armor:
+		Type: Wood
+	Valued:
+		Cost: 2000
+	RevealsShroud:
+		Range: 6c0
+	InfiltrateForSupportPower:
+		Types: SpyInfiltrate
+		InfiltratedNotification: TechnologyStolen
+		InfiltrationNotification: BuildingInfiltratedTechnologyStolen
+	ProvidesPrerequisite:
+		Prerequisite: lab
+	GrantExternalConditionPower@forceshield:
+		OrderName: FrenchForceShield
+		Names:
+			1: Force Shield
+		Descriptions:
+			1: Makes a group of buildings invulnerable for 15 seconds.
+		Prerequisites:
+			1: lab
+		Icons:
+			1: force
+		Cursor: force-shield
+		ChargeInterval: 4500
+		Durations:
+			1: 375
+		Conditions:
+			1: forceshield
+		Dimensions:
+			1: 7,7
+		Footprints:
+			1: ___x___ __xxx__ _xxxxx_ xxxxxxx _xxxxx_ __xxx__ ___x___
+		PauseOnCondition: chronodisable
+		OnFireSound: sforceon.wav
+		SelectTargetSpeechNotification: SelectTarget
+		SelectTargetTextNotification: Select target.
+		EndChargeSpeechNotification: ForceShieldReady
+		EndChargeTextNotification: Force Shield ready.
+		LaunchSpeechNotification: ForceShieldActivated
+		LaunchTextNotification: Force Shield activated.
+		IncomingSpeechNotification: ForceShieldActivated
+		IncomingTextNotification: Force Shield activated.
+		EffectImage: explosion
+		EffectSequence: forceshield
+		EffectPalette: effect
+	Voiced:
+		VoiceSet: TechCenterVoice
+		Volume: 0.8
+
+^SuperWeapon:
+	Inherits: ^BaseStructure
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@MC: ^MindControllableBuilding
+	Inherits@SPY: ^Spyable
+	RevealsShroud@ToEnemy:
+		Range: 2c0
+		ValidRelationships: Neutral, Enemy
+	SupportPowerChargeBar:
+	WithSupportPowerChargedOverlay:
+		RequiresCondition: !build-incomplete
+	InfiltrateForSupportPowerReset:
+		Types: SpyInfiltrate
+		InfiltratedNotification: BuildingInfiltrated
+		InfiltrationNotification: BuildingInfiltrated
+	ProvidesPrerequisite@swlimit:
+		RequiresPrerequisites: global-swlimit
+	NotificationAnnouncement:
+		ValidRelationships: Neutral, Enemy
+		PlayToOwner: False
+		PingRadar: True
+
+^Flag:
+	Inherits: ^CivBuilding
+	Inherits@SHAPE: ^1x1Shape
+	OwnerLostAction:
+		Action: ChangeOwner
+	IsometricSelectable:
+		DecorationHeight: 120
+	Building:
+		Footprint: x
+		Dimensions: 1, 1
+		TerrainTypes: Clear, Rough, Road, DirtRoad, Water
+	Tooltip:
+		Name: Flag
+	Tooltip@NoRow:
+		Name: Flag
+	Health:
+		HP: 2000
+	Armor:
+		Type: Steel
+	RevealsShroud:
+		Range: 6c0
+	Targetable:
+		RequiresCondition: !in_water
+	Targetable@Water:
+		TargetTypes: Ground, Water, WaterStructure
+		RequiresCondition: in_water
+	GrantConditionOnTerrain@Water:
+		TerrainTypes: Water, Beach
+		Condition: in_water
+	WithIdleOverlay@flag:
+		Sequence: flag
+		Palette: player
+		IsPlayerPalette: false
+		PauseOnCondition: chronodisable
+	WithIdleOverlay@flag_shadow:
+		Sequence: flag-shadow
+		Palette: shadow
+		IsPlayerPalette: false
+		PauseOnCondition: chronodisable
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		PauseOnCondition: chronodisable
+		RequiresCondition: in_water
+	SoundOnDamageTransition:
+		DamagedSounds: bmetdama.wav, bmetdamb.wav, bmetdamc.wav
+		DestroyedSounds: bmetdama.wav, bmetdamb.wav, bmetdamc.wav
+	MapEditorData:
+		Categories: Flag
+
+^Wall:
+	Inherits: ^Object
+	Inherits@HANDICAPS: ^PlayerHandicaps
+	Building:
+		RequiresBaseProvider: false
+		BuildSounds: uplace.wav
+		TerrainTypes: Clear, Rough, Road, DirtRoad
+	RequiresBuildableArea:
+		AreaTypes: defense
+		Adjacent: 6
+	FootprintPlaceBuildingPreview:
+		Palette: placefootprint
+		LineBuildFootprintAlpha: 0.5
+	LineBuild:
+		Range: 6
+		NodeTypes: wall
+	LineBuildNode:
+		Types: wall
+	Health:
+		HP: 30000
+	Armor:
+		Type: Concrete
+	Valued:
+		Cost: 100
+	CustomSellValue:
+		Value: 0
+	RevealsShroud:
+		Range: 1c0
+	Targetable:
+		TargetTypes: Ground, Wall, DetonateAttack, NoAutoTarget
+	WithWallSpriteBody:
+		Type: wall
+	Sellable:
+		Notification: StructureSold
+		SellSounds: uselbuil.wav
+	Crushable:
+		CrushClasses: wall
+	BlocksProjectiles:
+	RangedGpsDot:
+		Sequence: Wall
+	MapEditorData:
+		Categories: Building - Wall
+	OwnerLostAction:
+		Action: ChangeOwner
+
+^Fence:
+	Inherits: ^Wall
+	Buildable:
+		Queue: Support.Civilian
+	LineBuild:
+		NodeTypes: fence
+	LineBuildNode:
+		Types: fence
+	Health:
+		HP: 10000
+	Armor:
+		Type: Wood
+	Valued:
+		Cost: 25
+	Tooltip:
+		Name: Fence
+		GenericName: Fence
+	Tooltip@NoRow:
+		Name: Fence
+		GenericName: Fence
+	-BlocksProjectiles:
+	Targetable:
+		TargetTypes: Ground, Fence, DetonateAttack, NoAutoTarget
+	WithWallSpriteBody:
+		Type: fence
+	Crushable:
+		CrushClasses: fence
+	SoundOnDamageTransition:
+		DamagedSounds: gblacrua.wav, gblacrub.wav
+		DestroyedSounds: gblacrua.wav, gblacrub.wav
+	MapEditorData:
+		Categories: Building - Fence
+
+^Gate:
+	Inherits: ^Building
+	IsometricSelectable:
+		DecorationHeight: 30
+	AppearsOnMapPreview:
+	Huntable:
+	Valued:
+		Cost: 75
+	Health:
+		HP: 35000
+	Armor:
+		Type: Concrete
+	LineBuildNode:
+		Types: wall, gate
+	-WithSpriteBody:
+	WithGateSpriteBody:
+		OpenSequence: open
+	Buildable:
+		Description: Automated barrier that opens for allied units.\n\n  Cannot be placed on water.\n  Can be rotated.
+	HitShape:
+		Type: Rectangle
+			LocalYaw: -128
+			TopLeft: -512, -512
+			BottomRight: 512, 512
+			VerticalTopOffset: 768
+	MapEditorData:
+		Categories: Wall
+	Gate:
+		PauseOnCondition: disabled || chronodisable
+		OpeningSound: gateup1.aud
+		ClosingSound: gatedwn1.aud
+		CloseDelay: 100
+		BlocksProjectilesHeight: 768
+	Sellable:
+		RequiresCondition: !chronodisable
+	RequiresBuildableArea:
+		AreaTypes: building
+		Adjacent: 6
+	Tooltip:
+		Name: Gate
+		GenericName: Gate
+	Tooltip@NoRow:
+		Name: Gate
+		GenericName: Gate
+	Voiced:
+		VoiceSet: GateVoice
+		Volume: 0.8
+
+^Gate_A:
+	Inherits: ^Gate
+	Inherits@shape: ^3x1Shape
+	Health:
+	Building:
+		Dimensions: 3,1
+		Footprint: xxx
+	RevealsShroud:
+		Range: 2c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 2c0
+	WithGateSpriteBody:
+		WallConnections: -1,0, 3,0
+	LineBuildNode:
+		Connections: -1,0, 1,0
+
+^Gate_B:
+	Inherits: ^Gate
+	Inherits@shape: ^1x3Shape
+	Health:
+	Building:
+		Dimensions: 1,3
+		Footprint: x x x
+	RevealsShroud:
+		Range: 2c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 2c0
+	WithGateSpriteBody:
+		WallConnections: 0,-1, 0,3
+	LineBuildNode:
+		Connections: 0,-1, 0,1
+
+^Tunnel:
+	RenderSprites:
+		Palette: terrain
+	WithSpriteBody:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	Building:
+		Dimensions: 3, 3
+		Footprint: ___ ___ ___
+	Targetable:
+	AlwaysVisible:
+	TunnelEntrance:
+	MapEditorData:
+		Categories: Tunnel
+	Interactable:
+		Bounds: 4344, 8688
+
+^LowBridgeRamp:
+	AlwaysVisible:
+	RenderSprites:
+		Palette: terrain
+	WithSpriteBody:
+	AppearsOnRadar:
+	RadarColorFromTerrain:
+		Terrain: Bridge
+	AppearsOnMapPreview:
+		Terrain: Bridge
+	BodyOrientation:
+		UseClassicPerspectiveFudge: false
+		QuantizedFacings: 1
+	Tooltip:
+		Name: Wooden Bridge
+	MapEditorData:
+		Categories: Bridge
+	Interactable:
+
+^LowBridge:
+	Inherits: ^LowBridgeRamp
+	Inherits@1: ^AcceptsIvanBomb
+	Inherits@2: ^AcceptsC4
+	Targetable:
+		TargetTypes: Ground, Building, Bridge
+		RequiresForceFire: true
+	Health:
+		HP: 50000
+	Armor:
+		Type: Concrete
+	HitShape:
+
+^ElevatedBridgePlaceholder:
+	AlwaysVisible:
+	RenderSprites:
+		Palette: terrain
+	WithSpriteBody:
+	AppearsOnRadar:
+	RadarColorFromTerrain:
+		Terrain: Bridge
+	AppearsOnMapPreview:
+		Terrain: Bridge
+	BodyOrientation:
+		UseClassicPerspectiveFudge: false
+		QuantizedFacings: 1
+	Tooltip:
+		Name: Concrete Bridge
+	Immobile:
+		OccupiesSpace: false
+	MapEditorData:
+		Categories: Bridge
+	Interactable:
+		Bounds: 2316, 6950

@@ -1,0 +1,6 @@
+camera:
+	idle:
+		Filename: bits/camera.shp
+		Length: *
+	icon:
+		Filename: cameo|xxicon.shp

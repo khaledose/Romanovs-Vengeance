@@ -1,0 +1,49 @@
+civan:
+	Inherits: ivan
+	Buildable:
+		Queue: Infantry.Shared, Infantry.Allies, Infantry.Soviets, Infantry.Yuri
+		BuildPaletteOrder: 970
+		Prerequisites: ~barracks, ~soviets.tech.infiltrated, ~techlevel.4
+		Description: Specialist for explosives. Can plant a Bomb on anything, even Cows.\n\nAbilities:\n- Can teleport anywhere on the map\n\nUpgradeable with:\n- High Explosive Bombs (Libya)
+		BuildDuration: 375
+		BuildDurationModifier: 100
+	Tooltip:
+	Tooltip@NoRow:
+		Name: Chrono Ivan
+	Valued:
+		Cost: 1000
+	Crushable:
+		CrushClasses: vehicle
+	Crushable@Cheater:
+		CrushClasses: vehicle
+	Crushable@Vengeful:
+		CrushClasses: vehicle
+	DeliversCash:
+		Payload: 500
+	Health:
+		HP: 12500
+	Passenger:
+		CustomPipType: gray
+	ChronoMobile:
+		ChronoshiftSound: ichrmova.wav
+		Voice: Move
+		ChargeDelay: 120
+		TargetCursor: move
+		TeleportCondition: chronoed
+		HasTeleportEffect: true
+		TeleportEffect: effect50alpha
+		TeleportEffectSequence: temporal_explosion
+		PauseOnCondition: affectedbytemporal
+	Chronoshiftable:
+		ExplodeInstead: false
+	-Explodes:
+	ChronoAttackFrontal:
+		Voice: Attack
+		FacingTolerance: 2
+		Cursor: bomb
+		OutsideRangeCursor: bomb
+	Selectable:
+		Class: civan
+	RenderSprites:
+		Image: civan
+

@@ -1,0 +1,217 @@
+civ1:
+	Inherits: ^CivilianInfantry
+	Voiced:
+		VoiceSet: CivilianAlliedFemaleVoice
+
+civ2:
+	Inherits: ^CivilianInfantry
+
+civ3:
+	Inherits: ^CivilianInfantry
+
+civa:
+	Inherits: ^CivilianInfantry
+	Voiced:
+		VoiceSet: CivilianTexanVoice
+
+civb:
+	Inherits: ^CivilianInfantry
+	Voiced:
+		VoiceSet: CivilianTexanVoice
+
+civc:
+	Inherits: ^CivilianInfantry
+	Voiced:
+		VoiceSet: CivilianTexanVoice
+
+civbbp:
+	Inherits: ^CivilianInfantry
+
+civbfm:
+	Inherits: ^CivilianInfantry
+	WithInfantryBody:
+		-DefaultAttackSequence:
+
+civbf:
+	Inherits: ^CivilianInfantry
+	Voiced:
+		VoiceSet: CivilianAlliedFemaleVoice
+	WithInfantryBody:
+		-DefaultAttackSequence:
+
+civbtm:
+	Inherits: ^CivilianInfantry
+	WithInfantryBody:
+		-DefaultAttackSequence:
+
+civsfm:
+	Inherits: ^CivilianInfantry
+	Voiced:
+		VoiceSet: CivilianSovietMaleVoice
+
+civsf:
+	Inherits: ^CivilianInfantry
+	Voiced:
+		VoiceSet: CivilianSovietFemaleVoice
+
+civstm:
+	Inherits: ^CivilianInfantry
+	Voiced:
+		VoiceSet: CivilianSovietMaleVoice
+
+vladimir:
+	Inherits: ^CivilianInfantry
+	Tooltip:
+		Name: General Vladimir
+	Tooltip@NoRow:
+		Name: General Vladimir
+	WithInfantryBody:
+		IdleSequences: idle1, idle2
+	-ScaredyCat:
+	-Wanders:
+
+pentgen:
+	Inherits: ^CivilianInfantry
+	Tooltip:
+		Name: General
+	Tooltip@NoRow:
+		Name: General
+	Voiced:
+		VoiceSet: GIVoice
+	-ScaredyCat:
+	-Wanders:
+
+ssrv:
+	Inherits: ^CivilianInfantry
+	Tooltip:
+		Name: Secret Service
+	Tooltip@NoRow:
+		Name: Secret Service
+	Voiced:
+		VoiceSet: SecretServiceVoice
+	-ScaredyCat:
+	-Wanders:
+
+pres:
+	Inherits: ^CivilianInfantry
+	Tooltip:
+		Name: President Michael Dugan
+	Tooltip@NoRow:
+		Name: President Michael Dugan
+	-Wanders:
+	WithInfantryBody:
+		-DefaultAttackSequence:
+
+# Yuri's Revenge Civilians
+rmnv:
+	Inherits: ^CivilianInfantry
+	Tooltip:
+		Name: Premier Alexander Romanov
+	Tooltip@NoRow:
+		Name: Premier Alexander Romanov
+	Voiced:
+		VoiceSet: RomanovVoice
+	-ScaredyCat:
+	-Wanders:
+	WithInfantryBody:
+		-DefaultAttackSequence:
+
+eins:
+	Inherits: ^CivilianInfantry
+	Tooltip:
+		Name: Professor Albert Einstein
+	Tooltip@NoRow:
+		Name: Professor Albert Einstein
+	Voiced:
+		VoiceSet: EinsteinVoice
+	-Wanders:
+	WithInfantryBody:
+		-DefaultAttackSequence:
+
+mumy:
+	Inherits: ^CivilianInfantry
+	Tooltip:
+		Name: Mummy
+	Tooltip@NoRow:
+		Name: Mummy
+	Health:
+		HP: 40000
+	Armor:
+		Type: Plate
+	Armament@primary:
+		Weapon: MummyPunch
+	Armament@second:
+		Weapon: MummySmash
+	WithInfantryBody:
+		IdleSequences: idle1, idle2
+	Voiced:
+		VoiceSet: MummyVoice
+	-ScaredyCat:
+	-Wanders:
+	ActorStatValues:
+		Damage: 100
+
+# Custom Civilians
+pentgen2:
+	Inherits: pentgen
+
+myak:
+	Inherits: ssrv
+	Tooltip:
+		Name: Chairman Mustapha Yakubov
+	Tooltip@NoRow:
+		Name: Chairman Mustapha Yakubov
+
+pres.regicide:
+	Inherits: ^RegicideLeader
+	Tooltip:
+		Name: President Michael Dugan
+	Tooltip@NoRow:
+		Name: President Michael Dugan
+	RenderSprites:
+		Image: pres
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome
+
+rmnv.regicide:
+	Inherits: ^RegicideLeader
+	Tooltip:
+		Name: Premier Alexander Romanov
+	Tooltip@NoRow:
+		Name: Premier Alexander Romanov
+	Voiced:
+		VoiceSet: RomanovVoice
+	RenderSprites:
+		Image: rmnv
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome
+
+yuripr.regicide:
+	Inherits: ^RegicideLeader
+	Tooltip:
+		Name: Master Yuri
+	Tooltip@NoRow:
+		Name: Master Yuri
+	Voiced:
+		VoiceSet: YuriPrimeVoice
+	RenderSprites:
+		Image: yuripr
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome
+
+myak.regicide:
+	Inherits: ^RegicideLeader
+	Tooltip:
+		Name: Chairman Mustapha Yakubov
+	Tooltip@NoRow:
+		Name: Chairman Mustapha Yakubov
+	Voiced:
+		VoiceSet: SecretServiceVoice
+	RenderSprites:
+		Image: myak
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome

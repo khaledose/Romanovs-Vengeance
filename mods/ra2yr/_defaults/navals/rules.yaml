@@ -1,0 +1,309 @@
+^Ship:
+	Inherits@1: ^ExistsInWorld
+	Inherits@2: ^IronCurtainable
+	Inherits@3: ^ChronoDisableDisabledWithIC
+	Inherits@4: ^CrateStatModifiers
+	Inherits@5: ^MachineShopRepair
+	Inherits@6: ^AcceptsIvanBomb
+	Inherits@7: ^AcceptsC4
+	Inherits@8: ^AffectedByIndustrialPlant
+	Inherits@9: ^VehicleParticles
+	Inherits@10: ^Tractable
+	Inherits@HANDICAPS: ^PlayerHandicaps
+	Inherits@SELECTION_MODE: ^FlatSelectionMode
+	OwnerLostAction:
+		Action: Kill
+		DeathTypes: BulletDeath, NonTemporal
+	RevealOnFire:
+		ArmamentNames: primary, secondary, missile, asw
+		Duration: 50
+	RevealOnDeath:
+		Duration: 125
+	Mobile:
+		Voice: Move
+		Locomotor: naval
+		TurnSpeed: 20
+		RequiresCondition: !chronodisable && !squid && !beinginfected
+	LeavesTrails:
+		Image: wake
+		Palette: effect50alpha
+		TerrainTypes: Water, Beach
+		Type: CenterPosition
+		StationaryInterval: 18
+		MovingInterval: 6
+	SelectionDecorations:
+		MinimumZoom: 0
+	Selectable:
+		Bounds: 772, 1544
+	ActorStatValues:
+		UpgradePrerequisites: global-upgrades
+	Targetable:
+		TargetTypes: Ground, Water, Ship
+	Targetable@REPAIR:
+		RequiresCondition: damaged
+		TargetTypes: Repair
+	GrantConditionOnDamageState@DAMAGED:
+		Condition: damaged
+		ValidDamageStates: Light, Medium, Heavy, Critical
+	RepairableNear:
+		Voice: Move
+		CloseEnough: 3c0
+		RepairActors: gayard, nayard, yayard
+	CaptureManager:
+		BeingCapturedCondition: being-captured
+	Capturable:
+		Types: vehicle
+		CancelActivity: True
+	CaptureSound:
+		Sound: ihijweaa.wav
+	HiddenUnderFog:
+	ActorLostNotification:
+		TextNotification: Unit lost.
+	ProximityCaptor:
+		Types: Ship
+	Guard:
+		Voice: Attack
+	Guardable:
+	BodyOrientation:
+		QuantizedFacings: 0
+		CameraPitch: 85
+		UseClassicPerspectiveFudge: false
+	Explodes:
+		DeathTypes: NonTemporal
+		Weapon: UnitExplode
+		EmptyWeapon: UnitExplode
+	Explodes@Sinking:
+		DeathTypes: NonTemporal
+		Weapon: UnitSink
+		EmptyWeapon: UnitSink
+	RenderVoxels:
+		Scale: 11.7
+		LightYaw: 800
+		LightPitch: 150
+		LightAmbientColor: -0.5,-0.5,-0.5
+		LightDiffuseColor: 1.3,1.3,1.3
+	GrantConditionOnPrerequisite@SUDDENDEATH:
+		Condition: suddendeath
+		Prerequisites: global-suddendeath
+	MustBeDestroyed:
+		RequiresCondition: !suddendeath
+	Voiced:
+		VoiceSet: SovietNavalVoice
+	Chronoshiftable:
+		ChronoshiftSound: schrmov.wav
+		ReturnToOrigin: false
+		RequiresCondition: !invulnerability
+	Tooltip:
+		Name: Ship
+		GenericName: Ship
+		RequiresCondition: showownername
+	Tooltip@NoRow:
+		Name: Ship
+		GenericName: Ship
+		ShowOwnerRow: false
+		RequiresCondition: !showownername
+	GrantConditionOnPrerequisite@SHOWOWNERNAME:
+		Condition: showownername
+		Prerequisites: global-showownername
+	MapEditorData:
+		Categories: Naval
+	RangedGpsDot:
+		Sequence: Ship
+
+^AmphibiousTransport:
+	Inherits: ^Ship
+	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@DRONE: ^TerrorDronable
+	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	Inherits@SQUID: ^SquidGrabbable
+	Buildable:
+		Queue: Ship.Shared, Ship
+		Prerequisites: ~techlevel.1
+		BuildPaletteOrder: 45
+		Description: General-purpose naval transport.\nCan carry infantry and vehicles.\n\n  Unarmed
+		BuildDuration: 500
+		BuildDurationModifier: 100
+	Valued:
+		Cost: 500
+	DeliversCash:
+		Payload: 500
+		Voice: Move
+	Tooltip:
+		Name: Amphibious Transport
+	Tooltip@NoRow:
+		Name: Amphibious Transport
+	Selectable:
+		Bounds: 1448, 3861, 0, -772
+	Health:
+		HP: 40000
+	Armor:
+		Type: Light
+	Mobile:
+		TurnSpeed: 16
+		Speed: 120
+		TurnsWhileMoving: true
+		Locomotor: heavyamphibious
+		RequiresCondition: !notmobile && !chronodisable && !squid && !beinginfected
+	Hovers:
+		Ticks: 10
+		BobDistance: -64
+		InitialHeight: 384
+		# PauseOnCondition: chronodisable
+		RequiresCondition: !squid
+	Guard:
+		Voice: Move
+	RevealsShroud:
+		Range: 6c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 6c0
+	RevealOnDeath:
+		Radius: 6c0
+	Targetable:
+		RequiresCondition: in_water
+	Targetable@GROUND:
+		TargetTypes: Ground, Vehicle, DroneInfection, DetonateAttack
+		RequiresCondition: !in_water
+	GrantConditionOnTerrain@Water:
+		TerrainTypes: Water, Beach
+		Condition: in_water
+	Repairable:
+		Voice: Move
+		RepairActors: gadept, nadept, nadepb, caoutp, caoutb
+	Cargo:
+		Types: Infantry, Garrisoner, SmallVehicle, Vehicle, GarrisonerVehicle, NaturalVehicle
+		MaxWeight: 12
+		AfterLoadDelay: 0
+		BeforeUnloadDelay: 0
+		AfterUnloadDelay: 0
+		PassengerFacing: 384
+		UnloadTerrainTypes: Clear, Rough, Rail, Road, DirtRoad, Beach, Ore, Gems
+		UnloadVoice: Move
+		EjectOnDeath: false
+		LoadingCondition: notmobile
+	WithCargoSounds:
+		EnterSound: genter1a.wav
+		ExitSound: gexit1a.wav
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidRelationships: None
+	WithVoxelBody:
+	RenderSprites:
+	HitShape:
+	WithCargoPipsDecoration:
+		Margin: 4, 3
+		Palette: ra
+		Position: BottomLeft
+		RequiresSelection: true
+		CustomPipSequences:
+			gray: pip-gray
+			yellow: pip-yellow
+			blue: pip-blue
+			red: pip-red
+	# GrantConditionOnMovement@MoveStart:
+	#	Condition: moving
+	#	ValidMovementTypes: Horizontal, Turn
+	# SoundAnnouncement:
+	#	SoundFiles: vlanstaa.wav, vlanstab.wav, vlanstac.wav
+	#	Volume: 0.45
+	#	RequiresCondition: moving
+
+^SeaAnimal:
+	Inherits@1: ^ExistsInWorld
+	Inherits@2: ^SpriteActor
+	Inherits@3: ^ChronoDisable
+	Inherits@4: ^CrateStatModifiers
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@INVULNERABILITY: ^KilledByIronCurtain
+	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	Inherits@SUBMERGE: ^WithSubmergeColorOverlay
+	OwnerLostAction:
+		Action: Kill
+		DeathTypes: BulletDeath
+	WithColoredOverlay@SUBMERGE:
+		Color: 24262D80
+		RequiresCondition: !surfaced
+	Buildable:
+		Queue: Ship.Shared, Ship
+		BuildPaletteOrder: 70
+		Prerequisites: radar, ~techlevel.3
+		BuildDurationModifier: 100
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Tooltip:
+		Name: Sea Animal
+		GenericName: Sea Animal
+		RequiresCondition: showownername
+	Tooltip@NoRow:
+		Name: Sea Animal
+		GenericName: Sea Animal
+		ShowOwnerRow: false
+		RequiresCondition: !showownername
+	GrantConditionOnPrerequisite@SHOWOWNERNAME:
+		Condition: showownername
+		Prerequisites: global-showownername
+	Armor:
+		Type: Light
+	Mobile:
+		TurnSpeed: 1023
+		Speed: 120
+		Locomotor: naval
+		Voice: Move
+	SelectionDecorations:
+	ActorStatValues:
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidRelationships: None
+	RevealsShroud:
+		Range: 8c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 8c0
+	RevealOnDeath:
+		Radius: 8c0
+		Duration: 125
+	# Cloak:
+	#	DetectionTypes: Underwater
+	#	InitialDelay: 50
+	#	CloakDelay: 75
+	#	CloakSound: vnavupa.wav
+	#	UncloakSound: vnavupa.wav
+	#	UncloakOn: Damage
+	#	IsPlayerPalette: true
+	Targetable:
+		TargetTypes: Ground, Water, SeaAnimal, Underwater
+	Targetable@REPAIR:
+		RequiresCondition: damaged
+		TargetTypes: SeaAnimalRepair
+	GrantConditionOnDamageState@DAMAGED:
+		Condition: damaged
+		ValidDamageStates: Light, Medium, Heavy, Critical
+	DetectCloaked:
+		# DetectionTypes: Underwater
+		Range: 4c0
+	RenderDetectionCircle:
+	HiddenUnderFog:
+	ActorLostNotification:
+		TextNotification: Unit lost.
+	Guard:
+		Voice: Attack
+	Guardable:
+	DeathSounds:
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+	Chronoshiftable:
+		ExplodeInstead: true
+	RenderSprites:
+	RepairableNear:
+		Voice: Move
+		CloseEnough: 3c0
+		RepairActors: gayard, nayard, yayard
+	HitShape:

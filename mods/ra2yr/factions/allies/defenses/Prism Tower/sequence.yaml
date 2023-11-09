@@ -1,0 +1,69 @@
+atesla:
+	Defaults:
+		Offset: 1,-15
+	idle:
+		Filename: ggpris.shp
+		TilesetFilenames:
+			SNOW: gapris.shp
+			SIMPLETERRAIN: gtpris.shp
+		ShadowStart: 3
+	damaged-idle:
+		Filename: ggpris.shp
+		TilesetFilenames:
+			SNOW: gapris.shp
+			SIMPLETERRAIN: gtpris.shp
+		Start: 1
+		ShadowStart: 4
+	powered:
+		Filename: ggpris_b.shp
+		TilesetFilenames:
+			SNOW: gapris_b.shp
+			SIMPLETERRAIN: gtpris_b.shp
+		Length: 9
+		Tick: 100
+		ShadowStart: 18
+	damaged-powered:
+		Filename: ggpris_b.shp
+		TilesetFilenames:
+			SNOW: gapris_b.shp
+			SIMPLETERRAIN: gtpris_b.shp
+		Start: 9
+		Length: 9
+		Tick: 180
+		ShadowStart: 27
+	active:
+		Filename: ggpris_a.shp
+		TilesetFilenames:
+			SNOW: gapris_a.shp
+			SIMPLETERRAIN: gtpris_a.shp
+		Length: 10
+		Tick: 100
+		ShadowStart: 20
+	damaged-active:
+		Filename: ggpris_a.shp
+		TilesetFilenames:
+			SNOW: gapris_a.shp
+			SIMPLETERRAIN: gtpris_a.shp
+		Start: 10
+		Length: 10
+		Tick: 100
+		ShadowStart: 30
+	#dead: ggprisdm # SHP broken & unused
+	#	Length: 21
+	#	ShadowStart: 21
+	#	Tick: 100
+	make:
+		Filename: gtprismk.shp
+		TilesetFilenames:
+			SNOW: gaprismk.shp
+			URBAN: guprismk.shp
+			NEWURBAN: gnprismk.shp
+			DESERT: gdprismk.shp
+			LUNAR: glprismk.shp
+			DUNE: gdprismk.shp
+		Length: 8
+		ShadowStart: 8
+		Tick: 160
+	icon:
+		Filename: cameo|prisicon.shp
+		Offset: 0,0

@@ -1,0 +1,256 @@
+# e1:
+# 	Inherits: ^Infantry
+# 	Inherits@AI: ^AIMicroManagable
+# 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+# 	Inherits@EXPERIENCE: ^GainsExperience
+# 	Inherits@VETERAN: ^ProducibleAsVeteranInfantry
+# 	Inherits@CHAOS: ^Berserkable
+# 	Inherits@MC: ^MindControllable
+# 	Inherits@VOICES: ^WithFeedbackVoicelines
+# 	Buildable:
+# 		Queue: Infantry.Shared, Infantry.Allies
+# 		BuildAtProductionType: Soldier
+# 		Prerequisites: ~infantry.allies, ~techlevel.1
+# 		BuildPaletteOrder: 10
+# 		Description: General-purpose infantry.\nCan deploy to gain more range and damage.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nUpgradeable with:\n- Fiber-Reinforced Fortifications\n- Advanced Training\n- Portable Weaponry (United Kingdom)
+# 		BuildDuration: 100
+# 		BuildDurationModifier: 100
+# 	UpdatesPlayerStatistics:
+# 		AddToArmyValue: true
+# 	Valued:
+# 		Cost: 200
+# 	DeliversCash:
+# 		Payload: 100
+# 	Tooltip:
+# 	Tooltip@NoRow:
+# 		Name: G.I.
+# 	Selectable:
+# 		Bounds: 482, 1448, 0, -530
+# 	Health:
+# 		HP: 12500
+# 	Mobile:
+# 		Speed: 60
+# 		RequireForceMoveCondition: !undeployed
+# 	Garrisoner:
+# 		Voice: Move
+# 		GarrisonType: Garrisoner
+# 	Passenger:
+# 		RequireForceMoveCondition: !undeployed
+# 	RevealsShroud:
+# 		Range: 6c0
+# 	# RevealsShroudToIntelligenceOwner:
+# 	#	Range: 6c0
+# 	RevealOnDeath:
+# 		Radius: 6c0
+# 	Crushable:
+# 		RequiresCondition: !cheater-ai && !vengeful-ai && undeployed
+# 	Crushable@Cheater:
+# 		RequiresCondition: cheater-ai && undeployed
+# 	Crushable@Vengeful:
+# 		RequiresCondition: vengeful-ai && undeployed
+# 	Crushable@deployed:
+# 		WarnProbability: 0
+# 		CrushClasses: vehicle
+# 		CrushSound: igensqua.wav
+# 		RequiresCondition: !undeployed
+# 	Armament@primary:
+# 		Weapon: M60
+# 		Damage: 15
+# 		PauseOnCondition: chronodisable
+# 		RequiresCondition: !rank-elite && !deployed
+# 	Armament@elite:
+# 		Weapon: M60E
+# 		Damage: 20
+# 		PauseOnCondition: chronodisable
+# 		RequiresCondition: rank-elite && !deployed
+# 	Armament@deployed:
+# 		Name: deployed
+# 		Weapon: para
+# 		Damage: 20
+# 		Turret: deploy
+# 		PauseOnCondition: chronodisable
+# 		RequiresCondition: !rank-elite && deployed
+# 	Armament@elite-deployed:
+# 		Name: deployed
+# 		Weapon: paraE
+# 		Damage: 25
+# 		Turret: deploy
+# 		PauseOnCondition: chronodisable
+# 		RequiresCondition: rank-elite && deployed
+# 	Armament@opentopped:
+# 		Name: opentopped
+# 		Weapon: para
+# 		PauseOnCondition: chronodisable
+# 		RequiresCondition: !rank-elite
+# 	Armament@elite-opentopped:
+# 		Name: opentopped
+# 		Weapon: paraE
+# 		PauseOnCondition: chronodisable
+# 		RequiresCondition: rank-elite
+# 	Armament@garrisoned:
+# 		Weapon: UCpara
+# 		Name: garrisoned
+# 		PauseOnCondition: chronodisable
+# 		RequiresCondition: !rank-elite
+# 	Armament@elite-garrisoned:
+# 		Weapon: UCparaE
+# 		Name: garrisoned
+# 		PauseOnCondition: chronodisable
+# 		RequiresCondition: rank-elite
+# 	GrantConditionOnDeploy:
+# 		DeployedCondition: deployed
+# 		UndeployedCondition: undeployed
+# 		CanDeployOnRamps: True
+# 		SmartDeploy: True
+# 		Facing: 384
+# 		Voice: Deploy
+# 		UndeployOnMove: true
+# 		DeploySounds: igidepa.wav
+# 		UndeploySounds: igidepb.wav
+# 		PauseOnCondition: chronodisable
+# 		RequiresCondition: !parachute
+# 	GrantCondition:
+# 		Condition: editorhack
+# 	WithInfantryBody@Editor: # HACK: negative conditions don't count in EnabledByDefault, we can use this duplicate WIB to render it on map editor
+# 		DefaultAttackSequence: shoot
+# 		RequiresCondition: !editorhack
+# 	WithInfantryBody:
+# 		DefaultAttackSequence: shoot
+# 		RequiresCondition: undeployed && !parachute
+# 	Turreted:
+# 		Turret: deploy
+# 		RealignDelay: -1
+# 		TurnSpeed: 1023
+# 		InitialFacing: 368
+# 	WithSpriteTurret@idle:
+# 		Turret: deploy
+# 		Sequence: deployed
+# 		RequiresCondition: deployed && !animate-turret && !parachute
+# 	WithSpriteTurret@animated:
+# 		Turret: deploy
+# 		Sequence: shoot-deployed
+# 		RequiresCondition: deployed && animate-turret && !parachute
+# 	WithSpriteBody:
+# 		Sequence: dot
+# 		Name: dot
+# 		RequiresCondition: !undeployed
+# 	WithMakeAnimation:
+# 		Sequence: deploy
+# 		BodyNames: dot
+# 	AttackFrontal:
+# 		Voice: Attack
+# 		FacingTolerance: 2
+# 		RequiresCondition: undeployed
+# 	AttackTurreted@deployed:
+# 		Armaments: deployed
+# 		Turrets: deploy
+# 		Voice: Attack
+# 		RequiresCondition: deployed
+# 		OutsideRangeRequiresForceFire: True
+# 	GrantConditionOnAttack:
+# 		Condition: animate-turret
+# 		RevokeDelay: 10
+# 		ArmamentNames: deployed
+# 	RejectsOrders@deployment:
+# 		Reject: AttackMove, AssaultMove
+# 		RequiresCondition: !ai-control && deployed && !chaos
+# 	RejectsMoveToAttack:
+# 		RequiresCondition: !ai-control && deployed && !chaos
+# 	TakeCover:
+# 		RequiresCondition: undeployed
+# 	Voiced:
+# 		VoiceSet: GIVoice
+# 	QuantizeFacingsFromSequence:
+# 		Sequence: stand
+# 	AutoDeployer@AI:
+# 		RequiresCondition: ai-control && !deployed
+# 		DeployTrigger: Attack
+# 		DeployChance: 100
+# 		DeployTicks: 5
+# 		UndeployTicks: 50
+
+e1:
+	Inherits: ^GroundInfantry
+	Inherits@AI: ^AIMicroManagable
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@VETERAN: ^InfantryPromotable
+	Inherits@MC: ^MindControllable
+	Inherits@TURRET: ^WithDeployedTurret
+	Inherits@GARRISONER: ^Garrisoner
+	Inherits@VOICES: ^WithGIVoices
+	Buildable:
+		Queue: Infantry.Shared, Infantry.Allies
+		Prerequisites: ~infantry.allies, ~techlevel.1
+		Description: General-purpose infantry.\nCan deploy to gain more range and damage.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nUpgradeable with:\n- Fiber-Reinforced Fortifications\n- Advanced Training\n- Portable Weaponry (United Kingdom)
+		BuildPaletteOrder: 1
+	Health:
+		HP: 12500
+	Armor:
+		Type: None
+	Valued:
+		Cost: 200
+	DeliversCash:
+		Payload: 100
+	Mobile:
+		Speed: 60
+	RevealsShroud:
+		Range: 5c0
+	Tooltip:
+		Name: G.I.
+	Tooltip@NoRow:
+		Name: G.I.
+	Armament@primary:
+		Weapon: M60
+		Damage: 15
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite && !deployed
+	Armament@elite:
+		Weapon: M60E
+		Damage: 20
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite && !deployed
+	Armament@deployed:
+		Name: deployed
+		Weapon: para
+		Damage: 20
+		Turret: deploy
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite && deployed
+	Armament@elite-deployed:
+		Name: deployed
+		Weapon: paraE
+		Damage: 25
+		Turret: deploy
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite && deployed
+	Armament@opentopped:
+		Name: opentopped
+		Weapon: para
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite
+	Armament@elite-opentopped:
+		Name: opentopped
+		Weapon: paraE
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite
+	Armament@garrisoned:
+		Weapon: UCpara
+		Name: garrisoned
+		MuzzleSequence: muzzle
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite
+	Armament@elite-garrisoned:
+		Weapon: UCparaE
+		Name: garrisoned
+		MuzzleSequence: muzzle
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite
+	WithMuzzleOverlay:
+
+^WithGIVoices:
+	Inherits: ^WithFeedbackVoicelines
+	GrantConditionOnDeploy:
+		DeploySounds: igidepa.wav
+		UndeploySounds: igidepb.wav
+	Voiced:
+		VoiceSet: GIVoice

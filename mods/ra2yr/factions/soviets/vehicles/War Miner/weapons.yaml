@@ -1,0 +1,22 @@
+20mmrapid:
+	Inherits: ^MG
+	ReloadDelay: 20
+	Range: 6c0
+	Report: vwaratta.wav, vwarattb.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 3000
+		Versus:
+			Medium: 20
+			Heavy: 20
+			Wood: 20
+			Steel: 20
+			Concrete: 15
+			Drone: 200
+
+20mmrapidE:
+	Inherits: 20mmrapid
+	ReloadDelay: 15
+	Warhead@1Dam: SpreadDamage
+		Damage: 5000
+	Warhead@2Eff: CreateEffect
+		Explosions: piffpiffred

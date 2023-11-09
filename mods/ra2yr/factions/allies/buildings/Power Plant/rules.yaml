@@ -1,0 +1,32 @@
+gapowr:
+	Inherits: ^PowerPlant
+	Inherits@SHAPE: ^2x2Shape
+	Buildable:
+		Queue: Building.Shared, Building.Allies
+		Prerequisites: ~building.allies, ~techlevel.1
+	IsometricSelectable:
+		DecorationHeight: 60
+	Power:
+		Amount: 200
+	Health:
+		HP: 75000
+	Armor:
+		Type: Wood
+	Valued:
+		Cost: 800
+	RevealsShroud:
+		Range: 4c0
+	Tooltip:
+		Name: Allied Power Plant
+	Tooltip@NoRow:
+		Name: Allied Power Plant
+	Voiced:
+		VoiceSet: PowerPlantVoice
+		Volume: 0.8
+	Explodes:
+		Weapon: PowerPlantExplosion
+		Type: CenterPosition
+	WithIdleOverlay@glow:
+		Sequence: idle-glow
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete

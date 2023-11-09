@@ -1,0 +1,25 @@
+smcv:
+	Inherits: ^ConstructionVehicle
+	Buildable:
+		Queue: Vehicle.Shared, Vehicle.Soviets, Ship.Shared, Ship.Soviets
+		Prerequisites: ~vehicleorship.soviets, nadept, ~techlevel.2, ~!global-suddendeath, ~!ai.mcv
+	Transforms:
+		IntoActor: nacnst
+	Voiced:
+		VoiceSet: SovietConstructionVehicleVoice
+
+smcv.colorpicker:
+	Inherits: smcv
+	Mobile:
+		InitialFacing: 640
+	-Buildable:
+	-MapEditorData:
+	WithVoxelBody:
+		ShowShadow: false
+	-WithVoxelBody@Water:
+	RenderSprites:
+		Image: smcv
+		Palette: colorpicker
+	RenderVoxels:
+		Image: smcv
+		Palette: colorpicker

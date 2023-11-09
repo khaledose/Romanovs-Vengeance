@@ -1,0 +1,89 @@
+atesla:
+	Inherits: ^SupportBuilding
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	# Inherits@DRAIN: ^DiskDrainable
+	Inherits@DRAIN: ^DiskDefenseDrainable
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@MC: ^MindControllableBuilding
+	Buildable:
+		Queue: Support.Shared, Support.Allies
+		BuildPaletteOrder: 60
+		Prerequisites: ~building.allies, gaairc, ~techlevel.3
+		Description: Advanced base defense.\nCan buff at most 3 other Prism Towers nearby.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nAbilities:\n- Can detect Steath units\n\nUpgradeable with:\n- Grand Cannon Protocols (France)\n\n  Requires power to operate.
+		BuildDuration: 625
+		BuildDurationModifier: 100
+	Valued:
+		Cost: 1200
+	Tooltip:
+	Tooltip@NoRow:
+		Name: Prism Tower
+	Building:
+		Footprint: x
+		Dimensions: 1, 1
+	Health:
+		HP: 60000
+	Armor:
+		Type: Steel
+	RevealsShroud:
+		Range: 8c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 8c0
+	WithTeslaChargeAnimation:
+	Armament:
+		Weapon: PrismShot
+		LocalOffset: 0,0,3072
+	Armament@Support:
+		Name: support
+		Weapon: PrismSupport
+		LocalOffset: 0,0,3072
+	WithPrismChargeAnimation:
+	AttackPrismSupported:
+		ReloadDelay: 50
+		TicksPerHop: 3
+		ReceiverOffset: 0,0,3072
+		ChargeAudio: bpripow.wav
+		SupportArmament: support
+		BuffCondition: prism-stack
+		MaxSupportersPerAttacker: 3
+		PauseOnCondition: build-incomplete || disabled || chronodisable
+	DetectCloaked:
+		Range: 7c0
+		RequiresCondition: !disabled
+	RenderDetectionCircle:
+	Power:
+		Amount: -75
+		RequiresCondition: !chronodisable
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower || powerdown || diskdrain
+	AutoTarget:
+	WithIdleOverlay@normal:
+		Sequence: idle-normal
+		PauseOnCondition: disabled || chronodisable
+		RequiresCondition: !build-incomplete
+	WithSpriteBody:
+		PauseOnCondition: disabled || chronodisable
+	WithRangeCircle:
+		Range: 8c0
+		Type: prismcannon
+	FirepowerMultiplier@1:
+		Modifier: 200
+		RequiresCondition: prism-stack == 1
+	FirepowerMultiplier@2:
+		Modifier: 300
+		RequiresCondition: prism-stack == 2
+	FirepowerMultiplier@3:
+		Modifier: 400
+		RequiresCondition: prism-stack >= 3
+	IsometricSelectable:
+		Class: atesla
+		DecorationHeight: 90
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
+	Voiced:
+		VoiceSet: PrismTowerVoice
+		Volume: 0.8
+	ActorStatValues:
+		Damage: 150
+		ReloadDelay: 50

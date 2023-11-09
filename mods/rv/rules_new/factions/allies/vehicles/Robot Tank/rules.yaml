@@ -1,0 +1,133 @@
+robo:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@VETERAN: ^ProducibleAsVeteranVehicle
+	Inherits@SQUID: ^SquidGrabbable
+	Valued:
+		Cost: 500
+	DeliversCash:
+		Payload: 500
+		Voice: Move
+	Tooltip:
+	Tooltip@NoRow:
+		Name: Robot Tank
+	Buildable:
+		Queue: Vehicle.Shared, Vehicle.Allies
+		Prerequisites: ~vehicle.allies, garobo, ~techlevel.2
+		BuildPaletteOrder: 40
+		Description: Remote controlled vehicle.\nRequires an Allied War Factory to operate.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can move over water\n- Cannot be mind controlled
+		BuildDuration: 175
+		BuildDurationModifier: 100
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Mobile:
+		Speed: 135
+		TurnSpeed: 20
+		BackwardDuration: 5
+		CanMoveBackward: true
+		TurnsWhileMoving: true
+		Locomotor: amphibious
+		PauseOnCondition: !powered
+		RequiresCondition: !chronodisable && !magnefreeze && !beingterrordroned && !squid
+	Crushable:
+		RequiresCondition: !invulnerability && (!in_water || on_dock) && !cheater-ai && !vengeful-ai
+	Crushable@Cheater:
+		RequiresCondition: !invulnerability && (!in_water || on_dock) && cheater-ai
+	Crushable@Vengeful:
+		RequiresCondition: !invulnerability && (!in_water || on_dock) && vengeful-ai
+	Hovers:
+		Ticks: 10
+		BobDistance: -64
+		InitialHeight: 384
+		# PauseOnCondition: chronodisable
+		RequiresCondition: !magnefreeze && !squid && powered
+	Health:
+		HP: 25000
+	Armor:
+		Type: Light
+	-CaptureManager:
+	-Capturable:
+	RevealsShroud:
+		Range: 6c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 6c0
+	RevealOnDeath:
+		Radius: 6c0
+	Turreted:
+		TurnSpeed: 36
+	Armament:
+		Weapon: robogun
+		Damage: 25
+		LocalOffset: 640,0,640
+		MuzzleSequence: muzzle
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: robogunE
+		Damage: 30
+		LocalOffset: 640,0,640
+		MuzzleSequence: muzzle
+		RequiresCondition: rank-elite
+	AttackTurreted:
+		Voice: Attack
+		PauseOnCondition: !powered || chronodisable || parachute
+	WithMuzzleOverlay:
+	AutoTarget:
+	RenderSprites:
+	Selectable:
+		Bounds: 1158, 2316, 0, -579
+	RenderVoxels:
+	WithVoxelBody:
+	WithVoxelTurret:
+	WithColoredOverlay:
+		Color: 00000080
+		RequiresCondition: !powered
+	KillsSelf@LowPowerOnWater:
+		DamageTypes: NonTemporal
+		RequiresCondition: (!powered || magnefreeze) && in_water
+	PeriodicExplosion@disabledsparks:
+		RequiresCondition: !powered
+		Weapon: DisabledSparkSpawner
+		LocalOffset: 0,0,384
+	GrantConditionOnPrerequisite:
+		Condition: powered
+		Prerequisites: powered_robo
+	Targetable:
+		TargetTypes: Ground, Vehicle, DetonateAttack, DroneInfection, ImmuneToRadiation
+		RequiresCondition: !in_water
+	Targetable@WATER:
+		TargetTypes: Ground, Water, Ship, DetonateAttack, ImmuneToRadiation
+		RequiresCondition: in_water
+	GrantConditionOnTerrain@Water:
+		TerrainTypes: Water, Beach
+		Condition: in_water
+	LeavesTrails:
+		Image: wake
+		Palette: effect50alpha
+		TerrainTypes: Water, Beach
+		Type: CenterPosition
+		StationaryInterval: 18
+		MovingInterval: 6
+	RepairableNear:
+		Voice: Move
+		CloseEnough: 3c0
+		RepairActors: gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead, gayard, nayard, yayard, gaairc, gaairb, baairf, baairb, naheli, yadisk
+	Voiced:
+		VoiceSet: RobotTankVoice
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidRelationships: None
+	DeathSounds:
+		DeathTypes: NonTemporal
+	HitShape:
+	# GrantConditionOnMovement@MoveStart:
+	#	Condition: moving
+	#	ValidMovementTypes: Horizontal, Turn
+	# SoundAnnouncement:
+	#	SoundFiles: vrobstaa.wav, vrobstab.wav, vrobstac.wav
+	#	Volume: 0.4
+	#	RequiresCondition: moving

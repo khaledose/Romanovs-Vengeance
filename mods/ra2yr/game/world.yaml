@@ -1,0 +1,441 @@
+^BaseWorld:
+	Inherits: ^Palettes
+	Inherits@RandomFaction: ^RandomFactions
+	Inherits@AlliedFactions: ^AlliedFactions
+	Inherits@SovietFactions: ^SovietFactions
+	Inherits@YuriFactions: ^YuriFactions
+	AlwaysVisible:
+	MusicPlaylist:
+		VictoryMusic: scorex
+		DefeatMusic: score
+	ActorMap:
+	Selection:
+	ControlGroups:
+	ScreenMap:
+	TerrainGeometryOverlay:
+	TerrainLighting:
+	TerrainRenderer:
+	VoxelCache:
+	ModelRenderer:
+	DebugVisualizations:
+	Locomotor@FOOT:
+		Name: foot
+		Crushes: crate
+		CrushDamageTypes: NonTemporal, Crush
+		SharesCell: true
+		TerrainSpeeds:
+			Clear: 100
+			Sand: 100
+			Rough: 100
+			Dune: 80
+			Rail: 90
+			Road: 100
+			Bridge: 100
+			DirtRoad: 100
+			Ore: 90
+			Gems: 90
+	Locomotor@DINO:
+		Name: dino
+		Crushes: crate
+		CrushDamageTypes: NonTemporal, Crush
+		SharesCell: false
+		TerrainSpeeds:
+			Clear: 100
+			Sand: 100
+			Rough: 100
+			Dune: 100
+			Rail: 100
+			Road: 100
+			Bridge: 100
+			DirtRoad: 100
+			Ore: 100
+			Gems: 100
+	JumpjetLocomotor@JUMPJET:
+		Name: jumpjet
+		Crushes: crate
+		SharesCell: true
+		JumpjetTransitionCost: 100
+		TerrainSpeeds:
+			Clear: 90
+			Road: 100
+			Bridge: 100
+			Rail: 90
+			DirtRoad: 100
+			Rough: 80
+			Tiberium: 90
+			BlueTiberium: 90
+			Veins: 50
+			Jumpjet: 110
+	Locomotor@CHRONO:
+		Name: chrono
+		Crushes: crate
+		CrushDamageTypes: NonTemporal, Crush
+		MoveIntoShroud: false
+		SharesCell: true
+		TerrainSpeeds:
+			Clear: 100
+			Sand: 100
+			Rough: 100
+			Dune: 100
+			Rail: 100
+			Road: 100
+			Bridge: 100
+			DirtRoad: 100
+			Ore: 100
+			Gems: 100
+	Locomotor@SWIMSUIT:
+		Name: swimsuit
+		Crushes: crate
+		CrushDamageTypes: NonTemporal, Crush
+		SharesCell: true
+		TerrainSpeeds:
+			Clear: 100
+			Sand: 100
+			Rough: 100
+			Dune: 80
+			Rail: 90
+			Road: 100
+			Bridge: 100
+			DirtRoad: 100
+			Ore: 90
+			Gems: 90
+			Beach: 70
+			Water: 70
+	Locomotor@FLAMEGUY:
+		Name: flameguy
+		Crushes: crate
+		CrushDamageTypes: NonTemporal, Crush
+		SharesCell: true
+		TerrainSpeeds:
+			Clear: 45
+			Sand: 45
+			Rough: 45
+			Dune: 45
+			Rail: 45
+			Road: 50
+			Bridge: 50
+			DirtRoad: 50
+			Ore: 45
+			Gems: 45
+	Locomotor@WHEELED:
+		Name: wheeled
+		Crushes: crate
+		CrushDamageTypes: NonTemporal, Crush
+		TerrainSpeeds:
+			Clear: 100
+			Sand: 100
+			Rough: 100
+			Dune: 80
+			Rail: 50
+			Road: 100
+			Bridge: 100
+			DirtRoad: 100
+			Ore: 90
+			Gems: 90
+	Locomotor@TRACKED:
+		Name: tracked
+		Crushes: crate, tree, fence
+		CrushDamageTypes: NonTemporal, Crush
+		TerrainSpeeds:
+			Clear: 100
+			Sand: 100
+			Rough: 100
+			Dune: 80
+			Rail: 50
+			Road: 100
+			Bridge: 100
+			DirtRoad: 100
+			Ore: 90
+			Gems: 90
+	Locomotor@HEAVYTRACKED:
+		Name: heavytracked
+		Crushes: crate, tree, fence, infantry
+		CrushDamageTypes: NonTemporal, Crush
+		TerrainSpeeds:
+			Clear: 100
+			Sand: 100
+			Rough: 100
+			Dune: 80
+			Rail: 50
+			Road: 100
+			Bridge: 100
+			DirtRoad: 100
+			Ore: 90
+			Gems: 90
+	Locomotor@OMNICRUSHER:
+		Name: omnicrusher
+		Crushes: crate, tree, fence, wall, infantry, vehicle
+		CrushDamageTypes: NonTemporal, Crush
+		TerrainSpeeds:
+			Clear: 100
+			Sand: 100
+			Rough: 100
+			Dune: 80
+			Rail: 50
+			Road: 100
+			Bridge: 100
+			DirtRoad: 100
+			Ore: 90
+			Gems: 90
+	Locomotor@NAVAL:
+		Name: naval
+		Crushes: crate
+		CrushDamageTypes: NonTemporal, Crush
+		TerrainSpeeds:
+			Water: 100
+	Locomotor@AMPHIBIOUS:
+		Name: amphibious
+		Crushes: crate
+		CrushDamageTypes: NonTemporal, Crush
+		TerrainSpeeds:
+			Clear: 100
+			Sand: 100
+			Rough: 100
+			Dune: 100
+			Rail: 100
+			Road: 100
+			Bridge: 100
+			DirtRoad: 100
+			Ore: 100
+			Gems: 100
+			Beach: 100
+			Water: 100
+	Locomotor@HEAVYAMPHIBIOUS:
+		Name: heavyamphibious
+		Crushes: crate, tree, fence, infantry
+		CrushDamageTypes: NonTemporal, Crush
+		TerrainSpeeds:
+			Clear: 100
+			Sand: 100
+			Rough: 100
+			Dune: 100
+			Rail: 100
+			Road: 100
+			Bridge: 100
+			DirtRoad: 100
+			Ore: 100
+			Gems: 100
+			Beach: 100
+			Water: 100
+	Locomotor@OMNIAMPHIBIOUS:
+		Name: omniamphibious
+		Crushes: crate, tree, fence, infantry, vehicle
+		CrushDamageTypes: NonTemporal, Crush
+		TerrainSpeeds:
+			Clear: 100
+			Sand: 100
+			Rough: 100
+			Dune: 100
+			Rail: 100
+			Road: 100
+			Bridge: 100
+			DirtRoad: 100
+			Ore: 100
+			Gems: 100
+			Beach: 100
+			Water: 100
+	ShroudRenderer:
+		Index: 255, 16, 32, 48, 64, 80, 96, 112, 128, 144, 160, 176, 192, 208, 224, 240, 20, 40, 56, 65, 97, 130, 148, 194, 24, 33, 66, 132, 28, 41, 67, 134, 1, 2, 4, 8, 3, 6, 12, 9, 7, 14, 13, 11, 5, 10, 15, 255
+		UseExtendedIndex: true
+		FogPalette: shroud
+		ShroudPalette: shroud
+	ResourceRenderer:
+		ResourceTypes:
+			Ore:
+				Sequences: tib01, tib02, tib03, tib04, tib05, tib06, tib07, tib08, tib09, tib10, tib11, tib12, tib13, tib14, tib15, tib16, tib17, tib18, tib19, tib20
+				Palette: resource
+				Name: Valuable Minerals
+			Gems:
+				Sequences: gem01, gem02, gem03, gem04, gem05, gem06, gem07, gem08, gem09, gem10, gem11, gem12
+				Palette: resource
+				Name: Valuable Minerals
+	CliffBackImpassabilityLayer:
+	GlobalLightingPaletteEffect:
+		Ambient: 1.0
+		Red: 1.0
+		Green: 1.0
+		Blue: 1.0
+
+World:
+	Inherits: ^BaseWorld
+	ChatCommands:
+	DevCommands:
+	DebugVisualizationCommands:
+	PathFinderOverlay:
+	HierarchicalPathFinderOverlay:
+	PlayerCommands:
+	TauntCommands:
+	HelpCommand:
+	ScreenShaker:
+	BuildingInfluence:
+	ProductionQueueFromSelection:
+		ProductionTabsWidget: PRODUCTION_TABS
+	SmudgeLayer@smallscorch:
+		Type: SmallScorch
+		Sequence: smallscorches
+		SmokeImage: smallfire
+		SmokeSequences: idle
+		SmokeChance: 50
+	SmudgeLayer@mediumscorch:
+		Type: MediumScorch
+		Sequence: mediumscorches
+		SmokeImage: mediumfire
+		SmokeSequences: idle
+		SmokeChance: 75
+	SmudgeLayer@largescorch:
+		Type: LargeScorch
+		Sequence: largescorches
+		SmokeImage: largefire
+		SmokeSequences: idle
+		SmokeChance: 100
+	SmudgeLayer@smallcrater:
+		Type: SmallCrater
+		SmokeImage: smallsmoke
+		SmokeSequences: idle
+		Sequence: smallcraters
+	SmudgeLayer@mediumcrater:
+		Type: MediumCrater
+		SmokeImage: smallsmoke
+		SmokeSequences: idle
+		Sequence: mediumcraters
+	SmudgeLayer@largecrater:
+		Type: LargeCrater
+		SmokeImage: largesmoke
+		SmokeSequences: idle
+		Sequence: largecraters
+	BuildableTerrainLayer:
+	ResourceLayer:
+		RecalculateResourceDensity: true
+		ResourceTypes:
+			Ore:
+				ResourceIndex: 1
+				TerrainType: Ore
+				AllowedTerrainTypes: Clear, Sand, Rough, Dune, Road, DirtRoad
+				MaxDensity: 12
+			Gems:
+				ResourceIndex: 2
+				TerrainType: Gems
+				AllowedTerrainTypes: Clear, Sand, Rough, Dune, Road, DirtRoad
+				MaxDensity: 12
+	ResourceClaimLayer:
+	ResourceTwinkleLayer:
+		Image: oreshimmering
+		Types: Ore, Gems
+		Palette: effect
+	BridgeLayer:
+	WarheadDebugOverlay:
+	ExitsDebugOverlayManager:
+	CustomTerrainDebugOverlay:
+	SpawnMapActors:
+	MapBuildRadius:
+		AllyBuildRadiusCheckboxDisplayOrder: 4
+		BuildRadiusCheckboxDisplayOrder: 7
+	MapOptions:
+		ShortGameCheckboxDisplayOrder: 2
+		TechLevelDropdownDisplayOrder: 4
+		GameSpeedDropdownDisplayOrder: 2
+	CreateMapPlayers:
+	Inherits@AlliesNoBaseModifier: ^AlliesNoBaseModifier
+	Inherits@SovietsNoBaseModifiers: ^SovietsNoBaseModifier
+	Inherits@YurisNoBaseModifiers: ^YurisNoBaseModifier
+	Inherits@AlliesStartingOptions: ^AlliesStartingOptions
+	Inherits@SovietsStartingOptions: ^SovietsStartingOptions
+	Inherits@YurisStartingOptions: ^YurisStartingOptions
+	CrateSpawner:
+		DeliveryAircraft: pdplane
+		Minimum: 1
+		Maximum: 255
+		SpawnInterval: 3000
+		WaterChance: 25
+		InitialSpawnDelay: 1000
+	MapCreeps:
+		CheckboxVisible: false
+	MapStartingLocations:
+		SeparateTeamSpawnsCheckboxDisplayOrder: 6
+	SpawnStartingUnits:
+		DropdownDisplayOrder: 1
+	PathFinder:
+	ValidateOrder:
+	DebugPauseState:
+	RadarPings:
+	StartGameNotification:
+	ObjectivesPanel:
+		PanelName: SKIRMISH_STATS
+	LoadWidgetAtGameStart:
+		ShellmapRoot: MAINMENU_PRERELEASE_NOTIFICATION
+	LuaScript:
+		Scripts: main.lua, regicide.lua, koth.lua, domination.lua
+	TimeLimitManager:
+		TimeLimitDisplayOrder: 5
+		TimeLimitWarnings:
+			1: OneMinuteRemaining
+			2: TwoMinutesRemaining
+			3: ThreeMinutesRemaining
+			4: FourMinutesRemaining
+			5: FiveMinutesRemaining
+			10: TenMinutesRemaining
+			20: TwentyMinutesRemaining
+	TintedCellsLayer@RADIATION:
+		Color: 00FF00FF
+		MaxLevel: 500
+		UpdateDelay: 1
+		FadeoutDelay: 100
+		Darkest: 10
+		Brightest: 255
+		ZOffset: 0
+		TintedCellsLayer: Linear
+	ColorPickerManager:
+		PreviewActor: amcv.colorpicker
+		PresetColors: DEE308, FF1818, 2973E7, 39D629, FFA518, 31D6E7, 9429BD, FF9CEF, 6F7104, 7F0C0C, 143973, 1C6B14, 7F520C, 186B73, 4A145E, 7F484E
+		FactionPreviewActors:
+			random-soviets: smcv.colorpicker
+			random-psicorps: pcv.colorpicker
+			libya: smcv.colorpicker
+			cuba: smcv.colorpicker
+			iraq: smcv.colorpicker
+			russia: smcv.colorpicker
+			vietnam: smcv.colorpicker
+			chile: smcv.colorpicker
+			mexico: smcv.colorpicker
+			mongolia: smcv.colorpicker
+			psicorps: pcv.colorpicker
+			psinepal: pcv.colorpicker
+			psisouth: pcv.colorpicker
+			psitrans: pcv.colorpicker
+			psimoon: pcv.colorpicker
+			transcaucus: smcv.colorpicker
+			serbia: smcv.colorpicker
+			turkmen: smcv.colorpicker
+			tuva: smcv.colorpicker
+			russianfed: smcv.colorpicker
+	OrderEffects:
+		TerrainFlashImage: moveflsh
+		TerrainFlashSequence: idle
+		TerrainFlashPalette: moveflash
+
+EditorWorld:
+	Inherits: ^BaseWorld
+	EditorActorLayer:
+	EditorCursorLayer:
+	EditorResourceLayer:
+		RecalculateResourceDensity: true
+		ResourceTypes:
+			Ore:
+				ResourceIndex: 1
+				TerrainType: Ore
+				AllowedTerrainTypes: Clear, Sand, Rough, Dune, Road, DirtRoad
+				MaxDensity: 12
+			Gems:
+				ResourceIndex: 2
+				TerrainType: Gems
+				AllowedTerrainTypes: Clear, Sand, Rough, Dune, Road, DirtRoad
+				MaxDensity: 12
+	EditorSelectionLayer:
+		Palette: placefootprint
+	LoadWidgetAtGameStart:
+	EditorActionManager:
+	BuildableTerrainOverlay:
+		AllowedTerrainTypes: Clear, Rough, Road, DirtRoad, Water
+		Palette: ra
+		Alpha: 0.35
+

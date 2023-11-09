@@ -1,0 +1,54 @@
+nanrct:
+	Defaults:
+		Offset: -12, -56
+	idle:
+		Filename: ngnrct.shp
+		TilesetFilenames:
+			SNOW: nanrct.shp
+			SIMPLETERRAIN: ntnrct.shp
+		ShadowStart: 3
+	damaged-idle:
+		Filename: ngnrct.shp
+		TilesetFilenames:
+			SNOW: nanrct.shp
+			SIMPLETERRAIN: ntnrct.shp
+		Start: 1
+		ShadowStart: 4
+	idle-lights:
+		Filename: ngnrct_a.shp
+		TilesetFilenames:
+			SNOW: nanrct_a.shp
+			SIMPLETERRAIN: ntnrct_a.shp
+		Length: 11
+		Tick: 150
+	damaged-idle-lights:
+		Filename: ngnrct_a.shp
+		TilesetFilenames:
+			SNOW: nanrct_a.shp
+			SIMPLETERRAIN: ntnrct_a.shp
+		Start: 11
+		Length: 11
+		Tick: 150
+	make:
+		Filename: ntnrctmk.shp
+		TilesetFilenames:
+			SNOW: nanrctmk.shp
+			URBAN: nunrctmk.shp
+			NEWURBAN: nnnrctmk.shp
+			DESERT: ndnrctmk.shp
+			LUNAR: nlnrctmk.shp
+			DUNE: ndnrctmk.shp
+		Length: 25
+		ShadowStart: 25
+	icon:
+		Filename: cameo|nrcticon.shp
+		Offset: 0,0
+
+nanrcb:
+	Inherits: nanrct
+	Defaults:
+		FlipX: true
+		Offset: 12, -56
+	icon:
+		Filename: cameo|nrcticon.shp
+		FlipX: false

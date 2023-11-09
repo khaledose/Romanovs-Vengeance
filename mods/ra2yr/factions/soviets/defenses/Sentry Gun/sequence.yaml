@@ -1,0 +1,35 @@
+nalasr:
+	Inherits@MUZZLE: ^WithMachineGunMuzzle
+	Defaults:
+		Filename: nglasr.shp
+		TilesetFilenames:
+			SNOW: nalasr.shp
+		Offset: 0, -15
+		ZOffset: -512
+	idle:
+		Filename: nglasr.shp
+		TilesetFilenames:
+			SNOW: nalasr.shp
+		ShadowStart: 3
+	damaged-idle:
+		Filename: nglasr.shp
+		TilesetFilenames:
+			SNOW: nalasr.shp
+		Start: 1
+		ShadowStart: 4
+	make:
+		Filename: ntlasrmk.shp
+		TilesetFilenames:
+			SNOW: nalasrmk.shp
+			SIMPLETERRAIN: ntlasrmk.shp
+			LUNAR: nllasrmk.shp
+			DESERT: ndlasrmk.shp
+			URBAN: nulasrmk.shp
+			NEWURBAN: nnlasrmk.shp
+		Length: 12
+		ShadowStart: 12
+		ZOffset: 0
+	icon:
+		Filename: cameo|plticon.shp
+		TilesetFilenames:
+		Offset: 0,0

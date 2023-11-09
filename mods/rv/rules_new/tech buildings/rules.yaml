@@ -1,0 +1,867 @@
+caoild:
+	Inherits: ^TechBuilding
+	Inherits@MC: ^MindControllableBuilding
+	Inherits@SHAPE: ^2x2Shape
+	Buildable:
+		Queue: Building.Tech
+		BuildPaletteOrder: 10
+	Building:
+		Footprint: xx xx
+		Dimensions: 2, 2
+	InstantlyRepairable:
+	CashTrickler:
+		InitialDelay: 100
+		Interval: 300
+		Amount: 100
+		PauseOnCondition: disabled || chronodisable
+		RequiresCondition: enabled
+	Tooltip:
+		Name: Tech Oil Derrick
+	Tooltip@NoRow:
+		Name: Tech Oil Derrick
+	TooltipDescription:
+		Description: Periodically provides cash.
+	Health:
+		HP: 75000
+	Armor:
+		Type: Wood
+	WithIdleOverlay@pump:
+		Sequence: idle-pump
+		PauseOnCondition: !enabled || disabled || chronodisable
+	WithIdleOverlay@flag:
+		Sequence: flag
+		Offset: 1000,0,0
+		PauseOnCondition: chronodisable
+	GrantConditionAfterDelay@Cash:
+		Delay: 1
+		ShowSelectionBar: false
+		Condition: cashgiven
+		RequiresCondition: captured
+	GivesCashOnCapture:
+		Amount: 500
+	#	RequiresCondition: !cashgiven
+	# GrantConditionOnCapture:
+	#	Condition: captured
+	Explodes:
+		Weapon: DerrickExplode
+	UpdatesDerrickCount:
+	AmbientSound@Ambient:
+		SoundFiles: boillo2a.wav, boillo2b.wav, boillo2c.wav
+		Volume: 0.30
+		RequiresCondition: enabled
+	RangedGpsDot:
+		Sequence: Oil
+	CashTricklerMultiplier:
+		Modifier: 125
+		RequiresCondition: orepurifier && megawealth
+	IsometricSelectable:
+		DecorationHeight: 75
+	GrantConditionOnPrerequisite@orepurifier:
+		Condition: orepurifier
+		Prerequisites: gaorep
+	GrantConditionOnPrerequisite@megawealth:
+		Condition: megawealth
+		Prerequisites: global-megawealth
+	Targetable:
+		RequiresCondition: !megawealth
+	DamageMultiplier@megawealth:
+		RequiresCondition: megawealth
+		Modifier: 0
+
+caoild.mwspawner:
+	Inherits@SHAPE: ^2x2Shape
+	Interactable:
+	EditorOnlyTooltip:
+		Name: Megawealth Only Oil Derrick
+	FrozenUnderFog:
+	RenderSpritesEditorOnly:
+		Image: caoild
+		PlayerPalette: player50alpha
+	WithSpriteBody:
+	WithIdleOverlay@pump:
+		Sequence: idle-pump
+	WithIdleOverlay@flag:
+		Sequence: flag
+		Offset: 1000,0,0
+	BodyOrientation:
+		QuantizedFacings: 1
+	GrantConditionOnPrerequisite@megawealth:
+		Condition: megawealth
+		Prerequisites: global-megawealth
+	KillsSelf@spawn:
+		RequiresCondition: megawealth
+	KillsSelf@remove:
+		RemoveInstead: true
+		RequiresCondition: !megawealth
+	SpawnActorOnDeath:
+		Actor: caoild
+	Health:
+		HP: 10000000
+	Building:
+		Footprint: __ __
+		Dimensions: 2, 2
+	MapEditorData:
+		Categories: Tech building
+
+caoild.nonmwspawner:
+	Inherits: caoild.mwspawner
+	EditorOnlyTooltip:
+		Name: Non-Megawealth Only Oil Derrick
+	RenderSpritesEditorOnly:
+		Image: caoild
+		PlayerPalette: player50alpha
+	KillsSelf@spawn:
+		RequiresCondition: !megawealth
+	KillsSelf@remove:
+		RequiresCondition: megawealth
+
+caairp:
+	Inherits: ^TechBuilding
+	Inherits@MC: ^MindControllableBuilding
+	Inherits@SHAPE: ^3x3Shape
+	Inherits@AlliedParadropSpecial: AlliedParadropSpecial
+	Inherits@AlliedParadropSpecial: SovietParadropSpecial
+	Inherits@AlliedParadropSpecial: YuriParadropSpecial
+	Buildable:
+		Queue: Building.Tech
+		BuildPaletteOrder: 20
+	Tooltip:
+		Name: Tech Airport
+	Tooltip@NoRow:
+		Name: Tech Airport
+	TooltipDescription:
+		Description: Provides Paradrop support power.
+	Armor:
+		Type: Wood
+	Health:
+		HP: 75000
+	Building:
+		Dimensions: 3,3
+		Footprint: xxx xxx xxx
+	ProvidesPrerequisite@Allies:
+		Prerequisite: techparadrops.allies
+		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada
+		ResetOnOwnerChange: true
+	ProvidesPrerequisite@Soviets:
+		Prerequisite: techparadrops.soviets
+		Factions: cuba, libya, iraq, russia, vietnam, chile, mexico, mongolia, transcaucus, turkmen, tuva, russianfed, serbia
+		ResetOnOwnerChange: true
+	ProvidesPrerequisite@PsiCorps:
+		Prerequisite: techparadrops.psicorps
+		Factions: psicorps, psinepal, psisouth, psitrans, psimoon
+		ResetOnOwnerChange: true
+	SupportPowerChargeBar:
+	WithIdleOverlay@decoration:
+		PauseOnCondition: chronodisable
+	WithIdleOverlay@flag:
+		Sequence: flag
+		PauseOnCondition: chronodisable
+	RangedGpsDot:
+		Sequence: Paradrop
+	IsometricSelectable:
+		DecorationHeight: 90
+	Voiced:
+		VoiceSet: AirfieldVoice
+		Volume: 0.8
+
+cahosp:
+	Inherits: ^TechBuilding
+	Inherits@MC: ^MindControllableBuilding
+	Inherits@SHAPE: ^6x4Shape
+	Buildable:
+		Queue: Building.Tech
+		BuildPaletteOrder: 30
+	Building:
+		Footprint: xxxx xxxx xxxx xxxx xxxx xxxx
+		Dimensions: 6, 4
+	Tooltip:
+		Name: Tech Hospital
+	Tooltip@NoRow:
+		Name: Tech Hospital
+	TooltipDescription:
+		Description: Allows infantry to self-heal.
+	Health:
+		HP: 100000
+	Armor:
+		Type: Wood
+	ProvidesPrerequisite@buildingname:
+		Prerequisite: cahosp
+		RequiresCondition: enabled && !disabled && !chronodisable
+	WithIdleOverlay:
+		PauseOnCondition: disabled || chronodisable
+	WithIdleOverlay@flag:
+		Sequence: flag
+		Offset: 0,-500,2520
+		PauseOnCondition: chronodisable
+	RangedGpsDot:
+		Sequence: Hospital
+	PlaceBuildingVariants:
+		Actors: cahosb
+	IsometricSelectable:
+		Class: cahosp
+		DecorationHeight: 105
+
+cahosb:
+	Inherits: cahosp
+	Inherits@SHAPE: ^4x6Shape
+	-Buildable:
+	-PlaceBuildingVariants:
+	Building:
+		Footprint: xxxxxx xxxxxx xxxxxx xxxxxx
+		Dimensions: 4, 6
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome
+		TooltipActor: cahosp
+
+cashosp:
+	Inherits: cahosp
+	Inherits@SHAPE: ^4x4Shape
+	Buildable:
+		Queue: Building.Tech
+		BuildPaletteOrder: 40
+	Building:
+		Footprint: xxxx xxxx xxxx xxxx
+		Dimensions: 4, 4
+	Health:
+		HP: 75000
+	EditorOnlyTooltip:
+		Name: Tech Hospital
+	IsometricSelectable:
+		DecorationHeight: 90
+
+caoutp:
+	Inherits: ^TechBuilding
+	Inherits@AUTOTARGET: ^AutoTargetAll
+	Inherits@MC: ^MindControllableBuilding
+	Inherits@SHAPE: ^4x3Shape
+	Buildable:
+		Queue: Building.Tech
+		BuildPaletteOrder: 50
+	Tooltip:
+		Name: Tech Outpost
+	Tooltip@NoRow:
+		Name: Tech Outpost
+	TooltipDescription:
+		Description: Provides repairing ground for vehicles.
+	TooltipDescription@2:
+		Description: Armed with missile launcher.
+	TooltipDescription@3:
+		Description: Provides build area.
+	Armor:
+		Type: Concrete
+	Health:
+		HP: 100000
+	Building:
+		Dimensions: 4,3
+		Footprint: xx++ xx++ xx++
+	BaseProvider:
+		Range: 12c0
+		-RequiresCondition:
+	GivesBuildableArea:
+		-RequiresCondition:
+	-GrantConditionOnPrerequisite@BUILD:
+	RevealsShroud:
+		Range: 8c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 8c0
+	Reservable:
+	RallyPoint:
+		Palette: mouse
+		IsPlayerPalette: false
+	RepairsUnits:
+		PauseOnCondition: disabled || chronodisable
+		HpPerStep: 2000
+		Interval: 20
+		RepairDamageTypes: KillsDrone
+		StartRepairingTextNotification: Repairing.
+		FinishRepairingNotification: UnitRepaired
+		FinishRepairingTextNotification: Unit repaired.
+	WithIdleOverlay@bib:
+		Sequence: bib
+	WithIdleOverlay@flag:
+		Sequence: flag
+		PauseOnCondition: chronodisable
+	WithIdleRepairOverlay:
+		IdleSequence: idle-crane
+		StartSequence: repair-start
+		Sequence: repair
+		EndSequence: repair-end
+		PauseOnCondition: chronodisable
+	BodyOrientation:
+		QuantizedFacings: 16
+		CameraPitch: 85
+	RenderVoxels:
+		Image: caoutp
+		Scale: 11.7
+		LightYaw: 800
+		LightPitch: 150
+		LightAmbientColor: -0.5,-0.5,-0.5
+		LightDiffuseColor: 1.3,1.3,1.3
+	WithVoxelTurret:
+	WithRangeCircle:
+		Range: 12c0
+		Type: patriot
+	Turreted:
+		TurnSpeed: 40
+		InitialFacing: 896
+		Offset: 544,-1088,1408
+	AttackTurreted:
+		PauseOnCondition: disabled || chronodisable
+	Armament:
+		Weapon: OutpostMissile
+		LocalOffset: 128,-256,3328, 128,256,3328
+	RangedGpsDot:
+		Sequence: Outpost
+	PlaceBuildingVariants:
+		Actors: caoutb
+	IsometricSelectable:
+		Class: caoutp
+		DecorationHeight: 90
+	ActorStatValues:
+		Damage: 120
+
+caoutb:
+	Inherits: caoutp
+	Inherits@SHAPE: ^3x4Shape
+	-Buildable:
+	-PlaceBuildingVariants:
+	Building:
+		Dimensions: 3,4
+		Footprint: xxx x+x +++ +++
+	Turreted:
+		InitialFacing: 128
+		Offset: 544,1088,1408
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome
+		TooltipActor: caoutp
+
+# Yuri's Revenge Tech Structures
+capowr:
+	Inherits: ^TechBuilding
+	Inherits@DRAIN: ^DiskDefenseDrainable
+	Inherits@MC: ^MindControllableBuilding
+	Inherits@SHAPE: ^2x2Shape
+	Buildable:
+		Queue: Building.Tech
+		BuildPaletteOrder: 60
+	Building:
+		Footprint: xx xx
+		Dimensions: 2, 2
+	InstantlyRepairable:
+	Tooltip:
+		Name: Tech Power Plant
+	Tooltip@NoRow:
+		Name: Tech Power Plant
+	TooltipDescription:
+		Description: Provides 400 power.
+	Health:
+		HP: 75000
+	RevealsShroud:
+		Range: 6c0
+	Armor:
+		Type: Wood
+	WithIdleOverlay@flag:
+		Sequence: flag
+		Offset: 1000,0,0
+		PauseOnCondition: chronodisable
+	Power:
+		Amount: 400
+		RequiresCondition: !disabled && !chronodisable
+	RangedGpsDot:
+		Sequence: Power
+	IsometricSelectable:
+		DecorationHeight: 90
+
+camach:
+	Inherits: ^TechBuilding
+	Inherits@MC: ^MindControllableBuilding
+	Inherits@SHAPE: ^3x3Shape
+	Buildable:
+		Queue: Building.Tech
+		BuildPaletteOrder: 70
+	Building:
+		Footprint: xxx xxx xxx
+		Dimensions: 3, 3
+	Tooltip:
+		Name: Tech Machine Shop
+	Tooltip@NoRow:
+		Name: Tech Machine Shop
+	TooltipDescription:
+		Description: Allows vehicles to self-repair.
+	Health:
+		HP: 75000
+	Armor:
+		Type: Wood
+	ProvidesPrerequisite@buildingname:
+		RequiresCondition: enabled && !disabled && !chronodisable
+	WithIdleOverlay@flag:
+		Sequence: flag
+		PauseOnCondition: chronodisable
+	RangedGpsDot:
+		Sequence: MachineShop
+	IsometricSelectable:
+		DecorationHeight: 75
+
+caslab:
+	Inherits: ^TechBuilding
+	Inherits@MC: ^MindControllableBuilding
+	Inherits@SHAPE: ^3x3Shape
+	Buildable:
+		Queue: Building.Tech
+		BuildPaletteOrder: 80
+	Building:
+		Footprint: xxx xxx xxx
+		Dimensions: 3, 3
+	Tooltip:
+		Name: Tech Secret Lab
+	Tooltip@NoRow:
+		Name: Tech Secret Lab
+	TooltipDescription:
+		Description: Allow construction of a new 3rd tier vehicle.
+	Health:
+		HP: 125000
+	Armor:
+		Type: Concrete
+	WithIdleOverlay@flag:
+		Sequence: flag
+		PauseOnCondition: chronodisable
+	ProvidesPrerequisite@buildingname:
+	RangedGpsDot:
+		Sequence: SecretLab
+	IsometricSelectable:
+		DecorationHeight: 90
+
+# Custom Tech Structures
+cacomm:
+	Inherits: ^TechBuilding
+	Inherits@MC: ^MindControllableBuilding
+	Inherits@SHAPE: ^3x3Shape
+	Buildable:
+		Queue: Building.Tech
+		BuildPaletteOrder: 90
+	Building:
+		Footprint: xxx xxx xxx
+		Dimensions: 3, 3
+	Tooltip:
+		Name: Tech Communications Center
+	Tooltip@NoRow:
+		Name: Tech Communications Center
+	TooltipDescription:
+		Description: Reveals a large area around it.
+	Health:
+		HP: 75000
+	RevealsShroud:
+		Range: 20c0
+		RequiresCondition: !disabled
+	RevealsShroud@DISABLED:
+		Range: 4c0
+		RequiresCondition: disabled
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 20c0
+	#	RequiresCondition: !disabled && enabled
+	# RevealsShroudToIntelligenceOwner@DISABLED:
+	#	Range: 4c0
+	#	Types: SatelliteScan
+	#	RequiresCondition: disabled && enabled
+	Armor:
+		Type: Wood
+	WithIdleOverlay@flag:
+		Sequence: flag
+		PauseOnCondition: chronodisable
+	RangedGpsDot:
+		Sequence: Communications
+	IsometricSelectable:
+		DecorationHeight: 75
+
+caarmr:
+	Inherits: ^TechBuilding
+	Inherits@MC: ^MindControllableBuilding
+	Inherits@SHAPE: ^3x3Shape
+	Buildable:
+		Queue: Building.Tech
+		BuildPaletteOrder: 100
+	Building:
+		Footprint: xxx xxx xxx
+		Dimensions: 3, 3
+	Tooltip:
+		Name: Tech Armory
+	Tooltip@NoRow:
+		Name: Tech Armory
+	TooltipDescription:
+		Description: Increases the rate which units are promoted.
+	Health:
+		HP: 75000
+	Armor:
+		Type: Wood
+	WithIdleOverlay@flag:
+		Sequence: flag
+		PauseOnCondition: chronodisable
+	ProvidesPrerequisite@buildingname:
+		RequiresCondition: !disabled && !chronodisable
+	RangedGpsDot:
+		Sequence: Armory
+	IsometricSelectable:
+		DecorationHeight: 75
+
+carpad:
+	Inherits: ^TechBuilding
+	Inherits@MC: ^MindControllableBuilding
+	Inherits@SHAPE: ^1x3Shape
+	Buildable:
+		Queue: Building.Tech
+		BuildPaletteOrder: 110
+	Building:
+		Footprint: x x =
+		Dimensions: 1, 3
+		TerrainTypes: Clear, Rough, Road, DirtRoad
+	Tooltip:
+		Name: Tech Reinforcement Pad
+	Tooltip@NoRow:
+		Name: Tech Reinforcement Pad
+	TooltipDescription:
+		Description: Periodically provides an MBT.
+	Health:
+		HP: 75000
+	Armor:
+		Type: Wood
+	WithIdleOverlay@building:
+		Sequence: building
+	WithIdleOverlay@bib:
+		Sequence: bib
+	WithIdleOverlay@flag:
+		Sequence: flag
+		PauseOnCondition: chronodisable
+	WithDeliveryAnimation:
+	Targetable:
+		-RequiresCondition:
+	-Targetable@Water:
+	-GrantConditionOnTerrain@Water:
+	-WithIdleOverlay@waves:
+	RallyPoint:
+		Path: 0,3
+		Palette: mouse
+		IsPlayerPalette: false
+	Exit:
+		Facing: 384
+		ExitCell: 0,1
+	ProductionParadrop@Allies:
+		Produces: ReinforcementsPad.Allies
+		ActorType: alplane.rpad
+		ChuteSound: sparadra.wav
+	ProductionParadrop@Baku:
+		Produces: ReinforcementsPad.Baku
+		ActorType: svplane.rpad
+		ChuteSound: sparadra.wav
+	ProductionParadrop@Soviets:
+		Produces: ReinforcementsPad.Soviets
+		ActorType: svplane.rpad
+		ChuteSound: sparadra.wav
+	ProductionParadrop@PsiCorps:
+		Produces: ReinforcementsPad.Yuri
+		ActorType: pcplane.rpad
+		ChuteSound: sparadra.wav
+	PeriodicProducer@Allies:
+		Actors: mtnk
+		ChargeDuration: 3000
+		Type: ReinforcementsPad.Allies
+		ShowSelectionBar: true
+		ChargeColor: FF00FF
+		PauseOnCondition: disabled || chronodisable
+		RequiresCondition: enabled && allies
+	PeriodicProducer@Baku:
+		Actors: hytk
+		ChargeDuration: 3000
+		Type: ReinforcementsPad.Baku
+		ShowSelectionBar: true
+		ChargeColor: FF00FF
+		PauseOnCondition: disabled || chronodisable
+		RequiresCondition: enabled && baku
+	PeriodicProducer@Soviets:
+		Actors: htnk
+		ChargeDuration: 3000
+		Type: ReinforcementsPad.Soviets
+		ShowSelectionBar: true
+		ChargeColor: FF00FF
+		PauseOnCondition: disabled || chronodisable
+		RequiresCondition: enabled && soviets
+	PeriodicProducer@PsiCorps:
+		Actors: ltnk
+		ChargeDuration: 3000
+		Type: ReinforcementsPad.Yuri
+		ShowSelectionBar: true
+		ChargeColor: FF00FF
+		PauseOnCondition: disabled || chronodisable
+		RequiresCondition: enabled && psicorps
+	GrantConditionOnFaction@Allies:
+		Condition: allies
+		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada
+		ResetOnOwnerChange: true
+	GrantConditionOnFaction@Baku:
+		Condition: baku
+		Factions: transcaucus, turkmen, tuva, russianfed, serbia
+		ResetOnOwnerChange: true
+	GrantConditionOnFaction@Soviets:
+		Condition: soviets
+		Factions: cuba, libya, iraq, russia, vietnam, chile, mexico, mongolia
+		ResetOnOwnerChange: true
+	GrantConditionOnFaction@PsiCorps:
+		Condition: psicorps
+		Factions: psicorps, psinepal, psisouth, psitrans, psimoon
+		ResetOnOwnerChange: true
+	RangedGpsDot:
+		Sequence: ParaVehicle
+	PlaceBuildingVariants:
+		Actors: carpab
+	IsometricSelectable:
+		Class: carpad
+		DecorationHeight: 60
+
+carpab:
+	Inherits: carpad
+	Inherits@SHAPE: ^3x1Shape
+	-Buildable:
+	-PlaceBuildingVariants:
+	Building:
+		Footprint: xx=
+		Dimensions: 3, 1
+	RallyPoint:
+		Path: 3,0
+	Exit:
+		Facing: 640
+		ExitCell: 1,0
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome
+		TooltipActor: carpad
+
+capsyb:
+	Inherits: ^TechBuilding
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@MC: ^MindControllableBuilding
+	Inherits@SHAPE: ^2x2Shape
+	Buildable:
+		Queue: Building.Tech
+		BuildPaletteOrder: 120
+	Tooltip:
+		Name: Tech Psychic Beacon
+	Tooltip@NoRow:
+		Name: Tech Psychic Beacon
+	TooltipDescription:
+		Description: Provides Psychic Control support power.
+	TooltipDescription@2:
+		Description: Requires Power to operate.
+	Armor:
+		Type: Wood
+	Health:
+		HP: 75000
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+	DetonateWeaponPower:
+		OrderName: TechPsychicControl
+		RequiresCondition: enabled
+		PauseOnCondition: disabled || chronodisable
+		CameraRange: 4c0
+		CameraRemoveDelay: 100
+		SpawnCameraAtGround: true
+		Prerequisites:
+			1: capsyb
+		Icons:
+			1: control
+		ChargeInterval: 4500
+		Names:
+			1: Psychic Control
+		Descriptions:
+			1: Captures enemy units in a small area.\n\nCan be applied on ally units to\nmake them immune to mind control.
+		SelectTargetSpeechNotification: SelectTarget
+		SelectTargetTextNotification: Select target.
+		Weapons:
+			1: PsychicControl
+		TargetCircleRanges:
+			1: 1c512
+		ActivationSequence:
+	SupportPowerChargeBar:
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower || powerdown
+	WithColoredOverlay@IDISABLE:
+		RequiresCondition: ((lowpower || powerdown) && enabled)
+	WithIdleOverlay@spin:
+		Sequence: idle-spin
+		PauseOnCondition: !enabled || disabled || chronodisable
+	WithIdleOverlay@flag:
+		Sequence: flag
+		PauseOnCondition: chronodisable
+	Power:
+		Amount: -100
+		RequiresCondition: !chronodisable
+	ProvidesPrerequisite@buildingname:
+	AmbientSound@Ambient:
+		SoundFiles: gpsyampa.wav, gpsyampb.wav, gpsyampc.wav
+		Volume: 0.5
+		RequiresCondition: enabled && !disabled
+	RangedGpsDot:
+		Sequence: Psi
+	IsometricSelectable:
+		DecorationHeight: 120
+
+capsyb.koth:
+	Inherits: ^TechBuilding
+	Inherits@SHAPE: ^2x2Shape
+	-Buildable:
+	Tooltip:
+		Name: Psychic Beacon
+	Tooltip@NoRow:
+		Name: Psychic Beacon
+	TooltipDescription:
+		Description: Capture and hold for 6 minutes to win.
+	Armor:
+		Type: Wood
+	Health:
+		HP: 75000
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+	WithIdleOverlay@spin:
+		Sequence: idle-spin
+		PauseOnCondition: !enabled
+	ProvidesPrerequisite@buildingname:
+	AmbientSound@Ambient:
+		SoundFiles: gpsyampa.wav, gpsyampb.wav, gpsyampc.wav
+		Volume: 0.5
+		RequiresCondition: enabled
+	GrantConditionOnPrerequisite@koth:
+		Condition: koth
+		Prerequisites: global-koth
+	-Targetable:
+	-Targetable@ChronoDisable:
+	DamageMultiplier@koth:
+		Modifier: 0
+	KillsSelf:
+		RemoveInstead: true
+		RequiresCondition: !koth
+	-GivesBuildableArea:
+	-BaseProvider:
+	-GrantConditionOnPrerequisite@BUILD:
+	-Demolishable:
+	ExternalCondition@activated:
+		Condition: activated
+	PeriodicExplosion:
+		Weapon: PsychicControl
+		RequiresCondition: activated
+	RenderSprites:
+		Image: capsyb
+	RangedGpsDot:
+		Sequence: Psi
+	IsometricSelectable:
+		DecorationHeight: 120
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome
+
+camisl:
+	Inherits: ^TechBuilding
+	
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@MC: ^MindControllableBuilding
+	Inherits@SHAPE: ^4x3Shape
+	Buildable:
+		Queue: Building.Tech
+		BuildPaletteOrder: 130
+	Tooltip:
+		Name: Tech Missile Silo
+	Tooltip@NoRow:
+		Name: Tech Missile Silo
+	TooltipDescription:
+		Description: Provides Cluster Missile support power.
+	TooltipDescription@2:
+		Description: Requires Power to operate.
+	Armor:
+		Type: Wood
+	Health:
+		HP: 125000
+	Building:
+		Dimensions: 4,3
+		Footprint: xxx xxx xxx xxx
+	NukePower:
+		OrderName: TechClusterMissile
+		RequiresCondition: enabled
+		PauseOnCondition: disabled || chronodisable
+		Prerequisites:
+			1: camisl
+		Cursor: nuke
+		Icons:
+			1: cmissile
+		ChargeInterval: 7500
+		Names:
+			1: Cluster Missile
+		Descriptions:
+			1: Launches a cluster missile\nat a target location.
+		AllowMultiple: true
+		EndChargeSound: snukread.wav
+		LaunchSound: sclslaun.wav
+		SelectTargetSpeechNotification: SelectTarget
+		SelectTargetTextNotification: Select target.
+		MissileWeapons:
+			1: ClusterMissile
+		MissileImage: ClusterMissile
+		MissilePalette: player
+		SpawnOffset: 512,512,0
+		IsPlayerPalette: true
+		DisplayTimerRelationships: Ally, Neutral, Enemy
+		DisplayBeacon: True
+		DisplayRadarPing: True
+		DetonationAltitude: 6c0
+		BeaconPosters:
+			1: cmslicon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CameraRange: 10c0
+		CameraRemoveDelay: 200
+		FlightDelay: 250
+		FlightVelocity: 0c768
+		TrailInterval: 1
+		TrailImage: clusterpuff
+		TrailSequences: idle
+		CircleRanges:
+			1: 4c0
+		CircleColor: FFFFFFFF
+		CircleBorderColor: 00000060
+	Power:
+		Amount: -100
+		RequiresCondition: !chronodisable
+	SupportPowerChargeBar:
+	WithSupportPowerChargedOverlay:
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower || powerdown
+	WithColoredOverlay@IDISABLE:
+		RequiresCondition: ((lowpower || powerdown) && enabled)
+	WithIdleOverlay@flag:
+		Sequence: flag
+		PauseOnCondition: chronodisable
+	ProvidesPrerequisite@buildingname:
+		Prerequisite: camisl
+	RangedGpsDot:
+		Sequence: Missile
+	PlaceBuildingVariants:
+		Actors: camisb
+	IsometricSelectable:
+		Class: camisl
+		DecorationHeight: 45
+
+camisb:
+	Inherits: camisl
+	Inherits@SHAPE: ^3x4Shape
+	-Buildable:
+	-PlaceBuildingVariants:
+	Building:
+		Dimensions: 3,4
+		Footprint: xxxx xxxx xxxx
+	NukePower:
+		SpawnOffset: -512,512,0
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome
+		TooltipActor: camisl

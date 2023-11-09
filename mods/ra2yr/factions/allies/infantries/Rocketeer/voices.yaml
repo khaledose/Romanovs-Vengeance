@@ -1,0 +1,9 @@
+RocketeerVoice:
+	Inherits: ^InfantryDeath
+	Voices:
+		Select: irocsea, irocseb, irocsec, irocsed, irocsee, irocsef, irocseg
+		Move: irocmoa, irocmob, irocmoc, irocmod, irocmoe, irocmof
+		Attack: irocata, irocatb, irocatc, irocatd, irocate
+		Feedback: irocfea, irocfeb, irocfec
+		Die: irocdiea
+		Ambient: iroclo2a, iroclo2b, iroclo2c

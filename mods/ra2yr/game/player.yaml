@@ -1,0 +1,226 @@
+^BasePlayer:
+	AlwaysVisible:
+	Shroud:
+	PlayerResources:
+		ResourceValues:
+			Ore: 25
+			Gems: 50
+
+EditorPlayer:
+	Inherits: ^BasePlayer
+
+Player:
+	Inherits: ^BasePlayer
+	Inherits@PlayerStartingResources: ^PlayerStartingResources
+	Inherits@LobbyOptions: ^LobbyOptions
+	Inherits@TechLevelOptions: ^TechLevelOptions
+	TechTree:
+	ClassicProductionQueue@Building:
+		Type: Building.Shared
+		Group: Building
+		DisplayOrder: 1
+		LowPowerModifier: 200
+		ReadyAudio: ConstructionComplete
+		ReadyTextNotification: Construction complete.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		SpeedUp: true
+		BuildTimeSpeedReduction: 100, 91, 82, 73, 64, 55, 50
+	ClassicProductionQueue@Support:
+		Type: Support.Shared
+		Group: Support
+		DisplayOrder: 2
+		LowPowerModifier: 200
+		ReadyAudio: ConstructionComplete
+		ReadyTextNotification: Construction complete.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		SpeedUp: true
+		BuildTimeSpeedReduction: 100, 91, 82, 73, 64, 55, 50
+	ClassicProductionQueue@Infantry:
+		Type: Infantry.Shared
+		Group: Infantry
+		DisplayOrder: 4
+		LowPowerModifier: 200
+		ReadyAudio: UnitReady
+		ReadyTextNotification: Unit ready.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		SpeedUp: true
+		BuildTimeSpeedReduction: 100, 91, 82, 73, 64, 55, 50
+	ClassicProductionQueue@Vehicle:
+		Type: Vehicle.Shared
+		Group: Vehicle
+		DisplayOrder: 5
+		BuildDurationModifier: 100
+		LowPowerModifier: 200
+		ReadyAudio: UnitReady
+		ReadyTextNotification: Unit ready.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		SpeedUp: true
+		BuildTimeSpeedReduction: 100, 80, 65, 50
+	ClassicProductionQueue@Aircraft:
+		Type: Aircraft.Shared
+		Group: Aircraft
+		DisplayOrder: 6
+		LowPowerModifier: 200
+		ReadyAudio: UnitReady
+		ReadyTextNotification: Unit ready.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		SpeedUp: true
+		BuildTimeSpeedReduction: 100, 91, 82, 73, 64, 55, 50
+	ClassicProductionQueue@Ship:
+		Type: Ship.Shared
+		Group: Ship
+		DisplayOrder: 7
+		LowPowerModifier: 200
+		ReadyAudio: UnitReady
+		ReadyTextNotification: Unit ready.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		SpeedUp: true
+		BuildTimeSpeedReduction: 100, 91, 82, 73, 64, 55, 50
+	PlaceBuilding:
+		ToggleVariantKey: ToggleVariant
+		NewOptionsNotification: NewOptions
+		CannotPlaceNotification: BuildingCannotPlaceAudio
+		NewOptionsTextNotification: New construction options.
+		CannotPlaceTextNotification: Cannot deploy here.
+	SupportPowerManager:
+	ScriptTriggers:
+	CellTriggerOverlay:
+	MissionObjectives:
+		WinNotification: Win
+		LoseNotification: Lose
+		LeaveNotification: Leave
+	ConquestVictoryConditions:
+	PowerManager:
+		SpeechNotification: LowPower
+		TextNotification: Low power.
+	AllyRepair:
+	Taunts:
+		CheckboxVisible: false
+	ResourceStorageWarning:
+		Notification: InsufficientSilos
+		TextNotification: Insufficient silos.
+	DeveloperMode:
+		CheckboxDisplayOrder: 14
+	GpsWatcher:
+	FrozenActorLayer:
+	BaseAttackNotifier:
+		AllyNotification: OurAllyIsUnderAttack
+		TextNotification: Our base is under attack.
+		AllyTextNotification: Our ally is under attack.
+	BaseAttackNotifier@Warning:
+		NotifyInterval: 10000
+		Notification: BaseAttackWarning
+		AllyNotification: BaseAttackWarning
+	BaseAttackNotifier@RadarPing:
+		NotifyInterval: 10000
+		RevertUnitTypes: true
+		Notification:
+	HarvesterAttackNotifier:
+		Notification: OreMinerUnderAttack
+		TextNotification: Ore miner under attack.
+	PlayerStatistics:
+	PlaceBeacon:
+		BeaconSequence: idle
+		ArrowSequence:
+		CircleSequence:
+		IsPlayerPalette: true
+		Palette: player
+	GrantConditionOnPrerequisiteManager:
+	ExternalCondition@IndustrialPlant:
+		Condition: naindp
+	ProvidesPrerequisite@naindp-1:
+		Prerequisite: prerequisite.one_naindp
+		RequiresCondition: naindp
+	ProvidesPrerequisite@naindp-2:
+		Prerequisite: prerequisite.two_naindp
+		RequiresCondition: naindp > 1
+	ProvidesPrerequisite@naindp-3:
+		Prerequisite: prerequisite.three_naindp
+		RequiresCondition: naindp > 2
+	ProvidesPrerequisite@naindp-4:
+		Prerequisite: prerequisite.four_naindp
+		RequiresCondition: naindp > 3
+	ProvidesPrerequisite@naindp-5:
+		Prerequisite: prerequisite.five_naindp
+		RequiresCondition: naindp > 4
+	ExternalCondition@PadAircraft:
+		Condition: padaircraft
+	ExternalCondition@AirDock:
+		Condition: airdock
+	ProvidesPrerequisite@enoughair:
+		Prerequisite: prerequisite.enoughair
+		RequiresCondition: padaircraft >= airdock
+	ProvidesPrerequisite@aiplayer:
+		Prerequisite: prerequisite.aiplayer
+		RequiresCondition: enable-generic-ai
+	GrantConditionOnTileSet:
+		TileSets: DUNE
+		Condition: dune
+	ProvidesPrerequisite@dune:
+		Prerequisite: on_dune
+		RequiresCondition: dune
+	ProductionIconOverlayManager@chevron-veteran:
+		Type: chevron-veteran
+		Image: cameo-chevron
+		Sequence: veteran
+		Palette: pips
+	ProductionIconOverlayManager@chevron-elite:
+		Type: chevron-elite
+		Image: cameo-chevron
+		Sequence: elite
+		Palette: pips
+	ProductionIconOverlayManager@chevron-heroic:
+		Type: chevron-heroic
+		Image: cameo-chevron
+		Sequence: heroic
+		Palette: pips
+	ProductionIconOverlayManager@stripe-upgraded:
+		Type: stripe-upgraded
+		Image: cameo-stripe
+		Sequence: upgraded
+	ProductionIconOverlayManager@stripe-taken:
+		Type: stripe-taken
+		Image: cameo-stripe
+		Sequence: taken
+	PlayerExperience:
+	GameSaveViewportManager:
+	EnemyWatcher:
+		NotificationInterval: 125
+	RangedGpsWatcher:
+	PlayerRadarTerrain:

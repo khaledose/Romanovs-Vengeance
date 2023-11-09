@@ -1,0 +1,129 @@
+trock01:
+	idle:
+		Filename: trock01.tem
+		TilesetFilenames:
+			SNOW: trock01.sno
+			URBAN: trock01.urb
+			NEWURBAN: trock01.ubn
+			DESERT: trock01.des
+			LUNAR: trock01.lun
+			DUNE: trock01.des
+		ShadowStart: 1
+		Offset: 0, -15
+
+trock02:
+	idle:
+		Filename: trock02.tem
+		TilesetFilenames:
+			SNOW: trock02.sno
+			URBAN: trock02.urb
+			NEWURBAN: trock02.ubn
+			DESERT: trock02.des
+			LUNAR: trock02.lun
+			DUNE: trock02.des
+		ShadowStart: 1
+		Offset: 0, -15
+
+trock03:
+	idle:
+		Filename: trock03.tem
+		TilesetFilenames:
+			SNOW: trock03.sno
+			URBAN: trock03.urb
+			NEWURBAN: trock03.ubn
+			DESERT: trock03.des
+			LUNAR: trock03.lun
+			DUNE: trock03.des
+		ShadowStart: 1
+		Offset: 0, -15
+
+trock04:
+	idle:
+		Filename: trock04.tem
+		TilesetFilenames:
+			SNOW: trock04.sno
+			URBAN: trock04.urb
+			NEWURBAN: trock04.ubn
+			DESERT: trock04.des
+			LUNAR: trock04.lun
+			DUNE: trock04.des
+		ShadowStart: 1
+		Offset: 0, -15
+
+trock05:
+	idle:
+		Filename: trock05.tem
+		TilesetFilenames:
+			SNOW: trock05.sno
+			URBAN: trock05.urb
+			NEWURBAN: trock05.ubn
+			DESERT: trock05.des
+			LUNAR: trock05.lun
+			DUNE: trock05.des
+		ShadowStart: 1
+		Offset: 0, -15
+
+srock01:
+	idle:
+		Filename: srock01.tem
+		TilesetFilenames:
+			SNOW: srock01.sno
+			URBAN: srock01.urb
+			NEWURBAN: srock01.ubn
+			DESERT: srock01.des
+			LUNAR: srock01.lun
+			DUNE: srock01.des
+		ShadowStart: 1
+		Offset: 0, -15
+
+srock02:
+	idle:
+		Filename: srock02.tem
+		TilesetFilenames:
+			SNOW: srock02.sno
+			URBAN: srock02.urb
+			NEWURBAN: srock02.ubn
+			DESERT: srock02.des
+			LUNAR: srock02.lun
+			DUNE: srock02.des
+		ShadowStart: 1
+		Offset: 0, -15
+
+srock03:
+	idle:
+		Filename: srock03.tem
+		TilesetFilenames:
+			SNOW: srock03.sno
+			URBAN: srock03.urb
+			NEWURBAN: srock03.ubn
+			DESERT: srock03.des
+			LUNAR: srock03.lun
+			DUNE: srock03.des
+		ShadowStart: 1
+		Offset: 0, -15
+
+srock04:
+	idle:
+		Filename: srock04.tem
+		TilesetFilenames:
+			SNOW: srock04.sno
+			URBAN: srock04.urb
+			NEWURBAN: srock04.ubn
+			DESERT: srock04.des
+			LUNAR: srock04.lun
+			DUNE: srock04.des
+		ShadowStart: 1
+		Offset: 0, -15
+
+srock05:
+	idle:
+		Filename: srock05.tem
+		TilesetFilenames:
+			SNOW: srock05.sno
+			URBAN: srock05.urb
+			NEWURBAN: srock05.ubn
+			DESERT: srock05.des
+			LUNAR: srock05.lun
+			DUNE: srock05.des
+		ShadowStart: 1
+		Offset: 0, -15

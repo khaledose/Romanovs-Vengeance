@@ -1,0 +1,3 @@
+MultipleMindControlTower:
+	Inherits: MindControl
+	ReloadDelay: 100

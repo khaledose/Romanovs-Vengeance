@@ -1,0 +1,67 @@
+CAMERA:
+	AlwaysVisible:
+	Interactable:
+	Immobile:
+		OccupiesSpace: false
+	RevealsShroud:
+		Range: 10c0
+		Type: CenterPosition
+	BodyOrientation:
+		QuantizedFacings: 1
+	WithSpriteBody:
+	RenderSpritesEditorOnly:
+		Image: camera
+	EditorOnlyTooltip:
+		Name: (reveals area to owner)
+	MapEditorData:
+		Categories: System
+
+SONAR:
+	Inherits: CAMERA
+	EditorOnlyTooltip:
+		Name: (support power proxy camera)
+	-RevealsShroud:
+	DetectCloaked:
+		Range: 25c0
+		DetectionTypes: Underwater
+
+camera.5c0:
+	Inherits: CAMERA
+	RevealsShroud:
+		Range: 5c0
+		Type: CenterPosition
+
+camera.6c0:
+	Inherits: CAMERA
+	RevealsShroud:
+		Range: 6c0
+		Type: CenterPosition
+
+camera.8c0:
+	Inherits: CAMERA
+	RevealsShroud:
+		Range: 8c0
+		Type: CenterPosition
+
+camera.10c0:
+	Inherits: CAMERA
+	RevealsShroud:
+		Range: 10c0
+		Type: CenterPosition
+
+camera.spyplane:
+	Inherits: camera.10c0
+	DetectCloaked:
+		Range: 10c0
+	KillsSelf:
+		RemoveInstead: true
+		Delay: 250
+
+camera.psychicreveal:
+	Inherits: camera.spyplane
+	AmbientSound:
+		SoundFiles: spsyreve.wav
+		Delay: 1
+		Interval: 375
+	KillsSelf:
+		Delay: 375

@@ -1,0 +1,66 @@
+engineer:
+	Inherits: ^BasicInfantry
+	Inherits@DEATH: ^DeathAnimation
+	Inherits@SHOOTER: ^Shooter
+	Inherits@PRONE: ^Prone
+	Defaults:
+		Filename: conquer|engineer.shp
+	icon:
+		Filename: cameo|engnicon.shp
+	liedown:
+		Start: 212
+	standup:
+		Start: 228
+	cheer:
+		Start: 245
+	paradrop:
+		Start: 244
+
+# engineer:
+# 	Inherits: ^Infantry
+# 	Defaults:
+# 		Filename: bits/infantry/engineer.shp
+# 	shoot:
+# 		Start: 164
+# 		Length: 6
+# 		Facings: 8
+# 		Tick: 80
+# 	liedown:
+# 		Start: 212
+# 	standup:
+# 		Start: 228
+# 	paradrop:
+# 		Start: 244
+# 	swim-stand:
+# 		Frames: 253, 259, 255, 271, 277, 283, 289, 295
+# 		Facings: 8
+# 	swim-run:
+# 		Start: 301
+# 		Length: 6
+# 		Facings: 8
+# 		Tick: 100
+# 	swim-die1:
+# 		Start: 349
+# 		Length: 25
+# 	swim-die2:
+# 		Start: 349
+# 		Length: 25
+# 	swim-shoot:
+# 		Frames: 253, 259, 255, 271, 277, 283, 289, 295
+# 		Facings: 8
+# 	icon:
+# 		Filename: cameo|engnicon.shp
+
+# sengineer:
+# 	Inherits: engineer
+# 	Defaults:
+# 		Filename: bits/infantry/sengineer.shp
+# 	icon:
+# 		Filename: bits/cameos/sengicon.shp
+
+# yengineer:
+# 	Inherits: engineer
+# 	Defaults:
+# 		Filename: bits/infantry/yengineer.shp
+# 	icon:
+# 		Filename: cameomd|yengicon.shp

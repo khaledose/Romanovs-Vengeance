@@ -1,0 +1,36 @@
+nanrct:
+	Inherits: ^PowerPlant
+	Inherits@SHAPE: ^4x4Shape
+	Buildable:
+		Queue: Building.Shared, Building.Soviets
+		Prerequisites: ~building.soviets, natech, ~techlevel.3
+		Description: Provides a large amount of power for other structures.\n\nUpgradeable with:\n- Advanced Irradiators (Iraq)\n\n  Can be rotated.
+		BuildPaletteOrder: 110
+	Building:
+		Footprint: xxxx xxxx xxxx _xx_
+	IsometricSelectable:
+		DecorationHeight: 60
+	Power:
+		Amount: 2000
+	Health:
+		HP: 100000
+	Armor:
+		Type: Concrete
+	Valued:
+		Cost: 1000
+	RevealsShroud:
+		Range: 5c0
+	Tooltip:
+		Name: Nuclear Reactor
+	Tooltip@NoRow:
+		Name: Nuclear Reactor
+	Explodes:
+		Weapon: NukePayload
+		Type: CenterPosition
+	WithIdleOverlay@lights:
+		Sequence: idle-lights
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete
+	Voiced:
+		VoiceSet: NuclearReactorVoice
+		Volume: 0.8

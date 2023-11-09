@@ -1,0 +1,49 @@
+yapsyt:
+	Defaults:
+		Offset: 0, -15
+	idle:
+		Filename: ygpsyt.shp
+		TilesetFilenames:
+			SNOW: yapsyt.shp
+			SIMPLETERRAIN: ytpsyt.shp
+		Length: 1
+		ShadowStart: 3
+	damaged-idle:
+		Filename: ygpsyt.shp
+		TilesetFilenames:
+			SNOW: yapsyt.shp
+			SIMPLETERRAIN: ytpsyt.shp
+		Start: 1
+		Length: 1
+		ShadowStart: 4
+	powered:
+		Filename: ygpsyt_a.shp
+		Length: 26
+		ShadowStart: 52
+	damaged-powered:
+		Filename: ygpsyt_a.shp
+		Start: 26
+		Length: 26
+		ShadowStart: 78
+	powered-full:
+		Filename: ygpsyt_b.shp
+		Length: 26
+		ShadowStart: 52
+	damaged-powered-full:
+		Filename: ygpsyt_b.shp
+		Start: 26
+		Length: 26
+		ShadowStart: 78
+	muzzle:
+		Filename: conquer|yuricntl.shp
+		Length: *
+	make:
+		Filename: ygpsytmk.shp
+		TilesetFilenames:
+			SNOW: yapsytmk.shp
+			SIMPLETERRAIN: ytpsytmk.shp
+		Length: 31
+		ShadowStart: 31
+	icon:
+		Filename: cameomd|psyticon.shp
+		Offset: 0,0

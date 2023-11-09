@@ -13,6 +13,7 @@ using OpenRA.Mods.RA2.Traits;
 using OpenRA.Mods.Common.Activities;
 using OpenRA.Primitives;
 using OpenRA.Traits;
+using OpenRA.Mods.AS.Traits;
 
 namespace OpenRA.Mods.RA2.Activities
 {

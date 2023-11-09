@@ -1,0 +1,24 @@
+nayard:
+	Inherits: ^Shipyard
+	Buildable:
+		Queue: Building.Shared, Building.Soviets
+		Prerequisites: ~building.soviets, power, refinery, ~techlevel.1
+		Description: Produces Soviet ships, submarines, and other naval units.\n\nAbilities:\n- Comes with 3 repair drones.\n\n  Can only be placed on water.
+	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@ship.soviets:
+		Prerequisite: ship.soviets
+	ProvidesPrerequisite@vehicleorship.soviets:
+		Prerequisite: vehicleorship.soviets
+	Production:
+		Produces: Ship.Soviets
+	ProductionQueue:
+		Type: Ship.Soviets
+		DisplayOrder: 22
+	ProductionBar:
+		ProductionType: Ship.Soviets
+	WithIdleOverlay@lights:
+		Sequence: idle-lights
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete
+	IsometricSelectable:
+		DecorationHeight: 120

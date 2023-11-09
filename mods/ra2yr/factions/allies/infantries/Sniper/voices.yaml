@@ -1,0 +1,8 @@
+SniperVoice:
+	Inherits: ^InfantryDeath
+	Voices:
+		Select: isnisea, isniseb, isnisec, isnised
+		Move: isnimoa, isnimob, isnimoc, isnimod, isnimoe
+		Attack: isniata, isniatb, isniatc
+		Feedback: isnifea, isnifeb, isnifec
+		Die: isnidia, isnidib, isnidic

@@ -1,0 +1,20 @@
+fv:
+	idle: local|fv
+	turret-missile: local|fvtur
+	turret-mg: bits/vehicles/ifvturrets/fvtur_sentry
+	turret-repair: local|fvtur2
+	turret-hitech: local|fvtur3
+	turret-tesla: bits/vehicles/ifvturrets/fvtur_tesla
+	turret-demo: bits/vehicles/ifvturrets/fvtur_nuke
+	turret-deso: bits/vehicles/ifvturrets/fvtur_radbeam
+	turret-sniper: bits/vehicles/ifvturrets/fvtur_sniper
+	turret-virus: bits/vehicles/ifvturrets/fvtur_virus
+	turret-pyro: bits/vehicles/ifvturrets/fvtur_rail
+	turret-flak: bits/vehicles/ifvturrets/fvtur_flak
+	turret-yuri: bits/vehicles/ifvturrets/fvtur_chaos
+	turret-rocket: bits/vehicles/ifvturrets/fvtur_rocket
+	turret-crkt: bits/vehicles/ifvturrets/fvtur_chaosrkt
+	turret-hero: bits/vehicles/ifvturrets/fvtur_sealgun
+	turret-medic: bits/vehicles/ifvturrets/fvtur_ambu
+	turret-gatling: bits/vehicles/ifvturrets/fvtur_gatling
+	turret-toxin: bits/vehicles/ifvturrets/fvtur_toxin

@@ -1,0 +1,81 @@
+120mmx:
+	Inherits: 120mm
+	ReloadDelay: 65
+	Report: vapoat1a.wav
+	Range: 6c0
+	Projectile: BulletAS
+		Speed: 1024
+	Warhead@1Dam: SpreadDamage
+		Damage: 10000
+	Warhead@2Eff: CreateEffect
+		Explosions: apoc_explosion
+		ImpactSounds: gexpapoa.wav
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: SmallCrater
+
+120mmxE:
+	Inherits: 120mmx
+	Burst: 2
+	BurstDelays: 10
+	Projectile: BulletAS
+		Speed: 1024
+	Warhead@1Dam: SpreadDamage
+		Versus:
+			None: 100
+			Flak: 100
+			Plate: 100
+	Warhead@2Eff: CreateEffect
+		Explosions: elite_explosion
+	Warhead@3EffWater: CreateEffect
+		Explosions: large_watersplash
+		ImpactSounds: gexpwala.wav
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: MediumCrater, MediumScorch
+
+MammothTusk:
+	Inherits: ^AAMissile
+	ReloadDelay: 80
+	Range: 8c0
+	Report: vapoat2a.wav, vapoar2b.wav, vapoat2c.wav
+	Burst: 2
+	Projectile: Missile
+		ContrailLength: 8
+		Speed: 512
+		RangeLimit: 12c512
+		TrailImage: smokey2
+		MinimumLaunchAngle: 255
+		MaximumLaunchAngle: 255
+		MaximumLaunchSpeed: 384
+		MinimumLaunchSpeed: 384
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c128
+		Falloff: 100, 83, 67, 50, 0
+		Damage: 8000
+		Versus:
+			Flak: 90
+			Plate: 80
+			Light: 70
+			Medium: 35
+			Heavy: 35
+			Wood: 75
+			Steel: 40
+			Concrete: 20
+			Drone: 20
+		DamageTypes: ExplosionDeath, SuppressTerrorDrone, NonTemporal, NonTemporal
+	Warhead@2Eff: CreateEffect
+		Explosions: medium_bang
+
+MammothTuskE:
+	Inherits: MammothTusk
+	Burst: 4
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c128
+		Falloff: 100, 83, 67, 50, 0
+		Damage: 7000
+
+ApocExplode:
+	Inherits: KirovExplode
+	Warhead@1Eff: CreateEffect
+		ImpactSounds: gexpapoa.wav, gexpapob.wav, gexpapoc.wav
+	Warhead@2Dam: SpreadDamage
+		Damage: 4000

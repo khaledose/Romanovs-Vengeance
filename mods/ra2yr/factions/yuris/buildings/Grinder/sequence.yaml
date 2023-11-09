@@ -1,0 +1,45 @@
+yagrnd:
+	Defaults:
+		Offset: 0, -45
+	idle:
+		Filename: yggrnd_a.shp
+		TilesetFilenames:
+			SNOW: yagrnd_a.shp
+			SIMPLETERRAIN: ytgrnd_a.shp
+		Length: 3
+		ShadowStart: 6
+		Tick: 80
+	damaged-idle:
+		Filename: yggrnd_a.shp
+		TilesetFilenames:
+			SNOW: yagrnd_a.shp
+			SIMPLETERRAIN: ytgrnd_a.shp
+		Start: 3
+		Length: 3
+		ShadowStart: 9
+		Tick: 80
+	make:
+		Filename: yggrndmk.shp
+		TilesetFilenames:
+			SNOW: yagrndmk.shp
+			SIMPLETERRAIN: ytgrndmk.shp
+		Length: 30
+		ShadowStart: 30
+	grind:
+		Filename: yggrnd_b.shp
+		TilesetFilenames:
+			SNOW: yagrnd_b.shp
+			SIMPLETERRAIN: ytgrnd_b.shp
+		Length: 48
+		ShadowStart: 96
+	damaged-grind:
+		Filename: yggrnd_b.shp
+		TilesetFilenames:
+			SNOW: yagrnd_b.shp
+			SIMPLETERRAIN: ytgrnd_b.shp
+		Start: 48
+		Length: 48
+		ShadowStart: 144
+	icon:
+		Filename: cameomd|grndicon.shp
+		Offset: 0,0

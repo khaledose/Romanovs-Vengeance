@@ -1,0 +1,3 @@
+dtruck:
+	idle: bits/vehicles/replace/dtruck
+	idle-hiexplosive: bits/vehicles/upgrades/dtrucku

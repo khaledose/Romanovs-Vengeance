@@ -1,0 +1,178 @@
+jumpjet:
+	Inherits: ^Infantry
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@VETERAN: ^InfantryPromotable
+	Inherits@VOICES: ^WithFeedbackVoicelines
+	HiddenUnderFog:
+		Type: CenterPosition
+	Buildable:
+		Queue: Infantry.Shared, Infantry.Allies
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 60
+		Prerequisites: ~infantry.allies, gaairc, ~techlevel.2
+		Description: Airborne soldier.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles\n\nUpgradeable with:\n- Advanced Training
+		BuildDuration: 375
+		BuildDurationModifier: 100
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Valued:
+		Cost: 450
+	Tooltip:
+		Name: Rocketeer
+	Tooltip@NoRow:
+		Name: Rocketeer
+	Selectable:
+		Bounds: 482, 1448, 0, -530
+	Health:
+		HP: 12500
+	-Mobile:
+	RevealsShroud:
+		Range: 8c0
+		Type: GroundPosition
+		RequiresCondition: !airborne
+	RevealsShroud@Ground:
+		Range: 8c0
+		Type: GroundPosition
+		RequiresCondition: airborne
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 8c0
+	#	Type: GroundPosition
+	Armor:
+		Type: Light
+	Armament@primary:
+		Weapon: 20mm
+		Damage: 25
+		ReloadingCondition: reload-ground
+		PauseOnCondition: chronodisable || reload-air
+		RequiresCondition: !rank-elite
+	Armament@primary-aa:
+		Weapon: 20mmAA
+		ReloadingCondition: reload-air
+		PauseOnCondition: chronodisable || reload-ground
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: 20mmE
+		Damage: 50
+		ReloadingCondition: reload-ground
+		PauseOnCondition: chronodisable || reload-air
+		RequiresCondition: rank-elite
+	Armament@elite-aa:
+		Weapon: 20mmAAE
+		ReloadingCondition: reload-air
+		PauseOnCondition: chronodisable || reload-ground
+		RequiresCondition: rank-elite
+	AttackAircraft:
+		Voice: Attack
+		FacingTolerance: 2
+		AttackType: Hover
+	Aircraft:
+		CruiseAltitude: 3c852
+		InitialFacing: 80
+		TurnSpeed: 787
+		Speed: 150
+		AltitudeVelocity: 240
+		MaximumPitch: 128
+		Voice: Move
+		AirborneCondition: airborne
+		IdealSeparation: 512
+		VTOL: true
+		CanSlide: true
+		CanHover: true
+	WithInfantryBody:
+		RequiresCondition: !airborne
+	WithInfantryBody@Air:
+		StandSequences: fly
+		MoveSequence: fly
+		DefaultAttackSequence: shoot-air
+		IdleSequences: idle-air
+		RequiresCondition: airborne
+	Hovers:
+		BobDistance: -45
+	-InfectableRV:
+	-Targetable@DRONE:
+	-SpeedMultiplier@DRONE:
+	-RevealsShroud@DRONE:
+	-PeriodicExplosion@dronesparks:
+	-Crushable:
+	-Crushable@Cheater:
+	-Crushable@Vengeful:
+	-TakeCover:
+	-Targetable:
+	-TurnOnIdle:
+	-WithDeathAnimation@normal:
+	-WithDeathAnimation@effect:
+	-DamagedByTintedCells:
+	DeathSounds@normal:
+		DeathTypes: ExplosionDeath, BulletDeath, RadiationDeath, PsychicDeath, ElectroDeath, FlameDeath, VirusDeath, BruteDeath
+	-DeathSounds@zapped:
+	-DeathSounds@radiation:
+	-DeathSounds@psycrush:
+	-DeathSounds@virus:
+	Targetable@airborne:
+		TargetTypes: Air, Disguise
+		RequiresCondition: airborne
+	Targetable@ground:
+		TargetTypes: Ground, Infantry, DetonateAttack, Disguise
+		RequiresCondition: !airborne
+	WithSpriteBody@shadow:
+		Name: shadow
+		Sequence: shadow
+		ForceToGround: true
+	Voiced:
+		VoiceSet: RocketeerVoice
+	AmbientSound:
+		SoundFiles: iroclo2a.wav, iroclo2b.wav, iroclo2c.wav
+		Volume: 0.25
+		RequiresCondition: moving
+	GrantConditionOnMovement:
+		Condition: moving
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+	-Passenger:
+	-ChangesHealth@AMBULANCE:
+	SpawnActorOnDeath:
+		Actor: jumpjet.husk
+	ActorStatValues:
+		SplitRanges: true
+
+jumpjet.husk:
+	Inherits: ^HelicopterHusk
+	Inherits@1: ^SpriteActor
+	WithFacingSpriteBody:
+	-RenderVoxels:
+	-WithVoxelBody:
+	Tooltip:
+		Name: Rocketeer
+	Tooltip@NoRow:
+		Name: Rocketeer
+	Aircraft:
+		TurnSpeed: 40
+		Speed: 180
+	FallsToEarth:
+		Explosion: InfantryExplode
+	RevealsShroud:
+		Range: 8c0
+		Type: GroundPosition
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 8c0
+	#	Types: SatelliteScan
+	#	Type: GroundPosition
+	RevealOnDeath:
+		Radius: 8c0
+		Duration: 125
+	WithSpriteBody@shadow:
+		Name: shadow
+		Sequence: shadow
+		ForceToGround: true
+
+jumpjet.spawner:
+	Inherits: ^Infantry
+	FreeActor:
+		Actor: jumpjet
+		Facing: 640
+	KillsSelf:
+		RemoveInstead: true
+	-MapEditorData:
+	RenderSprites:
+		Image: jumpjet

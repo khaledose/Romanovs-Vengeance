@@ -1,0 +1,26 @@
+PsychicJab:
+	Inherits: ^SAFlame
+	ReloadDelay: 15
+	Range: 4c512
+	Report: iiniatta.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 2500
+
+PsychicJabE:
+	Inherits: PsychicJab
+	Range: 6c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 3000
+
+UCPsychicJab:
+	Inherits: ^SABFlame
+	ReloadDelay: 15
+	Range: 6c0
+	Report: iiniatta.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 6300
+
+UCPsychicJabE:
+	Inherits: UCPsychicJab
+	Warhead@1Dam: SpreadDamage
+		Damage: 7300

@@ -1,0 +1,379 @@
+civ1:
+	Inherits: ^Civilian
+	Inherits@PANIC: ^Panicker
+	Inherits@WANDERS: ^Wanderer
+	Voiced:
+		VoiceSet: CivilianAlliedFemaleVoice
+	-TakeCover:
+
+civ2:
+	Inherits: ^Civilian
+	Inherits@PANIC: ^Panicker
+	Inherits@WANDERS: ^Wanderer
+	Voiced:
+		VoiceSet: CivilianAlliedMaleVoice
+	-TakeCover:
+
+civ3:
+	Inherits: ^Civilian
+	Inherits@PANIC: ^Panicker
+	Inherits@WANDERS: ^Wanderer
+	Voiced:
+		VoiceSet: CivilianAlliedMaleVoice
+	-TakeCover:
+
+civa:
+	Inherits: ^Civilian
+	Inherits@PANIC: ^Panicker
+	Inherits@WANDERS: ^Wanderer
+	Armament:
+		Weapon: Pistola
+	Voiced:
+		VoiceSet: CivilianTexanVoice
+	-TakeCover:
+
+civb:
+	Inherits: ^Civilian
+	Inherits@PANIC: ^Panicker
+	Inherits@WANDERS: ^Wanderer
+	Armament:
+		Weapon: Pistola
+	Voiced:
+		VoiceSet: CivilianTexanVoice
+	-TakeCover:
+
+civc:
+	Inherits: ^Civilian
+	Inherits@PANIC: ^Panicker
+	Inherits@WANDERS: ^Wanderer
+	Armament:
+		Weapon: Pistola
+	Voiced:
+		VoiceSet: CivilianTexanVoice
+	-TakeCover:
+
+civbbp:
+	Inherits: ^Civilian
+	Inherits@PANIC: ^Panicker
+	Inherits@WANDERS: ^Wanderer
+	Voiced:
+		VoiceSet: CivilianAlliedMaleVoice
+	-TakeCover:
+
+civbfm:
+	Inherits: ^Civilian
+	Inherits@PANIC: ^Panicker
+	Inherits@WANDERS: ^Wanderer
+	Voiced:
+		VoiceSet: CivilianAlliedMaleVoice
+	-TakeCover:
+
+civbf:
+	Inherits: ^Civilian
+	Inherits@PANIC: ^Panicker
+	Inherits@WANDERS: ^Wanderer
+	Voiced:
+		VoiceSet: CivilianAlliedFemaleVoice
+	-TakeCover:
+
+civbtm:
+	Inherits: ^Civilian
+	Inherits@PANIC: ^Panicker
+	Inherits@WANDERS: ^Wanderer
+	Voiced:
+		VoiceSet: CivilianAlliedMaleVoice
+	-TakeCover:
+
+civsfm:
+	Inherits: ^Civilian
+	Inherits@PANIC: ^Panicker
+	Inherits@WANDERS: ^Wanderer
+	Voiced:
+		VoiceSet: CivilianSovietMaleVoice
+	-TakeCover:
+
+civsf:
+	Inherits: ^Civilian
+	Inherits@PANIC: ^Panicker
+	Inherits@WANDERS: ^Wanderer
+	Voiced:
+		VoiceSet: CivilianSovietFemaleVoice
+	-TakeCover:
+
+civstm:
+	Inherits: ^Civilian
+	Inherits@PANIC: ^Panicker
+	Inherits@WANDERS: ^Wanderer
+	Voiced:
+		VoiceSet: CivilianSovietMaleVoice
+	-TakeCover:
+
+vladimir:
+	Inherits: ^Civilian
+	DeliversCash:
+		Payload: 200
+	Tooltip:
+		Name: Vladimir
+	Tooltip@NoRow:
+		Name: Vladimir
+	Armament:
+		Weapon: Pistola
+	WithInfantryBody:
+		IdleSequences: idle1, idle2
+
+pentgen:
+	Inherits: ^Civilian
+	DeliversCash:
+		Payload: 200
+	Tooltip:
+		Name: General Pentagon
+	Tooltip@NoRow:
+		Name: General Pentagon
+	Armament:
+		Weapon: Pistola
+	Voiced:
+		VoiceSet: GIVoice
+
+ssrv:
+	Inherits: ^Civilian
+	Tooltip:
+		Name: Secret Service
+	Tooltip@NoRow:
+		Name: Secret Service
+	Armament:
+		Weapon: Pistola
+	Voiced:
+		VoiceSet: SecretServiceVoice
+
+pres:
+	Inherits: ^Civilian
+	Inherits@PANIC: ^Panicker
+	DeliversCash:
+		Payload: 2000
+	Tooltip:
+		Name: President
+	Tooltip@NoRow:
+		Name: President
+	-TakeCover:
+
+# Yuri's Revenge Civilians
+rmnv:
+	Inherits: ^Civilian
+	Inherits@PANIC: ^Panicker
+	Tooltip:
+		Name: Romanov
+	Tooltip@NoRow:
+		Name: Romanov
+	Voiced:
+		VoiceSet: RomanovVoice
+	-TakeCover:
+
+eins:
+	Inherits: ^Civilian
+	Inherits@PANIC: ^Panicker
+	DeliversCash:
+		Payload: 200
+	Tooltip:
+		Name: Albert Einstein
+	Tooltip@NoRow:
+		Name: Albert Einstein
+	Voiced:
+		VoiceSet: EinsteinVoice
+	-TakeCover:
+
+mumy:
+	Inherits: ^Civilian
+	Inherits@SELFHEALING: ^SelfHealing
+	Inherits@PANIC: ^Panicker
+	Health:
+		HP: 40000
+	Armor:
+		Type: Plate
+	Valued:
+		Cost: 100
+	DeliversCash:
+		Payload: 200
+	Mobile:
+		Speed: 45
+	RevealsShroud:
+		Range: 6c0
+	Tooltip:
+		Name: Evil Mummy
+	Tooltip@NoRow:
+		Name: Evil Mummy
+	Armament@primary:
+		Weapon: MummyPunch
+	Armament@secondary:
+		Weapon: MummySmash
+	Voiced:
+		VoiceSet: MummyVoice
+	WithInfantryBody:
+		IdleSequences: idle1, idle2
+	-TakeCover:
+
+arnd:
+	Inherits: ^Civilian
+	Health:
+		HP: 20000
+	Armor:
+		Type: Plate
+	Mobile:
+		Speed: 90
+	Tooltip:
+		Name: Arnnie Frankenfurter
+	Tooltip@NoRow:
+		Name: Arnnie Frankenfurter
+	Armament:
+		Weapon: TermiGun
+	Voiced:
+		VoiceSet: ArnoldVoice
+	WithInfantryBody:
+		IdleSequences: idle1, idle2
+
+stln:
+	Inherits: ^Civilian
+	Health:
+		HP: 20000
+	Armor:
+		Type: Plate
+	Mobile:
+		Speed: 90
+	Tooltip:
+		Name: Sammy Stallion
+	Tooltip@NoRow:
+		Name: Sammy Stallion
+	Armament@primary:
+		Weapon: StalGun
+	Armament@secondary:
+		Weapon: StalGren
+	Voiced:
+		VoiceSet: StallionVoice
+	WithInfantryBody:
+		IdleSequences: idle1, idle2
+
+^Lunr:
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@VETERAN: ^InfantryPromotable
+	Inherits@VOICES: ^WithFeedbackVoicelines
+	Health:
+		HP: 12500
+	Armor:
+		Type: None
+	Valued:
+		Cost: 600
+	DeliversCash:
+		Payload: 300
+	RevealsShroud:
+		Range: 8c0
+	Tooltip:
+		Name: Cosmonaut
+	Tooltip@NoRow:
+		Name: Cosmonaut
+	Voiced:
+		VoiceSet: CosmonautVoice
+	Transforms:
+		Voice: Move
+		PauseOnCondition: chronodisable || water
+
+lunr.foot:
+	Inherits: ^GroundInfantry
+	Inherits@SELF: ^Lunr
+	Mobile:
+		Speed: 60
+	Armament@primary:
+		Weapon: LunarLaserAG
+		Damage: 20
+		LocalOffset: 128,196,512, 128,-196,512
+		PauseOnCondition: chronodisable || airborne
+	Transforms:
+		IntoActor: lunr.air
+	-TakeCover:
+
+lunr.air:
+	Inherits: ^AirInfantry
+	Inherits@SELF: ^Lunr
+	Buildable:
+		Queue: Infantry.Allies
+		BuildAtProductionType: Soldier
+		Description: Airborne soldier.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles
+		BuildPaletteOrder: 72
+	Aircraft:
+		Speed: 135
+	Armament@primary:
+		Weapon: LunarLaser
+		Damage: 20
+		LocalOffset: 128,196,512, 128,-196,512
+		ReloadingCondition: reload-ground
+		PauseOnCondition: chronodisable || !airborne
+	SpawnActorOnDeath:
+		Actor: lunr.husk
+	WithInfantryBody:
+		SequenceSounds:
+			fly: iroclo2a.wav, iroclo2b.wav, iroclo2c.wav
+	Transforms:
+		IntoActor: lunr.foot
+
+lunr.husk:
+	Inherits: ^AirInfantryHusk
+	Aircraft:
+		TurnSpeed: 40
+		Speed: 180
+	Tooltip:
+		Name: Cosmonaut
+	Tooltip@NoRow:
+		Name: Cosmonaut
+
+# Custom Civilians
+# pres.regicide:
+# 	Inherits: ^RegicideLeader
+# 	Tooltip:
+# 		Name: President Michael Dugan
+# 	Tooltip@NoRow:
+# 		Name: President Michael Dugan
+# 	RenderSprites:
+# 		Image: pres
+# 	ActorStatValues:
+# 		Icon: icon
+# 		IconPalette: chrome
+
+# rmnv.regicide:
+# 	Inherits: ^RegicideLeader
+# 	Tooltip:
+# 		Name: Premier Alexander Romanov
+# 	Tooltip@NoRow:
+# 		Name: Premier Alexander Romanov
+# 	Voiced:
+# 		VoiceSet: RomanovVoice
+# 	RenderSprites:
+# 		Image: rmnv
+# 	ActorStatValues:
+# 		Icon: icon
+# 		IconPalette: chrome
+
+# yuripr.regicide:
+# 	Inherits: ^RegicideLeader
+# 	Tooltip:
+# 		Name: Master Yuri
+# 	Tooltip@NoRow:
+# 		Name: Master Yuri
+# 	Voiced:
+# 		VoiceSet: YuriPrimeVoice
+# 	RenderSprites:
+# 		Image: yuripr
+# 	ActorStatValues:
+# 		Icon: icon
+# 		IconPalette: chrome
+
+# myak.regicide:
+# 	Inherits: ^RegicideLeader
+# 	Tooltip:
+# 		Name: Chairman Mustapha Yakubov
+# 	Tooltip@NoRow:
+# 		Name: Chairman Mustapha Yakubov
+# 	Voiced:
+# 		VoiceSet: SecretServiceVoice
+# 	RenderSprites:
+# 		Image: myak
+# 	ActorStatValues:
+# 		Icon: icon
+# 		IconPalette: chrome

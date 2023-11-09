@@ -1,0 +1,36 @@
+gtgcan:
+	Defaults:
+		Offset: 0, -30
+		ZOffset: -512
+	idle:
+		Filename: gggcan.shp
+		TilesetFilenames:
+			SNOW: gagcan.shp
+			SIMPLETERRAIN: gtgcan.shp
+		ShadowStart: 3
+	damaged-idle:
+		Filename: gggcan.shp
+		TilesetFilenames:
+			SNOW: gagcan.shp
+			SIMPLETERRAIN: gtgcan.shp
+		Start: 1
+		ShadowStart: 4
+	make:
+		Filename: gtgcanmk.shp
+		TilesetFilenames:
+			SNOW: gagcanmk.shp
+			URBAN: gugcanmk.shp
+			NEWURBAN: gngcanmk.shp
+			DESERT: gdgcanmk.shp
+			LUNAR: glgcanmk.shp
+			DUNE: gdgcanmk.shp
+		Length: 12
+		ShadowStart: 12
+		ZOffset: 0
+	muzzle:
+		Filename: gcmuzzle.shp
+		Length: *
+		Offset: 0,0
+	icon:
+		Filename: cameo|gcanicon.shp
+		Offset: 0,0

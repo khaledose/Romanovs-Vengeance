@@ -1,0 +1,8 @@
+SpyVoice:
+	Inherits: ^InfantryDeath
+	Voices:
+		Select: ispysea, ispyseb, ispysec, ispysed
+		Move: ispyata, ispymob, ispymoc, ispymod, ispymoe
+		Action: ispyatb, ispyatd
+		Feedback: ispyfea, ispyfeb
+		Die: ispydia, ispydib, ispydic

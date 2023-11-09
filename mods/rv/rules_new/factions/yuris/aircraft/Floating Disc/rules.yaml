@@ -1,0 +1,166 @@
+disk:
+	Inherits: ^Helicopter
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@VETERAN: ^ProducibleAsVeteranVehicle
+	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	BodyOrientation:
+		QuantizedFacings: 1
+	DamagedByTintedCells:
+		RequiresCondition: !airborne
+	Valued:
+		Cost: 1750
+	DeliversCash:
+		Payload: 1750
+		PlayerExperience: 88
+		Voice: Move
+	Tooltip:
+	Tooltip@NoRow:
+		Name: Floating disc
+	Buildable:
+		Queue: Aircraft.Shared, Aircraft.Yuri
+		BuildPaletteOrder: 40
+		Prerequisites: ~aircraft.yuri, yatech, ~techlevel.4
+		Description: Floating Disc armed with lasers.\nCan disable Power Plants and powered Defenses.\nCan steal resources from enemy Refineries.\nCan steal technology from enemy Battle Labs.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles\n\nUpgradeable with:\n- Disc Armor (Lunar Eclipse)\n- Laser Capacitors (Lazarus Corps)
+		BuildDuration: 1000
+		BuildDurationModifier: 100
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Aircraft:
+		TurnSpeed: 1023
+		Speed: 165
+		AltitudeVelocity: 200
+	Selectable:
+		Bounds: 1882, 2075, 0, -724
+	Health:
+		HP: 60000
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 10c0
+	RevealsShroud@Ground:
+		Range: 10c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 10c0
+	#	Types: SatelliteScan
+	#	Type: GroundPosition
+	Armament@primary:
+		Weapon: DiskLaser
+		Damage: 75
+		ReloadingCondition: reload-ground
+		PauseOnCondition: reload-air
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: DiskLaserE
+		Damage: 100
+		ReloadingCondition: reload-ground
+		PauseOnCondition: reload-air
+		RequiresCondition: rank-elite
+	Armament@primary-aa:
+		Weapon: DiskLaserAA
+		ReloadingCondition: reload-air
+		PauseOnCondition: reload-ground
+		RequiresCondition: !rank-elite
+	Armament@elite-aa:
+		Weapon: DiskLaserAAE
+		ReloadingCondition: reload-air
+		PauseOnCondition: reload-ground
+		RequiresCondition: rank-elite
+	Armament@powerDrain:
+		Name: secondary
+		Weapon: DiskPowerDrain
+		MuzzleSequence: muzzle
+	Armament@defenseDrain:
+		Name: secondary
+		Weapon: DiskDefenseDrain
+		MuzzleSequence: muzzle
+	Armament@steal:
+		Name: secondary
+		Weapon: DiskSteal
+		MuzzleSequence: muzzle
+	AttackAircraft:
+		Voice: Attack
+		AttackType: Hover
+		FacingTolerance: 512
+		Armaments: primary, secondary
+	Voiced:
+		VoiceSet: FloatingDiskVoice
+	WithMuzzleOverlay:
+	AutoTarget:
+	RenderSprites:
+		Image: disk
+	RenderVoxels:
+		Image: disk
+	WithVoxelHelicopterBody:
+		TickRate: 1
+	WithVoxelHelicopterBody@turret:
+		Sequence: turret
+		TickRate: 1
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	NotificationAnnouncement:
+		RequiresCondition: produced
+		Notification: DiscInFlight
+	DeathSounds:
+		DeathTypes: NonTemporal
+	AmbientSound@Steal:
+		SoundFiles: vflolo5a.wav, vflolo5b.wav
+		Volume: 0.65
+		RequiresCondition: stealing
+	SoundAnnouncement@StealEnd:
+		SoundFiles: vflolo6a.wav
+		Volume: 0.65
+		RequiresCondition: !stealing
+	GrantConditionOnAttack:
+		Condition: stealing
+		RevokeDelay: 6
+		ArmamentNames: secondary
+	AmbientSound@Move:
+		SoundFiles: vflolo2a.wav, vflolo2b.wav
+		Volume: 0.40
+		RequiresCondition: moving
+	SoundAnnouncement@end:
+		SoundFiles: vflolo3a.wav
+		Volume: 0.40
+		RequiresCondition: !moving
+	GrantConditionOnMovement:
+		Condition: moving
+	HitShape:
+	Repairable:
+		Voice: Move
+		RepairActors: gadept, nadept, nadepb, caoutp, caoutb
+	SpawnActorOnDeath:
+		DeathType: NonTemporal
+		Actor: diskhusk
+	ActorStatValues:
+		SplitRanges: true
+		Armaments: primary
+
+diskhusk:
+	Inherits: ^HelicopterHusk
+	Tooltip:
+	Tooltip@NoRow:
+		Name: Leech Disc
+	Aircraft:
+		TurnSpeed: 40
+		Speed: 165
+	RevealsShroud:
+		Range: 10c0
+		Type: GroundPosition
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 10c0
+	#	Types: SatelliteScan
+	#	Type: GroundPosition
+	RevealOnDeath:
+		Radius: 10c0
+		Duration: 125
+	RenderVoxels:
+		Image: disk
+	-WithVoxelBody:
+	WithVoxelHelicopterBody:
+		TickRate: 1
+	WithVoxelHelicopterBody@turret:
+		Sequence: turret
+		TickRate: 1
+	BodyOrientation:
+		UseClassicPerspectiveFudge: false

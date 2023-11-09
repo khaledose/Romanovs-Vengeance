@@ -1,0 +1,56 @@
+naindp:
+	Defaults:
+		Offset: 0, -45
+	idle:
+		Filename: ngindp.shp
+		TilesetFilenames:
+			SNOW: naindp.shp
+			SIMPLETERRAIN: ntindp.shp
+		ShadowStart: 3
+	damaged-idle:
+		Filename: ngindp.shp
+		TilesetFilenames:
+			SNOW: naindp.shp
+			SIMPLETERRAIN: ntindp.shp
+		Start: 1
+		ShadowStart: 4
+	idle-pistons:
+		Filename: ngindp_a.shp
+		TilesetFilenames:
+			SNOW: naindp_a.shp
+			SIMPLETERRAIN: ntindp_a.shp
+		Length: 13
+		ShadowStart: 26
+	damaged-idle-pistons:
+		Filename: ngindp_a.shp
+		TilesetFilenames:
+			SNOW: naindp_a.shp
+			SIMPLETERRAIN: ntindp_a.shp
+		Start: 13
+		Length: 13
+		ShadowStart: 39
+	idle-lights:
+		Filename: ngindp_b.shp
+		TilesetFilenames:
+			SNOW: naindp_b.shp
+			SIMPLETERRAIN: ntindp_b.shp
+		Length: 13
+		ShadowStart: 26
+	damaged-idle-lights:
+		Filename: ngindp_b.shp
+		TilesetFilenames:
+			SNOW: naindp_b.shp
+			SIMPLETERRAIN: ntindp_b.shp
+		Start: 13
+		Length: 13
+		ShadowStart: 39
+	make:
+		Filename: ngindpmk.shp
+		TilesetFilenames:
+			SNOW: naindpmk.shp
+			SIMPLETERRAIN: ntindpmk.shp
+		Length: 25
+		ShadowStart: 25
+	icon:
+		Filename: cameomd|indpicon.shp
+		Offset: 0,0

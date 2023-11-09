@@ -1,0 +1,9 @@
+BorisVoice:
+	Inherits: ^InfantryDeath
+	Voices:
+		Build: iborcra, iborcrb, iborcrc, iborcrd, iborcre
+		Select: iborsea, iborseb, iborsec, iborsed, iborsee
+		Move: ibormoa, ibormob, ibormoc, ibormod, ibormoe
+		Attack: iborata, iboratb, iboratc, iboratd, iborate
+		Feedback: iborfea, iborfeb, iborfec, iborfed
+		Die: ibordia, ibordib, ibordic, ibordid, ibordie

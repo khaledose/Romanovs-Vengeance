@@ -1,0 +1,199 @@
+naweap:
+	Defaults:
+		Filename: ngweap.shp
+		TilesetFilenames:
+			SNOW: naweap.shp
+			SIMPLETERRAIN: ntweap.shp
+		Offset: -30, -60
+	idle:
+		ShadowStart: 3
+		ZOffset: -1536
+	damaged-idle:
+		Start: 1
+		ShadowStart: 4
+		ZOffset: -1536
+	build-front:
+		Filename: ngweap_1.shp
+		TilesetFilenames:
+			SNOW: naweap_1.shp
+			SIMPLETERRAIN: ntweap_1.shp
+		ShadowStart: 2
+		ZOffset: -1024
+	damaged-build-front:
+		Filename: ngweap_1.shp
+		TilesetFilenames:
+			SNOW: naweap_1.shp
+			SIMPLETERRAIN: ntweap_1.shp
+		Start: 1
+		ShadowStart: 3
+		ZOffset: -1024
+	build-top:
+		Filename: ngweap_2.shp
+		TilesetFilenames:
+			SNOW: naweap_2.shp
+			SIMPLETERRAIN: ntweap_2.shp
+		ShadowStart: 2
+		ZOffset: 1024
+	damaged-build-top:
+		Filename: ngweap_2.shp
+		TilesetFilenames:
+			SNOW: naweap_2.shp
+			SIMPLETERRAIN: ntweap_2.shp
+		Start: 1
+		ShadowStart: 3
+		ZOffset: 1024
+	# TODO: ngweap_3 and ngweap_4 are used for producing flying actors
+	build-air-open:
+		Filename: ngweap_3.shp
+		TilesetFilenames:
+			SNOW: naweap_3.shp
+			SIMPLETERRAIN: ntweap_3.shp
+		ShadowStart: 2
+	damaged-air-open:
+		Filename: ngweap_3.shp
+		TilesetFilenames:
+			SNOW: naweap_3.shp
+			SIMPLETERRAIN: ntweap_3.shp
+		Start: 1
+		ShadowStart: 3
+	build-air-inside:
+		Filename: ngweap_4.shp
+		TilesetFilenames:
+			SNOW: naweap_4.shp
+			SIMPLETERRAIN: ntweap_4.shp
+		ShadowStart: 2
+	damaged-air-inside:
+		Filename: ngweap_4.shp
+		TilesetFilenames:
+			SNOW: naweap_4.shp
+			SIMPLETERRAIN: ntweap_4.shp
+		Start: 1
+		ShadowStart: 3
+	bib:
+		Filename: ngweapbb.shp
+		TilesetFilenames:
+			SNOW: naweapbb.shp
+			SIMPLETERRAIN: ntweapbb.shp
+		ShadowStart: 3
+		ZOffset: -1024
+	damaged-bib:
+		Filename: ngweapbb.shp
+		TilesetFilenames:
+			SNOW: naweapbb.shp
+			SIMPLETERRAIN: ntweapbb.shp
+		Start: 1
+		ShadowStart: 3
+		ZOffset: -1024
+	idle-lights:
+		Filename: ngweap_a.shp
+		TilesetFilenames:
+			SNOW: naweap_a.shp
+			SIMPLETERRAIN: ntweap_a.shp
+		Length: 13
+		ShadowStart: 13
+		Tick: 150
+	damaged-idle-lights: # doesn't have damage frames
+		Filename: ngweap_a.shp
+		TilesetFilenames:
+			SNOW: naweap_a.shp
+			SIMPLETERRAIN: ntweap_a.shp
+		Length: 13
+		ShadowStart: 13
+		Tick: 150
+	make:
+		Filename: ntweapmk.shp
+		TilesetFilenames:
+			SNOW: naweapmk.shp
+			URBAN: nuweapmk.shp
+			NEWURBAN: nnweapmk.shp
+			DESERT: ndweapmk.shp
+			LUNAR: nlweapmk.shp
+			DUNE: ndweapmk.shp
+		Length: 25
+		ShadowStart: 25
+	icon:
+		Filename: cameo|nwepicon.shp
+		TilesetFilenames:
+		Offset: 0,0
+
+naweab:
+	Inherits: naweap
+	Defaults:
+		Filename: ngweap.shp
+		TilesetFilenames:
+			SNOW: naweap.shp
+			SIMPLETERRAIN: ntweap.shp
+		FlipX: true
+		Offset: 30, -60
+	icon:
+		Filename: cameo|nwepicon.shp
+		TilesetFilenames:
+		FlipX: false
+
+naweac:
+	Inherits: naweap
+	Defaults:
+		Filename: ctnewy21.shp
+		TilesetFilenames:
+			SNOW: canewy21.shp
+			URBAN: cunewy21.shp
+			NEWURBAN: cnnewy21.shp
+			DESERT: cdnewy21.shp
+			LUNAR: clnewy21.shp
+			DUNE: cdnewy21.shp
+		Offset: -18,-54
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		ShadowStart: 5
+	idle-flag:
+		Filename: ctgrd1_a.shp
+		TilesetFilenames:
+			SNOW: cagrd1_a.shp
+			URBAN: cugrd1_a.shp
+			NEWURBAN: cngrd1_a.shp
+			DESERT: cdgrd1_a.shp
+			LUNAR: clgrd1_a.shp
+			DUNE: cdgrd1_a.shp
+		Length: 9
+		ShadowStart: 9
+		Tick: 80
+
+nawead:
+	Inherits: naweap
+	Defaults:
+		Filename: ctnewy20.shp
+		TilesetFilenames:
+			SNOW: canewy20.shp
+			URBAN: cunewy20.shp
+			NEWURBAN: cnnewy20.shp
+			DESERT: cdnewy20.shp
+			LUNAR: clnewy20.shp
+			DUNE: cdnewy20.shp
+		Offset: 18,-54
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		ShadowStart: 5
+	idle-flag:
+		Filename: ctgrd1_a.shp
+		TilesetFilenames:
+			SNOW: cagrd1_a.shp
+			URBAN: cugrd1_a.shp
+			NEWURBAN: cngrd1_a.shp
+			DESERT: cdgrd1_a.shp
+			LUNAR: clgrd1_a.shp
+			DUNE: cdgrd1_a.shp
+		Length: 9
+		ShadowStart: 9
+		Tick: 80
+	make:
+		Filename: ntweapmk.shp
+		TilesetFilenames:
+			SNOW: naweapmk.shp
+			URBAN: nuweapmk.shp
+			NEWURBAN: nnweapmk.shp
+			DESERT: ndweapmk.shp
+			LUNAR: nlweapmk.shp
+			DUNE: ndweapmk.shp
+		FlipX: true

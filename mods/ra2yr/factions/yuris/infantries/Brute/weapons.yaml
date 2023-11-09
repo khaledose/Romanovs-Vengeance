@@ -1,0 +1,25 @@
+Punch:
+	Inherits: ^Battering
+	ReloadDelay: 60
+	Range: 1c103
+	Report: ibruatta.wav, ibruattb.wav, ibruattc.wav, ibruattd.wav, ibruatte.wav, ibruattf.wav
+	ValidTargets: Ground
+	InvalidTargets: Vehicles
+	Warhead@1Dam: SpreadDamage
+		Damage: 10000
+		ValidTargets: Ground
+		InvalidTargets: Vehicles
+
+PunchE:
+	Inherits: Punch
+	Range: 1c410
+
+Smash:
+	Inherits: ^Smashing
+	ReloadDelay: 60
+	Range: 1c103
+	Report: ibruatta.wav, ibruattb.wav, ibruattc.wav, ibruattd.wav, ibruatte.wav, ibruattf.wav
+	ValidTargets: Vehicle
+	Warhead@1Dam: SpreadDamage
+		Damage: 10000
+		ValidTargets: Vehicle

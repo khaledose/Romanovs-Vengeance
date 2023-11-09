@@ -1,0 +1,41 @@
+gacsph:
+	Inherits: ^SuperWeapon
+	Inherits@SPECIAL: ChronoSphereSpecial
+	Inherits@SHAPE: ^4x3Shape
+	Buildable:
+		Queue: Support.Shared, Support.Allies
+		Prerequisites: ~building.allies, gatech, !enoughchrono, ~techlevel.5
+		Description: Allows teleportation of vehicles.\nKills infantry.\n\n  Requires power to operate.\n  Can be rotated.
+		BuildPaletteOrder: 980
+	IsometricSelectable:
+		DecorationHeight: 45
+	Power:
+		Amount: -200
+	Health:
+		HP: 75000
+	Armor:
+		Type: Concrete
+	Valued:
+		Cost: 2500
+	RevealsShroud:
+		Range: 5c0
+	Tooltip:
+		Name: Allied Chrono Sphere
+	Tooltip@NoRow:
+		Name: Allied Chrono Sphere
+	ProvidesPrerequisite@swlimit:
+		Prerequisite: enoughchrono
+	WithIdleOverlay@dome:
+		Sequence: idle-dome
+		PauseOnCondition: disabled || chronodisable
+		RequiresCondition: !build-incomplete
+	WithIdleOverlay@fans:
+		Sequence: idle-fans
+		PauseOnCondition: disabled || chronodisable
+		RequiresCondition: !build-incomplete
+	NotificationAnnouncement:
+		Notification: ChronosphereDetected
+		TextNotification: Warning: Chronosphere detected.
+	Voiced:
+		VoiceSet: ChronosphereVoice
+		Volume: 0.8

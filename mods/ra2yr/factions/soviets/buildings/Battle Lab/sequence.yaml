@@ -1,0 +1,30 @@
+natech:
+	Defaults:
+		Offset: 0, -45
+	idle:
+		Filename: ngtech.shp
+		TilesetFilenames:
+			SNOW: natech.shp
+			SIMPLETERRAIN: nttech.shp
+		ShadowStart: 3
+	damaged-idle:
+		Filename: ngtech.shp
+		TilesetFilenames:
+			SNOW: natech.shp
+			SIMPLETERRAIN: nttech.shp
+		Start: 1
+		ShadowStart: 4
+	make:
+		Filename: nttechmk.shp
+		TilesetFilenames:
+			SNOW: natechmk.shp
+			URBAN: nutechmk.shp
+			NEWURBAN: nntechmk.shp
+			DESERT: ndtechmk.shp
+			LUNAR: nltechmk.shp
+			DUNE: ndtechmk.shp
+		Length: 25
+		ShadowStart: 25
+	icon:
+		Filename: cameo|ntchicon.shp
+		Offset: 0,0

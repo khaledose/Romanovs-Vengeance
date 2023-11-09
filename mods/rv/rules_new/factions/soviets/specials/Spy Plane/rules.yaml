@@ -1,0 +1,32 @@
+SpyPlaneSpecial:
+	AirstrikePower@spyplane:
+		OrderName: SovietSpyPlane
+		RequiresCondition: !lost
+		Prerequisites:
+			1: radar
+		Icons:
+			1: spyplane
+		Cursor: spyplane
+		ChargeInterval: 3000
+		StartFullyCharged: true
+		Names:
+			1: Spy Plane
+		Descriptions:
+			1: Reveals an area of the map.\nProvides stealth detection.
+		SelectTargetSpeechNotification: SelectTarget
+		SelectTargetTextNotification: Select target.
+		EndChargeSpeechNotification: SpyPlaneReady
+		EndChargeTextNotification: Spy Plane ready.
+		UnitTypes:
+			1: spyp
+		SquadSizes:
+			1: 1
+		QuantizedFacings: 8
+		DisplayBeacon: True
+		BeaconPosters:
+			1: spypicon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: swdirection
+		DirectionArrowPalette: mouse

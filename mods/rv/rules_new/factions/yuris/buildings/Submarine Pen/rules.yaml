@@ -1,0 +1,23 @@
+yayard:
+	Inherits: ^Shipyard
+	Tooltip:
+	Tooltip@NoRow:
+		Name: Submarine Pen
+	Buildable:
+		Queue: Building.Shared, Building.Yuri
+		Prerequisites: ~building.yuri, power, yarefn, ~techlevel.1
+		Description: Produces Psi-Corps submarines, and other naval units.\n\nAbilities:\n- Comes with 3 repair drones.\n\n  Can only be placed on water.
+	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@ship.yuri:
+		Prerequisite: ship.yuri
+	ProvidesPrerequisite@vehicleorship.yuri:
+		Prerequisite: vehicleorship.yuri
+	Production:
+		Produces: Ship.Yuri
+	ProductionQueue:
+		Type: Ship.Yuri
+		DisplayOrder: 23
+	ProductionBar:
+		ProductionType: Ship.Yuri
+	IsometricSelectable:
+		DecorationHeight: 120

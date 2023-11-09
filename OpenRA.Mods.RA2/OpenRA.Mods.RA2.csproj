@@ -13,5 +13,6 @@
     <ProjectReference Include="$(EngineRootPath)/OpenRA.Mods.Common/OpenRA.Mods.Common.csproj">
       <Private>False</Private>
     </ProjectReference>
+    <ProjectReference Include="..\engine\OpenRA.Mods.AS\OpenRA.Mods.AS.csproj" />
   </ItemGroup>
 </Project>

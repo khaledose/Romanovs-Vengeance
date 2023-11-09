@@ -1,0 +1,8 @@
+ChronoLegionnaireVoice:
+	Inherits: ^InfantryDeath
+	Voices:
+		Select: ichrsea
+		Move: ichrseb, ichrsec, ichrsed, ichrsee
+		Attack: ichrata, ichratb, ichratc, ichratd
+		Feedback: ichrfea, ichrfeb, ichrfec
+		Die: ichrdia, ichrdib, ichrdic

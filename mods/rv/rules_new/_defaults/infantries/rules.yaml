@@ -1,0 +1,421 @@
+^Infantry:
+	Inherits@1: ^ExistsInWorld
+	Inherits@2: ^SpriteActor
+	Inherits@3: ^ChronoDisable
+	Inherits@4: ^CrateStatModifiers
+	Inherits@5: ^HospitalHealing
+	Inherits@6: ^KilledByIronCurtain
+	Inherits@7: ^DamagedByRadiation100Percent
+	Inherits@8: ^AcceptsIvanBomb
+	Inherits@9: ^AffectedByPropaganda
+	Inherits@10: ^TerrorDronable
+	Inherits@11: ^AffectedByCashBounty
+	Inherits@12: ^HealsInAmbulance
+	Inherits@13: ^AffectedBySpectreBullets
+	Inherits@HANDICAPS: ^PlayerHandicaps
+	Inherits@SELECTION_MODE: ^FlatSelectionMode
+	Health:
+	OwnerLostAction:
+		Action: Kill
+		DeathTypes: BulletDeath, NonTemporal
+	HitShape:
+		Type: Circle
+			Radius: 128
+	Armor:
+		Type: None
+	RevealsShroud:
+		Range: 4c0
+		MaxHeightDelta: 3
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 4c0
+	RevealOnFire:
+		ArmamentNames: primary, secondary, deployed, sapper
+		Duration: 50
+	RevealOnDeath:
+		Radius: 4c0
+		Duration: 125
+	Mobile:
+		Speed: 60
+		Voice: Move
+		Locomotor: foot
+		AlwaysTurnInPlace: true
+		TurnsWhileMoving: true
+		RequiresCondition: !chronodisable
+	WithTextControlGroupDecoration:
+	SelectionDecorations:
+		MinimumZoom: 0
+	Selectable:
+	ActorStatValues:
+		UpgradePrerequisites: global-upgrades
+	Targetable:
+		TargetTypes: Ground, Infantry, DetonateAttack, Disguise
+	Targetable@HEAL:
+		RequiresCondition: damaged
+		TargetTypes: Heal
+	GrantConditionOnDamageState@DAMAGED:
+		Condition: damaged
+		ValidDamageStates: Light, Medium, Heavy, Critical
+	TurnOnIdle:
+		MinDelay: 125
+		MaxDelay: 250
+	WithInfantryBody:
+		IdleSequences: idle1,idle2
+		StandSequences: stand
+		DefaultAttackSequence: shoot
+	WithDeathAnimation@normal:
+		DeathSequencePalette: infantry
+		DeathTypes:
+			ExplosionDeath: 1
+			BulletDeath: 2
+	Explodes@Corpse:
+		DeathTypes: NonTemporal, ExplosionDeath, BulletDeath
+		Weapon: CorpseSpawner
+		EmptyWeapon: CorpseSpawner
+	WithDeathAnimation@effect:
+		DeathSequencePalette: effect
+		DeathPaletteIsPlayerPalette: False
+		DeathTypes:
+			RadiationDeath: 4
+			PsychicDeath: 5
+			ElectroDeath: 6
+			VirusDeath: 7
+			BruteDeath: 8
+	SpawnActorOnDeath@flames:
+		Actor: FLAMEGUY
+		DeathType: FlameDeath
+	SpawnActorOnDeath@brute:
+		Actor: brute.spawner
+		DeathType: MutationDeath
+		OwnerType: Killer
+	SpawnSmokeParticleOnDeath@virus:
+		Amount: 1
+		Image: txgasg
+		Sequences: idle
+		Palette: effect
+		Weapon: CloudDamage
+		Duration: 250
+		DeathTypes: VirusDeath
+		Speed: 0, 25
+		TurnRate: 10
+	TakeCover:
+		DamageModifiers:
+			Prone50Percent: 50
+			Prone70Percent: 70
+			Prone100Percent: 100
+		DamageTriggers: TriggerProne
+	Passenger:
+		Voice: Move
+		CargoType: Garrisoner
+	HiddenUnderFog:
+	ActorLostNotification:
+		TextNotification: Unit lost.
+	ProximityCaptor:
+		Types: Infantry
+	GrantExternalConditionToKiller@GRINDER_TREADS:
+		Duration: 1
+		DeathTypes: Crush
+		Condition: grinder_treads_active
+	Crushable:
+		WarnProbability: 0
+		CrushSound: igensqua.wav
+		RequiresCondition: !cheater-ai && !vengeful-ai
+	Crushable@Cheater:
+		WarnProbability: 50
+		CrushSound: igensqua.wav
+		RequiresCondition: cheater-ai
+	Crushable@Vengeful:
+		WarnProbability: 100
+		CrushSound: igensqua.wav
+		RequiresCondition: vengeful-ai
+	GrantConditionOnBotOwner@Cheater:
+		Condition: cheater-ai
+		Bots: cheater
+	GrantConditionOnBotOwner@Vengeful:
+		Condition: vengeful-ai
+		Bots: vengeful
+	Guard:
+		Voice: Attack
+	Guardable:
+	DeathSounds@normal:
+		DeathTypes: ExplosionDeath, BulletDeath
+	DeathSounds@zapped:
+		Voice: Zapped
+		DeathTypes: ElectroDeath
+	DeathSounds@radiation:
+		Voice: Melted
+		DeathTypes: RadiationDeath
+	DeathSounds@psycrush:
+		Voice: PsyCrush
+		DeathTypes: PsychicDeath, BruteDeath
+	DeathSounds@virus:
+		Voice: Virus
+		DeathTypes: VirusDeath
+	GrantConditionOnPrerequisite@SUDDENDEATH:
+		Condition: suddendeath
+		Prerequisites: global-suddendeath
+	MustBeDestroyed:
+		RequiresCondition: !suddendeath
+	Cloneable:
+		Types: Infantry
+	Voiced:
+		VoiceSet: GIVoice
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+	Chronoshiftable:
+		ExplodeInstead: true
+		ReturnToOrigin: false
+	Tooltip:
+		Name: Soldier
+		GenericName: Soldier
+		RequiresCondition: showownername
+	Tooltip@NoRow:
+		Name: Soldier
+		GenericName: Soldier
+		ShowOwnerRow: false
+		RequiresCondition: !showownername
+	GrantConditionOnPrerequisite@SHOWOWNERNAME:
+		Condition: showownername
+		Prerequisites: global-showownername
+	MapEditorData:
+		Categories: Infantry
+	EdibleByLeap:
+	RenderSprites:
+		PlayerPalette: infantry
+	DetectCloaked:
+		Range: 1c0
+	RangedGpsDot:
+		Sequence: Infantry
+
+^CivilianInfantry:
+	Inherits: ^Infantry
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@CHAOS: ^Berserkable
+	Inherits@MC: ^MindControllable
+	Selectable:
+		Bounds: 482, 1448, 0, -530
+	Valued:
+		Cost: 10
+	DeliversCash:
+		Payload: 5
+		Voice: Move
+	Buildable:
+		Queue: Infantry.Civilian
+		BuildAtProductionType: Soldier
+	Tooltip:
+		Name: Civilian
+		GenericName: Civilian
+	Tooltip@NoRow:
+		Name: Civilian
+		GenericName: Civilian
+	Health:
+		HP: 5000
+	Mobile:
+		Speed: 45
+		Voice: Move
+	RevealsShroud:
+		Range: 2c0
+	RevealOnDeath:
+		Radius: 2c0
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 2
+	ProximityCaptor:
+		Types: CivilianInfantry
+	ScaredyCat:
+	-GivesExperience:
+	-GrantConditionOnPrerequisite@SUDDENDEATH:
+	-MustBeDestroyed:
+	-TakeCover:
+	Voiced:
+		VoiceSet: CivilianAlliedMaleVoice
+	WithInfantryBody:
+		IdleSequences: idle1
+	MapEditorData:
+		Categories: Civilian infantry
+	Wanders:
+		MinMoveDelay: 150
+		MaxMoveDelay: 750
+
+^RegicideLeader:
+	Inherits: ^CivilianInfantry
+	Valued:
+		Cost: 1000
+	-DeliversCash:
+	-Buildable:
+	Health:
+		HP: 15000
+	Armor:
+		Type: Flak
+	RevealsShroud:
+		Range: 5c0
+	RevealOnDeath:
+		Radius: 5c0
+	Mobile:
+		Speed: 60
+	Garrisoner:
+		Voice: Move
+		GarrisonType: Garrisoner
+	-ScaredyCat:
+	-MindControllable:
+	-WithMindControlArc:
+	-Targetable@MC:
+	-WithIdleOverlay@mindcontrol:
+	-Capturable@PERMAMC:
+	-ExternalCondition@PERMAMC:
+	-MapEditorData:
+	-Wanders:
+	WithInfantryBody:
+		-DefaultAttackSequence:
+
+^Animal:
+	Inherits: ^Infantry
+	Valued:
+		Cost: 10
+	DeliversCash:
+		Payload: 5
+		Voice: Move
+	Buildable:
+		Queue: Infantry.Civilian
+		BuildAtProductionType: Soldier
+	Armor:
+		Type: None
+	Health:
+		HP: 20000
+	Targetable:
+		TargetTypes: Ground, Infantry
+	RevealsShroud:
+		Range: 2c0
+	RevealOnDeath:
+		Radius: 2c0
+	Mobile:
+		Speed: 45
+		RequiresCondition: !chronodisable
+	Selectable:
+		Bounds: 1086, 1206, 0, -386
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 2
+	DeathSounds@zapped:
+		Voice: Die
+	DeathSounds@radiation:
+		Voice: Die
+	DeathSounds@psycrush:
+		Voice: Die
+	DeathSounds@virus:
+		Voice: Die
+	-GivesExperience:
+	-TakeCover:
+	WithDeathAnimation@normal:
+		DeathTypes:
+			ExplosionDeath: 1
+			BulletDeath: 2
+			FlameDeath: 1
+			RadiationDeath: 1
+			PsychicDeath: 1
+			ElectroDeath: 2
+			VirusDeath: 2
+			BruteDeath: 1
+	-Explodes@Corpse:
+	-WithDeathAnimation@effect:
+	-SpawnActorOnDeath@brute:
+	-SpawnActorOnDeath@flames:
+	-SpawnSmokeParticleOnDeath@virus:
+	WithInfantryBody:
+	MapEditorData:
+		Categories: Animal
+	Wanders:
+		MinMoveDelay: 150
+		MaxMoveDelay: 750
+
+^Dog:
+	Inherits: ^Infantry
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@VETERAN: ^ProducibleAsVeteranInfantry
+	Inherits@PARACHUTE: ^Parachutable
+	Inherits@SWIMSUIT: ^WithSwimSuit
+	Inherits@VOICES: ^WithFeedbackVoicelines
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Valued:
+		Cost: 200
+	DeliversCash:
+		Payload: 100
+		Voice: Move
+	Tooltip:
+	Tooltip@NoRow:
+		Name: Attack Dog
+	Selectable:
+		Bounds: 724, 1158, 0, -241
+	Health:
+		HP: 9000
+	Mobile:
+		Speed: 105
+		Locomotor: swimsuit
+		RequiresCondition: !chronodisable
+	Passenger:
+		CargoType: Infantry
+	RevealsShroud:
+		Range: 8c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 8c0
+	RevealOnDeath:
+		Radius: 8c0
+	Armament:
+		Weapon: DogJaw
+		Damage: 1000
+	AttackLeap:
+		Voice: Attack
+		Speed: 105
+		PauseOnCondition: chronodisable
+	AttackMove:
+		Voice: Move
+	AutoTarget:
+		ScanRadius: 5
+		InitialStance: AttackAnything
+	AutoTargetPriority@DEFAULT:
+		ValidTargets: Infantry
+	WithInfantryBody:
+		DefaultAttackSequence: jump
+		RequiresCondition: !parachute && !attacking && !swimming
+	WithInfantryBody@Water:
+		-IdleSequences:
+		MoveSequence: swim-run
+		StandSequences: swim-stand
+		DefaultAttackSequence: swim-jump
+		RequiresCondition: !parachute && !attacking && swimming
+	WithFacingSpriteBody:
+		Sequence: shoot
+		RequiresCondition: attacking
+	IgnoresDisguise:
+	DetectCloaked:
+		Range: 5c0
+	Voiced:
+		VoiceSet: DogVoice
+	-TakeCover:
+	-SpawnActorOnDeath@brute:
+	-SpawnActorOnDeath@flames:
+	-SpawnSmokeParticleOnDeath@virus:
+	-Explodes@Corpse:
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+	WithDeathAnimation@normal:
+		DeathTypes:
+			ExplosionDeath: 1
+			BulletDeath: 2
+			FlameDeath: 1
+			RadiationDeath: 1
+			PsychicDeath: 1
+			ElectroDeath: 2
+			VirusDeath: 2
+			BruteDeath: 1
+	-WithDeathAnimation@effect:
+	WithDeathAnimation@Water:
+		DeathTypes:
+			FlameDeath: 1
+	DeathSounds@normal:
+		DeathTypes: ExplosionDeath, BulletDeath, RadiationDeath, PsychicDeath, ElectroDeath, FlameDeath, VirusDeath, BruteDeath
+	-DeathSounds@zapped:
+	-DeathSounds@radiation:
+	-DeathSounds@psycrush:
+	-DeathSounds@virus:

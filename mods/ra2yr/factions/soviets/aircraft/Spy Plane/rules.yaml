@@ -1,0 +1,87 @@
+# spyp:
+	# Inherits: ^NeutralAircraft
+	# Interactable:
+	# 	Bounds: 2413, 3861
+	# Health:
+	# 	HP: 40000
+	# Armor:
+	# 	Type: Light
+	# Aircraft:
+	# 	CruiseAltitude: 5c852
+	# 	Repulsable: false
+	# 	TurnSpeed: 20
+	# 	Speed: 225
+	# 	Voice: Action
+	# Tooltip:
+	# 	Name: Spy Plane
+	# Tooltip@NoRow:
+	# 	Name: Spy Plane
+	# Armament:
+	# 	Weapon: SpyCameraWeapon
+	# AttackBomber:
+	# HitShape:
+	# -Guard:
+	# -Selectable:
+	# RejectsOrders:
+	# RenderSprites:
+	# WithVoxelWalkerBody:
+	# 	TickRate: 1
+	# AmbientSound@Ambient:
+	# 	SoundFiles: vspylo2a.wav, vspylo2b.wav, vspylo2c.wav
+	# 	Volume: 0.60
+	# 	RequiresCondition: airborne
+	# Voiced:
+	# 	VoiceSet: SpyPlaneVoice
+	# 	Volume: 0.45
+	# DeathSounds:
+	# 	DeathTypes: NonTemporal
+	# SpawnActorOnDeath:
+	# 	DeathType: NonTemporal
+	# 	Actor: spyphusk
+
+spyp:
+	Inherits: ^NewPlane
+	Interactable:
+		Bounds: 2413, 3861
+	Health:
+		HP: 40000
+	Armor:
+		Type: Light
+	Aircraft:
+		CruiseAltitude: 5c852
+		Repulsable: false
+		TurnSpeed: 20
+		Speed: 225
+		Voice: Action
+	Tooltip:
+		Name: Spy Plane
+	Tooltip@NoRow:
+		Name: Spy Plane
+	Armament:
+		Weapon: SpyCameraWeapon
+	AttackBomber:
+	WithVoxelHelicopterBody:
+	SpawnActorOnDeath:
+		Actor: spyphusk
+	AmbientSound:
+		SoundFiles: vspylo2a.wav, vspylo2b.wav, vspylo2c.wav
+		Volume: 0.60
+		RequiresCondition: airborne
+	Voiced:
+		VoiceSet: SpyPlaneVoice
+		Volume: 0.45
+
+spyphusk:
+	Inherits: ^PlaneHusk
+	Tooltip:
+		Name: Spy Plane
+	Tooltip@NoRow:
+		Name: Spy Plane
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 225
+	RenderVoxels:
+		Image: spyp
+	FallsToEarth:
+		Explosion: UnitExplode
+

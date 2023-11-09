@@ -1,0 +1,213 @@
+# flakt:
+# 	Inherits: ^Infantry
+# 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+# 	Inherits@CHAOS: ^Berserkable
+# 	Inherits@EXPERIENCE: ^GainsExperience
+# 	Inherits@VETERAN: ^ProducibleAsVeteranInfantry
+# 	Inherits@MC: ^MindControllable
+# 	Inherits@VOICES: ^WithFeedbackVoicelines
+# 	Buildable:
+# 		Queue: Infantry.Shared, Infantry.Soviets
+# 		BuildAtProductionType: Soldier
+# 		BuildPaletteOrder: 60
+# 		Description: Anti-Air and anti-Infantry unit.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles\n\nUpgradeable with:\n- Bullet-Proof Coats
+# 		Prerequisites: ~infantry.soviets, naradr, ~techlevel.1
+# 		BuildDuration: 175
+# 		BuildDurationModifier: 100
+# 	UpdatesPlayerStatistics:
+# 		AddToArmyValue: true
+# 	Valued:
+# 		Cost: 300
+# 	DeliversCash:
+# 		Payload: 150
+# 	Tooltip:
+# 	Tooltip@NoRow:
+# 		Name: Flak Trooper
+# 	Selectable:
+# 		Bounds: 482, 1448, 0, -530
+# 	Health:
+# 		HP: 12500
+# 	Garrisoner:
+# 		Voice: Move
+# 		GarrisonType: Garrisoner
+# 	Passenger:
+# 	RevealsShroud:
+# 		Range: 6c0
+# 	# RevealsShroudToIntelligenceOwner:
+# 	#	Range: 6c0
+# 	RevealOnDeath:
+# 		Radius: 6c0
+# 	AttackFrontal:
+# 		Voice: Attack
+# 		FacingTolerance: 2
+# 	Armament@primary:
+# 		Weapon: FlakGuyGun
+# 		Damage: 20
+# 		LocalOffset: 256,0,1024
+# 		MuzzleSequence: muzzle
+# 		PauseOnCondition: chronodisable
+# 		RequiresCondition: !rank-elite
+# 	Armament@secondary:
+# 		Weapon: FlakGuyAAGun
+# 		LocalOffset: 256,0,1024
+# 		MuzzleSequence: muzzle
+# 		PauseOnCondition: chronodisable
+# 		RequiresCondition: !rank-elite
+# 	Armament@primary-elite:
+# 		Weapon: FlakGuyGunE
+# 		Damage: 40
+# 		LocalOffset: 256,0,1024
+# 		MuzzleSequence: muzzle
+# 		PauseOnCondition: chronodisable
+# 		RequiresCondition: rank-elite
+# 	Armament@secondary-elite:
+# 		Weapon: FlakGuyAAGunE
+# 		LocalOffset: 256,0,1024
+# 		MuzzleSequence: muzzle
+# 		PauseOnCondition: chronodisable
+# 		RequiresCondition: rank-elite
+# 	Armament@primary-garrisoned:
+# 		Name: garrisoned
+# 		Weapon: UCFlakGuyGun
+# 		LocalOffset: 256,0,1024
+# 		PauseOnCondition: chronodisable
+# 		RequiresCondition: !rank-elite
+# 	Armament@secondary-garrisoned:
+# 		Name: garrisoned
+# 		Weapon: UCFlakGuyAAGun
+# 		LocalOffset: 256,0,1024
+# 		PauseOnCondition: chronodisable
+# 		RequiresCondition: !rank-elite
+# 	Armament@primary-elite-garrisoned:
+# 		Name: garrisoned
+# 		Weapon: UCFlakGuyGunE
+# 		LocalOffset: 256,0,1024
+# 		PauseOnCondition: chronodisable
+# 		RequiresCondition: rank-elite
+# 	Armament@secondary-elite-garrisoned:
+# 		Name: garrisoned
+# 		Weapon: UCFlakGuyAAGunE
+# 		LocalOffset: 256,0,1024
+# 		PauseOnCondition: chronodisable
+# 		RequiresCondition: rank-elite
+# 	Armament@primary-opentopped:
+# 		Name: opentopped
+# 		Weapon: FlakGuyGun
+# 		LocalOffset: 256,0,1024
+# 		PauseOnCondition: chronodisable
+# 		RequiresCondition: !rank-elite
+# 	Armament@secondary-opentopped:
+# 		Name: opentopped
+# 		Weapon: FlakGuyAAGun
+# 		LocalOffset: 256,0,1024
+# 		PauseOnCondition: chronodisable
+# 		RequiresCondition: !rank-elite
+# 	Armament@primary-elite-opentopped:
+# 		Name: opentopped
+# 		Weapon: FlakGuyGunE
+# 		LocalOffset: 256,0,1024
+# 		PauseOnCondition: chronodisable
+# 		RequiresCondition: rank-elite
+# 	Armament@secondary-elite-opentopped:
+# 		Name: opentopped
+# 		Weapon: FlakGuyAAGunE
+# 		LocalOffset: 256,0,1024
+# 		PauseOnCondition: chronodisable
+# 		RequiresCondition: rank-elite
+# 	WithMuzzleOverlay:
+# 	WithSpriteBody@Parachute:
+# 		RequiresCondition: parachute
+# 	Voiced:
+# 		VoiceSet: FlakTrooperVoice
+# 	QuantizeFacingsFromSequence:
+# 		Sequence: stand
+# 	ActorStatValues:
+# 		SplitRanges: true
+
+flakt:
+	Inherits: ^GroundInfantry
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@VETERAN: ^InfantryPromotable
+	Inherits@VOICES: ^WithFeedbackVoicelines
+	Inherits@MC: ^MindControllable
+	Buildable:
+		Queue: Infantry.Shared, Infantry.Soviets
+		Prerequisites: ~infantry.soviets, naradr, ~techlevel.1
+		Description: Anti-Air and anti-Infantry unit.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles\n\nUpgradeable with:\n- Bullet-Proof Coats
+		BuildPaletteOrder: 3
+	Health:
+		HP: 10000
+	Armor:
+		Type: None
+	Valued:
+		Cost: 300
+	DeliversCash:
+		Payload: 150
+	Mobile:
+		Speed: 60
+	RevealsShroud:
+		Range: 5c0
+	Tooltip:
+		Name: Flak Trooper
+	Tooltip@NoRow:
+		Name: Flak Trooper
+	Armament@primary:
+		Weapon: FlakGuyGun
+		Damage: 20
+		LocalOffset: 256,0,1024
+		MuzzleSequence: muzzle
+		ReloadingCondition: reload-ground
+		PauseOnCondition: chronodisable || reload-air
+		RequiresCondition: !rank-elite
+	Armament@secondary:
+		Weapon: FlakGuyAAGun
+		LocalOffset: 256,0,1024
+		MuzzleSequence: muzzle
+		ReloadingCondition: reload-air
+		PauseOnCondition: chronodisable || reload-ground
+		RequiresCondition: !rank-elite
+	Armament@primary-elite:
+		Weapon: FlakGuyGunE
+		Damage: 40
+		LocalOffset: 256,0,1024
+		MuzzleSequence: muzzle
+		ReloadingCondition: reload-ground
+		PauseOnCondition: chronodisable || reload-air
+		RequiresCondition: rank-elite
+	Armament@secondary-elite:
+		Weapon: FlakGuyAAGunE
+		LocalOffset: 256,0,1024
+		MuzzleSequence: muzzle
+		ReloadingCondition: reload-air
+		PauseOnCondition: chronodisable || reload-ground
+		RequiresCondition: rank-elite
+	Armament@primary-opentopped:
+		Name: opentopped
+		Weapon: FlakGuyGun
+		LocalOffset: 256,0,1024
+		ReloadingCondition: reload-ground
+		PauseOnCondition: chronodisable || reload-air
+		RequiresCondition: !rank-elite
+	Armament@secondary-opentopped:
+		Name: opentopped
+		Weapon: FlakGuyAAGun
+		LocalOffset: 256,0,1024
+		ReloadingCondition: reload-air
+		PauseOnCondition: chronodisable || reload-ground
+		RequiresCondition: !rank-elite
+	Armament@primary-elite-opentopped:
+		Name: opentopped
+		Weapon: FlakGuyGunE
+		LocalOffset: 256,0,1024
+		ReloadingCondition: reload-ground
+		PauseOnCondition: chronodisable || reload-air
+		RequiresCondition: rank-elite
+	Armament@secondary-elite-opentopped:
+		Name: opentopped
+		Weapon: FlakGuyAAGunE
+		LocalOffset: 256,0,1024
+		ReloadingCondition: reload-air
+		PauseOnCondition: chronodisable || reload-ground
+		RequiresCondition: rank-elite
+	Voiced:
+		VoiceSet: FlakTrooperVoice

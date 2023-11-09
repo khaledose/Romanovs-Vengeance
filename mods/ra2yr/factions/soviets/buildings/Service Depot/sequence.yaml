@@ -1,0 +1,122 @@
+nadept:
+	Defaults:
+		Offset: -15, -53
+	idle:
+		Filename: ngdept.shp
+		TilesetFilenames:
+			SNOW: nadept.shp
+			SIMPLETERRAIN: ntdept.shp
+		ShadowStart: 3
+	damaged-idle:
+		Filename: ngdept.shp
+		TilesetFilenames:
+			SNOW: nadept.shp
+			SIMPLETERRAIN: ntdept.shp
+		Start: 2
+		ShadowStart: 4
+	idle-crane:
+		Filename: ngdept_b.shp
+		TilesetFilenames:
+			SNOW: nadept_b.shp
+			SIMPLETERRAIN: ntdept_b.shp
+		Length: 10
+		ShadowStart: 20
+		Tick: 180
+	damaged-idle-crane:
+		Filename: ngdept_b.shp
+		TilesetFilenames:
+			SNOW: nadept_b.shp
+			SIMPLETERRAIN: ntdept_b.shp
+		Start: 10
+		Length: 10
+		ShadowStart: 29
+	bib:
+		Filename: ngdeptbb.shp
+		TilesetFilenames:
+			SNOW: nadeptbb.shp
+			SIMPLETERRAIN: ntdeptbb.shp
+		ShadowStart: 2
+		ZOffset: -512
+	damaged-bib:
+		Filename: ngdeptbb.shp
+		TilesetFilenames:
+			SNOW: nadeptbb.shp
+			SIMPLETERRAIN: ntdeptbb.shp
+		Start: 1
+		ShadowStart: 3
+	make:
+		Filename: ntdeptmk.shp
+		TilesetFilenames:
+			SNOW: nadeptmk.shp
+			URBAN: nudeptmk.shp
+			NEWURBAN: nndeptmk.shp
+			DESERT: nddeptmk.shp
+			LUNAR: nldeptmk.shp
+			DUNE: nddeptmk.shp
+		Length: 25
+		ShadowStart: 25
+	repair-start:
+		Filename: ngdept_c.shp
+		TilesetFilenames:
+			SNOW: nadept_c.shp
+			SIMPLETERRAIN: ntdept_c.shp
+		Length: 22
+		ShadowStart: 100
+		Tick: 100
+	repair:
+		Filename: ngdept_c.shp
+		TilesetFilenames:
+			SNOW: nadept_c.shp
+			SIMPLETERRAIN: ntdept_c.shp
+		Start: 23
+		Length: 6
+		ShadowStart: 123
+		Tick: 100
+	repair-end:
+		Filename: ngdept_c.shp
+		TilesetFilenames:
+			SNOW: nadept_c.shp
+			SIMPLETERRAIN: ntdept_c.shp
+		Start: 29
+		Length: 21
+		ShadowStart: 129
+		Tick: 100
+	damaged-repair-start:
+		Filename: ngdept_c.shp
+		TilesetFilenames:
+			SNOW: nadept_c.shp
+			SIMPLETERRAIN: ntdept_c.shp
+		Start: 50
+		Length: 22
+		ShadowStart: 151
+		Tick: 100
+	damaged-repair:
+		Filename: ngdept_c.shp
+		TilesetFilenames:
+			SNOW: nadept_c.shp
+			SIMPLETERRAIN: ntdept_c.shp
+		Start: 72
+		Length: 6
+		ShadowStart: 172
+		Tick: 100
+	damaged-repair-end:
+		Filename: ngdept_c.shp
+		TilesetFilenames:
+			SNOW: nadept_c.shp
+			SIMPLETERRAIN: ntdept_c.shp
+		Start: 79
+		Length: 21
+		ShadowStart: 179
+		Tick: 100
+	icon:
+		Filename: cameo|rfixicon.shp
+		Offset: 0,0
+
+nadepb:
+	Inherits: nadept
+	Defaults:
+		FlipX: true
+		Offset: 15, -53
+	icon:
+		Filename: cameo|rfixicon.shp
+		FlipX: false

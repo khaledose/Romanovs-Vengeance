@@ -1,0 +1,7 @@
+YuriVoice:
+	Inherits: ^InfantryDeath
+	Voices:
+		Select: iyursea, iyurseb, iyursec, iyursed, iyursee
+		Move: iyurmoa, iyurmob, iyurmoc, iyurmod
+		Attack: iyurata, iyuratb, iyuratc, iyuratd, iyurate
+		Die: iyurdia, iyurdib, iyurdic

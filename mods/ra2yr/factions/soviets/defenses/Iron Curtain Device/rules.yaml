@@ -1,0 +1,36 @@
+nairon:
+	Inherits: ^SuperWeapon
+	Inherits@SPECIAL: ^IronCurtainSpecial
+	Inherits@SHAPE: ^3x3Shape
+	Buildable:
+		Queue: Support.Shared, Support.Soviets
+		Prerequisites: ~building.soviets, natech, !enoughiron, ~techlevel.5
+		Description: Grants invulnerability to vehicles and structures.\nKills infantry.\n\n  Requires power to operate.
+		BuildPaletteOrder: 980
+	IsometricSelectable:
+		DecorationHeight: 75
+	Power:
+		Amount: -200
+	Health:
+		HP: 75000
+	Armor:
+		Type: Concrete
+	Valued:
+		Cost: 2500
+	RevealsShroud:
+		Range: 4c0
+	Tooltip:
+		Name: Soviet Iron Curtain Device
+	Tooltip@NoRow:
+		Name: Soviet Iron Curtain Device
+	WithSpriteBody:
+		PauseOnCondition: chronodisable
+	ProvidesPrerequisite@swlimit:
+		Prerequisite: enoughiron
+	NotificationAnnouncement:
+		Notification: IronCurtainDetected
+		TextNotification: Warning: Iron Curtain detected.
+	Voiced:
+		VoiceSet: IronCurtainDeviceVoice
+		Volume: 0.8
+

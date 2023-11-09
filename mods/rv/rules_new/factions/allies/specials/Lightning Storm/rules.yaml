@@ -1,0 +1,37 @@
+LightningStormSpecial:
+	DetonateWeaponPower@WeatherStorm:
+		OrderName: WeatherStormInfoOrder
+		Prerequisites:
+			1: gaweat
+		Icons:
+			1: bolticon
+		Cursor: weatherstorm
+		ChargeInterval: 9000
+		Names:
+			1: Lightning Storm
+		Descriptions:
+			1: Applies heavy damage over a large area.
+		Weapons:
+			1: WeatherStormInit
+		ActivationSequence:
+		AirburstAltitude: 4c512
+		AllowMultiple: true
+		CameraRange: 10c0
+		CameraRemoveDelay: 375
+		SpawnCameraAtGround: true
+		EndChargeSound: swearead.wav
+		SelectTargetSpeechNotification: SelectTarget
+		SelectTargetTextNotification: Select target.
+		EndChargeSpeechNotification: LightningStormReady
+		EndChargeTextNotification: Lightning Storm ready.
+		LaunchSpeechNotification: LightningStormCreated
+		LaunchTextNotification: Warning: Lightning Storm created.
+		IncomingSpeechNotification: LightningStormCreated
+		IncomingTextNotification: Warning: Lightning Storm created.
+		DisplayTimerRelationships: Ally, Neutral, Enemy
+		PauseOnCondition: disabled || chronodisable
+		DisplayRadarPing: True
+		TargetCircleRanges:
+			1: 10c0
+		TargetCircleUsePlayerColor: true
+		EnvironmentEffectType: LightningStorm

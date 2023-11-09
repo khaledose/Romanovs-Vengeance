@@ -1,0 +1,47 @@
+shk:
+	Inherits: ^BasicInfantry
+	Inherits@DEATH: ^DeathAnimation
+	Inherits@SHOOTER: ^Shooter
+	Inherits@PRONE: ^ProneShooter
+	Defaults:
+		Filename: conquer|shk.shp
+	icon:
+		Filename: cameo|shkicon.shp
+	charge:
+		Start: 164
+		Length: 6
+		Facings: 8
+	prone-charge:
+		Start: 212
+		Length: 6
+		Facings: 8
+	cheer:
+		Start: 293
+	paradrop:
+		Start: 292
+
+
+# shk:
+# 	Inherits: ^ArmedInfantry
+# 	Defaults:
+# 		Filename: conquer|shk.shp
+# 	run:
+# 		Filename: bits/infantry/shkfix.shp
+# 		Start: 0
+# 		Tick: 120
+# 	paradrop:
+# 		Start: 292
+# 	charge:
+# 		Filename: bits/infantry/shkfix.shp
+# 		Start: 48
+# 		Length: 6
+# 		Facings: 8
+# 		Tick: 80
+# 	prone-charge:
+# 		Filename: bits/infantry/shkfix.shp
+# 		Start: 96
+# 		Length: 6
+# 		Facings: 8
+# 		Tick: 80
+# 	icon:
+# 		Filename: cameo|shkicon.shp

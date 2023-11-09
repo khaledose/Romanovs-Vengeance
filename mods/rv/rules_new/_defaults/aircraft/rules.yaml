@@ -1,0 +1,259 @@
+^NeutralAircraft:
+	Inherits@1: ^ExistsInWorld
+	Inherits@2: ^Tractable
+	Inherits@HANDICAPS: ^PlayerHandicaps
+	Inherits@SELECTION_MODE: ^FlatSelectionMode
+	OwnerLostAction:
+		Action: Kill
+		DeathTypes: BulletDeath, NonTemporal
+	SelectionDecorations:
+		MinimumZoom: 0
+	Selectable:
+	ActorStatValues:
+		UpgradePrerequisites: global-upgrades
+	Aircraft:
+		Voice: Move
+		MaximumPitch: 128
+		AltitudeVelocity: 120
+		AirborneCondition: airborne
+		VTOL: true
+		TakeOffOnResupply: true
+	HiddenUnderFog:
+		Type: CenterPosition
+	ActorLostNotification:
+		TextNotification: Unit lost.
+	BodyOrientation:
+		QuantizedFacings: 0
+		CameraPitch: 85
+		UseClassicPerspectiveFudge: false
+	Guard:
+		Voice: Attack
+	Guardable:
+	GrantConditionOnPrerequisite@SUDDENDEATH:
+		Condition: suddendeath
+		Prerequisites: global-suddendeath
+	MustBeDestroyed:
+		RequiresCondition: !suddendeath
+	RenderVoxels:
+		Scale: 11.7
+		LightYaw: 800
+		LightPitch: 150
+		LightAmbientColor: -0.5,-0.5,-0.5
+		LightDiffuseColor: 1.3,1.3,1.3
+	Targetable@Airborne:
+		TargetTypes: Air
+		RequiresCondition: airborne
+	Targetable@Ground:
+		TargetTypes: Ground, Vehicle
+		RequiresCondition: !airborne
+	Targetable@REPAIR:
+		RequiresCondition: !airborne && damaged
+		TargetTypes: Repair
+	Targetable@REPAIRAirborne:
+		RequiresCondition: airborne && damaged
+		TargetTypes: AirRepair
+	GrantConditionOnDamageState@DAMAGED:
+		Condition: damaged
+		ValidDamageStates: Light, Medium, Heavy, Critical
+	DeathSounds:
+	AppearsOnRadar:
+		UseLocation: true
+	Tooltip:
+		Name: Aircraft
+		GenericName: Aircraft
+		RequiresCondition: showownername
+	Tooltip@NoRow:
+		Name: Aircraft
+		GenericName: Aircraft
+		ShowOwnerRow: false
+		RequiresCondition: !showownername
+	GrantConditionOnPrerequisite@SHOWOWNERNAME:
+		Condition: showownername
+		Prerequisites: global-showownername
+	MapEditorData:
+		Categories: Aircraft
+	RangedGpsDot:
+		Sequence: Plane
+
+^Aircraft:
+	Inherits@1: ^NeutralAircraft
+	Inherits@2: ^ChronoDisableDisabledWithIC
+	Inherits@3: ^MachineShopRepair
+	Inherits@4: ^AcceptsIvanBomb
+	Inherits@5: ^AcceptsSuperC4
+	Inherits@6: ^AffectedByIndustrialPlant
+	Inherits@7: ^UnitParticles
+	Inherits@8: ^IronCurtainable
+	Inherits@9: ^AffectedByPropaganda
+	Inherits@10: ^TerrorDronableAircraft
+	Inherits@11: ^AffectedByCashBounty
+	Inherits@12: ^DisabledByMagnetron
+	Inherits@13: ^AffectedBySpectreBullets
+	Aircraft:
+		AltitudeVelocity: 43
+	WithTextControlGroupDecoration:
+	Targetable@ChronoDisable:
+		RequiresCondition: !airborne
+	Targetable@DRONE:
+		RequiresCondition: !airborne
+	Targetable@MagneFreeze:
+		RequiresCondition: !airborne
+	#Chronoshiftable:
+	#	ChronoshiftSound: schrmov.wav
+	#	ReturnToOrigin: false
+	#	RequiresCondition: !invulnerability
+	RevealsShroud:
+		Type: GroundPosition
+		RequiresCondition: airborne
+	RevealsShroud@Ground:
+		MaxHeightDelta: 3
+		Type: GroundPosition
+		RequiresCondition: !airborne
+	RevealOnFire:
+		ArmamentNames: primary, secondary, infiltrate, deployed, growth
+		Duration: 50
+	CaptureManager:
+	Capturable:
+		Types: vehicle
+		CancelActivity: True
+		RequiresCondition: !airborne
+	CaptureSound:
+		Sound: ihijweaa.wav
+	Sellable:
+		SellSounds: cashturn.aud
+		Cursor: sell2
+		Notification: UnitSold
+		RequiresCondition: unit.sellable && !airborne
+	ProximityExternalCondition:
+		Condition: unit.docked
+		Range: 1c0
+		RequiresCondition: !airborne
+	ExternalCondition@Sellable:
+		Condition: unit.sellable
+
+^Plane:
+	Inherits: ^Aircraft
+	Aircraft:
+		CruiseAltitude: 5c852
+		CruisingCondition: cruising
+		AltitudeVelocity: 120
+		IdleBehavior: ReturnToBase
+		IdleSpeed: -1
+		TakeOffOnResupply: false
+		TakeOffOnCreation: false
+	Hovers@CRUISING:
+		RequiresCondition: cruising
+	WithVoxelBody:
+
+^Helicopter:
+	Inherits: ^Aircraft
+	Inherits@1: ^CrateStatModifiers
+	Aircraft:
+		CruiseAltitude: 3c852
+		CanSlide: true
+		CanHover: true
+		IdleBehavior: Land
+	RangedGpsDot:
+		Sequence: Helicopter
+
+^Husk:
+	RenderVoxels:
+		Scale: 11.7
+		LightYaw: 800
+		LightPitch: 150
+		LightAmbientColor: -0.5,-0.5,-0.5
+		LightDiffuseColor: 1.3,1.3,1.3
+	WithVoxelBody:
+	BodyOrientation:
+		QuantizedFacings: 0
+		CameraPitch: 85
+	Aircraft:
+	HiddenUnderFog:
+		Type: CenterPosition
+	ScriptTriggers:
+	Health:
+		HP: 100
+	FallsToEarth:
+		Velocity: 86
+	HitShape:
+	Tooltip:
+		Name: Aircraft
+		GenericName: Aircraft
+		RequiresCondition: showownername
+	Tooltip@NoRow:
+		Name: Aircraft
+		GenericName: Aircraft
+		ShowOwnerRow: false
+		RequiresCondition: !showownername
+	GrantConditionOnPrerequisite@SHOWOWNERNAME:
+		Condition: showownername
+		Prerequisites: global-showownername
+	MapEditorData:
+		Categories: Husk
+	Interactable:
+
+^PlaneHusk:
+	Inherits: ^Husk
+	Aircraft:
+		AltitudeVelocity: 120
+	FallsToEarth:
+		Explosion: PlaneExplode
+		Velocity: 240
+		Moves: true
+		MaximumSpinSpeed: 0
+	SpeedMultiplier@HUSK:
+		Modifier: 150
+	RangedGpsDot:
+		Sequence: Plane
+
+^HelicopterHusk:
+	Inherits: ^Husk
+	Aircraft:
+		VTOL: true
+		CanSlide: true
+		CanHover: true
+	FallsToEarth:
+		Explosion: PlaneExplode
+		Velocity: 240
+	RangedGpsDot:
+		Sequence: Helicopter
+
+^ShootableMissile:
+	Inherits@1: ^ExistsInWorld
+	Inherits@HANDICAPS: ^PlayerHandicaps
+	-GivesExperience:
+	Armor:
+		Type: Missile
+	BallisticMissile:
+		LaunchAngle: 128
+		Speed: 170
+		AirborneCondition: airborne
+	Targetable@GROUND:
+		TargetTypes: Ground, Vehicle
+		RequiresCondition: !airborne
+	Targetable@AIRBORNE:
+		TargetTypes: Air
+		RequiresCondition: airborne
+	HiddenUnderFog:
+		Type: GroundPosition
+	Tooltip:
+		Name: Missile
+		GenericName: Missile
+		RequiresCondition: showownername
+	Tooltip@NoRow:
+		Name: Missile
+		GenericName: Missile
+		ShowOwnerRow: false
+		RequiresCondition: !showownername
+	GrantConditionOnPrerequisite@SHOWOWNERNAME:
+		Condition: showownername
+		Prerequisites: global-showownername
+	HitShape:
+	RejectsOrders:
+	BodyOrientation:
+		QuantizedFacings: 0
+		CameraPitch: 85
+		UseClassicPerspectiveFudge: false
+	RenderVoxels:
+	WithVoxelBody:
+	Interactable:

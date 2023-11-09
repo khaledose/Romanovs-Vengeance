@@ -1,0 +1,26 @@
+gatech:
+	Inherits: ^BattleLab
+	Inherits@SHAPE: ^3x2Shape
+	Buildable:
+		Queue: Building.Shared, Building.Allies
+		Prerequisites: ~building.allies, gaweap, gaairc, ~techlevel.3, ~!ai.gatech
+	IsometricSelectable:
+		DecorationHeight: 180
+	Tooltip:
+		Name: Allied Battle Lab
+	Tooltip@NoRow:
+		Name: Allied Battle Lab
+	InfiltrateForSupportPower:
+		Proxy: allies.tech.infiltrated
+	WithIdleOverlay@lights:
+		Sequence: idle-lights
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete
+	ProvidesPrerequisite@AIbuildinglimit:
+		RequiresCondition: ai-control
+		Prerequisite: ai.gatech
+
+allies.tech.infiltrated:
+	AlwaysVisible:
+	ProvidesPrerequisite:
+		Prerequisite: allies.tech.infiltrated

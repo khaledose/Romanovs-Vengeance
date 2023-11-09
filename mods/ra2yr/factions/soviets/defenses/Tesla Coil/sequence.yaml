@@ -1,0 +1,70 @@
+tesla:
+	Defaults:
+		Offset: 0, -15
+	idle:
+		Filename: ngtsla.shp
+		TilesetFilenames:
+			SNOW: natsla.shp
+			SIMPLETERRAIN: nttsla.shp
+		Length: 1
+		ShadowStart: 3
+	damaged-idle:
+		Filename: ngtsla.shp
+		TilesetFilenames:
+			SNOW: natsla.shp
+			SIMPLETERRAIN: nttsla.shp
+		Start: 1
+		Length: 1
+		ShadowStart: 4
+	powered:
+		Filename: ngtsla_a.shp
+		TilesetFilenames:
+			SNOW: natsla_a.shp
+			SIMPLETERRAIN: nttsla_a.shp
+		Length: 10
+		ShadowStart: 20
+	damaged-powered:
+		Filename: ngtsla_a.shp
+		TilesetFilenames:
+			SNOW: natsla_a.shp
+			SIMPLETERRAIN: nttsla_a.shp
+		Start: 10
+		Length: 10
+		ShadowStart: 30
+	active:
+		Filename: ngtsla_b.shp
+		TilesetFilenames:
+			SNOW: natsla_b.shp
+			SIMPLETERRAIN: nttsla_b.shp
+		Length: 10
+		ShadowStart: 20
+		Tick: 100
+		ZOffset: 10
+	damaged-active:
+		Filename: ngtsla_b.shp
+		TilesetFilenames:
+			SNOW: natsla_b.shp
+			SIMPLETERRAIN: nttsla_b.shp
+		Start: 10
+		ShadowStart: 20
+		Length: 10
+		Tick: 100
+		ZOffset: 10
+	#dead: ngtsladm # SHP broken & unused
+	#	Length: 20
+	#	ShadowStart: 20
+	#	Tick: 100
+	make:
+		Filename: nttslamk.shp
+		TilesetFilenames:
+			SNOW: natslamk.shp
+			URBAN: nutslamk.shp
+			NEWURBAN: nntslamk.shp
+			DESERT: ndtslamk.shp
+			LUNAR: nltslamk.shp
+			DUNE: ndtslamk.shp
+		Length: 25
+		ShadowStart: 25
+	icon:
+		Filename: cameo|tslaicon.shp
+		Offset: 0,0

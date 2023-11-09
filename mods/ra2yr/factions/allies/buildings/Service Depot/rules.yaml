@@ -1,0 +1,38 @@
+gadept:
+	Inherits: ^BaseStructure
+	Inherits@REPAIR: ^RepairsUnits
+	Inherits@CAPTURE: ^Capturable
+	Inherits@MC: ^MindControllableBuilding
+	Inherits@SHAPE: ^3x3Shape
+	Buildable:
+		Queue: Building.Shared, Building.Allies
+		Prerequisites: ~building.allies, gaweap, ~techlevel.1
+	Building:
+		Footprint: x++ x++ x++
+	IsometricSelectable:
+		DecorationHeight: 45
+	Power:
+		Amount: -25
+	Health:
+		HP: 120000
+	Armor:
+		Type: Wood
+	Valued:
+		Cost: 800
+	RevealsShroud:
+		Range: 5c0
+	Tooltip:
+		Name: Allied Service Depot
+	Tooltip@NoRow:
+		Name: Allied Service Depot
+	RallyPoint:
+		Path: 3,1
+	CommandBarBlacklist:
+		DisableStop: false
+	WithIdleOverlay@bib:
+		Sequence: bib
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete
+	Voiced:
+		VoiceSet: ServiceDepotVoice
+		Volume: 0.8

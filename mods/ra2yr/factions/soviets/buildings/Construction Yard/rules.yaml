@@ -1,0 +1,72 @@
+nacnst:
+	Inherits: ^ConstructionYard
+	IsometricSelectable:
+		DecorationHeight: 90
+	ProvidesPrerequisite@building.soviets:
+		Prerequisite: building.soviets
+	Production:
+		Produces: Building.Soviets, Support.Soviets
+	ProductionQueue@Building:
+		Type: Building.Soviets
+	ProductionQueue@Support:
+		Type: Support.Soviets
+	ProductionBar@Building:
+		ProductionType: Building.Soviets
+	ProductionBar@Support:
+		ProductionType: Support.Soviets
+	Transforms:
+		IntoActor: smcv
+	GrantConditionOnFaction@USSR:
+		Condition: russia
+		Factions: russia
+	GrantConditionOnFaction@Iraq:
+		Condition: iraq
+		Factions: iraq
+	GrantConditionOnFaction@Cuba:
+		Condition: cuba
+		Factions: cuba
+	GrantConditionOnFaction@Libya:
+		Condition: libya
+		Factions: libya
+	WithIdleOverlay@top:
+		Sequence: idle-top
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete
+	WithIdleOverlay@normal:
+		Sequence: idle-normal
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete
+	WithIdleOverlay@USSR:
+		Sequence: flag-russia
+		Palette: ussr
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete && russia
+	WithIdleOverlay@Iraq:
+		Sequence: flag-iraq
+		Palette: iraq
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete && iraq
+	WithIdleOverlay@Cuba:
+		Sequence: flag-cuba
+		Palette: cuba
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete && cuba
+	WithIdleOverlay@Libya:
+		Sequence: flag-libya
+		Palette: libya
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete && libya
+	WithIdleOverlay@FlagShadow:
+		Sequence: flag-shadow
+		Palette: shadow
+		IsPlayerPalette: false
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete && (russia || iraq || cuba || libya)
+	WithIdleOverlay@HNS:
+		Sequence: idle-hns
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete && (russia || iraq || cuba || libya)
+	WithBuildingPlacedAnimation:
+		RequiresCondition: !build-incomplete
+	Voiced:
+		VoiceSet: SovietConstructionYardVoice

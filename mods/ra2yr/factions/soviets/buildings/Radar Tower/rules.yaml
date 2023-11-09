@@ -1,0 +1,40 @@
+naradr:
+	Inherits: ^BaseStructure
+	Inherits@RADAR: ^Radar
+	Inherits@CAPTURE: ^Capturable
+	Inherits@MC: ^MindControllableBuilding
+	Inherits@SPECIAL: SpyPlaneSpecial
+	Inherits@SHAPE: ^2x2Shape
+	Inherits@AI: ^AIMicroManagable
+	Buildable:
+		Queue: Building.Shared, Building.Soviets
+		Prerequisites: ~building.soviets, narefn, ~techlevel.2, ~!ai.naradr
+		BuildPaletteOrder: 40
+	Power:
+		Amount: -50
+	Health:
+		HP: 100000
+	Armor:
+		Type: Wood
+	Valued:
+		Cost: 1000
+	RevealsShroud:
+		Range: 10c0
+	Tooltip:
+		Name: Soviet Radar Tower
+	Tooltip@NoRow:
+		Name: Soviet Radar Tower
+	WithIdleOverlay@dish:
+		Sequence: idle-dish
+		PauseOnCondition: disabled || chronodisable
+		RequiresCondition: !build-incomplete
+	ProvidesPrerequisite@AIbuildinglimit:
+		RequiresCondition: ai-control
+		Prerequisite: ai.naradr
+	IsometricSelectable:
+		DecorationHeight: 90
+	Voiced:
+		VoiceSet: RadarVoice
+		Volume: 0.8
+
+

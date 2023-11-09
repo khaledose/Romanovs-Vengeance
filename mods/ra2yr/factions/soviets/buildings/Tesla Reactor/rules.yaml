@@ -1,0 +1,32 @@
+napowr:
+	Inherits: ^PowerPlant
+	Inherits@SHAPE: ^3x2Shape
+	Buildable:
+		Queue: Building.Shared, Building.Soviets
+		Prerequisites: ~building.soviets, ~techlevel.1
+	IsometricSelectable:
+		DecorationHeight: 45
+	Power:
+		Amount: 150
+	Health:
+		HP: 75000
+	Armor:
+		Type: Wood
+	Valued:
+		Cost: 600
+	RevealsShroud:
+		Range: 4c0
+	Tooltip:
+		Name: Soviet Tesla Reactor
+	Tooltip@NoRow:
+		Name: Soviet Tesla Reactor
+	Voiced:
+		VoiceSet: PowerPlantVoice
+		Volume: 0.8
+	Explodes:
+		Weapon: TeslaReactorExplosion
+		Type: CenterPosition
+	WithIdleOverlay@lights:
+		Sequence: idle-lights
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete

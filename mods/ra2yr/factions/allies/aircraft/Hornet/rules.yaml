@@ -1,0 +1,80 @@
+hornet:
+	Inherits: ^NewNewPlane
+	RejectsOrders:
+	Health:
+		HP: 7500
+	Armor:
+		Type: Light
+	Valued:
+		Cost: 50
+	Aircraft:
+		AltitudeVelocity: 240
+		InitialFacing: 768
+		TurnSpeed: 32
+		Speed: 210
+		Repulsable: false
+		TakeoffSounds: vhortaka.wav, vhortakb.wav
+		LandingSounds: vhorlana.wav, vhorlanb.wav
+		SoundVolume: 0.45
+		TakeUpCellWhenLand: false
+	RevealsShroud:
+		Range: 2c0
+	RevealsShroud@Ground:
+		Range: 2c0
+	Tooltip:
+		Name: Hornet
+	Tooltip@NoRow:
+		Name: Hornet
+	Armament:
+		Weapon: HornetBomb
+		PauseOnCondition: !ammo
+		RequiresCondition: !rank-elite
+	Armament@Elite:
+		Weapon: HornetBombE
+		PauseOnCondition: !ammo
+		RequiresCondition: rank-elite
+	AmmoPool:
+		Ammo: 3
+	CarrierSlave:
+		LandingDistance: 8c0
+	RenderVoxels:
+		NormalsPalette: ts-normals
+	SpawnActorOnDeath:
+		Actor: hornethusk
+	SpawnActorOnDeath@VTOL:
+		Actor: hornethusk.VTOL
+	Contrail@1:
+		Offset: -600,100,100
+	Contrail@2:
+		Offset: -600,-100,100
+
+hornethusk:
+	Inherits: ^PlaneHusk
+	Tooltip:
+	Tooltip@NoRow:
+		Name: Hornet
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 210
+		AltitudeVelocity: 240
+	FallsToEarth:
+		Explosion: HornetExplode
+	RenderVoxels:
+		Image: hornet
+		NormalsPalette: ts-normals
+
+hornethusk.VTOL:
+	Inherits: ^HelicopterHusk
+	Tooltip:
+	Tooltip@NoRow:
+		Name: Hornet
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 210
+		AltitudeVelocity: 240
+	FallsToEarth:
+		Explosion: HornetExplode
+	RenderVoxels:
+		Image: hornet
+		NormalsPalette: ts-normals
+

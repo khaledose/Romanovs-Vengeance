@@ -1,0 +1,612 @@
+explosion:
+	Defaults:
+		Length: *
+		ZOffset: 4000
+		IgnoreWorldTint: true
+	huge_watersplash:
+		Filename: conquer|h2o_exp1.shp
+	large_watersplash:
+		Filename: conquer|h2o_exp2.shp
+	small_watersplash:
+		Filename: conquer|h2o_exp3.shp
+	piff:
+		Filename: conquer|piff.shp
+	piffpiff:
+		Filename: conquer|piffpiff.shp
+	piffred:
+		Filename: bits/animations/piffred.shp
+	piffpiffred:
+		Filename: bits/animations/piffpiffred.shp
+	small_explosion:
+		Filename: conquer|explosml.shp
+	medium_explosion:
+		Filename: conquer|explomed.shp
+	large_explosion:
+		Filename: conquer|explolrg.shp
+	small_toxin_explosion:
+		Filename: bits/animations/explosmlgrn.shp
+	medium_toxin_explosion:
+		Filename: bits/animations/explomedgrn.shp
+	large_toxin_explosion:
+		Filename: bits/animations/explolrggrn.shp
+	tiny_bang:
+		Filename: conquer|s_bang16.shp
+	small_bang:
+		Filename: conquer|s_bang24.shp
+	medium_bang:
+		Filename: conquer|s_bang34.shp
+	large_bang:
+		Filename: conquer|s_bang48.shp
+	tiny_brnl:
+		Filename: conquer|s_brnl20.shp
+	small_brnl:
+		Filename: conquer|s_brnl30.shp
+	medium_brnl:
+		Filename: conquer|s_brnl40.shp
+	large_brnl:
+		Filename: conquer|s_brnl58.shp
+	tiny_tumu:
+		Filename: conquer|s_tumu22.shp
+	small_tumu:
+		Filename: conquer|s_tumu30.shp
+	medium_tumu:
+		Filename: conquer|s_tumu42.shp
+	large_tumu:
+		Filename: conquer|s_tumu60.shp
+	tiny_clsn:
+		Filename: conquer|s_clsn16.shp
+	small_clsn:
+		Filename: conquer|s_clsn22.shp
+	medium_clsn:
+		Filename: conquer|s_clsn30.shp
+	large_clsn:
+		Filename: conquer|s_clsn42.shp
+	verylarge_clsn:
+		Filename: conquer|s_clsn58.shp
+	tiny_twlt:
+		Filename: conquer|twlt026.shp
+	small_twlt:
+		Filename: conquer|twlt036.shp
+	medium_twlt:
+		Filename: conquer|twlt050.shp
+	large_twlt:
+		Filename: conquer|twlt070.shp
+	verylarge_twlt:
+		Filename: conquer|twlt100.shp
+	tiny_grey_explosion:
+		Filename: conquer|xgrysml1.shp
+	small_grey_explosion:
+		Filename: conquer|xgrysml2.shp
+	medium_grey_explosion:
+		Filename: conquer|xgrymed1.shp
+	large_grey_explosion:
+		Filename: conquer|xgrymed2.shp
+	small_barrel_explosion:
+		Filename: conquer|brrlexp1.shp
+	large_barrel_explosion:
+		Filename: conquer|brrlexp2.shp
+	nuke_explosion:
+		Filename: conquer|nukeanim.shp
+	nuke_explosion_small:
+		Filename: conquer|nukeanim.shp
+		Scale: 0.6
+	nuke_ball:
+		Filename: conquer|nukeball.shp
+	demotruck_explosion:
+		Filename: conquer|demtexp.shp
+	demotruck_explosion_orange:
+		Filename: bits/animations/demtexporange.shp
+	elite_explosion:
+		Filename: conquer|vtexplod.shp
+	terrorist_explosion:
+		Filename: conquer|mininuke.shp
+	apoc_explosion:
+		Filename: conquer|apocexp.shp
+	flak_puff:
+		Filename: conquer|htrkpuff.shp
+	flak_puff_AA:
+		Filename: conquer|smkpuff.shp
+	ivan_explosion:
+		Filename: conquer|crivexp.shp
+	ivan_explosionE:
+		Filename: conquer|crivexp2.shp
+	tesla_impact:
+		Filename: conquer|tstimpct.shp
+	tesla_explosion:
+		Filename: conquer|tstlexp.shp
+	prism_explosion:
+		Filename: bits/animations/prismexplo.shp
+		Scale: 0.75
+	laser_explosion:
+		Filename: bits/animations/laserexp.shp
+	laser_explosion_red:
+		Filename: bits/animations/laserexpe.shp
+	powerplant_explosion:
+		Filename: conquer|gtpowexp.shp
+	iron_fx:
+		Filename: conquer|ironfx.shp
+	ironblast:
+		Filename: conquer|ironblst.shp
+	forceshield:
+		Filename: conqmd|forcshld.shp
+	chronofd:
+		Filename: conquer|chronofd.shp
+	chronosk:
+		Filename: conquer|chronosk.shp
+	psi_wave:
+		Filename: conquer|ring1.shp
+	psi_wave_big:
+		Filename: conquer|ring1.shp
+		Scale: 1.5
+	weathercloud1:
+		Filename: conquer|wccloud1.shp
+	weathercloud2:
+		Filename: conquer|wccloud2.shp
+	weathercloud1f:
+		Filename: conquer|wccloud1.shp
+		FlipX: true
+	weathercloud2f:
+		Filename: conquer|wccloud2.shp
+		FlipX: true
+	weatherbolt1:
+		Filename: conquer|wclbolt1.shp
+	weatherbolt2:
+		Filename: conquer|wclbolt2.shp
+	weatherbolt3:
+		Filename: conquer|wclbolt3.shp
+	weatherbolt1f:
+		Filename: conquer|wclbolt1.shp
+		FlipX: true
+	weatherbolt2f:
+		Filename: conquer|wclbolt2.shp
+		FlipX: true
+	weatherbolt3f:
+		Filename: conquer|wclbolt3.shp
+		FlipX: true
+	weatherboltexplosion:
+		Filename: conquer|explolb.shp
+	weatherboltexplosionf:
+		Filename: conquer|explolb.shp
+		FlipX: true
+	largefire:
+		Filename: conquer|fire01.shp
+	largefireblue:
+		Filename: bits/animations/bluefire01.shp
+	largefireblack:
+		Filename: bits/animations/blackfire01.shp
+	largefirepink:
+		Filename: bits/animations/pinkfire01.shp
+	c4explosion:
+		Filename: bits/animations/tstwlt070.shp
+	parabomb:
+		Filename: bits/animations/tss_tumu60.shp
+	devastator_explosion:
+		Filename: bits/animations/plxplo.shp
+	devastator_explosion_orange:
+		Filename: bits/animations/plxploorange.shp
+	ra1_atomic:
+		Filename: bits/animations/atomsfx.shp
+	mine_explosion:
+		Filename: bits/animations/tss_brnl58.shp
+	hornet_explosion:
+		Filename: bits/animations/tss_bang48.shp
+	chronotank_explosion:
+		Filename: bits/animations/art-exp1.shp
+	wrench:
+		Filename: conquer|mouse.shp
+		Start: 170
+		Length: 20
+	empulse:
+		Filename: bits/animations/pulsefx1.shp
+		BlendMode: Additive
+	empulse30p:
+		Filename: bits/animations/pulsefx130p.shp
+		BlendMode: Additive
+	empulse50p:
+		Filename: bits/animations/pulsefx150p.shp
+		BlendMode: Additive
+	kirovtesla:
+		Filename: conquer|ktstlexp.shp
+	yuriface:
+		Filename: conqmd|pdfxcld.shp
+		Offset: 0,-64
+		ZOffset: 1c0
+	controlwave:
+		Filename: pdfxloc.shp
+	chaosgasbig:
+		Filename: bits/animations/cdgas.shp
+		Scale: 1.25
+	chaosgas:
+		Filename: bits/animations/cdgas.shp
+	chaosgas50p:
+		Filename: bits/animations/cdgas50p.shp
+	napalm_large:
+		Filename: bits/animations/napalm3.shp
+	napalm_large_blue:
+		Filename: bits/animations/napalm3blue.shp
+	napalm_large_black:
+		Filename: bits/animations/napalm3black.shp
+	scananim:
+		Filename: bits/animations/scananim.shp
+		Length: *
+		ZOffset: 1023
+	ionring:
+		Filename: bits/animations/ionring.shp
+		ZRamp: 1
+		Tick: 100
+	ionbeam:
+		Filename: bits/animations/ionbeam.shp
+		Offset: 0, -60, 60
+		ZRamp: 1
+		Tick: 100
+	ionbeam2:
+		Filename: bits/animations/ionbeam.shp
+		Offset: 0, -180, 60
+		ZRamp: 1
+		Tick: 100
+	ionbeam3:
+		Filename: bits/animations/ionbeam.shp
+		Offset: 0, -300, 60
+		ZRamp: 1
+		Tick: 100
+	ionbeam4:
+		Filename: bits/animations/ionbeam.shp
+		Offset: 0, -420, 60
+		ZRamp: 1
+		Tick: 100
+	ionbeam5:
+		Filename: bits/animations/ionbeam.shp
+		Offset: 0, -540, 60
+		ZRamp: 1
+		Tick: 100
+	ionbeam6:
+		Filename: bits/animations/ionbeam.shp
+		Offset: 0, -660, 60
+		ZRamp: 1
+		Tick: 100
+	holosmoke1:
+		Filename: bits/animations/holosmoke1.shp
+		ZOffset: 1024
+	holosmoke2:
+		Filename: bits/animations/holosmoke2.shp
+		ZOffset: 1024
+	holosmoke3:
+		Filename: bits/animations/holosmoke3.shp
+		ZOffset: 1024
+	holosmoke4:
+		Filename: bits/animations/holosmoke4.shp
+		ZOffset: 1024
+	holodis:
+		Filename: bits/animations/holodis.shp
+	temporal_explosion:
+		Filename: conquer|warpout.shp
+	podring:
+		Filename: bits/animations/podring.shp
+	droppod:
+		Filename: bits/animations/droppod.shp
+		Tick: 400
+		ZOffset: -1000
+	droppod2:
+		Filename: bits/animations/droppod2.shp
+		Tick: 400
+		ZOffset: -1000
+	smokebomb:
+		Filename: bits/animations/smokebomb.shp
+		Tick: 70
+		Start: 2
+	tissue:
+		Filename: bits/animations/vissml.shp
+		Tick: 20
+		Scale: 0.6
+	spherewave:
+		Filename: bits/animations/spherewave.shp
+		Scale: 1.5
+	barkflash:
+		Filename: bits/animations/barkflash.shp
+		Scale: 0.35
+	barkflashchitz:
+		Filename: bits/animations/barkflash.shp
+		Scale: 0.4
+	repairsparks:
+		Filename: bits/animations/repairsparks.shp
+		Length: *
+		Tick: 40
+
+smallscorches:
+	Defaults:
+		Offset: 0, -15
+	sc1:
+		Filename: burnt01.tem
+		TilesetFilenames:
+			SNOW: burnt01.sno
+			URBAN: burnt01.urb
+			NEWURBAN: burnt01.ubn
+			DESERT: burnt01.des
+			LUNAR: burnt01.lun
+			DUNE: burnt01.des
+	sc2:
+		Filename: burnt02.tem
+		TilesetFilenames:
+			SNOW: burnt02.sno
+			URBAN: burnt02.urb
+			NEWURBAN: burnt02.ubn
+			DESERT: burnt02.des
+			LUNAR: burnt02.lun
+			DUNE: burnt02.des
+	sc3:
+		Filename: burnt03.tem
+		TilesetFilenames:
+			SNOW: burnt03.sno
+			URBAN: burnt03.urb
+			NEWURBAN: burnt03.ubn
+			DESERT: burnt03.des
+			LUNAR: burnt03.lun
+			DUNE: burnt03.des
+	sc4:
+		Filename: burnt04.tem
+		TilesetFilenames:
+			SNOW: burnt04.sno
+			URBAN: burnt04.urb
+			NEWURBAN: burnt04.ubn
+			DESERT: burnt04.des
+			LUNAR: burnt04.lun
+			DUNE: burnt04.des
+	sc5:
+		Filename: burnt05.tem
+		TilesetFilenames:
+			SNOW: burnt05.sno
+			URBAN: burnt05.urb
+			NEWURBAN: burnt05.ubn
+			DESERT: burnt05.des
+			LUNAR: burnt05.lun
+			DUNE: burnt05.des
+	sc6:
+		Filename: burnt06.tem
+		TilesetFilenames:
+			SNOW: burnt06.sno
+			URBAN: burnt06.urb
+			NEWURBAN: burnt06.ubn
+			DESERT: burnt06.des
+			LUNAR: burnt06.lun
+			DUNE: burnt06.des
+
+mediumscorches:
+	Defaults:
+		Offset: 0, -20
+	sc7:
+		Filename: burnt07.tem
+		TilesetFilenames:
+			SNOW: burnt07.sno
+			URBAN: burnt07.urb
+			NEWURBAN: burnt07.ubn
+			DESERT: burnt07.des
+			LUNAR: burnt07.lun
+			DUNE: burnt07.des
+	sc8:
+		Filename: burnt08.tem
+		TilesetFilenames:
+			SNOW: burnt08.sno
+			URBAN: burnt08.urb
+			NEWURBAN: burnt08.ubn
+			DESERT: burnt08.des
+			LUNAR: burnt08.lun
+			DUNE: burnt08.des
+	sc9:
+		Filename: burnt09.tem
+		TilesetFilenames:
+			SNOW: burnt09.sno
+			URBAN: burnt09.urb
+			NEWURBAN: burnt09.ubn
+			DESERT: burnt09.des
+			LUNAR: burnt09.lun
+			DUNE: burnt09.des
+	sc10:
+		Filename: burnt10.tem
+		TilesetFilenames:
+			SNOW: burnt10.sno
+			URBAN: burnt10.urb
+			NEWURBAN: burnt10.ubn
+			DESERT: burnt10.des
+			LUNAR: burnt10.lun
+			DUNE: burnt10.des
+
+largescorches:
+	Defaults:
+		Offset: 0, -30
+	sc11:
+		Filename: burnt11.tem
+		TilesetFilenames:
+			SNOW: burnt11.sno
+			URBAN: burnt11.urb
+			NEWURBAN: burnt11.ubn
+			DESERT: burnt11.des
+			LUNAR: burnt11.lun
+			DUNE: burnt11.des
+	sc12:
+		Filename: burnt12.tem
+		TilesetFilenames:
+			SNOW: burnt12.sno
+			URBAN: burnt12.urb
+			NEWURBAN: burnt12.ubn
+			DESERT: burnt12.des
+			LUNAR: burnt12.lun
+			DUNE: burnt12.des
+
+smallcraters:
+	Defaults:
+		Offset: 0, -15
+	cr1:
+		Filename: crater01.tem
+		TilesetFilenames:
+			SNOW: crater01.sno
+			URBAN: crater01.urb
+			NEWURBAN: crater01.ubn
+			DESERT: crater01.des
+			LUNAR: crater01.lun
+			DUNE: crater01.des
+	cr2:
+		Filename: crater02.tem
+		TilesetFilenames:
+			SNOW: crater02.sno
+			URBAN: crater02.urb
+			NEWURBAN: crater02.ubn
+			DESERT: crater02.des
+			LUNAR: crater02.lun
+			DUNE: crater02.des
+	cr3:
+		Filename: crater03.tem
+		TilesetFilenames:
+			SNOW: crater03.sno
+			URBAN: crater03.urb
+			NEWURBAN: crater03.ubn
+			DESERT: crater03.des
+			LUNAR: crater03.lun
+			DUNE: crater03.des
+	cr4:
+		Filename: crater04.tem
+		TilesetFilenames:
+			SNOW: crater04.sno
+			URBAN: crater04.urb
+			NEWURBAN: crater04.ubn
+			DESERT: crater04.des
+			LUNAR: crater04.lun
+			DUNE: crater04.des
+	cr5:
+		Filename: crater05.tem
+		TilesetFilenames:
+			SNOW: crater05.sno
+			URBAN: crater05.urb
+			NEWURBAN: crater05.ubn
+			DESERT: crater05.des
+			LUNAR: crater05.lun
+			DUNE: crater05.des
+	cr6:
+		Filename: crater06.tem
+		TilesetFilenames:
+			SNOW: crater06.sno
+			URBAN: crater06.urb
+			NEWURBAN: crater06.ubn
+			DESERT: crater06.des
+			LUNAR: crater06.lun
+			DUNE: crater06.des
+
+mediumcraters:
+	Defaults:
+		Offset: 0, -15
+	cr7:
+		Filename: crater07.tem
+		TilesetFilenames:
+			SNOW: crater07.sno
+			URBAN: crater07.urb
+			NEWURBAN: crater07.ubn
+			DESERT: crater07.des
+			LUNAR: crater07.lun
+			DUNE: crater07.des
+	cr8:
+		Filename: crater08.tem
+		TilesetFilenames:
+			SNOW: crater08.sno
+			URBAN: crater08.urb
+			NEWURBAN: crater08.ubn
+			DESERT: crater08.des
+			LUNAR: crater08.lun
+			DUNE: crater08.des
+	cr9:
+		Filename: crater09.tem
+		TilesetFilenames:
+			SNOW: crater09.sno
+			URBAN: crater09.urb
+			NEWURBAN: crater09.ubn
+			DESERT: crater09.des
+			LUNAR: crater09.lun
+			DUNE: crater09.des
+	cr10:
+		Filename: crater10.tem
+		TilesetFilenames:
+			SNOW: crater10.sno
+			URBAN: crater10.urb
+			NEWURBAN: crater10.ubn
+			DESERT: crater10.des
+			LUNAR: crater10.lun
+			DUNE: crater10.des
+
+largecraters:
+	Defaults:
+		Offset: 0, -30
+	cr11:
+		Filename: crater11.tem
+		TilesetFilenames:
+			SNOW: crater11.sno
+			URBAN: crater11.urb
+			NEWURBAN: crater11.ubn
+			DESERT: crater11.des
+			LUNAR: crater11.lun
+			DUNE: crater11.des
+	cr12:
+		Filename: crater12.tem
+		TilesetFilenames:
+			SNOW: crater12.sno
+			URBAN: crater12.urb
+			NEWURBAN: crater12.ubn
+			DESERT: crater12.des
+			LUNAR: crater12.lun
+			DUNE: crater12.des
+
+debris:
+	Defaults:
+		Length: *
+	small1:
+		Filename: dbris1sm.shp
+	small2:
+		Filename: dbris2sm.shp
+	small3:
+		Filename: dbris3sm.shp
+	small4:
+		Filename: dbris4sm.shp
+	small5:
+		Filename: dbris5sm.shp
+	small6:
+		Filename: dbris6sm.shp
+	small7:
+		Filename: dbris7sm.shp
+	small8:
+		Filename: dbris8sm.shp
+	small9:
+		Filename: dbris9sm.shp
+	large1:
+		Filename: dbris1lg.shp
+	large2:
+		Filename: dbris2lg.shp
+	large3:
+		Filename: dbris3lg.shp
+	large4:
+		Filename: dbris4lg.shp
+	large5:
+		Filename: dbris5lg.shp
+	large6:
+		Filename: dbris6lg.shp
+	large7:
+		Filename: dbris7lg.shp
+	large8:
+		Filename: dbris8lg.shp
+	large9:
+		Filename: dbris9lg.shp
+	large10:
+		Filename: dbrs10lg.shp
+	rock1:
+		Filename: dbri-wm1.shp
+	rock2:
+		Filename: dbri-wm2.shp
+	rock3:
+		Filename: dbri-wm3.shp
+	# was unused in vRA2
+	flyingbody:
+		Filename: dbrs10sm.shp
+	meteor1:
+		Filename: bits/projectiles/meteor.shp
+		Length: 8
+		Facings: 8
+	meteor2:
+		Filename: bits/projectiles/meteor2.shp
+		Length: 8
+		Facings: 8

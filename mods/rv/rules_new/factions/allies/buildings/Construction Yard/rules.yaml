@@ -1,0 +1,73 @@
+gacnst:
+	Inherits: ^ConstructionYard
+	Buildable:
+		BuildPaletteOrder: 10
+	ProvidesPrerequisite@building.allies:
+		Prerequisite: building.allies
+	ProvidesPrerequisite@building.france:
+		Prerequisite: building.france
+		Factions: france
+	Production:
+		Produces: Building.Allies, Support.Allies
+	ProductionQueue@Building:
+		Type: Building.Allies
+	ProductionQueue@Support:
+		Type: Support.Allies
+		DisplayOrder: 5
+		Group: Support
+	ProductionBar@Building:
+		ProductionType: Building.Allies
+	ProductionBar@Support:
+		ProductionType: Support.Allies
+	Transforms:
+		IntoActor: amcv
+	WithIdleOverlay@fans:
+		Sequence: idle-fans
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete
+	WithIdleOverlay@waves:
+		RequiresCondition: !build-incomplete && in_water
+	WithBuildingPlacedOverlay:
+		RequiresCondition: !build-incomplete && !chronodisable
+	GrantConditionOnFaction@America:
+		Condition: america
+		Factions: america
+	GrantConditionOnFaction@England:
+		Condition: england
+		Factions: england
+	GrantConditionOnFaction@France:
+		Condition: france
+		Factions: france
+	GrantConditionOnFaction@Germany:
+		Condition: germany
+		Factions: germany
+	GrantConditionOnFaction@Korea:
+		Condition: korea
+		Factions: korea
+	WithIdleOverlay@America:
+		Sequence: flag-usa
+		Palette: allcyardflags
+		RequiresCondition: !build-incomplete && america
+	WithIdleOverlay@England:
+		Sequence: flag-uk
+		Palette: allcyardflags
+		RequiresCondition: !build-incomplete && england
+	WithIdleOverlay@France:
+		Sequence: flag-france
+		Palette: allcyardflags
+		RequiresCondition: !build-incomplete && france
+	WithIdleOverlay@Germany:
+		Sequence: flag-germany
+		Palette: allcyardflags
+		RequiresCondition: !build-incomplete && germany
+	WithIdleOverlay@Korea:
+		Sequence: flag-korea
+		Palette: allcyardflags
+		IsPlayerPalette: false
+		RequiresCondition: !build-incomplete && korea
+	IsometricSelectable:
+		DecorationHeight: 60
+	Voiced:
+		VoiceSet: AlliedConstructionYardVoice
+	RenderSprites:
+		Image: gacnst

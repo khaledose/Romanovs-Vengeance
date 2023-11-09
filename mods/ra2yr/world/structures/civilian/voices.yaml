@@ -1,0 +1,5 @@
+MonumentVoice:
+	DefaultVariant: .wav
+	Voices:
+		Action: 
+		Die: gmondiea

@@ -1,0 +1,43 @@
+gaspysat:
+	Inherits: ^BaseStructure
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@MC: ^MindControllableBuilding
+	Inherits@SHAPE: ^2x2Shape
+	Buildable:
+		Queue: Support.Shared, Support.Allies
+		Prerequisites: ~building.allies, gatech, ~techlevel.4
+		Description: Provides Satellite Scan power, which reveals the map for a while.\nProvides Radar.\n\n  Requires power to operate.
+		BuildPaletteOrder: 110
+	IsometricSelectable:
+		DecorationHeight: 75
+	Power:
+		Amount: -100
+	Health:
+		HP: 100000
+	Armor:
+		Type: Wood
+	Valued:
+		Cost: 1500
+	RevealsShroud:
+		Range: 5c0
+	Tooltip:
+		Name: Allied SpySat Uplink
+	Tooltip@NoRow:
+		Name: Allied SpySat Uplink
+	RevealsMap:
+		RevealGeneratedShroud: false
+		RequiresCondition: !disabled && !chronodisable
+	WithIdleOverlay@dish:
+		Sequence: idle-dish
+		PauseOnCondition: disabled || chronodisable
+		RequiresCondition: !build-incomplete
+	VoiceAnnouncement@active:
+		Voice: Build
+		RequiresCondition: !build-incomplete && !disabled && !chronodisable
+	VoiceAnnouncement@lowpower:
+		Voice: Die
+		RequiresCondition: disabled || chronodisable
+	DeathSounds:
+		Voice: Die
+	Voiced:
+		VoiceSet: SpySatelliteVoice

@@ -1,0 +1,23 @@
+RedEye2:
+	Inherits: ^Missile
+	ReloadDelay: 55
+	Range: 12c0
+	Report: bpatatta.wav
+	ValidTargets: Air
+	Warhead@1Dam: SpreadDamage
+		Damage: 7500
+		Spread: 0c307
+		Versus:
+			None: 100
+			Flak: 100
+			Plate: 100
+			Light: 100
+			Medium: 100
+			Heavy: 100
+			Wood: 0
+			Steel: 0
+			Concrete: 0
+			Drone: 100
+			Rocket: 100
+		ValidTargets: Air
+		DamageTypes: BulletDeath, NonTemporal

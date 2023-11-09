@@ -1,0 +1,106 @@
+MummyPunch:
+	Inherits: Punch
+	Report: gmumatta.wav, gmumattb.wav, gmumattc.wav
+
+MummySmash:
+	Inherits: Smash
+	Report: gmumatta.wav, gmumattb.wav, gmumattc.wav
+
+Pistola:
+	Inherits: ^SA
+	ReloadDelay: 20
+	Range: 3c0
+	Report: icivatta.wav, icivattb.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 200
+
+TermiGun:
+	Inherits: ^HollowPoint
+	ReloadDelay: 5
+	Range: 6c0
+	Report: iarnatta.wav, iarnattb.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 12500
+
+StalGun:
+	Inherits: ^HollowPoint4
+	ReloadDelay: 10
+	Range: 6c0
+	Report: islyat1a.wav, islyat1b.wav
+	InvalidTargets: Bridge, Wall, Fence, Tree, Structure, WaterStructure
+	Warhead@1Dam: SpreadDamage
+		Damage: 12500
+		InvalidTargets: Bridge, Wall, Fence, Tree, Structure, WaterStructure
+
+StalGren:
+	Inherits: ^BreakPointDefenseDrones
+	ReloadDelay: 10
+	Range: 6c0
+	Report: islyat2a.wav
+	ValidTargets: Structure, WaterStructure
+	Projectile: Bullet
+		Image: 120mm
+		Palette: ra
+		LaunchAngle: 128
+		Speed: 800
+	Warhead@1Dam: SpreadDamage
+		Damage: 1000000
+		Versus:
+			None: 0
+			Flak: 0
+			Plate: 0
+			Light: 0
+			Medium: 0
+			Heavy: 0
+			Wood: 100
+			Steel: 100
+			Concrete: 100
+			Drone: 0
+			Rocket: 0
+		DamageTypes: NonTemporal
+		ValidTargets: Structure, WaterStructure
+	Warhead@2Eff: CreateEffect
+		Explosions: terrorist_explosion
+		ImpactSounds: gexpapoa.wav
+		ValidTargets: Ground, Water, Air
+	Warhead@3Smu: LeaveSmudge
+		SmudgeType: SmallCrater
+
+ClintGun:
+	Inherits: ^HollowPoint
+	ReloadDelay: 10
+	Range: 6c0
+	Report: icliatta.wav, icliattb.wav, icliattc.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 12500
+
+LunarLaser:
+	Inherits: ^Laser
+	ReloadDelay: 20
+	Range: 7c0
+	Report: ilasatta.wav
+	ValidTargets: Ground, Water, Air
+	Warhead@1Dam: SpreadDamage
+		Damage: 2500
+		Versus:
+			None: 100
+			Flak: 100
+			Plate: 100
+			Light: 75
+			Medium: 50
+			Heavy: 50
+			Wood: 100
+			Steel: 100
+			Concrete: 100
+			Drone: 100
+			Rocket: 100
+		DamageTypes: Prone100Percent, TriggerProne, NonTemporal
+		ValidTargets: Ground, Water, Air
+
+LunarLaserAG:
+	Inherits: LunarLaser
+	ValidTargets: Ground, Water
+	InvalidTargets: Air
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: Ground, Water
+		InvalidTargets: Air

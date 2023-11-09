@@ -1,0 +1,8 @@
+GiantSquidVoice:
+	DefaultVariant: .wav
+	Voices:
+		Build: vsqusela
+		Select: vsqusela
+		Move: vsqumova, vsqumovb
+		Attack: vsquat1a
+		Die: vsqudiea

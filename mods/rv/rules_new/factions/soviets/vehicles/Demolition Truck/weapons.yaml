@@ -1,0 +1,33 @@
+demobomb:
+	Inherits: NukePayload
+	ValidTargets: Ground, Water
+	Warhead@1Dam_impact: SpreadDamage
+		Spread: 2c0
+		Damage: 120000 # 30000
+		Falloff: 100, 70, 40, 10, 0
+		ValidTargets: Ground, Water
+		Versus:
+			Light: 100
+			Medium: 50
+			Heavy: 50
+			Wood: 80
+			Steel: 150
+			Concrete: 80 # 10
+	Warhead@2Eff_impact: CreateEffect
+		Explosions: demotruck_explosion
+		ImpactSounds: vdemdiea.wav
+	Warhead@3Radiation: CreateTintedCells
+		Spread: 1c0
+		Falloff: 100, 95, 90, 85, 80, 50, 30, 20, 5
+		Level: 100
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: MediumCrater, MediumScorch
+
+DemoTruckTargeting:
+	ValidTargets: DetonateAttack
+	Range: 2c0
+	Projectile: InstantHit
+	Warhead@1Dam: TargetDamage
+		ValidTargets: DetonateAttack
+	Warhead@3Smu: LeaveSmudge
+		SmudgeType: SmallCrater

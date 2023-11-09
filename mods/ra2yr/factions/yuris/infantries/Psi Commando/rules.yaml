@@ -1,0 +1,72 @@
+# ptroop:
+# 	Inherits: yuri
+# 	Inherits@SAPPER: ^C4Attacher
+# 	Buildable:
+# 		Queue: Infantry.Shared, Infantry.Allies, Infantry.Soviets, Infantry.Yuri
+# 		BuildPaletteOrder: 990
+# 		Prerequisites: ~barracks, ~yuri.tech.infiltrated, ~techlevel.4
+# 		Description: Psychic infantry. Can mind control enemy units.\n\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Dogs, Terror Drones, Aircraft\n\nAbilities:\n- Can place C4 on buildings\n\nUpgradeable with:\n- Mastery of Mind (Antarctica)
+# 		BuildDuration: 375
+# 		BuildDurationModifier: 100
+# 	Valued:
+# 		Cost: 1000
+# 	DeliversCash:
+# 		Payload: 500
+# 	Tooltip:
+# 	Tooltip@NoRow:
+# 		Name: Psi Commando
+# 	AttackFrontal:
+# 		Armaments: primary, sapper
+# 	PeriodicExplosion:
+# 		RequiresCondition: deployed && !chronodisable
+# 	Selectable:
+# 		Class: ptroop
+# 	RenderSprites:
+# 		Image: ptroop
+# 	ActorStatValues:
+# 		Armaments: primary
+
+ptroop:
+	Inherits: ^GroundInfantry
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@VETERAN: ^InfantryPromotable
+	Inherits@PSIWAVEIMMUNITY: ^PsiWaveImmunity
+	Inherits@MINDCONTROLLER: ^MindController
+	Inherits@SAPPER: ^C4Attacher
+	Inherits@DETECTCLOAKED: ^DetectCloaked
+	Buildable:
+		Queue: Infantry.Shared, Infantry.Allies, Infantry.Soviets, Infantry.Yuri
+		Prerequisites: ~barracks, ~yuri.tech.infiltrated, ~techlevel.4
+		Description: Psychic infantry. Can mind control enemy units.\n\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Dogs, Terror Drones, Aircraft\n\nAbilities:\n- Can place C4 on buildings\n\nUpgradeable with:\n- Mastery of Mind (Antarctica)
+		BuildPaletteOrder: 8
+	Health:
+		HP: 10000
+	Armor:
+		Type: None
+	Valued:
+		Cost: 1000
+	DeliversCash:
+		Payload: 500
+	Mobile:
+		Speed: 75
+	RevealsShroud:
+		Range: 8c0
+	Tooltip:
+		Name: Psi Commando
+	Tooltip@NoRow:
+		Name: Psi Commando
+	Armament:
+		Weapon: MindControl
+		MuzzleSequence: muzzle
+		LocalOffset: 0, 0, 960
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: MindControlE
+		MuzzleSequence: muzzle
+		LocalOffset: 0, 0, 960
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite
+	Voiced:
+		VoiceSet: YuriVoice
+	-Crushable:

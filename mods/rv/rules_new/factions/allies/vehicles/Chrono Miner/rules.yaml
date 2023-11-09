@@ -1,0 +1,33 @@
+cmin:
+	Inherits: ^Miner
+	Buildable:
+		Queue: Vehicle.Shared, Vehicle.Allies, Ship.Shared, Ship.Allies
+		Description: Gathers Ore and Gems.\n\n  Unarmed\n\nAbilities:\n- Can move over water\n- Cannot be mind controlled\n- Can teleport back to refineries
+		Prerequisites: ~vehicleorship.allies, refinery, ~!global-megawealth, ~techlevel.1
+	Tooltip:
+	Tooltip@NoRow:
+		Name: Chrono Miner
+	Harvester:
+		Capacity: 20
+		BaleUnloadDelay: 2
+		DeliverVoice: Deliver
+	ChronoResourceDelivery:
+		WarpInSequence: warpout
+		WarpInSound: vchrtele.wav
+		WarpOutSound: vchrtele.wav
+		SoundVolume: 0.5
+		AudibleThroughFog: false
+		RequiresCondition: !chronodisable && !beingterrordroned
+	Contrail@Teleport: ##HACK: add a trace for teleport. 
+		Offset: 0, 0, 700
+		StartColor: 00F0F8AA
+		StartColorAlpha: 176
+		StartColorUsePlayerColor: false
+		ZOffset: -1024
+		TrailWidth: 36
+		TrailLength: 2
+	Guard:
+		Voice: Move
+	Voiced:
+		VoiceSet: ChronoMinerVoice
+

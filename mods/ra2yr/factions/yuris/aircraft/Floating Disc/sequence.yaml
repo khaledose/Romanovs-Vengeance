@@ -1,0 +1,7 @@
+disk:
+	muzzle:
+		Filename: conqmd|diskray.shp
+		Length: 4
+		Tick: 100
+	icon:
+		Filename: cameomd|diskicon.shp

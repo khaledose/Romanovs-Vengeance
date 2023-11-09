@@ -1,0 +1,8 @@
+SealVoice:
+	Inherits: ^InfantryDeath
+	Voices:
+		Select: iseasea, iseaseb, iseasec, iseased, iseaexc
+		Move: iseamoa, iseamob, iseamoc
+		Attack: iseaata, iseaatb, iseaatc
+		SpecialAttack: iseaexa, iseaexb
+		Die: iseadia, iseadib, iseadic

@@ -1,0 +1,30 @@
+ElectricBolt:
+	Inherits: ^Shock
+	ReloadDelay: 60
+	Range: 3c0
+	Report: itesatta.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 5000
+
+ElectricBoltE:
+	Inherits: ElectricBolt
+	ReloadDelay: 60
+	Range: 5c0
+	Report: itesat2a.wav, itesat2b.wav
+	Projectile: TeslaZap
+		Image: litningyel
+
+AssaultBolt:
+	ReloadDelay: 20
+	Range: 2c0
+	Report: iteschaa.wav
+	SoundVolume: 0.15
+	ValidTargets: TeslaBoost
+	Projectile: TeslaZap
+		Image: litningyel
+		Duration: 10
+	Warhead@charge: GrantExternalCondition
+		Duration: 20
+		Condition: charged
+		ValidRelationships: Ally
+		ValidTargets: TeslaBoost

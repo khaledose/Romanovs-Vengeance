@@ -1,0 +1,15 @@
+schp:
+	Inherits@MUZZLE: ^WithCannonMuzzle
+	dot:
+		Filename: bits/dot.shp
+		ZOffset: -9999
+	deploy:
+		Filename: conqmd|schpdepl.shp
+		Length: 11
+		ShadowStart: 11
+		Tick: 136
+	shadow:
+		Filename: bits/vehicles/aircraftshadows/schpshadow.shp
+		Facings: 32
+	icon:
+		Filename: cameomd|schpicon.shp

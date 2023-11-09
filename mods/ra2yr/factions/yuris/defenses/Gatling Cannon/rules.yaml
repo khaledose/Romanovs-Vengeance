@@ -1,0 +1,101 @@
+yaggun:
+	Inherits: ^DefenseStructure
+	Inherits@SHAPE: ^1x1Shape
+	Inherits@AUTOTARGET: ^AutoTargetAll
+	Inherits@DRAIN: ^DiskDefenseDrainable
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@MC: ^MindControllableBuilding
+	Buildable:
+		Queue: Support.Shared, Support.Yuri
+		Prerequisites: ~building.yuri, yabrck, ~techlevel.1
+		Description: Automated anti-infantry and anti-air defense.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles\n\nAbilities:\n- Can detect Steath units\n\nUpgradeable with:\n- Chainguns\n\n  Requires power to operate.
+		BuildPaletteOrder: 40
+	RequiresBuildableArea:
+		Adjacent: 4
+	IsometricSelectable:
+		DecorationHeight: 45
+	Power:
+		Amount: -50
+	Health:
+		HP: 81000
+	Armor:
+		Type: Steel
+	Valued:
+		Cost: 1000
+	RevealsShroud:
+		Range: 10c0
+	Tooltip:
+		Name: Yuri Gattling Cannon
+	Tooltip@NoRow:
+		Name: Yuri Gattling Cannon
+	Armament@ag-0:
+		Weapon: AGGattling
+		LocalOffset: 640,240,1024, 640,-240,1024
+		MuzzleSequence: muzzle
+		ReloadingCondition: reload-ground
+		PauseOnCondition: reload-air
+		RequiresCondition: !gatling
+	Armament@ag-1:
+		Weapon: AGGattling2
+		LocalOffset: 640,240,1024, 640,-240,1024
+		MuzzleSequence: muzzle-1
+		ReloadingCondition: reload-ground
+		PauseOnCondition: reload-air
+		RequiresCondition: gatling == 1
+	Armament@ag-2:
+		Weapon: AGGattling3
+		LocalOffset: 640,240,1024, 640,-240,1024
+		MuzzleSequence: muzzle-2
+		ReloadingCondition: reload-ground
+		PauseOnCondition: reload-air
+		RequiresCondition: gatling >= 2
+	Armament@aa-0:
+		Weapon: AAGattCann
+		LocalOffset: 640,240,1024, 640,-240,1024
+		MuzzleSequence: muzzle
+		ReloadingCondition: reload-air
+		PauseOnCondition: reload-ground
+		RequiresCondition: !gatling
+	Armament@aa-1:
+		Weapon: AAGattCann2
+		LocalOffset: 640,240,1024, 640,-240,1024
+		MuzzleSequence: muzzle-1
+		ReloadingCondition: reload-air
+		PauseOnCondition: reload-ground
+		RequiresCondition: gatling == 1
+	Armament@aa-2:
+		Weapon: AAGattCann3
+		LocalOffset: 640,240,1024, 640,-240,1024
+		MuzzleSequence: muzzle-2
+		ReloadingCondition: reload-air
+		PauseOnCondition: reload-ground
+		RequiresCondition: gatling >= 2
+	GrantConditionOnAttack:
+		Condition: gatling
+		RequiredShotsPerInstance: 12, 24
+		MaximumInstances: 2
+		RevokeDelay: 25
+		RevokeAll: true
+		IsCyclic: false
+		RevokeOnNewTarget: false
+	Turreted:
+		TurnSpeed: 40
+		InitialFacing: 896
+		RealignDelay: -1
+	AttackTurreted:
+		PauseOnCondition: build-incomplete || disabled || chronodisable
+	BodyOrientation:
+		QuantizedFacings: 16
+	RenderVoxels:
+		Scale: 18
+		LightYaw: 800
+		LightPitch: 150
+		LightAmbientColor: -0.5,-0.5,-0.5
+		LightDiffuseColor: 1.3,1.3,1.3
+	WithVoxelTurret:
+		RequiresCondition: !build-incomplete
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: GatlingCannonVoice
+		Volume: 0.8
+

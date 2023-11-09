@@ -1,0 +1,31 @@
+dlph:
+	Defaults:
+		Filename: bits/infantry/new SHPs/dlph.shp
+	icon:
+		Filename: dlphicon.shp
+	stand:
+		Start: 48
+		Facings: -8
+	idle:
+		Start: 0
+		Length: 6
+		Facings: -8
+		Tick: 160
+	run:
+		Start: 0
+		Length: 6
+		Facings: -8
+		Tick: 80
+	die:
+		Start: 117
+		Length: 14
+	shoot:
+		Start: 56
+		Length: 6
+		Facings: -8
+		Tick: 120
+	cheer:
+		Start: 104
+		Length: 13
+		Tick: 120
+

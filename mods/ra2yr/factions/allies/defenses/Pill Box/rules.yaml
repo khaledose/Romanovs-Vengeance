@@ -1,0 +1,40 @@
+gapill:
+	Inherits: ^DefenseStructure
+	Inherits@SHAPE: ^1x1Shape
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@MC: ^MindControllableBuilding
+	Buildable:
+		Queue: Support.Shared, Support.Allies
+		Prerequisites: ~building.allies, gapile, ~techlevel.1
+		Description: Automated anti-infantry defense.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can detect Steath units\n\nUpgradeable with:\n- Grand Cannon Protocols (France)
+		BuildPaletteOrder: 40
+	RequiresBuildableArea:
+		Adjacent: 4
+	IsometricSelectable:
+		DecorationHeight: 15
+	Health:
+		HP: 40000
+	Armor:
+		Type: Steel
+	Valued:
+		Cost: 500
+	RevealsShroud:
+		Range: 7c0
+	Tooltip:
+		Name: Allied Pill Box
+	Tooltip@NoRow:
+		Name: Allied Pill Box
+	Armament:
+		Weapon: vulcan2
+		LocalOffset: 416,0,416
+		MuzzleSequence: muzzle
+	Turreted:
+		TurnSpeed: 1023
+	AttackTurreted:
+		PauseOnCondition: build-incomplete || chronodisable
+	BodyOrientation:
+		QuantizedFacings: 8
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: PillBoxVoice
+		Volume: 0.8

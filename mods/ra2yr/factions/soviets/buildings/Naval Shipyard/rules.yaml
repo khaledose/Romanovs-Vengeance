@@ -1,0 +1,25 @@
+nayard:
+	Inherits: ^Shipyard
+	Buildable:
+		Queue: Building.Shared, Building.Soviets
+		Prerequisites: ~building.soviets, napowr, narefn, ~techlevel.1
+	IsometricSelectable:
+		DecorationHeight: 120
+	Power:
+		Amount: -20
+	Tooltip:
+		Name: Soviet Shipyard
+	Tooltip@NoRow:
+		Name: Soviet Shipyard
+	Production:
+		Produces: Ship.Soviets
+	ProductionQueue:
+		Type: Ship.Soviets
+	ProductionBar:
+		ProductionType: Ship.Soviets
+	ProvidesPrerequisite@ship.soviets:
+		Prerequisite: ship.soviets
+	WithIdleOverlay@lights:
+		Sequence: idle-lights
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete

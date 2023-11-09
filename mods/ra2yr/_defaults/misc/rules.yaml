@@ -1,0 +1,176 @@
+^OreDrill:
+	Inherits: ^Object
+	Tooltip:
+		Name: Ore Drill
+	Tooltip@NoRow:
+		Name: Ore Drill
+	Targetable:
+		TargetTypes: OreDrill
+	SeedsResource:
+		ResourceType: Ore
+		Interval: 50
+	GrantConditionOnPrerequisite@megawealth:
+		Condition: megawealth
+		Prerequisites: global-megawealth
+	KillsSelf:
+		RemoveInstead: true
+		RequiresCondition: megawealth
+	RenderSprites:
+		Palette: player
+	WithSpriteBody:
+	WithIdleAnimation:
+		Interval: 50
+	RadarColorFromTerrain:
+		Terrain: Ore
+	AppearsOnMapPreview:
+		Terrain: Ore
+	MapEditorData:
+		Categories: Building - Ore Drills
+
+^StreetProp:
+	Inherits: ^Object
+	Health:
+		HP: 20000
+	Armor:
+		Type: Wood
+	Targetable:
+		TargetTypes: Ground, Tree, DetonateAttack
+	Crushable:
+		CrushClasses: tree
+		CrushSound: gsancrua.wav #, gsancrub.wav
+	RenderSprites:
+		Palette: terrain
+	WithSpriteBody:
+	MapEditorData:
+		Categories: Building - Decoration
+
+^Tree:
+	Inherits: ^StreetProp
+	Tooltip:
+		Name: Tree
+	Tooltip@NoRow:
+		Name: Tree
+	MirageTarget:
+	RadarColorFromTerrain:
+		Terrain: Tree
+	AppearsOnMapPreview:
+		Terrain: Tree
+	MapEditorData:
+		Categories: Trees
+
+^StreetSign:
+	Inherits: ^StreetProp
+	Tooltip:
+		Name: Street Sign
+	Tooltip@NoRow:
+		Name: Street Sign
+
+^TrafficLight:
+	Inherits: ^StreetProp
+	Tooltip:
+		Name: Traffic Light
+	Tooltip@NoRow:
+		Name: Traffic Light
+
+^StreetLight:
+	Inherits: ^StreetProp
+	Tooltip:
+		Name: Street Light
+	Tooltip@NoRow:
+		Name: Street Light
+
+^TelephonePole:
+	Inherits: ^StreetProp
+	Tooltip:
+		Name: Utility Pole
+	Tooltip@NoRow:
+		Name: Utility Pole
+
+^Rock:
+	Inherits: ^Object
+	Tooltip:
+		Name: Rock
+	Tooltip@NoRow:
+		Name: Rock
+	WithSpriteBody:
+	RenderSprites:
+		Palette: terrain
+	RadarColorFromTerrain:
+		Terrain: Rock
+	AppearsOnMapPreview:
+		Terrain: Rock
+	MapEditorData:
+		Categories: Rock
+
+^Crate:
+	Inherits@1: ^SpriteActor
+	Inherits@PARACHUTE: ^Parachutable
+	HiddenUnderFog:
+	Interactable:
+	Tooltip:
+		Name: Crate
+		GenericName: Crate
+	Crate:
+		TerrainTypes: Clear, Sand, Rough, Dune, Road, DirtRoad, Ore, Gems, Water
+	RenderSprites:
+		Palette: terrain
+		Image: crate
+	WithCrateBody:
+		LandSequence: land
+		WaterSequence: water
+	WithSpriteBody@shadow:
+		Name: shadow
+		Sequence: shadow
+		ForceToGround: true
+		RequiresCondition: parachute
+	MapEditorData:
+		Categories: System
+
+^SystemActor:
+	Immobile:
+		OccupiesSpace: false
+	BodyOrientation:
+	AlwaysVisible:
+	RenderSpritesEditorOnly:
+	WithSpriteBody:
+	QuantizeFacingsFromSequence:
+	MapEditorData:
+		Categories: System
+
+^Ambient:
+	Inherits: ^SystemActor
+	-Immobile:
+	Aircraft:
+		CruiseAltitude: 0c1
+		VTOL: true
+	RejectsOrders:
+	Interactable:
+	# AmbientSound:
+	#	AudibleThroughFog: true
+	-MapEditorData:
+	RenderSpritesEditorOnly:
+		Image: ambient
+
+^LampPost:
+	Interactable:
+	EditorOnlyTooltip:
+		Name: (Invisible Light Post)
+	AlwaysVisible:
+	Immobile:
+		OccupiesSpace: false
+	RenderSpritesEditorOnly:
+		Image: galite
+		Palette: terrainalpha
+	WithSpriteBody:
+	BodyOrientation:
+		QuantizedFacings: 1
+	MapEditorData:
+		Categories: System
+	RequiresSpecificOwners:
+		ValidOwnerNames: Neutral
+	TerrainLightSource:
+		Range: 19c544
+		Intensity: 0.2
+		RedTint: 0.05
+		GreenTint: 0.05
+		BlueTint: 0.01

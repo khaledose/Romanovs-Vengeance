@@ -1,0 +1,141 @@
+yarefn:
+	Inherits: ^Refinery
+	Inherits@EXPERIENCE: ^GainsExperience
+	# Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@SHAPE: ^2x2Shape
+	Buildable:
+		Queue: Building.Shared, Building.Yuri
+		Prerequisites: ~building.yuri, yapowr, ~!global-megawealth, ~techlevel.1, ~AIantiRush
+		Description: Gathers and processes ore.
+		BuildPaletteOrder: 30
+	Building:
+		Footprint: xx x+
+		TerrainTypes: Clear, Sand, Rough, Dune, Road, DirtRoad
+	IsometricSelectable:
+		DecorationHeight: 45
+	Health:
+		HP: 200000
+	Armor:
+		Type: Medium
+	Valued:
+		Cost: 1500
+	RevealsShroud:
+		Range: 6c0
+	Tooltip:
+		Name: Yuri Slave Miner
+	Tooltip@NoRow:
+		Name: Yuri Slave Miner
+	# Armament@primary:
+	# 	Weapon: 20mmrapid
+	# 	Damage: 30
+	# 	LocalOffset: 512, 0, 1132
+	# 	MuzzleSequence: muzzle
+	# 	RequiresCondition: !rank-elite
+	# Armament@elite:
+	# 	Weapon: 20mmrapidE
+	# 	Damage: 50
+	# 	LocalOffset: 512, 0, 1132
+	# 	MuzzleSequence: muzzle
+	# 	RequiresCondition: rank-elite
+	ProvidesPrerequisite@showslave:
+		Prerequisite: showslave
+	SlaveMinerMaster:
+		Actors: slav,slav,slav,slav,slav
+		Resources: Ore, Gems
+		SlaveDisposalOnKill: GiveSlavesToAttacker
+		KickDelay: 5
+		FreeSound: isl1lia.wav
+	DockHost:
+		DockOffset: 0c725, 0c725, 0
+		DockAngle: 120
+		MaxQueueLength: 5
+	Transforms:
+		Facing: 896
+		IntoActor: smin
+		DeployCursor: undeploy
+		Voice: Undeploy
+		PauseOnCondition: chronodisable
+		# RequiresCondition: !build-incomplete
+	TransformsIntoMobile:
+		Locomotor: tracked
+		Voice: Move
+		RequiresForceMove: false
+		# RequiresCondition: !build-incomplete && !chronodisable
+	TransformsIntoRepairable:
+		RepairActors: gadept, nadept, nadepb, caoutp, caoutb
+		Voice: Move
+		RequiresForceMove: false
+		# RequiresCondition: !build-incomplete && !chronodisable
+	TransformsIntoPassenger:
+		CargoType: Vehicle
+		Voice: Move
+		RequiresForceMove: false
+		# RequiresCondition: !build-incomplete && !chronodisable
+	TransferTimedExternalConditionOnTransform@INVULNERABILITY:
+		Condition: invulnerability
+	WithIdleOverlay@bib:
+		Sequence: idle-bib
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete
+	SmokeParticleEmitter@refinerysmoke1:
+		Offset: -400, -256, 2304
+		RequiresCondition: resource-delivered
+		Image: smallsmoke
+		Sequences: idle
+		Palette: effect75alpha
+		SpawnFrequency: 1
+		Speed: 0, 36
+		Gravity: 100, 150
+		Duration: 20
+	SmokeParticleEmitter@refinerysmoke2:
+		Offset: 0, 400, 2304
+		RequiresCondition: resource-delivered
+		Image: smallsmoke
+		Sequences: idle
+		Palette: effect75alpha
+		SpawnFrequency: 1
+		Speed: 0, 36
+		Gravity: 100, 150
+		Duration: 20
+	SmokeParticleEmitter@refinerysmoke3:
+		Offset: 32, 192, 2304
+		RequiresCondition: resource-delivered
+		Image: smallsmoke
+		Sequences: idle
+		Palette: effect75alpha
+		SpawnFrequency: 1
+		Speed: 0, 36
+		Gravity: 100, 150
+		Duration: 20
+	SmokeParticleEmitter@refinerysmoke4:
+		Offset: 350, -256, 2304
+		RequiresCondition: resource-delivered
+		Image: smallsmoke
+		Sequences: idle
+		Palette: effect75alpha
+		SpawnFrequency: 1
+		Speed: 0, 36
+		Gravity: 100, 150
+		Duration: 20
+	# Turreted:
+	# 	TurnSpeed: 20
+	# 	InitialFacing: 128
+	# 	Offset: 640,0,0
+	# AttackTurreted:
+	# 	Voice: Attack
+	# 	PauseOnCondition: chronodisable
+	# 	RequiresCondition: !build-incomplete
+	# WithVoxelTurret:
+	# 	RequiresCondition: !build-incomplete
+	# WithMuzzleOverlay:
+	# RenderVoxels:
+	# 	Image: smin
+	# 	Scale: 11.7
+	# 	LightYaw: 800
+	# 	LightPitch: 150
+	# 	LightAmbientColor: -0.5,-0.5,-0.5
+	# 	LightDiffuseColor: 1.3,1.3,1.3
+	RangedGpsDot:
+		Sequence: Harvester
+	Voiced:
+		VoiceSet: SlaveMinerVoice

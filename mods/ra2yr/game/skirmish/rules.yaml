@@ -1,0 +1,22 @@
+mpspawn:
+	Inherits: ^SystemActor
+	GrantConditionOnPrerequisite@megawealth:
+		Condition: megawealth
+		Prerequisites: global-megawealth
+	FreeActor:
+		Actor: oreclearer
+		RequiresCondition: megawealth
+
+waypoint:
+	Inherits: ^SystemActor
+
+oreclearer:
+	Immobile:
+		OccupiesSpace: false
+	AlwaysVisible:
+	ClearsResources:
+
+hack.no_bases:
+	Interactable:
+	AlwaysVisible:
+	ProvidesPrerequisite@upgradename:

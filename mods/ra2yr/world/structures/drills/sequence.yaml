@@ -1,0 +1,91 @@
+tibtre01:
+	Defaults:
+		Filename: tibtre01.tem
+		TilesetFilenames:
+			SNOW: tibtre01.sno
+			URBAN: tibtre01.urb
+			NEWURBAN: tibtre01.ubn
+			DESERT: tibtre01.des
+			LUNAR: tibtre01.lun
+			DUNE: tibtre01.des
+		Offset: -1, -16
+	idle:
+		ShadowStart: 11
+	active:
+		Start: 1
+		Length: 10
+		ShadowStart: 12
+		Tick: 160
+
+tibtre02:
+	Defaults:
+		Filename: tibtre02.tem
+		TilesetFilenames:
+			SNOW: tibtre02.sno
+			URBAN: tibtre02.urb
+			NEWURBAN: tibtre02.ubn
+			DESERT: tibtre02.des
+			LUNAR: tibtre02.lun
+			DUNE: tibtre02.des
+		Offset: -1, -16
+	idle:
+		ShadowStart: 11
+	active:
+		Start: 1
+		Length: 10
+		ShadowStart: 12
+		Tick: 160
+
+tibtre03:
+	Defaults:
+		Filename: tibtre03.tem
+		TilesetFilenames:
+			SNOW: tibtre03.sno
+			URBAN: tibtre03.urb
+			NEWURBAN: tibtre03.ubn
+			DESERT: tibtre03.des
+			LUNAR: tibtre03.lun
+			DUNE: tibtre03.des
+		Offset: -1, -16
+	idle:
+		ShadowStart: 11
+	active:
+		Start: 1
+		Length: 10
+		ShadowStart: 12
+		Tick: 160
+
+tibtre04:
+	Defaults:
+		Filename: gmin.tem
+		TilesetFilenames:
+			SNOW: gmin.sno
+		Offset: -1, -16
+	idle:
+		ShadowStart: 11
+	active:
+		Start: 1
+		Length: 10
+		ShadowStart: 12
+		Tick: 160
+
+tibtre05:
+	Inherits: tibtre01
+	Defaults:
+		Filename: tibtre01.tem
+		TilesetFilenames:
+			SNOW: tibtre01.sno
+			URBAN: tibtre01.urb
+			NEWURBAN: tibtre01.ubn
+			DESERT: tibtre01.des
+			LUNAR: tibtre01.lun
+			DUNE: tibtre01.des
+	idle-flipped:
+		FlipX: true
+		Offset: 3, -16
+	active-flipped:
+		FlipX: true
+		Offset: 3, -16
+		Start: 1
+		Length: 10
+		Tick: 160

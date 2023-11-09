@@ -1,0 +1,39 @@
+yaggun:
+	Inherits@MUZZLE: ^WithGatlingMuzzle
+	Defaults:
+		Filename: ygggun.shp
+		TilesetFilenames:
+			SNOW: yaggun.shp
+			SIMPLETERRAIN: ytggun.shp
+		Offset: 0, -15
+		ZOffset: -512
+	idle:
+		Filename: ygggun.shp
+		TilesetFilenames:
+			SNOW: yaggun.shp
+			SIMPLETERRAIN: ytggun.shp
+		ShadowStart: 3
+	damaged-idle:
+		Filename: ygggun.shp
+		TilesetFilenames:
+			SNOW: yaggun.shp
+			SIMPLETERRAIN: ytggun.shp
+		Start: 1
+		ShadowStart: 4
+	make:
+		Filename: ygggunmk.shp
+		TilesetFilenames:
+			SNOW: yaggunmk.shp
+			SIMPLETERRAIN: ytggunmk.shp
+		Length: 13
+		ShadowStart: 13
+	idle-waves:
+		Filename: gauwat.shp
+		TilesetFilenames:
+		Length: 15
+		Tick: 200
+		ZOffset: -1c0
+	icon:
+		Filename: cameomd|ggunicon.shp
+		TilesetFilenames:
+		Offset: 0,0

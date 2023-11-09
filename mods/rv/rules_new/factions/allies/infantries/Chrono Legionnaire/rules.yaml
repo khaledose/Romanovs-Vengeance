@@ -1,0 +1,90 @@
+cleg:
+	Inherits: ^Infantry
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@CHAOS: ^Berserkable
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@VETERAN: ^InfantryPromotable
+	Inherits@MC: ^MindControllable
+	Inherits@VOICES: ^WithFeedbackVoicelines
+	Selectable:
+		Bounds: 482, 1448, 0, -530
+	Tooltip:
+	Tooltip@NoRow:
+		Name: Chrono Legionnaire
+	Buildable:
+		Queue: Infantry.Shared, Infantry.Allies
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 140
+		Prerequisites: ~infantry.allies, gatech, ~techlevel.4
+		Description: High-tech soldier capable of erasing enemy units.\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Aircraft\n\nAbilities:\n- Can teleport anywhere on the map
+		BuildDuration: 500
+		BuildDurationModifier: 100
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Valued:
+		Cost: 1200
+	DeliversCash:
+		Payload: 600
+		Voice: Move
+	Health:
+		HP: 12500
+	RevealsShroud:
+		Range: 6c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 6c0
+	RevealOnDeath:
+		Radius: 6c0
+	Passenger: 
+	-TakeCover:
+	ChronoMobile:
+		ChronoshiftSound: ichrmova.wav
+		Voice: Move
+		ChargeDelay: 120
+		TargetCursor: move
+		TeleportCondition: chronoed
+		HasTeleportEffect: true
+		TeleportEffect: effect50alpha
+		TeleportEffectSequence: temporal_explosion
+		PauseOnCondition: affectedbytemporal
+	Chronoshiftable:
+		ExplodeInstead: false
+	Voiced:
+		VoiceSet: ChronoLegionnaireVoice
+	Armament@primary:
+		Weapon: NeutronRifle
+		LocalOffset: 512,0,384
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite
+		TargetRelationships: Enemy, Neutral
+	Armament@elite:
+		Weapon: NeutronRifleE
+		LocalOffset: 512,0,384
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite
+		TargetRelationships: Enemy, Neutral
+	Armament@sound:
+		Weapon: NeutronRifleSound
+		LocalOffset: 512,0,384
+		PauseOnCondition: chronodisable
+		TargetRelationships: Enemy, Neutral
+	Armament@opentopped:
+		Name: opentopped
+		Weapon: NeutronRifle
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite
+	Armament@elite-opentopped:
+		Name: opentopped
+		Weapon: NeutronRifleE
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite
+	Armament@sound-opentopped:
+		Name: opentopped
+		Weapon: NeutronRifleSound
+		PauseOnCondition: chronodisable
+	ChronoAttackFrontal:
+		Voice: Attack
+		FacingTolerance: 2
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+	GrantCondition@ChronoDisable:
+		RequiresCondition: affectedbytemporal || chronoed

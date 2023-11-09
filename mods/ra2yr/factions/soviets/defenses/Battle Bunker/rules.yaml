@@ -1,0 +1,38 @@
+nabnkr:
+	Inherits: ^DefenseStructure
+	Inherits@GARRISON: ^Garrisonable
+	Inherits@MC: ^MindControllableBuilding
+	Inherits@SHAPE: ^2x2Shape
+	Buildable:
+		Queue: Support.Shared, Support.Soviets
+		Prerequisites: ~building.soviets, ~techlevel.1
+		Description: Static defense with fireports for 6 garrisoned soldiers.\nInfantry inside cannot be killed by garrison killers.\nComes with a Conscript inside.\n\n  Cannot be placed on water.
+		BuildPaletteOrder: 40
+	IsometricSelectable:
+		DecorationHeight: 45
+	Health:
+		HP: 60000
+	Armor:
+		Type: Steel
+	Valued:
+		Cost: 500
+	RevealsShroud:
+		Range: 6c0
+	Tooltip:
+		Name: Soviet Battle Bunker
+	Tooltip@NoRow:
+		Name: Soviet Battle Bunker
+	AttackOpenTopped:
+		PortOffsets: 512,512,1024, -192,704,1024, -704,192,1024, -512,-512,1024, 192,-704,1024
+		PauseOnCondition: build-incomplete || chronodisable
+	Garrisonable:
+		MaxWeight: 5
+		-RequiresCondition:
+	WithGarrisonSounds:
+		-EnterNotification:
+		-ExitNotification:
+	-ChangeOwnerOnGarrison:
+	Voiced:
+		VoiceSet: BattleBunkerVoice
+		Volume: 0.8
+

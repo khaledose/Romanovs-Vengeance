@@ -1,0 +1,23 @@
+ccomand:
+	Inherits: ^BasicInfantry
+	Inherits@DEATH: ^DeathAnimation
+	Inherits@SHOOTER: ^Shooter
+	Inherits@PRONE: ^ProneShooter
+	Defaults:
+		Filename: conquer|ccomand.shp
+	icon:
+		Filename: cameo|ccomicon.shp
+	cheer:
+		Start: 340
+	paradrop:
+		Start: 0
+
+# ccomand:
+# 	Inherits: ghost
+# 	Defaults:
+# 		Filename: conquer|ccomand.shp
+# 	cheer:
+# 		Start: 340
+# 	icon:
+# 		Filename: cameo|ccomicon.shp
+

@@ -1,0 +1,8 @@
+DesolatorVoice:
+	Inherits: ^InfantryDeath
+	Voices:
+		Select: idessea, idesseb, idessec, idessed, idessee
+		Move: idesmoa, idesmob, idesmoc, idesmod, idesmoe
+		Attack: idesata, idesatb, idesatc, idesatd, idesate, idesatf
+		Deploy:
+		Die: idesdia, idesdib, idesdic

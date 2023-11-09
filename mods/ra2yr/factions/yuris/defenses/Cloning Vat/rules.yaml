@@ -1,0 +1,83 @@
+yaclon:
+	Inherits: ^BaseStructure
+	Inherits@MC: ^MindControllableBuilding
+	Inherits@SHAPE: ^2x2Shape
+	Buildable:
+		Queue: Support.Shared, Support.Yuri
+		Prerequisites: ~building.yuri, yatech, ~techlevel.4
+		Description: Clones most trained infantry.\n\n  Cannot be placed on water.\n  Maximum 1 can be built.
+		BuildPaletteOrder: 130
+		BuildLimit: 1
+	IsometricSelectable:
+		DecorationHeight: 90
+	Power:
+		Amount: -200
+	Health:
+		HP: 100000
+	Armor:
+		Type: Wood
+	Valued:
+		Cost: 2500
+	RevealsShroud:
+		Range: 5c0
+	Tooltip:
+		Name: Yuri Cloning Vats
+	Tooltip@NoRow:
+		Name: Yuri Cloning Vats
+	Production:
+		Produces: Clone.Yuri
+		PauseOnCondition: chronodisable || disabled
+	ClonesProducedUnits:
+		CloneableTypes: Infantry
+		ProductionType: Clone.Yuri
+	ExitsDebugOverlay:
+	Exit@1:
+		SpawnOffset: -640,640,0
+		ExitCell: 1,2
+		Priority: 2
+	Exit@2:
+		SpawnOffset: -640,640,0
+		ExitCell: 0,2
+		Priority: 2
+	Exit@fallback1:
+		SpawnOffset: 0,724,0
+		ExitCell: 2,2
+	Exit@fallback2:
+		SpawnOffset: 0,724,0
+		ExitCell: 2,1
+	Exit@fallback3:
+		SpawnOffset: 724,0,0
+		ExitCell: 2,0
+	Exit@fallback4:
+		SpawnOffset: 724,0,0
+		ExitCell: 2,-1
+	Exit@fallback5:
+		SpawnOffset: 724,0,0
+		ExitCell: 1,-1
+	Exit@fallback6:
+		SpawnOffset: 0,-724,0
+		ExitCell: 0,-1
+	Exit@fallback7:
+		SpawnOffset: 0,-724,0
+		ExitCell: -1,-1
+	Exit@fallback8:
+		SpawnOffset: 0,-724,0
+		ExitCell: -1,0
+	Exit@fallback9:
+		SpawnOffset: -724,0,0
+		ExitCell: -1,1
+	Exit@fallback10:
+		SpawnOffset: -724,0,0
+		ExitCell: -1,2
+	RallyPoint:
+		Path: 3,3
+		Palette: mouse
+		IsPlayerPalette: false
+	CommandBarBlacklist:
+		DisableStop: false
+	WithSpriteBody:
+		PauseOnCondition: chronodisable
+	Voiced:
+		VoiceSet: CloningVatsVoice
+		Volume: 0.8
+

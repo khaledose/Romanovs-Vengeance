@@ -1,0 +1,57 @@
+ccomand:
+	Inherits: ghost
+	Buildable:
+		Queue: Infantry.Shared, Infantry.Allies, Infantry.Soviets, Infantry.Yuri
+		BuildPaletteOrder: 960
+		Prerequisites: ~barracks, ~allies.tech.infiltrated, ~techlevel.4
+		Description: Elite commando infantry, armed with\na sub machine gun and C4 charges.\n\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can place C4 on buildings\n- Can teleport anywhere on the map\n\nUpgradeable with:\n- Advanced Training
+		BuildDuration: 375
+		BuildDurationModifier: 100
+	Tooltip:
+	Tooltip@NoRow:
+		Name: Chrono Commando
+	Valued:
+		Cost: 1500
+	DeliversCash:
+		Payload: 750
+	Health:
+		HP: 12500
+	Crushable:
+		CrushClasses: vehicle
+	Crushable@Cheater:
+		CrushClasses: vehicle
+	Crushable@Vengeful:
+		CrushClasses: vehicle
+	ChronoMobile:
+		ChronoshiftSound: ichrmova.wav
+		Voice: Move
+		ChargeDelay: 120
+		TargetCursor: move
+		TeleportCondition: chronoed
+		HasTeleportEffect: true
+		TeleportEffect: effect50alpha
+		TeleportEffectSequence: temporal_explosion
+		PauseOnCondition: affectedbytemporal
+	Chronoshiftable:
+		ExplodeInstead: false
+	WithInfantryBody:
+	WithDeathAnimation@normal:
+		-RequiresCondition:
+	WithDeathAnimation@effect:
+		-RequiresCondition:
+	TakeCover:
+		-RequiresCondition:
+	-GrantConditionOnTerrain@Water:
+	-WithInfantryBody@Water:
+	-WithInfantryBody@SNOW:
+	-WithDeathAnimation@Water:
+	-WithDeathAnimation@SNOW:
+	-Targetable@WaterBorne:
+	-GrantConditionOnTileSet@SNOW:
+	-AttackFrontal:
+	ChronoAttackFrontal:
+		Voice: Attack
+		FacingTolerance: 2
+	RenderSprites:
+		Image: ccomand
+

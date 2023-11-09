@@ -1,0 +1,55 @@
+spyp:
+	Inherits: ^NeutralAircraft
+	Valued:
+		Cost: 1000
+	-Guard:
+	-Selectable:
+	Interactable:
+		Bounds: 2413, 3861
+	RejectsOrders:
+	Tooltip:
+	Tooltip@NoRow:
+		Name: Spy Plane
+	Aircraft:
+		CruiseAltitude: 5c852
+		Repulsable: false
+		TurnSpeed: 20
+		Speed: 225
+		Voice: Action
+	Armament:
+		Weapon: SpyCameraWeapon
+	AttackBomber:
+	Health:
+		HP: 30000
+	Armor:
+		Type: Light
+	RenderSprites:
+	WithVoxelWalkerBody:
+		TickRate: 1
+	AmbientSound@Ambient:
+		SoundFiles: vspylo2a.wav, vspylo2b.wav, vspylo2c.wav
+		Volume: 0.60
+		RequiresCondition: airborne
+	Voiced:
+		VoiceSet: SpyPlaneVoice
+		Volume: 0.45
+	DeathSounds:
+		DeathTypes: NonTemporal
+	SpawnActorOnDeath:
+		DeathType: NonTemporal
+		Actor: spyphusk
+	HitShape:
+
+spyphusk:
+	Inherits: ^PlaneHusk
+	Tooltip:
+	Tooltip@NoRow:
+		Name: Spy Plane
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 225
+	RenderVoxels:
+		Image: spyp
+	FallsToEarth:
+		Explosion: UnitExplode
+

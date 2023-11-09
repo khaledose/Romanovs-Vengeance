@@ -1,0 +1,8 @@
+BuildingExplode:
+	Inherits: UnitExplodeSmall
+	Warhead@1Eff: CreateEffect
+		Explosions: large_twlt, large_bang, large_brnl, verylarge_clsn, large_tumu
+	Warhead@DebrisSpawn: FireShrapnel
+		Weapon: LargeDebris
+	Warhead@3Smu: LeaveSmudge
+		SmudgeType: MediumCrater, MediumScorch

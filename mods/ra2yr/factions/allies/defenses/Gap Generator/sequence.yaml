@@ -1,0 +1,36 @@
+gagap:
+	Defaults:
+		Offset: 0, -15
+	idle:
+		Filename: gggap.shp
+		TilesetFilenames:
+			SNOW: gagap.shp
+			SIMPLETERRAIN: gtgap.shp
+		Length: 1
+		ShadowStart: 3
+	damaged-idle:
+		Filename: gggap.shp
+		TilesetFilenames:
+			SNOW: gagap.shp
+			SIMPLETERRAIN: gtgap.shp
+		Start: 2
+		Length: 1
+		ShadowStart: 4
+	powered:
+		Filename: gggap_a.shp
+		TilesetFilenames:
+			SNOW: gagap_a.shp
+			SIMPLETERRAIN: gtgap_a.shp
+		Length: 12
+		ShadowStart: 12
+	make:
+		Filename: gggapmk.shp
+		TilesetFilenames:
+			SNOW: gagapmk.shp
+			SIMPLETERRAIN: gtgapmk.shp
+		Length: 9
+		ShadowStart: 9
+		Tick: 90
+	icon:
+		Filename: cameo|gapicon.shp
+		Offset: 0,0

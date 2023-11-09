@@ -1,0 +1,19 @@
+EiffelBolt:
+	Inherits: ^Shock
+	ReloadDelay: 1
+	Range: 20c0
+	Report: bparatta.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 200000
+
+MayanPrism:
+	Inherits: ^Prism
+	ReloadDelay: 1
+	Range: 12c0
+	Report: bpriat1a.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 100000
+
+BustShot:
+	Inherits: PrismShot
+	ReloadDelay: 30

@@ -1,0 +1,51 @@
+gaorep:
+	Inherits: ^BaseStructure
+	Inherits@MC: ^MindControllableBuilding
+	Inherits@SHAPE: ^3x3Shape
+	Inherits@AICash: ^AICashCheat
+	Buildable:
+		Queue: Building.Shared, Building.Allies
+		Prerequisites: ~building.allies, garefn, gatech, ~techlevel.4
+		Description: Refines income from ores and gems by 25%.\n\n  Maximum 1 can be built.
+		BuildPaletteOrder: 120
+		BuildLimit: 1
+	IsometricSelectable:
+		DecorationHeight: 60
+	Power:
+		Amount: -200
+	Health:
+		HP: 90000
+	Armor:
+		Type: Wood
+	Valued:
+		Cost: 2500
+	RevealsShroud:
+		Range: 5c0
+	Tooltip:
+		Name: Allied Ore Processor
+	Tooltip@NoRow:
+		Name: Allied Ore Processor
+	ResourcePurifier:
+		Modifier: 25
+		RequiresCondition: !chronodisable
+	GrantConditionOnResourcePurify:
+		Condition: resource-purify
+		Duration: 3
+	SmokeParticleEmitter@purifiersmoke:
+		RequiresCondition: resource-purify && !chronodisable
+		Image: smallsmoke
+		Sequences: idle
+		Palette: effect50alpha
+		SpawnFrequency: 1,2
+		Speed: 0, 36
+		Gravity: 27, 54
+		Duration: 39
+		Offset: -128,0,3560
+	WithIdleOverlay@glow:
+		Sequence: idle-glow
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete
+	Voiced:
+		VoiceSet: OrePurifierVoice
+		Volume: 0.8
+

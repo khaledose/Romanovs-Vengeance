@@ -1295,7 +1295,7 @@ nasam:
 		Amount: -30
 		RequiresCondition: !chronodisable
 	GrantCondition@IDISABLE:
-		RequiresCondition: lowpower || powerdown || emp || diskdrain
+		RequiresCondition: lowpower || powerdown || emp || 
 	RequiresBuildableArea:
 		Adjacent: 3
 	IsometricSelectable:
@@ -1381,7 +1381,7 @@ gtgcan:
 		Amount: -100
 		RequiresCondition: !chronodisable
 	GrantCondition@IDISABLE:
-		RequiresCondition: lowpower || powerdown || emp || diskdrain
+		RequiresCondition: lowpower || powerdown || emp || 
 	IsometricSelectable:
 		DecorationHeight: 45
 	Voiced:
@@ -1601,7 +1601,7 @@ gagap:
 		Amount: -50
 		RequiresCondition: !chronodisable
 	GrantCondition@IDISABLE:
-		RequiresCondition: lowpower || powerdown || emp || diskdrain
+		RequiresCondition: lowpower || powerdown || emp || 
 	MustBeDestroyed:
 		RequiredForShortGame: false
 	RangedGpsDot:
@@ -1810,7 +1810,7 @@ atesla:
 		Amount: -75
 		RequiresCondition: !chronodisable
 	GrantCondition@IDISABLE:
-		RequiresCondition: lowpower || powerdown || emp || diskdrain
+		RequiresCondition: lowpower || powerdown || emp || 
 	AutoTarget:
 	WithIdleOverlay@normal:
 		Sequence: idle-normal
@@ -2118,7 +2118,7 @@ gamgun:
 		Amount: -25
 		RequiresCondition: !chronodisable
 	GrantCondition@IDISABLE:
-		RequiresCondition: lowpower || powerdown || emp || diskdrain
+		RequiresCondition: lowpower || powerdown || emp || 
 	RequiresBuildableArea:
 		Adjacent: 15
 	-Cloak@stealth-generator:
@@ -2195,7 +2195,7 @@ gagun:
 		Amount: -15
 		RequiresCondition: !chronodisable
 	GrantCondition@IDISABLE:
-		RequiresCondition: lowpower || powerdown || emp || diskdrain
+		RequiresCondition: lowpower || powerdown || emp || 
 	RequiresBuildableArea:
 		Adjacent: 4
 	WithIdleOverlay@waves:

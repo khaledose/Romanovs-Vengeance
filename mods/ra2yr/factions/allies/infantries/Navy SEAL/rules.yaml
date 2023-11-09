@@ -1,0 +1,147 @@
+# ghost:
+# 	Inherits: ^Infantry
+# 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+# 	Inherits@CHAOS: ^Berserkable
+# 	Inherits@EXPERIENCE: ^GainsExperience
+# 	Inherits@VETERAN: ^ProducibleAsVeteranInfantry
+# 	Inherits@MC: ^MindControllable
+# 	Inherits@SWIMSUIT: ^WithSwimSuit
+# 	Inherits@SAPPER: ^C4Attacher
+# 	Buildable:
+# 		Queue: Infantry.Shared, Infantry.Allies
+# 		BuildAtProductionType: Soldier
+# 		BuildPaletteOrder: 100
+# 		Prerequisites: ~infantry.allies, gaairc, ~techlevel.3
+# 		Description: Elite commando infantry, armed with a sub machine gun\nand C4 charges.\n\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can swim\n- Can place C4 on buildings\n\nUpgradeable with:\n- Advanced Training
+# 		BuildDuration: 375
+# 		BuildDurationModifier: 100
+# 	UpdatesPlayerStatistics:
+# 		AddToArmyValue: true
+# 	Valued:
+# 		Cost: 1000
+# 	DeliversCash:
+# 		Payload: 500
+# 	Tooltip:
+# 	Tooltip@NoRow:
+# 		Name: Navy SEAL
+# 	Selectable:
+# 		Bounds: 482, 1448, 0, -530
+# 	Health:
+# 		HP: 12500
+# 	Passenger:
+# 		CustomPipType: gray
+# 	Mobile:
+# 		Speed: 75
+# 		Locomotor: swimsuit
+# 	RevealsShroud:
+# 		Range: 8c0
+# 	# RevealsShroudToIntelligenceOwner:
+# 	#	Range: 8c0
+# 	RevealOnDeath:
+# 		Radius: 8c0
+# 	Armor:
+# 		Type: Flak
+# 	Armament@primary:
+# 		Weapon: MP5
+# 		PauseOnCondition: chronodisable
+# 		RequiresCondition: !rank-elite
+# 	Armament@elite:
+# 		Weapon: MP5E
+# 		PauseOnCondition: chronodisable
+# 		RequiresCondition: rank-elite
+# 	Armament@opentopped:
+# 		Name: opentopped
+# 		Weapon: MP5
+# 		PauseOnCondition: chronodisable
+# 		RequiresCondition: !rank-elite
+# 	Armament@elite-opentopped:
+# 		Name: opentopped
+# 		Weapon: MP5E
+# 		PauseOnCondition: chronodisable
+# 		RequiresCondition: rank-elite
+# 	AttackFrontal:
+# 		Voice: Attack
+# 		FacingTolerance: 2
+# 		PauseOnCondition: chronodisable
+# 	RenderSprites:
+# 		Image: seal
+# 	Voiced:
+# 		VoiceSet: SealVoice
+# 	QuantizeFacingsFromSequence:
+# 		Sequence: stand
+# 	WithInfantryBody:
+# 		DefaultAttackSequence: shoot
+# 		RequiresCondition: !swimming && !snow && !parachute
+# 	WithInfantryBody@SNOW:
+# 		IdleSequences: snow-idle1, snow-idle2
+# 		StandSequences: snow-stand
+# 		MoveSequence: snow-run
+# 		DefaultAttackSequence: snow-shoot
+# 		RequiresCondition: !swimming && snow && !parachute
+# 	WithDeathAnimation@normal:
+# 		RequiresCondition: !swimming && !snow
+# 	WithDeathAnimation@SNOW:
+# 		DeathSequence: snow-die
+# 		DeathSequencePalette: infantry
+# 		DeathTypes:
+# 			ExplosionDeath: 1
+# 			BulletDeath: 2
+# 		RequiresCondition: !swimming && snow
+# 	GrantConditionOnTileSet@SNOW:
+# 		Condition: snow
+# 		TileSets: SNOW
+# 	TakeCover:
+# 		RequiresCondition: !swimming
+# 	ActorStatValues:
+# 		Armaments: primary
+# 		Damage: 70
+
+ghost:
+	Inherits: ^GroundInfantry
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@VETERAN: ^InfantryPromotable
+	Inherits@MC: ^MindControllable
+	Inherits@SWIMSUIT: ^WithSwimSuit
+	Inherits@SAPPER: ^C4Attacher
+	Buildable:
+		Queue: Infantry.Shared, Infantry.Allies
+		Prerequisites: ~infantry.allies, gaairc, ~techlevel.3
+		Description: Elite commando infantry, armed with a sub machine gun\nand C4 charges.\n\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can swim\n- Can place C4 on buildings\n\nUpgradeable with:\n- Advanced Training
+		BuildPaletteOrder: 8
+	Health:
+		HP: 12500
+	Armor:
+		Type: Flak
+	Valued:
+		Cost: 1000
+	DeliversCash:
+		Payload: 500
+	Mobile:
+		Speed: 75
+		Locomotor: swimsuit
+	RevealsShroud:
+		Range: 8c0
+	Tooltip:
+		Name: Navy SEAL
+	Tooltip@NoRow:
+		Name: Navy SEAL
+	Armament@primary:
+		Weapon: MP5
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: MP5E
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite
+	Armament@opentopped:
+		Name: opentopped
+		Weapon: MP5
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite
+	Armament@elite-opentopped:
+		Name: opentopped
+		Weapon: MP5E
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite
+	Voiced:
+		VoiceSet: SealVoice

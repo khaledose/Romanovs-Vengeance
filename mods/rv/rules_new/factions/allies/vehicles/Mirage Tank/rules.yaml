@@ -1,0 +1,105 @@
+mgtk:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@VETERAN: ^ProducibleAsVeteranVehicle
+	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@RADIATON: ^DamagedByRadiation10Percent
+	Buildable:
+		Queue: Vehicle.Shared, Vehicle.Allies
+		BuildPaletteOrder: 110
+		Prerequisites: ~vehicle.allies, gatech, ~techlevel.3
+		Description: Tank that appears as a tree while immobile.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nUpgradeable with:\n- Composite Armor
+		BuildDuration: 500
+		BuildDurationModifier: 100
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Valued:
+		Cost: 1000
+	DeliversCash:
+		Payload: 1000
+		Voice: Move
+	Tooltip:
+		RequiresCondition: !tree && showownername
+	Tooltip@NoRow:
+		Name: Mirage Tank
+		RequiresCondition: !tree && !showownername
+	MirageTooltip@Tree:
+		Name: Mirage Tank
+		GenericName: Tree
+		GenericVisibility: Enemy, Neutral
+		RequiresCondition: tree && showownername
+	MirageTooltip@TreeNoRow:
+		Name: Mirage Tank
+		GenericName: Tree
+		ShowOwnerRow: false
+		GenericVisibility: Enemy, Neutral
+		RequiresCondition: tree && !showownername
+	Selectable:
+		Bounds: 1544, 2509, 0, -289
+	Health:
+		HP: 20000
+	Armor:
+		Type: Heavy
+	Mobile:
+		TurnSpeed: 32
+		Speed: 105
+		Locomotor: heavytracked
+	RevealsShroud:
+		Range: 9c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 9c0
+	RevealOnDeath:
+		Radius: 9c0
+	Armament@primary:
+		Weapon: MirageGun
+		Damage: 100
+		LocalOffset: 640,0,640
+		MuzzleSequence: muzzle
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: MirageGunE
+		Damage: 150
+		LocalOffset: 640,0,640
+		MuzzleSequence: muzzle
+		RequiresCondition: rank-elite
+	WithMuzzleOverlay:
+	Mirage:
+		RequiresCondition: !chronodisable
+		InitialDelay: 25
+		RevealDelay: 25
+		RevealOn: Attack, Move
+		MirageCondition: tree
+		DefaultTargetTypes: tree01, tree02, tree03, tree04
+	AttackFollowFrontal:
+		Voice: Attack
+		FacingTolerance: 2
+		MustFaceTarget: true
+		PauseOnCondition: chronodisable
+	AutoTarget:
+		AllowMovement: false
+	RenderSprites:
+		Palette: terrain
+	WithMirageSpriteBody:
+		RequiresCondition: tree
+	RenderVoxels:
+	WithVoxelBody:
+		RequiresCondition: !tree
+	Voiced:
+		VoiceSet: MirageTankVoice
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidRelationships: None
+	HitShape:
+	# GrantConditionOnMovement@MoveStart:
+	#	Condition: moving
+	#	ValidMovementTypes: Horizontal
+	# SoundAnnouncement:
+	#	SoundFiles: vmirstaa.wav, vmirstab.wav, vmirstac.wav
+	#	Volume: 0.35
+	#	RequiresCondition: moving

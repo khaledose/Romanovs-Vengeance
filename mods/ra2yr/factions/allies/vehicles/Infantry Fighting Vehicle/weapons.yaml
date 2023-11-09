@@ -1,0 +1,195 @@
+HoverMissile:
+	Inherits@1: ^HE
+	Inherits@2: ^Missile
+	ReloadDelay: 50
+	Range: 6c0
+	MinRange: 1c0
+	Burst: 2
+	Report: vifvatta.wav
+	ValidTargets: Ground, Water, Air
+	Warhead@1Dam: SpreadDamage
+		Damage: 2500
+		ValidTargets: Ground, Water, Air
+
+HoverMissileE:
+	Inherits: HoverMissile
+	Burst: 4
+	Warhead@1Dam: SpreadDamage
+		Damage: 8000
+
+# HoverMissile:
+# 	Inherits: ^Missile
+# 	ReloadDelay: 50
+# 	Burst: 2
+# 	Range: 6c0
+# 	Report: vifvatta.wav
+# 	ValidTargets: Ground, Water
+# 	Projectile: Missile
+# 		Speed: 512
+# 		Arm: 2
+# 		RangeLimit: 12c0
+# 		ContrailStartColor: D8D8FF
+# 		MinimumLaunchAngle: 255
+# 		MaximumLaunchAngle: 255
+# 		MaximumLaunchSpeed: 384
+# 		MinimumLaunchSpeed: 384
+# 	Warhead@1Dam: SpreadDamage
+# 		Spread: 0c128
+# 		Falloff: 100, 83, 67, 50, 0
+# 		Damage: 3000
+# 		ValidTargets: Ground, Water
+# 		Versus:
+# 			None: 100
+# 			Flak: 100
+# 			Plate: 90
+# 			Light: 100
+# 			Medium: 35
+# 			Heavy: 35
+# 			Wood: 70
+# 			Steel: 35
+# 			Concrete: 60
+# 			Drone: 20
+# 			Rocket: 200
+# 		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, SuppressTerrorDrone, NonTemporal
+# 	Warhead@2Eff: CreateEffect
+# 		Explosions: small_grey_explosion
+# 		ImpactSounds: gexpifva.wav
+# 		ValidTargets: Ground, Air
+# 	Warhead@3EffWater: CreateEffect
+# 		Explosions: small_watersplash
+# 		ImpactSounds: gexpwasa.wav
+# 		ValidTargets: Water
+# 	Warhead@4Smu: LeaveSmudge
+# 		SmudgeType: SmallCrater
+
+# HoverMissileE:
+# 	Inherits: HoverMissile
+# 	Burst: 4
+# 	Projectile: Missile
+# 		ContrailStartColor: EA0000
+# 	Warhead@2Eff: CreateEffect
+# 		Explosions: medium_grey_explosion
+# 		ImpactSounds: gexp15a.wav
+
+# HoverMissileAA:
+# 	Inherits: HoverMissile
+# 	Range: 8c0
+# 	ValidTargets: Air
+# 	Projectile: Missile
+# 		RangeLimit: 14c512
+# 	Warhead@1Dam: SpreadDamage
+# 		ValidTargets: Air
+
+# HoverMissileAAE:
+# 	Inherits: HoverMissileE
+# 	Range: 8c0
+# 	ValidTargets: Air
+# 	Projectile: Missile
+# 		RangeLimit: 14c512
+# 		ContrailStartColor: EA0000
+# 	Warhead@1Dam: SpreadDamage
+# 		ValidTargets: Air
+
+RepairBullet:
+	ReloadDelay: 80
+	Range: 1c819
+	Report: vifvrepa.wav
+	ValidTargets: Repair
+	Projectile: InstantHit
+	Warhead@1Dam: SpreadDamage
+		Spread: 213
+		Damage: -5000
+		ValidTargets: Repair
+		DamageTypes: KillsDrone, NonTemporal
+
+CRM60:
+	Inherits: M60
+	ReloadDelay: 25
+	Burst: 2
+	Range: 6c0
+	Report: vifvat2a.wav, vifvat2b.wav, vifvat2c.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 2000
+
+CRFlakGuyGun:
+	Inherits: FlakGuyGun
+	Range: 7c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 3000
+
+CRMP5:
+	Inherits: MP5
+	Range: 7c0
+
+CRElectricBolt:
+	Inherits: ElectricBolt
+	Range: 6c0
+	ReloadDelay: 45
+	Warhead@1Dam: SpreadDamage
+		Damage: 6000
+
+CRTerrorBomb:
+	Inherits: TerrorBomb
+	Warhead@1Dam: SpreadDamage
+		Damage: 50000 # 25000
+
+CRTargetedTerrorBomb:
+	Inherits: TargetedTerrorBomb
+	Warhead@1Dam: SpreadDamage
+		Damage: 50000 # 25000
+
+CRRadBeamWeapon:
+	Inherits: RadBeamWeapon
+	Range: 7c0
+	ReloadDelay: 75
+	Warhead@1Dam: SpreadDamage
+		Damage: 17500
+
+CRNeutronRifle:
+	Inherits: NeutronRifle
+	Range: 6c0
+	Warhead@Damage: Temporal
+		Damage: 1200
+
+# CRNeutronRifleSound:
+# 	Inherits: NeutronRifleSound
+# 	Range: 6c0
+
+CRPsychicJab:
+	Inherits: PsychicJab
+	Range: 6c512
+	Warhead@1Dam: SpreadDamage
+		Damage: 2500
+
+CRVirusGun:
+	Inherits: VirusGun
+	ReloadDelay: 180
+	Range: 12c0
+
+CRPsiWave:
+	Inherits: PsiWave
+	ReloadDelay: 40
+	Projectile: InstantExplode
+
+CRSuperPsiWave:
+	Inherits: SuperPsiWave
+	ReloadDelay: 20
+	Projectile: InstantExplode
+
+CRMissileLauncher:
+	Inherits: MissileLauncher
+	ReloadDelay: 80
+	Burst: 3
+	BurstDelays: 5
+	Projectile: Missile
+		RangeLimit: 11c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 4000
+
+CRMissileLauncherAA:
+	Inherits: MissileLauncher
+	ReloadDelay: 80
+	Burst: 3
+	BurstDelays: 5
+	Warhead@1Dam: SpreadDamage
+		Damage: 4000

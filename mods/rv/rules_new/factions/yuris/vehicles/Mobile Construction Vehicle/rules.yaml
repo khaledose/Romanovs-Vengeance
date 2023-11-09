@@ -1,0 +1,33 @@
+pcv:
+	Inherits: ^ConstructionVehicle
+	Buildable:
+		Queue: Vehicle.Shared, Vehicle.Yuri, Ship.Shared, Ship.Yuri
+		Description: Deploys into a Construction Yard.\n\n  Unarmed\n\nAbilities:\n- Can move over water\n\nUpgradeable with:\n- Grinder Treads\n- Chaos Tank Compensators (Yurigrad)
+		Prerequisites: ~vehicleorship.yuri, yagrnd, ~techlevel.2, ~!global-suddendeath, ~!ai.mcv
+	Hovers:
+		Ticks: 10
+		FallTicks: 5
+		BobDistance: -48
+		InitialHeight: 48
+		# PauseOnCondition: chronodisable
+		RequiresCondition: in_water && !magnefreeze
+	Transforms:
+		IntoActor: yacnst
+	Voiced:
+		VoiceSet: YuriConstructionVehicleVoice
+
+pcv.colorpicker:
+	Inherits: pcv
+	Mobile:
+		InitialFacing: 640
+	-Buildable:
+	-MapEditorData:
+	WithVoxelBody:
+		ShowShadow: false
+	-WithVoxelBody@Water:
+	RenderSprites:
+		Image: pcv
+		Palette: colorpicker
+	RenderVoxels:
+		Image: pcv
+		Palette: colorpicker

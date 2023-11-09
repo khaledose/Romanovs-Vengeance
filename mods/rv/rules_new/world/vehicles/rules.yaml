@@ -1,0 +1,248 @@
+bus:
+	Inherits: ^CivVehicle
+	Tooltip:
+		Name: School Bus
+	Tooltip@NoRow:
+		Name: School Bus
+	Cargo:
+		Types: Infantry, Garrisoner, SmallVehicle
+		MaxWeight: 5
+		AfterLoadDelay: 0
+		BeforeUnloadDelay: 0
+		AfterUnloadDelay: 0
+		UnloadVoice: Move
+	WithCargoSounds:
+		EnterSound: genter1a.wav
+		ExitSound: gexit1a.wav
+	WithCargoPipsDecoration:
+		Margin: 4, 3
+		Palette: ra
+		Position: BottomLeft
+		RequiresSelection: true
+		CustomPipSequences:
+			gray: pip-gray
+			yellow: pip-yellow
+			blue: pip-blue
+			red: pip-red
+
+limo:
+	Inherits: bus
+	Tooltip:
+		Name: Limousine
+	Tooltip@NoRow:
+		Name: Limousine
+
+pick:
+	Inherits: ^CivVehicle
+	Tooltip:
+		Name: Pickup Truck
+	Tooltip@NoRow:
+		Name: Pickup Truck
+
+car:
+	Inherits: ^CivVehicle
+	Tooltip:
+		Name: Automobile
+	Tooltip@NoRow:
+		Name: Automobile
+
+wini:
+	Inherits: ^CivVehicle
+	Tooltip:
+		Name: Recreational Vehicle
+	Tooltip@NoRow:
+		Name: Recreational Vehicle
+	RenderVoxels:
+		NormalsPalette: ts-normals
+
+propa:
+	Inherits: ^CivVehicle
+	Tooltip:
+		Name: Propaganda Truck
+	Tooltip@NoRow:
+		Name: Propaganda Truck
+
+cop:
+	Inherits: ^CivVehicle
+	Tooltip:
+		Name: Police Car
+	Tooltip@NoRow:
+		Name: Police Car
+
+euroc:
+	Inherits: ^CivVehicle
+	Tooltip:
+		Name: Automobile
+	Tooltip@NoRow:
+		Name: Automobile
+	RenderVoxels:
+		NormalsPalette: ts-normals
+
+cona:
+	Inherits: ^CivVehicle
+	Tooltip:
+		Name: Excavator
+	Tooltip@NoRow:
+		Name: Excavator
+	RenderVoxels:
+		NormalsPalette: ts-normals
+
+trucka:
+	Inherits: ^CivVehicle
+	Tooltip:
+		Name: Truck
+	Tooltip@NoRow:
+		Name: Truck
+
+truckb:
+	Inherits: ^CivVehicle
+	Tooltip:
+		Name: Truck
+	Tooltip@NoRow:
+		Name: Truck
+
+suvb:
+	Inherits: ^CivVehicle
+	Tooltip:
+		Name: Automobile
+	Tooltip@NoRow:
+		Name: Automobile
+
+suvw:
+	Inherits: ^CivVehicle
+	Tooltip:
+		Name: Automobile
+	Tooltip@NoRow:
+		Name: Automobile
+
+stang:
+	Inherits: ^CivVehicle
+	Tooltip:
+		Name: Automobile
+	Tooltip@NoRow:
+		Name: Automobile
+	RenderVoxels:
+		NormalsPalette: ts-normals
+
+ptruck:
+	Inherits: ^CivVehicle
+	Tooltip:
+		Name: Pickup Truck
+	Tooltip@NoRow:
+		Name: Pickup Truck
+
+taxi:
+	Inherits: ^CivVehicle
+	Tooltip:
+		Name: Taxi
+	Tooltip@NoRow:
+		Name: Taxi
+	RenderVoxels:
+		NormalsPalette: ts-normals
+
+#Yuri's Revenge Vehicles
+ambu:
+	Inherits: ^CivVehicle
+	Tooltip:
+		Name: Ambulance
+	Tooltip@NoRow:
+		Name: Ambulance
+
+bcab:
+	Inherits: ^CivVehicle
+	Tooltip:
+		Name: Black Cab
+	Tooltip@NoRow:
+		Name: Black Cab
+
+cblc:
+	Inherits: ^CivVehicle
+	Tooltip:
+		Name: Cable Car
+	Tooltip@NoRow:
+		Name: Cable Car
+
+ddbx:
+	Inherits: bus
+	Tooltip:
+		Name: Bus
+	Tooltip@NoRow:
+		Name: Bus
+
+doly:
+	Inherits: ^CivVehicle
+	Tooltip:
+		Name: Camera Dolly
+	Tooltip@NoRow:
+		Name: Camera Dolly
+
+ftrk:
+	Inherits: ^CivVehicle
+	Tooltip:
+		Name: Fire Truck
+	Tooltip@NoRow:
+		Name: Fire Truck
+
+jeep:
+	Inherits: ^CivVehicle
+	Tooltip:
+		Name: Pickup Truck
+	Tooltip@NoRow:
+		Name: Pickup Truck
+
+ycab:
+	Inherits: ^CivVehicle
+	Tooltip:
+		Name: Yellow Cab
+	Tooltip@NoRow:
+		Name: Yellow Cab
+
+civp:
+	Inherits: ^CivVehicle
+	Tooltip:
+		Name: Passenger Plane
+	Tooltip@NoRow:
+		Name: Passenger Plane
+
+# Custom Vehicles
+truckc:
+	Inherits: ^CivVehicle
+	Tooltip:
+		Name: Truck
+	Tooltip@NoRow:
+		Name: Truck
+
+car2:
+	Inherits: ^CivVehicle
+	Tooltip:
+		Name: Automobile
+	Tooltip@NoRow:
+		Name: Automobile
+
+car3:
+	Inherits: ^CivVehicle
+	Tooltip:
+		Name: Automobile
+	Tooltip@NoRow:
+		Name: Automobile
+
+mixer:
+	Inherits: ^CivVehicle
+	Tooltip:
+		Name: Cement Mixer
+	Tooltip@NoRow:
+		Name: Cement Mixer
+
+flata:
+	Inherits: ^CivVehicle
+	Tooltip:
+		Name: Missile Truck
+	Tooltip@NoRow:
+		Name: Missile Truck
+
+flatb:
+	Inherits: ^CivVehicle
+	Tooltip:
+		Name: Empty Truck
+	Tooltip@NoRow:
+		Name: Empty Truck

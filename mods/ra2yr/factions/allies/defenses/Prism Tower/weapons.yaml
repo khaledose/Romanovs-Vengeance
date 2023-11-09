@@ -1,0 +1,14 @@
+PrismShot:
+	Inherits@1: ^Prism
+	ReloadDelay: 1
+	Range: 8c0
+	Report: bpriat1a.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 12000
+
+PrismSupport:
+	Inherits: PrismShot
+	ValidTargets: Ground, Water
+	Warhead@1Dam: SpreadDamage
+		Damage: 0
+	AirThreshold: 5000

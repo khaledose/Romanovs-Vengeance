@@ -1,0 +1,80 @@
+gaspysat:
+	Inherits: ^SupportBuilding
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@MC: ^MindControllableBuilding
+	Inherits@SHAPE: ^2x2Shape
+	Buildable:
+		Queue: Support.Shared, Support.Allies
+		BuildPaletteOrder: 110
+		Prerequisites: ~building.allies, gatech, ~techlevel.4
+		Description: Provides Satellite Scan power, which reveals the map for a while.\nProvides Radar.\n\n  Requires power to operate.
+		BuildDuration: 1000
+		BuildDurationModifier: 100
+	Valued:
+		Cost: 1500
+	Tooltip:
+	Tooltip@NoRow:
+		Name: Spy Satellite Uplink
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 50000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 15c0
+		RequiresCondition: !disabled
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 15c0
+	#	RequiresCondition: !disabled
+	RevealsShroud@DISABLED:
+		Range: 5c0
+		RequiresCondition: disabled
+	# RevealsShroudToIntelligenceOwner@DISABLED:
+	#	Types: SatelliteScan
+	#	Range: 5c0
+	#	RequiresCondition: disabled
+	WithIdleOverlay@dish:
+		Sequence: idle-dish
+		PauseOnCondition: disabled || chronodisable
+		RequiresCondition: !build-incomplete
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
+	Power:
+		Amount: -100
+		RequiresCondition: !chronodisable
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower || powerdown
+	ExternalCondition@disableradar:
+		Condition: disableradar
+	ProvidesRadar:
+		RequiresCondition: !disabled && !chronodisable && !disableradar
+	ProvidesPrerequisite@default:
+	Production:
+		Produces: SpySatellite
+	Exit:
+	SupportPowerChargeBar:
+	ProduceActorPower@SatelliteScan:
+		PauseOnCondition: disabled || chronodisable
+		Prerequisites:
+			1: gaspysat
+		Names:
+			1: Satellite Scan
+		Descriptions:
+			1: Reveals the whole map for 30 seconds.\nActivated automatically.
+		Icons:
+			1: satscan
+		Actors: camera.satscan
+		Type: SpySatellite
+		# AutoFire: true
+		ChargeInterval: 4500
+		OrderName: SatelliteScanPowerInfoOrder
+	IsometricSelectable:
+		DecorationHeight: 75
+	Voiced:
+		VoiceSet: SpySatelliteVoice
+		Volume: 0.8
+

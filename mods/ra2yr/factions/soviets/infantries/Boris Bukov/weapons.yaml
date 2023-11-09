@@ -1,0 +1,62 @@
+AKM:
+	Inherits: ^SA
+	ReloadDelay: 20
+	Range: 7c0
+	Report: iboratta.wav, iborattb.wav
+	InvalidTargets: Bridge, Wall, Fence, Tree, Structure, WaterStructure
+	Warhead@1Dam: SpreadDamage
+		Damage: 6500
+		Versus:
+			None: 200
+			Flak: 200
+			Plate: 100
+			Light: 50
+			Medium: 50
+			Heavy: 50
+			Wood: 1
+			Steel: 1
+			Concrete: 1
+			Drone: 100
+			Rocket: 100
+		DamageTypes: Prone70Percent, TriggerProne, BulletDeath, NonTemporal
+		InvalidTargets: Bridge, Wall, Fence, Tree, Structure, WaterStructure
+
+AKME:
+	Inherits: AKM
+	Range: 9c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 9000
+
+Flare:
+	ReloadDelay: 1
+	Range: 12c0
+	ValidTargets: Structure, WaterStructure
+	InvalidTargets: Barrel, Mine
+	TargetActorCenter: true
+	Projectile: LaserZap
+		Width: 12
+		Duration: 8
+		SecondaryBeam: true
+		SecondaryBeamWidth: 30
+		SecondaryBeamColor: FF000030
+	Warhead@1Dam: TargetDamage
+		ValidTargets: Structure, WaterStructure
+	Warhead@2Con: GrantExternalCondition
+		ValidTargets: Structure, WaterStructure
+		Range: 0c32
+		Duration: 8
+		Condition: flare
+
+FlareSAW:
+	Inherits: Flare
+	ReloadDelay: 100
+	Warhead@3Sen: SendAirstrike
+		UnitType: bpln
+		SquadSize: 2
+		SquadOffset: -0c512, 0c512, 0
+
+FlareSAWE:
+	Inherits: FlareSAW
+	ReloadDelay: 50
+	Warhead@3Sen: SendAirstrike
+		SquadSize: 4

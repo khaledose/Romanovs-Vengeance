@@ -1,0 +1,417 @@
+^Infantry:
+	Inherits@1: ^ExistsInWorld
+	Inherits@2: ^SpriteActor
+	Inherits@3: ^ChronoDisable
+	Inherits@4: ^HospitalHealing
+	Inherits@5: ^KilledByIronCurtain
+	Inherits@9: ^CrateStatModifiers
+	Inherits@10: ^PlayerHandicaps
+	Inherits@11: ^FlatSelectionMode
+	Inherits@12: ^SuddenDeathModifier
+	Inherits@13: ^WithTooltip
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Selectable:
+		Bounds: 482, 1448, 0, -530
+	SelectionDecorations:
+		MinimumZoom: 0
+	WithTextControlGroupDecoration:
+	RevealOnFire:
+		ArmamentNames: primary, secondary, deployed, sapper
+		Duration: 50
+	RevealOnDeath:
+		Radius: 5c0
+		Duration: 125
+	HiddenUnderFog:
+	OwnerLostAction:
+		Action: Kill
+		DeathTypes: BulletDeath, NonTemporal
+	ActorLostNotification:
+		TextNotification: Unit lost.
+	HitShape:
+		Type: Circle
+			Radius: 128
+	Cloneable:
+		Types: Infantry
+	RenderSprites:
+		PlayerPalette: infantry
+	GrantConditionOnDamageState@DAMAGED:
+		Condition: damaged
+		ValidDamageStates: Light, Medium, Heavy, Critical
+	GrantConditionOnBotOwner@Cheater:
+		Condition: cheater-ai
+		Bots: cheater
+	GrantConditionOnBotOwner@Vengeful:
+		Condition: vengeful-ai
+		Bots: vengeful
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
+
+^GroundInfantry:
+	Inherits: ^Infantry
+	Inherits@1: ^WithDeathEffects 
+	Inherits@2: ^DamagedByRadiation100Percent
+	Inherits@3: ^AcceptsIvanBomb
+	Inherits@4: ^ParachutableInfantry
+	Inherits@5: ^Berserkable
+	Buildable:
+		BuildAtProductionType: Soldier
+		BuildDurationModifier: 100
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Mobile:
+		Voice: Move
+		Locomotor: foot
+		AlwaysTurnInPlace: true
+		TurnsWhileMoving: true
+		RequiresCondition: !chronodisable
+	TakeCover:
+		DamageModifiers:
+			Prone30Percent: 30
+			Prone50Percent: 50
+			Prone70Percent: 70
+			Prone80Percent: 80
+			Prone100Percent: 100
+		DamageTriggers: TriggerProne
+	Crushable:
+		WarnProbability: 0
+		CrushClasses: vehicle
+		CrushSound: igensqua.wav
+	Guard:
+		Voice: Attack
+	Guardable:
+	Targetable:
+		TargetTypes: Ground, Infantry, DetonateAttack, Disguise
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 2
+		PauseOnCondition: chronodisable
+	EdibleByLeap:
+	Passenger:
+		Voice: Move
+		CargoType: Garrisoner
+	Chronoshiftable:
+		ExplodeInstead: true
+		ReturnToOrigin: false
+	TurnOnIdle:
+		MinDelay: 125
+		MaxDelay: 250
+	WithInfantryBody:
+		IdleSequences: idle1, idle2
+		StandSequences: stand
+		MoveSequence: run
+		DefaultAttackSequence: shoot
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+	MapEditorData:
+		Categories: Infantry - Ground
+
+^AirInfantry:
+	Inherits: ^Infantry
+	Buildable:
+		BuildAtProductionType: Soldier
+		BuildDurationModifier: 100
+	Aircraft:
+		CruiseAltitude: 3c852
+		InitialFacing: 80
+		TurnSpeed: 787
+		AltitudeVelocity: 240
+		MaximumPitch: 128
+		Voice: Move
+		AirborneCondition: airborne
+		IdealSeparation: 512
+		VTOL: true
+		CanSlide: true
+		CanHover: true
+	Hovers:
+		BobDistance: -45
+	AttackAircraft:
+		Voice: Attack
+		FacingTolerance: 2
+		AttackType: Hover
+	Targetable:
+		TargetTypes: Air, Disguise
+		RequiresCondition: airborne
+	DeathSounds:
+	WithInfantryBody:
+		StandSequences: fly
+		MoveSequence: fly
+		DefaultAttackSequence: shoot
+		IdleSequences: idle
+		RequiresCondition: airborne
+	WithSpriteBody:
+		Name: shadow
+		Sequence: shadow
+		ForceToGround: true
+		RequiresCondition: airborne
+	GrantConditionOnTerrain@Water:
+		TerrainTypes: Water, Beach
+		Condition: water
+	SpawnActorOnDeath:
+		RequiresCondition: airborne
+	MapEditorData:
+		Categories: Infantry - Air
+
+^Civilian:
+	Inherits: ^GroundInfantry
+	Inherits@MC: ^MindControllable
+	Buildable:
+		Queue: Infantry.Civilian
+		BuildAtProductionType: Civilian
+		BuildDurationModifier: 100
+	Health:
+		HP: 5000
+	Armor:
+		Type: None
+	Valued:
+		Cost: 10
+	DeliversCash:
+		Payload: 100
+	Mobile:
+		Speed: 60
+	RevealsShroud:
+		Range: 2c0
+	Tooltip:
+		Name: Civilian
+		GenericName: Civilian
+	Tooltip@NoRow:
+		Name: Civilian
+		GenericName: Civilian
+	WithInfantryBody:
+		IdleSequences: idle1
+	MapEditorData:
+		Categories: Infantry - Civilian
+
+^CommandoInfantry:
+	Inherits: ^GroundInfantry
+	Inherits@SELFHEALING: ^SelfHealing
+	Buildable:
+		BuildLimit: 1
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	NotificationAnnouncement:
+		RequiresCondition: produced
+	MapEditorData:
+		Categories: Infantry - Commando
+	-Crushable:
+
+^ChronoInfantry:
+	Inherits: ^GroundInfantry
+	ChronoMobile:
+		Voice: Move
+		Locomotor: chrono
+		AlwaysTurnInPlace: true
+		TurnsWhileMoving: true
+		RequiresCondition: !chronodisable
+		ChargeDelay: 120
+		TeleportCondition: chronoed
+		TeleportEffect: effect50alpha
+		TeleportEffectSequence: temporal_explosion
+		PauseOnCondition: affectedbytemporal
+		ChronoshiftSound: ichrmova.wav
+	Chronoshiftable:
+		ExplodeInstead: false
+	GrantCondition@ChronoDisable:
+		RequiresCondition: affectedbytemporal || chronoed
+	MapEditorData:
+		Categories: Infantry - Chrono
+	-Mobile:
+	-Crushable:
+
+^MinerInfantry:
+	Inherits: ^GroundInfantry
+	BaseSpawnerSlave:
+	Harvester:
+		DeliveryBuildings: yarefn
+		Resources: Ore, Gems
+		MaxUnloadQueue: 9
+		UnloadQueueCostModifier: 4
+		BaleLoadDelay: 24
+		BaleUnloadDelay: 1
+		FullyLoadedSpeed: 100
+		HarvestVoice: Move
+		DeliverVoice: Move
+		EmptyCondition: no-ore
+	StoresResources:
+		Capacity: 4
+		Resources: Ore, Gems
+	DockClientManager:
+		Voice: Move
+	WithFacingSpriteBody:
+		Sequence: harvest
+		RequiresCondition: harvesting && !parachute
+	GrantConditionOnHarvest:
+		Condition: harvesting
+	WithInfantryBody:
+		RequiresCondition: no-ore && !harvesting && !parachute 
+	WithInfantryBody@full:
+		MoveSequence: full-run
+		DefaultAttackSequence: shoot
+		RequiresCondition: !no-ore && !harvesting && !parachute
+	WithResourceStoragePipsDecoration:
+		Margin: 4, 3
+		Palette: ra
+		Position: BottomLeft
+		RequiresSelection: true
+		PipCount: 4
+		ResourceSequences:
+			Ore: pip-yellow
+			Gems: pip-blue
+	MapEditorData:
+		Categories: Infantry - Miner
+
+^GroundAnimal:
+	Inherits: ^Infantry
+	Inherits@1: ^WithNormalDeathEffects
+	Inherits@2: ^DamagedByRadiation100Percent
+	Inherits@3: ^AcceptsIvanBomb
+	Inherits@4: ^ParachutableInfantry
+	Inherits@5: ^Berserkable
+	Buildable:
+		Queue: Infantry.Animal
+		BuildAtProductionType: Animal
+		BuildDurationModifier: 100
+	Mobile:
+		Speed: 60
+		Voice: Move
+		Locomotor: foot
+		AlwaysTurnInPlace: true
+		TurnsWhileMoving: true
+		RequiresCondition: !chronodisable
+	Targetable:
+		TargetTypes: Ground, Infantry, DetonateAttack, Disguise
+	Guard:
+		Voice: Attack
+	Guardable:
+	Passenger:
+		Voice: Move
+		CargoType: Garrisoner
+	Wanders:
+		MinMoveDelay: 150
+		MaxMoveDelay: 750
+	Chronoshiftable:
+		ExplodeInstead: true
+		ReturnToOrigin: false
+	TurnOnIdle:
+		MinDelay: 125
+		MaxDelay: 250
+	WithInfantryBody:
+		IdleSequences: idle1, idle2
+		StandSequences: stand
+		MoveSequence: run
+		DefaultAttackSequence: shoot
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 2
+		PauseOnCondition: chronodisable
+	EdibleByLeap:
+	MapEditorData:
+		Categories: Animal - Ground
+
+^NewSeaAnimal:
+	Inherits: ^Infantry
+	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	Buildable:
+		Queue: Ship.Civilian
+		BuildAtProductionType: Sea Animal
+		BuildDurationModifier: 100
+	Mobile:
+		TurnSpeed: 1023
+		Locomotor: naval
+		Voice: Move
+	RevealOnDeath:
+		Radius: 8c0
+		Duration: 125
+	Tooltip:
+		Name: Sea Animal
+		GenericName: Sea Animal
+	Tooltip@NoRow:
+		Name: Sea Animal
+		GenericName: Sea Animal
+	AttackFollowFrontal:
+		Voice: Attack
+		FacingTolerance: 2
+		MustFaceTarget: true
+		PauseOnCondition: chronodisable
+	Targetable:
+		TargetTypes: Ground, Water, SeaAnimal
+	Targetable@REPAIR:
+		RequiresCondition: damaged
+		TargetTypes: SeaAnimalRepair
+	RepairableNear:
+		Voice: Move
+		CloseEnough: 3c0
+		RepairActors: gayard, nayard, yayard
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidRelationships: None
+	DeathSounds:
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+	WithInfantryBody:
+		MinIdleDelay: 1
+		MaxIdleDelay: 2
+		IdleSequences: idle
+		StandSequences: stand
+		DefaultAttackSequence: shoot
+	WithDeathAnimation:
+		UseDeathTypeSuffix: false
+	MapEditorData:
+		Categories: Animal - Sea
+
+^HuskInfantry:
+	Inherits@1: ^ExistsInWorld
+	Inherits@2: ^SpriteActor
+	Health:
+		HP: 160
+	HitShape:
+	HiddenUnderFog:
+	ScriptTriggers:
+	MapEditorData:
+		Categories: Infantry - Husk
+
+^AirInfantryHusk:
+	Inherits: ^HuskInfantry
+	Aircraft:
+		VTOL: true
+		CanSlide: true
+		CanHover: true
+	FallsToEarth:
+		Explosion: InfantryExplode
+		Velocity: 240
+	WithSpriteBody@shadow:
+		Name: shadow
+		Sequence: shadow
+		ForceToGround: true
+	BodyOrientation:
+		QuantizedFacings: 0
+		CameraPitch: 85
+	WithFacingSpriteBody:
+	Interactable:
+	RangedGpsDot:
+		Sequence: Infantry
+
+FLAMEGUY:
+	Inherits: ^HuskInfantry
+	Mobile:
+		Speed: 71
+		Locomotor: flameguy
+	RenderSprites:
+		Palette: flameguy
+	WithInfantryBody:
+		IdleSequences: run
+	ChangesHealth:
+		Step: -10
+		StartIfBelow: 101
+	ScaredyCat:
+		PanicSequencePrefix:
+	WithDeathAnimation:
+		FallbackSequence: die
+		UseDeathTypeSuffix: false
+		DeathSequencePalette: flameguy
+		DeathPaletteIsPlayerPalette: false

@@ -1,0 +1,105 @@
+# terror:
+# 	Inherits: ^Infantry
+# 	Inherits@CHAOS: ^Berserkable
+# 	Inherits@MC: ^MindControllable
+# 	Inherits@VOICES: ^WithFeedbackVoicelines
+# 	Buildable:
+# 		Queue: Infantry.Shared, Infantry.Soviets, Infantry.Cuba
+# 		BuildAtProductionType: Soldier
+# 		BuildPaletteOrder: 90
+# 		Description: Carries C4 charges taped to his body and kamikazes enemies\nblowing them up quickly and efficiently.\n\n  Strong vs Ground units\n  Weak vs Aircraft\n\nUpgradeable with:\n- Targeted Explosives (Cuba)
+# 		Prerequisites: ~infantry.cuba, naradr, ~techlevel.3
+# 		BuildDuration: 125
+# 		BuildDurationModifier: 100
+# 	UpdatesPlayerStatistics:
+# 		AddToArmyValue: true
+# 	Valued:
+# 		Cost: 200
+# 	DeliversCash:
+# 		Payload: 100
+# 	Tooltip:
+# 	Tooltip@NoRow:
+# 		Name: Terrorist
+# 	Selectable:
+# 		Bounds: 482, 1448, 0, -530
+# 	Health:
+# 		HP: 7500
+# 	Garrisoner:
+# 		Voice: Move
+# 		CustomPipType: gray
+# 		GarrisonType: Garrisoner
+# 	Passenger:
+# 		CustomPipType: gray
+# 	Mobile:
+# 		Speed: 90
+# 	RevealsShroud:
+# 		Range: 6c0
+# 	# RevealsShroudToIntelligenceOwner:
+# 	#	Range: 6c0
+# 	RevealOnDeath:
+# 		Radius: 6c0
+# 	Armor:
+# 		Type: Flak
+# 	Explodes:
+# 		DeathTypes: NonTemporal
+# 		Weapon: TerrorBomb
+# 		EmptyWeapon: TerrorBomb
+# 	Explodes@Targeted:
+# 		DeathTypes: NonTemporal
+# 		Weapon: TargetedTerrorBomb
+# 		EmptyWeapon: TargetedTerrorBomb
+# 	AttackFrontal:
+# 		Voice: Attack
+# 		FacingTolerance: 512
+# 	Armament@PRIMARY:
+# 		Weapon: DemoTruckTargeting
+# 		PauseOnCondition: chronodisable
+# 	GrantConditionOnAttack:
+# 		Condition: triggered
+# 	GrantConditionOnDeploy:
+# 		Voice: Attack
+# 		CanDeployOnRamps: True
+# 		DeployedCondition: triggered
+# 		PauseOnCondition: chronodisable
+# 	KillsSelf@triggered:
+# 		DamageTypes: NonTemporal
+# 		RequiresCondition: triggered
+# 	Voiced:
+# 		VoiceSet: TerroristVoice
+# 	-TakeCover:
+
+# 	QuantizeFacingsFromSequence:
+# 		Sequence: stand
+
+terror:
+	Inherits: ^GroundInfantry
+	Inherits@MC: ^MindControllable
+	Inherits@VOICES: ^WithFeedbackVoicelines
+	Inherits@EXPLODE: ^WithTerroristExplosion
+	Buildable:
+		Queue: Infantry.Shared, Infantry.Soviets, Infantry.Cuba
+		Prerequisites: ~infantry.cuba, naradr, ~techlevel.3
+		Description: Carries C4 charges taped to his body and kamikazes enemies\nblowing them up quickly and efficiently.\n\n  Strong vs Ground units\n  Weak vs Aircraft\n\nUpgradeable with:\n- Targeted Explosives (Cuba)
+		BuildPaletteOrder: 5
+	Health:
+		HP: 7500
+	Armor:
+		Type: Flak
+	Valued:
+		Cost: 200
+	DeliversCash:
+		Payload: 100
+	Mobile:
+		Speed: 90
+	RevealsShroud:
+		Range: 9c0
+	Tooltip:
+		Name: Terrorist
+	Tooltip@NoRow:
+		Name: Terrorist
+	Armament@PRIMARY:
+		Weapon: DemoTruckTargeting
+		PauseOnCondition: chronodisable
+	Voiced:
+		VoiceSet: TerroristVoice
+	-TakeCover:

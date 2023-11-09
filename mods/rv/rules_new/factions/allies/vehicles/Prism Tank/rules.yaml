@@ -1,0 +1,102 @@
+sref:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BUNKER: ^TankBunkerable
+	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@VETERAN: ^ProducibleAsVeteranVehicle
+	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	Buildable:
+		Queue: Vehicle.Shared, Vehicle.Allies
+		BuildPaletteOrder: 100
+		Prerequisites: ~vehicle.allies, gatech, ~techlevel.4
+		Description: Fires deadly beams of light.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
+		BuildDuration: 625
+		BuildDurationModifier: 100
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Valued:
+		Cost: 1200
+	DeliversCash:
+		Payload: 1200
+		Voice: Move
+	Tooltip:
+	Tooltip@NoRow:
+		Name: Prism Tank
+	Selectable:
+		Bounds: 1544, 2509, 0, -482
+	Health:
+		HP: 25000
+	Armor:
+		Type: Light
+	Mobile:
+		TurnSpeed: 32
+		Speed: 75
+		Locomotor: heavytracked
+	RevealsShroud:
+		Range: 6c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 6c0
+	RevealOnDeath:
+		Radius: 6c0
+	Turreted:
+		TurnSpeed: 32
+		Offset: -30,0,85
+	Armament@primary:
+		Weapon: Comet
+		Damage: 100
+		LocalOffset: 240,0,1280
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: SuperComet
+		Damage: 150
+		LocalOffset: 240,0,1280
+		RequiresCondition: rank-elite
+	AttackTurreted:
+		Voice: Attack
+		OpportunityFire: true
+		TargetFrozenActors: true
+		PauseOnCondition: chronodisable || parachute
+	AutoTarget:
+	RenderSprites:
+	RenderVoxels:
+	GrantConditionOnAttack@turretcharge1:
+		Condition: turretcharge
+		RevokeDelay: 5
+	GrantConditionOnAttack@turretcharge2:
+		Condition: turretcharge
+		RevokeDelay: 10
+	GrantConditionOnAttack@turretcharge3:
+		Condition: turretcharge
+		RevokeDelay: 15
+	WithVoxelTurret:
+		RequiresCondition: !turretcharge
+	WithVoxelTurret@stage1:
+		RequiresCondition: turretcharge == 1
+		Sequence: turret-stage1
+	WithVoxelTurret@stage2:
+		RequiresCondition: turretcharge == 2
+		Sequence: turret-stage2
+	WithVoxelTurret@stage3:
+		RequiresCondition: turretcharge == 3
+		Sequence: turret-stage3
+	WithVoxelBody:
+	Voiced:
+		VoiceSet: PrismTankVoice
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidRelationships: None
+	HitShape:
+	# GrantConditionOnMovement@MoveStart:
+	#	Condition: moving
+	#	ValidMovementTypes: Horizontal, Turn
+	# SoundAnnouncement:
+	#	SoundFiles: vpristaa.wav, vpristab.wav, vpristac.wav
+	#	Volume: 0.3
+	#	RequiresCondition: moving
+

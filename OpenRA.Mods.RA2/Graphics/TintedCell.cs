@@ -58,6 +58,7 @@ namespace OpenRA.Mods.RA2.Graphics
 		bool firstTime = true;
 		float3[] screen;
 		int alpha;
+
 		public void Render(WorldRenderer wr)
 		{
 			if (firstTime)
@@ -82,7 +83,7 @@ namespace OpenRA.Mods.RA2.Graphics
 			if (Level == 0)
 				return;
 
-			Game.Renderer.WorldRgbaColorRenderer.FillRect(screen[0], screen[1], screen[2], screen[3], Color.FromArgb(alpha, layer.Info.Color));
+			Game.Renderer.WorldRgbaColorRenderer.FillRect(screen[0], screen[1], screen[2], screen[3], Color.FromArgb(alpha, layer.Info.Color), BlendMode.Multiply);
 		}
 
 		public void SetLevel(int value)
@@ -93,15 +94,18 @@ namespace OpenRA.Mods.RA2.Graphics
 				return;
 
 			// Saturate the visualization to MaxLevel
-			int level = Level.Clamp(0, layer.Info.MaxLevel);
+			var level = Level.Clamp(0, layer.Info.MaxLevel);
 
 			// Linear interpolation
-			alpha = layer.Info.Darkest + (layer.TintLevel * level) / 255;
+			alpha = layer.Info.Darkest + layer.TintLevel * level / 255;
 		}
 
 		public void RenderDebugGeometry(WorldRenderer wr) { }
+
 		public Rectangle ScreenBounds(WorldRenderer wr) { return Rectangle.Empty; }
+
 		public void Tick(World world) { }
+
 		IEnumerable<IRenderable> IEffect.Render(WorldRenderer r) { yield return this; }
 	}
 }

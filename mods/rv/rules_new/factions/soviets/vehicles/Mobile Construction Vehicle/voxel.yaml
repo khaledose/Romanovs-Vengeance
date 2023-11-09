@@ -1,0 +1,3 @@
+smcv:
+	idle: local|smcv
+	water: bits/vehicles/water/smcvw

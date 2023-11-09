@@ -1,0 +1,47 @@
+yapsis:
+	Inherits: ^BaseStructure
+	Inherits@RADAR: ^Radar
+	Inherits@CAPTURE: ^Capturable
+	Inherits@MC: ^MindControllableBuilding
+	Inherits@SPECIAL: PsychicRevealSpecial
+	Inherits@SHAPE: ^2x2Shape
+	Buildable:
+		Queue: Building.Shared, Building.Yuri
+		Prerequisites: ~building.yuri, yarefn, ~techlevel.4
+		Description: Detects enemy units and structures.\n\n  Requires power to operate.
+		BuildPaletteOrder: 40
+	IsometricSelectable:
+		DecorationHeight: 120
+	Power:
+		Amount: -50
+	Health:
+		HP: 75000
+	Armor:
+		Type: Wood
+	Valued:
+		Cost: 1000
+	RevealsShroud:
+		Range: 10c0
+	Tooltip:
+		Name: Yuri Psychic Sensor
+	Tooltip@NoRow:
+		Name: Yuri Psychic Sensor
+	ProvidesPrerequisite:
+		Prerequisite: radar.yuri
+	RangedGpsProvider:
+		Range: 25c0
+		RequiresCondition: !build-incomplete && !chronodisable
+	RenderDetectionCircle:
+	WithRangeCircle:
+		Range: 25c0
+		Type: sensor
+	DetectCloaked:
+		DetectionTypes: Underwater
+		Range: 25c0
+	WithIdleOverlay@spin:
+		Sequence: idle-spin
+		PauseOnCondition: disabled || chronodisable
+		RequiresCondition: !build-incomplete
+	Voiced:
+		VoiceSet: PsychicSensorVoice
+		Volume: 0.8

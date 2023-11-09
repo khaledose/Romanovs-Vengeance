@@ -1,0 +1,39 @@
+gagap:
+	Inherits: ^DefenseStructure
+	Inherits@SHAPE: ^1x1Shape
+	Inherits@DRAIN: ^DiskDefenseDrainable
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@MC: ^MindControllableBuilding
+	Buildable:
+		Queue: Support.Shared, Support.Allies
+		Prerequisites: ~building.allies, gatech, ~techlevel.3
+		Description: Obscures the enemy's view with shroud.\n\n  Requires power to operate.
+		BuildPaletteOrder: 100
+	IsometricSelectable:
+		DecorationHeight: 90
+	Power:
+		Amount: -100
+	Health:
+		HP: 60000
+	Armor:
+		Type: Wood
+	Valued:
+		Cost: 1000
+	RevealsShroud:
+		Range: 5c0
+	Tooltip:
+		Name: Allied Gap Generator
+	Tooltip@NoRow:
+		Name: Allied Gap Generator
+	CreatesShroud:
+		Range: 10c0
+		RequiresCondition: !disabled && !chronodisable
+	RenderShroudCircle:
+	WithIdleOverlay@powered:
+		Sequence: powered
+		PauseOnCondition: disabled || chronodisable
+		RequiresCondition: !build-incomplete
+	Voiced:
+		VoiceSet: GapGeneratorVoice
+		Volume: 0.8
+

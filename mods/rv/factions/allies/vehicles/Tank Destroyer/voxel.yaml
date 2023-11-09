@@ -1,5 +1,0 @@
-tnkd:
-	idle: bits/vehicles/replace/tnkd
-	idle-advanced: bits/vehicles/upgrades/tnkdu
-	idle-armor: bits/vehicles/upgrades/tnkdu2
-	idle-armor-advanced: bits/vehicles/upgrades/tnkdu3

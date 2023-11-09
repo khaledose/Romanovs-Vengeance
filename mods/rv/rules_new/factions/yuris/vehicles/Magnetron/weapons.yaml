@@ -1,0 +1,68 @@
+MagneShake:
+	ReloadDelay: 110
+	Range: 10c0
+	Report: vmagat2a.wav
+	ValidTargets: Structure, Barrel
+	InvalidTargets: Infantry, Tractable
+	Projectile: LaserZap
+		Duration: 110
+		Width: 384
+		Shape: Flat
+		ZOffset: 2047
+		Color: FF50F545
+		UsePlayerColor: false
+	Warhead@1Dam: SpreadDamage
+		Range: 0, 32
+		Falloff: 100, 100
+		Damage: 8000
+		AffectsParent: false
+		ValidTargets: Structure, Barrel
+		DamageTypes: NonTemporal
+	Warhead@2Dam: TargetDamage
+		Damage: 0
+		ValidTargets: Structure, Barrel
+		InvalidTargets: Infantry
+
+MagneShakeE:
+	Inherits: MagneShake
+	Warhead@1Dam: SpreadDamage
+		Damage: 12000
+
+MagneFreeze:
+	ReloadDelay: 110
+	Range: 10c0
+	Report: vmagat1a.wav
+	ValidTargets: Ground, MagneFreezable, Structure, Barrel, Mine
+	InvalidTargets: Infantry
+	Projectile: LaserZap
+		Duration: 50
+		Width: 384
+		Shape: Flat
+		ZOffset: 2047
+		Color: FF50F545
+		UsePlayerColor: false
+	Warhead@1Con: GrantExternalCondition
+		Condition: magnefreeze
+		Duration: 110
+		Range: 0c128
+		ValidRelationships: Neutral, Enemy
+		ValidTargets: MagneFreezable
+
+MagnetronTract:
+	ReloadDelay: 100
+	Range: 15c0
+	Report: vmagat2a.wav
+	ValidTargets: Tractable
+	TargetActorCenter: true
+	Warhead@1Tract: Tractor
+		Spread: 0
+		ValidTargets: Tractable
+		CruiseSpeedMultiplier: 2
+		DamageTypes: DefaultDeath
+	Projectile: LaserZap
+		Duration: 200
+		Width: 384
+		Shape: Flat
+		ZOffset: 2047
+		Color: FF50F545
+		UsePlayerColor: false

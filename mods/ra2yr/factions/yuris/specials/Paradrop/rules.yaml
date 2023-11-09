@@ -1,0 +1,35 @@
+^YuriParadropSpecial:
+	ParatroopersPower@yuris:
+		OrderName: PsiCorpsParatroopers
+		Names:
+			1: Psi-Corps Paratroopers
+		Descriptions:
+			1: 2 Cargo Planes drop 7 Initiates\nanywhere on the map.
+		DropItems:
+			1: init,init,init,init,init,init,init
+		Prerequisites:
+			1: techparadrops.psicorps
+		Icons:
+			1: paradrop
+		BeaconPosters:
+			1: paraicon
+		Cursor: praradrop
+		UnitTypes:
+			1: pdplane
+		SquadSizes:
+			1: 1
+		RequiresCondition: enabled
+		PauseOnCondition: disabled || chronodisable
+		ChargeInterval: 4500
+		AllowMultiple: true
+		SelectTargetSpeechNotification: SelectTarget
+		SelectTargetTextNotification: Select target.
+		EndChargeSpeechNotification: ParatroopersReady
+		EndChargeTextNotification: Paratroopers ready.
+		CameraActor: camera
+		DisplayBeacon: True
+		ArrowSequence: arrow
+		ClockSequence: clock
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: swdirection
+		DirectionArrowPalette: mouse

@@ -1,0 +1,12 @@
+MP5:
+	Inherits: ^HollowPoint
+	ReloadDelay: 30
+	Range: 6c0
+	Report: iseaatta.wav, iseaattb.wav
+	InvalidTargets: Bridge, Wall, Fence, Tree, Structure, WaterStructure, Ship
+	Warhead@1Dam: SpreadDamage
+		Damage: 12500
+
+MP5E:
+	Inherits: MP5
+	ReloadDelay: 10

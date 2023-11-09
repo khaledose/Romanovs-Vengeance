@@ -10,6 +10,7 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using OpenRA.Mods.AS.Traits;
 using OpenRA.Mods.Common;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Traits;
@@ -166,7 +167,7 @@ namespace OpenRA.Mods.RA2.Traits
 
 					// If there's something left to spawn, restart the timer.
 					if (SelectEntryToSpawn(SlaveEntries) != null)
-						respawnTicks = Util.ApplyPercentageModifiers(Info.RespawnTicks, reloadModifiers.Select(rm => rm.GetReloadModifier()));
+						respawnTicks = Util.ApplyPercentageModifiers(Info.RespawnTicks, reloadModifiers.Select(rm => rm.GetReloadModifier("")));
 				}
 			}
 		}

@@ -1,0 +1,151 @@
+# brute:
+# 	Inherits: ^Infantry
+# 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+# 	Inherits@CHAOS: ^Berserkable
+# 	Inherits@EXPERIENCE: ^GainsExperience
+# 	Inherits@VETERAN: ^ProducibleAsVeteranInfantry
+# 	Inherits@VOICES: ^WithFeedbackVoicelines
+# 	Buildable:
+# 		Queue: Infantry.Shared, Infantry.Yuri
+# 		BuildAtProductionType: Soldier
+# 		BuildPaletteOrder: 20
+# 		Prerequisites: ~infantry.yuri, ~techlevel.1
+# 		Description: Powerful soldiers.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nAbilities:\n- Cannot be eaten by Attack Dogs\n\nUpgradeable with:\n- DNA Boosters (Transylvania)
+# 		BuildDuration: 175
+# 		BuildDurationModifier: 100
+# 	UpdatesPlayerStatistics:
+# 		AddToArmyValue: true
+# 	Valued:
+# 		Cost: 500
+# 	DeliversCash:
+# 		Payload: 250
+# 	Tooltip:
+# 	Tooltip@NoRow:
+# 		Name: Brute
+# 	Selectable:
+# 		Bounds: 482, 1448, 0, -530
+# 	Health:
+# 		HP: 20000
+# 	Garrisoner:
+# 		Voice: Move
+# 		CustomPipType: blue
+# 		GarrisonType: Garrisoner
+# 	Passenger:
+# 		CustomPipType: blue
+# 	Armor:
+# 		Type: Plate
+# 	-Crushable:
+# 	-Crushable@Cheater:
+# 	-Crushable@Vengeful:
+# 	-TakeCover:
+# 	Mobile:
+# 		Speed: 90
+# 		RequiresCondition: !chronodisable
+# 	RevealsShroud:
+# 		Range: 6c0
+# 	# RevealsShroudToIntelligenceOwner:
+# 	#	Range: 6c0
+# 	RevealOnDeath:
+# 		Radius: 6c0
+# 	AttackFrontal:
+# 		Voice: Attack
+# 	AutoTarget:
+# 		ScanRadius: 5
+# 		InitialStance: AttackAnything
+# 	Armament@primary:
+# 		Weapon: Punch
+# 		FireDelay: 5
+# 		RequiresCondition: !rank-elite
+# 	Armament@elite:
+# 		Weapon: PunchE
+# 		FireDelay: 3
+# 		RequiresCondition: rank-elite
+# 	Armament@second:
+# 		Name: secondary
+# 		Weapon: Smash
+# 		Damage: 100
+# 		FireDelay: 4
+# 		RequiresCondition: !rank-elite
+# 	Armament@second-elite:
+# 		Name: secondary
+# 		Weapon: SmashE
+# 		Damage: 150
+# 		FireDelay: 3
+# 		RequiresCondition: rank-elite
+# 	Targetable:
+# 		TargetTypes: Ground, Infantry, DetonateAttack, Disguise, DogImmune
+# 	Voiced:
+# 		VoiceSet: BruteVoice
+# 	WithInfantryBody:
+# 		DefaultAttackSequence: shoot
+# 		AttackSequences:
+# 			secondary: smash
+# 		RequiresCondition: !parachute
+
+brute:
+	Inherits: ^GroundInfantry
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@VETERAN: ^InfantryPromotable
+	Inherits@VOICES: ^WithFeedbackVoicelines
+	Inherits@DOGIMMUNITY: ^DogImmunity
+	Inherits@SELFHEALING: ^SelfHealing
+	Buildable:
+		Queue: Infantry.Shared, Infantry.Yuri
+		Prerequisites: ~infantry.yuri, ~techlevel.1
+		Description: Powerful soldiers.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nAbilities:\n- Cannot be eaten by Attack Dogs\n\nUpgradeable with:\n- DNA Boosters (Transylvania)
+		BuildPaletteOrder: 4
+	Health:
+		HP: 20000
+	Armor:
+		Type: Plate
+	Valued:
+		Cost: 500
+	DeliversCash:
+		Payload: 250
+	Mobile:
+		Speed: 90
+	RevealsShroud:
+		Range: 8c0
+	Tooltip:
+		Name: Brute
+	Tooltip@NoRow:
+		Name: Brute
+	Armament@primary:
+		Weapon: Punch
+		FireDelay: 5
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: PunchE
+		FireDelay: 3
+		RequiresCondition: rank-elite
+	Armament@secondary:
+		Name: secondary
+		Weapon: Smash
+		Damage: 100
+		FireDelay: 4
+	WithInfantryBody:
+		AttackSequences:
+			secondary: smash
+	Voiced:
+		VoiceSet: BruteVoice
+	-TakeCover:
+	-Crushable:
+
+brute.spawner:
+	Inherits: CAMERA
+	-Immobile:
+	-RevealsShroud:
+	Health:
+		HP: 1
+	HitShape:
+	Mobile:
+		Locomotor: foot
+	SpeedMultiplier:
+		Modifier: 0
+	RejectsOrders:
+	-RenderSpritesEditorOnly:
+	RenderSprites:
+	KillsSelf:
+		Delay: 50
+	SpawnActorOnDeath:
+		Actor: brute

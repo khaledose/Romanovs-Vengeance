@@ -1,0 +1,37 @@
+yagntc:
+	Inherits: ^SuperWeapon
+	Inherits@SPECIAL: ^GeneticConverterSpecial
+	Inherits@SHAPE: ^3x3Shape
+	Buildable:
+		Queue: Support.Shared, Support.Yuri
+		Prerequisites: ~building.yuri, yatech, !enoughgenmutator, ~techlevel.5
+		Description: Makes vehicles invisible.\nKills infantry.\n\n  Requires power to operate.
+		BuildPaletteOrder: 980
+	IsometricSelectable:
+		DecorationHeight: 120
+	Power:
+		Amount: -200
+	Health:
+		HP: 100000
+	Armor:
+		Type: Concrete
+	Valued:
+		Cost: 2500
+	RevealsShroud:
+		Range: 5c0
+	Tooltip:
+		Name: Yuri Genetic Mutator Device
+	Tooltip@NoRow:
+		Name: Yuri Genetic Mutator Device
+	ProvidesPrerequisite@swlimit:
+		Prerequisite: enoughgenmutator
+	WithIdleOverlay@top:
+		Sequence: idle-top
+		PauseOnCondition: disabled || chronodisable
+		RequiresCondition: !build-incomplete
+	NotificationAnnouncement:
+		Notification: GeneticMutatorDetected
+		TextNotification: Warning: Genetic Mutator detected.
+	Voiced:
+		VoiceSet: LazarusGeneratorVoice
+		Volume: 0.8

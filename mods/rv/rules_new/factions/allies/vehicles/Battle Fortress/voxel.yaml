@@ -1,0 +1,3 @@
+bfrt:
+	idle: localmd|bfrt
+	idle-armor: bits/vehicles/upgrades/bfrtu

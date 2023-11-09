@@ -1,0 +1,8 @@
+TerroristVoice:
+	Inherits: ^InfantryDeath
+	Voices:
+		Select: itersea, iterseb, itersec
+		Move: itermoa, itermob, itermoc
+		Attack: iterata, iteratb, iteratc, iteratd
+		Feedback: iterfea, iterfeb, iterfec
+		Die: iterdia, iterdib, iterdic

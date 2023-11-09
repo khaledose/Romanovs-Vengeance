@@ -1,0 +1,37 @@
+M60:
+	Inherits: ^SA
+	ReloadDelay: 20
+	Range: 4c0
+	Report: igiat1a.wav, igiat1b.wav, igiat1c.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 1500
+
+M60E:
+	Inherits: M60
+	Warhead@1Dam: SpreadDamage
+		Damage: 2500
+
+para:
+	Inherits: ^SSA
+	ReloadDelay: 15
+	Range: 5c0
+	Report: igiat2a.wav, igiat2b.wav, igiat2c.wav, igiat2d.wav, igiat2c.wav, igiat2d.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 2500
+
+paraE:
+	Inherits: para
+	Range: 6c0
+
+UCpara:
+	Inherits: ^SSAB
+	ReloadDelay: 15
+	Range: 6c0
+	Report: baocatta.wav, baocattb.wav, baocattc.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 3000
+
+UCparaE:
+	Inherits: UCpara
+	Warhead@1Dam: SpreadDamage
+		Damage: 4000

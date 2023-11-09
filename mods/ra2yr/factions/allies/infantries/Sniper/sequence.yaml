@@ -1,0 +1,23 @@
+snipe:
+	Inherits: ^BasicInfantry
+	Inherits@DEATH: ^DeathAnimation
+	Inherits@SHOOTER: ^Shooter
+	Inherits@PRONE: ^ProneShooter
+	Defaults:
+		Filename: conquer|snipe.shp
+	icon:
+		Filename: cameo|snipicon.shp
+	cheer:
+		Start: 293
+	paradrop:
+		Start: 292
+
+
+# snipe:
+# 	Inherits: ^ArmedInfantry
+# 	Defaults:
+# 		Filename: conquer|snipe.shp
+# 	paradrop:
+# 		Start: 292
+# 	icon:
+# 		Filename: cameo|snipicon.shp

@@ -1,0 +1,60 @@
+Comet:
+	Inherits@1: ^BreakPointDefenseDrones
+	ValidTargets: Ground, Water
+	ReloadDelay: 100
+	Range: 10c0
+	Report: vpriatta.wav
+	Projectile: LaserZap
+		Width: 50
+		Duration: 15
+		UsePlayerColor: true
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c128
+		Damage: 10000
+		Versus:
+			None: 100
+			Flak: 100
+			Plate: 100
+			Light: 75
+			Medium: 35
+			Heavy: 35
+			Wood: 100
+			Steel: 100
+			Concrete: 90
+			Drone: 100
+			Rocket: 100
+		DamageTypes: Prone50Percent, TriggerProne, ElectroDeath, SuppressTerrorDrone, NonTemporal
+	Warhead@2Shr: FireShrapnel
+		Weapon: CometFragment
+		Amount: 5
+		AimChance: 100
+		AimTargetStances: Enemy, Neutral
+		ValidTargets: Infantry, Vehicle, TerrorDrone, Ship, Tree
+	Warhead@2Eff: CreateEffect
+		Explosions: prism_explosion
+		ExplosionPalette: player
+		UsePlayerPalette: true
+		ImpactActors: false
+		ValidTargets: Ground, Water, Air
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: SmallScorch
+
+CometFragment:
+	Inherits: Comet
+	Range: 3c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 3000
+	-Warhead@2Shr:
+
+SuperCometFragment:
+	Inherits: CometFragment
+	Range: 5c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 5000
+
+SuperComet:
+	Inherits: Comet
+	Warhead@1Dam: SpreadDamage
+		Damage: 15000
+	Warhead@2Shr: FireShrapnel
+		Weapon: SuperCometFragment

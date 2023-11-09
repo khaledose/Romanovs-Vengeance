@@ -1,0 +1,16 @@
+CoilBolt:
+	Inherits: ^Shock
+	ReloadDelay: 1
+	Range: 7c0
+	Report: btesat1a.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 20000
+
+OPCoilBolt:
+	Inherits: CoilBolt
+	Range: 8c0
+	Report: btesat2a.wav
+	Projectile: TeslaZap
+		Image: litningyel
+	Warhead@1Dam: SpreadDamage
+		Damage: 30000

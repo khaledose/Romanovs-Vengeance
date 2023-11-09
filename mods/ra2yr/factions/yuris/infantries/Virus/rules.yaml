@@ -1,0 +1,93 @@
+# virus:
+# 	Inherits: ^Infantry
+# 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+# 	Inherits@CHAOS: ^Berserkable
+# 	Inherits@EXPERIENCE: ^GainsExperience
+# 	Inherits@VETERAN: ^ProducibleAsVeteranInfantry
+# 	Inherits@MC: ^MindControllable
+# 	Inherits@VOICES: ^WithFeedbackVoicelines
+# 	Buildable:
+# 		Queue: Infantry.Shared, Infantry.Yuri
+# 		BuildAtProductionType: Soldier
+# 		BuildPaletteOrder: 80
+# 		Prerequisites: ~infantry.yuri, yapsis, ~techlevel.2
+# 		Description: Sniper infantry armed with toxic bullets.\nKilled units leave toxin clouds.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can kill garrisoned infantry\n\nUpgradeable with:\n- Camouflage
+# 		BuildDuration: 250
+# 		BuildDurationModifier: 100
+# 	UpdatesPlayerStatistics:
+# 		AddToArmyValue: true
+# 	Valued:
+# 		Cost: 700
+# 	DeliversCash:
+# 		Payload: 350
+# 	Tooltip:
+# 	Tooltip@NoRow:
+# 		Name: Virus
+# 	Selectable:
+# 		Bounds: 482, 1448, 0, -530
+# 	Health:
+# 		HP: 7500
+# 	Passenger:
+# 	RevealsShroud:
+# 		Range: 6c0
+# 	# RevealsShroudToIntelligenceOwner:
+# 	#	Range: 6c0
+# 	RevealOnDeath:
+# 		Radius: 6c0
+# 	AttackFrontal:
+# 		Voice: Attack
+# 		FacingTolerance: 2
+# 		TargetFrozenActors: true
+# 	Armament@primary:
+# 		Weapon: VirusGun
+# 		PauseOnCondition: chronodisable
+# 		RequiresCondition: !rank-elite
+# 	Armament@elite:
+# 		Weapon: VirusGunE
+# 		PauseOnCondition: chronodisable
+# 		RequiresCondition: rank-elite
+# 	Voiced:
+# 		VoiceSet: VirusVoice
+# 	WithInfantryBody:
+# 		DefaultAttackSequence: shoot
+# 	ActorStatValues:
+# 		Damage: 200
+
+virus:
+	Inherits: ^GroundInfantry
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@VETERAN: ^InfantryPromotable
+	Inherits@VOICES: ^WithFeedbackVoicelines
+	Inherits@MC: ^MindControllable
+	Buildable:
+		Queue: Infantry.Shared, Infantry.Yuri
+		Prerequisites: ~infantry.yuri, yapsis, ~techlevel.2
+		Description: Sniper infantry armed with toxic bullets.\nKilled units leave toxin clouds.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can kill garrisoned infantry\n\nUpgradeable with:\n- Camouflage
+		BuildPaletteOrder: 3
+	Health:
+		HP: 10000
+	Armor:
+		Type: None
+	Valued:
+		Cost: 700
+	DeliversCash:
+		Payload: 350
+	Mobile:
+		Speed: 60
+	RevealsShroud:
+		Range: 9c0
+	Tooltip:
+		Name: Virus
+	Tooltip@NoRow:
+		Name: Virus
+	Armament@primary:
+		Weapon: VirusGun
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: VirusGunE
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite
+	Voiced:
+		VoiceSet: VirusVoice
+	-RevealOnFire:

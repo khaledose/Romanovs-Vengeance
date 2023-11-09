@@ -1,0 +1,53 @@
+mtnk:
+	Inherits: ^MainBattleTank
+	Buildable:
+		Queue: Vehicle.Shared, Vehicle.Allies
+		Description: Allied Main Battle Tank.\n\n  Strong vs Vehicles, Ships\n  Weak vs Infantry, Aircraft\n\nUpgradeable with:\n- Composite Armor\n- Advanced Gun Systems (Germany)
+		Prerequisites: ~vehicle.allies, ~techlevel.1
+		BuildDuration: 375
+		BuildDurationModifier: 100
+	Valued:
+		Cost: 700
+	DeliversCash:
+		Payload: 700
+	Tooltip:
+	Tooltip@NoRow:
+		Name: Grizzly Battle Tank
+	Mobile:
+		Speed: 105
+	Health:
+		HP: 30000
+	Armament@primary:
+		Weapon: 105mm
+		Damage: 65
+		Recoil: 87
+		RecoilRecovery: 12
+		LocalOffset: 896,0,512
+		MuzzleSequence: muzzle
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Name: elite
+		Weapon: 105mmE
+		Damage: 130
+		Recoil: 87
+		RecoilRecovery: 12
+		LocalOffset: 896,0,512
+		MuzzleSequence: muzzle-2
+		RequiresCondition: rank-elite
+	AttackTurreted:
+		Armaments: primary, elite
+	WithVoxelBarrel@ELITE:
+		Armament: elite
+		RequiresCondition: rank-elite
+	Selectable:
+		Bounds: 1544, 2509, 0, -289
+	Voiced:
+		VoiceSet: AlliedVehicleVoice
+	# GrantConditionOnMovement@MoveStart:
+	#	Condition: moving
+	#	ValidMovementTypes: Horizontal, Turn
+	# SoundAnnouncement:
+	#	SoundFiles: vgristaa.wav, vgristab.wav, vgristac.wav
+	#	Volume: 0.4
+	#	RequiresCondition: moving
+

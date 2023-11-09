@@ -1,0 +1,127 @@
+^CivProp:
+	Defaults:
+		Offset: 0,-15
+	idle:
+		ShadowStart: 3
+	icon:
+		Filename: cameo|xxicon.shp
+		TilesetFilenames: # To be sure that Defaults: won't override this with building art.
+			TEMPERATE: cameo|xxicon.shp
+			SNOW: cameo|xxicon.shp
+			URBAN: cameo|xxicon.shp
+			NEWURBAN: cameo|xxicon.shp
+			DESERT: cameo|xxicon.shp
+			LUNAR: cameo|xxicon.shp
+			DUNE: cameo|xxicon.shp
+			SIMPLETERRAIN: cameo|xxicon.shp
+		Offset: 0,0
+
+^CivBuilding:
+	Defaults:
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+	icon:
+		Filename: cameo|xxicon.shp
+		TilesetFilenames: # To be sure that Defaults: won't override this with building art.
+			TEMPERATE: cameo|xxicon.shp
+			SNOW: cameo|xxicon.shp
+			URBAN: cameo|xxicon.shp
+			NEWURBAN: cameo|xxicon.shp
+			DESERT: cameo|xxicon.shp
+			LUNAR: cameo|xxicon.shp
+			DUNE: cameo|xxicon.shp
+			SIMPLETERRAIN: cameo|xxicon.shp
+		Offset: 0,0
+
+^CivBuildingNoRubble:
+	Inherits: ^CivBuilding
+	idle:
+		ShadowStart: 3
+	damaged-idle:
+		ShadowStart: 4
+	-rubble:
+
+^GarrisonableBuilding:
+	garrisoned:
+		Start: 2
+		ShadowStart: 6
+
+^Fence:
+	Defaults:
+		Offset: 0,-15
+	idle:
+		Length: 16
+		ShadowStart: 32
+	damaged-idle:
+		Start: 16
+		Length: 16
+		ShadowStart: 48
+	icon:
+		Filename: cameo|wallicon.shp
+		TilesetFilenames: # To be sure that Defaults: won't override this with building art.
+			TEMPERATE: cameo|wallicon.shp
+			SNOW: cameo|wallicon.shp
+			URBAN: cameo|wallicon.shp
+			NEWURBAN: cameo|wallicon.shp
+			DESERT: cameo|wallicon.shp
+			LUNAR: cameo|wallicon.shp
+			DUNE: cameo|wallicon.shp
+			SIMPLETERRAIN: cameo|wallicon.shp
+		Offset: 0,0
+
+^Flag:
+	Defaults:
+		Offset: 0,-15
+	idle:
+		Filename: ctusfgl.shp
+		TilesetFilenames:
+			SNOW: causfgl.shp
+			URBAN: cuusfgl.shp
+			NEWURBAN: cnusfgl.shp
+			DESERT: cdusfgl.shp
+			LUNAR: clusfgl.shp
+			DUNE: cdusfgl.shp
+		ShadowStart: 4
+	damaged-idle:
+		Filename: ctusfgl.shp
+		TilesetFilenames:
+			SNOW: causfgl.shp
+			URBAN: cuusfgl.shp
+			NEWURBAN: cnusfgl.shp
+			DESERT: cdusfgl.shp
+			LUNAR: clusfgl.shp
+			DUNE: cdusfgl.shp
+		Start: 1
+		ShadowStart: 5
+	flag:
+		Length: 81
+		Offset: 27, -90
+		Tick: 120
+	flag-shadow:
+		Filename: bits/structures/flags/cgfglshdw.shp
+		Length: 81
+		ShadowStart: 81
+		Offset: 39, -7
+		Tick: 120
+	idle-waves:
+		Filename: gauwat.shp
+		Length: 15
+		Tick: 200
+		ZOffset: -1c0
+	icon:
+		Filename: bits/cameos/flags/flagicon.png
+		Offset: 0,0
+
+^bridge:
+	Defaults:
+		ZOffset: -1c511
+		Start: 1
+		ZRamp: 1
+		Offset: 0, 0, 0.5

@@ -1,0 +1,133 @@
+gayard:
+	Defaults:
+		Offset: 0, -45
+	idle:
+		Filename: ggyard.shp
+		TilesetFilenames:
+			SNOW: gayard.shp
+			SIMPLETERRAIN: gtyard.shp
+		ShadowStart: 4
+	damaged-idle:
+		Filename: ggyard.shp
+		TilesetFilenames:
+			SNOW: gayard.shp
+			SIMPLETERRAIN: gtyard.shp
+		Start: 2
+		ShadowStart: 5
+	idle-crane:
+		Filename: ggyard_a.shp
+		TilesetFilenames:
+			SNOW: gayard_a.shp
+			SIMPLETERRAIN: gtyard_a.shp
+		Length: 15
+		ShadowStart: 30
+		Tick: 200
+	damaged-idle-crane:
+		Filename: ggyard_a.shp
+		TilesetFilenames:
+			SNOW: gayard_a.shp
+			SIMPLETERRAIN: gtyard_a.shp
+		Start: 15
+		Length: 15
+		ShadowStart: 45
+		Tick: 200
+	idle-waves:
+		Filename: ggyard_c.shp
+		TilesetFilenames:
+			SNOW: gayard_c.shp
+			SIMPLETERRAIN: gtyard_c.shp
+		Length: 15
+		ShadowStart: 30
+		Tick: 200
+	damaged-idle-waves:
+		Filename: ggyard_c.shp
+		TilesetFilenames:
+			SNOW: gayard_c.shp
+			SIMPLETERRAIN: gtyard_c.shp
+		Start: 30
+		Length: 15
+		ShadowStart: 30
+		Tick: 200
+	produced-overlay:
+		Filename: ggyard_d.shp
+		TilesetFilenames:
+			SNOW: gayard_d.shp
+		Start: 0
+		Length: 42
+		ShadowStart: 84
+		Tick: 100
+	damaged-produced-overlay:
+		Filename: ggyard_d.shp
+		TilesetFilenames:
+			SNOW: gayard_d.shp
+		Start: 42
+		Length: 42
+		ShadowStart: 126
+		Tick: 100
+	make:
+		Filename: gtyardmk.shp
+		TilesetFilenames:
+			SNOW: gayardmk.shp
+			URBAN: guyardmk.shp
+			NEWURBAN: gnyardmk.shp
+			DESERT: gdyardmk.shp
+			LUNAR: glyardmk.shp
+			DUNE: gdyardmk.shp
+		Length: 25
+		ShadowStart: 25
+	repair-start:
+		Filename: ggyard_s.shp
+		TilesetFilenames:
+			SNOW: gayard_s.shp
+			SIMPLETERRAIN: gtyard_s.shp
+		Length: 7
+		ShadowStart: 36
+		Tick: 100
+	repair:
+		Filename: ggyard_s.shp
+		TilesetFilenames:
+			SNOW: gayard_s.shp
+			SIMPLETERRAIN: gtyard_s.shp
+		Start: 7
+		Length: 6
+		ShadowStart: 43
+		Tick: 100
+	repair-end:
+		Filename: ggyard_s.shp
+		TilesetFilenames:
+			SNOW: gayard_s.shp
+			SIMPLETERRAIN: gtyard_s.shp
+		Start: 13
+		Length: 5
+		ShadowStart: 49
+		Tick: 100
+	damaged-repair-start:
+		Filename: ggyard_s.shp
+		TilesetFilenames:
+			SNOW: gayard_s.shp
+			SIMPLETERRAIN: gtyard_s.shp
+		Start: 18
+		Length: 7
+		ShadowStart: 54
+		Tick: 100
+	damaged-repair:
+		Filename: ggyard_s.shp
+		TilesetFilenames:
+			SNOW: gayard_s.shp
+			SIMPLETERRAIN: gtyard_s.shp
+		Start: 25
+		Length: 6
+		ShadowStart: 61
+		Tick: 100
+	damaged-repair-end:
+		Filename: ggyard_s.shp
+		TilesetFilenames:
+			SNOW: gayard_s.shp
+			SIMPLETERRAIN: gtyard_s.shp
+		Start: 31
+		Length: 5
+		ShadowStart: 67
+		Tick: 100
+	icon:
+		Filename: cameo|ayaricon.shp
+		Offset: 0,0

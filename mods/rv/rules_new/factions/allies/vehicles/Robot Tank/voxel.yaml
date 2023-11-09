@@ -1,0 +1,3 @@
+robo:
+	idle: localmd|robo
+	turret: localmd|robotur

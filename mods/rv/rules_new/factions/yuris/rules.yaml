@@ -1,0 +1,73 @@
+^YuriFactions:
+	Faction@yuri:
+		Name: Yuri
+		InternalName: psicorps
+		Side: Randoms
+		Description: Yurigrad\nCenter of Operations: Kuban Region\n\n\nSpecial Vehicle: Slave Miner\nSpecial Ability: Psi-Ops Drop\nSpecial Upgrade: Chaos Tank Compensators
+
+^YurisNoBaseModifier:
+	StartingUnits@nobasespsicorps:
+		Class: nobases
+		ClassName: options-starting-units.no-bases
+		Factions: psicorps
+		BaseActor: yurix
+		BaseActorFacing: 640
+		SupportActors: init, init, init, init, brute, brute, brute, engineer, gtrp, gtrp, virus, yuripsi, spct, ltnk, ltnk, ltnk, ytnk, ytnk, caos, kamaz, tele, yhtnk, mind, txdx
+		SupportActorsFacing: 640
+		SupportProxyActors: hack.no_bases
+		InnerSupportRadius: 2
+		OuterSupportRadius: 8
+
+^YurisStartingOptions:
+	StartingUnits@pcv:
+		Class: none
+		ClassName: options-starting-units.mcv-only
+		Factions: psicorps
+		BaseActor: pcv
+		BaseActorFacing: 640
+	StartingUnits@pcvdog:
+		Class: mcvdog
+		ClassName: options-starting-units.mcv-and-dog
+		Factions: psicorps
+		BaseActor: pcv
+		BaseActorFacing: 640
+	StartingUnits@lightpsicorps:
+		Class: light
+		ClassName: options-starting-units.light-support
+		Factions: psicorps
+		BaseActor: pcv
+		BaseActorFacing: 640
+		SupportActors: init,init,init
+		SupportActorsFacing: 640
+		InnerSupportRadius: 4
+		OuterSupportRadius: 5
+	StartingUnits@mediumpsicorps:
+		Class: medium
+		ClassName: options-starting-units.medium-support
+		Factions: psicorps
+		BaseActor: pcv
+		BaseActorFacing: 640
+		SupportActors: init,init,init,init,ltnk,engineer
+		SupportActorsFacing: 640
+		InnerSupportRadius: 4
+		OuterSupportRadius: 5
+	StartingUnits@heavypsicorps:
+		Class: heavy
+		ClassName: options-starting-units.heavy-support
+		Factions: psicorps
+		BaseActor: pcv
+		BaseActorFacing: 640
+		SupportActors: init,init,init,init,init,ltnk,ltnk,ytnk,engineer
+		SupportActorsFacing: 640
+		InnerSupportRadius: 4
+		OuterSupportRadius: 5
+	StartingUnits@unholypcv:
+		Class: unholy
+		ClassName: options-starting-units.unholy-alliance
+		Factions: psicorps
+		BaseActor: pcv
+		BaseActorFacing: 640
+		SupportActors: amcv, smcv
+		SupportActorsFacing: 640
+		InnerSupportRadius: 4
+		OuterSupportRadius: 5

@@ -1,0 +1,74 @@
+naflak:
+	Inherits: ^VoxelLighting
+	Inherits@AUTOTARGET: ^AutoTargetAir
+	# Inherits@DRAIN: ^DiskDrainable
+	Inherits@DRAIN: ^DiskDefenseDrainable
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@MC: ^MindControllableBuilding
+	Buildable:
+		Queue: Support.Shared, Support.Soviets
+		BuildPaletteOrder: 50
+		Prerequisites: ~building.soviets, nahand, ~techlevel.2
+		Description: Automated anti-aircraft defense.\n\n  Strong vs Aircraft\n  Weak vs Ground units\n\nAbilities:\n- Can detect Steath units\n\n  Requires power to operate.
+		BuildDuration: 375
+		BuildDurationModifier: 100
+	Valued:
+		Cost: 700
+	Tooltip:
+	Tooltip@NoRow:
+		Name: Flak Cannon
+	Building:
+		Footprint: x
+		Dimensions: 1, 1
+	Health:
+		HP: 60000
+	Armor:
+		Type: Steel
+	RevealsShroud:
+		Range: 8c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	Turreted:
+		TurnSpeed: 40
+		InitialFacing: 896
+		Offset: 450,0,0
+		RealignDelay: -1
+	AttackTurreted:
+		PauseOnCondition: build-incomplete || disabled || chronodisable
+	Armament:
+		Weapon: FlakWeaponCannon
+		LocalOffset: 640,0,1536
+		MuzzleSequence: muzzle
+	WithMuzzleOverlay:
+	BodyOrientation:
+		QuantizedFacings: 16
+	RenderVoxels:
+	WithVoxelTurret:
+		RequiresCondition: !build-incomplete
+	WithRangeCircle:
+		Range: 12c0
+		Type: aa
+	AutoTarget:
+	Power:
+		Amount: -30
+		RequiresCondition: !chronodisable
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower || powerdown || diskdrain
+	RequiresBuildableArea:
+		Adjacent: 3
+	IsometricSelectable:
+		Class: naflak
+		DecorationHeight: 60
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
+	DetectCloaked:
+		Range: 5c0
+		RequiresCondition: !disabled
+	RenderDetectionCircle:
+	Voiced:
+		VoiceSet: FlakCannonVoice
+		Volume: 0.8
+	ActorStatValues:
+		Damage: 40
+

@@ -1,0 +1,61 @@
+gagap:
+	Inherits: ^SupportBuilding
+	# Inherits@DRAIN: ^DiskDrainable
+	Inherits@DRAIN: ^DiskDefenseDrainable
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@MC: ^MindControllableBuilding
+	Valued:
+		Cost: 500
+	Tooltip:
+	Tooltip@NoRow:
+		Name: Gap Generator
+	Buildable:
+		Queue: Support.Shared, Support.Allies
+		BuildPaletteOrder: 100
+		Prerequisites: ~building.allies, gatech, ~techlevel.3
+		Description: Obscures the enemy's view with shroud.\n\n  Requires power to operate.
+		BuildDuration: 250
+		BuildDurationModifier: 100
+	Health:
+		HP: 60000
+	Armor:
+		Type: Steel
+	RevealsShroud:
+		Range: 6c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 6c0
+	CreatesShroud:
+		Range: 10c0
+		RequiresCondition: !disabled && !chronodisable
+	Capturable:
+		Types: building
+		RequiresCondition: !build-incomplete && !invulnerability && !forceshield
+	CaptureNotification:
+	Targetable:
+		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure
+	Targetable@Water:
+		TargetTypes: Ground, Water, WaterStructure, C4
+	RenderShroudCircle:
+	WithIdleOverlay@head:
+		Sequence: idle-head
+		PauseOnCondition: disabled || chronodisable
+		RequiresCondition: !build-incomplete
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
+	Power:
+		Amount: -50
+		RequiresCondition: !chronodisable
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower || powerdown || diskdrain
+	MustBeDestroyed:
+		RequiredForShortGame: false
+	RangedGpsDot:
+		Sequence: Structure
+	IsometricSelectable:
+		DecorationHeight: 90
+	Voiced:
+		VoiceSet: GapGeneratorVoice
+		Volume: 0.8
+

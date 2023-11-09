@@ -1,0 +1,50 @@
+yatech:
+	Defaults:
+		Offset: -15, -38
+	idle:
+		Filename: ygtech.shp
+		TilesetFilenames:
+			SNOW: yatech.shp
+			SIMPLETERRAIN: yttech.shp
+		ShadowStart: 3
+	damaged-idle:
+		Filename: ygtech.shp
+		TilesetFilenames:
+			SNOW: yatech.shp
+			SIMPLETERRAIN: yttech.shp
+		Start: 1
+		ShadowStart: 4
+	idle-lift:
+		Filename: ygtech_a.shp
+		TilesetFilenames:
+			SNOW: yatech_a.shp
+			SIMPLETERRAIN: yttech_a.shp
+		Length: 32
+		ShadowStart: 64
+	damaged-idle-lift:
+		Filename: ygtech_a.shp
+		TilesetFilenames:
+			SNOW: yatech_a.shp
+			SIMPLETERRAIN: yttech_a.shp
+		Start: 32
+		Length: 32
+		ShadowStart: 96
+	make:
+		Filename: ygtechmk.shp
+		TilesetFilenames:
+			SNOW: yatechmk.shp
+			SIMPLETERRAIN: yttechmk.shp
+		Length: 25
+		ShadowStart: 25
+	icon:
+		Filename: cameomd|ytchicon.shp
+		Offset: 0,0
+
+yatecb:
+	Inherits: yatech
+	Defaults:
+		FlipX: true
+		Offset: 15, -38
+	icon:
+		Filename: cameomd|ytchicon.shp
+		FlipX: false

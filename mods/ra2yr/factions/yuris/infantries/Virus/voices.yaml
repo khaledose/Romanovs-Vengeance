@@ -1,0 +1,8 @@
+VirusVoice:
+	Inherits: ^InfantryDeath
+	Voices:
+		Select: ivirsea, ivirseb, ivirsec, ivirsed, ivirsee
+		Move: ivirmoa, ivirmob, ivirmoc, ivirmod, ivirmoe
+		Attack: ivirata, iviratb, iviratc, iviratd, iviratf, iviratg
+		Feedback: ivirfea, ivirfeb, ivirfec, ivirfed, ivirfee
+		Die: ivirdia, ivirdib, ivirdic, ivirdid, ivirdie

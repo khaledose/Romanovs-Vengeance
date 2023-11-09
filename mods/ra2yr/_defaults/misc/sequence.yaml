@@ -1,0 +1,1577 @@
+resources:
+	Defaults:
+		Length: 12
+		ShadowStart: 12
+		Offset: 0, -15
+	tib01:
+		Filename: tib01.tem
+		TilesetFilenames:
+			SNOW: tib01.sno
+			URBAN: tib01.urb
+			NEWURBAN: tib01.ubn
+			LUNAR: tib01.lun
+			DUNE: tib01.des
+	tib02:
+		Filename: tib02.tem
+		TilesetFilenames:
+			SNOW: tib02.sno
+			URBAN: tib02.urb
+			NEWURBAN: tib02.ubn
+			LUNAR: tib02.lun
+			DUNE: tib02.des
+		Frames: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 0
+		ShadowStart: -1
+	tib03:
+		Filename: tib03.tem
+		TilesetFilenames:
+			SNOW: tib03.sno
+			URBAN: tib03.urb
+			NEWURBAN: tib03.ubn
+			LUNAR: tib03.lun
+			DUNE: tib03.des
+	tib04:
+		Filename: tib04.tem
+		TilesetFilenames:
+			SNOW: tib04.sno
+			URBAN: tib04.urb
+			NEWURBAN: tib04.ubn
+			LUNAR: tib04.lun
+			DUNE: tib04.des
+	tib05:
+		Filename: tib05.tem
+		TilesetFilenames:
+			SNOW: tib05.sno
+			URBAN: tib05.urb
+			NEWURBAN: tib05.ubn
+			LUNAR: tib05.lun
+			DUNE: tib05.des
+	tib06:
+		Filename: tib06.tem
+		TilesetFilenames:
+			SNOW: tib06.sno
+			URBAN: tib06.urb
+			NEWURBAN: tib06.ubn
+			LUNAR: tib06.lun
+			DUNE: tib06.des
+	tib07:
+		Filename: tib07.tem
+		TilesetFilenames:
+			SNOW: tib07.sno
+			URBAN: tib07.urb
+			NEWURBAN: tib07.ubn
+			LUNAR: tib07.lun
+			DUNE: tib07.des
+	tib08:
+		Filename: tib08.tem
+		TilesetFilenames:
+			SNOW: tib08.sno
+			URBAN: tib08.urb
+			NEWURBAN: tib08.ubn
+			LUNAR: tib08.lun
+			DUNE: tib08.des
+	tib09:
+		Filename: tib09.tem
+		TilesetFilenames:
+			SNOW: tib09.sno
+			URBAN: tib09.urb
+			NEWURBAN: tib09.ubn
+			LUNAR: tib09.lun
+			DUNE: tib09.des
+	tib10:
+		Filename: tib10.tem
+		TilesetFilenames:
+			SNOW: tib10.sno
+			URBAN: tib10.urb
+			NEWURBAN: tib10.ubn
+			LUNAR: tib10.lun
+			DUNE: tib10.des
+	tib11:
+		Filename: tib11.tem
+		TilesetFilenames:
+			SNOW: tib11.sno
+			URBAN: tib11.urb
+			NEWURBAN: tib11.ubn
+			LUNAR: tib11.lun
+			DUNE: tib11.des
+	tib12:
+		Filename: tib12.tem
+		TilesetFilenames:
+			SNOW: tib12.sno
+			URBAN: tib12.urb
+			NEWURBAN: tib12.ubn
+			LUNAR: tib12.lun
+			DUNE: tib12.des
+	tib13:
+		Filename: tib13.tem
+		TilesetFilenames:
+			SNOW: tib13.sno
+			URBAN: tib13.urb
+			NEWURBAN: tib13.ubn
+			LUNAR: tib13.lun
+			DUNE: tib13.des
+	tib14:
+		Filename: tib14.tem
+		TilesetFilenames:
+			SNOW: tib14.sno
+			URBAN: tib14.urb
+			NEWURBAN: tib14.ubn
+			LUNAR: tib14.lun
+			DUNE: tib14.des
+		Frames: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 0
+		ShadowStart: -1
+	tib15:
+		Filename: tib15.tem
+		TilesetFilenames:
+			SNOW: tib15.sno
+			URBAN: tib15.urb
+			NEWURBAN: tib15.ubn
+			LUNAR: tib15.lun
+			DUNE: tib15.des
+	tib16:
+		Filename: tib16.tem
+		TilesetFilenames:
+			SNOW: tib16.sno
+			URBAN: tib16.urb
+			NEWURBAN: tib16.ubn
+			LUNAR: tib16.lun
+			DUNE: tib16.des
+	tib17:
+		Filename: tib17.tem
+		TilesetFilenames:
+			SNOW: tib17.sno
+			URBAN: tib17.urb
+			NEWURBAN: tib17.ubn
+			LUNAR: tib17.lun
+			DUNE: tib17.des
+	tib18:
+		Filename: tib18.tem
+		TilesetFilenames:
+			SNOW: tib18.sno
+			URBAN: tib18.urb
+			NEWURBAN: tib18.ubn
+			LUNAR: tib18.lun
+			DUNE: tib18.des
+	tib19:
+		Filename: tib19.tem
+		TilesetFilenames:
+			SNOW: tib19.sno
+			URBAN: tib19.urb
+			NEWURBAN: tib19.ubn
+			LUNAR: tib19.lun
+			DUNE: tib19.des
+	tib20:
+		Filename: tib20.tem
+		TilesetFilenames:
+			SNOW: tib20.sno
+			URBAN: tib20.urb
+			NEWURBAN: tib20.ubn
+			LUNAR: tib20.lun
+			DUNE: tib20.des
+	gem01:
+		Filename: gem01.tem
+		TilesetFilenames:
+			SNOW: gem01.sno
+			URBAN: gem01.urb
+			NEWURBAN: gem01.ubn
+			LUNAR: gem01.lun
+			DUNE: gem01.des
+	gem02:
+		Filename: gem02.tem
+		TilesetFilenames:
+			SNOW: gem02.sno
+			URBAN: gem02.urb
+			NEWURBAN: gem02.ubn
+			LUNAR: gem02.lun
+			DUNE: gem02.des
+	gem03:
+		Filename: gem03.tem
+		TilesetFilenames:
+			SNOW: gem03.sno
+			URBAN: gem03.urb
+			NEWURBAN: gem03.ubn
+			LUNAR: gem03.lun
+			DUNE: gem03.des
+	gem04:
+		Filename: gem04.tem
+		TilesetFilenames:
+			SNOW: gem04.sno
+			URBAN: gem04.urb
+			NEWURBAN: gem04.ubn
+			LUNAR: gem04.lun
+			DUNE: gem04.des
+	gem05:
+		Filename: gem05.tem
+		TilesetFilenames:
+			SNOW: gem05.sno
+			URBAN: gem05.urb
+			NEWURBAN: gem05.ubn
+			LUNAR: gem05.lun
+			DUNE: gem05.des
+	gem06:
+		Filename: gem06.tem
+		TilesetFilenames:
+			SNOW: gem06.sno
+			URBAN: gem06.urb
+			NEWURBAN: gem06.ubn
+			LUNAR: gem06.lun
+			DUNE: gem06.des
+	gem07:
+		Filename: gem07.tem
+		TilesetFilenames:
+			SNOW: gem07.sno
+			URBAN: gem07.urb
+			NEWURBAN: gem07.ubn
+			LUNAR: gem07.lun
+			DUNE: gem07.des
+	gem08:
+		Filename: gem08.tem
+		TilesetFilenames:
+			SNOW: gem08.sno
+			URBAN: gem08.urb
+			NEWURBAN: gem08.ubn
+			LUNAR: gem08.lun
+			DUNE: gem08.des
+	gem09:
+		Filename: gem09.tem
+		TilesetFilenames:
+			SNOW: gem09.sno
+			URBAN: gem09.urb
+			NEWURBAN: gem09.ubn
+			LUNAR: gem09.lun
+			DUNE: gem09.des
+	gem10:
+		Filename: gem10.tem
+		TilesetFilenames:
+			SNOW: gem10.sno
+			URBAN: gem10.urb
+			NEWURBAN: gem10.ubn
+			LUNAR: gem10.lun
+			DUNE: gem10.des
+	gem11:
+		Filename: gem11.tem
+		TilesetFilenames:
+			SNOW: gem11.sno
+			URBAN: gem11.urb
+			NEWURBAN: gem11.ubn
+			LUNAR: gem11.lun
+			DUNE: gem11.des
+	gem12:
+		Filename: gem12.tem
+		TilesetFilenames:
+			SNOW: gem12.sno
+			URBAN: gem12.urb
+			NEWURBAN: gem12.ubn
+			LUNAR: gem12.lun
+			DUNE: gem12.des
+
+shroud:
+	shroud:
+		Filename: conquer|shroud.shp
+		Length: *
+	fog:
+		Filename: conquer|fog.shp
+		Length: *
+
+overlay:
+	Defaults:
+		Filename: conquer|place.shp
+		Offset: 0, -15
+	build-valid-temperate:
+	build-valid-snow:
+	build-valid-urban:
+	build-valid-newurban:
+	build-valid-desert:
+	build-valid-lunar:
+	build-valid-dune:
+	build-valid-simpleterrain:
+	build-invalid:
+		Start: 1
+	target-select:
+	target-invalid:
+		Start: 1
+	target-valid-snow:
+		Start: 2
+	target-valid-temperate:
+		Start: 2
+	target-valid-urban:
+		Start: 2
+	target-valid-newurban:
+		Start: 2
+	target-valid-desert:
+		Start: 2
+	target-valid-lunar:
+		Start: 2
+	target-valid-dune:
+		Start: 2
+	target-valid-simpleterrain:
+		Start: 2
+
+editor-overlay:
+	Defaults:
+		Filename: conquer|place.shp
+		Offset: 0, -15
+	copy:
+	paste:
+		Start: 1
+
+poweroff:
+	offline:
+		Filename: poweroff.shp
+		Length: *
+		Tick: 160
+		Offset: 0,-50
+		ZOffset: 2047
+
+allyrepair:
+	repair:
+		Filename: wrench.shp
+		Length: 7
+		Tick: 160
+		ZOffset: 2047
+
+rallypoint:
+	flag:
+		Filename: conquer|mouse.shp
+		Start: 269
+		Length: 10
+		Offset: 2,-12
+		ZOffset: -1023
+	circles:
+		Filename: conquer|mouse.shp
+		Start: 249
+		Length: 10
+		ZOffset: -2047
+
+beacon:
+	idle:
+		Filename: pbeacon.shp
+		Length: 20
+		Tick: 200
+		ZOffset: 2047
+	arrow:
+		Filename: pbeacon.shp
+		Length: 1
+		ZOffset: 2047
+	nukeicon:
+		Filename: cameo|nukeicon.shp
+		Length: *
+		Offset: 0,-86
+	paraicon:
+		Filename: cameo|paraicon.shp
+		Length: *
+		Offset: 0,-86
+	aparicon:
+		Filename: cameo|aparicon.shp
+		Length: *
+		Offset: 0,-86
+	spypicon:
+		Filename: cameomd|spypicon.shp
+		Length: *
+		Offset: 0,-86
+	bolticon:
+		Filename: cameo|bolticon.shp
+		Length: *
+		Offset: 0,-86
+	tdrpicon:
+		Filename: bits/cameos/tdrpicon.shp
+		Length: *
+		Offset: 0,-86
+	tesdicon:
+		Filename: bits/cameos/tesdicon.shp
+		Length: *
+		Offset: 0,-86
+	radmicon:
+		Filename: bits/cameos/radmicon.shp
+		Length: *
+		Offset: 0,-86
+	parb1icon:
+		Filename: bits/cameos/parb1icon.shp
+		Length: *
+		Offset: 0,-86
+	parb2icon:
+		Filename: bits/cameos/parb2icon.shp
+		Length: *
+		Offset: 0,-86
+	parb3icon:
+		Filename: bits/cameos/parb3icon.shp
+		Length: *
+		Offset: 0,-86
+	empuicon:
+		Filename: bits/cameos/empuicon.shp
+		Length: *
+		Offset: 0,-86
+	mineicon:
+		Filename: bits/cameos/mineicon.shp
+		Length: *
+		Offset: 0,-86
+	nmineicon:
+		Filename: bits/cameos/nmineicon.shp
+		Length: *
+		Offset: 0,-86
+	leaficon:
+		Filename: bits/cameos/leaficon.shp
+		Length: *
+		Offset: 0,-86
+	a101icon:
+		Filename: bits/cameos/a101icon.shp
+		Length: *
+		Offset: 0,-86
+	a102icon:
+		Filename: bits/cameos/a102icon.shp
+		Length: *
+		Offset: 0,-86
+	a103icon:
+		Filename: bits/cameos/a103icon.shp
+		Length: *
+		Offset: 0,-86
+	sdrpicon:
+		Filename: bits/cameos/sdrpicon.shp
+		Length: *
+		Offset: 0,-86
+	dronicon:
+		Filename: cameo|dronicon.shp
+		Length: *
+		Offset: 0,-86
+	txdrop1icon:
+		Filename: bits/cameos/txdrop1icon.png
+		Length: *
+		Offset: 0,-86
+	txdrop2icon:
+		Filename: bits/cameos/txdrop2icon.png
+		Length: *
+		Offset: 0,-86
+	txdrop3icon:
+		Filename: bits/cameos/txdrop3icon.png
+		Length: *
+		Offset: 0,-86
+	buoyicon:
+		Filename: bits/cameos/buoyicon.png
+		Length: *
+		Offset: 0,-86
+	yclnicon:
+		Filename: cameomd|yclnicon.shp
+		Length: *
+		Offset: 0,-86
+	carpicon:
+		Filename: bits/cameos/carpicon.shp
+		Length: *
+		Offset: 0,-86
+	fallouticon:
+		Filename: bits/cameos/fallouticon.png
+		Length: *
+		Offset: 0,-86
+	cmslicon:
+		Filename: bits/cameos/cmslicon.shp
+		Length: *
+		Offset: 0,-86
+	chdpicon:
+		Filename: bits/cameos/chdpicon.png
+		Length: *
+		Offset: 0,-86
+	muteicon:
+		Filename: cameomd|muteicon.shp
+		Length: *
+		Offset: 0,-86
+	fab1icon:
+		Filename: bits/cameos/fab1icon.png
+		Length: *
+		Offset: 0,-86
+	fab2icon:
+		Filename: bits/cameos/fab2icon.png
+		Length: *
+		Offset: 0,-86
+	fab3icon:
+		Filename: bits/cameos/fab3icon.png
+		Length: *
+		Offset: 0,-86
+	xxicon:
+		Filename: cameo|xxicon.shp
+		Length: *
+		Offset: 0,-86
+	clock:
+		Filename: bits/animations/clock.shp
+		Length: *
+		Offset: 0,-86
+		BlendMode: Multiply
+
+rank:
+	rank-veteran-1:
+		Filename: bits/newpips.shp
+	rank-veteran-2:
+		Filename: bits/newpips.shp
+		Start: 1
+	rank-elite:
+		Filename: bits/newpips.shp
+		Start: 2
+	rank-veteran-cameo-1:
+		Filename: bits/newpips.shp
+		Offset: 2,2
+	rank-veteran-cameo-2:
+		Filename: bits/newpips.shp
+		Start: 1
+		Offset: 2,2
+	rank-elite-cameo:
+		Filename: bits/newpips.shp
+		Start: 2
+		Offset: 2,2
+
+tech:
+	heal:
+		Filename: bits/newpips.shp
+		Start: 3
+	repair:
+		Filename: bits/newpips.shp
+		Start: 4
+
+leaflet:
+	idle:
+		Filename: bits/projectiles/leaflet.shp
+		Length: *
+		Ticks: 160
+	icon:
+		Filename: bits/newpips.shp
+		Start: 5
+
+holo:
+	icon:
+		Filename: bits/newpips.shp
+		Start: 7
+
+propaganda:
+	icon:
+		Filename: bits/newpips.shp
+		Start: 10
+
+chronoboost:
+	icon:
+		Filename: bits/newpips.shp
+		Start: 11
+
+nogunner:
+	icon:
+		Filename: bits/newpips.shp
+		Start: 12
+
+propaganda-baku:
+	icon:
+		Filename: bits/newpips.shp
+		Start: 13
+
+mpspawn:
+	idle:
+		Filename: bits/mpspawn.shp
+		Length: *
+
+waypoint:
+	idle:
+		Filename: bits/waypoint.shp
+		Length: *
+
+ambient:
+	idle:
+		Filename: bits/ambient.shp
+		Length: *
+
+clock:
+	idle:
+		Filename: bits/animations/clock.shp
+		Length: *
+		BlendMode: Multiply
+
+parach:
+	Defaults:
+		Filename: conquer|parach.shp
+	open:
+		Length: 19
+	idle:
+		Start: 19
+		Length: 20
+	close:
+		Start: 40
+		Length: 29
+	shadow:
+		Filename: infshdw.shp
+		Start: 1
+
+cameo-chevron:
+	Defaults:
+		Offset: 2, 2
+	veteran:
+		Filename: bits/cameos/cameo-chevrons.shp
+	elite:
+		Filename: bits/cameos/cameo-chevrons.shp
+		Start: 1
+	heroic:
+		Filename: bits/cameos/cameo-chevrons.shp
+		Start: 2
+
+cameo-stripe:
+	fake:
+		Filename: bits/cameos/cameo-fake.png
+	upgraded:
+		Filename: bits/cameos/cameo-upgraded.png
+	taken:
+		Filename: bits/cameos/cameo-taken.png
+
+pips:
+	Defaults:
+		Filename: conqmd|pips.shp
+	medic:
+		Start: 6
+	groups: #TODO: backfall to RA asset
+		Filename: bits/pipsra.shp
+		Start: 8
+		Length: 10
+	pip-empty:
+		Filename: conqmd|pips2.shp
+	pip-green:
+		Filename: conqmd|pips2.shp
+		Start: 1
+	pip-yellow:
+		Filename: conqmd|pips2.shp
+		Start: 2
+	pip-gray:
+		Filename: conqmd|pips2.shp
+		Start: 3
+	pip-red:
+		Filename: conqmd|pips2.shp
+		Start: 4
+	pip-blue:
+		Filename: conqmd|pips2.shp
+		Start: 5
+	pip-ammo:
+		Filename: bits/ammopips.shp
+		Start: 1
+	pip-ammoempty:
+		Filename: bits/ammopips.shp
+		Start: 2
+	pip-garrison-empty:
+		Filename: conqmd|pips2.shp
+		Start: 6
+	pip-garrison-green:
+		Filename: conqmd|pips2.shp
+		Start: 7
+	pip-garrison-yellow:
+		Filename: conqmd|pips2.shp
+		Start: 8
+	pip-garrison-gray:
+		Filename: conqmd|pips2.shp
+		Start: 9
+	pip-garrison-red:
+		Filename: conqmd|pips2.shp
+		Start: 10
+	pip-garrison-blue:
+		Filename: conqmd|pips2.shp
+		Start: 11
+	pip-garrison-purple:
+		Filename: conqmd|pips2.shp
+		Start: 12
+	pip-building-empty:
+	pip-building-green:
+		Start: 1
+	pip-building-yellow:
+		Start: 2
+	pip-building-gray:
+		Start: 3
+	pip-building-red:
+		Start: 4
+	pip-building-blue:
+		Start: 5
+	pip-disguise:
+		Filename: bits/pip-disguise.shp
+		Length: *
+		Tick: 300
+		Offset: 6, -2
+
+chronoshift:
+	Defaults:
+		Filename: conquer|chronoar.shp
+		ZOffset: 1536
+		IgnoreWorldTint: true
+	start:
+		Length: 10
+	loop:
+		Start: 11
+		Length: 7
+	end:
+		Start: 18
+		Length: 4
+	target:
+		Filename: conquer|chronotg.shp
+		Length: *
+
+txgasp:
+	Defaults:
+		Filename: bits/projectiles/txgasp.shp
+	idle:
+		Length: *
+		ZOffset: 4096
+	projectile:
+		Length: *
+
+particles:
+	Defaults:
+		ZOffset: 4000
+		IgnoreWorldTint: true
+	largesmoke:
+		Filename: conquer|lgrysmk1.shp
+		Length: *
+		Tick: 80
+	smallsmoke:
+		Filename: conquer|sgrysmk1.shp
+		Length: *
+		Tick: 80
+	fire:
+		Filename: conquer|fire03.shp
+		Length: *
+	damagespark:
+		Filename: bits/animations/dmgspark.shp
+		Length: *
+		Tick: 100
+	inviso:
+		Filename: conquer|inviso.shp
+
+meteortrail:
+	Defaults:
+		Filename: bits/projectiles/meteortrail.shp
+		ZOffset: 4000
+		IgnoreWorldTint: true
+	idle:
+		Length: *
+		Tick: 25
+		ZOffset: 3000
+		BlendMode: Additive
+	idle2:
+		Length: *
+		ZOffset: 3000
+		BlendMode: Additive
+	idle3:
+		Start: 10
+		Length: *
+		ZOffset: 3000
+		Tick: 75
+		BlendMode: Additive
+	idle4:
+		Start: 14
+		Length: *
+		ZOffset: 3000
+		Tick: 50
+		BlendMode: Additive
+
+dynamite:
+	idle:
+		Filename: cache|bombcurs.shp
+		Length: 12
+		Tick: 300
+	small:
+		Filename: bits/newpips.shp
+		Length: 2
+		Start: 8
+		Tick: 300
+
+c4:
+	idle:
+		Filename: conquer|mouse.shp
+		Start: 309
+		Length: 10
+
+toxinbomb:
+	idle:
+		Filename: bits/animations/toxinbomb.shp
+		Length: *
+
+rac4countdown:
+	idle:
+		Filename: bits/animations/rac4countdown.shp
+		Length: *
+		Tick: 1000
+		Scale: 1.5
+		Offset: 1,-5
+
+discus:
+	idle:
+		Filename: conquer|discus.shp
+		Length: *
+
+canister:
+	idle:
+		Filename: conquer|dragon.shp
+		Length: 15
+
+dragon:
+	idle:
+		Filename: conquer|dragon.shp
+		Facings: 32
+
+smokey2:
+	Defaults:
+		ZOffset: 4000
+		IgnoreWorldTint: true
+	idle:
+		Filename: conquer|smokey2.shp
+		Length: *
+
+smokeyv3:
+	Defaults:
+		ZOffset: 4000
+		IgnoreWorldTint: true
+	idle:
+		Filename: conquer|smokey2.shp
+		Length: *
+		Offset: 0, -52
+
+smokeyrad:
+	idle:
+		Combine:
+			0:
+				Filename: conquer|smokey2.shp
+				Length: *
+			1:
+				Filename: conquer|smokey2.shp
+				Length: *
+				Offset: 0, -52
+		Facings: 2
+		Length: 20
+
+nukepuff:
+	idle:
+		Combine:
+			0:
+				Filename: conquer|nukepuff.shp
+				Length: *
+			1:
+				Filename: conquer|nukepuff.shp
+				Length: *
+				Offset: 2, -128
+		Facings: 2
+		Length: 20
+
+clusterpuff:
+	idle:
+		Combine:
+			0:
+				Filename: conquer|nukepuff.shp
+				Length: *
+			1:
+				Filename: conquer|nukepuff.shp
+				Length: *
+				Offset: 2, -64
+		Facings: 2
+		Length: 20
+
+grenade:
+	idle:
+		Filename: bits/projectiles/grenade.shp
+
+120mm:
+	idle:
+		Filename: conquer|120mm.shp
+
+160mm:
+	idle:
+		Filename: bits/projectiles/160mm.shp
+
+bbblelrg:
+	idle:
+		Filename: conquer|bbblelrg.shp
+		Length: *
+
+empbomb:
+	idle:
+		Filename: bits/projectiles/empbomb.shp
+
+empbomb50p:
+	idle:
+		Filename: bits/projectiles/empbomb50p.shp
+
+nbomb:
+	idle:
+		Filename: bits/projectiles/nbomb.shp
+
+missile:
+	idle:
+		Filename: conquer|missile.shp
+		Facings: 32
+
+ra1patriot:
+	idle:
+		Filename: bits/projectiles/ra1patriot.shp
+		Facings: 32
+
+parabomb:
+	idle:
+		Filename: bits/projectiles/parabomb.shp
+		Scale: 0.8
+	open:
+		Filename: conquer|parach.shp
+		Length: 19
+		Offset: 0, -15
+	parach:
+		Filename: conquer|parach.shp
+		Start: 19
+		Length: 20
+		Offset: 0, -15
+	close:
+		Filename: conquer|parach.shp
+		Start: 40
+		Length: 29
+		Offset: 0, -15
+
+subt:
+	idle:
+		Filename: bits/projectiles/zbomb.shp
+		Facings: 32
+
+zbomb:
+	idle:
+		Filename: bits/projectiles/zbomb.shp
+		Facings: 32
+
+zbombu:
+	idle:
+		Filename: bits/projectiles/zbombu.shp
+		Facings: 32
+
+zbombuo:
+	idle:
+		Filename: bits/projectiles/zbombuo.shp
+		Facings: 32
+
+zbombuc:
+	idle:
+		Filename: bits/projectiles/zbombuc.shp
+		Facings: 32
+
+pod:
+	idle:
+		Filename: bits/projectiles/pod.shp
+		Length: 1
+		Facings: 2
+		ZOffset: 1023
+
+largesmoke:
+	Defaults:
+		ZOffset: 4000
+		IgnoreWorldTint: true
+	idle:
+		Filename: conquer|lgrysmk1.shp
+		Length: *
+
+smallsmoke:
+	Defaults:
+		ZOffset: 4000
+		IgnoreWorldTint: true
+	idle:
+		Filename: conquer|sgrysmk1.shp
+		Length: *
+
+largefire:
+	Defaults:
+		ZOffset: 4000
+		IgnoreWorldTint: true
+	idle:
+		Filename: conquer|fire01.shp
+		Length: *
+
+largefireblue:
+	Defaults:
+		ZOffset: 4000
+		IgnoreWorldTint: true
+	idle:
+		Filename: bits/animations/bluefire01.shp
+		Length: *
+
+largefireblack:
+	Defaults:
+		ZOffset: 4000
+		IgnoreWorldTint: true
+	idle:
+		Filename: bits/animations/blackfire01.shp
+		Length: *
+
+largefirepink:
+	Defaults:
+		ZOffset: 4000
+		IgnoreWorldTint: true
+	idle:
+		Filename: bits/animations/pinkfire01.shp
+		Length: *
+
+mediumfire:
+	Defaults:
+		ZOffset: 4000
+		IgnoreWorldTint: true
+	idle:
+		Filename: conquer|fire02.shp
+		Length: *
+
+mediumfireblue:
+	Defaults:
+		ZOffset: 4000
+		IgnoreWorldTint: true
+	idle:
+		Filename: bits/animations/bluefire02.shp
+		Length: *
+
+mediumfireblack:
+	Defaults:
+		ZOffset: 4000
+		IgnoreWorldTint: true
+	idle:
+		Filename: bits/animations/blackfire02.shp
+		Length: *
+
+smallfire:
+	Defaults:
+		ZOffset: 4000
+		IgnoreWorldTint: true
+	idle:
+		Filename: conquer|fire03.shp
+		Length: *
+
+smallfireblue:
+	Defaults:
+		ZOffset: 4000
+		IgnoreWorldTint: true
+	idle:
+		Filename: bits/animations/bluefire03.shp
+		Length: *
+
+smallfireblack:
+	Defaults:
+		ZOffset: 4000
+		IgnoreWorldTint: true
+	idle:
+		Filename: bits/animations/blackfire03.shp
+		Length: *
+
+fireball:
+	Defaults:
+		ZOffset: 4000
+		IgnoreWorldTint: true
+	idle:
+		Filename: bits/animations/fb1.shp
+		Length: *
+	trailer:
+		Filename: bits/animations/fb2.shp
+		Length: *
+
+fireballblue:
+	Defaults:
+		ZOffset: 4000
+		IgnoreWorldTint: true
+	idle:
+		Filename: bits/animations/fb1blue.shp
+		Length: *
+	trailer:
+		Filename: bits/animations/fb2blue.shp
+		Length: *
+
+fireballblack:
+	Defaults:
+		ZOffset: 4000
+		IgnoreWorldTint: true
+	idle:
+		Filename: bits/animations/fb1black.shp
+		Length: *
+	trailer:
+		Filename: bits/animations/fb2black.shp
+		Length: *
+
+smokegren:
+	Defaults:
+		ZOffset: 4000
+		IgnoreWorldTint: true
+	idle:
+		Filename: conquer|lgrysmk1.shp
+		Length: *
+	trailer:
+		Filename: conquer|sgrysmk1.shp
+		Length: *
+		Tick: 20
+
+litning:
+	Defaults:
+		Filename: bits/projectiles/litning.shp
+		ZOffset: 4000
+		IgnoreWorldTint: true
+	bright:
+		Length: 4
+	dim:
+		Start: 4
+		Length: 4
+
+litningyel:
+	Defaults:
+		Filename: bits/projectiles/litningyel.shp
+		ZOffset: 4000
+		IgnoreWorldTint: true
+	bright:
+		Length: 4
+	dim:
+		Start: 4
+		Length: 4
+
+litningupg:
+	Defaults:
+		Filename: bits/projectiles/litningupg.shp
+		ZOffset: 4000
+		IgnoreWorldTint: true
+	bright:
+		Length: 4
+	dim:
+		Filename: bits/projectiles/litning.shp
+		Start: 4
+		Length: 4
+
+litningthicc:
+	Defaults:
+		Filename: bits/projectiles/litningthicc.shp
+		ZOffset: 4000
+		IgnoreWorldTint: true
+	bright:
+		Length: 4
+	dim:
+		Start: 4
+		Length: 4
+
+litningred:
+	Defaults:
+		Filename: bits/projectiles/litningred.shp
+		ZOffset: 4000
+		IgnoreWorldTint: true
+	bright:
+		Length: 4
+	dim:
+		Start: 4
+		Length: 4
+
+litningredthicc:
+	Defaults:
+		Filename: bits/projectiles/litningredthicc.shp
+		ZOffset: 4000
+		IgnoreWorldTint: true
+	bright:
+		Length: 4
+	dim:
+		Start: 4
+		Length: 4
+
+scrlitning:
+	Defaults:
+		Filename: bits/projectiles/scrlitning.shp
+		ZOffset: 4000
+		IgnoreWorldTint: true
+	bright:
+		Length: 4
+	dim:
+		Start: 4
+		Length: 4
+
+moveflsh:
+	idle:
+		Filename: conquer|ring.shp
+		Length: *
+		Tick: 30
+
+wake:
+	idle:
+		Filename: conquer|wake1.shp
+		Length: *
+		Tick: 120
+		ZOffset: -512
+		ZRamp: 1
+		Offset: 0, 0, 1
+
+icon:
+	satscan:
+		Filename: bits/cameos/satscanicon.shp
+	invuln:
+		Filename: cameo|ircricon.shp
+	chrono:
+		Filename: cameo|chroicon.shp
+	abomb:
+		Filename: cameo|nukeicon.shp
+	paradrop:
+		Filename: cameo|paraicon.shp
+	airborne:
+		Filename: bits/cameos/aparicon.shp
+	spyplane:
+		Filename: cameomd|spypicon.shp
+	bolticon:
+		Filename: cameo|bolticon.shp
+	tankdrop:
+		Filename: bits/cameos/tdrpicon.shp
+	tesladrop:
+		Filename: bits/cameos/tesdicon.shp
+	bunker:
+		Filename: cameomd|bnkricon.shp
+	repair1:
+		Filename: bits/cameos/erpr1icon.shp
+	repair2:
+		Filename: bits/cameos/erpr2icon.shp
+	repair3:
+		Filename: bits/cameos/erpr3icon.shp
+	radmissile:
+		Filename: bits/cameos/radmicon.shp
+	parabomb1:
+		Filename: bits/cameos/parb1icon.shp
+	parabomb2:
+		Filename: bits/cameos/parb2icon.shp
+	parabomb3:
+		Filename: bits/cameos/parb3icon.shp
+	empulse:
+		Filename: bits/cameos/empuicon.shp
+	cluster:
+		Filename: bits/cameos/mineicon.shp
+	cruiser:
+		Filename: bits/cameos/caicon.shp
+	sonar:
+		Filename: bits/cameos/sonricon.shp
+	navalmines:
+		Filename: bits/cameos/nmineicon.shp
+	control:
+		Filename: bits/cameos/psycicon.shp
+	force:
+		Filename: cameomd|forcicon.shp
+	sdrn:
+		Filename: bits/cameos/sdrnicon.shp
+	ambush:
+		Filename: bits/cameos/ambsicon.shp
+	leaflet:
+		Filename: bits/cameos/leaficon.shp
+	a101:
+		Filename: bits/cameos/a101icon.shp
+	a102:
+		Filename: bits/cameos/a102icon.shp
+	a103:
+		Filename: bits/cameos/a103icon.shp
+	grizzly:
+		Filename: bits/cameos/cgrzicon.shp
+	intel:
+		Filename: bits/cameos/sdrpicon.shp
+	drondrop:
+		Filename: cameo|dronicon.shp
+	v3storm:
+		Filename: bits/cameos/v3sticon.shp
+	propaganda1:
+		Filename: bits/cameos/prop1icon.shp
+	propaganda2:
+		Filename: bits/cameos/prop2icon.shp
+	propaganda3:
+		Filename: bits/cameos/prop3icon.shp
+	boost1:
+		Filename: bits/cameos/cbst1icon.shp
+	boost2:
+		Filename: bits/cameos/cbst2icon.shp
+	boost3:
+		Filename: bits/cameos/cbst3icon.shp
+	psireveal:
+		Filename: cameomd|psyricon.shp
+	domination:
+		Filename: cameomd|pdomicon.shp
+	invis:
+		Filename: bits/cameos/invsicon.shp
+	bounty:
+		Filename: bits/cameos/bntyicon.shp
+	xxicon:
+		Filename: cameo|xxicon.shp
+	emptyicon:
+		Filename: bits/cameos/emptyicon.shp
+	magnet1:
+		Filename: bits/cameos/mgnb1icon.png
+	magnet2:
+		Filename: bits/cameos/mgnb2icon.png
+	magnet3:
+		Filename: bits/cameos/mgnb3icon.png
+	ioncannon:
+		Filename: bits/cameos/ioncicon.png
+	txdrop1:
+		Filename: bits/cameos/txdrop1icon.png
+	txdrop2:
+		Filename: bits/cameos/txdrop2icon.png
+	txdrop3:
+		Filename: bits/cameos/txdrop3icon.png
+	buoy:
+		Filename: bits/cameos/buoyicon.png
+	lethocerus:
+		Filename: bits/cameos/txdxicon.shp
+	orbital:
+		Filename: bits/cameos/orbdicon.png
+	pointdefense:
+		Filename: bits/cameos/pdeficon.png
+	hologram:
+		Filename: bits/cameos/holoicon.png
+	deathbombs:
+		Filename: bits/cameos/dexpicon.shp
+	psiops:
+		Filename: cameomd|yclnicon.shp
+	carpetbomb:
+		Filename: bits/cameos/carpicon.shp
+	fallout:
+		Filename: bits/cameos/fallouticon.png
+	chronobomb:
+		Filename: bits/cameos/cbmbicon.png
+	cmissile:
+		Filename: bits/cameos/cmslicon.shp
+	chaosdrop:
+		Filename: bits/cameos/chdpicon.png
+	brutedrop:
+		Filename: bits/cameos/brdpicon.png
+	mutator:
+		Filename: cameomd|muteicon.shp
+	fuelairbomb1:
+		Filename: bits/cameos/fab1icon.png
+	fuelairbomb2:
+		Filename: bits/cameos/fab2icon.png
+	fuelairbomb3:
+		Filename: bits/cameos/fab3icon.png
+
+atomic:
+	up:
+		Filename: conquer|nkmslup.shp
+	down:
+		Filename: conquer|nkmsldn.shp
+
+radiationmissile:
+	up:
+		Filename: bits/projectiles/v3mslup.shp
+	down:
+		Filename: bits/projectiles/v3msldn.shp
+
+clustermissile:
+	up:
+		Filename: bits/projectiles/camslup.shp
+	down:
+		Filename: bits/projectiles/camsldn.shp
+
+mine:
+	Defaults:
+		Filename: bits/structures/mine.shp
+	idle:
+		Facings: 8
+	projectile:
+		Start: 8
+
+nmine:
+	Defaults:
+		Filename: bits/structures/nmine.shp
+	idle:
+		Length: *
+		Tick: 200
+		Offset: 0, -15
+	projectile:
+		Length: 1
+
+oreshimmering:
+	idle:
+		Filename: conquer|twnk1.shp
+		Length: *
+
+swtarget:
+	cursor:
+		Filename: conquer|mouse.shp
+		Start: 329
+		Length: 10
+
+spyptarget:
+	cursor:
+		Filename: conqmd|mouse.sha
+		Start: 504
+		Length: 8
+
+swdirection:
+	Defaults:
+		Filename: conquer|mouse.shp
+	arrow-t:
+		Start: 2
+	arrow-tr:
+		Start: 3
+	arrow-r:
+		Start: 4
+	arrow-br:
+		Start: 5
+	arrow-b:
+		Start: 6
+	arrow-bl:
+		Start: 7
+	arrow-l:
+		Start: 8
+	arrow-tl:
+		Start: 9
+
+gpsdot:
+	Defaults:
+		Filename: bits/gpsdot.shp
+	Infantry:
+	Vehicle:
+		Start: 1
+	Ship:
+		Start: 2
+	Helicopter:
+		Start: 3
+	Plane:
+		Start: 4
+	Harvester:
+		Start: 5
+	Structure:
+		Start: 6
+	Oil:
+		Start: 7
+	Hospital:
+		Start: 8
+	Outpost:
+		Start: 9
+	MachineShop:
+		Start: 10
+	Communications:
+		Start: 11
+	Defense:
+		Start: 12
+	Missile:
+		Start: 13
+	Psi:
+		Start: 14
+	Paradrop:
+		Start: 15
+	ParaVehicle:
+		Start: 16
+	Power:
+		Start: 17
+	SecretLab:
+		Start: 18
+	Wall:
+		Start: 19
+	Armory:
+		Start: 20
+	PillBox:
+		Start: 21
+
+dot:
+	idle:
+		Filename: bits/dot.shp
+
+web2:
+	idle:
+		Filename: bits/projectiles/web2.shp
+		Length: *
+		ZOffset: 1023
+
+dust:
+	idle:
+		Filename: bits/animations/vehicledust.shp
+		Length: *
+		ZOffset: -2047
+		Tick: 30
+		BlendMode: Additive
+
+emp:
+	emp:
+		Filename: conquer|emp_fx01.shp
+		Length: *
+
+webguy:
+	webguy:
+		Filename: bits/animations/webguy.shp
+		Length: 6
+		ShadowStart: 6
+
+mindcontrol:
+	mindcontrol:
+		Filename: conquer|yuricntl.shp
+		Length: *
+		Offset: 0, -24, 24
+
+corpse:
+	death_a:
+		Filename: death_a.shp
+		Length: *
+		ZOffset: -512
+		Tick: 2500
+	death_b:
+		Filename: death_b.shp
+		Length: *
+		ZOffset: -512
+		Tick: 2500
+	death_c:
+		Filename: death_c.shp
+		Length: *
+		ZOffset: -512
+		Tick: 2500
+	death_d:
+		Filename: death_d.shp
+		Length: *
+		ZOffset: -512
+		Tick: 2500
+	death_e:
+		Filename: death_e.shp
+		Length: *
+		ZOffset: -512
+		Tick: 2500
+	death_f:
+		Filename: death_f.shp
+		Length: *
+		ZOffset: -512
+		Tick: 2500
+
+^tuntop:
+	idle:
+		ZRamp: 1
+
+tuntop01:
+	Inherits: ^tuntop
+	idle:
+		Filename: tuntop01.tem
+		TilesetFilenames:
+			SNOW: tuntop01.sno
+			URBAN: tuntop01.urb
+			NEWURBAN: tuntop01.ubn
+			DESERT: tuntop01.des
+			LUNAR: tuntop01.lun
+			DUNE: tuntop01.des
+		Offset: 30, -61, 45
+
+tuntop02:
+	Inherits: ^tuntop
+	idle:
+		Filename: tuntop02.tem
+		TilesetFilenames:
+			SNOW: tuntop02.sno
+			URBAN: tuntop02.urb
+			NEWURBAN: tuntop02.ubn
+			DESERT: tuntop02.des
+			LUNAR: tuntop02.lun
+			DUNE: tuntop02.des
+		Offset: -30, -61, 45
+
+tuntop03:
+	Inherits: ^tuntop
+	idle:
+		Filename: tuntop03.tem
+		TilesetFilenames:
+			SNOW: tuntop03.sno
+			URBAN: tuntop03.urb
+			NEWURBAN: tuntop03.ubn
+			DESERT: tuntop03.des
+			LUNAR: tuntop03.lun
+			DUNE: tuntop03.des
+		Offset: 30, -61, 30
+
+tuntop04:
+	Inherits: ^tuntop
+	idle:
+		Filename: tuntop04.tem
+		TilesetFilenames:
+			SNOW: tuntop04.sno
+			URBAN: tuntop04.urb
+			NEWURBAN: tuntop04.ubn
+			DESERT: tuntop04.des
+			LUNAR: tuntop04.lun
+			DUNE: tuntop04.des
+		Offset: -30, -61, 30
+
+bomberbomb:
+	idle:
+		Filename: bits/projectiles/bomberbomb.shp
+		Facings: -32
+		ZOffset: 1023

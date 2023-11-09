@@ -1,0 +1,7 @@
+CrazyIvanVoice:
+	Inherits: ^InfantryDeath
+	Voices:
+		Select: icrasea, icraseb, icrasec, icrased, icrasee, icrasef, icraseg
+		Move: icramoa, icramob, icramoc, icramod, icramof
+		Attack: icraata, icraatb, icraatc, icraatd
+		Die: icradia, icradib

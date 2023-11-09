@@ -1,0 +1,136 @@
+^AlliedFactions:
+	Faction@allies:
+		Name: Allies
+		InternalName: random-allies
+		RandomFactionMembers: america, england, france, germany, korea
+		Side: Randoms
+		Description: Random Allied Country\nA random Allied country will be chosen when the game starts.
+	Faction@usa:
+		Name: United States
+		InternalName: america
+		Side: Allies
+		Description: United States of America\nCapital: Washington D.C. (1776-1973)\n             Seattle (1973-)\n\nSpecial Infantry: Navy SEAL\nSpecial Ability: Airborne\nSpecial Upgrade: Boost-Gliding Systems
+	Faction@uk:
+		Name: United Kingdom
+		InternalName: england
+		Side: Allies
+		Description: United Kingdom of Great Britain and Northern Ireland\nCapital: London\n\n\nSpecial Infantry: Sniper\nSpecial Ability: Carpet Bombing\nSpecial Upgrade: Portable Weaponry
+	Faction@france:
+		Name: France
+		InternalName: france
+		Side: Allies
+		Description: French Fourth Republic\nCapital: Paris\n\n\nSpecial Building: Mirage Turret\nSpecial Ability: Force Shield\nSpecial Upgrade: Grand Cannon Protocols
+	Faction@germany:
+		Name: Germany
+		InternalName: germany
+		Side: Allies
+		Description: German Republic\nCapital: Berlin\n\n\nSpecial Vehicle: Tank Destroyer\nSpecial Ability: Chrono Grizzly\nSpecial Upgrade: Advanced Gun Systems
+	Faction@korea:
+		Name: Korea
+		InternalName: korea
+		Side: Allies
+		Description: Republic of Korea\nCapital: Seoul\n\n\nSpecial Aircraft: Black Eagle\nSpecial Ability: Chronobomb\nSpecial Upgrade: EMP Munitions
+
+^AlliesNoBaseModifier:
+	StartingUnits@nobasesallies:
+		Class: nobases
+		ClassName: options-starting-units.no-bases
+		Factions: france, korea
+		BaseActor: tany
+		BaseActorFacing: 640
+		SupportActors: e1, e1, e1, e1, ggi, ggi, ggi, adog, adog, engineer, gren, gren, jumpjet.spawner, jumpjet.spawner, cleg, mtnk, mtnk, fv, fv, robo, robo, robo, mrcv, hwtz, mgtk, bfrt, sref, shad
+		SupportActorsFacing: 640
+		SupportProxyActors: hack.no_bases
+		InnerSupportRadius: 2
+		OuterSupportRadius: 8
+	StartingUnits@nobasesamerica:
+		Class: nobases
+		ClassName: options-starting-units.no-bases
+		Factions: america
+		BaseActor: tany
+		BaseActorFacing: 640
+		SupportActors: e1, e1, e1, e1, ggi, ggi, ggi, adog, adog, engineer, gren, jumpjet.spawner, jumpjet.spawner, ghost, cleg, mtnk, mtnk, fv, fv, robo, robo, robo, mrcv, hwtz, mgtk, bfrt, sref, shad
+		SupportActorsFacing: 640
+		SupportProxyActors: hack.no_bases
+		InnerSupportRadius: 2
+		OuterSupportRadius: 8
+	StartingUnits@nobasesengland:
+		Class: nobases
+		ClassName: options-starting-units.no-bases
+		Factions: england
+		BaseActor: tany
+		BaseActorFacing: 640
+		SupportActors: e1, e1, e1, e1, ggi, ggi, ggi, adog, adog, engineer, gren, jumpjet.spawner, jumpjet.spawner, snipe, cleg, mtnk, mtnk, fv, fv, robo, robo, robo, mrcv, hwtz, mgtk, bfrt, sref, shad
+		SupportActorsFacing: 640
+		SupportProxyActors: hack.no_bases
+		InnerSupportRadius: 2
+		OuterSupportRadius: 8
+	StartingUnits@nobasesgermany:
+		Class: nobases
+		ClassName: options-starting-units.no-bases
+		Factions: germany
+		BaseActor: tany
+		BaseActorFacing: 640
+		SupportActors: e1, e1, e1, e1, ggi, ggi, ggi, adog, adog, engineer, gren, jumpjet.spawner, jumpjet.spawner, cleg, mtnk, mtnk, fv, fv, robo, robo, robo, mrcv, hwtz, tnkd, mgtk, bfrt, sref, shad
+		SupportActorsFacing: 640
+		SupportProxyActors: hack.no_bases
+		InnerSupportRadius: 2
+		OuterSupportRadius: 8
+
+^AlliesStartingOptions:
+	StartingUnits@amcv:
+		Class: none
+		ClassName: options-starting-units.mcv-only
+		Factions: america, england, france, germany, korea
+		BaseActor: amcv
+		BaseActorFacing: 640
+	StartingUnits@amcvdog:
+		Class: mcvdog
+		ClassName: options-starting-units.mcv-and-dog
+		Factions: america, england, france, germany, korea
+		BaseActor: amcv
+		BaseActorFacing: 640
+		SupportActors: adog
+		SupportActorsFacing: 640
+		InnerSupportRadius: 4
+		OuterSupportRadius: 5
+	StartingUnits@lightallies:
+		Class: light
+		ClassName: options-starting-units.light-support
+		Factions: america, england, france, germany, korea
+		BaseActor: amcv
+		BaseActorFacing: 640
+		SupportActors: adog,e1,e1
+		SupportActorsFacing: 640
+		InnerSupportRadius: 4
+		OuterSupportRadius: 5
+	StartingUnits@mediumallies:
+		Class: medium
+		ClassName: options-starting-units.medium-support
+		Factions: america, england, france, germany, korea
+		BaseActor: amcv
+		BaseActorFacing: 640
+		SupportActors: adog,e1,e1,e1,mtnk,engineer
+		SupportActorsFacing: 640
+		InnerSupportRadius: 4
+		OuterSupportRadius: 5
+	StartingUnits@heavyallies:
+		Class: heavy
+		ClassName: options-starting-units.heavy-support
+		Factions: america, england, france, germany, korea
+		BaseActor: amcv
+		BaseActorFacing: 640
+		SupportActors: adog,e1,e1,e1,e1,mtnk,mtnk,fv,engineer
+		SupportActorsFacing: 640
+		InnerSupportRadius: 4
+		OuterSupportRadius: 5
+	StartingUnits@unholyamcv:
+		Class: unholy
+		ClassName: options-starting-units.unholy-alliance
+		Factions: america, england, france, germany, korea
+		BaseActor: amcv
+		BaseActorFacing: 640
+		SupportActors: smcv, pcv
+		SupportActorsFacing: 640
+		InnerSupportRadius: 4
+		OuterSupportRadius: 5

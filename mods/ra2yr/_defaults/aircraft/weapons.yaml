@@ -1,0 +1,20 @@
+PlaneExplode:
+	Inherits: KirovExplode
+	Warhead@2Dam: SpreadDamage
+		Damage: 10000
+
+KirovExplode:
+	Inherits: UnitExplode
+	Inherits@1: ^BreakPointDefenseDrones
+	Warhead@2Dam: SpreadDamage
+		Spread: 0c512
+		Damage: 75000 # 25000
+		Falloff: 100, 83, 67, 50, 0
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, SuppressTerrorDrone, NonTemporal
+	Warhead@3Smu: LeaveSmudge
+		SmudgeType: MediumCrater
+
+HornetExplode:
+	Inherits: KirovExplode
+	Warhead@2Dam: SpreadDamage
+		Damage: 200

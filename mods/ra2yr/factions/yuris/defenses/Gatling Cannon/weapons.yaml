@@ -1,0 +1,113 @@
+AGGattling:
+	Inherits: ^Gatling
+	ReloadDelay: 16
+	Range: 5c0
+	Burst: 2
+	Report: vgatlo1a.wav, vgatlo2a.wav, vgatlo2b.wav, vgatlo2c.wav, vgatlo3a.wav
+	ValidTargets: Structure, Barrel, Mine, Infantry, Vehicle, TerrorDrone, Ship, SeaAnimal
+	Warhead@1Dam: SpreadDamage
+		Damage: 2500
+		ValidTargets: Ground, Water
+
+AGGattling2:
+	Inherits: ^SA
+	ReloadDelay: 16
+	Range: 5c0
+	Burst: 2
+	Report: vgatlo4a.wav, vgatlo5a.wav, vgatlo5b.wav, vgatlo6a.wav
+	ValidTargets: Structure, Barrel, Mine, Infantry, Vehicle, TerrorDrone, Ship, SeaAnimal
+	Warhead@1Dam: SpreadDamage
+		Damage: 2500
+		ValidTargets: Ground, Water
+
+AGGattling3:
+	Inherits: ^SSA
+	ReloadDelay: 16
+	Range: 5c0
+	Burst: 2
+	Report: vgatlo7a.wav, vgatlo8a.wav, vgatlo8b.wav, vgatlo9a.wav
+	ValidTargets: Structure, Barrel, Mine, Infantry, Vehicle, TerrorDrone, Ship, SeaAnimal
+	Warhead@1Dam: SpreadDamage
+		Damage: 2500
+		ValidTargets: Ground, Water
+
+AAGattCann:
+	Inherits: ^Gatling
+	ReloadDelay: 16
+	Range: 12c0
+	Burst: 2
+	Report: vgatlo1a.wav, vgatlo2a.wav, vgatlo2b.wav, vgatlo2c.wav, vgatlo3a.wav
+	ValidTargets: Air
+	Warhead@1Dam: SpreadDamage
+		Damage: 3000
+		ValidTargets: Air
+
+AAGattCann2:
+	Inherits: ^Gatling
+	ReloadDelay: 8
+	Range: 12c0
+	Burst: 2
+	Report: vgatlo4a.wav, vgatlo5a.wav, vgatlo5b.wav, vgatlo6a.wav
+	ValidTargets: Air
+	Warhead@1Dam: SpreadDamage
+		Damage: 3000
+		ValidTargets: Air
+
+AAGattCann3:
+	Inherits: ^Gatling
+	ReloadDelay: 4
+	Range: 12c0
+	Burst: 2
+	Report: vgatlo7a.wav, vgatlo8a.wav, vgatlo8b.wav, vgatlo9a.wav
+	ValidTargets: Air
+	Warhead@1Dam: SpreadDamage
+		Damage: 3000
+		ValidTargets: Air
+
+
+
+# AGGattCann:
+# 	Inherits: ^Gatling
+# 	ReloadDelay: 6
+# 	BurstDelays: 3
+# 	Range: 7c0
+# 	Burst: 2
+# 	ValidTargets: Structure, Barrel, Mine, Infantry, Vehicle, TerrorDrone, Ship, SeaAnimal
+# 	Warhead@1Dam: SpreadDamage
+# 		ValidTargets: Ground, Water
+
+# AGGattCann2:
+# 	Inherits: AGGattCann
+# 	ReloadDelay: 4
+# 	BurstDelays: 2
+# 	Report: bgatweaa.wav, bgatweab.wav, bgatweac.wav, bgatwead.wav
+
+# AGGattCann3:
+# 	Inherits: AGGattCann
+# 	ReloadDelay: 2
+# 	BurstDelays: 1
+# 	Report: bgatweaa.wav, bgatweab.wav, bgatweac.wav, bgatwead.wav
+
+# AAGattCann:
+# 	Inherits: ^Gatling
+# 	ReloadDelay: 6
+# 	BurstDelays: 3
+# 	Range: 12c0
+# 	Burst: 2
+# 	ValidTargets: Air
+# 	Projectile: InstantHit
+# 		Blockable: false
+# 	Warhead@1Dam: SpreadDamage
+# 		ValidTargets: Air
+
+# AAGattCann2:
+# 	Inherits: AAGattCann
+# 	ReloadDelay: 4
+# 	BurstDelays: 2
+# 	Report: bgatweaa.wav, bgatweab.wav, bgatweac.wav, bgatwead.wav
+
+# AAGattCann3:
+# 	Inherits: AAGattCann
+# 	ReloadDelay: 2
+# 	BurstDelays: 1
+# 	Report: bgatweaa.wav, bgatweab.wav, bgatweac.wav, bgatwead.wav

@@ -1,0 +1,15 @@
+SquidPunch:
+	Inherits: ^HE
+	ReloadDelay: 32
+	Range: 1c856
+	Report: vsquat1a.wav
+	ValidTargets: Water, Underwater
+	Projectile: InstantHit
+	Warhead@1Dam: SpreadDamage
+		Damage: 10000
+		ValidTargets: Water, Underwater
+
+SquidPunchE:
+	Inherits: SquidPunch
+	Warhead@1Dam: SpreadDamage
+		Damage: 20000

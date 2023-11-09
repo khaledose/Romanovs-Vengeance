@@ -1,0 +1,19 @@
+gayard:
+	Inherits: ^Shipyard
+	Buildable:
+		Queue: Building.Shared, Building.Allies
+		Prerequisites: ~building.allies, power, refinery, ~techlevel.1
+		Description: Produces Allied ships, and other naval units.\n\nAbilities:\n- Comes with 3 repair drones.\n\n  Can only be placed on water.
+	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@ship.allies:
+		Prerequisite: ship.allies
+	ProvidesPrerequisite@vehicleorship.allies:
+		Prerequisite: vehicleorship.allies
+	Production:
+		Produces: Ship.Allies
+	ProductionQueue:
+		Type: Ship.Allies
+	ProductionBar:
+		ProductionType: Ship.Allies
+	IsometricSelectable:
+		DecorationHeight: 120

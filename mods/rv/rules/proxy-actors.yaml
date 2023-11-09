@@ -1,6 +1,7 @@
 barracks.infiltrated:
 	AlwaysVisible:
 	ProvidesPrerequisite:
+		Prerequisite: barracks.infiltrated
 	ProvidesPrerequisite@vete2flakt:
 		Prerequisite: vete2flakt
 	ProvidesPrerequisite@vetmtrp:
@@ -19,6 +20,7 @@ barracks.infiltrated:
 warfactory.infiltrated:
 	AlwaysVisible:
 	ProvidesPrerequisite:
+		Prerequisite: warfactory.infiltrated
 	ProvidesPrerequisite@vetifv:
 		Prerequisite: vetifv
 	ProvidesPrerequisite@vetytnk:

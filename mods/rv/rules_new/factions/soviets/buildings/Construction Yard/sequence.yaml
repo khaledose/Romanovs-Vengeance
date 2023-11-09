@@ -1,0 +1,181 @@
+nacnst:
+	Defaults:
+		Offset: 4, -58
+	idle:
+		Filename: ngcnst_c.shp
+		TilesetFilenames:
+			SNOW: nacnst_c.shp
+			SIMPLETERRAIN: ntcnst_c.shp
+		Length: 1
+		ShadowStart: 4
+		Tick: 150
+	damaged-idle:
+		Filename: ngcnst_c.shp
+		TilesetFilenames:
+			SNOW: nacnst_c.shp
+			SIMPLETERRAIN: ntcnst_c.shp
+		Start: 1
+		Length: 1
+		ShadowStart: 5
+		Tick: 150
+	make:
+		Filename: ntcnstmk.shp
+		TilesetFilenames:
+			SNOW: nacnstmk.shp
+			URBAN: nucnstmk.shp
+			NEWURBAN: nncnstmk.shp
+			DESERT: ndcnstmk.shp
+			LUNAR: nlcnstmk.shp
+			DUNE: ndcnstmk.shp
+		Length: 31
+		ShadowStart: 31
+	idle-top:
+		Filename: ngcnst_a.shp
+		TilesetFilenames:
+			SNOW: nacnst_a.shp
+			SIMPLETERRAIN: ntcnst_a.shp
+		Length: 11
+		Tick: 200
+	damaged-idle-top:
+		Filename: ngcnst_a.shp
+		TilesetFilenames:
+			SNOW: nacnst_a.shp
+			SIMPLETERRAIN: ntcnst_a.shp
+		Start: 11
+		Length: 11
+		Tick: 150
+	idle-normal:
+		Filename: ngcnst.shp
+		TilesetFilenames:
+			SNOW: nacnst.shp
+			SIMPLETERRAIN: ntcnst.shp
+		ShadowStart: 3
+		ZOffset: -1024
+	damaged-idle-normal:
+		Filename: ngcnst.shp
+		TilesetFilenames:
+			SNOW: nacnst.shp
+			SIMPLETERRAIN: ntcnst.shp
+		Start: 1
+		ShadowStart: 4
+		ZOffset: -1024
+	build:
+		Filename: ngcnst_b.shp
+		TilesetFilenames:
+			SNOW: nacnst_b.shp
+			SIMPLETERRAIN: ntcnst_b.shp
+		Length: 21
+		Tick: 150
+		ZOffset: 1c0
+	damaged-build:
+		Filename: ngcnst_b.shp
+		TilesetFilenames:
+			SNOW: nacnst_b.shp
+			SIMPLETERRAIN: ntcnst_b.shp
+		Start: 21
+		Length: 21
+		Tick: 150
+		ZOffset: 1c0
+	idle-waves:
+		Filename: bits/structures/water/ngcnst_w.shp
+		Tick: 200
+		ZOffset: -1c0
+	flag-russia:
+		Filename: bits/structures/flags/cgrufgl_a.png
+		Length: 81
+		Tick: 120
+		Offset: 26,-97
+		ZOffset: -1c128
+	flag-iraq:
+		Filename: bits/structures/flags/cgirfgl_a.png
+		Length: 81
+		Tick: 120
+		Offset: 26,-97
+		ZOffset: -1c128
+	flag-vietnam:
+		Filename: bits/structures/flags/cgvnfgl_a.png
+		Length: 81
+		Tick: 120
+		Offset: 26,-97
+		ZOffset: -1c128
+	flag-cuba:
+		Filename: bits/structures/flags/cgcufgl_a.png
+		Length: 81
+		Tick: 120
+		Offset: 26,-97
+		ZOffset: -1c128
+	flag-libya:
+		Filename: bits/structures/flags/cglbfgl_a.png
+		Length: 81
+		Tick: 120
+		Offset: 26,-97
+		ZOffset: -1c128
+	flag-chile:
+		Filename: bits/structures/flags/cgclfgl_a.png
+		Length: 81
+		Tick: 120
+		Offset: 26,-97
+		ZOffset: -1c128
+	flag-mexico:
+		Filename: bits/structures/flags/cgmxfgl_a.png
+		Length: 81
+		Tick: 120
+		Offset: 26,-97
+		ZOffset: -1c128
+	flag-mongolia:
+		Filename: bits/structures/flags/cgmofgl_a.png
+		Length: 81
+		Tick: 120
+		Offset: 26,-97
+		ZOffset: -1c128
+	flag-transcaucus:
+		Filename: bits/structures/flags/cgtcfgl_a.png
+		Length: 81
+		Tick: 120
+		Offset: 26,-97
+		ZOffset: -1c128
+	flag-turkmen:
+		Filename: bits/structures/flags/cgtmfgl_a.png
+		Length: 81
+		Tick: 120
+		Offset: 26,-97
+		ZOffset: -1c128
+	flag-tuva:
+		Filename: bits/structures/flags/cgtvfgl_a.png
+		Length: 81
+		Tick: 120
+		Offset: 26,-97
+		ZOffset: -1c128
+	flag-russianfed:
+		Filename: bits/structures/flags/cgrffgl_a.png
+		Length: 81
+		Tick: 120
+		Offset: 26,-97
+		ZOffset: -1c128
+	flag-serbia:
+		Filename: bits/structures/flags/cgsmfgl_a.png
+		Length: 81
+		Tick: 120
+		Offset: 26,-97
+		ZOffset: -1c128
+	flag-shadow:
+		Filename: bits/structures/flags/cgfglshdw.shp
+		Length: 81
+		ShadowStart: 81
+		Tick: 120
+		Offset: 38, -14
+	idle-hns:
+		Filename: bits/structures/sovcyardflags.shp
+		Start: 7
+		Tick: 120
+	idle-star:
+		Filename: bits/structures/sovcyardflags.shp
+		Start: 8
+		Tick: 120
+	#dead: ngcnstdm # SHP broken & unused
+	#	Length: 25
+	#	ShadowStart: 25
+	#	Tick: 100
+	icon:
+		Filename: bits/cameos/scnsicon.shp
+		Offset: 0,0

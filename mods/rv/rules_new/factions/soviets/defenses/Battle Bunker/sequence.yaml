@@ -1,0 +1,40 @@
+nabnkr:
+	Defaults:
+		Offset: 0, -30
+	idle:
+		Filename: ngbnkr.shp
+		TilesetFilenames:
+			SNOW: nabnkr.shp
+			SIMPLETERRAIN: ntbnkr.shp
+		ShadowStart: 4
+	damaged-idle:
+		Filename: ngbnkr.shp
+		TilesetFilenames:
+			SNOW: nabnkr.shp
+			SIMPLETERRAIN: ntbnkr.shp
+		Start: 1
+		ShadowStart: 5
+	garrisoned:
+		Filename: ngbnkr.shp
+		TilesetFilenames:
+			SNOW: nabnkr.shp
+			SIMPLETERRAIN: ntbnkr.shp
+		Start: 2
+		ShadowStart: 6
+	damaged-garrisoned:
+		Filename: ngbnkr.shp
+		TilesetFilenames:
+			SNOW: nabnkr.shp
+			SIMPLETERRAIN: ntbnkr.shp
+		Start: 3
+		ShadowStart: 7
+	make:
+		Filename: ngbnkrmk.shp
+		TilesetFilenames:
+			SNOW: nabnkrmk.shp
+			SIMPLETERRAIN: ntbnkrmk.shp
+		Length: 25
+		ShadowStart: 25
+	icon:
+		Filename: cameomd|bnkricon.shp
+		Offset: 0,0

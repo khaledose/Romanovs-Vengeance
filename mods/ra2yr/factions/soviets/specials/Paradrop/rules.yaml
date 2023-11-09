@@ -1,0 +1,35 @@
+^SovietParadropSpecial:
+	ParatroopersPower@soviets:
+		OrderName: SovietParatroopers
+		Names:
+			1: Soviet Paratroopers
+		Descriptions:
+			1: 2 Cargo Planes drop 10 conscripts\nanywhere on the map.
+		DropItems:
+			1: e2,e2,e2,e2,e2,e2,e2,e2,e2,e2
+		Prerequisites:
+			1: techparadrops.soviets
+		Icons:
+			1: paradrop
+		BeaconPosters:
+			1: paraicon
+		Cursor: praradrop
+		UnitTypes:
+			1: pdplane
+		SquadSizes:
+			1: 1
+		RequiresCondition: enabled
+		PauseOnCondition: disabled || chronodisable
+		ChargeInterval: 4500
+		AllowMultiple: true
+		SelectTargetSpeechNotification: SelectTarget
+		SelectTargetTextNotification: Select target.
+		EndChargeSpeechNotification: ParatroopersReady
+		EndChargeTextNotification: Paratroopers ready.
+		CameraActor: camera
+		DisplayBeacon: True
+		ArrowSequence: arrow
+		ClockSequence: clock
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: swdirection
+		DirectionArrowPalette: mouse

@@ -1,0 +1,128 @@
+# engineer:
+# 	Inherits: ^Infantry
+# 	Inherits@CHAOS: ^Berserkable
+# 	Inherits@MC: ^MindControllable
+# 	Inherits@SWIMSUIT: ^WithSwimSuit
+# 	Inherits@VOICES: ^WithFeedbackVoicelines
+# 	Buildable:
+# 		Queue: Infantry.Shared, Infantry.Allies, Infantry.Soviets, Infantry.Yuri
+# 		BuildAtProductionType: Soldier
+# 		Prerequisites: ~barracks, ~techlevel.1
+# 		BuildPaletteOrder: 30
+# 		Description: Captures enemy structures, repairs damaged buildings and bridges.\nDisarms explosives.\n\nAbilities:\n- Can swim\n\n  Unarmed
+# 		BuildDuration: 375
+# 		BuildDurationModifier: 100
+# 	Valued:
+# 		Cost: 500
+# 	DeliversCash:
+# 		Payload: 250
+# 	Tooltip:
+# 	Tooltip@NoRow:
+# 		Name: Engineer
+# 	Selectable:
+# 		Bounds: 482, 1448, 0, -530
+# 	Health:
+# 		HP: 10000
+# 	Mobile:
+# 		Locomotor: swimsuit
+# 	Garrisoner:
+# 		Voice: Move
+# 		CustomPipType: yellow
+# 		GarrisonType: Garrisoner
+# 	Passenger:
+# 		CustomPipType: yellow
+# 	RevealsShroud:
+# 		Range: 5c0
+# 	# RevealsShroudToIntelligenceOwner:
+# 	#	Range: 5c0
+# 	RevealOnDeath:
+# 		Radius: 5c0
+# 	InstantlyRepairs:
+# 		Types: building
+# 		RepairSound: urepair.wav
+# 	InstantlyRepairs@CIV:
+# 		Types: civilian
+# 		RepairSound: urepair.wav
+# 		ValidRelationships: Ally, Neutral
+# 	RepairsBridges:
+# 		RepairNotification: BridgeRepaired
+# 	Captures@INSTANT:
+# 		CaptureTypes: building, tech, husk
+# 		RequiresCondition: instantcapture
+# 	Captures@TIMED:
+# 		CaptureDelay: 75
+# 		CaptureTypes: building, husk
+# 		RequiresCondition: !instantcapture && !chronodisable
+# 	Captures@TECH:
+# 		CaptureTypes: tech
+# 		CaptureDelay: 250
+# 		RequiresCondition: !instantcapture && !chronodisable
+# 	GrantConditionOnPrerequisite@INSTANTCAPTURE:
+# 		Condition: instantcapture
+# 		Prerequisites: global-instantcapture
+# 	Armament:
+# 		Weapon: DefuseKit
+# 		Cursor: remove-bomb
+# 		OutsideRangeCursor: remove-bomb
+# 		TargetRelationships: Ally
+# 		ForceTargetRelationships: None
+# 		PauseOnCondition: chronodisable
+# 	AttackFrontal:
+# 		Voice: Action
+# 		FacingTolerance: 2
+# 	Voiced:
+# 		VoiceSet: EngineerVoice
+# 	Guard:
+# 		Voice: Action
+# 	AttackMove:
+# 		Voice: Action
+# 	QuantizeFacingsFromSequence:
+# 		Sequence: stand
+# 	WithInfantryBody@Water:
+# 		-IdleSequences:
+# 	CaptureManager:
+
+^Engineer:
+	Inherits: ^GroundInfantry
+	Inherits@MC: ^MindControllable
+	Inherits@CAPTURER: ^BuildingCapturer
+	Inherits@Repairer: ^BuildingRepairer
+	Inherits@VOICES: ^WithFeedbackVoicelines
+	Buildable:
+		Description: Captures enemy structures, repairs damaged buildings and bridges.\nDisarms explosives.\n\nAbilities:\n- Can swim\n\n  Unarmed
+		BuildPaletteOrder: 2
+	Health:
+		HP: 7500
+	Armor:
+		Type: None
+	Valued:
+		Cost: 500
+	DeliversCash:
+		Payload: 250
+	Mobile:
+		Speed: 60
+	RevealsShroud:
+		Range: 4c0
+	Tooltip:
+		Name: Engineer
+	Tooltip@NoRow:
+		Name: Engineer
+	Armament:
+		Weapon: DefuseKit
+		Cursor: remove-bomb
+		OutsideRangeCursor: remove-bomb
+		TargetRelationships: Ally
+		ForceTargetRelationships: None
+		PauseOnCondition: chronodisable
+
+engineer:
+	Inherits: ^Engineer
+	Buildable:
+		Queue: Infantry.Shared, Infantry.Allies
+		Prerequisites: ~gapile, ~techlevel.1
+	Tooltip:
+		Name: Allied Engineer
+	Tooltip@NoRow:
+		Name: Allied Engineer
+	Voiced:
+		VoiceSet: AlliedEngineerVoice

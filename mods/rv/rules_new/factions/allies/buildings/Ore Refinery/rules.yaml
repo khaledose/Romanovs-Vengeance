@@ -1,0 +1,80 @@
+garefn:
+	Inherits: ^Refinery
+	Buildable:
+		Queue: Building.Shared, Building.Allies
+		Prerequisites: ~building.allies, power, ~!global-megawealth, ~techlevel.1, ~AIantiRush
+	FreeActor:
+		Actor: cmin
+	SmokeParticleEmitter@refinerysmoke1:
+		Offset: -1024,-512,3456
+	SmokeParticleEmitter@refinerysmoke2:
+		Offset: -64,-1280,3456
+	SpawnNeighboringActors:
+		Locations: 3,0, 3,1, 3,2
+	PlaceBuildingVariants:
+		Actors: garefb #, garefc, garefd
+		Facings: 640, 384 #, 128, 896
+	IsometricSelectable:
+		Class: garefn
+		DecorationHeight: 60
+
+garefb:
+	Inherits: ^RefineryB
+	FreeActor:
+		Actor: cmin
+	-WithDockedOverlay: # This causes a crash for some reason.
+	ProvidesPrerequisite@garefn:
+		Prerequisite: garefn
+	SmokeParticleEmitter@refinerysmoke1:
+		Offset: 1024,-512,3456
+	SmokeParticleEmitter@refinerysmoke2:
+		Offset: 64,-1280,3456
+	SpawnNeighboringActors:
+		Locations: 0,3, 1,3, 2,3
+	IsometricSelectable:
+		Class: garefn
+		DecorationHeight: 60
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome
+		TooltipActor: garefn
+
+garefc:
+	Inherits: ^RefineryC
+	FreeActor:
+		Actor: cmin
+	ProvidesPrerequisite@garefn:
+		Prerequisite: garefn
+	SmokeParticleEmitter@refinerysmoke1:
+		Offset: 1024,512,3456
+	SmokeParticleEmitter@refinerysmoke2:
+		Offset: 64,1280,3456
+	SpawnNeighboringActors:
+		Locations: 0,0, 0,1, 0,2
+	IsometricSelectable:
+		Class: garefn
+		DecorationHeight: 60
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome
+		TooltipActor: garefn
+
+garefd:
+	Inherits: ^RefineryD
+	FreeActor:
+		Actor: cmin
+	ProvidesPrerequisite@garefn:
+		Prerequisite: garefn
+	SmokeParticleEmitter@refinerysmoke1:
+		Offset: -1024,512,3456
+	SmokeParticleEmitter@refinerysmoke2:
+		Offset: -64,1280,3456
+	SpawnNeighboringActors:
+		Locations: 0,0, 1,0, 2,0
+	IsometricSelectable:
+		Class: garefn
+		DecorationHeight: 60
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome
+		TooltipActor: garefn

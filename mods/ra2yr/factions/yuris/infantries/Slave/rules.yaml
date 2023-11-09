@@ -1,0 +1,122 @@
+# slav:
+# 	Inherits: ^Infantry
+# 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+# 	Inherits@CHAOS: ^Berserkable
+# 	Inherits@EXPERIENCE: ^GainsExperience
+# 	Inherits@VETERAN: ^ProducibleAsVeteranInfantry
+# 	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
+# 	Buildable:
+# 		Queue: Infantry.Unused
+# 		BuildAtProductionType: Slave
+# 		BuildPaletteOrder: 60
+# 		Prerequisites: ~showslave, yarefn, ~techlevel.1
+# 		Description: Gathers Ore and Gems.
+# 		BuildDuration: 125
+# 		BuildDurationModifier: 100
+# 	Valued:
+# 		Cost: 10
+# 	DeliversCash:
+# 		Payload: 0
+# 	Tooltip:
+# 	Tooltip@NoRow:
+# 		Name: Slave
+# 	Selectable:
+# 		Priority: 7
+# 		Bounds: 482, 1448, 0, -530
+# 	BaseSpawnerSlave:
+# 	Harvester:
+# 		DeliveryBuildings: yarefn
+# 		Capacity: 4
+# 		MaxUnloadQueue: 9
+# 		UnloadQueueCostModifier: 4
+# 		BaleLoadDelay: 24
+# 		BaleUnloadDelay: 1
+# 		FullyLoadedSpeed: 100
+# 		Resources: Ore, Gems
+# 		HarvestVoice: Move
+# 		DeliverVoice: Move
+# 		EmptyCondition: no-ore
+# 	DockClientManager:
+# 		Voice: Move
+# 	Health:
+# 		HP: 10000
+# 	Mobile:
+# 		Speed: 45
+# 		Locomotor: foot
+# 	Passenger:
+# 	RevealsShroud:
+# 		Range: 5c0
+# 	# RevealsShroudToIntelligenceOwner:
+# 	#	Range: 5c0
+# 	RevealOnDeath:
+# 		Radius: 5c0
+# 	WithFacingSpriteBody:
+# 		Sequence: harvest
+# 		RequiresCondition: harvesting && !parachute
+# 	GrantConditionOnHarvest:
+# 		Condition: harvesting
+# 	Armament@primary:
+# 		Weapon: Shovel
+# 		Damage: 30
+# 		PauseOnCondition: chronodisable
+# 		RequiresCondition: !rank-elite
+# 	Armament@elite:
+# 		Weapon: ShovelE
+# 		Damage: 35
+# 		PauseOnCondition: chronodisable
+# 		RequiresCondition: rank-elite
+# 	Voiced:
+# 		VoiceSet: SlaveVoice
+# 	-TakeCover:
+# 	WithInfantryBody:
+# 		RequiresCondition: no-ore && !harvesting && !parachute 
+# 	WithInfantryBody@full:
+# 		MoveSequence: full-run
+# 		DefaultAttackSequence: shoot
+# 		RequiresCondition: !no-ore && !harvesting && !parachute
+# 	AttackFrontal:
+# 		Voice: Attack
+# 		FacingTolerance: 2
+# 	WithHarvesterPipsDecoration:
+# 		Margin: 4, 3
+# 		Palette: ra
+# 		Position: BottomLeft
+# 		RequiresSelection: true
+# 		PipCount: 4
+# 		ResourceSequences:
+# 			Ore: pip-yellow
+# 			Gems: pip-blue
+
+slav:
+	Inherits: ^MinerInfantry
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@VETERAN: ^InfantryPromotable
+	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
+	Buildable:
+		Queue: Infantry.Unused
+		BuildPaletteOrder: 60
+		Prerequisites: ~showslave, yarefn, ~techlevel.1
+		Description: Gathers Ore and Gems.
+	Health:
+		HP: 12500
+	Armor:
+		Type: None
+	Valued:
+		Cost: 10
+	DeliversCash:
+		Payload: 0
+	Mobile:
+		Speed: 45
+	RevealOnDeath:
+		Radius: 5c0
+	Tooltip:
+		Name: Slave
+	Tooltip@NoRow:
+		Name: Slave
+	Armament@primary:
+		Weapon: Shovel
+		Damage: 30
+		PauseOnCondition: chronodisable
+	Voiced:
+		VoiceSet: SlaveVoice
+	-TakeCover:

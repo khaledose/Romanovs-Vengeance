@@ -1,0 +1,53 @@
+yappet:
+	Inherits: ^SuperWeapon
+	Inherits@SPECIAL: ^PsychicDominatorSpecial
+	Inherits@SHAPE: ^3x3Shape
+	Buildable:
+		Queue: Support.Shared, Support.Yuri
+		Prerequisites: ~building.yuri, yatech, !enoughpsydom, ~techlevel.5
+		Description: Release powerful energy that damages structures and mind controls units.\n\n  Requires power to operate.
+		BuildPaletteOrder: 990
+	IsometricSelectable:
+		DecorationHeight: 120
+	Power:
+		Amount: -200
+	Health:
+		HP: 100000
+	Armor:
+		Type: Concrete
+	Valued:
+		Cost: 5000
+	RevealsShroud:
+		Range: 5c0
+	Tooltip:
+		Name: Yuri Psychic Dominator
+	Tooltip@NoRow:
+		Name: Yuri Psychic Dominator
+	ProvidesPrerequisite@swlimit:
+		Prerequisite: enoughpsydom
+	NotificationAnnouncement:
+		Notification: PsychicDominatorDetected
+		TextNotification: Warning: Psychic Dominator detected.
+	WithIdleOverlay@lights:
+		Sequence: idle-lights
+		PauseOnCondition: disabled || chronodisable
+		RequiresCondition: !build-incomplete
+	Voiced:
+		VoiceSet: PsychicDominatorVoice
+		Volume: 0.8
+
+yapppt:
+	Inherits: ^CivBuilding
+	Inherits@SHAPE: ^3x3Shape
+	Tooltip:
+	Tooltip@NoRow:
+		Name: Psychic Dominator
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 6c0
+	Health:
+		HP: 100000
+	IsometricSelectable:
+		DecorationHeight: 75
+

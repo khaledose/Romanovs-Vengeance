@@ -1,0 +1,52 @@
+deso:
+	Inherits: ^BasicInfantry
+	Inherits@DEATH: ^DeathAnimation
+	Inherits@SHOOTER: ^Shooter
+	Inherits@Prone: ^ProneShooter
+	Defaults:
+		Filename: conquer|deso.shp
+	icon:
+		Filename: cameo|desoicon.shp
+	deploy:
+		Start: 299
+		Length: 15
+	deployed:
+		Start: 298
+		Length: 1
+	deployed-shoot:
+		Start: 292
+		Length: 7
+	dot:
+		Filename: dot.shp
+		ZOffset: -9999
+	cheer:
+		Start: 314
+	paradrop:
+		Filename: bits/infantry/desofix.shp
+		Start: 0
+
+# deso:
+# 	Inherits: ^ArmedInfantry
+# 	Defaults:
+# 		Filename: conquer|deso.shp
+# 	dot:
+# 		Filename: dot.shp
+# 		ZOffset: -9999
+# 	run:
+# 		Tick: 120
+# 	deploy:
+# 		Start: 299
+# 		Length: 15
+# 		Tick: 70
+# 	deployed:
+# 		Start: 292
+# 	deployed-shoot:
+# 		Start: 292
+# 		Length: 7
+# 		Tick: 70
+# 	cheer:
+# 		Start: 314
+# 	paradrop:
+# 		Filename: bits/infantry/desofix.shp
+# 	icon:
+# 		Filename: cameo|desoicon.shp

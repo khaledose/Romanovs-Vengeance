@@ -1,0 +1,4 @@
+dest:
+	Inherits@MUZZLE: ^WithCannonMuzzle
+	icon:
+		Filename: cameo|desticon.shp

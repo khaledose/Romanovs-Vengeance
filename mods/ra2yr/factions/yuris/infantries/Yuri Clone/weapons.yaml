@@ -1,0 +1,41 @@
+PsiWave:
+	ReloadDelay: 50
+	Range: 1c0
+	Report: iyurat2a.wav
+	ValidTargets: Infantry
+	Warhead@1Dam: SpreadDamage
+		Spread: 3c0
+		Falloff: 100, 100
+		Damage: 25000
+		Versus:
+			None: 100
+			Flak: 100
+			Plate: 100
+			Light: 0
+			Medium: 0
+			Heavy: 0
+			Wood: 0
+			Steel: 0
+			Concrete: 0
+			Drone: 0
+			Rocket: 0
+		ValidTargets: Infantry
+		InvalidTargets: ImmuneToFriendlyPsiWave
+		ValidRelationships: Ally, Enemy, Neutral
+		DamageTypes: PsychicDeath, NonTemporal
+	Warhead@2Eff: CreateEffect
+		Explosions: psi_wave
+		ValidTargets: Ground, Water, Air
+
+MindControl:
+	ReloadDelay: 200
+	Range: 7c0
+	ValidTargets: MindControl
+	InvalidTargets: IronCurtained, ForceShielded
+	Projectile: InstantHit
+	Warhead@1Dam: TargetDamage
+		Damage: 0
+
+MindControlE:
+	Inherits: MindControl
+	Range: 14c0

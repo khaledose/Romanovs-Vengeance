@@ -1,0 +1,4 @@
+ltnk:
+	Inherits@MUZZLE: ^WithCannonMuzzle
+	icon:
+		Filename: cameomd|ltnkicon.shp

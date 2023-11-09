@@ -1,0 +1,10 @@
+DefuseKit:
+	ReloadDelay: 20
+	TargetActorCenter: true
+	Range: 1c512
+	Report: gdefuse.wav
+	Projectile: InstantHit
+	ValidTargets: IvanBombCleaner, C4Cleaner
+	Warhead@1Det: DetachDelayedWeapon
+		Types: IvanBomb, C4
+	Warhead@2Dam: TargetDamage

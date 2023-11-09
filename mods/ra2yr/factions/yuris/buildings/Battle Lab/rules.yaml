@@ -1,0 +1,26 @@
+yatech:
+	Inherits: ^BattleLab
+	Inherits@SHAPE: ^3x2Shape
+	Buildable:
+		Queue: Building.Shared, Building.Yuri
+		Prerequisites: ~building.yuri, yaweap, yapsis, ~techlevel.3, ~!ai.yatech
+	IsometricSelectable:
+		DecorationHeight: 180
+	Tooltip:
+		Name: Yuri Battle Lab
+	Tooltip@NoRow:
+		Name: Yuri Battle Lab
+	InfiltrateForSupportPower:
+		Proxy: yuri.tech.infiltrated
+	WithIdleOverlay@lift:
+		Sequence: idle-lift
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete
+	ProvidesPrerequisite@AIbuildinglimit:
+		RequiresCondition: ai-control
+		Prerequisite: ai.yatech
+
+yuri.tech.infiltrated:
+	AlwaysVisible:
+	ProvidesPrerequisite:
+		Prerequisite: yuri.tech.infiltrated

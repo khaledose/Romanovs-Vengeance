@@ -1,0 +1,34 @@
+yagrnd:
+	Inherits: ^BaseStructure
+	Inherits@MC: ^MindControllableBuilding
+	Inherits@SHAPE: ^3x3Shape
+	Buildable:
+		Queue: Building.Shared, Building.Yuri
+		Prerequisites: ~building.yuri, yaweap, yapsis, ~techlevel.1
+		Description: Converts Infantry and Vehicles back to credits.
+		BuildPaletteOrder: 110
+	IsometricSelectable:
+		DecorationHeight: 75
+	Power:
+		Amount: -50
+	Health:
+		HP: 90000
+	Armor:
+		Type: Wood
+	Valued:
+		Cost: 600
+	RevealsShroud:
+		Range: 6c0
+	Tooltip:
+		Name: Yuri Grinder
+	Tooltip@NoRow:
+		Name: Yuri Grinder
+	AcceptsDeliveredCash:
+	WithAcceptDeliveredCashAnimation:
+		Sequence: grind
+	WithAcceptDeliveredCashSound:
+		Sound: bgrinda.wav
+	Voiced:
+		VoiceSet: GrinderVoice
+		Volume: 0.8
+

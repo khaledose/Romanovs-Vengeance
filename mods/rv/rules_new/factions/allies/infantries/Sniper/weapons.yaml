@@ -1,0 +1,54 @@
+AWP:
+	Inherits: DoublePistols
+	InvalidTargets: Bridge, Wall, Fence, Tree, NonGarrisonableStructure, WaterStructure, Vehicle, Ship
+	ReloadDelay: 120
+	Range: 14c0
+	Report: isniatta.wav
+	Warhead@1Dam: SpreadDamage
+		InvalidTargets: Bridge, Wall, Fence, Tree, Structure, WaterStructure, Vehicle, Ship
+		Spread: 42
+		Damage: 20000
+		DamageTypes: BulletDeath, NonTemporal
+		Versus:
+			None: 100
+			Flak: 100
+			Plate: 50
+			Light: 50
+			Heavy: 25
+			Drone: 25
+	Warhead@1Gar: OpenToppedDamage
+		ValidTargets: GarrisonedStructure
+		InvalidTargets: IronCurtained, ForceShielded
+		Spread: 42
+		Damage: 20000
+		Amount: 1
+		DamageTypes: BulletDeath, NonTemporal
+		Versus:
+			None: 100
+			Flak: 100
+			Plate: 50
+			Light: 50
+			Medium: 1
+			Heavy: 25
+			Wood: 1
+			Steel: 1
+			Concrete: 1
+			Drone: 25
+			Rocket: 100
+
+AWPE:
+	Inherits: AWP
+	ReloadDelay: 90
+	Range: 14c0
+	Warhead@2Eff: CreateEffect
+		Explosions: piffred
+
+UCawp:
+	Inherits: AWP
+	Projectile: InstantHit
+		Blockable: false
+
+UCAWPE:
+	Inherits: AWPE
+	Projectile: InstantHit
+		Blockable: false

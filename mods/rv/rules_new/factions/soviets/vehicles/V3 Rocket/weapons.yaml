@@ -1,0 +1,40 @@
+V3Weapon:
+	Inherits@1: ^BreakPointDefenseDrones
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c768
+		Damage: 20000
+		ValidTargets: Ground, Water
+		Versus:
+			None: 100
+			Flak: 100
+			Plate: 80
+			Light: 100
+			Medium: 70
+			Heavy: 70
+			Wood: 100
+			Steel: 100
+			Concrete: 90
+			Drone: 100
+			Rocket: 0
+		DamageTypes: Prone70Percent, TriggerProne, ExplosionDeath, SuppressTerrorDrone, NonTemporal
+	Warhead@2Eff: CreateEffect
+		Explosions: medium_clsn
+		ImpactSounds: gexp14a.wav
+		ValidTargets: Ground, Air
+	Warhead@3EffWater: CreateEffect
+		Explosions: small_watersplash
+		ImpactSounds: gexpwasa.wav
+		ValidTargets: Water
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: MediumCrater, MediumScorch
+
+V3WeaponE:
+	Inherits: V3Weapon
+	Warhead@1Dam: SpreadDamage
+		Spread: 1c0
+	Warhead@2Eff: CreateEffect
+		Explosions: terrorist_explosion
+		ImpactSounds: gexpapoa.wav
+		ImpactActors: false
+		ValidTargets: Ground, Water, Air
+	-Warhead@3EffWater:

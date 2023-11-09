@@ -1,0 +1,5 @@
+v3:
+	idle: local|v3
+	idle-rad: bits/vehicles/upgrades/v3u
+	idle-rad-orange: bits/vehicles/upgrades/v3uo
+	empty: local|v3wo

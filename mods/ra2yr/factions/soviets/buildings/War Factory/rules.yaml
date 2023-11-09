@@ -1,0 +1,36 @@
+naweap:
+	Inherits: ^WarFactory
+	Buildable:
+		Queue: Building.Shared, Building.Soviets
+		Prerequisites: ~building.soviets, nahand, narefn, ~techlevel.1
+	IsometricSelectable:
+		DecorationHeight: 90
+	Tooltip:
+		Name: Soviet War Factory
+	Tooltip@NoRow:
+		Name: Soviet War Factory
+	Production:
+		Produces: Vehicle.Soviets, Aircraft.Soviets
+	ProductionQueue:
+		Type: Vehicle.Soviets
+	ProductionQueue@Aircraft:
+		Type: Aircraft.Soviets
+	ProductionBar:
+		ProductionType: Vehicle.Soviets
+	ProductionBar@Aircraft:
+		ProductionType: Aircraft.Soviets
+	ProvidesPrerequisite@vehicle.soviets:
+		Prerequisite: vehicle.soviets
+	ProvidesPrerequisite@vehicle.russia:
+		Prerequisite: vehicle.russia
+		Factions: russia
+	ProvidesPrerequisite@vehicle.libya:
+		Prerequisite: vehicle.libya
+		Factions: libya
+	ProvidesPrerequisite@aircraft.soviets:
+		Prerequisite: aircraft.soviets
+	WithIdleOverlay@lights:
+		Sequence: idle-lights
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete
+	

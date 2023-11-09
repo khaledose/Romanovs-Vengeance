@@ -1,0 +1,75 @@
+asw:
+	Inherits: ^NewNewPlane
+	RejectsOrders:
+	Health:
+		HP: 3000
+	Armor:
+		Type: Light
+	Valued:
+		Cost: 50
+	Aircraft:
+		AltitudeVelocity: 240
+		InitialFacing: 768
+		TurnSpeed: 32
+		Speed: 210
+		RepulsionSpeed: 40
+		TakeoffSounds: vospstaa.wav
+		LandingSounds: vosplana.wav
+		SoundVolume: 0.35
+		TakeUpCellWhenLand: false
+	Tooltip:
+		Name: Osprey
+	Tooltip@NoRow:
+		Name: Osprey
+	Armament:
+		Weapon: ASWBomb
+		PauseOnCondition: !ammo
+		RequiresCondition: !rank-elite
+	Armament@Elite:
+		Weapon: ASWBombE
+		PauseOnCondition: !ammo
+		RequiresCondition: rank-elite
+	AmmoPool:
+		Ammo: 5
+	CarrierSlave:
+		LandingDistance: 8c0
+	RenderVoxels:
+		NormalsPalette: ts-normals
+	SpawnActorOnDeath:
+		Actor: aswhusk
+	SpawnActorOnDeath@VTOL:
+		Actor: aswhusk.VTOL
+	Contrail@1:
+		Offset: -600,100,100
+	Contrail@2:
+		Offset: -600,-100,100
+
+aswhusk:
+	Inherits: ^PlaneHusk
+	Tooltip:
+	Tooltip@NoRow:
+		Name: Osprey
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 180
+		AltitudeVelocity: 240
+	FallsToEarth:
+		Explosion: HornetExplode
+	RenderVoxels:
+		Image: asw
+		NormalsPalette: ts-normals
+
+aswhusk.VTOL:
+	Inherits: ^HelicopterHusk
+	Tooltip:
+	Tooltip@NoRow:
+		Name: Osprey
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 180
+		AltitudeVelocity: 240
+	FallsToEarth:
+		Explosion: HornetExplode
+	RenderVoxels:
+		Image: asw
+		NormalsPalette: ts-normals

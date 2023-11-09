@@ -1,0 +1,129 @@
+yayard:
+	Defaults:
+		Offset: 0, -60
+	idle:
+		Filename: ygyard.shp
+		TilesetFilenames:
+			SNOW: yayard.shp
+			SIMPLETERRAIN: ytyard.shp
+		ShadowStart: 3
+	damaged-idle:
+		Filename: ygyard.shp
+		TilesetFilenames:
+			SNOW: yayard.shp
+			SIMPLETERRAIN: ytyard.shp
+		Start: 2
+		ShadowStart: 4
+	idle-crane:
+		Filename: ygyard_a.shp
+		TilesetFilenames:
+			SNOW: yayard_a.shp
+			SIMPLETERRAIN: ytyard_a.shp
+		Length: 15
+		ShadowStart: 32
+		Tick: 200
+	damaged-idle-crane:
+		Filename: ygyard_a.shp
+		TilesetFilenames:
+			SNOW: yayard_a.shp
+			SIMPLETERRAIN: ytyard_a.shp
+		Start: 16
+		Length: 15
+		ShadowStart: 48
+		Tick: 200
+	idle-waves:
+		Filename: ygyard_c.shp
+		TilesetFilenames:
+			SNOW: yayard_c.shp
+			SIMPLETERRAIN: ytyard_c.shp
+		Length: 15
+		ShadowStart: 30
+		Tick: 200
+	damaged-idle-waves:
+		Filename: ygyard_c.shp
+		TilesetFilenames:
+			SNOW: yayard_c.shp
+			SIMPLETERRAIN: ytyard_c.shp
+		Start: 16
+		Length: 15
+		ShadowStart: 32
+		Tick: 200
+	produced-overlay:
+		Filename: ygyard_d.shp
+		TilesetFilenames:
+			SNOW: yayard_d.shp
+		Start: 0
+		Length: 16
+		ShadowStart: 32
+		Tick: 100
+	damaged-produced-overlay:
+		Filename: ygyard_d.shp
+		TilesetFilenames:
+			SNOW: yayard_d.shp
+		Start: 16
+		Length: 16
+		ShadowStart: 48
+		Tick: 100
+	make:
+		Filename: ygyardmk.shp
+		TilesetFilenames:
+			SNOW: yayardmk.shp
+			SIMPLETERRAIN: ytyardmk.shp
+		Length: 24
+		ShadowStart: 25
+	repair-start:
+		Filename: ygyard_s.shp
+		TilesetFilenames:
+			SNOW: yayard_s.shp
+			SIMPLETERRAIN: ytyard_s.shp
+		Length: 6
+		ShadowStart: 32
+		Tick: 100
+	repair:
+		Filename: ygyard_s.shp
+		TilesetFilenames:
+			SNOW: yayard_s.shp
+			SIMPLETERRAIN: ytyard_s.shp
+		Start: 6
+		Length: 5
+		ShadowStart: 38
+		Tick: 100
+	repair-end:
+		Filename: ygyard_s.shp
+		TilesetFilenames:
+			SNOW: yayard_s.shp
+			SIMPLETERRAIN: ytyard_s.shp
+		Start: 11
+		Length: 5
+		ShadowStart: 43
+		Tick: 100
+	damaged-repair-start:
+		Filename: ygyard_s.shp
+		TilesetFilenames:
+			SNOW: yayard_s.shp
+			SIMPLETERRAIN: ytyard_s.shp
+		Start: 16
+		Length: 6
+		ShadowStart: 48
+		Tick: 100
+	damaged-repair:
+		Filename: ygyard_s.shp
+		TilesetFilenames:
+			SNOW: yayard_s.shp
+			SIMPLETERRAIN: ytyard_s.shp
+		Start: 22
+		Length: 5
+		ShadowStart: 54
+		Tick: 100
+	damaged-repair-end:
+		Filename: ygyard_s.shp
+		TilesetFilenames:
+			SNOW: yayard_s.shp
+			SIMPLETERRAIN: ytyard_s.shp
+		Start: 27
+		Length: 5
+		ShadowStart: 59
+		Tick: 100
+	icon:
+		Filename: cameomd|yyrdicon.shp
+		Offset: 0,0

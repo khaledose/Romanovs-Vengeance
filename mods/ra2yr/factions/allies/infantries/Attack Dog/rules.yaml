@@ -1,0 +1,54 @@
+^Dog:
+	Inherits: ^GroundAnimal
+	Inherits@AUTOTARGET: ^AutoTargetInfantryAssaultMove
+	Inherits@VETERAN: ^InfantryPromotable
+	Inherits@DETECTCLOAKED: ^DetectCloaked
+	Inherits@VOICES: ^WithFeedbackVoicelines
+	Inherits@LEAP: ^LeapAttack
+	Buildable:
+		Description: Anti-infantry unit.\nCan be deployed to stun nearby infantry for a short while.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can swim\n- Can detect Stealth units\n- Can detect Spies
+		BuildPaletteOrder: 4
+	Selectable:
+		Bounds: 724, 1158, 0, -241
+	Health:
+		HP: 10000
+	Armor:
+		Type: None
+	Valued:
+		Cost: 200
+	DeliversCash:
+		Payload: 100
+	RevealsShroud:
+		Range: 9c0
+	Mobile:
+		Speed: 105
+	Tooltip:
+		Name: Attack Dog
+	Tooltip@NoRow:
+		Name: Attack Dog
+	Armament:
+		Weapon: DogJaw
+		Damage: 1000
+	Voiced:
+		VoiceSet: DogVoice
+	-AttackFrontal:
+
+^LeapAttack:
+	AttackLeap:
+		Voice: Attack
+		Speed: 105
+		LeapCondition: attacking
+		PauseOnCondition: chronodisable
+	WithFacingSpriteBody:
+		Sequence: shoot
+		RequiresCondition: attacking
+	WithInfantryBody:
+		RequiresCondition: !parachute && !attacking
+
+adog:
+	Inherits: ^Dog
+	Buildable:
+		Queue: Infantry.Shared, Infantry.Allies
+		Prerequisites: ~infantry.allies, ~techlevel.1
+
+

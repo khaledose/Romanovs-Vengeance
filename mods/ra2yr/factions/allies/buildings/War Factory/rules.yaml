@@ -1,0 +1,39 @@
+gaweap:
+	Inherits: ^WarFactory
+	Buildable:
+		Queue: Building.Shared, Building.Allies
+		Prerequisites: ~building.allies, gapile, garefn, ~techlevel.1
+	IsometricSelectable:
+		DecorationHeight: 60
+	Tooltip:
+		Name: Allied War Factory
+	Tooltip@NoRow:
+		Name: Allied War Factory
+	Production:
+		Produces: Vehicle.Allies, Aircraft.Allies
+	ProductionQueue:
+		Type: Vehicle.Allies
+	ProductionQueue@Aircraft:
+		Type: Aircraft.Allies
+	ProductionBar:
+		ProductionType: Vehicle.Allies
+	ProductionBar@Aircraft:
+		ProductionType: Aircraft.Allies
+	ProvidesPrerequisite@vehicle.allies:
+		Prerequisite: vehicle.allies
+	ProvidesPrerequisite@aircraft.allies:
+		Prerequisite: aircraft.allies
+	ProvidesPrerequisite@vehicle.germany:
+		Prerequisite: vehicle.germany
+		Factions: germany
+	ProvidesPrerequisite@powered:
+		Prerequisite: powered_robo
+		RequiresCondition: !chronodisable
+	WithIdleOverlay@flag:
+		Sequence: idle-flag
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete
+	WithIdleOverlay@fan:
+		Sequence: overlay-fan
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete

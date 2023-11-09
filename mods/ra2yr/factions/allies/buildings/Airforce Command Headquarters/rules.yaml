@@ -1,0 +1,117 @@
+gaairc:
+	Inherits: ^Factory
+	Inherits@RADAR: ^Radar
+	Inherits@CAPTURE: ^Capturable
+	Inherits@MC: ^MindControllableBuilding
+	Inherits@SPECIAL: AmericanParaDropSpecial
+	Inherits@SHAPE: ^3x2Shape
+	Buildable:
+		Queue: Building.Shared, Building.Allies
+		Prerequisites: ~building.allies, garefn, ~techlevel.2
+		Description: Provides radar.\nProduces Allied aircraft.\nSupports 4 aircraft.\nResearches basic upgrades.\n\nProvides a different support power depening on the subfaction:\n- Airborne (United States)\n- Carpet Bombing (United Kingdom)\n- Force Shield (France)\n- Chrono Grizzly (Germany)\n- Chronobomb (Korea)\n\nAbilities:\n- Comes with 3 repair drones.
+		BuildPaletteOrder: 40
+	Building:
+		Footprint: x=x x==
+	Power:
+		Amount: -50
+	Health:
+		HP: 60000
+	Armor:
+		Type: Steel
+	Valued:
+		Cost: 1000
+	RevealsShroud:
+		Range: 5c0
+	Tooltip:
+		Name: Allied Airforce Command Headquarters
+	Tooltip@NoRow:
+		Name: Allied Airforce Command Headquarters
+	Production:
+		Produces: Aircraft.Helipad.Allies
+	Production@Shared:
+		Produces: Aircraft.Shared
+	ProductionQueue:
+		Type: Aircraft.Allies
+		Group: Aircraft
+		DisplayOrder: 25
+	ProductionQueue@Shared:
+		Type: Aircraft.Shared
+		Group: Aircraft
+		DisplayOrder: 25
+	ProductionBar:
+		ProductionType: Aircraft.Allies
+	ProductionBar@Shared:
+		ProductionType: Aircraft.Shared
+	RallyPoint:
+		Path: 1, 2
+	ProvidesPrerequisite@aircraft.allies:
+		Prerequisite: aircraft.helipad.allies
+	ProvidesPrerequisite@aircraft.korea:
+		Prerequisite: aircraft.helipad.korea
+		Factions: korea
+	ProvidesPrerequisite@radar.america:
+		Prerequisite: radar.america
+		Factions: america
+	WithIdleOverlay@bib:
+		Sequence: idle-bib
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete
+	WithIdleOverlay@idle-dock-lights:
+		Sequence: idle-dock-lights
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete
+	WithIdleOverlay@bib-lights:
+		Sequence: idle-bib-lights
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete
+	WithIdleOverlay@dish:
+		Sequence: idle-dish
+		PauseOnCondition: disabled || chronodisable
+		RequiresCondition: !build-incomplete
+	Reservable:
+	Exit@1:
+		Facing: 896
+		SpawnOffset: 1086,362,0
+		ExitCell: 3,-1
+	Exit@2:
+		Facing: 896
+		SpawnOffset: -362,-1086,0
+		ExitCell: 1,-1
+	Exit@3:
+		Facing: 896
+		SpawnOffset: -384,512,0
+		ExitCell: 1,2
+	Exit@4:
+		Facing: 896
+		SpawnOffset: 384,768,0
+		ExitCell: 3,2
+	GrantExternalConditionToOwner:
+		Condition: airdock
+	CommandBarBlacklist:
+		DisableStop: false
+	SpawnNeighboringActors:
+		ActorTypes: gadock
+		Locations: 1,0, 1,1, 2,1
+	IsometricSelectable:
+		DecorationHeight: 105
+	Voiced:
+		VoiceSet: AirfieldVoice
+		Volume: 0.8
+	ProvidesPrerequisite@AIantiRush:
+		Prerequisite: AIantiRush ## Hack: AI Building control. AI build refinary only when it has a combat producing line.
+
+gadock:
+	Interactable:
+	AlwaysVisible:
+	Reservable:
+	GrantExternalConditionToOwner:
+		Condition: airdock
+	GrantCondition:
+		Condition: dontmove
+	Mobile:
+		Speed: 1
+		Locomotor: amphibious
+		PauseOnCondition: dontmove
+	Exit@1:
+		Facing: 896
+	RejectsOrders:

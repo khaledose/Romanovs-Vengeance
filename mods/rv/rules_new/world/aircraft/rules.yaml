@@ -1,0 +1,73 @@
+pdplane:
+	Inherits: ^NeutralAircraft
+	Valued:
+		Cost: 1000
+	-Guard:
+	-Selectable:
+	Interactable:
+		Bounds: 2413, 3861
+	RejectsOrders:
+	Tooltip:
+		Name: Cargo Plane
+	Tooltip@NoRow:
+		Name: Cargo Plane
+	Aircraft:
+		CruiseAltitude: 5c852
+		Repulsable: false
+		TurnSpeed: 20
+		Speed: 270
+		TakeOffOnCreation: false
+		Voice: Action
+	Health:
+		HP: 20000
+	Armor:
+		Type: Light
+	RenderSprites:
+	WithVoxelHelicopterBody:
+		TickRate: 1
+	Cargo:
+		MaxWeight: 10
+	ParaDrop:
+		DropRange: 8c0
+		ChuteSound: sparadra.wav
+	SpawnActorOnDeath:
+		DeathType: NonTemporal
+		Actor: pdplanehusk
+	HitShape:
+	RenderVoxels:
+		Image: pdplane
+	AmbientSound@Ambient:
+		SoundFiles: sparlo2a.wav, sparlo2b.wav, sparlo2c.wav
+		Volume: 1
+		RequiresCondition: airborne
+	Voiced:
+		VoiceSet: CargoPlaneVoice
+		Volume: 0.45
+	DeathSounds:
+		DeathTypes: NonTemporal
+	Contrail@1:
+		Offset: -50,1200,400
+		TrailLength: 15
+		StartColor: 88888880
+		StartColorAlpha: 128
+		StartColorUsePlayerColor: False
+		EndColorUsePlayerColor: true
+	Contrail@2:
+		Offset: -50,-1200,400
+		TrailLength: 15
+		StartColor: 88888880
+		StartColorAlpha: 128
+		StartColorUsePlayerColor: False
+		EndColorUsePlayerColor: true
+
+pdplanehusk:
+	Inherits: ^PlaneHusk
+	Tooltip:
+		Name: Cargo Plane
+	Tooltip@NoRow:
+		Name: Cargo Plane
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 270
+	RenderVoxels:
+		Image: pdplane

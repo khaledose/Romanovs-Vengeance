@@ -1,0 +1,150 @@
+bfrt:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@VETERAN: ^ProducibleAsVeteranVehicle
+	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@RADIATON: ^DamagedByRadiation10Percent
+	Buildable:
+		Queue: Vehicle.Shared, Vehicle.Allies
+		BuildPaletteOrder: 120
+		Prerequisites: ~vehicle.allies, gatech, ~techlevel.4
+		Description: Large vehicle with 5 fireports for infantry in to fire.\n\nAbilities:\n- Can crush enemy vehicles\n\nUpgradeable with:\n- Composite Armor
+		BuildDuration: 875
+		BuildDurationModifier: 100
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Valued:
+		Cost: 2000
+	DeliversCash:
+		Payload: 2000
+	Tooltip:
+	Tooltip@NoRow:
+		Name: Battle Fortress
+	Selectable:
+		Class: bfrt
+		Bounds: 1737, 3089, 0, -386
+	Health:
+		HP: 60000
+	Armor:
+		Type: Heavy
+	Mobile:
+		TurnSpeed: 32
+		Speed: 75
+		Locomotor: omnicrusher
+		RequiresCondition: !notmobile && !chronodisable && !beingterrordroned && !being-captured
+	-Crushable:
+	RevealsShroud:
+		Range: 6c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 6c0
+	RevealOnDeath:
+		Radius: 6c0
+	# Armament@primary:
+	#	Weapon: 20mmrapid
+	#	Damage: 30
+	#	RequiresCondition: !rank-elite
+	# Armament@elite:
+	#	Weapon: 20mmrapidE
+	#	Damage: 50
+	#	RequiresCondition: rank-elite
+	# AttackFollowFrontal:
+	#	Voice: Attack
+	#	FacingTolerance: 2
+	#	MustFaceTarget: true
+	#	PauseOnCondition: chronodisable
+	Cargo:
+		Types: Infantry, Garrisoner, SmallVehicle
+		MaxWeight: 5
+		AfterLoadDelay: 0
+		BeforeUnloadDelay: 0
+		AfterUnloadDelay: 0
+		UnloadVoice: Move
+		EjectOnDeath: false
+		LoadingCondition: notmobile
+		PassengerConditions:
+			e1: loaded
+			e2: loaded
+			init: loaded
+			gren: loaded
+			ggi: loaded-air
+			rctt: loaded-air
+			flakt: loaded-air
+			gtrp: loaded-air
+			shk: loaded
+			shkc: loaded
+			vlkv: loaded
+			pyro: loaded
+			mtrp: loaded
+			deso: loaded
+			tany: loaded
+			ghost: loaded
+			boris: loaded
+			ccomand: loaded
+			snipe: loaded
+			ssnipe: loaded
+			virus: loaded
+			cleg: loaded
+			itrp: loaded
+			spct: loaded
+			ttrp: loaded
+			ttrp.soviet: loaded
+			crkt: loaded-air
+	WithCargoSounds:
+		EnterSound: genter1a.wav
+		ExitSound: gexit1a.wav
+	AutoTargetPriority@DEFAULT:
+		RequiresCondition: !stance-attackanything && !assault-move && !loaded-air
+	AutoTargetPriority@ATTACKANYTHING:
+		RequiresCondition: (stance-attackanything || assault-move) && !loaded-air
+	AutoTargetPriority@DEFAULT_AIR:
+		RequiresCondition: !stance-attackanything && !assault-move && loaded-air
+		ValidTargets: Infantry, Vehicle, TerrorDrone, Water, Underwater, Air, Defense
+		InvalidTargets: NoAutoTarget, WaterStructure
+	AutoTargetPriority@ATTACKANYTHING_AIR:
+		RequiresCondition: (stance-attackanything || assault-move) && loaded-air
+		ValidTargets: Infantry, Vehicle, TerrorDrone, Water, Underwater, Air, Structure, Defense
+		InvalidTargets: NoAutoTarget
+	AttackOpenTopped:
+		Voice: Attack
+		Armaments: primary, secondary
+		PortOffsets: 768,0,256, 448,-682,256, -448,-682,256, -768,0,256, -448,682,256, 448,682,256
+		PauseOnCondition: chronodisable
+		RequiresCondition: loaded || loaded-air
+	RenderSprites:
+	RenderVoxels:
+		Scale: 12
+	WithVoxelBody:
+		RequiresCondition: !composite_armor
+	WithVoxelBody@COMPOSITE_ARMOR:
+		Sequence: idle-armor
+		RequiresCondition: composite_armor
+	Voiced:
+		VoiceSet: BattleFortressVoice
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidRelationships: None
+	HitShape:
+	WithCargoPipsDecoration:
+		Margin: 4, 3
+		Palette: ra
+		Position: BottomLeft
+		RequiresSelection: true
+		CustomPipSequences:
+			gray: pip-gray
+			yellow: pip-yellow
+			blue: pip-blue
+			red: pip-red
+	# GrantConditionOnMovement@MoveStart:
+	#	Condition: moving
+	#	ValidMovementTypes: Horizontal, Turn
+	# SoundAnnouncement:
+	#	SoundFiles: vbatstaa.wav, vbatstab.wav, vbatstac.wav
+	#	Volume: 0.5
+	#	RequiresCondition: moving
+

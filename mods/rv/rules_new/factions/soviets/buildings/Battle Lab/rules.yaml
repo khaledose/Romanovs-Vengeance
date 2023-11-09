@@ -1,0 +1,33 @@
+natech:
+	Inherits: ^BattleLab
+	Inherits@SHAPE: ^3x3Shape
+	Buildable:
+		Queue: Building.Shared, Building.Soviets
+		Prerequisites: ~building.soviets, naweap, naradr, ~techlevel.3, ~!ai.natech
+		Description: Allows deployment of advanced units.
+	ProvidesPrerequisite@default:
+	ProvidesPrerequisite@AIbuildinglimit:
+		RequiresCondition: ai-control
+		Prerequisite: ai.natech
+	Building:
+		Footprint: xxx xxx xxx
+		Dimensions: 3,3
+	InfiltrateForSupportPower:
+		Types: SpyInfiltrate
+		Proxy: soviets.tech.infiltrated
+		InfiltratedNotification: TechnologyStolen
+		InfiltrationNotification: BuildingInfiltratedTechnologyStolen
+	Targetable:
+		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate, HijackerInfiltrate, DiskInfiltrateSoviet
+	Targetable@Water:
+		TargetTypes: Ground, Water, WaterStructure, C4, SpyInfiltrate, HijackerInfiltrate, DiskInfiltrateSoviet
+	IsometricSelectable:
+		DecorationHeight: 120
+	Voiced:
+		VoiceSet: TechCenterVoice
+		Volume: 0.8
+
+soviets.tech.infiltrated:
+	AlwaysVisible:
+	ProvidesPrerequisite:
+		Prerequisite: soviets.tech.infiltrated

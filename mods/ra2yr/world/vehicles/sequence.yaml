@@ -1,0 +1,123 @@
+bus:
+	icon:
+		Filename: cameo|xxicon.shp
+
+limo:
+	icon:
+		Filename: cameo|xxicon.shp
+
+car:
+	icon:
+		Filename: cameo|xxicon.shp
+
+pick:
+	icon:
+		Filename: cameo|xxicon.shp
+
+wini:
+	icon:
+		Filename: cameo|xxicon.shp
+
+propa:
+	icon:
+		Filename: cameo|xxicon.shp
+
+cop:
+	icon:
+		Filename: bits/cameos/copicon.shp
+
+euroc:
+	icon:
+		Filename: cameo|xxicon.shp
+
+cona:
+	icon:
+		Filename: bits/cameos/conaicon.shp
+
+trucka:
+	icon:
+		Filename: cameo|xxicon.shp
+
+truckb:
+	icon:
+		Filename: cameo|xxicon.shp
+
+suvb:
+	icon:
+		Filename: cameo|xxicon.shp
+
+suvw:
+	icon:
+		Filename: cameo|xxicon.shp
+
+taxi:
+	icon:
+		Filename: cameo|xxicon.shp
+
+stang:
+	icon:
+		Filename: cameo|xxicon.shp
+
+ptruck:
+	icon:
+		Filename: cameo|xxicon.shp
+
+ambu:
+	icon:
+		Filename: cameo|xxicon.shp
+
+bcab:
+	icon:
+		Filename: cameo|xxicon.shp
+
+cblc:
+	icon:
+		Filename: cameo|xxicon.shp
+
+ddbx:
+	icon:
+		Filename: cameo|xxicon.shp
+
+doly:
+	icon:
+		Filename: cameo|xxicon.shp
+
+ftrk:
+	icon:
+		Filename: cameo|xxicon.shp
+
+jeep:
+	icon:
+		Filename: cameo|xxicon.shp
+
+ycab:
+	icon:
+		Filename: cameo|xxicon.shp
+
+civp:
+	icon:
+		Filename: cameo|xxicon.shp
+
+truckc:
+	icon:
+		Filename: cameo|xxicon.shp
+
+car2:
+	icon:
+		Filename: cameo|xxicon.shp
+
+car3:
+	icon:
+		Filename: cameo|xxicon.shp
+
+mixer:
+	icon:
+		Filename: cameo|xxicon.shp
+
+flata:
+	icon:
+		Filename: cameo|xxicon.shp
+
+flatb:
+	icon:
+		Filename: cameo|xxicon.shp

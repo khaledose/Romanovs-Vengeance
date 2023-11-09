@@ -1,0 +1,27 @@
+amcv:
+	Inherits: ^ConstructionVehicle
+	Buildable:
+		Queue: Vehicle.Shared, Vehicle.Allies, Ship.Shared, Ship.Allies
+		Prerequisites: ~vehicleorship.allies, gadept, ~techlevel.2, ~!global-suddendeath, ~!ai.mcv
+	Selectable:
+		Bounds: 1641, 2702, 0, -337
+	Transforms:
+		IntoActor: gacnst
+	Voiced:
+		VoiceSet: AlliedConstructionVehicleVoice
+
+amcv.colorpicker:
+	Inherits: amcv
+	Mobile:
+		InitialFacing: 640
+	-Buildable:
+	-MapEditorData:
+	WithVoxelBody:
+		ShowShadow: false
+	-WithVoxelBody@Water:
+	RenderSprites:
+		Image: amcv
+		Palette: colorpicker
+	RenderVoxels:
+		Image: amcv
+		Palette: colorpicker

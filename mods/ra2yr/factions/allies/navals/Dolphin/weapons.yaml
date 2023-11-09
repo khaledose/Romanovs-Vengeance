@@ -1,0 +1,64 @@
+SonicZap:
+	Inherits@1: ^BreakPointDefenseDrones
+	ReloadDelay: 120
+	Range: 6c0
+	Report: vdolatta.wav
+	ValidTargets: Water, Underwater
+	Projectile: AreaBeam
+		Speed: 0c256
+		Duration: 2
+		DamageInterval: 1
+		Width: 0c640
+		Shape: Flat
+		ZOffset: 2047
+		BeyondTargetRange: 0c256
+		Blockable: true
+		Color: 50F5FF45
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c103
+		Damage: 400
+		AffectsParent: false
+		Versus: 
+			None: 100
+			Flak: 100
+			Plate: 100
+			Light: 100
+			Medium: 80
+			Heavy: 80
+			Wood: 100
+			Steel: 60
+			Concrete: 60
+			Drone: 100
+			Rocket: 100
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, SuppressTerrorDrone, RemovesSquid, NonTemporal
+		ValidRelationships: Neutral, Enemy
+		ValidTargets: Water, Underwater
+	Warhead@2Dam: SpreadDamage
+		Spread: 0c103
+		Damage: 400
+		AffectsParent: false
+		Versus: 
+			None: 100
+			Flak: 100
+			Plate: 100
+			Light: 100
+			Medium: 80
+			Heavy: 80
+			Wood: 100
+			Steel: 60
+			Concrete: 60
+			Drone: 100
+			Rocket: 100
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, SuppressTerrorDrone, RemovesSquid, NonTemporal
+		ValidRelationships: Ally
+		ValidTargets: Water, Underwater
+		InvalidTargets: ImmuneToAllySonic
+
+SonicZapE:
+	Inherits: SonicZap
+	ReloadDelay: 80
+	Burst: 2
+	Warhead@1Dam: SpreadDamage
+		Damage: 800
+	Warhead@2Dam: SpreadDamage
+		Damage: 800

@@ -1,0 +1,137 @@
+# bpln:
+# 	Inherits: orca
+# 	Valued:
+# 		Cost: 1250
+# 	Tooltip:
+# 	Tooltip@NoRow:
+# 		Name: MiG
+# 	-Buildable:
+# 	-RevealsShroud:
+# 	-RevealsShroud@Ground:
+# 	# -RevealsShroudToIntelligenceOwner:
+# 	-Selectable:
+# 	-SelectionDecorations:
+# 	-ProducibleWithLevel@1:
+# 	-WithProductionIconOverlay@1:
+# 	-ExternalCondition@PRODUCED:
+# 	-GrantExternalConditionToOwner:
+# 	-DeliversCash:
+# 	VoiceAnnouncement:
+# 		Voice: Attack
+# 		-RequiresCondition:
+# 	RejectsOrders:
+# 	Interactable:
+# 	Aircraft:
+# 		Repulsable: false
+# 		Speed: 240
+# 		IdleBehavior: LeaveMap
+# 		-TakeoffSounds:
+# 		-LandingSounds:
+# 	SpawnActorOnDeath:
+# 		DeathType: NonTemporal
+# 		Actor: bplnhusk
+# 	SpawnActorOnDeath@VTOL:
+# 		Actor: bplnhusk.VTOL
+# 	Armament:
+# 		Weapon: Maverick3
+# 		Damage: 300
+# 	Armament@Elite:
+# 		Weapon: Maverick3E
+# 		Damage: 1000
+# 	WithVoxelBody:
+# 	AttackAircraft:
+# 		RequiresCondition: ammo
+# 	Health:
+# 		HP: 10000
+# 	AmmoPool:
+# 		Ammo: 2
+# 	AirstrikeSlave:
+# 		LandingDistance: 1c0
+# 	Voiced:
+# 		VoiceSet: MiGVoice
+# 	RenderSprites:
+# 		Image: bpln
+# 	RenderVoxels:
+# 		Image: bpln
+# 	HitShape:
+# 	AmbientSound@Ambient:
+# 		SoundFiles: vblelo2a.wav, vblelo2b.wav, vblelo2c.wav
+# 		Volume: 0.35
+# 	Contrail@1:
+# 		Offset: -600,100,100
+# 		TrailLength: 15
+# 		StartColor: 88888880
+# 		StartColorAlpha: 128
+# 		StartColorUsePlayerColor: False
+# 		EndColorUsePlayerColor: true
+# 	Contrail@2:
+# 		Offset: -600,-100,100
+# 		TrailLength: 15
+# 		StartColor: 88888880
+# 		StartColorAlpha: 128
+# 		StartColorUsePlayerColor: False
+# 		EndColorUsePlayerColor: true
+# 	Rearmable:
+# 		RearmActors: boris
+
+bpln:
+	Inherits: ^NewNewPlane
+	RejectsOrders:
+	Health:
+		HP: 10000
+	Armor:
+		Type: Light
+	Aircraft:
+		AltitudeVelocity: 240
+		InitialFacing: 768
+		TurnSpeed: 32
+		Speed: 210
+		Repulsable: false
+		IdleBehavior: LeaveMap
+	RevealsShroud:
+		Range: 2c0
+	RevealsShroud@Ground:
+		Range: 2c0
+	Tooltip:
+		Name: MiG
+	Tooltip@NoRow:
+		Name: MiG
+	Armament:
+		Weapon: Maverick3
+		Damage: 300
+	Armament@Elite:
+		Weapon: Maverick3E
+		Damage: 1000
+	AmmoPool:
+		Ammo: 2
+	Rearmable:
+		RearmActors: boris
+	AirstrikeSlave:
+		LandingDistance: 1c0
+	SpawnActorOnDeath:
+		Actor: bplnhusk
+	SpawnActorOnDeath@VTOL:
+		Actor: bplnhusk.VTOL
+	AmbientSound:
+		SoundFiles: vblelo2a.wav, vblelo2b.wav, vblelo2c.wav
+		Volume: 0.35
+	Voiced:
+		VoiceSet: MiGVoice
+	Contrail@1:
+		Offset: -600,100,100
+	Contrail@2:
+		Offset: -600,-100,100
+
+bplnhusk:
+	Inherits: ^PlaneHusk
+	Tooltip:
+	Tooltip@NoRow:
+		Name: MiG
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 240
+		AltitudeVelocity: 240
+	RenderVoxels:
+		Image: bpln
+	FallsToEarth:
+		Explosion: UnitExplode

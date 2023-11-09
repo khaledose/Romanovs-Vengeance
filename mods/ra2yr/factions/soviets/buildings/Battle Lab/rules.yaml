@@ -1,0 +1,22 @@
+natech:
+	Inherits: ^BattleLab
+	Inherits@SHAPE: ^3x3Shape
+	Buildable:
+		Queue: Building.Shared, Building.Soviets
+		Prerequisites: ~building.soviets, naweap, naradr, ~techlevel.3, ~!ai.natech
+	IsometricSelectable:
+		DecorationHeight: 120
+	Tooltip:
+		Name: Soviet Battle Lab
+	Tooltip@NoRow:
+		Name: Soviet Battle Lab
+	InfiltrateForSupportPower:
+		Proxy: soviets.tech.infiltrated
+	ProvidesPrerequisite@AIbuildinglimit:
+		RequiresCondition: ai-control
+		Prerequisite: ai.natech
+
+soviets.tech.infiltrated:
+	AlwaysVisible:
+	ProvidesPrerequisite:
+		Prerequisite: soviets.tech.infiltrated

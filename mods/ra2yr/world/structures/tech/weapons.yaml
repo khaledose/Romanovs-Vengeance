@@ -1,0 +1,57 @@
+DerrickExplode:
+	Inherits: LargeBarrelExplode
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c768
+	Warhead@2Eff: CreateEffect
+		Explosions: large_twlt, large_bang, large_brnl, verylarge_clsn, large_tumu
+	Warhead@3Smu: LeaveSmudge
+		SmudgeType: MediumCrater, MediumScorch
+
+ClusterMissile:
+	Warhead@Cluster: FireCluster
+		Weapon: ClusterMissileCluster
+		Dimensions: 5,5
+		Footprint: __X__ _XXX_ XXXXX _XXX_ __X__
+	Warhead@2Eff: CreateEffect
+		Explosions: verylarge_clsn
+		ImpactSounds: gexpapoa.wav
+		ImpactActors: false
+		ValidTargets: Air, Ground, Water
+	Warhead@21Shake: ShakeScreen
+		Duration: 20
+		Intensity: 3
+		Multiplier: 1,1
+
+ClusterMissileCluster:
+	Inherits@1: ^BreakPointDefenseDrones
+	Range: 7c0
+	Projectile: Bullet
+		Image: 160mm
+		Palette: ra
+		Speed: 196
+		LaunchAngle: 0, 32
+		Inaccuracy: 1c512
+	Warhead@1Dam: SpreadDamage
+		Damage: 10000
+		Spread: 2c0
+		Versus:
+			None: 100
+			Flak: 100
+			Plate: 80
+			Light: 100
+			Medium: 70
+			Heavy: 70
+			Wood: 100
+			Steel: 100
+			Concrete: 90
+			Drone: 100
+			Rocket: 0
+		DamageTypes: Prone70Percent, TriggerProne, ExplosionDeath, SuppressTerrorDrone, NonTemporal
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: MediumCrater, MediumScorch
+		InvalidTargets: Vehicle, Structure, Barrel, Mine, Wall
+	Warhead@3Eff: CreateEffect
+		Explosions: large_twlt
+		ImpactSounds: gexpapoa.wav
+		ImpactActors: false
+

@@ -1,0 +1,42 @@
+^WithSwimsuit:
+	swim-stand:
+		Filename: conquer|seal.shp
+		Start: 340
+		Facings: 8
+		Length: 6
+		Tick: 160
+	swim-idle1:
+		Filename: conquer|seal.shp
+		Start: 484
+		Length: 15
+		Tick: 160
+	swim-idle2:
+		Filename: conquer|seal.shp
+		Start: 499
+		Length: 15
+		Tick: 160
+	swim-run:
+		Filename: conquer|seal.shp
+		Start: 388
+		Facings: 8
+		Length: 6
+		Tick: 120
+	swim-die1:
+		Filename: conquer|seal.shp
+		Start: 512
+		Length: 22
+	swim-die2:
+		Filename: conquer|seal.shp
+		Start: 534
+		Length: 20
+	swim-shoot:
+		Filename: conquer|seal.shp
+		Start: 436
+		Length: 6
+		Facings: 8
+		Tick: 80
+	swim-cheer:
+		Filename: conquer|seal.shp
+		Start: 611
+		Length: 8
+		Tick: 120

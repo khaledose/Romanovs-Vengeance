@@ -1,0 +1,80 @@
+natbnk:
+	Inherits: ^SupportBuilding
+	Inherits@AUTOTARGET: ^AutoTargetAll
+	Inherits@MC: ^MindControllableBuilding
+	Inherits@SHAPE: ^2x2Shape
+	WithChronoOverlay@ChronoDisable:
+		Palette: chronoed
+		IsPlayerPallete: true
+		RequiresCondition: chronodisable && loaded
+	WithChronoOverlay@ChronoDisableEmpty:
+		Palette: chronoed
+		IsPlayerPallete: true
+		RequiresCondition: chronodisable && !loaded
+	Buildable:
+		Queue: Support.Shared, Support.Yuri
+		BuildPaletteOrder: 50
+		Prerequisites: ~building.yuri, ~techlevel.1
+		Description: Static defense with fireports for a vehicle to garrison.\nProvides increased firepower, fire speed and range to the vehicle.
+		BuildDuration: 250
+		BuildDurationModifier: 100
+	Valued:
+		Cost: 400
+	Tooltip:
+	Tooltip@NoRow:
+		Name: Tank Bunker
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+		-SecondaryTerrainTypes:
+	Health:
+		HP: 100000
+	Armor:
+		Type: Steel
+	Cargo:
+		Types: GarrisonerVehicle
+		MaxWeight: 3
+		AfterLoadDelay: 0
+		BeforeUnloadDelay: 0
+		AfterUnloadDelay: 0
+		EjectOnDeath: true
+		LoadedCondition: loaded
+	WithCargoSounds:
+		EnterSound: btanupa.wav
+		ExitSound: btandowa.wav
+	WithCargoBuilding:
+		Facing: 384
+		DisplayTypes: GarrisonerVehicle
+	-SpawnActorsOnSell@allies:
+	-SpawnActorsOnSell@soviets:
+	-SpawnActorsOnSell@psicorps:
+	WithSpriteBody:
+	WithIdleOverlay@Garrisoned:
+		Sequence: idle-garrisoned
+		RequiresCondition: !build-incomplete && loaded
+	WithIdleOverlay@GarrisonedFront:
+		Sequence: idle-garrisoned-front
+		RequiresCondition: !build-incomplete && loaded
+	Targetable@loaded:
+		TargetTypes: LoadedTankBunker
+		RequiresCondition: loaded
+	AttackGarrisoned:
+		Armaments: primary, primary2, elite, elite2, secondary, gatling
+		PortOffsets: 768,0,1024, 448,-682,1024, -448,-682,1024, -768,0,1024, -448,682,1024, 448,682,1024
+		PortYaws: 0, 176, 341, 512, 682, 853
+		PortCones: 88, 88, 88, 88, 88, 88
+		PauseOnCondition: build-incomplete || chronodisable || disabled
+	RevealsShroud:
+		Range: 6c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 6c0
+	IsometricSelectable:
+		Class: natbnk
+		DecorationHeight: 45
+	RenderSprites:
+		Image: natbnk
+	Voiced:
+		VoiceSet: TankBunkerVoice
+		Volume: 0.8
+

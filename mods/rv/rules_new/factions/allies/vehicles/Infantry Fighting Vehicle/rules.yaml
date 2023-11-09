@@ -1,0 +1,440 @@
+fv:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@BUNKER: ^TankBunkerable
+	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@VETERAN: ^ProducibleAsVeteranVehicle
+	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	Valued:
+		Cost: 600
+	DeliversCash:
+		Payload: 600
+		Voice: Move
+	Tooltip:
+		RequiresCondition: !ifv-mg && !ifv-init && !ifv-repair && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-amg && !ifv-chrono && !ifv-yuri && !ifv-yuripr && showownername
+	Tooltip@NoRow:
+		Name: Infantry Fighting Vehicle
+		RequiresCondition: !ifv-mg && !ifv-init && !ifv-repair && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-amg && !ifv-chrono && !ifv-yuri && !ifv-yuripr && !showownername
+	Tooltip@mg:
+		Name: Machine Gun IFV
+		GenericName: Vehicle
+		RequiresCondition: ifv-mg && showownername
+	Tooltip@mg-norow:
+		Name: Machine Gun IFV
+		GenericName: Vehicle
+		ShowOwnerRow: false
+		RequiresCondition: ifv-mg && !showownername
+	Tooltip@init:
+		Name: Ignitor IFV
+		GenericName: Vehicle
+		RequiresCondition: ifv-init && showownername
+	Tooltip@init-norow:
+		Name: Ignitor IFV
+		GenericName: Vehicle
+		ShowOwnerRow: false
+		RequiresCondition: ifv-init && !showownername
+	Tooltip@rocket:
+		Name: Rocket IFV
+		GenericName: Vehicle
+		RequiresCondition: ifv-rocket && showownername
+	Tooltip@rocket-norow:
+		Name: Rocket IFV
+		GenericName: Vehicle
+		ShowOwnerRow: false
+		RequiresCondition: ifv-rocket && !showownername
+	Tooltip@engineer:
+		Name: Repair IFV
+		GenericName: Vehicle
+		RequiresCondition: ifv-repair && showownername
+	Tooltip@engineer-norow:
+		Name: Repair IFV
+		GenericName: Vehicle
+		ShowOwnerRow: false
+		RequiresCondition: ifv-repair && !showownername
+	Tooltip@sniper:
+		Name: Sniper IFV
+		GenericName: Vehicle
+		RequiresCondition: ifv-sniper && showownername
+	Tooltip@sniper-norow:
+		Name: Sniper IFV
+		GenericName: Vehicle
+		ShowOwnerRow: false
+		RequiresCondition: ifv-sniper && !showownername
+	Tooltip@virus:
+		Name: Virus IFV
+		GenericName: Vehicle
+		RequiresCondition: ifv-virus && showownername
+	Tooltip@virus-norow:
+		Name: Virus IFV
+		GenericName: Vehicle
+		ShowOwnerRow: false
+		RequiresCondition: ifv-virus && !showownername
+	Tooltip@flak:
+		Name: Flak IFV
+		GenericName: Vehicle
+		RequiresCondition: ifv-flak && showownername
+	Tooltip@flak-norow:
+		Name: Flak IFV
+		GenericName: Vehicle
+		ShowOwnerRow: false
+		RequiresCondition: ifv-flak && !showownername
+	Tooltip@tesla:
+		Name: Tesla IFV
+		GenericName: Vehicle
+		RequiresCondition: ifv-tesla && showownername
+	Tooltip@tesla-norow:
+		Name: Tesla IFV
+		GenericName: Vehicle
+		ShowOwnerRow: false
+		RequiresCondition: ifv-tesla && !showownername
+	Tooltip@desolator:
+		Name: Desolator IFV
+		GenericName: Vehicle
+		RequiresCondition: ifv-deso && showownername
+	Tooltip@desolator-norow:
+		Name: Desolator IFV
+		GenericName: Vehicle
+		ShowOwnerRow: false
+		RequiresCondition: ifv-deso && !showownername
+	Tooltip@demo:
+		Name: Demolition IFV
+		GenericName: Vehicle
+		RequiresCondition: ifv-demo && showownername
+	Tooltip@demo-norow:
+		Name: Demolition IFV
+		GenericName: Vehicle
+		ShowOwnerRow: false
+		RequiresCondition: ifv-demo && !showownername
+	Tooltip@amg:
+		Name: Advanced Machine Gun IFV
+		GenericName: Vehicle
+		RequiresCondition: ifv-amg && showownername
+	Tooltip@amg-norow:
+		Name: Advanced Machine Gun IFV
+		GenericName: Vehicle
+		ShowOwnerRow: false
+		RequiresCondition: ifv-amg && !showownername
+	Tooltip@chrono:
+		Name: Chrono IFV
+		GenericName: Vehicle
+		RequiresCondition: ifv-chrono && showownername
+	Tooltip@chrono-norow:
+		Name: Chrono IFV
+		GenericName: Vehicle
+		ShowOwnerRow: false
+		RequiresCondition: ifv-chrono && !showownername
+	Tooltip@yuri:
+		Name: Yuri IFV
+		GenericName: Vehicle
+		RequiresCondition: ifv-yuri && showownername
+	Tooltip@yuri-norow:
+		Name: Yuri IFV
+		GenericName: Vehicle
+		ShowOwnerRow: false
+		RequiresCondition: ifv-yuri && !showownername
+	Tooltip@yuripr:
+		Name: Yuri Prime IFV
+		GenericName: Vehicle
+		RequiresCondition: ifv-yuripr && showownername
+	Tooltip@yuripr-norow:
+		Name: Yuri Prime IFV
+		GenericName: Vehicle
+		ShowOwnerRow: false
+		RequiresCondition: ifv-yuripr && !showownername
+	WithColoredOverlay@ironcurtain:
+		RequiresCondition: invulnerability
+	DamageMultiplier@ironcurtain:
+		RequiresCondition: invulnerability
+	Buildable:
+		Queue: Vehicle.Shared, Vehicle.Allies
+		Prerequisites: ~vehicle.allies, ~techlevel.1
+		BuildPaletteOrder: 30
+		Description: Multi-Purpose Vehicle.\n\nWithout passenger:\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles, Ships\n\nAbilities:\n- Armament changes depending on passenger\n- Can detect Stealth units\n\nUpgradeable with:\n- Boost-Gliding Systems (United States)
+		BuildDuration: 250
+		BuildDurationModifier: 100
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Mobile:
+		Speed: 135
+		TurnSpeed: 60
+		RequiresCondition: !notmobile && !chronodisable && !magnefreeze && !beingterrordroned && !being-captured
+	Health:
+		HP: 25000
+	Armor:
+		Type: Light
+	Turreted:
+		TurnSpeed: 60
+	Cargo:
+		Types: Infantry, Garrisoner
+		MaxWeight: 1
+		AfterLoadDelay: 0
+		BeforeUnloadDelay: 0
+		AfterUnloadDelay: 0
+		UnloadVoice: Move
+		EjectOnDeath: false
+		LoadingCondition: notmobile
+		PassengerConditions:
+			e1: ifv-mg
+			e2: ifv-mg
+			spy: ifv-mg
+			ggi: ifv-rocket
+			engineer: ifv-repair
+			snipe: ifv-sniper
+			cleg: ifv-chrono
+			tany: ifv-amg
+			ghost: ifv-amg
+			ccomand: ifv-amg
+			ptroop: ifv-amg
+			ptroop.yuri: ifv-amg
+			boris: ifv-amg
+			flakt: ifv-flak
+			shk: ifv-tesla
+			deso: ifv-deso
+			ivan: ifv-demo
+			civan: ifv-demo
+			civan.allied: ifv-demo
+			terror: ifv-demo
+			init: ifv-init
+			virus: ifv-virus
+			yuri: ifv-yuri
+			yuripr: ifv-yuripr
+	WithCargoSounds:
+		EnterSound: vifvtran.wav
+		ExitSound: vifvtran.wav
+	Armament@primary:
+		Weapon: HoverMissile
+		Damage: 60
+		LocalOffset: 128,-128,1024, 128,128,1024
+		ReloadingCondition: reload-ground
+		PauseOnCondition: reload-air
+		RequiresCondition: !rank-elite && !ifv-mg && !ifv-init && !ifv-repair && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-amg && !ifv-chrono && !ifv-yuri && !ifv-yuripr
+	Armament@elite:
+		Weapon: HoverMissileE
+		Damage: 120
+		LocalOffset: 128,-128,1024, 128,128,1024
+		ReloadingCondition: reload-ground
+		PauseOnCondition: reload-air
+		RequiresCondition: rank-elite && !ifv-mg && !ifv-init && !ifv-repair && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-amg && !ifv-chrono && !ifv-yuri && !ifv-yuripr
+	Armament@primary-aa:
+		Weapon: HoverMissileAA
+		LocalOffset: 128,-128,1024, 128,128,1024
+		EnableSplitRanges: true
+		ReloadingCondition: reload-air
+		PauseOnCondition: reload-ground
+		RequiresCondition: !rank-elite && !ifv-mg && !ifv-init && !ifv-repair && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-amg && !ifv-chrono && !ifv-yuri && !ifv-yuripr
+	Armament@elite-aa:
+		Weapon: HoverMissileAAE
+		LocalOffset: 128,-128,1024, 128,128,1024
+		EnableSplitRanges: true
+		ReloadingCondition: reload-air
+		PauseOnCondition: reload-ground
+		RequiresCondition: rank-elite && !ifv-mg && !ifv-init && !ifv-repair && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-amg && !ifv-chrono && !ifv-yuri && !ifv-yuripr
+	Armament@mg:
+		Weapon: CRM60
+		Damage: 40
+		LocalOffset: 188,32,600
+		RequiresCondition: ifv-mg
+	Armament@init:
+		Weapon: CRPsychicJab
+		Damage: 25
+		LocalOffset: 128,0,1024
+		RequiresCondition: ifv-init
+	Armament@rocket:
+		Weapon: CRMissileLauncher
+		Damage: 120
+		LocalOffset: 128,-128,1408, 128,128,1408
+		ReloadingCondition: reload-ground
+		PauseOnCondition: reload-air
+		RequiresCondition: ifv-rocket
+	Armament@rocket-aa:
+		Weapon: CRMissileLauncherAA
+		LocalOffset: 128,-128,1408, 128,128,1408
+		EnableSplitRanges: true
+		ReloadingCondition: reload-air
+		PauseOnCondition: reload-ground
+		RequiresCondition: ifv-rocket
+	Armament@repair:
+		Weapon: RepairBullet
+		Damage: -50
+		LocalOffset: 164,0,864
+		RequiresCondition: ifv-repair
+		Cursor: goldwrench
+		OutsideRangeCursor: goldwrench
+		TargetRelationships: Ally
+		ForceTargetRelationships: None
+	Armament@demo:
+		Weapon: DemoTruckTargeting
+		RequiresCondition: ifv-demo
+	GrantConditionOnAttack@demo:
+		Condition: triggered
+		RequiresCondition: ifv-demo
+	KillsSelf@demo:
+		DamageTypes: NonTemporal
+		RequiresCondition: triggered
+	Armament@sniper:
+		Weapon: AWPE
+		Damage: 200
+		LocalOffset: 188,0,600
+		RequiresCondition: ifv-sniper
+	Armament@virus:
+		Weapon: CRVirusGun
+		Damage: 200
+		LocalOffset: 188,0,600
+		RequiresCondition: ifv-virus
+	Armament@amg:
+		Weapon: CRMP5
+		Damage: 70
+		LocalOffset: 200,0,800
+		RequiresCondition: ifv-amg
+	Armament@tesla:
+		Weapon: CRElectricBolt
+		Damage: 60
+		LocalOffset: 280,196,1024, 280,-196,1024
+		RequiresCondition: ifv-tesla && !overcharge
+	Armament@desolator:
+		Weapon: CRRadBeamWeapon
+		Damage: 175
+		LocalOffset: 256,-256,1280
+		RequiresCondition: ifv-deso && !advirrad
+	Armament@flak:
+		Weapon: CRFlakGuyGun
+		Damage: 30
+		LocalOffset: 256,0,1536
+		RequiresCondition: ifv-flak
+	Armament@chrono:
+		Weapon: CRNeutronRifle
+		LocalOffset: 128,0,1024
+		RequiresCondition: ifv-chrono
+	Armament@chrono-sound:
+		Weapon: CRNeutronRifleSound
+		LocalOffset: 128,0,1024
+		RequiresCondition: ifv-chrono
+	Armament@yuri:
+		Weapon: CRPsiWave
+		Damage: 200
+		LocalOffset: 0,0,1024
+		RequiresCondition: ifv-yuri
+	Armament@yuripr:
+		Weapon: CRSuperPsiWave
+		Damage: 200
+		LocalOffset: 0,0,1024
+		RequiresCondition: ifv-yuripr
+	WithMuzzleOverlay:
+	AttackTurreted:
+		Voice: Attack
+		Armaments: primary, elite
+		PauseOnCondition: chronodisable || parachute
+	AutoTargetPriority@DEFAULT:
+		RequiresCondition: !stance-attackanything && !assault-move && !ifv-mg && !ifv-init && !ifv-repair && !ifv-sniper && !ifv-virus && !ifv-tesla && !ifv-deso && !ifv-amg && !ifv-demo && !ifv-chrono && !ifv-yuri && !ifv-yuripr
+	AutoTargetPriority@ATTACKANYTHING:
+		RequiresCondition: (stance-attackanything || assault-move) && !ifv-mg && !ifv-init && !ifv-repair && !ifv-sniper  && !ifv-virus && !ifv-tesla && !ifv-deso && !ifv-amg && !ifv-demo && !ifv-chrono && !ifv-yuri && !ifv-yuripr
+	AutoTargetPriority@DEFAULT_GROUND:
+		RequiresCondition: (!stance-attackanything && !assault-move) && (ifv-mg || ifv-init || ifv-tesla || ifv-chrono)
+		ValidTargets: Infantry, Vehicle, TerrorDrone, Water, Underwater, Defense
+		InvalidTargets: NoAutoTarget, WaterStructure
+	AutoTargetPriority@ATTACKANYTHING_GROUND:
+		RequiresCondition: (stance-attackanything || assault-move) && (ifv-mg || ifv-init || ifv-tesla || ifv-chrono)
+		ValidTargets: Infantry, Vehicle, TerrorDrone, Water, Underwater, Structure, Defense
+		InvalidTargets: NoAutoTarget
+	AutoTargetPriority@INFONLY:
+		RequiresCondition: ifv-amg
+		ValidTargets: Infantry
+		InvalidTargets: NoAutoTarget
+	AutoTargetPriority@GARRISONCLEANER:
+		RequiresCondition: ifv-sniper || ifv-virus
+		ValidTargets: Infantry, Defense
+		InvalidTargets: NoAutoTarget
+	AutoTargetPriority@REPAIR:
+		RequiresCondition: ifv-repair
+		ValidTargets: Repair
+		InvalidTargets: NoAutoTarget
+	AutoTargetPriority@NOBUILDING:
+		RequiresCondition: ifv-deso
+		ValidTargets: Infantry, Vehicle, TerrorDrone, Ship
+		InvalidTargets: NoAutoTarget
+	Selectable:
+		Class: fv
+		Bounds: 1254, 2316, 0, -482
+	RenderSprites:
+		Image: fv
+	RenderVoxels:
+		Image: fv
+	WithVoxelBody:
+	Explodes:
+		RequiresCondition: !ifv-demo
+	Explodes@demo:
+		Weapon: CRTerrorBomb
+		EmptyWeapon: CRTerrorBomb
+		RequiresCondition: ifv-demo && !targetedexp
+	Explodes@demo-targeted:
+		Weapon: CRTargetedTerrorBomb
+		EmptyWeapon: CRTargetedTerrorBomb
+		RequiresCondition: ifv-demo && targetedexp
+	WithVoxelTurret@default:
+		Sequence: turret-missile
+		RequiresCondition: !ifv-mg && !ifv-init && !ifv-repair && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-amg && !ifv-chrono && !ifv-yuri && !ifv-yuripr
+	WithVoxelTurret@mg:
+		Sequence: turret-mg
+		RequiresCondition: ifv-mg
+	WithVoxelTurret@rocket:
+		Sequence: turret-rocket
+		RequiresCondition: ifv-rocket
+	WithVoxelTurret@engineer:
+		Sequence: turret-repair
+		RequiresCondition: ifv-repair
+	WithVoxelTurret@sniper:
+		Sequence: turret-sniper
+		RequiresCondition: ifv-sniper
+	WithVoxelTurret@virus:
+		Sequence: turret-virus
+		RequiresCondition: ifv-virus
+	WithVoxelTurret@hero:
+		Sequence: turret-hero
+		RequiresCondition: ifv-amg
+	WithVoxelTurret@tesla:
+		Sequence: turret-tesla
+		RequiresCondition: ifv-tesla
+	WithVoxelTurret@desolator:
+		Sequence: turret-deso
+		RequiresCondition: ifv-deso
+	WithVoxelTurret@flak:
+		Sequence: turret-flak
+		RequiresCondition: ifv-flak
+	WithVoxelTurret@demo:
+		Sequence: turret-demo
+		RequiresCondition: ifv-demo
+	WithVoxelTurret@yuri:
+		Sequence: turret-yuri
+		RequiresCondition: ifv-yuri || ifv-yuripr
+	WithVoxelTurret@hitech:
+		Sequence: turret-hitech
+		RequiresCondition: ifv-init || ifv-chrono
+	Voiced:
+		VoiceSet: IFVVoice
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidRelationships: None
+	HitShape:
+	WithCargoPipsDecoration:
+		Margin: 4, 3
+		Palette: ra
+		Position: BottomLeft
+		RequiresSelection: true
+		CustomPipSequences:
+			gray: pip-gray
+			yellow: pip-yellow
+			blue: pip-blue
+			red: pip-red
+	# GrantConditionOnMovement@MoveStart:
+	#	Condition: moving
+	#	ValidMovementTypes: Horizontal, Turn
+	# SoundAnnouncement:
+	#	SoundFiles: vifvstaa.wav, vifvstab.wav, vifvstac.wav
+	#	Volume: 0.3
+	#	RequiresCondition: moving
+

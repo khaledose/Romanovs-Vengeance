@@ -1,0 +1,34 @@
+yacnst:
+	Inherits: ^ConstructionYard
+	IsometricSelectable:
+		DecorationHeight: 60
+	ProvidesPrerequisite@building.yuri:
+		Prerequisite: building.yuri
+	Production:
+		Produces: Building.Yuri, Support.Yuri
+	ProductionQueue@Building:
+		Type: Building.Yuri
+	ProductionQueue@Support:
+		Type: Support.Yuri
+	ProductionBar@Building:
+		ProductionType: Building.Yuri
+	ProductionBar@Support:
+		ProductionType: Support.Yuri
+	Transforms:
+		IntoActor: pcv
+	GrantConditionOnFaction@Psicorps:
+		Condition: psicorps
+		Factions: psicorps
+	WithIdleOverlay@top:
+		Sequence: idle-top
+		RequiresCondition: !build-incomplete
+	WithIdleOverlay@normal:
+		Sequence: idle-normal
+		RequiresCondition: !build-incomplete
+	WithIdleOverlay@Psicorps:
+		Sequence: flag-psicorps
+		RequiresCondition: !build-incomplete && psicorps
+	WithBuildingPlacedAnimation:
+		RequiresCondition: !build-incomplete
+	Voiced:
+		VoiceSet: YuriConstructionYardVoice

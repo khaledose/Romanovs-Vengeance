@@ -1,0 +1,20 @@
+yawall:
+	Inherits: ^Wall
+	Buildable:
+		Queue: Support.Shared, Support.Yuri
+		Prerequisites: ~building.yuri, yabrck, ~techlevel.1
+		BuildPaletteOrder: 10
+		Description: Heavy wall capable of blocking units and projectiles.\n\n  Cannot be placed on water.
+	Tooltip:
+		Name: Yuri Citadel Wall
+	Tooltip@NoRow:
+		Name: Yuri Citadel Wall
+	LineBuild:
+		NodeTypes: yawall
+	LineBuildNode:
+		Types: yawall
+	WithWallSpriteBody:
+		Type: yawall
+	Replaceable:
+		Types: YuriGate
+

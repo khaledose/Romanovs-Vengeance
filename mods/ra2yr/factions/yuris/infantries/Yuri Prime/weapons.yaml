@@ -1,0 +1,21 @@
+SuperMindControl:
+	Inherits: MindControl
+	ValidTargets: MindControl, MindControlBuilding
+
+SuperPsiWave:
+	Inherits: PsiWave
+	Warhead@1Dam: SpreadDamage
+		Spread: 5c0
+		Versus:
+			None: 100
+			Flak: 100
+			Plate: 100
+			Light: 50
+			Medium: 50
+			Heavy: 50
+			Wood: 0
+			Steel: 0
+			Concrete: 0
+			Drone: 0
+			Rocket: 0
+		ValidRelationships: Enemy, Neutral

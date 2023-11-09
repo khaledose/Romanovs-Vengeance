@@ -1,0 +1,124 @@
+htk:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@BUNKER: ^TankBunkerable
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@VETERAN: ^ProducibleAsVeteranVehicle
+	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	Valued:
+		Cost: 500
+	DeliversCash:
+		Payload: 500
+		Voice: Move
+	Tooltip:
+	Tooltip@NoRow:
+		Name: Flak Track
+	Selectable:
+		Class: htk
+		Bounds: 1206, 1930, 0, -289
+	Buildable:
+		Queue: Vehicle.Shared, Vehicle.Soviets
+		Prerequisites: ~vehicle.soviets, ~techlevel.1
+		BuildPaletteOrder: 30
+		Description: Anti-Air and Anti-Infantry vehicle capable of transporting Infantry.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles\n\nAbilities:\n- Can detect Stealth units
+		BuildDuration: 250
+		BuildDurationModifier: 100
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Mobile:
+		Speed: 120
+		TurnSpeed: 40
+		Locomotor: tracked
+		RequiresCondition: !notmobile && !chronodisable && !magnefreeze && !beingterrordroned && !being-captured
+	Health:
+		HP: 30000
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 9c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 9c0
+	RevealOnDeath:
+		Radius: 9c0
+	DetectCloaked:
+		Range: 5c0
+	RenderDetectionCircle:
+	Cargo:
+		Types: Infantry, Garrisoner, SmallVehicle
+		MaxWeight: 5
+		AfterLoadDelay: 0
+		BeforeUnloadDelay: 0
+		AfterUnloadDelay: 0
+		PassengerFacing: 0
+		UnloadVoice: Move
+		EjectOnDeath: false
+		LoadingCondition: notmobile
+	WithCargoSounds:
+		EnterSound: genter1a.wav
+		ExitSound: gexit1a.wav
+	AttackTurreted:
+		Voice: Attack
+		PauseOnCondition: chronodisable || parachute
+	AutoTarget:
+	Armament@primary:
+		Weapon: FlakTrackGun
+		Damage: 25
+		LocalOffset: 256,0,1536
+		MuzzleSequence: muzzle
+		RequiresCondition: !rank-elite
+	Armament@secondary:
+		Weapon: FlakTrackAAGun
+		LocalOffset: 256,0,1536
+		MuzzleSequence: muzzle
+		RequiresCondition: !rank-elite
+	Armament@primary-elite:
+		Weapon: FlakTrackGunE
+		Damage: 50
+		LocalOffset: 256,0,1536
+		MuzzleSequence: muzzle
+		RequiresCondition: rank-elite
+	Armament@secondary-elite:
+		Weapon: FlakTrackAAGunE
+		LocalOffset: 256,0,1536
+		MuzzleSequence: muzzle
+		RequiresCondition: rank-elite
+	WithMuzzleOverlay:
+	Turreted:
+		TurnSpeed: 40
+		Offset: -280,-3,0
+	RenderSprites:
+	RenderVoxels:
+	WithVoxelTurret:
+	WithVoxelBody:
+	Voiced:
+		VoiceSet: FlakTrackVoice
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidRelationships: None
+	HitShape:
+	WithCargoPipsDecoration:
+		Margin: 4, 3
+		Palette: ra
+		Position: BottomLeft
+		RequiresSelection: true
+		CustomPipSequences:
+			gray: pip-gray
+			yellow: pip-yellow
+			blue: pip-blue
+			red: pip-red
+	# GrantConditionOnMovement@MoveStart:
+	#	Condition: moving
+	#	ValidMovementTypes: Horizontal, Turn
+	# SoundAnnouncement:
+	#	SoundFiles: vflastaa.wav, vflastab.wav, vflastac.wav, vflastad.wav
+	#	Volume: 0.35
+	#	RequiresCondition: moving
+	ActorStatValues:
+		SplitRanges: true
+

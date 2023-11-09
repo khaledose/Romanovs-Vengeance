@@ -528,6 +528,7 @@ namespace OpenRA.Mods.Cnc.UtilityCommands
 				}
 			}
 
+			var nodes = new List<MiniYamlNode>();
 			foreach (var cell in map.AllCells)
 			{
 				var overlayType = overlayPack[overlayIndex[cell]];
@@ -582,7 +583,7 @@ namespace OpenRA.Mods.Cnc.UtilityCommands
 							ar.Add(new HealthInit(health));
 					}
 
-					map.ActorDefinitions.Add(new MiniYamlNode("Actor" + map.ActorDefinitions.Count, ar.Save()));
+					nodes.Add(new MiniYamlNode("Actor" + map.ActorDefinitions.Count, ar.Save()));
 
 					continue;
 				}
@@ -600,11 +601,14 @@ namespace OpenRA.Mods.Cnc.UtilityCommands
 
 				Console.WriteLine("{0} unknown overlay {1}", cell, overlayType);
 			}
+
+			map.ActorDefinitions = nodes;
 		}
 
 		static void ReadWaypoints(Map map, IniFile file, int2 fullSize)
 		{
 			var waypointsSection = file.GetSection("Waypoints", true);
+			var nodes = new List<MiniYamlNode>();
 			foreach (var kv in waypointsSection)
 			{
 				var pos = int.Parse(kv.Value);
@@ -619,13 +623,16 @@ namespace OpenRA.Mods.Cnc.UtilityCommands
 				ar.Add(new LocationInit(cell));
 				ar.Add(new OwnerInit("Neutral"));
 
-				map.ActorDefinitions.Add(new MiniYamlNode("Actor" + map.ActorDefinitions.Count, ar.Save()));
+				nodes.Add(new MiniYamlNode("Actor" + map.ActorDefinitions.Count, ar.Save()));
 			}
+
+			map.ActorDefinitions = nodes;
 		}
 
 		static void ReadTerrainActors(Map map, IniFile file, int2 fullSize)
 		{
 			var terrainSection = file.GetSection("Terrain", true);
+			var nodes = new List<MiniYamlNode>();
 			foreach (var kv in terrainSection)
 			{
 				var pos = int.Parse(kv.Key);
@@ -643,13 +650,16 @@ namespace OpenRA.Mods.Cnc.UtilityCommands
 				if (!map.Rules.Actors.ContainsKey(name))
 					Console.WriteLine($"Ignoring unknown actor type: `{name}`");
 				else
-					map.ActorDefinitions.Add(new MiniYamlNode("Actor" + map.ActorDefinitions.Count, ar.Save()));
+					nodes.Add(new MiniYamlNode("Actor" + map.ActorDefinitions.Count, ar.Save()));
 			}
+
+			map.ActorDefinitions = nodes;
 		}
 
 		static void ReadActors(Map map, IniFile file, string type, int2 fullSize)
 		{
 			var structuresSection = file.GetSection(type, true);
+			var nodes = new List<MiniYamlNode>();
 			foreach (var kv in structuresSection)
 			{
 				var isDeployed = false;
@@ -695,8 +705,10 @@ namespace OpenRA.Mods.Cnc.UtilityCommands
 				if (!map.Rules.Actors.ContainsKey(name))
 					Console.WriteLine($"Ignoring unknown actor type: `{name}`");
 				else
-					map.ActorDefinitions.Add(new MiniYamlNode("Actor" + map.ActorDefinitions.Count, ar.Save()));
+					nodes.Add(new MiniYamlNode("Actor" + map.ActorDefinitions.Count, ar.Save()));
 			}
+
+			map.ActorDefinitions = nodes;
 		}
 
 		static void ReadLighting(Map map, IniFile file)

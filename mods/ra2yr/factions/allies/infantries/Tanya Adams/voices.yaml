@@ -1,0 +1,10 @@
+TanyaVoice:
+	Inherits: ^InfantryDeath
+	Voices:
+		Build: itapcra, itapcrb, itapcrc, itapcrd
+		Select: itansea, itanseb, itansec, itansed, itansee, itapsea, itapseb, itapsec, itapsed, itapsee
+		Move: itanmoa, itanmob, itanmoc, itanmod, itanmoe, itanmof, itapmoa, itapmob, itapmoc, itapmod
+		Attack: itanata, itanatc, itanatd, itanate, itapata, itapatb, itapatd
+		Demolish: itanatb, itapatc, itapcra, itapcrb, itapcrc
+		Feedback: itapfea, itapfeb, itapfec, itapfed
+		Die: itandia, itandib, itandic, itapdia, itapdib, itapdic, itapdid, itapdie

@@ -1,0 +1,48 @@
+^NukeSpecial:
+	NukePower:
+		Names:
+			1: Nuclear Missile
+		Descriptions:
+			1: Launches a devastating nuclear missile\nat a target location.
+		MissileWeapons:
+			1: atomic
+		Prerequisites:
+			1: namisl
+		Icons:
+			1: abomb
+		BeaconPosters:
+			1: nukeicon
+		CircleRanges:
+			1: 10c0
+		Cursor: nuke
+		ChargeInterval: 9000
+		EnvironmentEffectType: Nuke
+		PauseOnCondition: chronodisable
+		AllowMultiple: true
+		LaunchSound: snuklaun.wav
+		EndChargeSound: snukread.wav
+		SelectTargetSpeechNotification: SelectTarget
+		SelectTargetTextNotification: Select target.
+		EndChargeSpeechNotification: NuclearMissileReady
+		EndChargeTextNotification: Nuclear Missile ready.
+		LaunchSpeechNotification: NuclearMissileLaunched
+		LaunchTextNotification: Warning: Nuclear Missile launched.
+		IncomingSpeechNotification: NuclearMissileLaunched
+		IncomingTextNotification: Warning: Nuclear Missile launched.
+		MissileImage: atomic
+		MissilePalette: player
+		SpawnOffset: 0,0,-1c0
+		IsPlayerPalette: true
+		DisplayTimerRelationships: Ally, Neutral, Enemy
+		DisplayBeacon: True
+		DisplayRadarPing: True
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CameraRange: 10c0
+		CameraRemoveDelay: 200
+		FlightDelay: 250
+		FlightVelocity: 1c0
+		TrailInterval: 1
+		TrailImage: nukepuff
+		TrailSequences: idle
+		TargetCircleUsePlayerColor: true

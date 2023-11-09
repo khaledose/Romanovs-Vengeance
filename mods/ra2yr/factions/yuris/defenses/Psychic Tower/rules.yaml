@@ -1,0 +1,56 @@
+yapsyt:
+	Inherits: ^DefenseStructure
+	Inherits@SHAPE: ^1x1Shape
+	Inherits@DRAIN: ^DiskDefenseDrainable
+	Inherits@MINDCONTROLLER: ^MindController
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Buildable:
+		Queue: Support.Shared, Support.Yuri
+		Prerequisites: ~building.yuri, yapsis, ~techlevel.3
+		Description: Tower capable of mind controlling up to 3 enemy units.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Buildings, Aircraft\n\nAbilities:\n- Can detect Steath units\n\n  Requires power to operate.
+		BuildPaletteOrder: 60
+	IsometricSelectable:
+		DecorationHeight: 120
+	Power:
+		Amount: -100
+	Health:
+		HP: 45500
+	Armor:
+		Type: Steel
+	Valued:
+		Cost: 1500
+	RevealsShroud:
+		Range: 5c0
+	Tooltip:
+		Name: Yuri Psychic Tower
+	Tooltip@NoRow:
+		Name: Yuri Psychic Tower
+	Armament:
+		Weapon: MultipleMindControlTower
+		MuzzleSequence: muzzle
+		LocalOffset: 0,0,960
+	AttackTurreted:
+		PauseOnCondition: build-incomplete || disabled || chronodisable
+	Turreted:
+		TurnSpeed: 1023
+	MindController:
+		Capacity: 3
+	WithMindControllerPipsDecoration:
+		FullSequence: pip-building-green
+		EmptySequence: pip-building-empty
+		Margin: 8, 2
+		PipStride: 4, 2
+	WithMuzzleOverlay:
+	WithIdleOverlay@powered:
+		Sequence: powered
+		PauseOnCondition: disabled || chronodisable
+		RequiresCondition: !build-incomplete && controlling < 3
+	WithIdleOverlay@powered-full:
+		Sequence: powered-full
+		PauseOnCondition: disabled || chronodisable
+		RequiresCondition: !build-incomplete && controlling >= 3
+	Voiced:
+		VoiceSet: PsychicTowerVoice
+		Volume: 0.8
+

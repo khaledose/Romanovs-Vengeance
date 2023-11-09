@@ -10,6 +10,7 @@
 #endregion
 
 using System.Linq;
+using OpenRA.Mods.Common.Activities;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Primitives;
 using OpenRA.Traits;
@@ -54,6 +55,7 @@ namespace OpenRA.Mods.RA2.Traits
 	public class AffectedByTemporal : ConditionalTrait<AffectedByTemporalInfo>, ISync, ITick, ISelectionBar
 	{
 		Actor self;
+		Actor attacker;
 
 		int token = Actor.InvalidConditionToken;
 		int requiredDamage;
@@ -72,6 +74,7 @@ namespace OpenRA.Mods.RA2.Traits
 
 		public void AddDamage(int damage, Actor damager, BitSet<DamageType> damageTypes)
 		{
+			attacker = damager;
 			if (IsTraitDisabled)
 				return;
 
@@ -103,7 +106,7 @@ namespace OpenRA.Mods.RA2.Traits
 
 		void ITick.Tick(Actor self)
 		{
-			if (--tick < 0)
+			if (--tick < 0 || attacker.CurrentActivity is not Attack)
 			{
 				recievedDamage = 0;
 

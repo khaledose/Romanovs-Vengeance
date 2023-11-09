@@ -1,0 +1,40 @@
+RadBeamWeapon:
+	Inherits: ^RadBeam
+	ReloadDelay: 50
+	Range: 6c0
+	Report: idesat1a.wav
+	ValidTargets: Ground
+	InvalidTargets: Structure, WaterStructure, Barrel, Wall, ImmuneToRadiation
+	Projectile: RadBeam
+		Color: 00FF0080
+	Warhead@1Dam: SpreadDamage
+		Damage: 12500
+		Versus:
+			None: 100
+			Flak: 100
+			Plate: 100
+			Light: 20
+			Medium: 15
+			Heavy: 10
+			Wood: 0
+			Steel: 0
+			Concrete: 0
+			Drone: 100
+			Rocket: 100
+		DamageTypes: Prone100Percent, TriggerProne, RadiationDeath, NonTemporal
+		InvalidTargets: Structure, Barrel, Wall, ImmuneToRadiation
+
+RadBeamWeaponE:
+	Inherits: RadBeamWeapon
+	Range: 8c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 20000
+
+RadEruptionWeapon:
+	ReloadDelay: 300
+	Report: idesat2a.wav
+	Warhead@1Radiation: CreateTintedCells
+		Spread: 1c0
+		Falloff: 100, 95, 90, 85, 80, 50, 30, 20, 5
+		Level: 100
+		MaxLevel: 500

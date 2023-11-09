@@ -1,0 +1,8 @@
+DolphinVoice:
+	DefaultVariant: .wav
+	Voices:
+		Build: vdolselb
+		Select: vdolsela, vdolselb
+		Move: vdolmova, vdolmovb
+		Attack: vdolatca, vdolatcb, vdolatcc
+		Die: vdoldiea, vdoldieb

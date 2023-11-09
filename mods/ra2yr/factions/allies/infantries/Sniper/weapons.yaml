@@ -1,0 +1,11 @@
+AWP:
+	Inherits: ^HollowPoint
+	ReloadDelay: 150
+	Range: 14c0
+	Report: isniatta.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 12500
+
+AWPE:
+	Inherits: AWP
+	ReloadDelay: 60

@@ -1,0 +1,33 @@
+gaweat:
+	Inherits: ^SuperWeapon
+	Inherits@SPECIAL: ^LightningStormSpecial
+	Inherits@SHAPE: ^3x3Shape
+	Buildable:
+		Queue: Support.Shared, Support.Allies
+		Prerequisites: ~building.allies, gatech, !enoughweather, ~techlevel.5
+		Description: Play God with deadly weather!\n\n  Requires power to operate.
+		BuildPaletteOrder: 990
+	IsometricSelectable:
+		DecorationHeight: 75
+	Power:
+		Amount: -200
+	Health:
+		HP: 100000
+	Armor:
+		Type: Concrete
+	Valued:
+		Cost: 5000
+	RevealsShroud:
+		Range: 5c0
+	Tooltip:
+		Name: Allied Weather Controller
+	Tooltip@NoRow:
+		Name: Allied Weather Controller
+	ProvidesPrerequisite@swlimit:
+		Prerequisite: enoughweather
+	NotificationAnnouncement:
+		Notification: WeathercontrolDeviceDetected
+		TextNotification: Warning: Weather Control Device detected.
+	Voiced:
+		VoiceSet: WeatherControllerVoice
+		Volume: 0.8

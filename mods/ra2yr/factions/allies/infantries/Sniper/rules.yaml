@@ -1,0 +1,120 @@
+# snipe:
+# 	Inherits: ^Infantry
+# 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+# 	Inherits@CHAOS: ^Berserkable
+# 	Inherits@EXPERIENCE: ^GainsExperience
+# 	Inherits@VETERAN: ^ProducibleAsVeteranInfantry
+# 	Inherits@MC: ^MindControllable
+# 	Inherits@VOICES: ^WithFeedbackVoicelines
+# 	Valued:
+# 		Cost: 600
+# 	DeliversCash:
+# 		Payload: 300
+# 	Tooltip:
+# 	Tooltip@NoRow:
+# 		Name: Sniper
+# 	Buildable:
+# 		Queue: Infantry.Shared, Infantry.Allies, Infantry.UK
+# 		BuildAtProductionType: Soldier
+# 		BuildPaletteOrder: 100
+# 		Prerequisites: ~infantry.england, gaairc, ~techlevel.3
+# 		Description: Special anti-infantry unit.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can kill garrisoned infantry
+# 		BuildDuration: 375
+# 		BuildDurationModifier: 100
+# 	UpdatesPlayerStatistics:
+# 		AddToArmyValue: true
+# 	Selectable:
+# 		Bounds: 482, 1448, 0, -530
+# 	Health:
+# 		HP: 7500
+# 	Passenger:
+# 		CustomPipType: gray
+# 	RevealsShroud:
+# 		Range: 6c0
+# 	# RevealsShroudToIntelligenceOwner:
+# 	#	Range: 6c0
+# 	RevealOnDeath:
+# 		Radius: 6c0
+# 	Armor:
+# 		Type: None
+# 	Armament@primary:
+# 		Weapon: AWP
+# 		ReloadingCondition: reload-ap
+# 		PauseOnCondition: chronodisable
+# 		RequiresCondition: !rank-elite
+# 	Armament@elite:
+# 		Weapon: AWPE
+# 		ReloadingCondition: reload-ap
+# 		PauseOnCondition: chronodisable
+# 		RequiresCondition: rank-elite
+# 	Armament@opentopped:
+# 		Name: opentopped
+# 		Weapon: AWP
+# 		ReloadingCondition: reload-ap
+# 		PauseOnCondition: chronodisable
+# 		RequiresCondition: !rank-elite
+# 	Armament@elite-opentopped:
+# 		Name: opentopped
+# 		Weapon: AWPE
+# 		ReloadingCondition: reload-ap
+# 		PauseOnCondition: chronodisable
+# 		RequiresCondition: rank-elite
+# 	AttackFrontal:
+# 		Voice: Attack
+# 		FacingTolerance: 2
+# 		TargetFrozenActors: true
+# 	Voiced:
+# 		VoiceSet: SniperVoice
+# 	WithInfantryBody:
+# 		DefaultAttackSequence: shoot
+# 	ActorStatValues:
+# 		Damage: 200
+
+snipe:
+	Inherits: ^GroundInfantry
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@VETERAN: ^InfantryPromotable
+	Inherits@VOICES: ^WithFeedbackVoicelines
+	Inherits@MC: ^MindControllable
+	Buildable:
+		Queue: Infantry.Shared, Infantry.Allies
+		Prerequisites: ~infantry.england, gaairc, ~techlevel.3
+		Description: Special anti-infantry unit.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can kill garrisoned infantry
+		BuildPaletteOrder: 3
+	Health:
+		HP: 12500
+	Armor:
+		Type: None
+	Valued:
+		Cost: 600
+	DeliversCash:
+		Payload: 300
+	Mobile:
+		Speed: 60
+	RevealsShroud:
+		Range: 8c0
+	Tooltip:
+		Name: Sniper
+	Tooltip@NoRow:
+		Name: Sniper
+	Armament@primary:
+		Weapon: AWP
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: AWPE
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite
+	Armament@opentopped:
+		Name: opentopped
+		Weapon: AWP
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite
+	Armament@elite-opentopped:
+		Name: opentopped
+		Weapon: AWPE
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite
+	Voiced:
+		VoiceSet: SniperVoice
+	-RevealOnFire:

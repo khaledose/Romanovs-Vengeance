@@ -1,0 +1,8 @@
+FlakTrooperVoice:
+	Inherits: ^InfantryDeath
+	Voices:
+		Select: iflasea, iflaseb, iflasec, iflased
+		Move: iflamoa, iflamob, iflamoc, iflamod
+		Attack: iflaata, iflaatb, iflaatc, iflaatd
+		Feedback: iflafea, iflafeb, iflafec, iflafed, iflafee
+		Die: ifladia, ifladib, ifladic, ifladid, ifladie

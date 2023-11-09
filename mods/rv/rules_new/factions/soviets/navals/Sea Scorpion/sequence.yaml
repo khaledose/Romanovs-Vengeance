@@ -1,0 +1,4 @@
+hyd:
+	Inherits@MUZZLE: ^WithFlakMuzzle
+	icon:
+		Filename: cameo|hovricon.shp

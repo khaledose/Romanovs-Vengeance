@@ -1,0 +1,35 @@
+spy:
+	Inherits: ^BasicInfantry
+	Inherits@DEATH: ^DeathAnimation
+	Inherits@PRONE: ^Prone
+	Defaults:
+		Filename: conquer|spy.shp
+	icon:
+		Filename: cameo|spyicon.shp
+	liedown:
+		Start: 164
+	standup:
+		Start: 180
+	cheer:
+		Start: 196
+	paradrop:
+		Filename: bits/infantry/spyfix.shp
+		Start: 0
+
+
+# spy:
+# 	Inherits: ^Infantry
+# 	Inherits@SWIMSUIT: ^WithSwimsuit
+# 	Defaults:
+# 		Filename: conquer|spy.shp
+# 	liedown:
+# 		Start: 164
+# 	standup:
+# 		Start: 180
+# 	cheer:
+# 		Start: 196
+# 	paradrop:
+# 		Filename: bits/infantry/spyfix.shp
+# 		Start: 0
+# 	icon:
+# 		Filename: cameo|spyicon.shp

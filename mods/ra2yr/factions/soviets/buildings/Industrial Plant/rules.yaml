@@ -1,0 +1,40 @@
+naindp:
+	Inherits: ^BaseStructure
+	Inherits@MC: ^MindControllableBuilding
+	Inherits@SHAPE: ^3x3Shape
+	Buildable:
+		Queue: Building.Shared, Building.Soviets
+		Prerequisites: ~building.soviets, natech, ~techlevel.4
+		Description: Decreases vehicle costs by 25%.\n\n  Maximum 1 can be built.
+		BuildPaletteOrder: 120
+		BuildLimit: 1
+	IsometricSelectable:
+		DecorationHeight: 120
+	Power:
+		Amount: -200
+	Health:
+		HP: 100000
+	Armor:
+		Type: Wood
+	Valued:
+		Cost: 2500
+	RevealsShroud:
+		Range: 4c0
+	Tooltip:
+		Name: Soviet Industrial Plant
+	Tooltip@NoRow:
+		Name: Soviet Industrial Plant
+	WithIdleOverlay@pistons:
+		Sequence: idle-pistons
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete
+	WithIdleOverlay@lights:
+		Sequence: idle-lights
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete
+	GrantExternalConditionToOwner:
+		Condition: naindp
+		RequiresCondition: !chronodisable
+	Voiced:
+		VoiceSet: IndustrialPlantVoice
+		Volume: 0.8
