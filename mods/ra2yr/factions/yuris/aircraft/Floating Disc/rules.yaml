@@ -1,47 +1,29 @@
 disk:
-	Inherits: ^Helicopter
+	Inherits: ^NewHelicopter
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
-	Inherits@EXPERIENCE: ^GainsExperience
-	Inherits@VETERAN: ^ProducibleAsVeteranVehicle
-	Inherits@RADIATON: ^DamagedByRadiation50Percent
-	BodyOrientation:
-		QuantizedFacings: 1
-	DamagedByTintedCells:
-		RequiresCondition: !airborne
-	Valued:
-		Cost: 1750
-	DeliversCash:
-		Payload: 1750
-	Tooltip:
-	Tooltip@NoRow:
-		Name: Floating disc
 	Buildable:
 		Queue: Aircraft.Shared, Aircraft.Yuri
-		BuildPaletteOrder: 40
 		Prerequisites: ~aircraft.yuri, yatech, ~techlevel.4
 		Description: Floating Disc armed with lasers.\nCan disable Power Plants and powered Defenses.\nCan steal resources from enemy Refineries.\nCan steal technology from enemy Battle Labs.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles\n\nUpgradeable with:\n- Disc Armor (Lunar Eclipse)\n- Laser Capacitors (Lazarus Corps)
-		BuildDuration: 1000
-		BuildDurationModifier: 100
-	UpdatesPlayerStatistics:
-		AddToArmyValue: true
-	Aircraft:
-		TurnSpeed: 1023
-		Speed: 165
-		AltitudeVelocity: 200
+		BuildPaletteOrder: 40
 	Selectable:
 		Bounds: 1882, 2075, 0, -724
 	Health:
 		HP: 60000
 	Armor:
 		Type: Light
+	Valued:
+		Cost: 1750
+	Aircraft:
+		Speed: 225
 	RevealsShroud:
-		Range: 10c0
+		Range: 9c0
 	RevealsShroud@Ground:
-		Range: 10c0
-	# RevealsShroudToIntelligenceOwner:
-	#	Range: 10c0
-	#	Types: SatelliteScan
-	#	Type: GroundPosition
+		Range: 9c0
+	Tooltip:
+		Name: Floating disc
+	Tooltip@NoRow:
+		Name: Floating disc
 	Armament@primary:
 		Weapon: DiskLaser
 		Damage: 75
@@ -77,62 +59,18 @@ disk:
 		Weapon: DiskSteal
 		MuzzleSequence: muzzle
 	AttackAircraft:
-		Voice: Attack
-		AttackType: Hover
-		FacingTolerance: 512
 		Armaments: primary, secondary
-	Voiced:
-		VoiceSet: FloatingDiskVoice
+		FacingTolerance: 512
 	WithMuzzleOverlay:
-	AutoTarget:
-	RenderSprites:
-		Image: disk
-	RenderVoxels:
-		Image: disk
-	WithVoxelHelicopterBody:
-		TickRate: 1
 	WithVoxelHelicopterBody@turret:
 		Sequence: turret
-		TickRate: 1
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	NotificationAnnouncement:
-		RequiresCondition: produced
-		Notification: DiscInFlight
-	DeathSounds:
-		DeathTypes: NonTemporal
-	AmbientSound@Steal:
-		SoundFiles: vflolo5a.wav, vflolo5b.wav
-		Volume: 0.65
-		RequiresCondition: stealing
-	SoundAnnouncement@StealEnd:
-		SoundFiles: vflolo6a.wav
-		Volume: 0.65
-		RequiresCondition: !stealing
-	GrantConditionOnAttack:
-		Condition: stealing
-		RevokeDelay: 6
-		ArmamentNames: secondary
-	AmbientSound@Move:
-		SoundFiles: vflolo2a.wav, vflolo2b.wav
-		Volume: 0.40
-		RequiresCondition: moving
-	SoundAnnouncement@end:
-		SoundFiles: vflolo3a.wav
-		Volume: 0.40
-		RequiresCondition: !moving
-	GrantConditionOnMovement:
-		Condition: moving
-	HitShape:
-	Repairable:
-		Voice: Move
-		RepairActors: gadept, nadept, nadepb, caoutp, caoutb
+		TickRate: 2
 	SpawnActorOnDeath:
-		DeathType: NonTemporal
 		Actor: diskhusk
-	ActorStatValues:
-		SplitRanges: true
-		Armaments: primary
+	AmbientSound:
+		SoundFiles: vflolo2a.wav, vflolo2b.wav
+	Voiced:
+		VoiceSet: FloatingDiskVoice
 
 diskhusk:
 	Inherits: ^HelicopterHusk

@@ -1,5 +1,5 @@
 hornet:
-	Inherits: ^NewNewPlane
+	Inherits: ^FighterJet
 	RejectsOrders:
 	Health:
 		HP: 7500
@@ -8,15 +8,11 @@ hornet:
 	Valued:
 		Cost: 50
 	Aircraft:
-		AltitudeVelocity: 240
-		InitialFacing: 768
-		TurnSpeed: 32
-		Speed: 210
-		Repulsable: false
+		IdleBehavior: ReturnToBase
+		Speed: 180
+		PitchSpeed: 162
 		TakeoffSounds: vhortaka.wav, vhortakb.wav
 		LandingSounds: vhorlana.wav, vhorlanb.wav
-		SoundVolume: 0.45
-		TakeUpCellWhenLand: false
 	RevealsShroud:
 		Range: 2c0
 	RevealsShroud@Ground:
@@ -47,6 +43,8 @@ hornet:
 		Offset: -600,100,100
 	Contrail@2:
 		Offset: -600,-100,100
+	AmbientSound:
+		SoundFiles: vintlo2a.wav, vintlo2b.wav, vintlo2c.wav
 
 hornethusk:
 	Inherits: ^PlaneHusk

@@ -41,18 +41,14 @@
 
 spyp:
 	Inherits: ^NewPlane
-	Interactable:
-		Bounds: 2413, 3861
+	RejectsOrders:
 	Health:
 		HP: 40000
 	Armor:
 		Type: Light
 	Aircraft:
-		CruiseAltitude: 5c852
-		Repulsable: false
-		TurnSpeed: 20
+		IdleBehavior: LeaveMap
 		Speed: 225
-		Voice: Action
 	Tooltip:
 		Name: Spy Plane
 	Tooltip@NoRow:
@@ -61,15 +57,16 @@ spyp:
 		Weapon: SpyCameraWeapon
 	AttackBomber:
 	WithVoxelHelicopterBody:
+		TickRate: 1
+	-WithVoxelBody:
 	SpawnActorOnDeath:
+		Actor: spyphusk
+	SpawnActorOnDeath@VTOL:
 		Actor: spyphusk
 	AmbientSound:
 		SoundFiles: vspylo2a.wav, vspylo2b.wav, vspylo2c.wav
-		Volume: 0.60
-		RequiresCondition: airborne
 	Voiced:
 		VoiceSet: SpyPlaneVoice
-		Volume: 0.45
 
 spyphusk:
 	Inherits: ^PlaneHusk

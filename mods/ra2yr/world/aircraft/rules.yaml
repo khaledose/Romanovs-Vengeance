@@ -62,19 +62,14 @@
 
 pdplane:
 	Inherits: ^NewPlane
-	Interactable:
-		Bounds: 2413, 3861
+	RejectsOrders:
 	Health:
 		HP: 40000
 	Armor:
 		Type: Light
 	Aircraft:
-		CruiseAltitude: 5c852
-		Repulsable: false
-		TurnSpeed: 20
-		Speed: 270
-		TakeOffOnCreation: false
-		Voice: Action
+		IdleBehavior: LeaveMap
+		Speed: 225
 	Tooltip:
 		Name: Cargo Plane
 	Tooltip@NoRow:
@@ -85,30 +80,17 @@ pdplane:
 		DropRange: 20c0
 		ChuteSound: sparadra.wav
 	SpawnActorOnDeath:
-		DeathType: NonTemporal
 		Actor: pdplanehusk
-	WithVoxelBody:
+	SpawnActorOnDeath@VTOL:
+		Actor: pdplanehusk
 	Contrail@1:
 		Offset: -50,1200,400
-		TrailLength: 15
-		StartColor: 88888880
-		StartColorAlpha: 128
-		StartColorUsePlayerColor: False
-		EndColorUsePlayerColor: true
 	Contrail@2:
 		Offset: -50,-1200,400
-		TrailLength: 15
-		StartColor: 88888880
-		StartColorAlpha: 128
-		StartColorUsePlayerColor: False
-		EndColorUsePlayerColor: true
 	AmbientSound:
 		SoundFiles: sparlo2a.wav, sparlo2b.wav, sparlo2c.wav
-		Volume: 1
-		RequiresCondition: airborne
 	Voiced:
 		VoiceSet: CargoPlaneVoice
-		Volume: 0.45
 
 pdplanehusk:
 	Inherits: ^PlaneHusk

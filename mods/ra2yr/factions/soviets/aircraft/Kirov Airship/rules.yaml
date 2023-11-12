@@ -1,61 +1,33 @@
 zep:
-	Inherits: ^Helicopter
+	Inherits: ^NewHelicopter
+	Inherits@SELFHEALING: ^SelfHealing
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@CHAOS: ^BerserkableVoxel
-	Inherits@EXPERIENCE: ^GainsExperience
-	Inherits@VETERAN: ^ProducibleAsVeteranVehicle
 	Inherits@AI: ^AIMicroManagable
-	Valued:
-		Cost: 2000
-	DeliversCash:
-		Payload: 2000
-	Tooltip:
-	Tooltip@NoRow:
-		Name: Kirov Airship
 	Buildable:
-		Queue: Aircraft.Shared, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya
-		BuildPaletteOrder: 50
+		Queue: Aircraft.Shared, Aircraft.Soviets
 		Prerequisites: ~aircraft.soviets, natech, ~techlevel.4
 		Description: Massive zeppelins that are the aerial terror of the Soviet force.\n\n  Strong vs Buildings\n  Weak vs Infantry, Vehicles\n\nUpgradeable with:\n- Radioactive Warheads\n- Advanced Irradiators (Iraq)\n- Aerial Propaganda (Vietnam)
-		BuildDuration: 1000
-		BuildDurationModifier: 100
-	UpdatesPlayerStatistics:
-		AddToArmyValue: true
+		BuildPaletteOrder: 50
 	Selectable:
 		Bounds: 2413, 2896, 0, -482
-	Aircraft:
-		CruiseAltitude: 5c852
-		TurnSpeed: 20
-		Speed: 30
-		Voice: Move
-		Repulsable: false
-		AltitudeVelocity: 200
-		AirborneCondition: airborne
-	Repairable:
-		Voice: Move
-		RepairActors: gadept, nadept, nadepb, caoutp, caoutb
-	RepairableNear:
-		Voice: Move
-		CloseEnough: 3c0
-		RepairActors: gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead, gayard, nayard, yayard, gaairc, gaairb, baairf, baairb, naheli, yadisk
 	Health:
-		HP: 400000
+		HP: 200000
 	Armor:
-		Type: Light
-	ChangesHealth:
-		PercentageStep: 1
-		Step: 0
-		Delay: 100
-		DamageCooldown: 100
-		StartIfBelow: 100
+		Type: Medium
+	Valued:
+		Cost: 2000
+	Aircraft:
+		Speed: 75
+		Voice: Move
+		Repulsable: true
 	RevealsShroud:
-		Range: 10c0
+		Range: 8c0
 	RevealsShroud@Ground:
-		Range: 10c0
-	# RevealsShroudToIntelligenceOwner:
-	#	Range: 10c0
-	#	Types: SatelliteScan
-	#	Type: GroundPosition
+		Range: 8c0
+	Tooltip:
+		Name: Kirov Airship
+	Tooltip@NoRow:
+		Name: Kirov Airship
 	Armament:
 		Weapon: BlimpBomb
 		Damage: 750
@@ -65,47 +37,13 @@ zep:
 		Damage: 825
 		RequiresCondition: rank-elite
 	AttackAircraft:
-		Voice: Attack
-		AttackType: Hover
 		FacingTolerance: 512
-	AutoTarget:
-	RenderSprites:
-	RenderVoxels:
-	WithVoxelBody:
-		ShowShadow: false	
-	WithFacingSpriteBody:
-		Sequence: shadow
-		ForceToGround: true
-	Hovers:
-		BobDistance: -10
-	Explodes:
-		DeathTypes: NonTemporal
-		Weapon: UnitExplode
-		Chance: 75
-	AutoTarget:
-		ScanRadius: 5
-		InitialStance: ReturnFire
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	NotificationAnnouncement:
-		RequiresCondition: produced
-		Notification: KirovReporting
+	SpawnActorOnDeath:
+		Actor: zephusk
+	AmbientSound:
+		SoundFiles: vkirlo2a.wav, vkirlo2b.wav, vkirlo2c.wav
 	Voiced:
 		VoiceSet: KirovVoice
-	AmbientSound@Move:
-		SoundFiles: vkirlo2a.wav, vkirlo2b.wav, vkirlo2c.wav
-		Volume: 0.40
-		RequiresCondition: moving
-	SoundAnnouncement@end:
-		SoundFiles: vkirlo3.wav
-		Volume: 0.40
-		RequiresCondition: !moving
-	GrantConditionOnMovement:
-		Condition: moving
-	SpawnActorOnDeath:
-		DeathType: NonTemporal
-		Actor: zephusk
-	HitShape:
 	GrantConditionOnActivity@AI:
 		Condition: AIattack
 	RejectsOrders@AI: ## Make AI zep more offensive when attack

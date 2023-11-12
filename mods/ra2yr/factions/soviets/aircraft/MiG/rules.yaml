@@ -75,19 +75,15 @@
 # 		RearmActors: boris
 
 bpln:
-	Inherits: ^NewNewPlane
+	Inherits: ^FighterJet
 	RejectsOrders:
 	Health:
 		HP: 10000
 	Armor:
 		Type: Light
 	Aircraft:
-		AltitudeVelocity: 240
-		InitialFacing: 768
-		TurnSpeed: 32
-		Speed: 210
-		Repulsable: false
 		IdleBehavior: LeaveMap
+		Speed: 240
 	RevealsShroud:
 		Range: 2c0
 	RevealsShroud@Ground:
@@ -112,15 +108,14 @@ bpln:
 		Actor: bplnhusk
 	SpawnActorOnDeath@VTOL:
 		Actor: bplnhusk.VTOL
-	AmbientSound:
-		SoundFiles: vblelo2a.wav, vblelo2b.wav, vblelo2c.wav
-		Volume: 0.35
-	Voiced:
-		VoiceSet: MiGVoice
 	Contrail@1:
 		Offset: -600,100,100
 	Contrail@2:
 		Offset: -600,-100,100
+	AmbientSound:
+		SoundFiles: vblelo2a.wav, vblelo2b.wav, vblelo2c.wav
+	Voiced:
+		VoiceSet: MiGVoice
 
 bplnhusk:
 	Inherits: ^PlaneHusk

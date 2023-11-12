@@ -1,22 +1,51 @@
-^NewPlane:
+^NewAircraft:
 	Inherits@1: ^ExistsInWorld
-	Inherits@2: ^Tractable
-	Inherits@3: ^WithTooltip
-	Inherits@4: ^SuddenDeathModifier
+	Inherits@2: ^WithTooltip
+	Inherits@3: ^SuddenDeathModifier
+	Inherits@4: ^Tractable
+	Inherits@5: ^ChronoDisableDisabledWithIC
+	Inherits@6: ^AcceptsIvanBomb
+	Inherits@7: ^AcceptsC4
+	Inherits@8: ^AffectedByIndustrialPlant
+	Inherits@9: ^UnitParticles
+	Inherits@10: ^IronCurtainable
+	Inherits@11: ^TerrorDronableAircraft
+	Inherits@12: ^GainsExperience
+	Inherits@13: ^ProducibleAsVeteranVehicle
+	Inherits@14: ^FlatSelectionMode
+	Inherits@15: ^DamagedByRadiation50Percent
 	Inherits@HANDICAPS: ^PlayerHandicaps
+	Selectable:
+		Bounds: 724, 1158
+	SelectionDecorations:
+		MinimumZoom: 0
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
 	HitShape:
 	OwnerLostAction:
 		Action: Kill
 		DeathTypes: BulletDeath, NonTemporal
-	SelectionDecorations:
-		MinimumZoom: 0
 	Aircraft:
-		Voice: Move
-		MaximumPitch: 128
-		AltitudeVelocity: 120
-		AirborneCondition: airborne
+		CruiseAltitude: 5c852
+		AltitudeVelocity: 240
+		TurnSpeed: 20
+		IdleTurnSpeed: 10
+		TakeOffOnCreation: false
 		VTOL: true
-		TakeOffOnResupply: true
+		Voice: Move
+		SoundVolume: 0.3
+		AirborneCondition: airborne
+		CruisingCondition: cruising
+		PauseOnCondition: chronodisable
+	Hovers@CRUISING:
+		RequiresCondition: cruising
+	RevealsShroud:
+		Type: GroundPosition
+		RequiresCondition: airborne
+	RevealsShroud@Ground:
+		MaxHeightDelta: 3
+		Type: GroundPosition
+		RequiresCondition: !airborne
 	HiddenUnderFog:
 		Type: CenterPosition
 	ActorLostNotification:
@@ -25,12 +54,20 @@
 		QuantizedFacings: 0
 		CameraPitch: 85
 		UseClassicPerspectiveFudge: false
+	Chronoshiftable:
+		ChronoshiftSound: schrmov.wav
+		ReturnToOrigin: false
+		RequiresCondition: !invulnerability && !airborne
 	Guardable:
 	Targetable@Airborne:
 		TargetTypes: Air
 		RequiresCondition: airborne
 	Targetable@Ground:
 		TargetTypes: Ground, Vehicle
+		RequiresCondition: !airborne
+	Explodes:
+		DeathTypes: NonTemporal
+		Weapon: UnitExplode
 		RequiresCondition: !airborne
 	DeathSounds:
 		DeathTypes: NonTemporal
@@ -43,6 +80,10 @@
 		LightPitch: 150
 		LightAmbientColor: -0.5,-0.5,-0.5
 		LightDiffuseColor: 1.3,1.3,1.3
+	WithTextControlGroupDecoration:
+	AmbientSound:
+		Volume: 0.30
+		RequiresCondition: cruising && airborne
 	AppearsOnRadar:
 		UseLocation: true
 	RangedGpsDot:
@@ -50,69 +91,10 @@
 	MapEditorData:
 		Categories: Aircraft
 
-^NewAircraft:
-	Inherits@1: ^NewPlane
-	Inherits@2: ^ChronoDisableDisabledWithIC
-	Inherits@3: ^MachineShopRepair
-	Inherits@4: ^AcceptsIvanBomb
-	Inherits@5: ^AcceptsC4
-	Inherits@6: ^AffectedByIndustrialPlant
-	Inherits@7: ^UnitParticles
-	Inherits@8: ^IronCurtainable
-	Inherits@9: ^TerrorDronableAircraft
-	Inherits@10: ^GainsExperience
-	Inherits@SELECTION_MODE: ^FlatSelectionMode
-	UpdatesPlayerStatistics:
-		AddToArmyValue: true
-	Aircraft:
-		AltitudeVelocity: 43
-	WithTextControlGroupDecoration:
-	Targetable@ChronoDisable:
-		RequiresCondition: !airborne
-	Targetable@DRONE:
-		RequiresCondition: !airborne
-	Chronoshiftable:
-		ChronoshiftSound: schrmov.wav
-		ReturnToOrigin: false
-		RequiresCondition: !invulnerability && !airborne
-	RevealsShroud:
-		Type: GroundPosition
-		RequiresCondition: airborne
-	RevealsShroud@Ground:
-		MaxHeightDelta: 3
-		Type: GroundPosition
-		RequiresCondition: !airborne
-	RevealOnFire:
-		ArmamentNames: primary, secondary, infiltrate, deployed, growth
-		Duration: 50
-	Explodes:
-		DeathTypes: NonTemporal
-		Weapon: UnitExplode
-		RequiresCondition: !airborne
-	ProximityExternalCondition:
-		Condition: unit.docked
-		Range: 1c0
-		RequiresCondition: !airborne
-
-^NewNewPlane:
+^NewPlane:
 	Inherits: ^NewAircraft
-	Inherits@AMMO: ^WithAmmoPool
 	Aircraft:
-		CruiseAltitude: 5c852
-		CruisingCondition: cruising
-		AltitudeVelocity: 120
-		IdleBehavior: ReturnToBase
-		IdleSpeed: -1
-		TakeOffOnResupply: false
-		TakeOffOnCreation: false
-	AttackAircraft:
-		FacingTolerance: 20
-		TargetFrozenActors: True
-		PauseOnCondition: chronodisable
-		RequiresCondition: ammo
-	Hovers@CRUISING:
-		RequiresCondition: cruising
-	Guard:
+		Repulsable: false
 	WithVoxelBody:
 	GrantConditionOnMovement@V:
 		Condition: vmove
@@ -121,7 +103,6 @@
 		Condition: hmove
 		ValidMovementTypes: Horizontal
 	SpawnActorOnDeath:
-		DeathType: NonTemporal
 		RequiresCondition: !vmove || hmove
 	SpawnActorOnDeath@VTOL:
 		DeathType: NonTemporal
@@ -140,15 +121,75 @@
 		StartColorUsePlayerColor: false
 		EndColorUsePlayerColor: true
 		TrailWidth: 32
+	Contrail@FlameTrail:
+		Offset: -500,0,50
+		StartColor: FFEA0080
+		StartColorAlpha: 128
+		StartColorUsePlayerColor: false
+		TrailWidth: 96
+		TrailLength: 7
+		WidthFadeRate: 0.8
 
-^Helicopter:
-	Inherits: ^Aircraft
-	Inherits@1: ^CrateStatModifiers
+^FighterJet:
+	Inherits: ^NewPlane
+	Inherits@AMMO: ^WithAmmoPool
+	RevealOnFire:
+		ArmamentNames: primary, secondary, infiltrate, deployed, growth
+		Duration: 50
+	AttackAircraft:
+		FacingTolerance: 20
+		TargetFrozenActors: True
+		PauseOnCondition: chronodisable
+		RequiresCondition: ammo
+	Guard:
+
+^DockablePlane:
+	Inherits: ^FighterJet
+	Buildable:
+		BuildDurationModifier: 100
 	Aircraft:
+		IdleBehavior: ReturnToBase
+	GrantExternalConditionToOwner:
+		Condition: padaircraft
+	Rearmable:
+		RearmActors: gadock, gaairc
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidRelationships: None
+
+^NewHelicopter:
+	Inherits: ^NewAircraft
+	Inherits@1: ^CrateStatModifiers
+	Buildable:
+		BuildDurationModifier: 100
+	Aircraft:
+		LandRange: 1c0
+		LandableTerrainTypes: Clear, Sand, Rough, Road, DirtRoad, Ore, Gems
+		Crushes: crate
+		CrushDamageTypes: NonTemporal
 		CruiseAltitude: 3c852
+		AltitudeVelocity: 120
 		CanSlide: true
 		CanHover: true
-		IdleBehavior: Land
+	AttackAircraft:
+		Voice: Attack
+		AttackType: Hover
+		FacingTolerance: 2
+		PauseOnCondition: chronodisable
+	Repairable:
+		Voice: Move
+		RepairActors: gadept, nadept, caoutp
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidRelationships: None
+	WithVoxelHelicopterBody:
+		TickRate: 1
 	RangedGpsDot:
 		Sequence: Helicopter
 

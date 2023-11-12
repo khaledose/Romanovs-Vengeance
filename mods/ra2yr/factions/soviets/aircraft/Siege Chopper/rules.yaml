@@ -1,40 +1,33 @@
 schp:
-	Inherits: ^Helicopter
+	Inherits: ^NewHelicopter
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
-	Inherits@CHAOS: ^BerserkableVoxel
-	Inherits@EXPERIENCE: ^GainsExperience
-	Inherits@VETERAN: ^ProducibleAsVeteranVehicle
 	Inherits@MC: ^MindControllable
-	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Inherits@AI: ^AIMicroManagable
-	Valued:
-		Cost: 1400
-	DeliversCash:
-		Payload: 1400
-	Tooltip:
-	Tooltip@NoRow:
-		Name: Siege Chopper
-	AutoTargetPriority@DEFAULT:
-		RequiresCondition: !stance-attackanything && !assault-move && !deployed
-	AutoTargetPriority@ATTACKANYTHING:
-		RequiresCondition: (stance-attackanything || assault-move) && !deployed
-	AutoTargetPriority@DEFAULT_GROUND:
-		RequiresCondition: !stance-attackanything && !assault-move && deployed
-		ValidTargets: Infantry, Vehicle, Ship, Water, Underwater, Defense
-		InvalidTargets: NoAutoTarget, WaterStructure
-	AutoTargetPriority@ATTACKANYTHING_GROUND:
-		RequiresCondition: (stance-attackanything || assault-move) && deployed
-		ValidTargets: Infantry, Vehicle, Ship, Water, Underwater, Structure, Defense
-		InvalidTargets: NoAutoTarget
-	DamagedByTintedCells:
-		RequiresCondition: !airborne
+	Buildable:
+		Queue: Aircraft.Shared, Aircraft.Soviets
+		Prerequisites: ~aircraft.soviets, natech, ~techlevel.3
+		Description: Helicopter capable of deploying into a long range artillery.\n\nMobile:\n  Strong vs Infantry\n  Weak vs Vehicles\nDeployed:\n  Strong vs Buildings, Vehicles\n  Weak vs Aircraft\n\nAbilities:\n- Can detect Stealth units\n\nUpgradeable with:\n- Armor-Piercing Bullets
+		BuildPaletteOrder: 10
 	Selectable:
-		Class: schp
 		Bounds: 1689, 2896, 0, -965
 	Health:
 		HP: 30000
 	Armor:
 		Type: Light
+	Valued:
+		Cost: 1400
+	Aircraft:
+		Speed: 180
+		CanForceLand: false
+		PauseOnCondition: !undeployed || chronodisable
+	RevealsShroud:
+		Range: 7c0
+	RevealsShroud@Ground:
+		Range: 7c0
+	Tooltip:
+		Name: Siege Chopper
+	Tooltip@NoRow:
+		Name: Siege Chopper
 	Armament@primary:
 		Weapon: SiegeChopperCannon
 		Damage: 60
@@ -77,52 +70,16 @@ schp:
 		MuzzleSequence: muzzle
 		LocalOffset: 768,0,2048
 		RequiresCondition: rank-elite && deployed
-	WithMuzzleOverlay:
+	AttackAircraft:
+		RequiresCondition: airborne && !deployed
+	AttackTurreted:
+		Armaments: deployed
+		Voice: DeployedAttack
+		PauseOnCondition: chronodisable
+		RequiresCondition: !airborne && deployed
 	Turreted:
 		TurnSpeed: 80
-	Voiced:
-		VoiceSet: SiegeChopperVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
-	Buildable:
-		Queue: Aircraft.Shared, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya
-		BuildPaletteOrder: 10
-		Prerequisites: ~aircraft.soviets, natech, ~techlevel.3
-		Description: Helicopter capable of deploying into a long range artillery.\n\nMobile:\n  Strong vs Infantry\n  Weak vs Vehicles\nDeployed:\n  Strong vs Buildings, Vehicles\n  Weak vs Aircraft\n\nAbilities:\n- Can detect Stealth units\n\nUpgradeable with:\n- Armor-Piercing Bullets
-		BuildDuration: 625
-		BuildDurationModifier: 100
-	UpdatesPlayerStatistics:
-		AddToArmyValue: true
-	RevealsShroud:
-		Range: 10c0
-	RevealsShroud@Ground:
-		Range: 10c0
-	# RevealsShroudToIntelligenceOwner:
-	#	Range: 10c0
-	#	Types: SatelliteScan
-	#	Type: GroundPosition
-	DetectCloaked:
-		Range: 5c0
-	RenderDetectionCircle:
-		RenderOnGround: true
-	AttackTurreted:
-		Armaments: primary, deployed
-		Voice: DeployedAttack
-		PauseOnCondition: (!deployed && !undeployed) || (undeployed && !cruising) || chronodisable
-	Aircraft:
-		CanForceLand: false
-		LandableTerrainTypes: Clear, Sand, Rough, Road, DirtRoad, Ore, Gems
-		Crushes: crate
-		CrushDamageTypes: NonTemporal
-		TurnSpeed: 40
-		Speed: 165
-		AltitudeVelocity: 200
-		CruisingCondition: cruising
-		PauseOnCondition: !undeployed || chronodisable
+	WithMuzzleOverlay:
 	HeliGrantConditionOnDeploy:
 		BodyNames: dot
 		DeployAnimation: deploy
@@ -138,71 +95,19 @@ schp:
 		PauseOnCondition: chronodisable
 	WithSpriteBody@dot:
 		Sequence: dot
-		Name: dot
-	RenderSprites:
-		Image: schp
-	RenderVoxels:
-		Image: schp
-	Repairable:
-		Voice: Move
-		RepairActors: gadept, nadept, nadepb, caoutp, caoutb
-	RepairableNear:
-		Voice: Move
-		CloseEnough: 3c0
-		RepairActors: gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead, gayard, nayard, yayard, gaairc, gaairb, baairf, baairb, naheli, yadisk
-	Targetable@MC:
-		RequiresCondition: !controlled && !permamc && !airborne
-	Targetable@CHAOS:
-		RequiresCondition: !airborne
-	RejectsOrders@deployment:
-		Reject: Move
-		RequiresCondition: !undeployed && !airborne
-	RejectsOrders@wierdtakeoff:
-		RequiresCondition: !undeployed && airborne
 	WithVoxelHelicopterBody:
-		TickRate: 1
-		ShowShadow: false
-		RequiresCondition: undeployed
-	WithFacingSpriteBody:
-		Sequence: shadow
-		ForceToGround: true
 		RequiresCondition: undeployed
 	WithVoxelBody:
 		Sequence: deployed
 		RequiresCondition: deployed
 	WithVoxelTurret:
 		RequiresCondition: deployed
-	Hovers@CRUISING:
-		RequiresCondition: cruising
-		BobDistance: -45
-	WithRangeCircle:
-		Range: 12c0
-		RequiresCondition: deployed
 	SpawnActorOnDeath:
-		DeathType: NonTemporal
 		Actor: schphusk
-		RequiresCondition: airborne
-	Explodes:
-		DeathTypes: NonTemporal
-		Weapon: UnitExplode
-		RequiresCondition: !airborne
-	AmbientSound@Move:
+	AmbientSound:
 		SoundFiles: vcholo2a.wav, vcholo2b.wav, vcholo2c.wav
-		Volume: 0.45
-		RequiresCondition: moving
-	SoundAnnouncement@end:
-		SoundFiles: vcholo3a.wav
-		Volume: 0.45
-		RequiresCondition: !moving
-	GrantConditionOnMovement:
-		Condition: moving
-	HitShape:
-	# AutoDeployer@AI:
-	# 	RequiresCondition: ai-control
-	# 	DeployChance: 50
-	# 	DeployTicks: 300
-	# 	UndeployTicks: 200
-	# 	DeployTrigger: Periodically
+	Voiced:
+		VoiceSet: SiegeChopperVoice
 	RejectsOrders@deploymentAI:
 		Reject: AttackMove, AssaultMove, Attack #HACK: Deployed Siege Chopper will try to aim orignal target set by squad if not block the Attack order
 		RequiresCondition: ai-control && !undeployed

@@ -1,7 +1,7 @@
 ﻿using OpenRA.Mods.Common.Traits;
 using OpenRA.Traits;
 
-namespace OpenRA.Mods.RA2.Traits.Conditions
+namespace OpenRA.Mods.RA2.Traits
 {
 	[Desc("Grants condition as long as an actor is resupplying another actor.")]
 	public class GrantConditionOnResupplyInfo : ConditionalTraitInfo

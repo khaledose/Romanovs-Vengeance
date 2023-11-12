@@ -1,5 +1,5 @@
 asw:
-	Inherits: ^NewNewPlane
+	Inherits: ^FighterJet
 	RejectsOrders:
 	Health:
 		HP: 3000
@@ -8,15 +8,11 @@ asw:
 	Valued:
 		Cost: 50
 	Aircraft:
-		AltitudeVelocity: 240
-		InitialFacing: 768
-		TurnSpeed: 32
-		Speed: 210
-		RepulsionSpeed: 40
+		IdleBehavior: ReturnToBase
+		Speed: 180
+		PitchSpeed: 162
 		TakeoffSounds: vospstaa.wav
 		LandingSounds: vosplana.wav
-		SoundVolume: 0.35
-		TakeUpCellWhenLand: false
 	Tooltip:
 		Name: Osprey
 	Tooltip@NoRow:
@@ -43,6 +39,8 @@ asw:
 		Offset: -600,100,100
 	Contrail@2:
 		Offset: -600,-100,100
+	AmbientSound:
+		SoundFiles: vintlo2a.wav, vintlo2b.wav, vintlo2c.wav
 
 aswhusk:
 	Inherits: ^PlaneHusk

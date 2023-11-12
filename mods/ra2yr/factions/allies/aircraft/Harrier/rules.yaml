@@ -161,21 +161,13 @@
 
 
 orca:
-	Inherits: ^NewNewPlane
+	Inherits: ^DockablePlane
 	Inherits@AI: ^AIMicroManagable
-	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@CHAOS: ^BerserkableVoxel
-	Inherits@EXPERIENCE: ^GainsExperience
-	Inherits@VETERAN: ^ProducibleAsVeteranVehicle
-	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Buildable:
 		Queue: Aircraft.Shared, Aircraft.Allies
-		Prerequisites: ~aircraft.helipad.allies, !prerequisite.enoughair, ~techlevel.3
+		Prerequisites: ~aircraft.allies, !prerequisite.enoughair, ~techlevel.3
 		Description: Fast assault fighter.\nCannot be built more than landing pads available.\n\n  Strong vs Buildings, Infantry, Vehicles\n  Weak vs Aircraft\n\nUpgradeable with:\n- Air-to-Air Missile Systems\n- Predator Missiles
-		BuildDurationModifier: 100
 		BuildPaletteOrder: 10
-	Selectable:
-		Bounds: 724, 1158
 	Health:
 		HP: 15000
 	Armor:
@@ -183,17 +175,10 @@ orca:
 	Valued:
 		Cost: 1200
 	Aircraft:
-		AltitudeVelocity: 240
-		TurnSpeed: 20
-		IdleTurnSpeed: 10
-		# IdleSpeed: 105
 		Speed: 210
+		PitchSpeed: 231
 		TakeoffSounds: vintupa.wav
 		LandingSounds: vintdna.wav
-		SoundVolume: 0.3
-		Roll: 56
-		RollSpeed: 14
-		PauseOnCondition: chronodisable
 	RevealsShroud:
 		Range: 8c0
 	RevealsShroud@Ground:
@@ -220,42 +205,16 @@ orca:
 		Actor: orcahusk
 	SpawnActorOnDeath@VTOL:
 		Actor: orcahusk.VTOL
-	Repairable:
-		Voice: Move
-		RepairActors: gaairc
-	Rearmable:
-		RearmActors: gaairc
-	RenderSprites:
-		Image: falc
-	RenderVoxels:
-		Image: falc
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
-	AmbientSound:
-		SoundFiles: vintlo2a.wav, vintlo2b.wav, vintlo2c.wav
-		Volume: 0.20
-		RequiresCondition: airborne
-	Voiced:
-		VoiceSet: HarrierVoice
-	ProvidesPrerequisite@default:
-	GrantExternalConditionToOwner:
-		Condition: padaircraft
 	Contrail@1:
 		Offset: -100,-500,100
 	Contrail@2:
 		Offset: -100,500,100
 	Contrail@FlameTrail:
 		Offset: -500,0,50
-		StartColor: FFEA0080
-		StartColorAlpha: 128
-		StartColorUsePlayerColor: false
-		TrailWidth: 96
-		TrailLength: 7
-		WidthFadeRate: 0.8
+	AmbientSound:
+		SoundFiles: vintlo2a.wav, vintlo2b.wav, vintlo2c.wav
+	Voiced:
+		VoiceSet: HarrierVoice
 	ProductionCostMultiplier@AI:
 		Prerequisites: prerequisite.aiplayer
 		Multiplier: 40

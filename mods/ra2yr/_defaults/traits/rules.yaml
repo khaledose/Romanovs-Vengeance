@@ -321,6 +321,7 @@
 		RequiresCondition: !affectedbytemporal
 	Targetable@ChronoDisable:
 		TargetTypes: ChronoDisable
+		RequiresCondition: !airborne
 	SpeedMultiplier@ChronoDisable:
 		Modifier: 0
 		RequiresCondition: chronodisable
@@ -452,7 +453,7 @@
 		InfectedCondition: terrordroned
 	Targetable@DRONE:
 		TargetTypes: TerrorDronable
-		RequiresCondition: !chronodisable
+		RequiresCondition: !chronodisable && !airborne
 	RevealsShroud@DRONE:
 		Range: 2c0
 		ValidRelationships: Enemy, Neutral

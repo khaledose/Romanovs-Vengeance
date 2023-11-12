@@ -41,9 +41,8 @@ beag:
 	Inherits: orca
 	Buildable:
 		Queue: Aircraft.Shared, Aircraft.Allies
-		Prerequisites: ~aircraft.helipad.korea, !prerequisite.enoughair, ~techlevel.3
+		Prerequisites: ~aircraft.korea, !prerequisite.enoughair, ~techlevel.3
 		Description: Aircraft armed with EMP bomb.\nCannot be built more than landing pads available.\n  Strong vs Buildings, Vehicles\n  Weak vs Infantry, Aircraft
-		BuildDurationModifier: 100
 		BuildPaletteOrder: 30
 	Health:
 		HP: 20000
@@ -61,18 +60,14 @@ beag:
 		Actor: beaghusk
 	SpawnActorOnDeath@VTOL:
 		Actor: beaghusk.VTOL
-	RenderSprites:
-		Image: beag
-	RenderVoxels:
-		Image: beag
-	Voiced:
-		VoiceSet: BlackEagleVoice
 	Contrail@1:
 		Offset: 0,-500,100
 	Contrail@2:
 		Offset: 0,500,100
 	Contrail@FlameTrail:
 		Offset: -700,0,50
+	Voiced:
+		VoiceSet: BlackEagleVoice
 
 beaghusk:
 	Inherits: ^PlaneHusk

@@ -1,23 +1,32 @@
 shad:
-	Inherits: ^Helicopter
+	Inherits: ^NewHelicopter
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
-	Inherits@CHAOS: ^BerserkableVoxel
-	Inherits@EXPERIENCE: ^GainsExperience
-	Inherits@VETERAN: ^ProducibleAsVeteranVehicle
 	Inherits@MC: ^MindControllable
-	Inherits@RADIATON: ^DamagedByRadiation50Percent
-	DamagedByTintedCells:
-		RequiresCondition: !airborne
-	Tooltip:
-	Tooltip@NoRow:
-		Name: Night Hawk
+	Buildable:
+		Queue: Aircraft.Shared, Aircraft.Allies
+		Prerequisites: ~aircraft.allies, ~techlevel.2
+		Description: Infantry Transport Helicopter.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilties:\n- Can detect Stealth units\n- Invisible on radar
+		BuildPaletteOrder: 20
 	Selectable:
-		Class: shad
 		Bounds: 1689, 2896, 0, -965
 	Health:
-		HP: 22500
+		HP: 17500
 	Armor:
 		Type: Light
+	Valued:
+		Cost: 1000
+	Aircraft:
+		IdleBehavior: Land
+		Speed: 210
+		LandingSounds: vblhlo3.wav
+	RevealsShroud:
+		Range: 7c0
+	RevealsShroud@Ground:
+		Range: 7c0
+	Tooltip:
+		Name: Night Hawk
+	Tooltip@NoRow:
+		Name: Night Hawk
 	Armament@primary:
 		Weapon: BlackHawkCannon
 		Damage: 35
@@ -49,76 +58,12 @@ shad:
 		PauseOnCondition: reload-ground
 		RequiresCondition: rank-elite
 	WithMuzzleOverlay:
+	SpawnActorOnDeath:
+		Actor: shadhusk
+	AmbientSound:
+		SoundFiles: vblhlo2a.wav, vblhlo2b.wav, vblhlo2c.wav
 	Voiced:
 		VoiceSet: NighthawkVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
-	Buildable:
-		Queue: Aircraft.Shared, Aircraft.Allies
-		BuildPaletteOrder: 20
-		Prerequisites: ~aircraft.allies, ~techlevel.2
-		Description: Infantry Transport Helicopter.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilties:\n- Can detect Stealth units\n- Invisible on radar
-		BuildDuration: 250
-		BuildDurationModifier: 100
-	UpdatesPlayerStatistics:
-		AddToArmyValue: true
-	Valued:
-		Cost: 500
-	DeliversCash:
-		Payload: 500
-		Voice: Move
-	RevealsShroud:
-		Range: 8c0
-	RevealsShroud@Ground:
-		Range: 8c0
-	# RevealsShroudToIntelligenceOwner:
-	#	Range: 8c0
-	#	Types: SatelliteScan
-	#	Type: GroundPosition
-	DetectCloaked:
-		Range: 5c0
-	RenderDetectionCircle:
-		RenderOnGround: true
-	-AppearsOnRadar:
-	AttackAircraft:
-		Voice: Attack
-		AttackType: Hover
-		FacingTolerance: 2
-		PauseOnCondition: chronodisable
-	Aircraft:
-		LandableTerrainTypes: Clear, Sand, Rough, Road, DirtRoad, Ore, Gems
-		Crushes: crate
-		CrushDamageTypes: NonTemporal
-		TurnSpeed: 40
-		Speed: 180
-		AltitudeVelocity: 200
-		CruisingCondition: cruising
-		PauseOnCondition: chronodisable
-	Repairable:
-		Voice: Move
-		RepairActors: gadept, nadept, nadepb, caoutp, caoutb
-	RepairableNear:
-		Voice: Move
-		CloseEnough: 3c0
-		RepairActors: gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead, gayard, nayard, yayard, gaairc, gaairb, baairf, baairb, naheli, yadisk
-	RenderSprites:
-	Targetable@MC:
-		RequiresCondition: !controlled && !permamc && !airborne
-	Targetable@CHAOS:
-		RequiresCondition: !airborne
-	WithVoxelHelicopterBody:
-		TickRate: 1
-		ShowShadow: false
-	WithFacingSpriteBody:
-		Sequence: shadow
-		ForceToGround: true
-	Hovers@CRUISING:
-		RequiresCondition: cruising
-		BobDistance: -45
 	Cargo:
 		Types: Infantry, Garrisoner, SmallVehicle
 		MaxWeight: 5
@@ -129,25 +74,6 @@ shad:
 	WithCargoSounds:
 		EnterSound: genter1a.wav
 		ExitSound: gexit1a.wav
-	SpawnActorOnDeath:
-		DeathType: NonTemporal
-		Actor: shadhusk
-		RequiresCondition: airborne
-	Explodes:
-		DeathTypes: NonTemporal
-		Weapon: UnitExplode
-		RequiresCondition: !airborne
-	AmbientSound@Move:
-		SoundFiles: vblhlo2a.wav, vblhlo2b.wav, vblhlo2c.wav
-		Volume: 0.5
-		RequiresCondition: moving
-	SoundAnnouncement@end:
-		SoundFiles: vblhlo3.wav
-		Volume: 0.5
-		RequiresCondition: !moving
-	GrantConditionOnMovement:
-		Condition: moving
-	HitShape:
 	WithCargoPipsDecoration:
 		Margin: 4, 3
 		Palette: ra
@@ -158,8 +84,6 @@ shad:
 			yellow: pip-yellow
 			blue: pip-blue
 			red: pip-red
-	ActorStatValues:
-		SplitRanges: true
 
 shadhusk:
 	Inherits: ^HelicopterHusk
