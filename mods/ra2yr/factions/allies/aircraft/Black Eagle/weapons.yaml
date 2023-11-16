@@ -1,13 +1,11 @@
 Maverick2:
 	Inherits: Maverick
+	Report: vbleatta.wav, vbleattb.wav
 	Warhead@1Dam: SpreadDamage
-		Damage: 15000
-	Warhead@1Gar: OpenToppedDamage
-		Damage: 15000
+		Damage: 20000
 
 Maverick2E:
 	Inherits: MaverickE
+	Report: vbleatta.wav, vbleattb.wav
 	Warhead@1Dam: SpreadDamage
-		Damage: 20000
-	Warhead@1Gar: OpenToppedDamage
-		Damage: 20000
+		Damage: 40000

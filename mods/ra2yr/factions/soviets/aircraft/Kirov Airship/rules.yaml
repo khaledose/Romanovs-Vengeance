@@ -1,5 +1,5 @@
 zep:
-	Inherits: ^NewHelicopter
+	Inherits: ^Helicopter
 	Inherits@SELFHEALING: ^SelfHealing
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@AI: ^AIMicroManagable
@@ -19,7 +19,6 @@ zep:
 	Aircraft:
 		Speed: 75
 		Voice: Move
-		Repulsable: true
 	RevealsShroud:
 		Range: 8c0
 	RevealsShroud@Ground:
@@ -53,6 +52,7 @@ zep:
 zephusk:
 	Inherits: ^HelicopterHusk
 	Tooltip:
+		Name: Kirov Airship
 	Tooltip@NoRow:
 		Name: Kirov Airship
 	Aircraft:
@@ -62,46 +62,7 @@ zephusk:
 		Explosion: KirovExplode
 		Velocity: 120
 		MaximumSpinSpeed: 0
-	RevealsShroud:
-		Range: 10c0
-		Type: GroundPosition
-	# RevealsShroudToIntelligenceOwner:
-	#	Range: 10c0
-	#	Types: SatelliteScan
-	#	Type: GroundPosition
 	RevealOnDeath:
-		Radius: 10c0
-		Duration: 125
-	WithVoxelBody:
-		ShowShadow: false
-		RequiresCondition: !airprop && !radbombs
-	WithVoxelBody@propaganda:
-		ShowShadow: false
-		Sequence: idle-propaganda
-		RequiresCondition: airprop && !radbombs
-	WithVoxelBody@rad:
-		ShowShadow: false
-		Sequence: idle-rad
-		RequiresCondition: !airprop && radbombs && !advirrad
-	WithVoxelBody@rad-orange:
-		ShowShadow: false
-		Sequence: idle-rad-orange
-		RequiresCondition: !airprop && radbombs && advirrad
-	WithVoxelBody@propaganda-rad:
-		ShowShadow: false
-		Sequence: idle-propaganda-rad
-		RequiresCondition: airprop && radbombs && !advirrad
-	WithVoxelBody@propaganda-rad-orange:
-		ShowShadow: false
-		Sequence: idle-propaganda-rad-orange
-		RequiresCondition: airprop && radbombs && advirrad
+		Radius: 8c0
 	RenderVoxels:
 		Image: zep
-	RenderSprites:
-		Image: zep
-	WithFacingSpriteBody:
-		Sequence: shadow
-		ForceToGround: true
-	BodyOrientation:
-		UseClassicPerspectiveFudge: false
-

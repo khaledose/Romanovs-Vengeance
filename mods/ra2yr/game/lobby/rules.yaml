@@ -88,7 +88,7 @@
 		Label: checkbox-show-owner-name.label
 		Description: checkbox-show-owner-name.description
 		Enabled: True
-		Visible: False # Too lazy to remove the setup for this.
+		Visible: True # Too lazy to remove the setup for this.
 		DisplayOrder: 17
 		Prerequisites: global-showownername
 	LobbyPrerequisiteCheckbox@SUDDENDEATH:

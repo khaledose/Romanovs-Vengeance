@@ -1,3 +1,60 @@
+^VoxelVehicle:
+	Inherits@1: ^ExistsInWorld
+	Inherits@2: ^IronCurtainable
+	Inherits@3: ^ChronoDisableDisabledWithIC
+	Inherits@4: ^AcceptsIvanBomb
+	Inherits@5: ^AcceptsC4
+	Inherits@6: ^AffectedByIndustrialPlant
+	Inherits@7: ^Tractable
+	Inherits@8: ^MachineShopRepair
+	Inherits@9: ^FlatSelectionMode
+	Inherits@10: ^VehicleParticles
+	Inherits@11: ^PlayerHandicaps
+	Inherits@12: ^SuddenDeathModifier
+	Inherits@13: ^WithTooltip
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	ActorStatValues:
+	OwnerLostAction:
+		Action: Kill
+		DeathTypes: BulletDeath, NonTemporal
+	SelectionDecorations:
+		MinimumZoom: 0
+	HitShape:
+	HiddenUnderFog:
+	WithTextControlGroupDecoration:
+	ActorLostNotification:
+		TextNotification: Unit lost.
+	Chronoshiftable:
+		ChronoshiftSound: schrmov.wav
+		ReturnToOrigin: false
+		RequiresCondition: !invulnerability && !airborne
+	BodyOrientation:
+		QuantizedFacings: 0
+		CameraPitch: 85
+		UseClassicPerspectiveFudge: false
+	RenderSprites:
+	RenderVoxels:
+		Scale: 11.7
+		LightYaw: 800
+		LightPitch: 150
+		LightAmbientColor: -0.5,-0.5,-0.5
+		LightDiffuseColor: 1.3,1.3,1.3
+	Explodes:
+		DeathTypes: NonTemporal
+		Weapon: UnitExplode
+		EmptyWeapon: UnitExplode
+		RequiresCondition: !airborne
+	Explodes@Sinking:
+		DeathTypes: NonTemporal
+		Weapon: UnitSink
+		EmptyWeapon: UnitSink
+		RequiresCondition: !airborne
+	Guardable:
+	AppearsOnRadar:
+		UseLocation: true
+
+
 ^Vehicle:
 	Inherits@1: ^ExistsInWorld
 	Inherits@2: ^IronCurtainable

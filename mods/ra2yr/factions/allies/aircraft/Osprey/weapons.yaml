@@ -1,6 +1,8 @@
 ASWBomb:
-	Inherits: HornetBomb
+	Inherits: ^ORCAAP
+	ReloadDelay: 3
 	Range: 3c0
+	Report: vospatta.wav
 	ValidTargets: Underwater
 	Warhead@1Dam: SpreadDamage
 		Damage: 5000
@@ -8,21 +10,12 @@ ASWBomb:
 			None: 25
 			Flak: 25
 			Plate: 25
-			Light: 100
+			Light: 75
 			Medium: 100
 			Heavy: 100
 			Wood: 65
-			Steel: 85
+			Steel: 65
 			Concrete: 60
 			Drone: 25
-	Warhead@2Eff: CreateEffect
-		Explosions: small_grey_explosion
-		ExplosionPalette: effect
-	-Warhead@4Smu:
-
-ASWBombE:
-	Inherits: ASWBomb
-	Projectile: Missile
-		ContrailStartColor: EA0000
-	Warhead@1Dam: SpreadDamage
-		Damage: 8000
+			Rocket: 100
+		ValidTargets: Underwater

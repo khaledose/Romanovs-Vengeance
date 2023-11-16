@@ -40,7 +40,7 @@
 	# 	Actor: spyphusk
 
 spyp:
-	Inherits: ^NewPlane
+	Inherits: ^Plane
 	RejectsOrders:
 	Health:
 		HP: 40000
@@ -79,6 +79,3 @@ spyphusk:
 		Speed: 225
 	RenderVoxels:
 		Image: spyp
-	FallsToEarth:
-		Explosion: UnitExplode
-

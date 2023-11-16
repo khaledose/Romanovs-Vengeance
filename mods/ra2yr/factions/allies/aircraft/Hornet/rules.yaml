@@ -36,43 +36,38 @@ hornet:
 	RenderVoxels:
 		NormalsPalette: ts-normals
 	SpawnActorOnDeath:
-		Actor: hornethusk
+		Actor: hornethusk.horizontal
 	SpawnActorOnDeath@VTOL:
-		Actor: hornethusk.VTOL
+		Actor: hornethusk.vertical
 	Contrail@1:
 		Offset: -600,100,100
 	Contrail@2:
 		Offset: -600,-100,100
-	AmbientSound:
-		SoundFiles: vintlo2a.wav, vintlo2b.wav, vintlo2c.wav
+	Voiced:
+		VoiceSet: HornetVoice
+	-AmbientSound:
 
 hornethusk:
+	Tooltip:
+		Name: Hornet
+	Tooltip@NoRow:
+		Name: Hornet
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 210
+		AltitudeVelocity: 240
+	FallsToEarth:
+		Explosion: HornetExplode
+	RevealOnDeath:
+		Radius: 2c0
+	RenderVoxels:
+		Image: hornet
+		NormalsPalette: ts-normals
+
+hornethusk.horizontal:
 	Inherits: ^PlaneHusk
-	Tooltip:
-	Tooltip@NoRow:
-		Name: Hornet
-	Aircraft:
-		TurnSpeed: 20
-		Speed: 210
-		AltitudeVelocity: 240
-	FallsToEarth:
-		Explosion: HornetExplode
-	RenderVoxels:
-		Image: hornet
-		NormalsPalette: ts-normals
+	Inherits@HUSK: hornethusk
 
-hornethusk.VTOL:
-	Inherits: ^HelicopterHusk
-	Tooltip:
-	Tooltip@NoRow:
-		Name: Hornet
-	Aircraft:
-		TurnSpeed: 20
-		Speed: 210
-		AltitudeVelocity: 240
-	FallsToEarth:
-		Explosion: HornetExplode
-	RenderVoxels:
-		Image: hornet
-		NormalsPalette: ts-normals
-
+hornethusk.vertical:
+	Inherits: ^HelicopterHusk	
+	Inherits@HUSK: hornethusk

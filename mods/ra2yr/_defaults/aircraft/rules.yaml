@@ -1,30 +1,11 @@
-^NewAircraft:
-	Inherits@1: ^ExistsInWorld
-	Inherits@2: ^WithTooltip
-	Inherits@3: ^SuddenDeathModifier
-	Inherits@4: ^Tractable
-	Inherits@5: ^ChronoDisableDisabledWithIC
-	Inherits@6: ^AcceptsIvanBomb
-	Inherits@7: ^AcceptsC4
-	Inherits@8: ^AffectedByIndustrialPlant
-	Inherits@9: ^UnitParticles
-	Inherits@10: ^IronCurtainable
+^Aircraft:
+	Inherits: ^VoxelVehicle
 	Inherits@11: ^TerrorDronableAircraft
 	Inherits@12: ^GainsExperience
 	Inherits@13: ^ProducibleAsVeteranVehicle
-	Inherits@14: ^FlatSelectionMode
 	Inherits@15: ^DamagedByRadiation50Percent
-	Inherits@HANDICAPS: ^PlayerHandicaps
 	Selectable:
 		Bounds: 724, 1158
-	SelectionDecorations:
-		MinimumZoom: 0
-	UpdatesPlayerStatistics:
-		AddToArmyValue: true
-	HitShape:
-	OwnerLostAction:
-		Action: Kill
-		DeathTypes: BulletDeath, NonTemporal
 	Aircraft:
 		CruiseAltitude: 5c852
 		AltitudeVelocity: 240
@@ -46,53 +27,26 @@
 		MaxHeightDelta: 3
 		Type: GroundPosition
 		RequiresCondition: !airborne
-	HiddenUnderFog:
-		Type: CenterPosition
-	ActorLostNotification:
-		TextNotification: Unit lost.
-	BodyOrientation:
-		QuantizedFacings: 0
-		CameraPitch: 85
-		UseClassicPerspectiveFudge: false
-	Chronoshiftable:
-		ChronoshiftSound: schrmov.wav
-		ReturnToOrigin: false
-		RequiresCondition: !invulnerability && !airborne
-	Guardable:
 	Targetable@Airborne:
 		TargetTypes: Air
 		RequiresCondition: airborne
 	Targetable@Ground:
 		TargetTypes: Ground, Vehicle
 		RequiresCondition: !airborne
-	Explodes:
-		DeathTypes: NonTemporal
-		Weapon: UnitExplode
-		RequiresCondition: !airborne
 	DeathSounds:
 		DeathTypes: NonTemporal
 	SpawnActorOnDeath:
 		DeathType: NonTemporal
-	RenderSprites:
-	RenderVoxels:
-		Scale: 11.7
-		LightYaw: 800
-		LightPitch: 150
-		LightAmbientColor: -0.5,-0.5,-0.5
-		LightDiffuseColor: 1.3,1.3,1.3
-	WithTextControlGroupDecoration:
 	AmbientSound:
 		Volume: 0.30
 		RequiresCondition: cruising && airborne
-	AppearsOnRadar:
-		UseLocation: true
 	RangedGpsDot:
 		Sequence: Plane
 	MapEditorData:
 		Categories: Aircraft
 
-^NewPlane:
-	Inherits: ^NewAircraft
+^Plane:
+	Inherits: ^Aircraft
 	Aircraft:
 		Repulsable: false
 	WithVoxelBody:
@@ -131,7 +85,7 @@
 		WidthFadeRate: 0.8
 
 ^FighterJet:
-	Inherits: ^NewPlane
+	Inherits: ^Plane
 	Inherits@AMMO: ^WithAmmoPool
 	RevealOnFire:
 		ArmamentNames: primary, secondary, infiltrate, deployed, growth
@@ -160,8 +114,8 @@
 		Voice: Build
 		ValidRelationships: None
 
-^NewHelicopter:
-	Inherits: ^NewAircraft
+^Helicopter:
+	Inherits: ^Aircraft
 	Inherits@1: ^CrateStatModifiers
 	Buildable:
 		BuildDurationModifier: 100
@@ -193,196 +147,35 @@
 	RangedGpsDot:
 		Sequence: Helicopter
 
-
-
-^NeutralAircraft:
-	Inherits@1: ^ExistsInWorld
-	Inherits@2: ^Tractable
-	Inherits@HANDICAPS: ^PlayerHandicaps
-	Inherits@SELECTION_MODE: ^FlatSelectionMode
-	OwnerLostAction:
-		Action: Kill
-		DeathTypes: BulletDeath, NonTemporal
-	SelectionDecorations:
-		MinimumZoom: 0
-	Selectable:
-	Aircraft:
-		Voice: Move
-		MaximumPitch: 128
-		AltitudeVelocity: 120
-		AirborneCondition: airborne
-		VTOL: true
-		TakeOffOnResupply: true
-	HiddenUnderFog:
-		Type: CenterPosition
-	ActorLostNotification:
-		TextNotification: Unit lost.
-	BodyOrientation:
-		QuantizedFacings: 0
-		CameraPitch: 85
-		UseClassicPerspectiveFudge: false
-	Guard:
-		Voice: Attack
-	Guardable:
-	GrantConditionOnPrerequisite@SUDDENDEATH:
-		Condition: suddendeath
-		Prerequisites: global-suddendeath
-	MustBeDestroyed:
-		RequiresCondition: !suddendeath
-	RenderVoxels:
-		Scale: 11.7
-		LightYaw: 800
-		LightPitch: 150
-		LightAmbientColor: -0.5,-0.5,-0.5
-		LightDiffuseColor: 1.3,1.3,1.3
-	Targetable@Airborne:
-		TargetTypes: Air
-		RequiresCondition: airborne
-	Targetable@Ground:
-		TargetTypes: Ground, Vehicle
-		RequiresCondition: !airborne
-	Targetable@REPAIR:
-		RequiresCondition: !airborne && damaged
-		TargetTypes: Repair
-	Targetable@REPAIRAirborne:
-		RequiresCondition: airborne && damaged
-		TargetTypes: AirRepair
-	GrantConditionOnDamageState@DAMAGED:
-		Condition: damaged
-		ValidDamageStates: Light, Medium, Heavy, Critical
-	DeathSounds:
-	AppearsOnRadar:
-		UseLocation: true
-	Tooltip:
-		Name: Aircraft
-		GenericName: Aircraft
-		RequiresCondition: showownername
-	Tooltip@NoRow:
-		Name: Aircraft
-		GenericName: Aircraft
-		ShowOwnerRow: false
-		RequiresCondition: !showownername
-	GrantConditionOnPrerequisite@SHOWOWNERNAME:
-		Condition: showownername
-		Prerequisites: global-showownername
-	MapEditorData:
-		Categories: Aircraft
-	RangedGpsDot:
-		Sequence: Plane
-
-^Aircraft:
-	Inherits@1: ^NeutralAircraft
-	Inherits@2: ^ChronoDisableDisabledWithIC
-	Inherits@3: ^MachineShopRepair
-	Inherits@4: ^AcceptsIvanBomb
-	Inherits@5: ^AcceptsC4
-	Inherits@6: ^AffectedByIndustrialPlant
-	Inherits@7: ^UnitParticles
-	Inherits@8: ^IronCurtainable
-	Inherits@9: ^TerrorDronableAircraft
-	Aircraft:
-		AltitudeVelocity: 43
-	WithTextControlGroupDecoration:
-	Targetable@ChronoDisable:
-		RequiresCondition: !airborne
-	Targetable@DRONE:
-		RequiresCondition: !airborne
-	#Chronoshiftable:
-	#	ChronoshiftSound: schrmov.wav
-	#	ReturnToOrigin: false
-	#	RequiresCondition: !invulnerability
-	RevealsShroud:
-		Type: GroundPosition
-		RequiresCondition: airborne
-	RevealsShroud@Ground:
-		MaxHeightDelta: 3
-		Type: GroundPosition
-		RequiresCondition: !airborne
-	RevealOnFire:
-		ArmamentNames: primary, secondary, infiltrate, deployed, growth
-		Duration: 50
-	CaptureManager:
-	Capturable:
-		Types: vehicle
-		CancelActivity: True
-		RequiresCondition: !airborne
-	CaptureSound:
-		Sound: ihijweaa.wav
-	Sellable:
-		SellSounds: cashturn.aud
-		Cursor: sell2
-		Notification: UnitSold
-		RequiresCondition: unit.sellable && !airborne
-	ProximityExternalCondition:
-		Condition: unit.docked
-		Range: 1c0
-		RequiresCondition: !airborne
-	ExternalCondition@Sellable:
-		Condition: unit.sellable
-
-^Plane:
-	Inherits: ^Aircraft
-	Aircraft:
-		CruiseAltitude: 5c852
-		CruisingCondition: cruising
-		AltitudeVelocity: 120
-		IdleBehavior: ReturnToBase
-		IdleSpeed: -1
-		TakeOffOnResupply: false
-		TakeOffOnCreation: false
-	Hovers@CRUISING:
-		RequiresCondition: cruising
-	WithVoxelBody:
-
-^Helicopter:
-	Inherits: ^Aircraft
-	Inherits@1: ^CrateStatModifiers
-	Aircraft:
-		CruiseAltitude: 3c852
-		CanSlide: true
-		CanHover: true
-		IdleBehavior: Land
-	RangedGpsDot:
-		Sequence: Helicopter
-
-^Husk:
-	RenderVoxels:
-		Scale: 11.7
-		LightYaw: 800
-		LightPitch: 150
-		LightAmbientColor: -0.5,-0.5,-0.5
-		LightDiffuseColor: 1.3,1.3,1.3
-	WithVoxelBody:
-	BodyOrientation:
-		QuantizedFacings: 0
-		CameraPitch: 85
-	Aircraft:
-	HiddenUnderFog:
-		Type: CenterPosition
-	ScriptTriggers:
+^AircraftHusk:
+	Inherits: ^WithTooltip
+	Interactable:
 	Health:
 		HP: 100
+	HitShape:
+	Aircraft:
 	FallsToEarth:
 		Velocity: 86
-	HitShape:
-	Tooltip:
-		Name: Aircraft
-		GenericName: Aircraft
-		RequiresCondition: showownername
-	Tooltip@NoRow:
-		Name: Aircraft
-		GenericName: Aircraft
-		ShowOwnerRow: false
-		RequiresCondition: !showownername
-	GrantConditionOnPrerequisite@SHOWOWNERNAME:
-		Condition: showownername
-		Prerequisites: global-showownername
+	RevealOnDeath:
+		Radius: 0
+		Duration: 125
+	HiddenUnderFog:
+		Type: CenterPosition
+	RenderVoxels:
+		Scale: 11.7
+		LightYaw: 800
+		LightPitch: 150
+		LightAmbientColor: -0.5,-0.5,-0.5
+		LightDiffuseColor: 1.3,1.3,1.3
+	BodyOrientation:
+		QuantizedFacings: 0
+		CameraPitch: 85
+	ScriptTriggers:
 	MapEditorData:
 		Categories: Husk
-	Interactable:
 
 ^PlaneHusk:
-	Inherits: ^Husk
+	Inherits: ^AircraftHusk
 	Aircraft:
 		AltitudeVelocity: 120
 	FallsToEarth:
@@ -392,11 +185,12 @@
 		MaximumSpinSpeed: 0
 	SpeedMultiplier@HUSK:
 		Modifier: 150
+	WithVoxelBody:
 	RangedGpsDot:
 		Sequence: Plane
 
 ^HelicopterHusk:
-	Inherits: ^Husk
+	Inherits: ^AircraftHusk
 	Aircraft:
 		VTOL: true
 		CanSlide: true
@@ -404,6 +198,8 @@
 	FallsToEarth:
 		Explosion: PlaneExplode
 		Velocity: 240
+	WithVoxelHelicopterBody:
+		TickRate: 1
 	RangedGpsDot:
 		Sequence: Helicopter
 

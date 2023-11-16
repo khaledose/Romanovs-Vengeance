@@ -1,0 +1,8 @@
+FloatingDiskVoice:
+	DefaultVariant: .wav
+	Voices:
+		Build: vflomoe
+		Select: vflosea, vfloseb, vflosec, vflosed
+		Move: vflomob, vflomoc, vflomod
+		Attack: vfloata, vfloatb, vfloatc, vfloatd, vfloate
+		Die: vflodiea

@@ -422,6 +422,7 @@ Sequences:
 	ra2yr|world/misc/cameras/sequence.yaml
 	ra2yr|world/misc/crate/sequence.yaml
 	ra2yr|world/misc/lighting/sequence.yaml
+	ra2yr|world/navals/sequence.yaml
 	ra2yr|world/rocks/sequence.yaml
 	ra2yr|world/structures/bridges/sequence.yaml
 	ra2yr|world/structures/civilian/sequence.yaml
@@ -493,6 +494,7 @@ ModelSequences:
 	ra2yr|world/structures/civilian/voxel.yaml
 	ra2yr|world/structures/tech/voxel.yaml
 	ra2yr|world/aircraft/voxel.yaml
+	ra2yr|world/navals/voxel.yaml
 	ra2yr|world/vehicles/voxel.yaml
 
 Cursors:
@@ -668,6 +670,11 @@ Weapons:
 
 Voices:
 	ra2yr|audio/voices.yaml
+	ra2yr|factions/allies/aircraft/Black Eagle/voices.yaml
+	ra2yr|factions/allies/aircraft/Harrier/voices.yaml
+	ra2yr|factions/allies/aircraft/Hornet/voices.yaml
+	ra2yr|factions/allies/aircraft/Night Hawk/voices.yaml
+	ra2yr|factions/allies/aircraft/Osprey/voices.yaml
 	ra2yr|factions/allies/infantries/Attack Dog/voices.yaml
 	ra2yr|factions/allies/infantries/Chrono Legionnaire/voices.yaml
 	ra2yr|factions/allies/infantries/Engineer/voices.yaml
@@ -679,6 +686,10 @@ Voices:
 	ra2yr|factions/allies/infantries/Spy/voices.yaml
 	ra2yr|factions/allies/infantries/Tanya Adams/voices.yaml
 	ra2yr|factions/allies/navals/Dolphin/voices.yaml
+	ra2yr|factions/soviets/aircraft/Kirov Airship/voices.yaml
+	ra2yr|factions/soviets/aircraft/MiG/voices.yaml
+	ra2yr|factions/soviets/aircraft/Siege Chopper/voices.yaml
+	ra2yr|factions/soviets/aircraft/Spy Plane/voices.yaml
 	ra2yr|factions/soviets/infantries/Boris Bukov/voices.yaml
 	ra2yr|factions/soviets/infantries/Conscript/voices.yaml
 	ra2yr|factions/soviets/infantries/Crazy Ivan/voices.yaml
@@ -688,6 +699,7 @@ Voices:
 	ra2yr|factions/soviets/infantries/Terrorist/voices.yaml
 	ra2yr|factions/soviets/infantries/Tesla Trooper/voices.yaml
 	ra2yr|factions/soviets/navals/Giant Squid/voices.yaml
+	ra2yr|factions/yuris/aircraft/Floating Disc/voices.yaml
 	ra2yr|factions/yuris/infantries/Brute/voices.yaml
 	ra2yr|factions/yuris/infantries/Engineer/voices.yaml
 	ra2yr|factions/yuris/infantries/Initiate/voices.yaml
@@ -695,6 +707,7 @@ Voices:
 	ra2yr|factions/yuris/infantries/Virus/voices.yaml
 	ra2yr|factions/yuris/infantries/Yuri Clone/voices.yaml
 	ra2yr|factions/yuris/infantries/Yuri Prime/voices.yaml
+	ra2yr|world/aircraft/voices.yaml
 	ra2yr|world/animals/voices.yaml
 	ra2yr|world/civilians/voices.yaml
 	ra2yr|world/structures/civilian/voices.yaml

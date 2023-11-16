@@ -1,0 +1,6 @@
+CargoPlaneVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select:
+		Action:
+		Die: sparlo3

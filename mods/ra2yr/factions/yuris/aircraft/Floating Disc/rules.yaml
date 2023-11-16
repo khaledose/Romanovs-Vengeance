@@ -1,5 +1,5 @@
 disk:
-	Inherits: ^NewHelicopter
+	Inherits: ^Helicopter
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Buildable:
 		Queue: Aircraft.Shared, Aircraft.Yuri
@@ -21,9 +21,9 @@ disk:
 	RevealsShroud@Ground:
 		Range: 9c0
 	Tooltip:
-		Name: Floating disc
+		Name: Floating Disc
 	Tooltip@NoRow:
-		Name: Floating disc
+		Name: Floating Disc
 	Armament@primary:
 		Weapon: DiskLaser
 		Damage: 75
@@ -75,28 +75,16 @@ disk:
 diskhusk:
 	Inherits: ^HelicopterHusk
 	Tooltip:
+		Name: Floating Disc
 	Tooltip@NoRow:
-		Name: Leech Disc
+		Name: Floating Disc
 	Aircraft:
 		TurnSpeed: 40
 		Speed: 165
-	RevealsShroud:
-		Range: 10c0
-		Type: GroundPosition
-	# RevealsShroudToIntelligenceOwner:
-	#	Range: 10c0
-	#	Types: SatelliteScan
-	#	Type: GroundPosition
 	RevealOnDeath:
-		Radius: 10c0
-		Duration: 125
+		Radius: 9c0
 	RenderVoxels:
 		Image: disk
-	-WithVoxelBody:
-	WithVoxelHelicopterBody:
-		TickRate: 1
 	WithVoxelHelicopterBody@turret:
 		Sequence: turret
 		TickRate: 1
-	BodyOrientation:
-		UseClassicPerspectiveFudge: false

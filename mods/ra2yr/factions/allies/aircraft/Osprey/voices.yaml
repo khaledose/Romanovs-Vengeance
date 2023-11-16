@@ -1,0 +1,5 @@
+OspreyVoice:
+	DefaultVariant: .wav
+	Voices:
+		Attack: vospatta
+		Die: vospdiea

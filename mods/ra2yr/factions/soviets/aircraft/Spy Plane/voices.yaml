@@ -1,0 +1,6 @@
+SpyPlaneVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select:
+		Action:
+		Die: vspylo3a

@@ -20,11 +20,6 @@ asw:
 	Armament:
 		Weapon: ASWBomb
 		PauseOnCondition: !ammo
-		RequiresCondition: !rank-elite
-	Armament@Elite:
-		Weapon: ASWBombE
-		PauseOnCondition: !ammo
-		RequiresCondition: rank-elite
 	AmmoPool:
 		Ammo: 5
 	CarrierSlave:
@@ -32,42 +27,36 @@ asw:
 	RenderVoxels:
 		NormalsPalette: ts-normals
 	SpawnActorOnDeath:
-		Actor: aswhusk
+		Actor: aswhusk.horizontal
 	SpawnActorOnDeath@VTOL:
-		Actor: aswhusk.VTOL
+		Actor: aswhusk.vertical
 	Contrail@1:
 		Offset: -600,100,100
 	Contrail@2:
 		Offset: -600,-100,100
-	AmbientSound:
-		SoundFiles: vintlo2a.wav, vintlo2b.wav, vintlo2c.wav
+	Voiced:
+		VoiceSet: OspreyVoice
+	-AmbientSound:
 
 aswhusk:
-	Inherits: ^PlaneHusk
 	Tooltip:
+		Name: Osprey
 	Tooltip@NoRow:
 		Name: Osprey
 	Aircraft:
 		TurnSpeed: 20
-		Speed: 180
+		Speed: 210
 		AltitudeVelocity: 240
 	FallsToEarth:
 		Explosion: HornetExplode
 	RenderVoxels:
-		Image: asw
+		Image: beag
 		NormalsPalette: ts-normals
 
-aswhusk.VTOL:
-	Inherits: ^HelicopterHusk
-	Tooltip:
-	Tooltip@NoRow:
-		Name: Osprey
-	Aircraft:
-		TurnSpeed: 20
-		Speed: 180
-		AltitudeVelocity: 240
-	FallsToEarth:
-		Explosion: HornetExplode
-	RenderVoxels:
-		Image: asw
-		NormalsPalette: ts-normals
+aswhusk.horizontal:
+	Inherits: ^PlaneHusk
+	Inherits@HUSK: aswhusk
+
+aswhusk.vertical:
+	Inherits: ^HelicopterHusk	
+	Inherits@HUSK: aswhusk

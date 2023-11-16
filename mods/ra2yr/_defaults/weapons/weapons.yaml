@@ -499,6 +499,36 @@ UnitSinkSharpnel:
 		ImpactSounds: gexpwasa.wav
 		ValidTargets: Water
 
+^ORCAAP:
+	Inherits: ^Missile
+	ValidTargets: Ground, Water
+	Projectile: Missile
+		RangeLimit: 20c204
+		HorizontalRateOfTurn: 160
+		VerticalRateOfTurn: 160
+	Warhead@1Dam: SpreadDamage
+		Versus:
+			None: 100
+			Flak: 100
+			Plate: 100
+			Light: 100
+			Medium: 100
+			Heavy: 100
+			Wood: 100
+			Steel: 75
+			Concrete: 100
+			Drone: 100
+			Rocket: 100
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, SuppressTerrorDrone, NonTemporal
+		ValidTargets: Ground, Water
+	Warhead@2Eff: CreateEffect
+		Explosions: tiny_clsn, small_clsn, medium_clsn, large_clsn, verylarge_clsn
+		ImpactSounds: gexp14a.wav
+	Warhead@3EffWater: CreateEffect
+		Explosions: huge_watersplash
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: MediumCrater, MediumScorch
+
 ^SA:
 	Inherits@1: ^BreakPointDefenseDrones
 	InvalidTargets: Bridge, Wall, Fence, Tree

@@ -36,13 +36,6 @@ camsc13:
 		Modifier: 0
 
 schp:
-	-WithVoxelHelicopterBody:
-	-WithFacingSpriteBody:
-	-Aircraft:
-	-HeliGrantConditionOnDeploy:
-	Mobile:
-		Locomotor: tracked
-		Voice: Move
 	GrantCondition@1:
 		Condition: airborne
 		RequiresCondition: !deployed

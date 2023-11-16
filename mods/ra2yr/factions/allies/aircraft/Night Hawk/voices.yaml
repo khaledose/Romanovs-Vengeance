@@ -1,0 +1,8 @@
+NighthawkVoice:
+	DefaultVariant: .wav
+	Voices:
+		Build: vblhseb
+		Select: vblhsea, vblhsec, vblhsed, vblhsee
+		Move: vblhmoa, vblhmob, vblhmoc, vblhmod
+		Attack: vblhata, vblhatb, vblhatc, vblhatd
+		Die: vblhdia, vblhdib, vblhdic

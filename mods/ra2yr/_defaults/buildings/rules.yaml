@@ -53,7 +53,7 @@
 
 ^BuildableStructure:
 	Inherits: ^Building
-	Inherits@1: ^Repairable
+	Inherits@1: ^RepairableBuilding
 	Inherits@2: ^SuddenDeathModifier
 	Building:
 		BuildSounds: uplace.wav
@@ -155,7 +155,7 @@
 
 ^TechBuilding:
 	Inherits: ^Building
-	Inherits@REPAIR: ^Repairable
+	Inherits@REPAIR: ^RepairableBuilding
 	Inherits@CAPTURE: ^Capturable
 	GrantConditionOnCombatantOwner:
 		Condition: enabled

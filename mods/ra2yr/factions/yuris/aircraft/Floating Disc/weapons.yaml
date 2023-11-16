@@ -18,24 +18,6 @@ DiskLaser:
 		Damage: 7500
 		InvalidTargets: LoadedTankBunker
 		DamageTypes: RadiationDeath, SuppressTerrorDrone, NonTemporal
-	Warhead@1Gar: OpenToppedDamage
-		ValidTargets: LoadedTankBunker
-		InvalidTargets: IronCurtained, ForceShielded
-		Spread: 0c128
-		Damage: 7500
-		Versus:
-			None: 100
-			Flak: 100
-			Plate: 100
-			Light: 100
-			Medium: 100
-			Heavy: 100
-			Wood: 100
-			Steel: 100
-			Concrete: 100
-			Drone: 100
-			Rocket: 100
-		DamageTypes: Prone50Percent, TriggerProne, ElectroDeath, SuppressTerrorDrone, NonTemporal
 	-Warhead@2Shr:
 	-Warhead@2Eff: #CreateEffect
 	# 	Explosions: laser_explosion
@@ -61,14 +43,12 @@ DiskLaserAA:
 	ValidTargets: Air
 	Warhead@1Dam: SpreadDamage
 		ValidTargets: Air
-	-Warhead@1Gar:
 
 DiskLaserAAE:
 	Inherits: DiskLaserE
 	ValidTargets: Air
 	Warhead@1Dam: SpreadDamage
 		ValidTargets: Air
-	-Warhead@1Gar:
 
 DiskPowerDrain:
 	ReloadDelay: 5

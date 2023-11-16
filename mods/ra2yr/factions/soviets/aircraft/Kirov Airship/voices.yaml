@@ -1,0 +1,9 @@
+KirovVoice:
+	DefaultVariant: .wav
+	Voices:
+		Build: vkirsea
+		Select: vkirseb, vkirsec, vkirsed
+		Move: vkirmoa, vkirmob, vkirmoc
+		Attack: vkirata, vkiratb, vkiratc, vkiratd
+		Feedback: vkirfea
+		Die: vkirdia, vkirdib, vkirdic, vkirdid

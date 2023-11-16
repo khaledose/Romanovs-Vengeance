@@ -5,5 +5,3 @@ shad:
 		Facings: 32
 	icon:
 		Filename: cameo|shadicon.shp
-	muzzle:
-		Filename: shad.shp

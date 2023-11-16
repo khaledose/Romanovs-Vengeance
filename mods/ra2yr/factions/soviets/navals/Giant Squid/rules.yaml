@@ -84,6 +84,7 @@
 sqd:
 	Inherits: ^NewSeaAnimal
 	Inherits@CLOAK: ^UnderWaterCloak
+	Inherits@DETECTCLOAK: ^DetectUnderWater
 	Inherits@SELFHEALING: ^SelfHealing
 	Buildable:
 		Queue: Ship.Shared, Ship.Soviets

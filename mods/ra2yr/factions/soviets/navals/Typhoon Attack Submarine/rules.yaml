@@ -6,48 +6,30 @@ sub:
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Inherits@SQUID: ^SquidGrabbable
-	Inherits@SUBMERGE: ^WithSubmergeColorOverlay
+	Inherits@ANNOUNCE: ^AnnounceProduction
+	Inherits@CLOAK: ^UnderWaterCloak
+	Inherits@DETECTCLOAK: ^DetectUnderWater
 	Buildable:
 		Queue: Ship.Shared, Ship.Soviets
 		Prerequisites: ~ship.soviets, ~techlevel.2
-		BuildPaletteOrder: 80
 		Description: Submerged anti-ship unit armed with torpedoes.\n\n  Strong vs Ships\n  Weak vs Ground units, Aircraft\n\nAbilities:\n- Can detect Stealth units
-		BuildDuration: 750
 		BuildDurationModifier: 100
-	UpdatesPlayerStatistics:
-		AddToArmyValue: true
-	Valued:
-		Cost: 1600
-	Tooltip:
-		GenericName: Submarine
-	Tooltip@NoRow:
-		Name: Typhoon Attack Submarine
-		GenericName: Submarine
+		BuildPaletteOrder: 80
 	Health:
-		HP: 80000
+		HP: 60000
 	Armor:
 		Type: Heavy
+	Valued:
+		Cost: 1000
 	Mobile:
 		TurnSpeed: 24
-		Speed: 75
-	# -LeavesTrails:
+		Speed: 60
 	RevealsShroud:
-		Range: 7c0
-	# RevealsShroudToIntelligenceOwner:
-	#	Types: SatelliteScan
-	#	Range: 7c0
-	RevealOnDeath:
-		Radius: 7c0
-	Targetable:
-		TargetTypes: Ground, Water, Ship, Underwater
-	# Cloak:
-	#	DetectionTypes: Underwater
-	#	InitialDelay: 50
-	#	CloakDelay: 75
-	#	CloakSound: vnavupa.wav
-	#	UncloakSound: vnavupa.wav
-	#	UncloakOn: Damage
-	#	IsPlayerPalette: true
+		Range: 4c0
+	Tooltip:
+		Name: Typhoon Attack Submarine
+	Tooltip@NoRow:
+		Name: Typhoon Attack Submarine
 	Armament:
 		Weapon: SubTorpedo
 		Damage: 75
@@ -65,28 +47,7 @@ sub:
 		FacingTolerance: 2
 		MustFaceTarget: true
 		PauseOnCondition: chronodisable
-	DetectCloaked:
-		# DetectionTypes: Underwater
-		Range: 6c0
-	RenderDetectionCircle:
-	-MustBeDestroyed:
-	WithVoxelBody:
-		ShowShadow: false
-	RenderSprites:
+	LeavesTrails:
+		RequiresCondition: surfaced
 	Voiced:
 		VoiceSet: TyphoonVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
-	HitShape:
-	# GrantConditionOnMovement@MoveStart:
-	#	Condition: moving
-	#	ValidMovementTypes: Horizontal, Turn
-	# SoundAnnouncement:
-	#	SoundFiles: vsqumova.wav, vsqumovb.wav
-	#	Volume: 0.45
-	#	RequiresCondition: moving
-

@@ -57,63 +57,39 @@ beag:
 		Weapon: Maverick2E
 		Damage: 400
 	SpawnActorOnDeath:
-		Actor: beaghusk
+		Actor: beaghusk.horizontal
 	SpawnActorOnDeath@VTOL:
-		Actor: beaghusk.VTOL
+		Actor: beaghusk.vertical
 	Contrail@1:
 		Offset: 0,-500,100
 	Contrail@2:
 		Offset: 0,500,100
 	Contrail@FlameTrail:
 		Offset: -700,0,50
+	AmbientSound:
+		SoundFiles: vintlo1a.wav, vintlo1b.wav, vintlo1c.wav
 	Voiced:
 		VoiceSet: BlackEagleVoice
 
 beaghusk:
+	Tooltip:
+		Name: Black Eagle
+	Tooltip@NoRow:
+		Name: Black Eagle
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 210
+		AltitudeVelocity: 240
+	RevealOnDeath:
+		Radius: 8c0
+	RenderVoxels:
+		Image: beag
+		NormalsPalette: ts-normals
+
+beaghusk.horizontal:
 	Inherits: ^PlaneHusk
-	Tooltip:
-	Tooltip@NoRow:
-		Name: Black Eagle
-	FallsToEarth:
-		Explosion: PlaneExplode
-	Aircraft:
-		TurnSpeed: 20
-		Speed: 210
-		AltitudeVelocity: 240
-	RevealsShroud:
-		Range: 12c0
-		Type: GroundPosition
-	# RevealsShroudToIntelligenceOwner:
-	#	Range: 12c0
-	#	Types: SatelliteScan
-	#	Type: GroundPosition
-	RevealOnDeath:
-		Radius: 12c0
-		Duration: 125
-	RenderVoxels:
-		Image: beag
-		NormalsPalette: ts-normals
+	Inherits@HUSK: beaghusk
 
-beaghusk.VTOL:
-	Inherits: ^HelicopterHusk
-	Tooltip:
-	Tooltip@NoRow:
-		Name: Black Eagle
-	Aircraft:
-		TurnSpeed: 20
-		Speed: 210
-		AltitudeVelocity: 240
-	RevealsShroud:
-		Range: 12c0
-		Type: GroundPosition
-	# RevealsShroudToIntelligenceOwner:
-	#	Range: 12c0
-	#	Types: SatelliteScan
-	#	Type: GroundPosition
-	RevealOnDeath:
-		Radius: 12c0
-		Duration: 125
-	RenderVoxels:
-		Image: beag
-		NormalsPalette: ts-normals
-
+beaghusk.vertical:
+	Inherits: ^HelicopterHusk	
+	Inherits@HUSK: beaghusk

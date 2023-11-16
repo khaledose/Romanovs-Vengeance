@@ -5,56 +5,37 @@ carrier:
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Inherits@SQUID: ^SquidGrabbable
+	Inherits@ANNOUNCE: ^AnnounceProduction
 	Buildable:
 		Queue: Ship.Shared, Ship.Allies
-		BuildPaletteOrder: 90
 		Prerequisites: ~ship.allies, gatech, ~techlevel.4
 		Description: Aircraft carrier ship.\n\n  Strong vs Tanks, Structures\n  Weak vs Infantry
-		BuildDuration: 1000
 		BuildDurationModifier: 100
-	UpdatesPlayerStatistics:
-		AddToArmyValue: true
-	Valued:
-		Cost: 2500
-	Tooltip:
-	Tooltip@NoRow:
-		Name: Aircraft Carrier
+		BuildPaletteOrder: 90
+	Selectable:
+		Bounds: 1448, 3861, 0, -289
 	Health:
 		HP: 80000
 	Armor:
 		Type: Heavy
-	Selectable:
-		Bounds: 1448, 3861, 0, -289
+	Valued:
+		Cost: 2500
 	Mobile:
 		TurnSpeed: 12
 		Speed: 60
 	RevealsShroud:
 		Range: 7c0
-	# RevealsShroudToIntelligenceOwner:
-	#	Types: SatelliteScan
-	#	Range: 7c0
-	RevealOnDeath:
-		Radius: 7c0
+	Tooltip:
+		Name: Aircraft Carrier
+	Tooltip@NoRow:
+		Name: Aircraft Carrier
+	Armament:
+		Weapon: HornetLauncher
 	AttackFollowFrontal:
 		Voice: Attack
 		FacingTolerance: 512
 		TargetFrozenActors: True
 		PauseOnCondition: chronodisable
-	AutoTarget:
-	Explodes:
-		Weapon: UnitExplode
-		EmptyWeapon: UnitExplode
-	WithVoxelBody:
-	RenderSprites:
-	Voiced:
-		VoiceSet: AircraftCarrierVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
-	HitShape:
 	CarrierMaster:
 		Actors: hornet, hornet, hornet, hornet, hornet
 		RespawnTicks: 400
@@ -64,14 +45,5 @@ carrier:
 		Palette: ra
 		Position: BottomLeft
 		RequiresSelection: true
-	Armament:
-		Weapon: HornetLauncher
-	GrantConditionOnMovement@MoveStart:
-		Condition: moving
-		ValidMovementTypes: Horizontal, Turn
-	# SoundAnnouncement:
-	#	SoundFiles: vaccstaa.wav, vaccstab.wav
-	#	Volume: 0.5
-	#	RequiresCondition: moving
-	ActorStatValues:
-		Damage: 80
+	Voiced:
+		VoiceSet: AircraftCarrierVoice

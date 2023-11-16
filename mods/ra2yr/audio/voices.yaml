@@ -567,14 +567,14 @@ GrenadierVoice:
 # 		Attack: vdolatca, vdolatcb, vdolatcc
 # 		Die: vdoldiea, vdoldieb
 
-HarrierVoice:
-	DefaultVariant: .wav
-	Voices:
-		Build: vintsea
-		Select: vintseb, vintsec, vintsed
-		Move: vintmoa, vintmob, vintmoc, vintmod
-		Attack: vintata, vintatb, vintatc, vintatd, vintate
-		Die: vintdia, vintdib, vintdic
+# HarrierVoice:
+# 	DefaultVariant: .wav
+# 	Voices:
+# 		Build: vintsea
+# 		Select: vintseb, vintsec, vintsed
+# 		Move: vintmoa, vintmob, vintmoc, vintmod
+# 		Attack: vintata, vintatb, vintatc, vintatd, vintate
+# 		Die: vintdia, vintdib, vintdic
 
 B2Voice:
 	DefaultVariant: .wav
@@ -585,45 +585,45 @@ B2Voice:
 		Attack: vb2sata, vb2satb, vb2satc, vb2satd, vb2sate, vb2satf, vb2satg, vb2sath
 		Die: vb2sdia, vb2sdib, vb2sdic
 
-BlackEagleVoice:
-	DefaultVariant: .wav
-	Voices:
-		Build: vblesed
-		Select: vblesea, vbleseb, vblesec, vblesef
-		Move: vblemoa, vblemob, vblemoc
-		Attack: vbleata, vbleatb, vbleatc
-		Die: vbledia, vbledib, vbledic, vbledid, vbledie
+# BlackEagleVoice:
+# 	DefaultVariant: .wav
+# 	Voices:
+# 		Build: vblesed
+# 		Select: vblesea, vbleseb, vblesec, vblesef
+# 		Move: vblemoa, vblemob, vblemoc
+# 		Attack: vbleata, vbleatb, vbleatc
+# 		Die: vbledia, vbledib, vbledic, vbledid, vbledie
 
-NighthawkVoice:
-	DefaultVariant: .wav
-	Voices:
-		Build: vblhseb
-		Select: vblhsea, vblhsec, vblhsed, vblhsee
-		Move: vblhmoa, vblhmob, vblhmoc, vblhmod
-		Attack: vblhata, vblhatb, vblhatc, vblhatd
-		Die: vblhdia, vblhdib, vblhdic
+# NighthawkVoice:
+# 	DefaultVariant: .wav
+# 	Voices:
+# 		Build: vblhseb
+# 		Select: vblhsea, vblhsec, vblhsed, vblhsee
+# 		Move: vblhmoa, vblhmob, vblhmoc, vblhmod
+# 		Attack: vblhata, vblhatb, vblhatc, vblhatd
+# 		Die: vblhdia, vblhdib, vblhdic
 
-CargoPlaneVoice:
-	DefaultVariant: .wav
-	Voices:
-		Select:
-		Action:
-		Die: sparlo3
+# CargoPlaneVoice:
+# 	DefaultVariant: .wav
+# 	Voices:
+# 		Select:
+# 		Action:
+# 		Die: sparlo3
 
-SpyPlaneVoice:
-	DefaultVariant: .wav
-	Voices:
-		Select:
-		Action:
-		Die: vspylo3a
+# SpyPlaneVoice:
+# 	DefaultVariant: .wav
+# 	Voices:
+# 		Select:
+# 		Action:
+# 		Die: vspylo3a
 
-MiGVoice:
-	DefaultVariant: .wav
-	Voices:
-		Select:
-		Move: vmigmoa, vmigmob
-		Attack: vmigata, vmigatb, vmigmoa, vmigmob
-		Die: vmigdia, vmigdib, vmigdic
+# MiGVoice:
+	# DefaultVariant: .wav
+	# Voices:
+	# 	Select:
+	# 	Move: vmigmoa, vmigmob
+	# 	Attack: vmigata, vmigatb, vmigmoa, vmigmob
+	# 	Die: vmigdia, vmigdib, vmigdic
 
 # FlakTrooperVoice:
 # 	Inherits: ^InfantryDeath
@@ -912,16 +912,16 @@ DevastatorVoice:
 		Move: irommoa, irommob, irommoc, irommod
 		Attack: iromata, iromatc, iromatd, iromate
 
-SiegeChopperVoice:
-	DefaultVariant: .wav
-	Voices:
-		Build: vchosea
-		Select: vchoseb, vchosec, vchosed, vchosee
-		Move: vchomoa, vchomob, vchomoc, vchomod, vchomoe
-		Attack: vchoa1a, vchoa1b, vchoa1c, vchoa1d
-		Deploy: vchoa2b
-		DeployedAttack: vchoa2a, vchoa2c, vchoa2d, vchoa2e, vchoa2f
-		Die: vchodia, vchodib, vchodic, vchodid, vchodie
+# SiegeChopperVoice:
+# 	DefaultVariant: .wav
+# 	Voices:
+# 		Build: vchosea
+# 		Select: vchoseb, vchosec, vchosed, vchosee
+# 		Move: vchomoa, vchomob, vchomoc, vchomod, vchomoe
+# 		Attack: vchoa1a, vchoa1b, vchoa1c, vchoa1d
+# 		Deploy: vchoa2b
+# 		DeployedAttack: vchoa2a, vchoa2c, vchoa2d, vchoa2e, vchoa2f
+# 		Die: vchodia, vchodib, vchodic, vchodid, vchodie
 
 BlackKiteVoice:
 	DefaultVariant: .wav
@@ -931,24 +931,24 @@ BlackKiteVoice:
 		Move: vhelmoa, vhelmoc, vhelmod, vhelmoe
 		Attack: vhelata, vhelatb, vhelatc, vhelatd, vhelate, vhelatf, vhelath
 
-KirovVoice:
-	DefaultVariant: .wav
-	Voices:
-		Build: vkirsea
-		Select: vkirseb, vkirsec, vkirsed
-		Move: vkirmoa, vkirmob, vkirmoc
-		Attack: vkirata, vkiratb, vkiratc, vkiratd
-		Feedback: vkirfea
-		Die: vkirdia, vkirdib, vkirdic, vkirdid
+# KirovVoice:
+# 	DefaultVariant: .wav
+# 	Voices:
+# 		Build: vkirsea
+# 		Select: vkirseb, vkirsec, vkirsed
+# 		Move: vkirmoa, vkirmob, vkirmoc
+# 		Attack: vkirata, vkiratb, vkiratc, vkiratd
+# 		Feedback: vkirfea
+# 		Die: vkirdia, vkirdib, vkirdic, vkirdid
 
-FloatingDiskVoice:
-	DefaultVariant: .wav
-	Voices:
-		Build: vflomoe
-		Select: vflosea, vfloseb, vflosec, vflosed
-		Move: vflomob, vflomoc, vflomod
-		Attack: vfloata, vfloatb, vfloatc, vfloatd, vfloate
-		Die: vflodiea
+# FloatingDiskVoice:
+# 	DefaultVariant: .wav
+# 	Voices:
+# 		Build: vflomoe
+# 		Select: vflosea, vfloseb, vflosec, vflosed
+# 		Move: vflomob, vflomoc, vflomod
+# 		Attack: vfloata, vfloatb, vfloatc, vfloatd, vfloate
+# 		Die: vflodiea
 
 DemolitionTruckVoice:
 	DefaultVariant: .wav

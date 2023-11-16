@@ -1,6 +1,7 @@
 dlph:
 	Inherits: ^NewSeaAnimal
 	Inherits@CLOAK: ^UnderWaterCloak
+	Inherits@DETECTCLOAK: ^DetectUnderWater
 	Inherits@SONICZAPIMMUNITY: ^SonicZapImmunity
 	Buildable:
 		Queue: Ship.Shared, Ship.Allies

@@ -1,0 +1,8 @@
+HarrierVoice:
+	DefaultVariant: .wav
+	Voices:
+		Build: vintsea
+		Select: vintseb, vintsec, vintsed
+		Move: vintmoa, vintmob, vintmoc, vintmod
+		Attack: vintata, vintatb, vintatc, vintatd, vintate
+		Die: vintdia, vintdib, vintdic

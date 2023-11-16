@@ -202,9 +202,9 @@ orca:
 	AmmoPool:
 		Ammo: 1
 	SpawnActorOnDeath:
-		Actor: orcahusk
+		Actor: orcahusk.horizontal
 	SpawnActorOnDeath@VTOL:
-		Actor: orcahusk.VTOL
+		Actor: orcahusk.vertical
 	Contrail@1:
 		Offset: -100,-500,100
 	Contrail@2:
@@ -220,40 +220,23 @@ orca:
 		Multiplier: 40
 
 orcahusk:
+	Tooltip:
+		Name: Harrier
+	Tooltip@NoRow:
+		Name: Harrier
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 210
+		AltitudeVelocity: 240
+	RevealOnDeath:
+		Radius: 8c0
+	RenderVoxels:
+		Image: falc
+
+orcahusk.horizontal:
 	Inherits: ^PlaneHusk
-	Tooltip:
-	Tooltip@NoRow:
-		Name: Harrier
-	FallsToEarth:
-		Explosion: PlaneExplode
-	Aircraft:
-		TurnSpeed: 20
-		Speed: 210
-		AltitudeVelocity: 240
-	RevealsShroud:
-		Range: 12c0
-		Type: GroundPosition
-	RevealOnDeath:
-		Radius: 12c0
-		Duration: 125
-	RenderVoxels:
-		Image: falc
+	Inherits@HUSK: orcahusk
 
-orcahusk.VTOL:
-	Inherits: ^HelicopterHusk
-	Tooltip:
-	Tooltip@NoRow:
-		Name: Harrier
-	Aircraft:
-		TurnSpeed: 20
-		Speed: 210
-		AltitudeVelocity: 240
-	RevealsShroud:
-		Range: 12c0
-		Type: GroundPosition
-	RevealOnDeath:
-		Radius: 12c0
-		Duration: 125
-	RenderVoxels:
-		Image: falc
-
+orcahusk.vertical:
+	Inherits: ^HelicopterHusk	
+	Inherits@HUSK: orcahusk

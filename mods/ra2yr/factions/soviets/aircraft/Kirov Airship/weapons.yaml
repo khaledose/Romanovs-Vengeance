@@ -1,9 +1,9 @@
 BlimpBomb:
 	Inherits@1: ^BreakPointDefenseDrones
 	ReloadDelay: 50
-	Range: 0c256
-	MinRange: 0c1
+	Range: 1c512
 	Report: vkiratta.wav
+	ValidTargets: Ground, Water
 	Projectile: GravityBomb
 		Velocity: 0, 0, -50
 		Acceleration: 0, 0, -10
@@ -13,8 +13,8 @@ BlimpBomb:
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c512
 		Falloff: 100, 83, 67, 50, 0
-		Damage: 75000 # 25000
-		ValidTargets: Building, Ground, Water
+		Damage: 25000
+		ValidTargets: Ground, Water
 		Versus:
 			None: 100
 			Flak: 100
@@ -31,7 +31,7 @@ BlimpBomb:
 	Warhead@2Eff: CreateEffect
 		Explosions: medium_clsn
 		ImpactSounds: gexp14a.wav
-		ValidTargets: Ground, Air
+		ValidTargets: Ground
 	Warhead@3EffWater: CreateEffect
 		Explosions: small_watersplash
 		ImpactSounds: gexpwasa.wav
@@ -41,9 +41,5 @@ BlimpBomb:
 
 BlimpBombE:
 	Inherits: BlimpBomb
-	ReloadDelay: 45
-	Warhead@1Dam: SpreadDamage
-		Spread: 0c576
-		Damage: 82500 # 27500
 	Warhead@2Eff: CreateEffect
 		Explosions: kirovtesla

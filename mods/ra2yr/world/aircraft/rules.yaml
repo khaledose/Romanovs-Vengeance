@@ -61,7 +61,7 @@
 	# 	EndColorUsePlayerColor: true
 
 pdplane:
-	Inherits: ^NewPlane
+	Inherits: ^Plane
 	RejectsOrders:
 	Health:
 		HP: 40000

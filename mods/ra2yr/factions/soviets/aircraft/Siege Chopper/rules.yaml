@@ -1,5 +1,5 @@
 schp:
-	Inherits: ^NewHelicopter
+	Inherits: ^Helicopter
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@MC: ^MindControllable
 	Inherits@AI: ^AIMicroManagable
@@ -29,33 +29,17 @@ schp:
 	Tooltip@NoRow:
 		Name: Siege Chopper
 	Armament@primary:
-		Weapon: SiegeChopperCannon
-		Damage: 60
-		LocalOffset: 640,-256,0, 640,256,0
-		ReloadingCondition: reload-ground
-		PauseOnCondition: deployed || reload-air
-		RequiresCondition: !rank-elite && undeployed
-	Armament@primary-aa:
-		Weapon: SiegeChopperCannonAA
-		LocalOffset: 640,-256,0, 640,256,0
-		EnableSplitRanges: true
-		ReloadingCondition: reload-air
-		PauseOnCondition: deployed || reload-ground
-		RequiresCondition: !rank-elite && undeployed
+		Weapon: BlackHawkCannon
+		Damage: 35
+		LocalOffset: 928,0,128
+		MuzzleSequence: muzzle
+		RequiresCondition: !rank-elite && !deployed
 	Armament@elite:
-		Weapon: SiegeChopperCannonE
-		Damage: 90
-		LocalOffset: 640,-256,0, 640,256,0
-		ReloadingCondition: reload-ground
-		PauseOnCondition: deployed || reload-air
-		RequiresCondition: rank-elite && undeployed
-	Armament@elite-aa:
-		Weapon: SiegeChopperCannonAAE
-		LocalOffset: 640,-256,0, 640,256,0
-		EnableSplitRanges: true
-		ReloadingCondition: reload-air
-		PauseOnCondition: deployed || reload-ground
-		RequiresCondition: rank-elite && undeployed
+		Weapon: BlackHawkCannonE
+		Damage: 50
+		LocalOffset: 928,0,128
+		MuzzleSequence: muzzle
+		RequiresCondition: rank-elite && !deployed
 	Armament@deployed:
 		Name: deployed
 		Weapon: 160mm
@@ -115,32 +99,13 @@ schp:
 schphusk:
 	Inherits: ^HelicopterHusk
 	Tooltip:
+		Name: Siege Chopper
 	Tooltip@NoRow:
 		Name: Siege Chopper
 	Aircraft:
 		TurnSpeed: 40
 		Speed: 165
-	RevealsShroud:
-		Range: 10c0
-		Type: GroundPosition
-	# RevealsShroudToIntelligenceOwner:
-	#	Range: 10c0
-	#	Types: SatelliteScan
-	#	Type: GroundPosition
 	RevealOnDeath:
-		Radius: 10c0
-		Duration: 125
-	RenderSprites:
-		Image: schp
+		Radius: 7c0
 	RenderVoxels:
 		Image: schp
-	-WithVoxelBody:
-	WithVoxelHelicopterBody:
-		TickRate: 1
-		ShowShadow: false
-	WithFacingSpriteBody:
-		Sequence: shadow
-		ForceToGround: true
-	BodyOrientation:
-		UseClassicPerspectiveFudge: false
-

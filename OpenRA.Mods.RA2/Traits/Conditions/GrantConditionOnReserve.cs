@@ -15,7 +15,7 @@ namespace OpenRA.Mods.RA2.Traits
 		public override object Create(ActorInitializer init) { return new GrantConditionOnReserve(init.Self, this); }
 	}
 
-	public class GrantConditionOnReserve : ConditionalTrait<GrantConditionOnReserveInfo>, INotifyResupply
+	public class GrantConditionOnReserve : ConditionalTrait<GrantConditionOnReserveInfo>, ITick//, INotifyResupply
 	{
 		int token = Actor.InvalidConditionToken;
 
@@ -23,28 +23,26 @@ namespace OpenRA.Mods.RA2.Traits
 		{
 		}
 
-		public void BeforeResupply(Actor host, Actor target, ResupplyType types)
-		{
-			GrantReservedCondition(host);
-		}
+		//public void BeforeResupply(Actor host, Actor target, ResupplyType types)
+		//{
+		//	GrantReservedCondition(host);
+		//}
 
-		public void ResupplyTick(Actor host, Actor target, ResupplyType types)
-		{
-			GrantReservedCondition(host);
-		}
+		//public void ResupplyTick(Actor host, Actor target, ResupplyType types)
+		//{
+		//	GrantReservedCondition(host);
+		//}
 
 		public void Tick(Actor self)
 		{
-			// if (Reservable.IsReserved(self))
-			// {
-			// 	Console.WriteLine($"{self} a7aaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-			// 	GrantReservedCondition(self);
-			// }
-			// else
-			// {
-			// 	Console.WriteLine($"{self} a7aaaaaaaaaaaaaaaaaaaaaaaaaaaa la2");
-			// 	RevokeReservedCondition(self);
-			// }
+			if (Reservable.IsReserved(self))
+			{
+				GrantReservedCondition(self);
+			}
+			else
+			{
+				RevokeReservedCondition(self);
+			}
 		}
 
 		protected override void TraitDisabled(Actor self)

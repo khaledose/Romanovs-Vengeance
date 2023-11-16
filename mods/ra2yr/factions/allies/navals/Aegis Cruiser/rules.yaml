@@ -6,36 +6,30 @@ aegis:
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Inherits@SQUID: ^SquidGrabbable
+	Inherits@ANNOUNCE: ^AnnounceProduction
 	Buildable:
 		Queue: Ship.Shared, Ship.Allies
-		BuildPaletteOrder: 41
 		Prerequisites: ~ship.allies, gaairc, ~techlevel.1
 		Description: Anti-Air naval unit.\n\n  Strong vs Aircraft\n  Weak vs Grounds units, Ships\n\nUpgradeable with:\n- Boost-Gliding Systems (United States)
-		BuildDuration: 500
 		BuildDurationModifier: 100
-	UpdatesPlayerStatistics:
-		AddToArmyValue: true
-	Valued:
-		Cost: 900
-	Tooltip:
-	Tooltip@NoRow:
-		Name: Aegis Cruiser
+		BuildPaletteOrder: 41
 	Selectable:
 		Bounds: 1448, 3861, 0, -289
 	Health:
 		HP: 40000
 	Armor:
 		Type: Light
+	Valued:
+		Cost: 900
 	Mobile:
 		TurnSpeed: 24
 		Speed: 90
 	RevealsShroud:
 		Range: 10c0
-	# RevealsShroudToIntelligenceOwner:
-	#	Types: SatelliteScan
-	#	Range: 10c0
-	RevealOnDeath:
-		Radius: 10c0
+	Tooltip:
+		Name: Aegis Cruiser
+	Tooltip@NoRow:
+		Name: Aegis Cruiser
 	Armament@primary:
 		Weapon: Medusa
 		Damage: 300
@@ -49,26 +43,5 @@ aegis:
 	AttackTurreted:
 		Voice: Attack
 		PauseOnCondition: chronodisable
-	AutoTarget:
-	Explodes:
-		Weapon: UnitExplode
-		EmptyWeapon: UnitExplode
-	WithVoxelBody:
-	RenderSprites:
 	Voiced:
 		VoiceSet: AegisVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
-	HitShape:
-	# GrantConditionOnMovement@MoveStart:
-	#	Condition: moving
-	#	ValidMovementTypes: Horizontal, Turn
-	# SoundAnnouncement:
-	#	SoundFiles: vaegstaa.wav, vaegstab.wav
-	#	Volume: 0.5
-	#	RequiresCondition: moving
-

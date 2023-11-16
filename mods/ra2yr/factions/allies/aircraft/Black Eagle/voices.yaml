@@ -1,0 +1,8 @@
+BlackEagleVoice:
+	DefaultVariant: .wav
+	Voices:
+		Build: vblesed
+		Select: vblesea, vbleseb, vblesec, vblesef
+		Move: vblemoa, vblemob, vblemoc
+		Attack: vbleata, vbleatb, vbleatc
+		Die: vbledia, vbledib, vbledic, vbledid, vbledie

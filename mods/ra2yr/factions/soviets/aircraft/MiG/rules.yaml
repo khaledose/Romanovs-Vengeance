@@ -95,9 +95,6 @@ bpln:
 	Armament:
 		Weapon: Maverick3
 		Damage: 300
-	Armament@Elite:
-		Weapon: Maverick3E
-		Damage: 1000
 	AmmoPool:
 		Ammo: 2
 	Rearmable:
@@ -120,6 +117,7 @@ bpln:
 bplnhusk:
 	Inherits: ^PlaneHusk
 	Tooltip:
+		Name: MiG
 	Tooltip@NoRow:
 		Name: MiG
 	Aircraft:
@@ -128,5 +126,3 @@ bplnhusk:
 		AltitudeVelocity: 240
 	RenderVoxels:
 		Image: bpln
-	FallsToEarth:
-		Explosion: UnitExplode
