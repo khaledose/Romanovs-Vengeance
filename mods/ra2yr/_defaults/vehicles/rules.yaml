@@ -54,6 +54,107 @@
 	AppearsOnRadar:
 		UseLocation: true
 
+^NewVehicle:
+	Inherits: ^VoxelVehicle
+	Inherits@1: ^RepairableVehicle
+	Inherits@2: ^LowHealthSpeedPenalty
+	RevealOnFire:
+		ArmamentNames: primary, primary2, elite, elite2, secondary, opentopped, opentopped-secondary, gatling
+		Duration: 50
+	DeliversCash:
+		Voice: Move
+	Mobile:
+		Voice: Move
+		Speed: 90
+		TurnSpeed: 20
+		Locomotor: wheeled
+		TerrainOrientationAdjustmentMargin: 256
+		RequiresCondition: !chronodisable && !beingterrordroned && !being-captured
+	Targetable:
+		TargetTypes: Ground, Vehicle, DroneInfection, DetonateAttack
+	Carryable:
+	Passenger:
+		Voice: Move
+		CargoType: Vehicle
+		Weight: 3
+	Guard:
+		Voice: Attack
+
+^MinerVehicle:
+	Inherits: ^NewVehicle
+	Inherits@RADIATON: ^DamagedByRadiation10Percent
+	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
+	Inherits@SELFHEALING: ^SelfHealing
+	Inherits@ANNOUNCE: ^AnnounceProduction
+	Buildable:
+		Prerequisites: refinery, ~!global-megawealth, ~techlevel.1
+		Description: Gathers Ore and Gems.\n\n  Unarmed\n\nAbilities:\n- Can move over water\n- Cannot be mind controlled
+		BuildDurationModifier: 100
+		BuildPaletteOrder: 10
+	Selectable:
+		Priority: 7
+		Bounds: 1544, 2509, 0, -289
+	Harvester:
+		DeliveryBuildings: garefn, narefn
+		Resources: Ore, Gems
+		BaleLoadDelay: 12
+		BaleUnloadDelay: 1
+		FullyLoadedSpeed: 100
+		HarvestVoice: Harvest
+		DeliverVoice: Move
+		EmptyCondition: no-ore
+	StoresResources:
+		Capacity: 40
+		Resources: Ore, Gems
+	DockClientManager:
+	WithHarvestOverlay:
+		LocalOffset: 121,0,0
+		Palette: effect
+	WithVoxelUnloadBody:
+		RequiresCondition: on_dock
+	ExternalCondition@on_dock:
+		Condition: on_dock
+	WithResourceStoragePipsDecoration:
+		Margin: 4, 3
+		Palette: ra
+		Position: BottomLeft
+		RequiresSelection: true
+		PipCount: 7
+		ResourceSequences:
+			Ore: pip-yellow
+			Gems: pip-blue
+	RangedGpsDot:
+		Sequence: Harvester
+
+^ConstructionVehicle:
+	Inherits: ^NewVehicle
+	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@RADIATON: ^DamagedByRadiation10Percent
+	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
+	Inherits@ANNOUNCE: ^AnnounceProduction
+	Buildable:
+		Description: Deploys into a Construction Yard.\n\n  Unarmed\n\nAbilities:\n- Can move over water
+		Prerequisites: ~techlevel.2, ~!global-suddendeath, ~!ai.mcv
+		BuildDurationModifier: 100
+		BuildPaletteOrder: 50
+	Selectable:
+		Priority: 4
+		Bounds: 1544, 2509, 0, -289
+	Passenger:
+		Weight: 6
+	Transforms:
+		Voice: Move
+		IntoActor: cnst
+		Offset: -1,-1
+		Facing: 384
+		TransformSounds: uplace.wav
+		NoTransformNotification: BuildingCannotPlaceAudio
+		NoTransformTextNotification: Cannot deploy here.
+		PauseOnCondition: chronodisable || terrordroned || squid || controlled
+	TransferTimedExternalConditionOnTransform@INVULNERABILITY:
+		Condition: invulnerability
+	WithVoxelBody:
+
 
 ^Vehicle:
 	Inherits@1: ^ExistsInWorld
@@ -87,7 +188,7 @@
 		TurnSpeed: 20
 		Locomotor: wheeled
 		TerrainOrientationAdjustmentMargin: 256
-		RequiresCondition: !chronodisable && !beingterrordroned && !being-captured
+		RequiresCondition: !chronodisable && !beingterrordroned
 	RevealsShroud:
 		Range: 5c0
 		MaxHeightDelta: 3

@@ -99,6 +99,7 @@
 
 ^DockablePlane:
 	Inherits: ^FighterJet
+	Inherits@ANNOUNCE: ^AnnounceProduction
 	Buildable:
 		BuildDurationModifier: 100
 	Aircraft:
@@ -107,16 +108,11 @@
 		Condition: padaircraft
 	Rearmable:
 		RearmActors: gadock, gaairc
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 
 ^Helicopter:
 	Inherits: ^Aircraft
 	Inherits@1: ^CrateStatModifiers
+	Inherits@ANNOUNCE: ^AnnounceProduction
 	Buildable:
 		BuildDurationModifier: 100
 	Aircraft:
@@ -136,12 +132,6 @@
 	Repairable:
 		Voice: Move
 		RepairActors: gadept, nadept, caoutp
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	WithVoxelHelicopterBody:
 		TickRate: 1
 	RangedGpsDot:

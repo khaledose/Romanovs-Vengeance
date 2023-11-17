@@ -40,6 +40,7 @@
 	Inherits@SQUID: ^SquidGrabbable
 	Inherits@CARGO: ^CarryVehiclesAndInfantries
 	Inherits@REPAIRGROUND: ^RepairableVehicle
+	Inherits@ANNOUNCE: ^AnnounceProduction
 	Buildable:
 		Prerequisites: ~techlevel.1
 		Description: General-purpose naval transport.\nCan carry infantry and vehicles.\n\n  Unarmed
@@ -84,12 +85,6 @@
 		Condition: in_water
 	Cargo:
 		MaxWeight: 12
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 
 ^SeaAnimal:
 	Inherits@1: ^ExistsInWorld
