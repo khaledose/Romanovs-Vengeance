@@ -3,7 +3,7 @@ hyd:
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@EXPERIENCE: ^GainsExperience
-	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@MC: ^MindControllable
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Inherits@SQUID: ^SquidGrabbable
 	Inherits@ANNOUNCE: ^AnnounceProduction

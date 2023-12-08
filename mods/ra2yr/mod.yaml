@@ -279,7 +279,14 @@ Rules:
 	ra2yr|_defaults/misc/rules.yaml
 	ra2yr|_defaults/navals/rules.yaml
 	ra2yr|_defaults/shapes/rules.yaml
+	ra2yr|_defaults/traits/autotarget/rules.yaml
 	ra2yr|_defaults/traits/rules.yaml
+	ra2yr|_defaults/traits/cargo/rules.yaml
+	ra2yr|_defaults/traits/deployables/rules.yaml
+	ra2yr|_defaults/traits/mindcontrol/rules.yaml
+	ra2yr|_defaults/traits/power/rules.yaml
+	ra2yr|_defaults/traits/targets/rules.yaml
+	ra2yr|_defaults/traits/turrets/rules.yaml
 	ra2yr|_defaults/vehicles/rules.yaml
 	ra2yr|game/lobby/rules.yaml
 	ra2yr|game/skirmish/rules.yaml
@@ -686,6 +693,10 @@ Voices:
 	ra2yr|factions/allies/infantries/Spy/voices.yaml
 	ra2yr|factions/allies/infantries/Tanya Adams/voices.yaml
 	ra2yr|factions/allies/navals/Dolphin/voices.yaml
+	ra2yr|factions/allies/vehicles/Battle Fortress/voices.yaml
+	ra2yr|factions/allies/vehicles/Chrono Miner/voices.yaml
+	ra2yr|factions/allies/vehicles/Mobile Construction Vehicle/voices.yaml
+	ra2yr|factions/allies/vehicles/Tank Destroyer/voices.yaml
 	ra2yr|factions/soviets/aircraft/Kirov Airship/voices.yaml
 	ra2yr|factions/soviets/aircraft/MiG/voices.yaml
 	ra2yr|factions/soviets/aircraft/Siege Chopper/voices.yaml
@@ -699,6 +710,9 @@ Voices:
 	ra2yr|factions/soviets/infantries/Terrorist/voices.yaml
 	ra2yr|factions/soviets/infantries/Tesla Trooper/voices.yaml
 	ra2yr|factions/soviets/navals/Giant Squid/voices.yaml
+	ra2yr|factions/soviets/vehicles/Demolition Truck/voices.yaml
+	ra2yr|factions/soviets/vehicles/Mobile Construction Vehicle/voices.yaml
+	ra2yr|factions/soviets/vehicles/War Miner/voices.yaml
 	ra2yr|factions/yuris/aircraft/Floating Disc/voices.yaml
 	ra2yr|factions/yuris/infantries/Brute/voices.yaml
 	ra2yr|factions/yuris/infantries/Engineer/voices.yaml
@@ -707,6 +721,7 @@ Voices:
 	ra2yr|factions/yuris/infantries/Virus/voices.yaml
 	ra2yr|factions/yuris/infantries/Yuri Clone/voices.yaml
 	ra2yr|factions/yuris/infantries/Yuri Prime/voices.yaml
+	ra2yr|factions/yuris/vehicles/Mobile Construction Vehicle/voices.yaml
 	ra2yr|world/aircraft/voices.yaml
 	ra2yr|world/animals/voices.yaml
 	ra2yr|world/civilians/voices.yaml

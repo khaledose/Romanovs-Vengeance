@@ -54,6 +54,7 @@
 	Inherits@3: ^AcceptsIvanBomb
 	Inherits@4: ^ParachutableInfantry
 	Inherits@5: ^Berserkable
+	Inherits@6: ^TransportableInfantry
 	Buildable:
 		BuildAtProductionType: Soldier
 		BuildDurationModifier: 100
@@ -87,9 +88,6 @@
 		FacingTolerance: 2
 		PauseOnCondition: chronodisable
 	EdibleByLeap:
-	Passenger:
-		Voice: Move
-		CargoType: Garrisoner
 	Chronoshiftable:
 		ExplodeInstead: true
 		ReturnToOrigin: false
@@ -264,6 +262,7 @@
 	Inherits@3: ^AcceptsIvanBomb
 	Inherits@4: ^ParachutableInfantry
 	Inherits@5: ^Berserkable
+	Inherits@6: ^TransportableInfantry
 	Buildable:
 		Queue: Infantry.Animal
 		BuildAtProductionType: Animal
@@ -280,9 +279,6 @@
 	Guard:
 		Voice: Attack
 	Guardable:
-	Passenger:
-		Voice: Move
-		CargoType: Garrisoner
 	Wanders:
 		MinMoveDelay: 150
 		MaxMoveDelay: 750

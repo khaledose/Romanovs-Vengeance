@@ -2,7 +2,7 @@ shad:
 	Inherits: ^Helicopter
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@MC: ^MindControllable
-	Inherits@CARGO: ^CarryInfantries
+	Inherits@CARGO: ^TransportInfantries
 	Buildable:
 		Queue: Aircraft.Shared, Aircraft.Allies
 		Prerequisites: ~aircraft.allies, ~techlevel.2

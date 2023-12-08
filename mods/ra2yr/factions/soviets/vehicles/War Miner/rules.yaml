@@ -1,14 +1,17 @@
 harv:
-	Inherits: ^Miner
+	Inherits: ^MinerVehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@BUNKER: ^TankBunkerable
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@VETERAN: ^ProducibleAsVeteranVehicle
+	Inherits@TURRET: ^WithVoxelTurret
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Soviets
 		Description: Gathers Ore and Gems.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can move over water\n- Cannot be mind controlled\n\nUpgradeable with:\n- Armor-Piercing Bullets
-		Prerequisites: ~vehicle.soviets, refinery, ~!global-megawealth, ~techlevel.1
+		Prerequisites: ~vehicle.soviets, narefn, ~!global-megawealth, ~techlevel.1
+	Harvester:
+		Capacity: 20
 	Tooltip:
+		Name: War Miner
 	Tooltip@NoRow:
 		Name: War Miner
 	Armament@primary:
@@ -25,11 +28,8 @@ harv:
 		RequiresCondition: rank-elite
 	AttackTurreted:
 		Voice: Attack
-		PauseOnCondition: chronodisable || parachute
-	WithMuzzleOverlay:
 	Turreted:
-		TurnSpeed: 40
 		Offset: 196,0,-24
-	WithVoxelTurret:
+	WithMuzzleOverlay:
 	Voiced:
 		VoiceSet: WarMinerVoice

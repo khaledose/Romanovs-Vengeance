@@ -102,8 +102,8 @@ yuri:
 	Inherits@VETERAN: ^InfantryPromotable
 	Inherits@PSIWAVEIMMUNITY: ^PsiWaveImmunity
 	Inherits@MINDCONTROLLER: ^MindController
-	Inherits@DEPLOY: ^PsiWaveOnDeploy
 	Inherits@DETECTCLOAKED: ^DetectCloaked
+	Inherits@PSIWAVE: ^WithInfantryPsiWaveOnDeploy
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Yuri
 		Prerequisites: ~infantry.yuri, yapsis, ~techlevel.3
@@ -130,6 +130,8 @@ yuri:
 		MuzzleSequence: muzzle
 		LocalOffset: 0, 0, 960
 		PauseOnCondition: deployed || chronodisable
+	PeriodicExplosion:
+		Weapon: PsiWave
 	Voiced:
 		VoiceSet: YuriVoice
 	-Crushable:

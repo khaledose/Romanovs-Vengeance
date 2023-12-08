@@ -1,0 +1,8 @@
+WarMinerVoice:
+	DefaultVariant: .wav
+	Voices:
+		Build: vwarsea
+		Select: vwarseb, vwarsec, vwarsed, vwarsee
+		Move: vwarmoa, vwarmob, vwarmoc, vwarmod, vwarmoe
+		Attack: vwarata, vwaratb, vwaratc, vwaratd, vwarate
+		Harvest: vwarhaa, vwarhab, vwarhac, vwarhad

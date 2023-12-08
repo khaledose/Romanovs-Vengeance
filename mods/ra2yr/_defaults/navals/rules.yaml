@@ -35,10 +35,10 @@
 ^AmphibiousTransport:
 	Inherits: ^Ship
 	Inherits@DRONE: ^TerrorDronable
-	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@MC: ^MindControllable
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Inherits@SQUID: ^SquidGrabbable
-	Inherits@CARGO: ^CarryVehiclesAndInfantries
+	Inherits@CARGO: ^TransportVehiclesAndInfantries
 	Inherits@REPAIRGROUND: ^RepairableVehicle
 	Inherits@ANNOUNCE: ^AnnounceProduction
 	Buildable:

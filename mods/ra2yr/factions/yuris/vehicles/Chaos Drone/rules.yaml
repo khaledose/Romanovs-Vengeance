@@ -1,80 +1,44 @@
 caos:
-	Inherits: ^Vehicle
+	Inherits: ^GroundVehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@RAD: ^RadiationImmunity
+	Inherits@ANNOUNCE: ^AnnounceProduction
+	Inherits@DEPLOY: ^PeriodicExplosionOnDeploy
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Yuri
-		BuildPaletteOrder: 40
 		Prerequisites: ~vehicle.yuri, ~techlevel.2
 		Description: Drone capable of releasing gas that causes enemy units to fire random units.\nUnits affected by the gas deal more damage.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nAbilities\n- Can be deployed to release gas continuously\n- Cannot be mind controlled\n\nUpgradeable with:\n- Chaos Tank Compensators (Yurigrad)
-		BuildDuration: 250
 		BuildDurationModifier: 100
-	UpdatesPlayerStatistics:
-		AddToArmyValue: true
-	Valued:
-		Cost: 800
-	DeliversCash:
-		Payload: 800
-	Tooltip:
-	Tooltip@NoRow:
-		Name: Chaos Drone
-	Mobile:
-		Speed: 135
-		TurnSpeed: 60
-		RequiresCondition: !chronodisable && !beingterrordroned
+		BuildPaletteOrder: 40
+	Selectable:
+		Bounds: 1254, 2316, 0, -193
 	Health:
 		HP: 25000
 	Armor:
 		Type: Light
+	Valued:
+		Cost: 800
+	DeliversCash:
+		Payload: 800
+	Mobile:
+		Speed: 135
+		TurnSpeed: 60
+		RequiresCondition: !chronodisable && !beingterrordroned
 	RevealsShroud:
 		Range: 6c0
-	# RevealsShroudToIntelligenceOwner:
-	#	Types: SatelliteScan
-	#	Range: 6c0
-	RevealOnDeath:
-		Radius: 6c0
-	Targetable:
-		TargetTypes: Ground, Vehicle, DetonateAttack, DroneInfection, ImmuneToRadiation
+	Tooltip:
+		Name: Chaos Drone
+	Tooltip@NoRow:
+		Name: Chaos Drone
 	Armament@primary:
 		Weapon: ChaosAttack
 		LocalOffset: 0,0,64
 	PeriodicExplosion:
 		Weapon: ChaosAttack
-		LocalOffset: 0,0,64
-		ResetReloadWhenEnabled: false
-		RequiresCondition: deployed && !chronodisable
 	AttackFrontal:
 		Voice: Attack
 		FacingTolerance: 512
 		PauseOnCondition: chronodisable || deployed
-	GrantConditionOnDeploy:
-		DeployedCondition: deployed
-		CanDeployOnRamps: True
-		SmartDeploy: True
-		Voice: Attack
-		UndeployOnMove: true
-		PauseOnCondition: chronodisable
-		RequiresCondition: !parachute
-	-CaptureManager:
-	-Capturable:
-	RenderSprites:
-	Selectable:
-		Bounds: 1254, 2316, 0, -193
-	RenderVoxels:
 	WithVoxelBody:
 	Voiced:
 		VoiceSet: ChaosDroneVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
-	HitShape:
-	# GrantConditionOnMovement@MoveStart:
-	#	Condition: moving
-	#	ValidMovementTypes: Horizontal, Turn
-	# SoundAnnouncement:
-	#	SoundFiles: vchastaa.wav, vchastab.wav, vchastac.wav
-	#	Volume: 0.5
-	#	RequiresCondition: moving
-

@@ -1,6 +1,7 @@
 yapowr:
 	Inherits: ^PowerPlant
 	Inherits@SHAPE: ^2x2Shape
+	Inherits@CARGO: ^CarryInfantries
 	Buildable:
 		Queue: Building.Shared, Building.Yuri
 		Prerequisites: ~building.yuri, ~techlevel.1
@@ -11,19 +12,19 @@ yapowr:
 		Amount: 150
 	Power@1:
 		Amount: 100
-		RequiresCondition: !chronodisable && !forceshieldnopower && !disabled && loaded >= 1
+		RequiresCondition: !disabled && !chronodisable && loaded >= 1
 	Power@2:
 		Amount: 100
-		RequiresCondition: !chronodisable && !forceshieldnopower && !disabled && loaded >= 2
+		RequiresCondition: !disabled && !chronodisable && loaded >= 2
 	Power@3:
 		Amount: 100
-		RequiresCondition: !chronodisable && !forceshieldnopower && !disabled && loaded >= 3
+		RequiresCondition: !disabled && !chronodisable && loaded >= 3
 	Power@4:
 		Amount: 100
-		RequiresCondition: !chronodisable && !forceshieldnopower && !disabled && loaded >= 4
+		RequiresCondition: !disabled && !chronodisable && loaded >= 4
 	Power@5:
 		Amount: 100
-		RequiresCondition: !chronodisable && !forceshieldnopower && !disabled && loaded >= 5
+		RequiresCondition: !disabled && !chronodisable && loaded >= 5
 	Health:
 		HP: 70000
 	Armor:
@@ -36,30 +37,6 @@ yapowr:
 		Name: Yuri Bio Reactor
 	Tooltip@NoRow:
 		Name: Yuri Bio Reactor
-	Cargo:
-		Types: Infantry, Garrisoner
-		MaxWeight: 5
-		AfterLoadDelay: 0
-		BeforeUnloadDelay: 0
-		AfterUnloadDelay: 0
-		LoadedCondition: loaded
-	WithCargoPipsDecoration:
-		FullSequence: pip-building-green
-		EmptySequence: pip-building-empty
-		Palette: ra
-		Margin: 8, 2
-		PipStride: 4, 2
-		Position: BottomLeft
-		RequiresSelection: true
-		CustomPipSequences:
-			gray: pip-building-gray
-			yellow: pip-building-yellow
-			blue: pip-building-blue
-			red: pip-building-red
-	WithCargoSounds:
-		EnterSound: bbioenta.wav
-		ExitSound: bbioenta.wav
-		SoundVolume: 0.5
 	Explodes:
 		Weapon: PowerPlantExplosion
 		Type: CenterPosition

@@ -1,0 +1,141 @@
+^Garrisoner:
+	Garrisoner:
+		Voice: Move
+		GarrisonType: Garrisoner
+
+^Garrisonable:
+	Inherits@AUTOTARGET: ^AutoTargetAll
+	Targetable@DEFENSE:
+		TargetTypes: Defense
+		RequiresCondition: loaded
+	AttackOpenTopped:
+		Armaments: garrisoned
+		PortOffsets: 768,0,1024, 448,-682,1024, -448,-682,1024, -768,0,1024, -448,682,1024, 448,682,1024
+		RandomMuzzleActivations: true
+		MuzzleActivationDelay: 5
+		PauseOnCondition: chronodisable
+	Garrisonable:
+		Types: Garrisoner
+		MaxWeight: 10
+		AfterLoadDelay: 0
+		BeforeUnloadDelay: 0
+		AfterUnloadDelay: 0
+		EjectOnDeath: true
+		OwnerChangedAffectsGarrisoners: false
+		LoadedCondition: loaded
+		RequiresCondition: !dmg_crit
+	WithGarrisonPipsDecoration:
+		EmptySequence: pip-garrison-empty
+		FullSequence: pip-garrison-green
+		Margin: 4, 3
+		PipStride: 4, 2
+		Palette: ra
+		Position: BottomLeft
+		RequiresSelection: true
+		CustomPipSequences:
+			gray: pip-garrison-gray
+			yellow: pip-garrison-yellow
+			blue: pip-garrison-blue
+			red: pip-garrison-red
+	WithIdleOverlay@garrisoned:
+		Sequence: garrisoned
+		RequiresCondition: loaded
+	WithGarrisonSounds:
+		EnterSound: ugarris.wav
+		EnterNotification: StructureGarrisoned
+		ExitNotification: StructureAbandoned
+	ChangeOwnerOnGarrison:
+
+^TransportableInfantry:
+	Passenger@TRANSPORT:
+		CargoType: Infantry
+		Weight: 1
+		Voice: Move
+
+^TransportableVehicle:
+	Passenger@TRANSPORT:
+		CargoType: Vehicle
+		Weight: 3
+		Voice: Move
+
+^BunkerableVehicle:
+	FirepowerMultiplier@TANK_BUNKER:
+		Modifier: 130
+		RequiresCondition: in-tank-bunker
+	ReloadDelayMultiplier@TANK_BUNKER:
+		Modifier: 77
+		RequiresCondition: in-tank-bunker
+	RangeMultiplier@TANK_BUNKER:
+		Modifier: 134 # This is meant to be +2
+		RequiresCondition: in-tank-bunker
+	Passenger@BUNKER:
+		CargoType: BunkerableVehicle
+		CargoConditions:
+			natbnk: in-tank-bunker
+
+^TransportVehiclesAndInfantries:
+	Cargo:
+		Types: Infantry, Vehicle
+		MaxWeight: 12
+		AfterLoadDelay: 0
+		BeforeUnloadDelay: 0
+		AfterUnloadDelay: 0
+		PassengerFacing: 384
+		UnloadTerrainTypes: Clear, Rough, Rail, Road, DirtRoad, Beach, Ore, Gems
+		UnloadVoice: Move
+		EjectOnDeath: false
+		LoadingCondition: notmobile
+		LoadedCondition: loaded
+	WithCargoSounds:
+		EnterSounds: genter1a.wav
+		ExitSounds: gexit1a.wav
+	WithCargoPipsDecoration:
+		Margin: 4, 3
+		Palette: ra
+		Position: BottomLeft
+		RequiresSelection: true
+		CustomPipSequences:
+			gray: pip-gray
+			yellow: pip-yellow
+			blue: pip-blue
+			red: pip-red
+
+^TransportInfantries:
+	Inherits: ^TransportVehiclesAndInfantries
+	Cargo:
+		Types: Infantry
+		MaxWeight: 5
+
+^TankBunker:
+	Cargo:
+		Types: BunkerableVehicle
+		MaxWeight: 3
+		AfterLoadDelay: 0
+		BeforeUnloadDelay: 0
+		AfterUnloadDelay: 0
+		EjectOnDeath: true
+		LoadedCondition: loaded
+	WithCargoOverlay:
+		Facing: 384
+		DisplayTypes: BunkerableVehicle
+		LoadingSequences: loading, loading-front
+		LoadedSequences: loaded, loaded-front
+	WithCargoSounds:
+		EnterSound: btanupa.wav
+		ExitSound: btandowa.wav
+
+^CarryInfantries:
+	Inherits: ^TransportInfantries
+	WithCargoPipsDecoration:
+		FullSequence: pip-building-green
+		EmptySequence: pip-building-empty
+		Margin: 8, 2
+		PipStride: 4, 2
+		CustomPipSequences:
+			gray: pip-building-gray
+			yellow: pip-building-yellow
+			blue: pip-building-blue
+			red: pip-building-red
+	WithCargoSounds:
+		EnterSound: bbioenta.wav
+		ExitSound: bbioenta.wav

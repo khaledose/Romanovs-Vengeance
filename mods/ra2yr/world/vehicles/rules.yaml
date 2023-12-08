@@ -1,29 +1,10 @@
 bus:
-	Inherits: ^CivVehicle
+	Inherits: ^CivilianVehicle
+	Inherits@CARGO: ^TransportInfantries
 	Tooltip:
 		Name: School Bus
 	Tooltip@NoRow:
 		Name: School Bus
-	Cargo:
-		Types: Infantry, Garrisoner, SmallVehicle
-		MaxWeight: 5
-		AfterLoadDelay: 0
-		BeforeUnloadDelay: 0
-		AfterUnloadDelay: 0
-		UnloadVoice: Move
-	WithCargoSounds:
-		EnterSound: genter1a.wav
-		ExitSound: gexit1a.wav
-	WithCargoPipsDecoration:
-		Margin: 4, 3
-		Palette: ra
-		Position: BottomLeft
-		RequiresSelection: true
-		CustomPipSequences:
-			gray: pip-gray
-			yellow: pip-yellow
-			blue: pip-blue
-			red: pip-red
 
 limo:
 	Inherits: bus
@@ -33,21 +14,21 @@ limo:
 		Name: Limousine
 
 pick:
-	Inherits: ^CivVehicle
+	Inherits: ^CivilianVehicle
 	Tooltip:
 		Name: Pickup Truck
 	Tooltip@NoRow:
 		Name: Pickup Truck
 
 car:
-	Inherits: ^CivVehicle
+	Inherits: ^CivilianVehicle
 	Tooltip:
 		Name: Automobile
 	Tooltip@NoRow:
 		Name: Automobile
 
 wini:
-	Inherits: ^CivVehicle
+	Inherits: ^CivilianVehicle
 	Tooltip:
 		Name: Recreational Vehicle
 	Tooltip@NoRow:
@@ -56,21 +37,21 @@ wini:
 		NormalsPalette: ts-normals
 
 propa:
-	Inherits: ^CivVehicle
+	Inherits: ^CivilianVehicle
 	Tooltip:
 		Name: Propaganda Truck
 	Tooltip@NoRow:
 		Name: Propaganda Truck
 
 cop:
-	Inherits: ^CivVehicle
+	Inherits: ^CivilianVehicle
 	Tooltip:
 		Name: Police Car
 	Tooltip@NoRow:
 		Name: Police Car
 
 euroc:
-	Inherits: ^CivVehicle
+	Inherits: ^CivilianVehicle
 	Tooltip:
 		Name: Automobile
 	Tooltip@NoRow:
@@ -79,7 +60,7 @@ euroc:
 		NormalsPalette: ts-normals
 
 cona:
-	Inherits: ^CivVehicle
+	Inherits: ^CivilianVehicle
 	Tooltip:
 		Name: Excavator
 	Tooltip@NoRow:
@@ -88,35 +69,35 @@ cona:
 		NormalsPalette: ts-normals
 
 trucka:
-	Inherits: ^CivVehicle
+	Inherits: ^CivilianVehicle
 	Tooltip:
 		Name: Truck
 	Tooltip@NoRow:
 		Name: Truck
 
 truckb:
-	Inherits: ^CivVehicle
+	Inherits: ^CivilianVehicle
 	Tooltip:
 		Name: Truck
 	Tooltip@NoRow:
 		Name: Truck
 
 suvb:
-	Inherits: ^CivVehicle
+	Inherits: ^CivilianVehicle
 	Tooltip:
 		Name: Automobile
 	Tooltip@NoRow:
 		Name: Automobile
 
 suvw:
-	Inherits: ^CivVehicle
+	Inherits: ^CivilianVehicle
 	Tooltip:
 		Name: Automobile
 	Tooltip@NoRow:
 		Name: Automobile
 
 stang:
-	Inherits: ^CivVehicle
+	Inherits: ^CivilianVehicle
 	Tooltip:
 		Name: Automobile
 	Tooltip@NoRow:
@@ -125,14 +106,14 @@ stang:
 		NormalsPalette: ts-normals
 
 ptruck:
-	Inherits: ^CivVehicle
+	Inherits: ^CivilianVehicle
 	Tooltip:
 		Name: Pickup Truck
 	Tooltip@NoRow:
 		Name: Pickup Truck
 
 taxi:
-	Inherits: ^CivVehicle
+	Inherits: ^CivilianVehicle
 	Tooltip:
 		Name: Taxi
 	Tooltip@NoRow:
@@ -142,21 +123,21 @@ taxi:
 
 #Yuri's Revenge Vehicles
 ambu:
-	Inherits: ^CivVehicle
+	Inherits: ^CivilianVehicle
 	Tooltip:
 		Name: Ambulance
 	Tooltip@NoRow:
 		Name: Ambulance
 
 bcab:
-	Inherits: ^CivVehicle
+	Inherits: ^CivilianVehicle
 	Tooltip:
 		Name: Black Cab
 	Tooltip@NoRow:
 		Name: Black Cab
 
 cblc:
-	Inherits: ^CivVehicle
+	Inherits: ^CivilianVehicle
 	Tooltip:
 		Name: Cable Car
 	Tooltip@NoRow:
@@ -170,35 +151,35 @@ ddbx:
 		Name: Bus
 
 doly:
-	Inherits: ^CivVehicle
+	Inherits: ^CivilianVehicle
 	Tooltip:
 		Name: Camera Dolly
 	Tooltip@NoRow:
 		Name: Camera Dolly
 
 ftrk:
-	Inherits: ^CivVehicle
+	Inherits: ^CivilianVehicle
 	Tooltip:
 		Name: Fire Truck
 	Tooltip@NoRow:
 		Name: Fire Truck
 
 jeep:
-	Inherits: ^CivVehicle
+	Inherits: ^CivilianVehicle
 	Tooltip:
 		Name: Pickup Truck
 	Tooltip@NoRow:
 		Name: Pickup Truck
 
 ycab:
-	Inherits: ^CivVehicle
+	Inherits: ^CivilianVehicle
 	Tooltip:
 		Name: Yellow Cab
 	Tooltip@NoRow:
 		Name: Yellow Cab
 
 civp:
-	Inherits: ^CivVehicle
+	Inherits: ^CivilianVehicle
 	Tooltip:
 		Name: Passenger Plane
 	Tooltip@NoRow:
@@ -206,42 +187,42 @@ civp:
 
 # Custom Vehicles
 truckc:
-	Inherits: ^CivVehicle
+	Inherits: ^CivilianVehicle
 	Tooltip:
 		Name: Truck
 	Tooltip@NoRow:
 		Name: Truck
 
 car2:
-	Inherits: ^CivVehicle
+	Inherits: ^CivilianVehicle
 	Tooltip:
 		Name: Automobile
 	Tooltip@NoRow:
 		Name: Automobile
 
 car3:
-	Inherits: ^CivVehicle
+	Inherits: ^CivilianVehicle
 	Tooltip:
 		Name: Automobile
 	Tooltip@NoRow:
 		Name: Automobile
 
 mixer:
-	Inherits: ^CivVehicle
+	Inherits: ^CivilianVehicle
 	Tooltip:
 		Name: Cement Mixer
 	Tooltip@NoRow:
 		Name: Cement Mixer
 
 flata:
-	Inherits: ^CivVehicle
+	Inherits: ^CivilianVehicle
 	Tooltip:
 		Name: Missile Truck
 	Tooltip@NoRow:
 		Name: Missile Truck
 
 flatb:
-	Inherits: ^CivVehicle
+	Inherits: ^CivilianVehicle
 	Tooltip:
 		Name: Empty Truck
 	Tooltip@NoRow:

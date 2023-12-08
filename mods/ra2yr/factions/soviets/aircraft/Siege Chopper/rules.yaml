@@ -3,6 +3,8 @@ schp:
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@MC: ^MindControllable
 	Inherits@AI: ^AIMicroManagable
+	Inherits@DEPLOY: ^DeployableAircraft
+	Inherits@TURRET: ^WithVoxelTurretDeployed
 	Buildable:
 		Queue: Aircraft.Shared, Aircraft.Soviets
 		Prerequisites: ~aircraft.soviets, natech, ~techlevel.3
@@ -56,36 +58,7 @@ schp:
 		RequiresCondition: rank-elite && deployed
 	AttackAircraft:
 		RequiresCondition: airborne && !deployed
-	AttackTurreted:
-		Armaments: deployed
-		Voice: DeployedAttack
-		PauseOnCondition: chronodisable
-		RequiresCondition: !airborne && deployed
-	Turreted:
-		TurnSpeed: 80
 	WithMuzzleOverlay:
-	HeliGrantConditionOnDeploy:
-		BodyNames: dot
-		DeployAnimation: deploy
-		DeployedCondition: deployed
-		UndeployedCondition: undeployed
-		DeploySound: vchodepa.wav
-		UndeploySound: vchodepa.wav
-		AllowedTerrainTypes: Clear, Rough, Road, DirtRoad, Ore, Gems
-		DeployVoice: Deploy
-		UndeployVoice: Move
-		CanDeployOnRamps: true
-		SynchronizeDeployment: True
-		PauseOnCondition: chronodisable
-	WithSpriteBody@dot:
-		Sequence: dot
-	WithVoxelHelicopterBody:
-		RequiresCondition: undeployed
-	WithVoxelBody:
-		Sequence: deployed
-		RequiresCondition: deployed
-	WithVoxelTurret:
-		RequiresCondition: deployed
 	SpawnActorOnDeath:
 		Actor: schphusk
 	AmbientSound:

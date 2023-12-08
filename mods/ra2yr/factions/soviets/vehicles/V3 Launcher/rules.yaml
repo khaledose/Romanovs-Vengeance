@@ -1,11 +1,13 @@
 v3:
-	Inherits: ^Vehicle
+	Inherits: ^GroundVehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@VETERAN: ^ProducibleAsVeteranVehicle
 	Inherits@CHAOS: ^BerserkableVoxel
-	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@MC: ^MindControllable
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	Inherits@MISSILE: ^MissileSpawner
+	Inherits@ANNOUNCE: ^AnnounceProduction
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Soviets
 		BuildPaletteOrder: 100
@@ -13,36 +15,25 @@ v3:
 		Description: Long-range rocket artillery.\n\n  Strong vs Buildings, Infantry\n  Weak vs Aircraft\n\nUpgradeable with:\n- Radioactive Warheads\n- Advanced Irradiators (Iraq)\n- High Explosive Bombs (Libya)
 		BuildDuration: 500
 		BuildDurationModifier: 100
-	UpdatesPlayerStatistics:
-		AddToArmyValue: true
-	Valued:
-		Cost: 800
-	DeliversCash:
-		Payload: 800
-	Tooltip:
-	Tooltip@NoRow:
-		Name: V3 Launcher
 	Health:
 		HP: 15000
 	Armor:
 		Type: Light
+	Valued:
+		Cost: 800
+	DeliversCash:
+		Payload: 800
 	Mobile:
 		Speed: 75
 		TurnSpeed: 32
 	RevealsShroud:
 		Range: 6c0
-	# RevealsShroudToIntelligenceOwner:
-	#	Types: SatelliteScan
-	#	Range: 6c0
-	RevealOnDeath:
-		Radius: 6c0
+	Tooltip:
+		Name: V3 Launcher
+	Tooltip@NoRow:
+		Name: V3 Launcher
 	Armament:
 		Weapon: V3Launcher
-	FirepowerMultiplier@RANK-1:
-		RequiresCondition: rank-veteran >= 1 && !rank-elite
-	FirepowerMultiplier@RANK-ELITE:
-		RequiresCondition: rank-elite
-		Modifier: 220
 	AttackFollowFrontal:
 		Voice: Attack
 		FacingTolerance: 2
@@ -51,41 +42,16 @@ v3:
 		PauseOnCondition: chronodisable
 	MissileSpawnerMaster:
 		Actors: v3rocket
-		RespawnTicks: 200
-		LoadedCondition: loaded
 		SpawnOffset: 0,640,300
-	WithSpawnerMasterPipsDecoration:
-		Margin: 4, 3
-		Palette: ra
-		Position: BottomLeft
-		RequiresSelection: true
-	GrantExternalConditionToSpawnedMissile:
-		Condition: rank-elite
+	FirepowerMultiplier@RANK-1:
+		RequiresCondition: rank-veteran >= 1 && !rank-elite
+	FirepowerMultiplier@RANK-ELITE:
 		RequiresCondition: rank-elite
-	RenderSprites:
-		Image: v3
-	RenderVoxels:
-		Image: v3
-	WithVoxelBody@FULL:
+		Modifier: 220
+	WithVoxelBody:
 		RequiresCondition: loaded
 	WithVoxelBody@EMPTY:
 		Sequence: empty
 		RequiresCondition: !loaded
-	HitShape:
 	Voiced:
 		VoiceSet: V3LauncherVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
-	# GrantConditionOnMovement@MoveStart:
-	#	Condition: moving
-	#	ValidMovementTypes: Horizontal
-	# SoundAnnouncement:
-	#	SoundFiles: vv3lstaa.wav, vv3lstab.wav, vv3lstac.wav
-	#	Volume: 0.35
-	#	RequiresCondition: moving
-
-

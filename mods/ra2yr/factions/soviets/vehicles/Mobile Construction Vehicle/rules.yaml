@@ -16,7 +16,6 @@ smcv.colorpicker:
 	-MapEditorData:
 	WithVoxelBody:
 		ShowShadow: false
-	-WithVoxelBody@Water:
 	RenderSprites:
 		Image: smcv
 		Palette: colorpicker

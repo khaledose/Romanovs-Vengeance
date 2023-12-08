@@ -1,0 +1,7 @@
+TankDestroyerVoice:
+	DefaultVariant: .wav
+	Voices:
+		Build: vtansea
+		Select: vtanseb, vtansec, vtansed, vtansee
+		Move: vtanmoa, vtanmob, vtanmoc, vtanmod
+		Attack: vtanata, vtanatb, vtanatc, vtanatd, vtanate

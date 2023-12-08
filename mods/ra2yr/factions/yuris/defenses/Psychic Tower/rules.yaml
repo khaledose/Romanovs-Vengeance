@@ -1,10 +1,11 @@
 yapsyt:
 	Inherits: ^DefenseStructure
 	Inherits@SHAPE: ^1x1Shape
-	Inherits@DRAIN: ^DiskDefenseDrainable
-	Inherits@MINDCONTROLLER: ^MindController
+	Inherits@MINDCONTROLLER: ^MindControllerBuilding
 	Inherits@AUTOTARGET: ^AutoTargetGround
-	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@LOWPOWER: ^DisabledOnLowPowerOrPowerDown
+	Inherits@DRAIN: ^DisabledOnDiskDrain
+	Inherits@TURRET: ^WithSpriteTurretBuildingPowered
 	Buildable:
 		Queue: Support.Shared, Support.Yuri
 		Prerequisites: ~building.yuri, yapsis, ~techlevel.3
@@ -30,18 +31,9 @@ yapsyt:
 		Weapon: MultipleMindControlTower
 		MuzzleSequence: muzzle
 		LocalOffset: 0,0,960
-	AttackTurreted:
-		PauseOnCondition: build-incomplete || disabled || chronodisable
-	Turreted:
-		TurnSpeed: 1023
+	WithMuzzleOverlay:
 	MindController:
 		Capacity: 3
-	WithMindControllerPipsDecoration:
-		FullSequence: pip-building-green
-		EmptySequence: pip-building-empty
-		Margin: 8, 2
-		PipStride: 4, 2
-	WithMuzzleOverlay:
 	WithIdleOverlay@powered:
 		Sequence: powered
 		PauseOnCondition: disabled || chronodisable

@@ -15,6 +15,14 @@
 	QuantizeFacingsFromSequence:
 	RenderSprites:
 
+^Voxel:
+	RenderVoxels:
+		Scale: 11.7
+		LightYaw: 800
+		LightPitch: 150
+		LightAmbientColor: -0.5,-0.5,-0.5
+		LightDiffuseColor: 1.3,1.3,1.3
+
 ^GainsExperience:
 	GainsExperience:
 		LevelUpNotification: LevelUp
@@ -177,16 +185,12 @@
 		DamageTypes: Prone100Percent, TriggerProne, RadiationDeath, NonTemporal
 
 ^AcceptsIvanBomb:
+	Inherits@BOMB: ^IvanBombable
+	Inherits@CLEAN: ^IvanBombCleanable
 	DelayedWeaponAttachable@IVANBOMB:
 		Type: IvanBomb
 		ShowProgressBar: false
 		Condition: ivanbomb
-	Targetable@IVANBOMB:
-		TargetTypes: IvanBomb
-		RequiresCondition: !ivanbomb
-	Targetable@IVANBOMBCLEANER:
-		TargetTypes: IvanBombCleaner
-		RequiresCondition: ivanbomb
 	WithDecoration@IVANBOMB:
 		RequiresSelection: false
 		Image: dynamite
@@ -201,13 +205,11 @@
 		RequiresCondition: ivanbomb
 
 ^AcceptsC4:
+	Inherits@CLEAN: ^C4Cleanable
 	DelayedWeaponAttachable@C4:
 		Type: C4
 		ShowProgressBar: false
 		Condition: c4
-	Targetable@C4CLEANER:
-		TargetTypes: C4Cleaner
-		RequiresCondition: c4
 	WithDecoration@C4:
 		RequiresSelection: false
 		Image: c4
@@ -222,50 +224,26 @@
 		Volume: 0.65
 		RequiresCondition: c4
 
-^C4Attacher:
-	Armament@sapper:
-		Name: secondary
-		Weapon: Sapper
-		Cursor: c4
-		OutsideRangeCursor: c4
-		PauseOnCondition: chronodisable
+^Demolitionist:
 	Demolition:
 		TargetRelationships: Enemy
 		Voice: Attack
 		DamageTypes: NonTemporal
 
-^SuperC4Attacher:
-	Armament@sapper:
-		Name: secondary
-		Weapon: SuperSapper
-		Cursor: c4
-		OutsideRangeCursor: c4
-		PauseOnCondition: chronodisable
-	Demolition:
-		TargetRelationships: Enemy
-		Voice: Demolish
-		DamageTypes: NonTemporal
-
 ^IronCurtainable:
+	Inherits@IC: ^IronCurtained
 	WithColoredOverlay@ironcurtain:
 		Color: 40000080
 		RequiresCondition: invulnerability
 	DamageMultiplier@ironcurtain:
 		RequiresCondition: invulnerability
 		Modifier: 0
-	Targetable@ironcurtain:
-		TargetTypes: IronCurtainable
-	Targetable@ironcurtained:
-		TargetTypes: IronCurtained
-		RequiresCondition: invulnerability
 	TimedConditionBar@invulnerability:
 		Condition: invulnerability
 	ExternalCondition@INVULNERABILITY:
 		Condition: invulnerability
 
 ^KilledByIronCurtain:
-	Targetable@ironcurtain:
-		TargetTypes: IronCurtainable
 	KillsSelf@ironcurtain:
 		DamageTypes: FlameDeath, NonTemporal
 		RequiresCondition: invulnerability
@@ -273,6 +251,7 @@
 		Condition: invulnerability
 
 ^ForceShieldable:
+	Inherits: ^PowerOutageOnForceShield
 	WithColoredOverlay@forceshield:
 		Color: 00004080
 		RequiresCondition: forceshield
@@ -287,9 +266,6 @@
 		RequiresCondition: forceshield
 	ExternalCondition@FORCESHIELD:
 		Condition: forceshield
-	ExternalCondition@POWEROUTAGE:
-		Condition: power-outage
-		RequiresCondition: forceshield
 
 ^AffectedByIndustrialPlant:
 	ProductionCostMultiplier@1_INDUSTRAL_PLANT:
@@ -309,6 +285,7 @@
 		Prerequisites: prerequisite.five_naindp
 
 ^ChronoDisable:
+	Inherits@CHRONO: ^Chronoable
 	AffectedByTemporal:
 		Condition: affectedbytemporal
 		RevokeDelay: 120
@@ -319,9 +296,6 @@
 		DeathTypes: Temporal
 	Targetable:
 		RequiresCondition: !affectedbytemporal
-	Targetable@ChronoDisable:
-		TargetTypes: ChronoDisable
-		RequiresCondition: !airborne
 	SpeedMultiplier@ChronoDisable:
 		Modifier: 0
 		RequiresCondition: chronodisable
@@ -348,78 +322,8 @@
 	AffectedByTemporal:
 		RequiresCondition: !invulnerability && !forceshield
 
-^TankBunkerable:
-	FirepowerMultiplier@TANK_BUNKER:
-		Modifier: 130
-		RequiresCondition: in-tank-bunker
-	ReloadDelayMultiplier@TANK_BUNKER:
-		Modifier: 77
-		RequiresCondition: in-tank-bunker
-	RangeMultiplier@TANK_BUNKER:
-		Modifier: 134 # This is meant to be +2
-		RequiresCondition: in-tank-bunker
-	Passenger:
-		CargoType: GarrisonerVehicle
-		CargoConditions:
-			natbnk: in-tank-bunker
-
-^MindController:
-	MindController:
-		ArmamentNames: primary
-		ControllingCondition: controlling
-		Sounds: iyurat1a.wav
-	WithMindControllerPipsDecoration:
-		Margin: 4, 3
-		Palette: ra
-		Position: BottomLeft
-		RequiresSelection: true
-	WithMindControlArc:
-		UsePlayerColor: true
-		Offset: 0, 0, 1024
-	AutoTargetPriority@DEFAULT:
-		ValidTargets: MindControl
-		RequiresCondition: !controlling
-
-^MindControllable:
-	MindControllable:
-		RevokeControlSounds: gmindcle.wav
-		Condition: controlled
-	WithMindControlArc:
-		UsePlayerColor: true
-		Offset: 0,0,960
-	Targetable@MC:
-		TargetTypes: MindControl
-		RequiresCondition: !controlled && !permamc && !airborne
-	WithIdleOverlay@mindcontrol:
-		Image: mindcontrol
-		Sequence: mindcontrol
-		Palette: effect
-		RequiresCondition: controlled || permamc
-	Capturable@PERMAMC:
-		Types: permamc
-		RequiresCondition: !controlled && !permamc
-	CaptureManager:
-	ExternalCondition@PERMAMC:
-		Condition: permamc
-
-^MindControllableDisabledWithIC:
-	Inherits: ^MindControllable
-	MindControllable:
-		PauseOnCondition: invulnerability
-
-^MindControllableBuilding:
-	Inherits: ^MindControllableDisabledWithIC
-	MindControllable:
-		PauseOnCondition: invulnerability || forceshield
-	Targetable@MC:
-		TargetTypes: MindControlBuilding
-		RequiresCondition: !controlled
-	WithIdleOverlay@mindcontrol:
-		RequiresCondition: controlled
-	-Capturable@PERMAMC:
-	-ExternalCondition@PERMAMC:
-
 ^Berserkable:
+	Inherits@CHAOS: ^ChaosGasable
 	FirepowerMultiplier@CHAOS:
 		Modifier: 130
 		RequiresCondition: chaos
@@ -434,9 +338,6 @@
 	TimedConditionBar@CHAOS:
 		Color: 880088
 		Condition: chaos
-	Targetable@CHAOS:
-		TargetTypes: ChaosGasable
-		RequiresCondition: !airborne
 	ExternalCondition@CHAOS:
 		Condition: chaos
 
@@ -446,14 +347,12 @@
 		Color: 2A002A40
 
 ^TerrorDronable:
+	Inherits@DRONEINFECT: ^DroneInfectable
 	InfectableRV:
 		RequiresCondition: !chronodisable
 		KillInfectorDamageTypes: KillsDrone
 		BeingInfectedCondition: beingterrordroned
 		InfectedCondition: terrordroned
-	Targetable@DRONE:
-		TargetTypes: TerrorDronable
-		RequiresCondition: !chronodisable && !airborne
 	RevealsShroud@DRONE:
 		Range: 2c0
 		ValidRelationships: Enemy, Neutral
@@ -472,6 +371,7 @@
 		Type: CenterPosition
 
 ^SquidGrabbable:
+	Inherits@SQUIDINFECT: ^SquidInfectable
 	InfectableOld:
 		RequiresCondition: !chronodisable
 		RemoveInfectorDamageTypes: RemovesSquid
@@ -482,16 +382,13 @@
 		Range: 5c0
 		ValidRelationships: Enemy, Neutral
 		RequiresCondition: squid
-	Targetable@SQUID:
-		TargetTypes: SquidInfection
-		RequiresCondition: !chronodisable
 	SpeedMultiplier@SQUID:
 		RequiresCondition: beinginfected
 		Modifier: 0
 
 ^WithFeedbackVoicelines:
 	GrantRandomCondition@Feedback:
-		Conditions: playfeedback #, dontplayfeedback, dontplayfeedback, dontplayfeedback
+		Conditions: playfeedback , dontplayfeedback, dontplayfeedback, dontplayfeedback
 	GrantConditionOnDamageState@Feedback:
 		Condition: feedback
 		ValidDamageStates: Critical
@@ -499,83 +396,6 @@
 		RequiresCondition: feedback && playfeedback
 		Voice: Feedback
 		ValidRelationships: None
-
-^AutoTargetInfantry:
-	AutoTarget:
-		AttackAnythingCondition: stance-attackanything
-	AutoTargetPriority@DEFAULT:
-		RequiresCondition: !stance-attackanything
-		ValidTargets: Infantry
-		InvalidTargets: NoAutoTarget
-	AutoTargetPriority@ATTACKANYTHING:
-		RequiresCondition: stance-attackanything
-		ValidTargets: Infantry
-		InvalidTargets: NoAutoTarget
-
-^AutoTargetInfantryAssaultMove:
-	Inherits: ^AutoTargetGround
-	AutoTargetPriority@DEFAULT:
-		RequiresCondition: !stance-attackanything && !assault-move
-	AutoTargetPriority@ATTACKANYTHING:
-		RequiresCondition: stance-attackanything || assault-move
-	AttackMove:
-		AssaultMoveCondition: assault-move
-		Voice: Attack
-
-^AutoTargetGround:
-	AutoTarget:
-		AttackAnythingCondition: stance-attackanything
-	AutoTargetPriority@DEFAULT:
-		RequiresCondition: !stance-attackanything
-		ValidTargets: Infantry, Vehicle, TerrorDrone, Water, Underwater, SeaAnimal, Defense, Mine
-		InvalidTargets: NoAutoTarget, WaterStructure
-	AutoTargetPriority@ATTACKANYTHING:
-		RequiresCondition: stance-attackanything
-		ValidTargets: Infantry, Vehicle, TerrorDrone, Water, Underwater, SeaAnimal, Structure, Defense, Mine
-		InvalidTargets: NoAutoTarget
-
-^AutoTargetGroundAssaultMove:
-	Inherits: ^AutoTargetGround
-	AutoTargetPriority@DEFAULT:
-		RequiresCondition: !stance-attackanything && !assault-move
-	AutoTargetPriority@ATTACKANYTHING:
-		RequiresCondition: stance-attackanything || assault-move
-	AttackMove:
-		AssaultMoveCondition: assault-move
-		Voice: Attack
-
-^AutoTargetAir:
-	AutoTarget:
-	AutoTargetPriority@DEFAULT:
-		ValidTargets: Air
-		InvalidTargets: NoAutoTarget
-
-^AutoTargetAirAssaultMove:
-	Inherits: ^AutoTargetAir
-	AttackMove:
-		Voice: Attack
-
-^AutoTargetAll:
-	AutoTarget:
-		AttackAnythingCondition: stance-attackanything
-	AutoTargetPriority@DEFAULT:
-		RequiresCondition: !stance-attackanything
-		ValidTargets: Infantry, Vehicle, TerrorDrone, Water, Underwater, SeaAnimal, Air, Defense, Mine
-		InvalidTargets: NoAutoTarget, WaterStructure
-	AutoTargetPriority@ATTACKANYTHING:
-		RequiresCondition: stance-attackanything
-		ValidTargets: Infantry, Vehicle, TerrorDrone, Water, Underwater, SeaAnimal, Air, Structure, Defense, Mine
-		InvalidTargets: NoAutoTarget
-
-^AutoTargetAllAssaultMove:
-	Inherits: ^AutoTargetAll
-	AutoTargetPriority@DEFAULT:
-		RequiresCondition: !stance-attackanything && !assault-move
-	AutoTargetPriority@ATTACKANYTHING:
-		RequiresCondition: stance-attackanything || assault-move
-	AttackMove:
-		AssaultMoveCondition: assault-move
-		Voice: Attack
 
 ^PlayerHandicaps:
 	HandicapFirepowerMultiplier:
@@ -597,69 +417,6 @@
 		Condition: surfaced
 		RevokeDelay: 100
 		ArmamentNames: primary, missile
-
-^DisableOnLowPower:
-	WithColoredOverlay@IDISABLE:
-		Color: 00000080
-		RequiresCondition: disabled
-	GrantConditionOnPowerState@LOWPOWER:
-		Condition: lowpower
-		ValidPowerStates: Low, Critical
-	GrantCondition@IDISABLE:
-		RequiresCondition: lowpower
-		Condition: disabled
-
-^DisableOnLowPowerOrPowerDown:
-	Inherits: ^DisableOnLowPower
-	GrantCondition@IDISABLE:
-		RequiresCondition: lowpower || powerdown
-		Condition: disabled
-	ToggleConditionOnOrder:
-		DisabledSound: EnablePower
-		EnabledSound: DisablePower
-		Condition: powerdown
-		OrderName: PowerDown
-	WithDecoration@POWERDOWN:
-		Image: poweroff
-		Sequence: offline
-		Palette: ts-mouse
-		RequiresCondition: powerdown
-		Position: Center
-	PowerMultiplier@POWERDOWN:
-		RequiresCondition: powerdown
-		Modifier: 0
-
-^DisabledByPowerOutage:
-	WithColoredOverlay@IDISABLE:
-		Color: 00000080
-		RequiresCondition: disabled
-	GrantCondition@IDISABLE:
-		RequiresCondition: power-outage || diskdrain || forceshield
-		Condition: disabled
-	AffectedByPowerOutage:
-		Condition: power-outage
-	InfiltrateForPowerOutage:
-		Types: SpyInfiltrate
-		InfiltratedNotification: PowerSabotaged
-		InfiltrationNotification: BuildingInfiltratedPowerSabotaged
-	Power:
-		RequiresCondition: !disabled
-
-^DiskDrainable:
-	ExternalCondition@DISKDRAIN:
-		Condition: power-outage
-	Targetable@DISKDRAIN:
-		TargetTypes: DiskDrain
-
-^DiskDefenseDrainable:
-	ExternalCondition@DISKDRAIN:
-		Condition: diskdrain
-	Targetable@DISKDRAIN:
-		TargetTypes: DiskDefenseDrain
-
-^DiskStealable:
-	Targetable@DISKSTEAL:
-		TargetTypes: DiskSteal
 
 ^SelectableBuilding:
 	IsometricSelectable:
@@ -689,7 +446,7 @@
 		ClosingSequence: close
 		ShadowSequence: shadow
 		RequiresCondition: parachute
-	Passenger:
+	Passenger@TRANSPORT:
 
 ^ParachutableInfantry:
 	Inherits: ^Parachutable
@@ -846,26 +603,6 @@
 	RejectsOrders@TRACTING:
 		RequiresCondition: tracted
 
-^DogImmunity:
-	Targetable@DOGIMMUNITY:
-		TargetTypes: DogImmune
-
-^RadiationImmunity:
-	Targetable@RADIATIONIMMUNITY:
-		TargetTypes: ImmuneToRadiation
-
-^PsiWaveImmunity:
-	Targetable@PSIWAVEIMMUNITY:
-		TargetTypes: ImmuneToFriendlyPsiWave
-
-^SonicZapImmunity:
-	Targetable@SONICZAPIMMUNITY:
-		TargetTypes: ImmuneToAllySonic
-
-^Spyable:
-	Targetable@SPY:
-		TargetTypes: SpyInfiltrate
-
 ^Disguisable:
 	DisguiseTooltip:
 		RequiresCondition: disguise && showownername
@@ -944,139 +681,6 @@
 		ValidRelationships: Ally, Neutral
 	RepairsBridges:
 		RepairNotification: BridgeRepaired
-
-^Deployable:
-	Mobile:
-		RequireForceMoveCondition: !undeployed
-	Passenger:
-		RequireForceMoveCondition: !undeployed
-	Garrisoner:
-		RequireForceMoveCondition: !undeployed
-	AttackFrontal:
-		RequiresCondition: undeployed && !chronodisable
-	GrantConditionOnDeploy:
-		DeployedCondition: deployed
-		UndeployedCondition: undeployed
-		CanDeployOnRamps: True
-		SmartDeploy: True
-		Facing: 384
-		Voice: Deploy
-		UndeployOnMove: true
-		PauseOnCondition: chronodisable
-		RequiresCondition: !parachute
-	WithInfantryBody:
-		RequiresCondition: undeployed && !parachute
-	WithSpriteBody:
-		Sequence: dot
-		Name: dot
-		RequiresCondition: !undeployed
-	WithMakeAnimation:
-		Sequence: deploy
-		BodyNames: dot
-	RejectsOrders@deployment:
-		Reject: AttackMove, AssaultMove
-		RequiresCondition: !ai-control && deployed
-	RejectsMoveToAttack:
-		RequiresCondition: !ai-control && deployed
-	TakeCover:
-		RequiresCondition: undeployed
-
-^WithDeployedTurret:
-	Inherits@Deploy: ^Deployable
-	Turreted:
-		Turret: deploy
-		RealignDelay: -1
-		TurnSpeed: 1023
-		InitialFacing: 368
-	AttackTurreted@deployed:
-		Armaments: deployed
-		Turrets: deploy
-		Voice: Attack
-		RequiresCondition: deployed
-		OutsideRangeRequiresForceFire: True
-	GrantConditionOnAttack:
-		Condition: animate-turret
-		RevokeDelay: 10
-		ArmamentNames: deployed
-	WithSpriteTurret@idle:
-		Turret: deploy
-		Sequence: deployed
-		RequiresCondition: deployed && !animate-turret && !parachute
-	WithSpriteTurret@animated:
-		Turret: deploy
-		Sequence: deployed-shoot
-		RequiresCondition: deployed && animate-turret && !parachute
-
-^TimedDeployable:
-	Mobile:
-		RequiresCondition: !deployed && !deploying && !chronodisable
-	GrantTimedConditionOnDeploy:
-		DeployedTicks: 40
-		CooldownTicks: 0
-		Facing: 96
-		Voice: Attack
-		DeployedCondition: deployed
-		DeployingCondition: deploying
-		DeployAnimation: deploy
-		UndeployAnimation: undeploy
-		ShowSelectionBar: false
-		PauseOnCondition: chronodisable || controlling
-	WithInfantryBody:
-		RequiresCondition: !deployed && !deploying && !parachute
-	WithSpriteBody@DEPLOYED:
-		Sequence: deployed
-		PauseOnCondition: chronodisable
-		RequiresCondition: (deployed || deploying) && !parachute
-
-^PsiWaveOnDeploy:
-	Inherits@DEPLOY: ^TimedDeployable
-	PeriodicExplosion:
-		Weapon: PsiWave
-		LocalOffset: 0, 0, 128
-		RequiresCondition: deployed && !chronodisable
-
-^SuperPsiWaveOnDeploy:
-	Inherits@DEPLOY: ^TimedDeployable
-	PeriodicExplosion:
-		Weapon: SuperPsiWave
-		LocalOffset: 0, 0, 128
-		RequiresCondition: deployed && !chronodisable
-
-^WithDeployAnimation:
-	Inherits@DEPLOY: ^Deployable
-	WithInfantryBody@Deployed:
-		StandSequences: deployed
-		DefaultAttackSequence: deployed-shoot
-		RequiresCondition: deployed && !parachute
-
-^ExplodeOnDeploy:
-	GrantConditionOnAttack:
-		Condition: triggered
-	GrantConditionOnDeploy:
-		Voice: Attack
-		CanDeployOnRamps: True
-		DeployedCondition: triggered
-		PauseOnCondition: chronodisable
-	KillsSelf@triggered:
-		DamageTypes: NonTemporal
-		RequiresCondition: triggered
-
-^WithIvanExplosion:
-	Explodes:
-		DeathTypes: NonTemporal
-		Weapon: IvanBomber
-		EmptyWeapon: IvanBomber
-
-^WithTerroristExplosion:
-	Inherits@EXPLODE: ^ExplodeOnDeploy
-	Explodes:
-		DeathTypes: NonTemporal
-		Weapon: TerrorBomb
-		EmptyWeapon: TerrorBomb
-	Explodes@Targeted:
-		DeathTypes: NonTemporal
-		Weapon: TargetedTerrorBomb
-		EmptyWeapon: TargetedTerrorBomb
 
 ^DetectCloaked:
 	DetectCloaked:
@@ -1180,11 +784,6 @@
 	ScaredyCat:
 		AttackPanicChance: 0
 
-^Garrisoner:
-	Garrisoner:
-		Voice: Move
-		GarrisonType: Garrisoner
-
 ^SuddenDeathModifier:
 	MustBeDestroyed:
 		RequiresCondition: !suddendeath
@@ -1218,7 +817,7 @@
 		Prerequisites: global-multiqueue
 
 ^Radar:
-	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@LOWPOWER: ^DisabledOnLowPowerOrPowerDown
 	Inherits@SPY: ^Spyable
 	ProvidesRadar:
 		RequiresCondition: !chronodisable && !disableradar
@@ -1254,49 +853,6 @@
 		EndSequence: repair-end
 		ResupplyCondition: resupplying
 		PauseOnCondition: chronodisable
-
-^Garrisonable:
-	Inherits@AUTOTARGET: ^AutoTargetAll
-	Targetable@DEFENSE:
-		TargetTypes: Defense
-		RequiresCondition: loaded
-	AttackOpenTopped:
-		Armaments: garrisoned
-		PortOffsets: 768,0,1024, 448,-682,1024, -448,-682,1024, -768,0,1024, -448,682,1024, 448,682,1024
-		RandomMuzzleActivations: true
-		MuzzleActivationDelay: 5
-		PauseOnCondition: chronodisable
-	Garrisonable:
-		Types: Garrisoner
-		MaxWeight: 10
-		AfterLoadDelay: 0
-		BeforeUnloadDelay: 0
-		AfterUnloadDelay: 0
-		EjectOnDeath: true
-		OwnerChangedAffectsGarrisoners: false
-		LoadedCondition: loaded
-		RequiresCondition: !dmg_crit
-	WithGarrisonPipsDecoration:
-		EmptySequence: pip-garrison-empty
-		FullSequence: pip-garrison-green
-		Margin: 4, 3
-		PipStride: 4, 2
-		Palette: ra
-		Position: BottomLeft
-		RequiresSelection: true
-		CustomPipSequences:
-			gray: pip-garrison-gray
-			yellow: pip-garrison-yellow
-			blue: pip-garrison-blue
-			red: pip-garrison-red
-	WithIdleOverlay@garrisoned:
-		Sequence: garrisoned
-		RequiresCondition: loaded
-	WithGarrisonSounds:
-		EnterSound: ugarris.wav
-		EnterNotification: StructureGarrisoned
-		ExitNotification: StructureAbandoned
-	ChangeOwnerOnGarrison:
 
 ^CollapsingMonumentSound:
 	DeathSounds:
@@ -1342,38 +898,6 @@
 		Palette: ra
 		Position: BottomLeft
 		RequiresSelection: true
-
-^CarryVehiclesAndInfantries:
-	Cargo:
-		Types: Infantry, Garrisoner, SmallVehicle, Vehicle, GarrisonerVehicle, NaturalVehicle
-		MaxWeight: 12
-		AfterLoadDelay: 0
-		BeforeUnloadDelay: 0
-		AfterUnloadDelay: 0
-		PassengerFacing: 384
-		UnloadTerrainTypes: Clear, Rough, Rail, Road, DirtRoad, Beach, Ore, Gems
-		UnloadVoice: Move
-		EjectOnDeath: false
-		LoadingCondition: notmobile
-	WithCargoSounds:
-		EnterSound: genter1a.wav
-		ExitSound: gexit1a.wav
-	WithCargoPipsDecoration:
-		Margin: 4, 3
-		Palette: ra
-		Position: BottomLeft
-		RequiresSelection: true
-		CustomPipSequences:
-			gray: pip-gray
-			yellow: pip-yellow
-			blue: pip-blue
-			red: pip-red
-
-^CarryInfantries:
-	Inherits: ^CarryVehiclesAndInfantries
-	Cargo:
-		Types: Infantry, Garrisoner
-		MaxWeight: 5
 
 ^RepairableVehicle:
 	Repairable@GROUND:

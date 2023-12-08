@@ -1,22 +1,40 @@
 ltnk:
-	Inherits: ^MainBattleTank
+	Inherits: ^GroundVehicle
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BUNKER: ^BunkerableVehicle
+	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@VETERAN: ^ProducibleAsVeteranVehicle
+	Inherits@MC: ^MindControllable
+	Inherits@RADIATON: ^DamagedByRadiation10Percent
+	Inherits@ANNOUNCE: ^AnnounceProduction
+	Inherits@TURRET: ^WithVoxelTurret
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Yuri
 		Description: Yuri Main Battle Tank.\n\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft\n\nUpgradeable with:\n- Grinder Treads\n- Autoloaders\n- Chaos Tank Compensators (Yurigrad)\n- Laser Capacitors (Lazarus Corps)
 		Prerequisites: ~vehicle.yuri, ~techlevel.1
-		BuildDuration: 375
 		BuildDurationModifier: 100
+		BuildPaletteOrder: 20
+	Selectable:
+		Bounds: 1544, 2509, 0, -289
+	Health:
+		HP: 30000
+	Armor:
+		Type: Heavy
 	Valued:
 		Cost: 700
 	DeliversCash:
 		Payload: 700
+	Mobile:
+		Speed: 105
+		TurnSpeed: 32
+		Locomotor: heavytracked
+	RevealsShroud:
+		Range: 6c0
 	Tooltip:
+		Name: Lasher Light Tank
 	Tooltip@NoRow:
 		Name: Lasher Light Tank
-	Mobile:
-		Speed: 120
-	Health:
-		HP: 20000
 	Armament@primary:
 		Weapon: ATGUN
 		Damage: 65
@@ -33,23 +51,10 @@ ltnk:
 		LocalOffset: 800,0,832
 		MuzzleSequence: muzzle-2
 		RequiresCondition: rank-elite
-	WithVoxelTurret:
-	-WithVoxelBarrel:
-	Selectable:
-		Bounds: 1544, 2509, 0, -289
+	AttackTurreted:
+		Voice: Attack
+	WithMuzzleOverlay:
+	WithVoxelBody:
 	Voiced:
 		VoiceSet: LasherTankVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
-	# GrantConditionOnMovement@MoveStart:
-	#	Condition: moving
-	#	ValidMovementTypes: Horizontal, Turn
-	# SoundAnnouncement:
-	#	SoundFiles: vlasstaa.wav, vlasstab.wav, vlasstac.wav
-	#	Volume: 0.35
-	#	RequiresCondition: moving
 

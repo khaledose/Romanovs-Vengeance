@@ -1,0 +1,6 @@
+AlliedConstructionVehicleVoice:
+	DefaultVariant: .wav
+	Voices:
+		Build: vmcaseb
+		Select: vmcasea, vmcasec, vmcased, vmcasee, vmcasef
+		Move: vmcamoa, vmcamob, vmcamoc, vmcamod, vmcamoe, vmcamof

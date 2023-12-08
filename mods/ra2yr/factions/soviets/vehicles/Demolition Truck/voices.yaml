@@ -1,0 +1,8 @@
+DemolitionTruckVoice:
+	DefaultVariant: .wav
+	Voices:
+		Build: vdemsea
+		Select: vdemseb, vdemsec, vdemsed
+		Move: vdemmoa, vdemmob, vdemmoc
+		Attack: vdemata, vdematb, vdematc, vdematd, vdemate
+		Die: vdemdiea

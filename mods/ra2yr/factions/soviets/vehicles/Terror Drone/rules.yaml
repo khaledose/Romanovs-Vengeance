@@ -44,7 +44,6 @@ dron:
 	-RevealsShroud@DRONE:
 	-PeriodicExplosion@dronesparks:
 	-RenderVoxels:
-	-Carryable:
 	-CaptureManager:
 	-Capturable:
 	WithInfantryBody:

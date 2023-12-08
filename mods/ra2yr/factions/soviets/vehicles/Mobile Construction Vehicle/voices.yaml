@@ -1,0 +1,6 @@
+SovietConstructionVehicleVoice:
+	DefaultVariant: .wav
+	Voices:
+		Build: vmcssee
+		Select: vmcssea, vmcsseb, vmcssec, vmcssed
+		Move: vmcsmoa, vmcsmob, vmcsmoc, vmcsmod, vmcsmoe

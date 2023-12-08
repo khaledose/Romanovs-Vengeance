@@ -1,48 +1,40 @@
 sref:
-	Inherits: ^Vehicle
+	Inherits: ^GroundVehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@BUNKER: ^TankBunkerable
+	Inherits@BUNKER: ^BunkerableVehicle
 	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@VETERAN: ^ProducibleAsVeteranVehicle
-	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@MC: ^MindControllable
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	Inherits@ANNOUNCE: ^AnnounceProduction
+	Inherits@TURRET: ^WithVoxelTurret
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Allies
-		BuildPaletteOrder: 100
 		Prerequisites: ~vehicle.allies, gatech, ~techlevel.4
 		Description: Fires deadly beams of light.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
-		BuildDuration: 625
 		BuildDurationModifier: 100
-	UpdatesPlayerStatistics:
-		AddToArmyValue: true
-	Valued:
-		Cost: 1200
-	DeliversCash:
-		Payload: 1200
-	Tooltip:
-	Tooltip@NoRow:
-		Name: Prism Tank
+		BuildPaletteOrder: 100
 	Selectable:
 		Bounds: 1544, 2509, 0, -482
 	Health:
 		HP: 25000
 	Armor:
 		Type: Light
+	Valued:
+		Cost: 1200
+	DeliversCash:
+		Payload: 1200
 	Mobile:
 		TurnSpeed: 32
 		Speed: 75
 		Locomotor: heavytracked
 	RevealsShroud:
 		Range: 6c0
-	# RevealsShroudToIntelligenceOwner:
-	#	Types: SatelliteScan
-	#	Range: 6c0
-	RevealOnDeath:
-		Radius: 6c0
-	Turreted:
-		TurnSpeed: 32
-		Offset: -30,0,85
+	Tooltip:
+		Name: Prism Tank
+	Tooltip@NoRow:
+		Name: Prism Tank
 	Armament@primary:
 		Weapon: Comet
 		Damage: 100
@@ -55,12 +47,8 @@ sref:
 		RequiresCondition: rank-elite
 	AttackTurreted:
 		Voice: Attack
-		OpportunityFire: true
-		TargetFrozenActors: true
-		PauseOnCondition: chronodisable || parachute
-	AutoTarget:
-	RenderSprites:
-	RenderVoxels:
+	Turreted:
+		Offset: -30,0,85
 	GrantConditionOnAttack@turretcharge1:
 		Condition: turretcharge
 		RevokeDelay: 5
@@ -84,18 +72,3 @@ sref:
 	WithVoxelBody:
 	Voiced:
 		VoiceSet: PrismTankVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
-	HitShape:
-	# GrantConditionOnMovement@MoveStart:
-	#	Condition: moving
-	#	ValidMovementTypes: Horizontal, Turn
-	# SoundAnnouncement:
-	#	SoundFiles: vpristaa.wav, vpristab.wav, vpristac.wav
-	#	Volume: 0.3
-	#	RequiresCondition: moving
-

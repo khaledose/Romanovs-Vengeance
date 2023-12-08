@@ -1,6 +1,6 @@
 gaspysat:
 	Inherits: ^BaseStructure
-	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@LOWPOWER: ^DisabledOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:

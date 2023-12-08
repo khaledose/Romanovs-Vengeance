@@ -303,11 +303,11 @@
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
 	Production:
-		PauseOnCondition: chronodisable || disabled
+		PauseOnCondition: chronodisable
 		RequiresCondition: multiqueue
 	Production@Shared:
 		Produces: Building.Shared, Support.Shared
-		PauseOnCondition: chronodisable || disabled
+		PauseOnCondition: chronodisable
 		RequiresCondition: !multiqueue
 	ProductionBar@Building:
 	ProductionBar@Support:
@@ -326,7 +326,7 @@
 		Facing: 384
 		Voice: Move
 		DeployCursor: undeploy
-		PauseOnCondition: chronodisable || controlled || disabled
+		PauseOnCondition: chronodisable || controlled
 		RequiresCondition: factundeploy && !build-incomplete
 	TransformsIntoMobile:
 		RequiresCondition: factundeploy && !build-incomplete && !chronodisable && !controlled
@@ -361,15 +361,14 @@
 ^PowerPlant:
 	Inherits: ^BaseStructure
 	Inherits@CAPTURE: ^Capturable
-	Inherits@DRAIN: ^DiskDrainable
 	Inherits@MC: ^MindControllableBuilding
-	Inherits@POWEROUTAGE: ^DisabledByPowerOutage
+	Inherits@LOWPOWER: ^DisabledOnLowPower
+	Inherits@POWEROUTAGE: ^PowerOutageOnInfiltration
+	Inherits@DISKPOWEROUTAGE: ^PowerOutageOnDiskDrain
 	Inherits@SPY: ^Spyable
 	Buildable:
 		Description: Provides power for other structures.
 		BuildPaletteOrder: 10
-	Power:
-		RequiresCondition: !chronodisable && !disabled
 	PowerTooltip:
 	ScalePowerWithHealth:
 	SoundOnDamageTransition:
@@ -801,7 +800,7 @@ warfactory.infiltrated:
 
 ^SuperWeapon:
 	Inherits: ^BaseStructure
-	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@LOWPOWER: ^DisabledOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@SPY: ^Spyable
 	RevealsShroud@ToEnemy:

@@ -1,22 +1,40 @@
 htnk:
-	Inherits: ^MainBattleTank
+	Inherits: ^GroundVehicle
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BUNKER: ^BunkerableVehicle
+	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@VETERAN: ^ProducibleAsVeteranVehicle
+	Inherits@MC: ^MindControllable
+	Inherits@RADIATON: ^DamagedByRadiation10Percent
+	Inherits@ANNOUNCE: ^AnnounceProduction
+	Inherits@TURRET: ^WithVoxelTurret
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Soviets
 		Description: Soviet Main Battle Tank.\n\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft\n\nUpgradeable with:\n- Nuclear Engines\n- Uranium Shells\n- Advanced Irradiators (Iraq)
 		Prerequisites: ~vehicle.soviets, ~techlevel.1
-		BuildDuration: 500
 		BuildDurationModifier: 100
+		BuildPaletteOrder: 20
+	Selectable:
+		Bounds: 1544, 2509, 0, -289
+	Health:
+		HP: 30000
+	Armor:
+		Type: Heavy
 	Valued:
-		Cost: 900
+		Cost: 700
 	DeliversCash:
-		Payload: 900
+		Payload: 700
+	Mobile:
+		Speed: 105
+		TurnSpeed: 32
+		Locomotor: heavytracked
+	RevealsShroud:
+		Range: 6c0
 	Tooltip:
+		Name: Rhino Heavy Tank
 	Tooltip@NoRow:
 		Name: Rhino Heavy Tank
-	Mobile:
-		Speed: 90
-	Health:
-		HP: 40000
 	Armament@primary:
 		Weapon: 120mm
 		Damage: 90
@@ -26,7 +44,6 @@ htnk:
 		MuzzleSequence: muzzle
 		RequiresCondition: !rank-elite
 	Armament@elite:
-		Name: elite
 		Weapon: 120mmE
 		Damage: 180
 		Recoil: 87
@@ -35,30 +52,12 @@ htnk:
 		MuzzleSequence: muzzle-2
 		RequiresCondition: rank-elite
 	AttackTurreted:
-		Armaments: primary, elite
+		Voice: Attack
+	WithMuzzleOverlay:
+	RenderVoxels:
+		NormalsPalette: ts-normals
 	WithVoxelBody:
 	WithVoxelBarrel:
-		RequiresCondition: !rank-elite
-	WithVoxelBarrel@ELITE:
-		Armament: elite
-		RequiresCondition: rank-elite
-	Selectable:
-		Bounds: 1544, 2509, 0, -289
-	RenderVoxels:
-		LightAmbientColor: 0.5,0.5,0.5
 	Voiced:
 		VoiceSet: SovietVehicleVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
-	# GrantConditionOnMovement@MoveStart:
-	#	Condition: moving
-	#	ValidMovementTypes: Horizontal, Turn
-	# SoundAnnouncement:
-	#	SoundFiles: vrhistaa.wav, vrhistab.wav, vrhistac.wav, vrhistad.wav
-	#	Volume: 0.3
-	#	RequiresCondition: moving
 

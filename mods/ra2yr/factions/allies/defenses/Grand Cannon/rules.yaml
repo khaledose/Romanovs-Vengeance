@@ -1,10 +1,11 @@
 gtgcan:
 	Inherits: ^DefenseStructure
 	Inherits@AUTOTARGET: ^AutoTargetGround
-	Inherits@DRAIN: ^DiskDefenseDrainable
-	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@DRAIN: ^DisabledOnDiskDrain
+	Inherits@LOWPOWER: ^DisabledOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@SHAPE: ^2x2Shape
+	Inherits@TURRET: ^WithVoxelTurretBuildingPowered
 	Buildable:
 		Queue: Support.Shared, Support.Allies, Support.France
 		Prerequisites: ~building.france, gaairc, ~techlevel.3
@@ -37,25 +38,13 @@ gtgcan:
 		LocalOffset: 1792,0,1280
 	Turreted:
 		TurnSpeed: 12
-		InitialFacing: 896
 		Offset: 400,0,0
 		RealignDelay: -1
-	AttackTurreted:
-		PauseOnCondition: build-incomplete || disabled || chronodisable
-	BodyOrientation:
-		QuantizedFacings: 16
+	WithMuzzleOverlay:
 	RenderVoxels:
-		Scale: 11.7
-		LightYaw: 800
-		LightPitch: 150
-		LightAmbientColor: -0.5,-0.5,-0.5
-		LightDiffuseColor: 1.3,1.3,1.3
 		NormalsPalette: ts-normals
-	WithVoxelTurret:
-		RequiresCondition: !build-incomplete
 	WithVoxelBarrel:
 		RequiresCondition: !build-incomplete
-	WithMuzzleOverlay:
 	Voiced:
 		VoiceSet: GrandCannonVoice
 		Volume: 0.5

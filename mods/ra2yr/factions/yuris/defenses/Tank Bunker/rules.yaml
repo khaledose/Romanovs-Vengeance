@@ -1,6 +1,7 @@
 natbnk:
 	Inherits: ^DefenseStructure
 	# Inherits@AUTOTARGET: ^AutoTargetAll
+	Inherits@CARGO: ^TankBunker
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
@@ -33,22 +34,6 @@ natbnk:
 		PortYaws: 0, 176, 341, 512, 682, 853
 		PortCones: 88, 88, 88, 88, 88, 88
 		PauseOnCondition: build-incomplete || chronodisable
-	Cargo:
-		Types: GarrisonerVehicle
-		MaxWeight: 3
-		AfterLoadDelay: 0
-		BeforeUnloadDelay: 0
-		AfterUnloadDelay: 0
-		EjectOnDeath: true
-		LoadedCondition: loaded
-	WithCargoOverlay:
-		Facing: 384
-		DisplayTypes: GarrisonerVehicle
-		LoadingSequences: loading, loading-front
-		LoadedSequences: loaded, loaded-front
-	WithCargoSounds:
-		EnterSound: btanupa.wav
-		ExitSound: btandowa.wav
 	Voiced:
 		VoiceSet: TankBunkerVoice
 		Volume: 0.8

@@ -1,91 +1,9 @@
-# e2:
-# 	Inherits: ^Infantry
-# 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-# 	Inherits@CHAOS: ^Berserkable
-# 	Inherits@EXPERIENCE: ^GainsExperience
-# 	Inherits@VETERAN: ^ProducibleAsVeteranInfantry
-# 	Inherits@MC: ^MindControllable
-# 	Inherits@VOICES: ^WithFeedbackVoicelines
-# 	Buildable:
-# 		Queue: Infantry.Shared, Infantry.Soviets
-# 		BuildAtProductionType: Soldier
-# 		Prerequisites: ~infantry.soviets, ~techlevel.1
-# 		BuildPaletteOrder: 10
-# 		Description: Cheap rifle infantry.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nUpgradeable with:\n- Bullet-Proof Coats\n- Molotov Cocktails\n- Armor-Piercing Bullets
-# 		BuildDuration: 75
-# 		BuildDurationModifier: 100
-# 	UpdatesPlayerStatistics:
-# 		AddToArmyValue: true
-# 	Valued:
-# 		Cost: 100
-# 	DeliversCash:
-# 		Payload: 50
-# 	Tooltip:
-# 	Tooltip@NoRow:
-# 		Name: Conscript
-# 	Selectable:
-# 		Bounds: 482, 1448, 0, -530
-# 	Health:
-# 		HP: 12500
-# 	Mobile:
-# 		Speed: 60
-# 	Garrisoner:
-# 		Voice: Move
-# 		GarrisonType: Garrisoner
-# 	Passenger:
-# 	RevealsShroud:
-# 		Range: 6c0
-# 	# RevealsShroudToIntelligenceOwner:
-# 	#	Range: 6c0
-# 	RevealOnDeath:
-# 		Radius: 6c0
-# 	AttackFrontal:
-# 		Voice: Attack
-# 		FacingTolerance: 2
-# 	Armament@primary:
-# 		Weapon: M1Carbine
-# 		Damage: 15
-# 		LocalOffset: 256,0,768
-# 		PauseOnCondition: chronodisable
-# 		RequiresCondition: !rank-elite
-# 	Armament@elite:
-# 		Weapon: M1CarbineE
-# 		Damage: 20
-# 		LocalOffset: 256,0,768
-# 		PauseOnCondition: chronodisable
-# 		RequiresCondition: rank-elite
-# 	Armament@opentopped:
-# 		Name: opentopped
-# 		Weapon: M1Carbine
-# 		PauseOnCondition: chronodisable
-# 		RequiresCondition: !rank-elite
-# 	Armament@elite-opentopped:
-# 		Name: opentopped
-# 		Weapon: M1CarbineE
-# 		PauseOnCondition: chronodisable
-# 		RequiresCondition: rank-elite
-# 	Armament@garrisoned:
-# 		Name: garrisoned
-# 		Weapon: UCM1Carbine
-# 		PauseOnCondition: chronodisable
-# 		RequiresCondition: !rank-elite
-# 	Armament@elite-garrisoned:
-# 		Name: garrisoned
-# 		Weapon: UCM1CarbineE
-# 		PauseOnCondition: chronodisable
-# 		RequiresCondition: rank-elite
-# 	WithSpriteBody@Parachute:
-# 		RequiresCondition: parachute
-# 	Voiced:
-# 		VoiceSet: ConscriptVoice
-# 	QuantizeFacingsFromSequence:
-# 		Sequence: stand
-
 e2:
 	Inherits: ^GroundInfantry
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@VETERAN: ^InfantryPromotable
 	Inherits@MC: ^MindControllable
+	Inherits@GARRISONER: ^Garrisoner
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Soviets
@@ -145,6 +63,3 @@ e2:
 	WithMuzzleOverlay:
 	Voiced:
 		VoiceSet: ConscriptVoice
-	Garrisoner:
-		Voice: Move
-		GarrisonType: Garrisoner

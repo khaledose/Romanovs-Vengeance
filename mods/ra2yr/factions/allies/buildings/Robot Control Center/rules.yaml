@@ -1,6 +1,6 @@
 garobo:
 	Inherits: ^BaseStructure
-	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@LOWPOWER: ^DisabledOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
@@ -26,7 +26,7 @@ garobo:
 		Name: Allied Robot Control Center
 	ProvidesPrerequisite@powered:
 		Prerequisite: powered_robo
-		RequiresCondition: !chronodisable
+		RequiresCondition: !disabled && !chronodisable
 	WithIdleOverlay@dish:
 		Sequence: idle-dish
 		PauseOnCondition: disabled || chronodisable

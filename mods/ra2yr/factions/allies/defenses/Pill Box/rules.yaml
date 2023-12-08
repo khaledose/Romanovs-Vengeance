@@ -3,6 +3,7 @@ gapill:
 	Inherits@SHAPE: ^1x1Shape
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@MC: ^MindControllableBuilding
+	Inherits@TURRET: ^WithTurret
 	Buildable:
 		Queue: Support.Shared, Support.Allies
 		Prerequisites: ~building.allies, gapile, ~techlevel.1
@@ -28,12 +29,6 @@ gapill:
 		Weapon: vulcan2
 		LocalOffset: 416,0,416
 		MuzzleSequence: muzzle
-	Turreted:
-		TurnSpeed: 1023
-	AttackTurreted:
-		PauseOnCondition: build-incomplete || chronodisable
-	BodyOrientation:
-		QuantizedFacings: 8
 	WithMuzzleOverlay:
 	Voiced:
 		VoiceSet: PillBoxVoice

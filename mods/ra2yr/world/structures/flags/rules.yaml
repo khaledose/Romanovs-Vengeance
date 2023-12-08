@@ -13,7 +13,7 @@ cadmfgl:
 		Prerequisites: global-domination
 	-Targetable:
 	-Targetable@Water:
-	-Targetable@ChronoDisable:
+	-Targetable@CHRONO:
 	DamageMultiplier@domination:
 		Modifier: 0
 	KillsSelf:

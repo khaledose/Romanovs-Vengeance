@@ -86,21 +86,21 @@ AlliedVehicleVoice:
 		Move: vgramoa, vgramob, vgramoc, vgramod, vgramoe, vgramof
 		Attack: vgraata, vgraatb, vgraatc, vgraatd, vgraate
 
-AlliedConstructionVehicleVoice:
-	DefaultVariant: .wav
-	Voices:
-		Build: vmcaseb
-		Select: vmcasea, vmcasec, vmcased, vmcasee, vmcasef
-		Move: vmcamoa, vmcamob, vmcamoc, vmcamod, vmcamoe, vmcamof
+# AlliedConstructionVehicleVoice:
+# 	DefaultVariant: .wav
+# 	Voices:
+# 		Build: vmcaseb
+# 		Select: vmcasea, vmcasec, vmcased, vmcasee, vmcasef
+# 		Move: vmcamoa, vmcamob, vmcamoc, vmcamod, vmcamoe, vmcamof
 
-ChronoMinerVoice:
-	DefaultVariant: .wav
-	Voices:
-		Build: vchrsec
-		Select: vchrsea, vchrseb, vchrsed, vchrsee
-		Move: vchrmoa, vchrmob, vchrmoc, vchrmod, vchrmoe
-		Harvest: vchrhaa, vchrhab, vchrhac, vchrhad, vchrhae
-		Deliver: vchrgoa, vchrgob, vchrgoc, vchrgod, vchrgoe
+# ChronoMinerVoice:
+# 	DefaultVariant: .wav
+# 	Voices:
+# 		Build: vchrsec
+# 		Select: vchrsea, vchrseb, vchrsed, vchrsee
+# 		Move: vchrmoa, vchrmob, vchrmoc, vchrmod, vchrmoe
+# 		Harvest: vchrhaa, vchrhab, vchrhac, vchrhad, vchrhae
+# 		Deliver: vchrgoa, vchrgob, vchrgoc, vchrgod, vchrgoe
 
 IFVVoice:
 	DefaultVariant: .wav
@@ -133,13 +133,13 @@ HowitzerVoice:
 		Move: vhowmoa, vhowmob, vhowmoc, vhowmod, vhowmof, vhowmog, vhowmoh, vhowmoi, vhowmoj
 		Attack: vhowata, vhowatb, vhowatc, vhowatd, vhowate, vhowatf, vhowatg, vhowath
 
-TankDestroyerVoice:
-	DefaultVariant: .wav
-	Voices:
-		Build: vtansea
-		Select: vtanseb, vtansec, vtansed, vtansee
-		Move: vtanmoa, vtanmob, vtanmoc, vtanmod
-		Attack: vtanata, vtanatb, vtanatc, vtanatd, vtanate
+# TankDestroyerVoice:
+# 	DefaultVariant: .wav
+# 	Voices:
+# 		Build: vtansea
+# 		Select: vtanseb, vtansec, vtansed, vtansee
+# 		Move: vtanmoa, vtanmob, vtanmoc, vtanmod
+# 		Attack: vtanata, vtanatb, vtanatc, vtanatd, vtanate
 
 PrismTankVoice:
 	DefaultVariant: .wav
@@ -157,13 +157,13 @@ MirageTankVoice:
 		Move: vmirmoa, vmirmob, vmirmoc, vmirmod, vmirmoe, vmirmof, vmirmog
 		Attack: vmirata, vmiratb, vmiratc, vmiratd, vmirate
 
-BattleFortressVoice:
-	DefaultVariant: .wav
-	Voices:
-		Build: vbatseb
-		Select: vbatsea, vbatsec, vbatsed, vbatsee, vbatsef
-		Move: vbatmoa, vbatmob, vbatmoc, vbatmod, vbatmoe
-		Attack: vbatatb, vbatatc, vbatatd, vbatate
+# BattleFortressVoice:
+# 	DefaultVariant: .wav
+# 	Voices:
+# 		Build: vbatseb
+# 		Select: vbatsea, vbatsec, vbatsed, vbatsee, vbatsef
+# 		Move: vbatmoa, vbatmob, vbatmoc, vbatmod, vbatmoe
+# 		Attack: vbatatb, vbatatc, vbatatd, vbatate
 
 SovietVehicleVoice:
 	DefaultVariant: .wav
@@ -173,21 +173,21 @@ SovietVehicleVoice:
 		Move: vgrsmoa, vgrsmob, vgrsmoc
 		Attack: vgrsata, vgrsatb, vgrsatc, vgrsatd
 
-SovietConstructionVehicleVoice:
-	DefaultVariant: .wav
-	Voices:
-		Build: vmcssee
-		Select: vmcssea, vmcsseb, vmcssec, vmcssed
-		Move: vmcsmoa, vmcsmob, vmcsmoc, vmcsmod, vmcsmoe
+# SovietConstructionVehicleVoice:
+# 	DefaultVariant: .wav
+# 	Voices:
+# 		Build: vmcssee
+# 		Select: vmcssea, vmcsseb, vmcssec, vmcssed
+# 		Move: vmcsmoa, vmcsmob, vmcsmoc, vmcsmod, vmcsmoe
 
-WarMinerVoice:
-	DefaultVariant: .wav
-	Voices:
-		Build: vwarsea
-		Select: vwarseb, vwarsec, vwarsed, vwarsee
-		Move: vwarmoa, vwarmob, vwarmoc, vwarmod, vwarmoe
-		Attack: vwarata, vwaratb, vwaratc, vwaratd, vwarate
-		Harvest: vwarhaa, vwarhab, vwarhac, vwarhad
+# WarMinerVoice:
+# 	DefaultVariant: .wav
+# 	Voices:
+# 		Build: vwarsea
+# 		Select: vwarseb, vwarsec, vwarsed, vwarsee
+# 		Move: vwarmoa, vwarmob, vwarmoc, vwarmod, vwarmoe
+# 		Attack: vwarata, vwaratb, vwaratc, vwaratd, vwarate
+# 		Harvest: vwarhaa, vwarhab, vwarhac, vwarhad
 
 FlakTrackVoice:
 	DefaultVariant: .wav
@@ -272,12 +272,12 @@ ChaosDroneVoice:
 		Move: vchamova, vchamovb, vchamovc, vchamovd
 		Attack: vchaatca
 
-YuriConstructionVehicleVoice:
-	DefaultVariant: .wav
-	Voices:
-		Build: vmcysec
-		Select: vmcysea, vmcyseb, vmcysed, vmcysee
-		Move: vmcymoa, vmcymob, vmcymoc, vmcymod, vmcymoe
+# YuriConstructionVehicleVoice:
+# 	DefaultVariant: .wav
+# 	Voices:
+# 		Build: vmcysec
+# 		Select: vmcysea, vmcyseb, vmcysed, vmcysee
+# 		Move: vmcymoa, vmcymob, vmcymoc, vmcymod, vmcymoe
 
 MagnetronVoice:
 	DefaultVariant: .wav
@@ -950,14 +950,14 @@ BlackKiteVoice:
 # 		Attack: vfloata, vfloatb, vfloatc, vfloatd, vfloate
 # 		Die: vflodiea
 
-DemolitionTruckVoice:
-	DefaultVariant: .wav
-	Voices:
-		Build: vdemsea
-		Select: vdemseb, vdemsec, vdemsed
-		Move: vdemmoa, vdemmob, vdemmoc
-		Attack: vdemata, vdematb, vdematc, vdematd, vdemate
-		Die: vdemdiea
+# DemolitionTruckVoice:
+# 	DefaultVariant: .wav
+# 	Voices:
+# 		Build: vdemsea
+# 		Select: vdemseb, vdemsec, vdemsed
+# 		Move: vdemmoa, vdemmob, vdemmoc
+# 		Attack: vdemata, vdematb, vdematc, vdematd, vdemate
+# 		Die: vdemdiea
 
 TerrorDroneVoice:
 	DefaultVariant: .wav

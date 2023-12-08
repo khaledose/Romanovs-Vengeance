@@ -1,0 +1,90 @@
+^LowPowerOverlay:
+	WithColoredOverlay@IDISABLE:
+		Color: 00000080
+		RequiresCondition: disabled
+	GrantCondition@IDISABLE:
+		Condition: disabled
+		RequiresCondition: lowpower || power-outage || powerdown || diskdrain
+
+^DisabledOnLowPower:
+	Inherits: ^LowPowerOverlay
+	GrantConditionOnPowerState@LOWPOWER:
+		Condition: lowpower
+		ValidPowerStates: Low, Critical
+
+^DisabledOnLowPowerOrPowerDown:
+	Inherits: ^DisabledOnLowPower
+	ToggleConditionOnOrder:
+		DisabledSound: EnablePower
+		EnabledSound: DisablePower
+		Condition: powerdown
+		OrderName: PowerDown
+	WithDecoration@POWERDOWN:
+		Image: poweroff
+		Sequence: offline
+		Palette: ts-mouse
+		Position: Center
+		RequiresCondition: powerdown
+	PowerMultiplier@POWERDOWN:
+		Modifier: 0
+		RequiresCondition: powerdown
+
+^DisabledOnUncharged:
+	Inherits: ^DisabledOnLowPowerOrPowerDown
+	Inherits@CHARGABLE: ^TeslaChargable
+	GrantCondition@IDISABLE:
+		RequiresCondition: uncharged
+	WithDecoration@POWERDOWN:
+		RequiresCondition: powerdown && uncharged
+	PowerMultiplier@POWERDOWN:
+		RequiresCondition: powerdown && uncharged
+	GrantCondition@UNPOWERED:
+		Condition: nopower
+		RequiresCondition: lowpower || power-outage || powerdown || diskdrain
+	GrantCondition@UNCHARGED:
+		Condition: uncharged
+		RequiresCondition: nopower && charges <= 1
+	GrantCondition@CHARGED:
+		Condition: charged
+		RequiresCondition: (!nopower && !charges) || (nopower && charges == 2)
+	GrantCondition@OVERCHARGED:
+		Condition: overcharged
+		RequiresCondition: (!nopower && charges >= 1) || (nopower && charges >= 3)
+	ExternalCondition@CHARGED:
+		Condition: charges
+		SourceCap: 1
+
+^DisabledOnDiskDrain:
+	Inherits: ^LowPowerOverlay
+	Inherits@DRAINABLE: ^DiskDrainable
+	ExternalCondition@DISKDRAIN:
+		Condition: diskdrain
+	PowerMultiplier@DISKDRAIN:
+		Modifier: 0
+		RequiresCondition: diskdrain
+
+^AffectedByPowerOutage:
+	AffectedByPowerOutage:
+		Condition: power-outage
+	Power:
+		RequiresCondition: !chronodisable && !power-outage
+
+^PowerOutageOnInfiltration:
+	Inherits: ^AffectedByPowerOutage
+	InfiltrateForPowerOutage:
+		Types: SpyInfiltrate
+		InfiltratedNotification: PowerSabotaged
+		InfiltrationNotification: BuildingInfiltratedPowerSabotaged
+
+^PowerOutageOnForceShield:
+	Inherits: ^AffectedByPowerOutage
+	TriggerPowerOutage:
+		RequiresCondition: forceshield
+
+^PowerOutageOnDiskDrain:
+	Inherits: ^AffectedByPowerOutage
+	Inherits@DRAINABLE: ^DiskDrainable
+	TriggerPowerOutage:
+		RequiresCondition: diskdrain
+	ExternalCondition@DISKDRAIN:
+		Condition: diskdrain

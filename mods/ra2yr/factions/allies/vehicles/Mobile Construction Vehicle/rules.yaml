@@ -3,8 +3,6 @@ amcv:
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Allies
 		Prerequisites: ~vehicle.allies, gadept, ~techlevel.2, ~!global-suddendeath, ~!ai.mcv
-	Selectable:
-		Bounds: 1641, 2702, 0, -337
 	Transforms:
 		IntoActor: gacnst
 	Voiced:
@@ -18,7 +16,6 @@ amcv.colorpicker:
 	-MapEditorData:
 	WithVoxelBody:
 		ShowShadow: false
-	-WithVoxelBody@Water:
 	RenderSprites:
 		Image: amcv
 		Palette: colorpicker

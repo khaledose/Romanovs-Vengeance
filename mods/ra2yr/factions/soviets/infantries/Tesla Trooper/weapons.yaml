@@ -25,6 +25,6 @@ AssaultBolt:
 		Duration: 10
 	Warhead@charge: GrantExternalCondition
 		Duration: 20
-		Condition: charged
+		Condition: charges
 		ValidRelationships: Ally
 		ValidTargets: TeslaBoost

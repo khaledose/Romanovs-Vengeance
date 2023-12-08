@@ -1,0 +1,74 @@
+^DogImmunity:
+	Targetable@DOGIMMUNITY:
+		TargetTypes: DogImmune
+
+^RadiationImmunity:
+	Targetable@RADIATIONIMMUNITY:
+		TargetTypes: ImmuneToRadiation
+
+^PsiWaveImmunity:
+	Targetable@PSIWAVEIMMUNITY:
+		TargetTypes: ImmuneToFriendlyPsiWave
+
+^SonicZapImmunity:
+	Targetable@SONICZAPIMMUNITY:
+		TargetTypes: ImmuneToAllySonic
+
+^Spyable:
+	Targetable@SPY:
+		TargetTypes: SpyInfiltrate
+
+^IvanBombable:
+	Targetable@IVANBOMB:
+		TargetTypes: IvanBomb
+		RequiresCondition: !ivanbomb
+
+^IvanBombCleanable:
+	Targetable@IVANBOMBCLEANER:
+		TargetTypes: IvanBombCleaner
+		RequiresCondition: ivanbomb
+
+^C4Cleanable:
+	Targetable@C4CLEANER:
+		TargetTypes: C4Cleaner
+		RequiresCondition: c4
+
+^IronCurtained:
+	Targetable@IRONCURTAINED:
+		TargetTypes: IronCurtained
+		RequiresCondition: invulnerability
+
+^Chronoable:
+	Targetable@CHRONO:
+		TargetTypes: ChronoDisable
+		RequiresCondition: !chronodisable && !airborne
+
+^ChaosGasable:
+	Targetable@CHAOS:
+		TargetTypes: ChaosGasable
+		RequiresCondition: !chronodisable && !airborne
+
+^DroneInfectable:
+	Targetable@DRONE:
+		TargetTypes: TerrorDronable
+		RequiresCondition: !chronodisable && !airborne
+
+^SquidInfectable:
+	Targetable@SQUID:
+		TargetTypes: SquidInfection
+		RequiresCondition: !chronodisable
+
+^DiskDrainable:
+	Targetable@DISKDRAIN:
+		TargetTypes: DiskDrain
+		RequiresCondition: !chronodisable
+
+^DiskStealable:
+	Targetable@DISKSTEAL:
+		TargetTypes: DiskSteal
+		RequiresCondition: !chronodisable
+
+^TeslaChargable:
+	Targetable@TESLABOOST:
+		TargetTypes: TeslaBoost
+		RequiresCondition: !chronodisable

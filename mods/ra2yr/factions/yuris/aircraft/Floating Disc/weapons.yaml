@@ -50,28 +50,12 @@ DiskLaserAAE:
 	Warhead@1Dam: SpreadDamage
 		ValidTargets: Air
 
-DiskPowerDrain:
+DiskDrain:
 	ReloadDelay: 5
 	Range: 0c256
 	MinRange: 0c1
 	TargetActorCenter: true
 	ValidTargets: DiskDrain
-	Projectile: InstantHit
-	Warhead@1Con: GrantGlobalCondition
-		Condition: power-outage
-		Duration: 6
-		Range: 0c256
-		ValidRelationships: Neutral, Enemy
-	Warhead@2Dam: TargetDamage
-		ValidTargets: DiskDrain
-		ValidRelationships: Neutral, Enemy
-
-DiskDefenseDrain:
-	ReloadDelay: 5
-	Range: 0c256
-	MinRange: 0c1
-	TargetActorCenter: true
-	ValidTargets: DiskDefenseDrain
 	Projectile: InstantHit
 	Warhead@1Con: GrantExternalCondition
 		Condition: diskdrain
@@ -79,7 +63,7 @@ DiskDefenseDrain:
 		Range: 0c256
 		ValidRelationships: Neutral, Enemy
 	Warhead@2Dam: TargetDamage
-		ValidTargets: DiskDefenseDrain
+		ValidTargets: DiskDrain
 		ValidRelationships: Neutral, Enemy
 
 DiskSteal:

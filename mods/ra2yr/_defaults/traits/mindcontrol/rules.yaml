@@ -1,0 +1,77 @@
+^MindController:
+	MindController:
+		ArmamentNames: primary
+		ControllingCondition: controlling
+		Sounds: iyurat1a.wav
+	WithMindControllerPipsDecoration:
+		Margin: 4, 3
+		Palette: ra
+		Position: BottomLeft
+		RequiresSelection: true
+	WithMindControlArc:
+		UsePlayerColor: true
+		Offset: 0, 0, 1024
+	AutoTargetPriority@DEFAULT:
+		ValidTargets: MindControl
+		RequiresCondition: !controlling
+
+^MindControllerBuilding:
+	Inherits: ^MindController
+	WithMindControllerPipsDecoration:
+		FullSequence: pip-building-green
+		EmptySequence: pip-building-empty
+		Margin: 8, 2
+		PipStride: 4, 2
+
+^MultiMindController:
+	Inherits: ^MindController
+	MindController:
+		Capacity: 0
+	AutoTargetPriority@DEFAULT:
+		-RequiresCondition:
+
+^TempMindControllable:
+	MindControllable:
+		RevokeControlSounds: gmindcle.wav
+		Condition: controlled
+		PauseOnCondition: invulnerability
+	WithMindControlArc:
+		UsePlayerColor: true
+		Offset: 0,0,960
+	Targetable@MC:
+		TargetTypes: MindControl
+		RequiresCondition: !controlled && !airborne
+	WithIdleOverlay@mindcontrol:
+		Image: mindcontrol
+		Sequence: mindcontrol
+		Palette: effect
+		RequiresCondition: controlled
+
+^PermaMindControllable:
+	Capturable@PERMAMC:
+		Types: permamc
+		RequiresCondition: !controlled
+	CaptureManager:
+
+^MindControllable:
+	Inherits@TEMP: ^TempMindControllable
+	Inherits@PERMA: ^PermaMindControllable
+
+^MindControllableMCV:
+	Inherits: ^MindControllable
+	Capturable@PERMAMC:
+		RequiresCondition: !controlled && !suddendeath
+	WithIdleOverlay@mindcontrol:
+		RequiresCondition: controlled && !suddendeath
+	Targetable@MC:
+		RequiresCondition: !controlled && !suddendeath
+
+^MindControllableBuilding:
+	Inherits: ^TempMindControllable
+	MindControllable:
+		PauseOnCondition: invulnerability || forceshield
+	Targetable@MC:
+		TargetTypes: MindControlBuilding
+		RequiresCondition: !controlled
+	WithIdleOverlay@mindcontrol:
+		RequiresCondition: controlled

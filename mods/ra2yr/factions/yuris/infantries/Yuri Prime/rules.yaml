@@ -1,85 +1,12 @@
-# yuripr:
-# 	Inherits: yuri
-# 	Inherits@SWIMSUIT: ^WithSwimSuit
-# 	Buildable:
-# 		Queue: Infantry.Shared, Infantry.Yuri
-# 		BuildPaletteOrder: 110
-# 		Prerequisites: ~infantry.yuri, yatech, ~techlevel.4
-# 		Description: Psychic infantry. Can mind control enemy units and structures.\nCan be deployed to unleash a powerful psychic wave.\n\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Terror Drones, Aircraft\n\nAbilities:\n- Cannot be eaten by Attack Dogs\n- Can move over water\n\nUpgradeable with:\n- Mastery of Mind (Antarctica)\n\n  Maximum 1 can be trained.
-# 		BuildDuration: 1125
-# 		BuildDurationModifier: 100
-# 	Valued:
-# 		Cost: 1500
-# 	DeliversCash:
-# 		Payload: 750
-# 	Tooltip:
-# 	Tooltip@NoRow:
-# 		Name: Yuri Prime
-# 	Selectable:
-# 		Bounds: 482, 2896, 0, -1254
-# 	Health:
-# 		HP: 15000
-# 	Passenger:
-# 		CustomPipType: red
-# 	Armor:
-# 		Type: Flak
-# 	ChangesHealth:
-# 		PercentageStep: 1
-# 		Step: 0
-# 		Delay: 100
-# 		DamageCooldown: 100
-# 		StartIfBelow: 100
-# 	Mobile:
-# 		Locomotor: swimsuit
-# 		RequiresCondition: !deployed && !deploying && !chronodisable
-# 	LeavesTrails:
-# 		Image: wake
-# 		Palette: effect50alpha
-# 		TerrainTypes: Water, Beach
-# 		StationaryInterval: 18
-# 		MovingInterval: 6
-# 	RevealsShroud:
-# 		Range: 9c0
-# 	# RevealsShroudToIntelligenceOwner:
-# 	#	Range: 8c0
-# 	RevealOnDeath:
-# 		Radius: 9c0
-# 	Armament:
-# 		Weapon: SuperMindControl
-# 		LocalOffset: 0,0,1024
-# 		PauseOnCondition: deployed || chronodisable
-# 	Armament@elite:
-# 		Weapon: SuperMindControlE
-# 		LocalOffset: 0,0,1024
-# 		PauseOnCondition: deployed || chronodisable
-# 	ProvidesPrerequisite@default:
-# 	PeriodicExplosion:
-# 		Weapon: SuperPsiWave
-# 		RequiresCondition: deployed && !chronodisable
-# 	GrantTimedConditionOnDeploy:
-# 		PauseOnCondition: chronodisable || (webdisable && !deployed)
-# 	ExternalCondition@PRODUCED:
-# 		Condition: produced
-# 	NotificationAnnouncement:
-# 		RequiresCondition: produced
-# 		Notification: TheresOnlyOneTrueYuri
-# 	Voiced:
-# 		VoiceSet: YuriPrimeVoice
-# 	Targetable:
-# 		TargetTypes: Ground, Infantry, DetonateAttack, Disguise, DogImmune
-# 	WithMindControlArc:
-# 		Offset: 0,0,1024
-# 	-TakeCover:
-
 yuripr:
 	Inherits: ^CommandoInfantry
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@VETERAN: ^InfantryPromotable
 	Inherits@PSIWAVEIMMUNITY: ^PsiWaveImmunity
 	Inherits@MINDCONTROLLER: ^MindController
-	Inherits@DEPLOY: ^SuperPsiWaveOnDeploy
 	Inherits@DOGIMMUNITY: ^DogImmunity
 	Inherits@DETECTCLOAKED: ^DetectCloaked
+	Inherits@PSIWAVE: ^WithInfantryPsiWaveOnDeploy
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Yuri
 		Prerequisites: ~infantry.yuri, yatech, ~techlevel.4
@@ -107,6 +34,8 @@ yuripr:
 		MuzzleSequence: muzzle
 		LocalOffset: 0, 0, 1024
 		PauseOnCondition: deployed || chronodisable
+	PeriodicExplosion:
+		Weapon: SuperPsiWave
 	NotificationAnnouncement:
 		Notification: TheresOnlyOneTrueYuri
 	Voiced:

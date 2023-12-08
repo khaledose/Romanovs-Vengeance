@@ -48,11 +48,7 @@ disk:
 		RequiresCondition: rank-elite
 	Armament@powerDrain:
 		Name: secondary
-		Weapon: DiskPowerDrain
-		MuzzleSequence: muzzle
-	Armament@defenseDrain:
-		Name: secondary
-		Weapon: DiskDefenseDrain
+		Weapon: DiskDrain
 		MuzzleSequence: muzzle
 	Armament@steal:
 		Name: secondary

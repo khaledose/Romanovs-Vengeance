@@ -2,8 +2,8 @@ tesla:
 	Inherits: ^DefenseStructure
 	Inherits@SHAPE: ^1x1Shape
 	Inherits@AUTOTARGET: ^AutoTargetGround
-	Inherits@DRAIN: ^DiskDefenseDrainable
-	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@DRAIN: ^DisabledOnDiskDrain
+	Inherits@POWER: ^DisabledOnUncharged
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
 		Queue: Support.Shared, Support.Soviets
@@ -32,25 +32,18 @@ tesla:
 		Weapon: CoilBolt
 		Damage: 75
 		LocalOffset: 0,0,3072
-		RequiresCondition: ((!lowpower && !charged) || (lowpower && charged == 2))
+		RequiresCondition: charged
 	Armament@charged:
 		Weapon: OPCoilBolt
 		Damage: 100
 		LocalOffset: 0,0,3072
-		RequiresCondition: ((!lowpower && charged >= 1) || (lowpower && charged >= 3))
+		RequiresCondition: overcharged
 	AttackTesla:
 		ReloadDelay: 80
 		InitialChargeDelay: 25
 		ChargeDelay: 0
 		ChargeAudio: btespow.wav
 		PauseOnCondition: build-incomplete || disabled || chronodisable
-	Targetable@TeslaBoost:
-		TargetTypes: TeslaBoost
-	GrantCondition@IDISABLE:
-		RequiresCondition: lowpower && charged <= 1
-	ExternalCondition@CHARGED:
-		Condition: charged
-		SourceCap: 1
 	WithIdleOverlay@powered:
 		Sequence: powered
 		PauseOnCondition: chronodisable

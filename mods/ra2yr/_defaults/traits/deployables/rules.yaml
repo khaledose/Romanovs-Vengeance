@@ -1,0 +1,107 @@
+^Deployable:
+	GrantConditionOnDeploy:
+		DeployedCondition: deployed
+		UndeployedCondition: undeployed
+		CanDeployOnRamps: True
+		SmartDeploy: True
+		Facing: 384
+		Voice: Deploy
+		PauseOnCondition: chronodisable
+		RequiresCondition: !parachute
+
+^TimedDeployable:
+	Mobile:
+		RequiresCondition: !deployed && !deploying && !chronodisable
+	GrantTimedConditionOnDeploy:
+		DeployedTicks: 40
+		CooldownTicks: 0
+		Facing: 96
+		Voice: Attack
+		DeployedCondition: deployed
+		DeployingCondition: deploying
+		DeployAnimation: deploy
+		UndeployAnimation: undeploy
+		ShowSelectionBar: false
+		PauseOnCondition: chronodisable
+		RequiresCondition: !parachute
+
+^DeployableInfantry:
+	Inherits: ^Deployable
+	Mobile:
+		RequiresCondition: !deployed
+	WithInfantryBody:
+		RequiresCondition: undeployed && !parachute
+	AttackFrontal:
+		RequiresCondition: undeployed && !chronodisable
+	TakeCover:
+		RequiresCondition: undeployed
+	WithSpriteBody@DEPLOYING:
+		Sequence: dot
+		Name: dot
+		RequiresCondition: !undeployed
+	WithMakeAnimation:
+		Sequence: deploy
+		BodyNames: dot
+
+^TimedDeployableInfantry:
+	Inherits: ^TimedDeployable
+	WithInfantryBody:
+		RequiresCondition: !deployed && !deploying && !parachute
+	WithSpriteBody@DEPLOYED:
+		Sequence: deployed
+		PauseOnCondition: chronodisable
+		RequiresCondition: (deployed || deploying) && !parachute
+
+^PeriodicExplosionOnDeploy:
+	Inherits: ^Deployable
+	GrantConditionOnDeploy:
+		Voice: Attack
+		UndeployOnMove: true
+	PeriodicExplosion:
+		LocalOffset: 0, 0, 64
+		RequiresCondition: deployed && !chronodisable
+
+^WithInfantryPsiWaveOnDeploy:
+	Inherits: ^TimedDeployable
+	PeriodicExplosion:
+		LocalOffset: 0, 0, 128
+		RequiresCondition: deployed && !chronodisable
+
+^WithInfantryPsiWaveOnDeploy:
+	Inherits: ^TimedDeployableInfantry
+	PeriodicExplosion:
+		LocalOffset: 0, 0, 128
+		RequiresCondition: deployed && !chronodisable
+
+^SuicideOnDeploy:
+	Inherits: ^Deployable
+	GrantConditionOnAttack:
+		Condition: triggered
+	GrantConditionOnDeploy:
+		Voice: Attack
+		DeployedCondition: triggered
+	KillsSelf@triggered:
+		DamageTypes: NonTemporal
+		RequiresCondition: triggered
+
+^DeployableAircraft:
+	HeliGrantConditionOnDeploy:
+		BodyNames: dot
+		DeployAnimation: deploy
+		DeployedCondition: deployed
+		UndeployedCondition: undeployed
+		DeploySound: vchodepa.wav
+		UndeploySound: vchodepa.wav
+		AllowedTerrainTypes: Clear, Rough, Road, DirtRoad, Ore, Gems
+		DeployVoice: Deploy
+		UndeployVoice: Move
+		CanDeployOnRamps: true
+		SynchronizeDeployment: True
+		PauseOnCondition: chronodisable
+	WithSpriteBody@dot:
+		Sequence: dot
+	WithVoxelHelicopterBody:
+		RequiresCondition: undeployed
+	WithVoxelBody:
+		Sequence: deployed
+		RequiresCondition: deployed

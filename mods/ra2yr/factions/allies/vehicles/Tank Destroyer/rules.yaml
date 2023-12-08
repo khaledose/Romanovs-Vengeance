@@ -1,41 +1,37 @@
 tnkd:
-	Inherits: ^Vehicle
+	Inherits: ^GroundVehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@VETERAN: ^ProducibleAsVeteranVehicle
-	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@MC: ^MindControllable
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
-	Valued:
-		Cost: 900
-	DeliversCash:
-		Payload: 900
-	Tooltip:
-	Tooltip@NoRow:
-		Name: Tank Destroyer
+	Inherits@ANNOUNCE: ^AnnounceProduction
 	Buildable:
-		Queue: Vehicle.Shared, Vehicle.Allies, Vehicle.Germany
-		BuildPaletteOrder: 90
+		Queue: Vehicle.Shared, Vehicle.Allies
 		Prerequisites: ~vehicle.germany, gaairc, ~techlevel.3
 		Description: Special anti-armor unit.\n\n  Strong vs Vehicles, Ships\n  Weak vs Infantry, Aircraft\n\nUpgradeable with:\n- Composite Armor\n- Advanced Gun Systems (Germany)
-		BuildDuration: 500
 		BuildDurationModifier: 100
-	UpdatesPlayerStatistics:
-		AddToArmyValue: true
-	Mobile:
-		Speed: 75
-		Locomotor: heavytracked
+		BuildPaletteOrder: 90
+	Selectable:
+		Bounds: 1544, 2509, 0, -289
 	Health:
 		HP: 40000
 	Armor:
 		Type: Heavy
+	Valued:
+		Cost: 900
+	DeliversCash:
+		Payload: 900
+	Mobile:
+		Speed: 75
+		Locomotor: heavytracked
 	RevealsShroud:
 		Range: 7c0
-	# RevealsShroudToIntelligenceOwner:
-	#	Types: SatelliteScan
-	#	Range: 7c0
-	RevealOnDeath:
-		Radius: 7c0
+	Tooltip:
+		Name: Tank Destroyer
+	Tooltip@NoRow:
+		Name: Tank Destroyer
 	Armament@primary:
 		Weapon: sabot
 		Damage: 150
@@ -54,28 +50,8 @@ tnkd:
 		MustFaceTarget: true
 		PauseOnCondition: chronodisable
 	WithMuzzleOverlay:
-	AutoTarget:
-	RenderSprites:
-	Selectable:
-		Bounds: 1544, 2509, 0, -289
 	RenderVoxels:
-		LightAmbientColor: 0.5,0.5,0.5
-		Scale: 13
+		NormalsPalette: ts-normals
 	WithVoxelBody:
 	Voiced:
 		VoiceSet: TankDestroyerVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
-	HitShape:
-	# GrantConditionOnMovement@MoveStart:
-	#	Condition: moving
-	#	ValidMovementTypes: Horizontal
-	# SoundAnnouncement:
-	#	SoundFiles: vtadstaa.wav, vtadstab.wav
-	#	Volume: 0.4
-	#	RequiresCondition: moving
-

@@ -1,0 +1,7 @@
+BattleFortressVoice:
+	DefaultVariant: .wav
+	Voices:
+		Build: vbatseb
+		Select: vbatsea, vbatsec, vbatsed, vbatsee, vbatsef
+		Move: vbatmoa, vbatmob, vbatmoc, vbatmod, vbatmoe
+		Attack: vbatatb, vbatatc, vbatatd, vbatate

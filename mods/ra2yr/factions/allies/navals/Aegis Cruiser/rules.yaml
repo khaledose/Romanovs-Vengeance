@@ -3,10 +3,11 @@ aegis:
 	Inherits@AUTOTARGET: ^AutoTargetAirAssaultMove
 	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@EXPERIENCE: ^GainsExperience
-	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@MC: ^MindControllable
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Inherits@SQUID: ^SquidGrabbable
 	Inherits@ANNOUNCE: ^AnnounceProduction
+	Inherits@TURRET: ^WithTurret
 	Buildable:
 		Queue: Ship.Shared, Ship.Allies
 		Prerequisites: ~ship.allies, gaairc, ~techlevel.1
@@ -38,10 +39,7 @@ aegis:
 		Weapon: MedusaE
 		Damage: 800
 		RequiresCondition: rank-elite
-	Turreted:
-		TurnSpeed: 1023
 	AttackTurreted:
 		Voice: Attack
-		PauseOnCondition: chronodisable
 	Voiced:
 		VoiceSet: AegisVoice
