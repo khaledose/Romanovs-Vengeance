@@ -24,7 +24,7 @@ namespace OpenRA.Mods.Cnc.FileSystem
 	{
 		sealed class BagFile : IReadOnlyPackage
 		{
-			public string Name { get; private set; }
+			public string Name { get; }
 			public IEnumerable<string> Contents { get { return index.Keys; } }
 
 			readonly Stream s;
@@ -42,8 +42,7 @@ namespace OpenRA.Mods.Cnc.FileSystem
 
 			public Stream GetStream(string filename)
 			{
-				IdxEntry entry;
-				if (!index.TryGetValue(filename, out entry))
+				if (!index.TryGetValue(filename, out var entry))
 					return null;
 
 				var waveHeaderMemoryStream = new MemoryStream();

@@ -143,7 +143,7 @@ label-mute-player = Bu oyuncuyu sustur
 label-unmute-player = Bu oyuncunun sesini aç
 
 dialog-kick =
-    .title = adlı oyuncuyu at?
+    .title = { $player } adlı oyuncuyu at?
     .prompt = Oyuna geri katılamayacaklar.
     .confirm = At
 
@@ -434,6 +434,8 @@ label-map-size-huge = (Dev)
 label-map-size-large = (Büyük)
 label-map-size-medium = (Orta)
 label-map-size-small = (Küçük)
+label-map-searching-count = { $count } harita OpenRA Kaynak Merkezi'nde aranıyor...
+label-map-unavailable-count = { $count } harita OpenRA Kaynak Merkezi'nde bulunamadı
 
 notification-map-deletion-failed = Harita '{ $map }' silinemedi. Ayrıntılar için debug.log dosyasına bakın.
 
@@ -710,6 +712,9 @@ notification-copied-tiles =
     }
 
 ## EditorDefaultBrush
+notification-selected-area = Alan { $x },{ $y } ({ $width },{ $height }) seçildi
+notification-selected-actor = Selected actor { $id }
+notification-cleared-selection = Seçim temizlendi
 notification-removed-actor = { $name } ({ $id }) kaldırıldı
 notification-removed-resource = { $type } kaldırıldı
 
@@ -729,3 +734,18 @@ notification-opened = Açıldı
 
 ## ActorEditLogic
 notification-edited-actor = { $name } ({ $id }) düzenlendi
+
+## ActorStatsValues, IngameActorStatsLogic
+label-armor-class =
+    .no-armor = Zırh Yok
+    .None = None
+    .Flak = Flak
+    .Plate = Plate
+    .Light = Hafif
+    .Medium = Orta
+    .Heavy = Ağır
+    .Wood = Tahta
+    .Steel = Çelik
+    .Concrete = Beton
+    .Drone = Dron
+    .Rocket = Roket

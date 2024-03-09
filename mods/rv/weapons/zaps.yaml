@@ -806,7 +806,7 @@ MagneShake:
 	ReloadDelay: 110
 	Range: 10c0
 	Report: vmagat2a.wav
-	ValidTargets: Ground, MagneFreezable, Structure, Barrel, Mine
+	ValidTargets: Ground, MagneFreezable, Structure, WaterStructure, Barrel, Mine
 	InvalidTargets: Infantry
 	Projectile: LaserZap
 		Duration: 110
@@ -820,11 +820,11 @@ MagneShake:
 		Falloff: 100, 100
 		Damage: 8000
 		AffectsParent: false
-		ValidTargets: Structure, Barrel, Mine
+		ValidTargets: Structure, WaterStructure, Barrel, Mine
 		DamageTypes: NonTemporal
 	Warhead@2Dam: TargetDamage
 		Damage: 0
-		ValidTargets: Ground, MagneFreezable, Structure, Barrel, Mine
+		ValidTargets: Ground, MagneFreezable, Structure, WaterStructure, Barrel, Mine
 		InvalidTargets: Infantry
 
 MagneShakeE:
@@ -836,7 +836,7 @@ MagneFreeze:
 	ReloadDelay: 110
 	Range: 10c0
 	Report: vmagat1a.wav
-	ValidTargets: Ground, MagneFreezable, Structure, Barrel, Mine
+	ValidTargets: Ground, MagneFreezable, Structure, WaterStructure, Barrel, Mine
 	InvalidTargets: Infantry
 	Projectile: LaserZap
 		Duration: 50
@@ -1450,7 +1450,6 @@ BloodBack:
 		Palette: player
 		HorizontalRateOfTurn: 60
 		RangeLimit: 15c0
-		Arm: 0
 		Speed: 300
 		Inaccuracy: 0c0
 		Blockable: false
@@ -1462,7 +1461,7 @@ BloodBack:
 		ContrailDelay: 0
 		ContrailStartColor: CC000060
 		ContrailLength: 3
-		ContrailWidth: 32
+		ContrailStartWidth: 32
 	Warhead@charge: GrantExternalCondition
 		Range: 299
 		Duration: 1
@@ -1485,7 +1484,6 @@ MaterialBack:
 		Palette: effect
 		HorizontalRateOfTurn: 60
 		RangeLimit: 15c0
-		Arm: 0
 		Speed: 300
 		Inaccuracy: 0c0
 		Blockable: false
