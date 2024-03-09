@@ -1,4 +1,3 @@
 ltnk:
 	idle: localmd|ltnk
 	turret: localmd|ltnktur
-	turret-autoloaders: bits/vehicles/upgrades/ltnkutur

@@ -1,4 +1,3 @@
 cmin:
 	idle: local|cmin
-	water: bits/vehicles/water/cminw
 	unload: local|cmon

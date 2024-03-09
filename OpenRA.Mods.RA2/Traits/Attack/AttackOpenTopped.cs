@@ -141,7 +141,7 @@ namespace OpenRA.Mods.RA2.Traits
 
 			foreach (var a in armaments)
 			{
-				if (a.IsTraitDisabled || !a.CheckFire(a.Actor, facing, target, true))
+				if (a.IsTraitDisabled || !a.CheckFire(a.Actor, facing, target))
 				{
 					continue;
 				}
