@@ -15,14 +15,3 @@ e2:
 		Start: 293
 	paradrop:
 		Start: 292
-
-# e2:
-# 	Inherits: ^ArmedInfantry
-# 	Defaults:
-# 		Filename: conquer|cons.shp
-# 	run:
-# 		Tick: 120
-# 	paradrop:
-# 		Start: 292
-# 	icon:
-# 		Filename: cameo|e2icon.shp

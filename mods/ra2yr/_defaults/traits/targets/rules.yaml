@@ -38,11 +38,6 @@
 		TargetTypes: IronCurtained
 		RequiresCondition: invulnerability
 
-^Chronoable:
-	Targetable@CHRONO:
-		TargetTypes: ChronoDisable
-		RequiresCondition: !chronodisable && !airborne
-
 ^ChaosGasable:
 	Targetable@CHAOS:
 		TargetTypes: ChaosGasable

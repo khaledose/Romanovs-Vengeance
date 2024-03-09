@@ -1,4 +1,5 @@
 SubTorpedo:
+	Inherits@WATEREXPLOSION: MediumWaterExplosion
 	ReloadDelay: 75
 	Range: 7c0
 	Report: vsubatta.wav
@@ -29,10 +30,6 @@ SubTorpedo:
 			Concrete: 60
 			Drone: 25
 		DamageTypes: ExplosionDeath, SuppressTerrorDrone, NonTemporal
-	Warhead@2EffWater: CreateEffect
-		Explosions: large_watersplash
-		ImpactSounds: gexpwasa.wav
-		ValidTargets: Water
 	Warhead@3EffGround: CreateEffect
 		Explosions: medium_clsn
 		ImpactSounds: gexpwasb.wav

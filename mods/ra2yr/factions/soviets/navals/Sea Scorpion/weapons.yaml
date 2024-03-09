@@ -1,24 +1,13 @@
 FlakWeapon:
 	Inherits: FlakTrackAAGun
-	ReloadDelay: 25
+	ReloadDelay: 20
 	Range: 12c0
 	Report: bflaatta.wav, bflaattb.wav, bflaattc.wav, bflaattd.wav
 	Warhead@1Dam: SpreadDamage
-		Damage: 2500
-		Spread: 0c512
-		Versus:
-			None: 100
-			Flak: 100
-			Plate: 100
-			Light: 100
-			Medium: 60
-			Heavy: 100
-			Wood: 0
-			Steel: 0
-			Concrete: 0
-			Drone: 100
-			Rocket: 100
+		Damage: 4000
 
 FlakWeaponE:
 	Inherits: FlakWeapon
 	Burst: 2
+	Warhead@1Dam: SpreadDamage
+		Damage: 3500

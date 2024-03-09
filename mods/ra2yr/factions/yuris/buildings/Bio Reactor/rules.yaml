@@ -39,7 +39,6 @@ yapowr:
 		Name: Yuri Bio Reactor
 	Explodes:
 		Weapon: PowerPlantExplosion
-		Type: CenterPosition
 	WithIdleOverlay@empty:
 		Sequence: empty
 		PauseOnCondition: chronodisable

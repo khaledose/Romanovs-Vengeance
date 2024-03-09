@@ -3,25 +3,23 @@ M1Carbine:
 	ReloadDelay: 25
 	Range: 4c0
 	Report: iconatta.wav, iconattb.wav, iconattc.wav, iconattd.wav, iconatte.wav
-	Warhead@1Dam: SpreadDamage
+	Warhead@1Dam: TargetDamage
 		Damage: 1500
 
 M1CarbineE:
 	Inherits: M1Carbine
 	Range: 5c0
-	Warhead@1Dam: SpreadDamage
+	Warhead@1Dam: TargetDamage
 		Damage: 2000
 
 UCM1Carbine:
-	Inherits: ^SSAB
+	Inherits: UCpara
 	ReloadDelay: 20
-	Range: 6c0
-	Report: baocatta.wav, baocattb.wav, baocattc.wav
-	Warhead@1Dam: SpreadDamage
+	Warhead@1Dam: TargetDamage
 		Damage: 2000
 
 UCM1CarbineE:
 	Inherits: UCM1Carbine
 	Range: 7c0
-	Warhead@1Dam: SpreadDamage
+	Warhead@1Dam: TargetDamage
 		Damage: 3000

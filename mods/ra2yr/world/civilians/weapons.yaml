@@ -11,7 +11,7 @@ Pistola:
 	ReloadDelay: 20
 	Range: 3c0
 	Report: icivatta.wav, icivattb.wav
-	Warhead@1Dam: SpreadDamage
+	Warhead@1Dam: TargetDamage
 		Damage: 200
 
 TermiGun:
@@ -19,7 +19,7 @@ TermiGun:
 	ReloadDelay: 5
 	Range: 6c0
 	Report: iarnatta.wav, iarnattb.wav
-	Warhead@1Dam: SpreadDamage
+	Warhead@1Dam: TargetDamage
 		Damage: 12500
 
 StalGun:
@@ -27,22 +27,19 @@ StalGun:
 	ReloadDelay: 10
 	Range: 6c0
 	Report: islyat1a.wav, islyat1b.wav
-	InvalidTargets: Bridge, Wall, Fence, Tree, Structure, WaterStructure
-	Warhead@1Dam: SpreadDamage
+	ValidTargets: Ground, Water
+	InvalidTargets: Structure, WaterStructure, Bridge, Wall, Fence, Tree
+	Warhead@1Dam: TargetDamage
 		Damage: 12500
-		InvalidTargets: Bridge, Wall, Fence, Tree, Structure, WaterStructure
+		InvalidTargets: Structure, WaterStructure, Bridge, Wall, Fence, Tree
 
 StalGren:
-	Inherits: ^BreakPointDefenseDrones
+	Inherits: ^Bullet
+	Inherits@EXPLOSION: MiniNukeExplosion
 	ReloadDelay: 10
 	Range: 6c0
 	Report: islyat2a.wav
 	ValidTargets: Structure, WaterStructure
-	Projectile: Bullet
-		Image: 120mm
-		Palette: ra
-		LaunchAngle: 128
-		Speed: 800
 	Warhead@1Dam: SpreadDamage
 		Damage: 1000000
 		Versus:
@@ -59,28 +56,23 @@ StalGren:
 			Rocket: 0
 		DamageTypes: NonTemporal
 		ValidTargets: Structure, WaterStructure
-	Warhead@2Eff: CreateEffect
-		Explosions: terrorist_explosion
-		ImpactSounds: gexpapoa.wav
-		ValidTargets: Ground, Water, Air
-	Warhead@3Smu: LeaveSmudge
-		SmudgeType: SmallCrater
 
 ClintGun:
 	Inherits: ^HollowPoint
 	ReloadDelay: 10
 	Range: 6c0
 	Report: icliatta.wav, icliattb.wav, icliattc.wav
-	Warhead@1Dam: SpreadDamage
+	Warhead@1Dam: TargetDamage
 		Damage: 12500
 
 LunarLaser:
-	Inherits: ^Laser
+	Inherits: ^PrismBeam
 	ReloadDelay: 20
 	Range: 7c0
 	Report: ilasatta.wav
 	ValidTargets: Ground, Water, Air
-	Warhead@1Dam: SpreadDamage
+	InvalidTargets: Underwater, Bridge, Wall, Fence, Tree 
+	Warhead@1Dam: TargetDamage
 		Damage: 2500
 		Versus:
 			None: 100
@@ -94,13 +86,14 @@ LunarLaser:
 			Concrete: 100
 			Drone: 100
 			Rocket: 100
-		DamageTypes: Prone100Percent, TriggerProne, NonTemporal
 		ValidTargets: Ground, Water, Air
+		InvalidTargets: Underwater, Bridge, Wall, Fence, Tree 
+	Warhead@2Eff: CreateEffect
+		Explosions: small_grey_explosion
+		ImpactSounds: gexpifva.wav
 
 LunarLaserAG:
 	Inherits: LunarLaser
 	ValidTargets: Ground, Water
-	InvalidTargets: Air
-	Warhead@1Dam: SpreadDamage
+	Warhead@1Dam: TargetDamage
 		ValidTargets: Ground, Water
-		InvalidTargets: Air

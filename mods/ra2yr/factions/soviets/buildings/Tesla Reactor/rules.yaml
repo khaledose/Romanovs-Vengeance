@@ -25,7 +25,6 @@ napowr:
 		Volume: 0.8
 	Explodes:
 		Weapon: TeslaReactorExplosion
-		Type: CenterPosition
 	WithIdleOverlay@lights:
 		Sequence: idle-lights
 		PauseOnCondition: chronodisable

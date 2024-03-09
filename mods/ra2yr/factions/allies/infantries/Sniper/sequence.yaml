@@ -11,13 +11,3 @@ snipe:
 		Start: 293
 	paradrop:
 		Start: 292
-
-
-# snipe:
-# 	Inherits: ^ArmedInfantry
-# 	Defaults:
-# 		Filename: conquer|snipe.shp
-# 	paradrop:
-# 		Start: 292
-# 	icon:
-# 		Filename: cameo|snipicon.shp

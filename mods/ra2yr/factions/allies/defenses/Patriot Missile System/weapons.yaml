@@ -7,6 +7,7 @@ RedEye2:
 	Warhead@1Dam: SpreadDamage
 		Damage: 7500
 		Spread: 0c307
+		Falloff: 100, 0
 		Versus:
 			None: 100
 			Flak: 100
@@ -20,4 +21,6 @@ RedEye2:
 			Drone: 100
 			Rocket: 100
 		ValidTargets: Air
-		DamageTypes: BulletDeath, NonTemporal
+		DamageTypes: ExplosionDeath, NonTemporal
+	Warhead@2Eff: CreateEffect
+		Explosions: small_explosion

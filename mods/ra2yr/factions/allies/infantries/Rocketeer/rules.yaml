@@ -69,14 +69,3 @@ jumpjet.husk:
 		Name: Rocketeer
 	Tooltip@NoRow:
 		Name: Rocketeer
-
-# jumpjet.spawner:
-# 	Inherits: ^Infantry
-# 	FreeActor:
-# 		Actor: jumpjet
-# 		Facing: 640
-# 	KillsSelf:
-# 		RemoveInstead: true
-# 	-MapEditorData:
-# 	RenderSprites:
-# 		Image: jumpjet

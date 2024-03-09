@@ -1,10 +1,33 @@
 Maverick:
-	Inherits: ^ORCAAP
+	Inherits: ^Missile
+	Inherits@WATEREXPLOSION: LargeWaterExplosion
 	ReloadDelay: 10
 	Range: 6c0
 	Report: vintatta.wav
+	ValidTargets: Ground, Water
 	Warhead@1Dam: SpreadDamage
 		Damage: 15000
+		Spread: 0c410
+		Falloff: 100, 0
+		Versus:
+			None: 100
+			Flak: 100
+			Plate: 100
+			Light: 100
+			Medium: 100
+			Heavy: 100
+			Wood: 100
+			Steel: 75
+			Concrete: 100
+			Drone: 100
+			Rocket: 100
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, SuppressTerrorDrone, NonTemporal
+		ValidTargets: Ground, Water
+	Warhead@2Eff: CreateEffect
+		Explosions: verylarge_clsn
+		ImpactSounds: gexp14a.wav, gexp14b.wav, gexp14c.wav, gexp14d.wav
+	Warhead@3Smu: LeaveSmudge
+		SmudgeType: MediumCrater, MediumScorch
 
 MaverickE:
 	Inherits: Maverick

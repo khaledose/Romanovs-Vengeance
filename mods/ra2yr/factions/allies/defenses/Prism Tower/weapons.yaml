@@ -1,14 +1,29 @@
 PrismShot:
-	Inherits@1: ^Prism
+	Inherits: ^PrismBeam
 	ReloadDelay: 1
 	Range: 8c0
 	Report: bpriat1a.wav
-	Warhead@1Dam: SpreadDamage
+	ValidTargets: Ground, Water, Bridge, Wall, Fence, Tree
+	InvalidTargets: Underwater
+	Warhead@1Dam: TargetDamage
 		Damage: 12000
+		Versus:
+			None: 200
+			Flak: 100
+			Plate: 100
+			Light: 100
+			Medium: 100
+			Heavy: 100
+			Wood: 50
+			Steel: 50
+			Concrete: 50
+			Drone: 200
+			Rocket: 100
+		ValidTargets: Ground, Water, Bridge, Wall, Fence, Tree
+		InvalidTargets: Underwater
 
 PrismSupport:
 	Inherits: PrismShot
-	ValidTargets: Ground, Water
-	Warhead@1Dam: SpreadDamage
+	Warhead@1Dam: TargetDamage
 		Damage: 0
 	AirThreshold: 5000

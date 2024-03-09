@@ -5,7 +5,7 @@
 		Descriptions:
 			1: Launches a devastating nuclear missile\nat a target location.
 		MissileWeapons:
-			1: atomic
+			1: NukeBomb
 		Prerequisites:
 			1: namisl
 		Icons:

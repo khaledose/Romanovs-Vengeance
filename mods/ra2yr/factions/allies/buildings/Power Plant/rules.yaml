@@ -25,7 +25,6 @@ gapowr:
 		Volume: 0.8
 	Explodes:
 		Weapon: PowerPlantExplosion
-		Type: CenterPosition
 	WithIdleOverlay@glow:
 		Sequence: idle-glow
 		PauseOnCondition: chronodisable

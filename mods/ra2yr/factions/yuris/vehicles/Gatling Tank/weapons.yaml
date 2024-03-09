@@ -5,7 +5,7 @@ AGGatling:
 	Range: 5c0
 	Burst: 2
 	ValidTargets: Ground, Water
-	Warhead@1Dam: SpreadDamage
+	Warhead@1Dam: TargetDamage
 		Damage: 1000
 		ValidTargets: Ground, Water
 
@@ -30,7 +30,7 @@ AAGatling:
 	ValidTargets: Air
 	Projectile: InstantHit
 		Blockable: false
-	Warhead@1Dam: SpreadDamage
+	Warhead@1Dam: TargetDamage
 		Damage: 1000
 		Versus:
 			Light: 65

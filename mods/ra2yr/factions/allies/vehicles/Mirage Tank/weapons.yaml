@@ -1,10 +1,9 @@
 MirageGun:
-	Inherits: ^LargeBullet
 	ReloadDelay: 70
 	Range: 7c0
 	Report: vmiratta.wav
-	Projectile: BulletAS
-		Speed: 100c0
+	Projectile: InstantHit
+		Blockable: true
 	Warhead@1Dam: SpreadDamage
 		Spread: 64
 		Damage: 10000
@@ -12,23 +11,22 @@ MirageGun:
 			None: 100
 			Flak: 100
 			Plate: 80
-			Wood: 20
-			Steel: 25
-			Concrete: 15
+			Light: 100
+			Medium: 100
+			Heavy: 100
+			Wood: 30
+			Steel: 20
+			Concrete: 20
 			Drone: 100
+			Rocket: 100
 		DamageTypes: FlameDeath, SuppressTerrorDrone, NonTemporal
 	Warhead@2Eff: CreateEffect
 		Explosions: iron_fx
-		ImpactSounds:
 		ValidTargets: Ground, Water, Air
-	-Warhead@3EffWater:
-	Warhead@4Smu: LeaveSmudge
-		SmudgeType: SmallCrater
 
 MirageGunE:
 	Inherits: MirageGun
+	ReloadDelay: 80
 	Range: 9c0
 	Warhead@1Dam: SpreadDamage
 		Damage: 15000
-		Versus:
-			Plate: 100

@@ -20,7 +20,7 @@
 	Inherits@8: ^AffectedByBorisAirStrike
 	Inherits@HANDICAPS: ^PlayerHandicaps
 	Targetable:
-		TargetTypes: Ground, DetonateAttack, Structure
+		TargetTypes: Ground, Structure
 	RevealsShroud:
 		Range: 6c0
 		MaxHeightDelta: 3
@@ -204,7 +204,7 @@
 	Buildable:
 		Queue: Building.Allies
 	Targetable:
-		TargetTypes: Ground, DetonateAttack, NoAutoTarget
+		TargetTypes: Ground, NoAutoTarget
 	Tooltip:
 		Name: Decoration
 	Tooltip@NoRow:
@@ -454,67 +454,6 @@ barracks.infiltrated:
 		Duration: 3
 	Voiced:
 		VoiceSet: RefineryVoice
-		Volume: 0.8
-
-^Silo:
-	Inherits: ^BaseStructure
-	Inherits@DISK: ^DiskStealable
-	Inherits@SHAPE: ^2x2Shape
-	IsometricSelectable:
-		DecorationHeight: 30
-	Buildable:
-		Queue: Support
-		BuildPaletteOrder: 30
-		Prerequisites: refinery, ~!global-megawealth, ~techlevel.1
-		Description: Stores excess Ore.
-		BuildDuration: 125
-		BuildDurationModifier: 100
-	Valued:
-		Cost: 300
-	Tooltip:
-		Name: Ore Silo
-	Tooltip@NoRow:
-		Name: Ore Silo
-	Health:
-		HP: 30000
-	Armor:
-		Type: Wood
-	RevealsShroud:
-		Range: 4c0
-	# RevealsShroudToIntelligenceOwner:
-	#	Types: SatelliteScan
-	#	Range: 4c0
-	-WithSpriteBody:
-	WithResourceLevelSpriteBody:
-		Stages: 4
-	StoresResources:
-		Capacity: 2000
-	WithIdleOverlay@waves:
-		Sequence: idle-waves
-		RequiresCondition: in_water
-	Power:
-		Amount: -10
-		RequiresCondition: !chronodisable
-	Explodes:
-		RequiresCondition: !spawn-ore
-	Explodes@Ore:
-		Type: Footprint
-		DeathTypes: NonTemporal
-		Weapon: RefineryExplode
-		RequiresCondition: spawn-ore
-	GrantConditionOnPlayerResources:
-		Condition: spawn-ore
-	WithResourceStoragePipsDecoration:
-		FullSequence: pip-building-yellow
-		EmptySequence: pip-building-empty
-		Palette: ra
-		Margin: 8, 2
-		PipStride: 4, 2
-		Position: BottomLeft
-		RequiresSelection: true
-		PipCount: 12
-	Voiced:
-		VoiceSet: SiloVoice
 		Volume: 0.8
 
 ^WarFactory:
@@ -898,7 +837,7 @@ warfactory.infiltrated:
 	RevealsShroud:
 		Range: 1c0
 	Targetable:
-		TargetTypes: Ground, Wall, DetonateAttack, NoAutoTarget
+		TargetTypes: Ground, Wall, NoAutoTarget
 	WithWallSpriteBody:
 		Type: wall
 	Sellable:
@@ -936,7 +875,7 @@ warfactory.infiltrated:
 		GenericName: Fence
 	-BlocksProjectiles:
 	Targetable:
-		TargetTypes: Ground, Fence, DetonateAttack, NoAutoTarget
+		TargetTypes: Ground, Fence, NoAutoTarget
 	WithWallSpriteBody:
 		Type: fence
 	Crushable:

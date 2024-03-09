@@ -17,7 +17,7 @@
 		MinimumZoom: 0
 	WithTextControlGroupDecoration:
 	RevealOnFire:
-		ArmamentNames: primary, secondary, deployed, sapper
+		ArmamentNames: primary, secondary, deployed
 		Duration: 50
 	RevealOnDeath:
 		Radius: 5c0
@@ -82,7 +82,7 @@
 		Voice: Attack
 	Guardable:
 	Targetable:
-		TargetTypes: Ground, Infantry, DetonateAttack, Disguise
+		TargetTypes: Ground, Infantry, Disguise
 	AttackFrontal:
 		Voice: Attack
 		FacingTolerance: 2
@@ -275,7 +275,7 @@
 		TurnsWhileMoving: true
 		RequiresCondition: !chronodisable
 	Targetable:
-		TargetTypes: Ground, Infantry, DetonateAttack, Disguise
+		TargetTypes: Ground, Infantry, Disguise
 	Guard:
 		Voice: Attack
 	Guardable:
@@ -330,7 +330,7 @@
 		MustFaceTarget: true
 		PauseOnCondition: chronodisable
 	Targetable:
-		TargetTypes: Ground, Water, SeaAnimal
+		TargetTypes: Water, SeaAnimal
 	Targetable@REPAIR:
 		RequiresCondition: damaged
 		TargetTypes: SeaAnimalRepair

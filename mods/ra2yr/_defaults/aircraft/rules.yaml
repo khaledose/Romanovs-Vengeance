@@ -195,8 +195,20 @@
 
 ^ShootableMissile:
 	Inherits@1: ^ExistsInWorld
-	Inherits@HANDICAPS: ^PlayerHandicaps
-	-GivesExperience:
+	Inherits@2: ^WithTooltip
+	OwnerLostAction:
+		Action: Kill
+		DeathTypes: BulletDeath, NonTemporal
+	HitShape:
+	HiddenUnderFog:
+	WithTextControlGroupDecoration:
+	BodyOrientation:
+		QuantizedFacings: 0
+		CameraPitch: 85
+		UseClassicPerspectiveFudge: false
+	AppearsOnRadar:
+		UseLocation: true
+	Interactable:
 	Armor:
 		Type: Missile
 	BallisticMissile:
@@ -209,26 +221,26 @@
 	Targetable@AIRBORNE:
 		TargetTypes: Air
 		RequiresCondition: airborne
-	HiddenUnderFog:
-		Type: GroundPosition
-	Tooltip:
-		Name: Missile
-		GenericName: Missile
-		RequiresCondition: showownername
-	Tooltip@NoRow:
-		Name: Missile
-		GenericName: Missile
-		ShowOwnerRow: false
-		RequiresCondition: !showownername
-	GrantConditionOnPrerequisite@SHOWOWNERNAME:
-		Condition: showownername
-		Prerequisites: global-showownername
-	HitShape:
+	MissileSpawnerSlave:
+	LeavesTrails:
+		Image: smokey2
+		TrailWhileStationary: true
+		MovingInterval: 0
+		SpawnAtLastPosition: false
+		Type: CenterPosition
+	SpawnedExplodes:
+		RequiresCondition: !rank-elite
+	SpawnedExplodes@Elite:
+		RequiresCondition: rank-elite
+	ExternalCondition@RANK-ELITE:
+		Condition: rank-elite
 	RejectsOrders:
-	BodyOrientation:
-		QuantizedFacings: 0
-		CameraPitch: 85
-		UseClassicPerspectiveFudge: false
 	RenderVoxels:
+		Scale: 11.7
+		LightYaw: 800
+		LightPitch: 150
+		LightAmbientColor: -0.5,-0.5,-0.5
+		LightDiffuseColor: 1.3,1.3,1.3
 	WithVoxelBody:
-	Interactable:
+	MapEditorData:
+		Categories: Rocket

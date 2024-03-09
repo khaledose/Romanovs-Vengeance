@@ -1,14 +1,15 @@
 cmisl:
 	Inherits: ^ShootableMissile
-	Valued:
-		Cost: 50
-	Tooltip:
-	Tooltip@NoRow:
-		Name: Cruise Missile
 	Health:
 		HP: 5000
 	Armor:
 		Type: Rocket
+	Valued:
+		Cost: 50
+	Tooltip:
+		Name: Cruise Missile
+	Tooltip@NoRow:
+		Name: Cruise Missile
 	BallisticMissile:
 		CreateAngle: 255
 		LaunchAngle: 255
@@ -20,25 +21,9 @@ cmisl:
 		LaunchSounds: vbooat1a.wav
 		SoundVolume: 0.6
 		AirborneCondition: airborne
-	LeavesTrails:
-		Image: smokey2
-		MovingInterval: 2
-		SpawnAtLastPosition: false
-		Type: CenterPosition
-	MissileSpawnerSlave:
 	SpawnedExplodes:
 		Weapon: CruiseWeapon
-		EmptyWeapon: CruiseWeapon
-		RequiresCondition: !airborne && !rank-elite
 	SpawnedExplodes@Elite:
 		Weapon: CruiseWeaponE
-		EmptyWeapon: CruiseWeaponE
-		RequiresCondition: !airborne && rank-elite
-	SpawnedExplodes@Airborne:
-		Weapon: UnitExplode
-		EmptyWeapon: UnitExplode
-		RequiresCondition: airborne
-	ExternalCondition@RANK-ELITE:
-		Condition: rank-elite
 	RenderVoxels:
 		Image: bsubmisl

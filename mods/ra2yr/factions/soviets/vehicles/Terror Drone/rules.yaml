@@ -1,64 +1,33 @@
 dron:
-	Inherits: ^Vehicle
-	Inherits@EXPERIENCE: ^GainsExperience
-	Inherits@VETERAN: ^ProducibleAsVeteranVehicle
+	Inherits: ^Machine
+	Inherits@RAD: ^RadiationImmunity
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Soviets
 		Prerequisites: ~vehicle.soviets, ~techlevel.2
-		BuildPaletteOrder: 40
 		Description: Small vehicle that can infect enemy vehicles and slowly kill them.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nAbilities:\n- Immune to Radiation\n- Cannot be mind controlled
-		BuildDuration: 175
 		BuildDurationModifier: 100
-	Valued:
-		Cost: 500
-	DeliversCash:
-		Payload: 500
-	Tooltip:
-	Tooltip@NoRow:
-		Name: Terror Drone
-	UpdatesPlayerStatistics:
-		AddToArmyValue: true
-	Mobile:
-		Speed: 150
-		TurnSpeed: 1023
-		TerrainOrientationAdjustmentMargin: -1
-		RequiresCondition: !chronodisable
+		BuildPaletteOrder: 40
 	Health:
 		HP: 10000
 	Armor:
 		Type: Drone
+	Valued:
+		Cost: 500
+	DeliversCash:
+		Payload: 500
+	Mobile:
+		Speed: 150
+		TurnSpeed: 1023
+		Locomotor: wheeled
+		Voice: Move
+		TerrainOrientationAdjustmentMargin: -1
+		RequiresCondition: !chronodisable
 	RevealsShroud:
 		Range: 6c0
-	# RevealsShroudToIntelligenceOwner:
-	#	Types: SatelliteScan
-	#	Range: 6c0
-	RevealOnDeath:
-		Radius: 6c0
-	Passenger:
-		CargoType: SmallVehicle
-		Weight: 2
-	RenderSprites:
-	-InfectableRV:
-	-Targetable@DRONE:
-	-SpeedMultiplier@DRONE:
-	-RevealsShroud@DRONE:
-	-PeriodicExplosion@dronesparks:
-	-RenderVoxels:
-	-CaptureManager:
-	-Capturable:
-	WithInfantryBody:
-		StandSequences: stand
-		DefaultAttackSequence: jump
-		RequiresCondition: !jousting
-	WithFacingSpriteBody:
-		Sequence: shoot
-		RequiresCondition: jousting
-	GrantConditionOnTerrain@Water:
-		TerrainTypes: Water, Beach
-		Condition: in_water
-	KillsSelf@LowPowerOnWater:
-		DamageTypes: NonTemporal
-		RequiresCondition: in_water
+	Tooltip:
+		Name: Terror Drone
+	Tooltip@NoRow:
+		Name: Terror Drone
 	Armament@primary:
 		Weapon: DroneJump
 		RequiresCondition: !rank-elite
@@ -73,51 +42,125 @@ dron:
 		SurviveHostDamageTypes: DroneInfection
 		JoustRange: 1c768
 		RequiresCondition: !chronodisable
-	RejectsOrders:
-		RequiresCondition: jousting
-	SpeedMultiplier@JOUSTING:
-		Modifier: 150
-		RequiresCondition: jousting
-	AttackMove:
-		Voice: Move
-	AutoTarget:
-		ScanRadius: 5
-		InitialStance: AttackAnything
-	AutoTargetPriority@DEFAULT:
-		ValidTargets: TerrorDronable
 	Targetable:
-		TargetTypes: Ground, TerrorDrone, DetonateAttack, ImmuneToRadiation
+		TargetTypes: Ground, TerrorDrone
 		RequiresCondition: !parachute && !chronodisable && !jousting
-	# -DelayedWeaponAttachable@SUPERC4:
-	# -Targetable@SUPERC4:
-	# -Targetable@SUPERC4CLEANER:
-	# -WithDecoration@SUPERC4:
-	# -AmbientSound@SUPERC4:
-	Explodes:
-		Weapon: InfantryExplode
-		EmptyWeapon: InfantryExplode
+	WithInfantryBody:
+		StandSequences: stand
+		DefaultAttackSequence: jump
+		RequiresCondition: !jousting
+	WithFacingSpriteBody:
+		Sequence: shoot
+		RequiresCondition: jousting
 	Voiced:
 		VoiceSet: TerrorDroneVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
-	AmbientSound@Walk:
-		SoundFiles: vterlo1a.wav, vterlo1b.wav, vterlo1c.wav, vterlo2a.wav, vterlo2b.wav, vterlo2c.wav
-		Volume: 0.50
-		RequiresCondition: walking
-	SoundAnnouncement@end:
-		SoundFiles: vterlo3.wav
-		Volume: 0.50
-		RequiresCondition: !walking
-	GrantConditionOnMovement:
-		Condition: walking
-	DeathSounds:
-		DeathTypes: NonTemporal
-	HitShape:
-	ActorStatValues:
-		Damage: 40
-		ReloadDelay: 45
+
+
+# dron:
+# 	Inherits: ^Vehicle
+# 	Inherits@EXPERIENCE: ^GainsExperience
+# 	Inherits@VETERAN: ^ProducibleAsVeteranVehicle
+# 	Buildable:
+# 		Queue: Vehicle.Shared, Vehicle.Soviets
+# 		Prerequisites: ~vehicle.soviets, ~techlevel.2
+# 		BuildPaletteOrder: 40
+# 		Description: Small vehicle that can infect enemy vehicles and slowly kill them.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nAbilities:\n- Immune to Radiation\n- Cannot be mind controlled
+# 		BuildDuration: 175
+# 		BuildDurationModifier: 100
+	
+	
+# 	UpdatesPlayerStatistics:
+# 		AddToArmyValue: true
+	
+# 	# RevealsShroudToIntelligenceOwner:
+# 	#	Types: SatelliteScan
+# 	#	Range: 6c0
+# 	RevealOnDeath:
+# 		Radius: 6c0
+# 	Passenger:
+# 		CargoType: SmallVehicle
+# 		Weight: 2
+# 	RenderSprites:
+# 	-InfectableRV:
+# 	-Targetable@DRONE:
+# 	-SpeedMultiplier@DRONE:
+# 	-RevealsShroud@DRONE:
+# 	-PeriodicExplosion@dronesparks:
+# 	-RenderVoxels:
+# 	-CaptureManager:
+# 	-Capturable:
+# 	WithInfantryBody:
+# 		StandSequences: stand
+# 		DefaultAttackSequence: jump
+# 		RequiresCondition: !jousting
+# 	WithFacingSpriteBody:
+# 		Sequence: shoot
+# 		RequiresCondition: jousting
+# 	GrantConditionOnTerrain@Water:
+# 		TerrainTypes: Water, Beach
+# 		Condition: in_water
+# 	KillsSelf@LowPowerOnWater:
+# 		DamageTypes: NonTemporal
+# 		RequiresCondition: in_water
+# 	Armament@primary:
+# 		Weapon: DroneJump
+# 		RequiresCondition: !rank-elite
+# 	Armament@elite:
+# 		Weapon: DroneJumpE
+# 		RequiresCondition: rank-elite
+# 	AttackInfectRV:
+# 		Voice: Attack
+# 		Damage: 4000
+# 		DamageInterval: 45
+# 		DamageTypes: DroneInfection, BulletDeath, NonTemporal
+# 		SurviveHostDamageTypes: DroneInfection
+# 		JoustRange: 1c768
+# 		RequiresCondition: !chronodisable
+# 	RejectsOrders:
+# 		RequiresCondition: jousting
+# 	SpeedMultiplier@JOUSTING:
+# 		Modifier: 150
+# 		RequiresCondition: jousting
+# 	AttackMove:
+# 		Voice: Move
+# 	AutoTarget:
+# 		ScanRadius: 5
+# 		InitialStance: AttackAnything
+# 	AutoTargetPriority@DEFAULT:
+# 		ValidTargets: TerrorDronable
+# 	Targetable:
+# 		TargetTypes: Ground, TerrorDrone, ImmuneToRadiation
+# 		RequiresCondition: !parachute && !chronodisable && !jousting
+# 	# -DelayedWeaponAttachable@SUPERC4:
+# 	# -Targetable@SUPERC4:
+# 	# -Targetable@SUPERC4CLEANER:
+# 	# -WithDecoration@SUPERC4:
+# 	# -AmbientSound@SUPERC4:
+# 	Explodes:
+# 		Weapon: InfantryExplode
+# 		EmptyWeapon: InfantryExplode
+# 	Voiced:
+# 		VoiceSet: TerrorDroneVoice
+# 	ExternalCondition@PRODUCED:
+# 		Condition: produced
+# 	VoiceAnnouncement:
+# 		RequiresCondition: produced
+# 		Voice: Build
+# 		ValidRelationships: None
+# 	AmbientSound@Walk:
+# 		SoundFiles: vterlo1a.wav, vterlo1b.wav, vterlo1c.wav, vterlo2a.wav, vterlo2b.wav, vterlo2c.wav
+# 		Volume: 0.50
+# 		RequiresCondition: walking
+# 	SoundAnnouncement@end:
+# 		SoundFiles: vterlo3.wav
+# 		Volume: 0.50
+# 		RequiresCondition: !walking
+# 	GrantConditionOnMovement:
+# 		Condition: walking
+# 	DeathSounds:
+# 		DeathTypes: NonTemporal
+# 	HitShape:
+# 	ActorStatValues:
+# 		Damage: 40
+# 		ReloadDelay: 45
 

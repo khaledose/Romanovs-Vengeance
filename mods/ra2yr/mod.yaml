@@ -441,7 +441,7 @@ Sequences:
 	ra2yr|world/trees/sequence.yaml
 	ra2yr|world/vehicles/sequence.yaml
 	ra2yr|_defaults/buildings/sequence.yaml
-	ra2yr|_defaults/explosions/sequence.yaml
+	ra2yr|_defaults/weapons/explosions/sequence.yaml
 	ra2yr|_defaults/infantries/sequence.yaml
 	ra2yr|_defaults/misc/sequence.yaml
 	ra2yr|_defaults/vehicles/sequence.yaml
@@ -587,6 +587,7 @@ Weapons:
 	ra2yr|factions/allies/aircraft/Hornet/weapons.yaml
 	ra2yr|factions/allies/aircraft/Night Hawk/weapons.yaml
 	ra2yr|factions/allies/aircraft/Osprey/weapons.yaml
+	ra2yr|factions/allies/buildings/Power Plant/weapons.yaml
 	ra2yr|factions/allies/defenses/Grand Cannon/weapons.yaml
 	ra2yr|factions/allies/defenses/Patriot Missile System/weapons.yaml
 	ra2yr|factions/allies/defenses/Pill Box/weapons.yaml
@@ -617,7 +618,6 @@ Weapons:
 	ra2yr|factions/soviets/aircraft/Spy Plane/weapons.yaml
 	ra2yr|factions/soviets/buildings/Nuclear Reactor/weapons.yaml
 	ra2yr|factions/soviets/buildings/Tesla Reactor/weapons.yaml
-	ra2yr|factions/soviets/defenses/Flak Cannon/weapons.yaml
 	ra2yr|factions/soviets/defenses/Sentry Gun/weapons.yaml
 	ra2yr|factions/soviets/defenses/Tesla Coil/weapons.yaml
 	ra2yr|factions/soviets/infantries/Boris Bukov/weapons.yaml
@@ -643,7 +643,6 @@ Weapons:
 	ra2yr|factions/soviets/vehicles/V3 Rocket/weapons.yaml
 	ra2yr|factions/soviets/vehicles/War Miner/weapons.yaml
 	ra2yr|factions/yuris/aircraft/Floating Disc/weapons.yaml
-	ra2yr|factions/yuris/buildings/Slave Miner/weapons.yaml
 	ra2yr|factions/yuris/defenses/Gatling Cannon/weapons.yaml
 	ra2yr|factions/yuris/defenses/Psychic Tower/weapons.yaml
 	ra2yr|factions/yuris/infantries/Brute/weapons.yaml
@@ -669,11 +668,9 @@ Weapons:
 	ra2yr|world/structures/props/weapons.yaml
 	ra2yr|world/structures/tech/weapons.yaml
 	ra2yr|_defaults/aircraft/weapons.yaml
-	ra2yr|_defaults/buildings/weapons.yaml
-	ra2yr|_defaults/explosions/weapons.yaml
 	ra2yr|_defaults/traits/weapons.yaml
-	ra2yr|_defaults/vehicles/weapons.yaml
 	ra2yr|_defaults/weapons/weapons.yaml
+	ra2yr|_defaults/weapons/explosions/weapons.yaml
 
 Voices:
 	ra2yr|audio/voices.yaml

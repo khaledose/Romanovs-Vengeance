@@ -3,17 +3,17 @@ BlackHawkCannon:
 	ReloadDelay: 40
 	Range: 6c0
 	Report: vblhatta.wav, vblhattb.wav
-	ValidTargets: Ground, Air, Water
-	Warhead@1Dam: SpreadDamage
+	ValidTargets: Ground, Water, Air
+	Warhead@1Dam: TargetDamage
 		Damage: 3500
-		ValidTargets: Ground, Air, Water
+		ValidTargets: Ground, Water, Air
 
 BlackHawkCannonE:
 	Inherits: ^SSA
 	ReloadDelay: 40
 	Range: 6c0
 	Report: vblhatta.wav, vblhattb.wav
-	ValidTargets: Ground, Air, Water
-	Warhead@1Dam: SpreadDamage
+	ValidTargets: Ground, Water, Air
+	Warhead@1Dam: TargetDamage
 		Damage: 4000
-		ValidTargets: Ground, Air, Water
+		ValidTargets: Ground, Water, Air

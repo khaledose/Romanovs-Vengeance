@@ -1,37 +1,52 @@
 sabot:
-	Inherits: ^LargeBullet
-	ValidTargets: Ground, Water
-	Range: 6c0
+	Inherits: ^Bullet
+	Inherits@WATEREXPLOSION: LargeWaterExplosion
 	ReloadDelay: 70
+	Range: 5c0
 	Report: vtadatta.wav, vtadattb.wav, vtadattc.wav
-	Projectile: BulletAS
-		Speed: 1024
 	Warhead@1Dam: SpreadDamage
-		Spread: 190
 		Damage: 15000
+		Spread: 0c308
 		Versus:
-			None: 10
-			Flak: 10
-			Plate: 5
-		DamageTypes: Prone50Percent, TriggerProne, BulletDeath, SuppressTerrorDrone, NonTemporal
-	Warhead@4Smu: LeaveSmudge
-		SmudgeType: SmallCrater
+			None: 2
+			Flak: 2
+			Plate: 2
+			Light: 100
+			Medium: 40
+			Heavy: 100
+			Wood: 2
+			Steel: 2
+			Concrete: 2
+			Drone: 2
+			Rocket: 100
+		DamageTypes: Prone50Percent, TriggerProne, NonTemporal
+	Warhead@2Eff: CreateEffect
+		Explosions: medium_clsn
+		ImpactSounds: gexp14a.wav, gexp14b.wav, gexp14c.wav, gexp14d.wav
+	Warhead@3Smu: LeaveSmudge
+		SmudgeType: MediumCrater
 
 sabotE:
 	Inherits: sabot
+	Inherits@WATEREXPLOSION: LargeWaterExplosion
+	ReloadDelay: 60
+	Range: 6c768
 	Burst: 2
 	BurstDelays: 5
-	Projectile: BulletAS
 	Warhead@1Dam: SpreadDamage
+		Damage: 17500
 		Versus:
-			None: 50
-			Flak: 50
-			Plate: 50
+			None: 2
+			Flak: 2
+			Plate: 2
+			Light: 100
+			Medium: 50
+			Heavy: 100
+			Wood: 2
+			Steel: 2
+			Concrete: 2
+			Drone: 100
+			Rocket: 100
 	Warhead@2Eff: CreateEffect
 		Explosions: elite_explosion
 		ImpactSounds: gexpapoa.wav
-	Warhead@3EffWater: CreateEffect
-		Explosions: large_watersplash
-		ImpactSounds: gexpwala.wav
-	Warhead@4Smu: LeaveSmudge
-		SmudgeType: MediumCrater, MediumScorch

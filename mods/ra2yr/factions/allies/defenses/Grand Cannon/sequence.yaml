@@ -31,6 +31,7 @@ gtgcan:
 		Filename: gcmuzzle.shp
 		Length: *
 		Offset: 0,0
+		ZOffset: 1
 	icon:
 		Filename: cameo|gcanicon.shp
 		Offset: 0,0

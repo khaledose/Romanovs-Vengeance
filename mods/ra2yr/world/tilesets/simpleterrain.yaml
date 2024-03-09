@@ -10,19 +10,19 @@ Terrain:
 		Type: Clear
 		AcceptsSmudgeType: SmallCrater, MediumCrater, LargeCrater, SmallScorch, MediumScorch, LargeScorch
 		Color: 745537
-		TargetTypes: Ground
+		TargetTypes: Ground, GroundTerrain
 	TerrainType@Road:
 		Type: Road
 		Color: 745537
-		TargetTypes: Ground
+		TargetTypes: Ground, GroundTerrain
 	TerrainType@Rail:
 		Type: Rail
 		Color: 745537
-		TargetTypes: Ground
+		TargetTypes: Ground, GroundTerrain
 	TerrainType@Impassable:
 		Type: Impassable
 		Color: 745537
-		TargetTypes: Ground
+		TargetTypes: Ground, GroundTerrain
 	TerrainType@Water:
 		Type: Water
 		Color: 745537
@@ -34,57 +34,57 @@ Terrain:
 	TerrainType@DirtRoad:
 		Type: DirtRoad
 		Color: 745537
-		TargetTypes: Ground
+		TargetTypes: Ground, GroundTerrain
 	TerrainType@Rough:
 		Type: Rough
 		Color: 745537
-		TargetTypes: Ground
+		TargetTypes: Ground, GroundTerrain
 	TerrainType@Cliff:
 		Type: Cliff
 		Color: 745537
-		TargetTypes: Ground
+		TargetTypes: Ground, GroundTerrain
 	TerrainType@Tiberium:
 		Type: Tiberium
 		AcceptsSmudgeType: SmallCrater, MediumCrater, LargeCrater, SmallScorch, MediumScorch, LargeScorch
 		Color: A1E21C
-		TargetTypes: Ground
+		TargetTypes: Ground, GroundTerrain
 	TerrainType@BlueTiberium:
 		Type: BlueTiberium
 		AcceptsSmudgeType: SmallCrater, MediumCrater, LargeCrater, SmallScorch, MediumScorch, LargeScorch
 		Color: 1C40F8
-		TargetTypes: Ground
+		TargetTypes: Ground, GroundTerrain
 	TerrainType@Veins:
 		Type: Veins
 		Color: E26700
-		TargetTypes: Ground
+		TargetTypes: Ground, GroundTerrain
 	TerrainType@Tree:
 		Type: Tree
-		TargetTypes: Ground
+		TargetTypes: Ground, GroundTerrain
 		Color: 506428
 	TerrainType@Rock:
 		Type: Rock
-		TargetTypes: Ground
+		TargetTypes: Ground, GroundTerrain
 		Color: 44443C
 	TerrainType@Ore:
 		Type: Ore
 		AcceptsSmudgeType: SmallCrater, MediumCrater, LargeCrater, SmallScorch, MediumScorch, LargeScorch
 		Color: F0C000
-		TargetTypes: Ground
+		TargetTypes: Ground, GroundTerrain
 	TerrainType@Gold:
 		Type: Gold
 		AcceptsSmudgeType: SmallCrater, MediumCrater, LargeCrater, SmallScorch, MediumScorch, LargeScorch
 		Color: FFD700
-		TargetTypes: Ground
+		TargetTypes: Ground, GroundTerrain
 	TerrainType@Gem:
 		Type: Gem
 		AcceptsSmudgeType: SmallCrater, MediumCrater, LargeCrater, SmallScorch, MediumScorch, LargeScorch
 		Color: 600060
-		TargetTypes: Ground
+		TargetTypes: Ground, GroundTerrain
 	TerrainType@Crystal:
 		Type: Crystal
 		AcceptsSmudgeType: SmallCrater, MediumCrater, LargeCrater, SmallScorch, MediumScorch, LargeScorch
 		Color: 6F00FF
-		TargetTypes: Ground
+		TargetTypes: Ground, GroundTerrain
 
 # Automatically generated. DO NOT EDIT!
 Templates:

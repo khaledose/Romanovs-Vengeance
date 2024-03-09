@@ -4,23 +4,10 @@
 	Range: 5c0
 	Report: irocatta.wav
 	ValidTargets: Ground, Water, Air
-	Warhead@1Dam: SpreadDamage
+	Warhead@1Dam: TargetDamage
 		Damage: 2500
 		ValidTargets: Ground, Water, Air
 
 20mmE:
 	Inherits: 20mm
 	ReloadDelay: 5
-
-# 20mmAA:
-# 	Inherits: 20mm
-# 	Range: 5c0
-# 	ValidTargets: Air
-# 	Warhead@1Dam: SpreadDamage
-# 		ValidTargets: Air
-
-# 20mmAAE:
-# 	Inherits: 20mmAA
-# 	Burst: 2
-# 	Warhead@2Eff: CreateEffect
-# 		Explosions: piffpiffred

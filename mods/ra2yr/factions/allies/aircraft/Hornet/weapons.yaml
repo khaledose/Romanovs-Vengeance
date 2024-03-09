@@ -1,19 +1,21 @@
 HornetBomb:
-	Inherits: ^ORCAAP
+	Inherits: Maverick
+	Inherits@WATEREXPLOSION: MediumWaterExplosion
 	ReloadDelay: 3
 	Range: 5c0
 	Report: vospatta.wav
-	Projectile: Missile
-		Speed: 384
-		HorizontalRateOfTurn: 32
-		RangeLimit: 11c512
 	Warhead@1Dam: SpreadDamage
 		Damage: 4000
+	Warhead@2Eff: CreateEffect
+		Explosions: tiny_clsn
 
 HornetBombE:
 	Inherits: HornetBomb
+	Inherits@WATEREXPLOSION: LargeWaterExplosion
 	Warhead@1Dam: SpreadDamage
 		Damage: 8000
+		Spread: 1c0
+		Falloff: 100, 0
 		Versus:
 			None: 100
 			Flak: 80
@@ -27,5 +29,4 @@ HornetBombE:
 			Drone: 100
 			Rocket: 100
 	Warhead@2Eff: CreateEffect
-		Explosions: tiny_grey_explosion, small_grey_explosion, medium_grey_explosion, large_grey_explosion, small_explosion, medium_explosion, large_explosion
-		ImpactSounds: gexp14a.wav
+		Explosions: medium_grey_explosion

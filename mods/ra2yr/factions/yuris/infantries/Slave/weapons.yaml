@@ -3,6 +3,7 @@ Shovel:
 	ReloadDelay: 30
 	Range: 1c512
 	Report: isl1atta.wav
-	Warhead@1Dam: SpreadDamage
+	ValidTargets: Ground
+	Warhead@1Dam: TargetDamage
 		Damage: 3000
 		ValidTargets: Ground

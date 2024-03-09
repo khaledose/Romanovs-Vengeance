@@ -1,31 +1,52 @@
 105mm:
-	Inherits: ^LargeBullet
+	Inherits: ^Bullet
+	Inherits@WATEREXPLOSION: MediumWaterExplosion
 	ReloadDelay: 60
-	Range: 6c0
+	Range: 5c0
 	Report: vgriatta.wav, vgriattb.wav, vgriattc.wav
-	Projectile: BulletAS
-		Speed: 1024
 	Warhead@1Dam: SpreadDamage
 		Damage: 6500
-	Warhead@4Smu: LeaveSmudge
+		Spread: 0c308
+		Versus:
+			None: 25
+			Flak: 25
+			Plate: 15
+			Light: 75
+			Medium: 100
+			Heavy: 100
+			Wood: 65
+			Steel: 45
+			Concrete: 60
+			Drone: 60
+			Rocket: 100
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, NonTemporal
+	Warhead@2Eff: CreateEffect
+		Explosions: tiny_clsn, small_clsn
+		ImpactSounds: gexp14a.wav, gexp14b.wav, gexp14c.wav, gexp14d.wav
+	Warhead@3Smu: LeaveSmudge
 		SmudgeType: SmallCrater
 
 105mmE:
 	Inherits: 105mm
+	Inherits@WATEREXPLOSION: LargeWaterExplosion
+	ReloadDelay: 50
 	Burst: 2
 	BurstDelays: 5
-	Projectile: BulletAS
-		Speed: 1024
 	Warhead@1Dam: SpreadDamage
 		Versus:
 			None: 100
 			Flak: 100
 			Plate: 100
+			Light: 100
+			Medium: 100
+			Heavy: 100
+			Wood: 65
+			Steel: 45
+			Concrete: 60
+			Drone: 60
+			Rocket: 100
 	Warhead@2Eff: CreateEffect
 		Explosions: elite_explosion
 		ImpactSounds: gexpapoa.wav
-	Warhead@3EffWater: CreateEffect
-		Explosions: large_watersplash
-		ImpactSounds: gexpwala.wav
-	Warhead@4Smu: LeaveSmudge
-		SmudgeType: MediumCrater, MediumScorch
+	Warhead@3Smu: LeaveSmudge
+		SmudgeType: MediumCrater

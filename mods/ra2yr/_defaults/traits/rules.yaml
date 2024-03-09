@@ -89,6 +89,7 @@
 ^InfantryPromotable:
 	Inherits: ^GainsExperience
 	ProducibleWithLevel@1:
+		# InitialLevels: 2
 		Prerequisites: barracks.infiltrated
 	WithProductionIconOverlay@1:
 		Prerequisites: barracks.infiltrated
@@ -96,6 +97,7 @@
 
 ^ProducibleAsVeteranVehicle:
 	ProducibleWithLevel@1:
+		# InitialLevels: 2
 		Prerequisites: warfactory.infiltrated
 	WithProductionIconOverlay@1:
 		Prerequisites: warfactory.infiltrated
@@ -188,7 +190,7 @@
 	Inherits@BOMB: ^IvanBombable
 	Inherits@CLEAN: ^IvanBombCleanable
 	DelayedWeaponAttachable@IVANBOMB:
-		Type: IvanBomb
+		Type: Bomb
 		ShowProgressBar: false
 		Condition: ivanbomb
 	WithDecoration@IVANBOMB:
@@ -207,7 +209,7 @@
 ^AcceptsC4:
 	Inherits@CLEAN: ^C4Cleanable
 	DelayedWeaponAttachable@C4:
-		Type: C4
+		Type: Bomb
 		ShowProgressBar: false
 		Condition: c4
 	WithDecoration@C4:
@@ -226,9 +228,19 @@
 
 ^Demolitionist:
 	Demolition:
+		Cursor: c4
 		TargetRelationships: Enemy
 		Voice: Attack
 		DamageTypes: NonTemporal
+	AttackFrontal:
+		Armaments: primary
+	AttackFrontal@secondary:
+		Armaments: secondary
+		Cursor: c4
+		OutsideRangeCursor: c4
+		Voice: Attack
+		FacingTolerance: 2
+		PauseOnCondition: chronodisable
 
 ^IronCurtainable:
 	Inherits@IC: ^IronCurtained
@@ -285,7 +297,6 @@
 		Prerequisites: prerequisite.five_naindp
 
 ^ChronoDisable:
-	Inherits@CHRONO: ^Chronoable
 	AffectedByTemporal:
 		Condition: affectedbytemporal
 		RevokeDelay: 120
@@ -294,8 +305,6 @@
 	Explodes@ChronoDisable:
 		Weapon: TemporalExplosion
 		DeathTypes: Temporal
-	Targetable:
-		RequiresCondition: !affectedbytemporal
 	SpeedMultiplier@ChronoDisable:
 		Modifier: 0
 		RequiresCondition: chronodisable
@@ -761,8 +770,8 @@
 		StartIfBelow: 100
 
 ^UnderWaterCloak:
-	Inherits@SUBMERGE: ^WithSubmergeColorOverlay
 	Cloak:
+		CloakedCondition: cloaked
 		DetectionTypes: Underwater
 		InitialDelay: 50
 		CloakDelay: 75
@@ -770,9 +779,12 @@
 		UncloakSound: vnavupa.wav
 		UncloakOn: Attack, Damage
 		IsPlayerPalette: true
-		Palette: player
+		Palette: player50alpha
+	Targetable:
+		RequiresCondition: !cloaked
 	Targetable@UNDERWATER:
 		TargetTypes: UnderWater
+		RequiresCondition: cloaked
 
 ^Wanderer:
 	Wanders:
@@ -926,7 +938,7 @@
 ^MissileSpawner:
 	MissileSpawnerMaster:
 		SpawnAllAtOnce: true
-		RespawnTicks: 120
+		RespawnTicks: 200
 		LoadedCondition: loaded
 	WithSpawnerMasterPipsDecoration:
 		Margin: 4, 3

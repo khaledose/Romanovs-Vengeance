@@ -30,6 +30,8 @@
 		TargetRelationships: Ally
 		ForceTargetRelationships: None
 		PauseOnCondition: chronodisable
+	AttackFrontal:
+		Voice: Action
 
 engineer:
 	Inherits: ^Engineer

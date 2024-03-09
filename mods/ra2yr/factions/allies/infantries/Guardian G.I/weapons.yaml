@@ -4,9 +4,10 @@ MissileLauncher:
 	Range: 8c0
 	MinRange: 1c0
 	Report: iggiat2a.wav, iggiat2b.wav
-	ValidTargets: Ground, Water, Air
 	Warhead@1Dam: SpreadDamage
 		Damage: 4000
+		Spread: 0c128
+		Falloff: 100, 83, 67, 50, 0
 		Versus:
 			None: 20
 			Flak: 20
@@ -19,7 +20,6 @@ MissileLauncher:
 			Concrete: 10
 			Drone: 100
 			Rocket: 100
-		ValidTargets: Ground, Water, Air
 		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, SuppressTerrorDrone, NonTemporal
 
 MissileLauncherE:
@@ -27,3 +27,7 @@ MissileLauncherE:
 	ReloadDelay: 20
 	Warhead@1Dam: SpreadDamage
 		Damage: 5000
+	Warhead@2Eff: CreateEffect
+		Explosions: small_explosion
+	Warhead@3Smu: LeaveSmudge
+		SmudgeType: MediumCrater, MediumScorch

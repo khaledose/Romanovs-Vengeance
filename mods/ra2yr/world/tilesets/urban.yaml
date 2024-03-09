@@ -12,25 +12,25 @@ Terrain:
 		Type: Clear
 		AcceptsSmudgeType: SmallCrater, MediumCrater, LargeCrater, SmallScorch, MediumScorch, LargeScorch
 		Color: 745537
-		TargetTypes: Ground
+		TargetTypes: Ground, GroundTerrain
 	TerrainType@Road:
 		Type: Road
 		AcceptsSmudgeType: SmallScorch, MediumScorch, LargeScorch
 		Color: 745537
-		TargetTypes: Ground
+		TargetTypes: Ground, GroundTerrain
 	TerrainType@Bridge:
 		Type: Bridge
 		Color: 403C34
-		TargetTypes: Ground
+		TargetTypes: Ground, GroundTerrain
 	TerrainType@Rail:
 		Type: Rail
 		AcceptsSmudgeType: SmallScorch, MediumScorch, LargeScorch
 		Color: 745537
-		TargetTypes: Ground
+		TargetTypes: Ground, GroundTerrain
 	TerrainType@Impassable:
 		Type: Impassable
 		Color: 745537
-		TargetTypes: Ground
+		TargetTypes: Ground, GroundTerrain
 	TerrainType@Water:
 		Type: Water
 		Color: 745537
@@ -43,34 +43,34 @@ Terrain:
 		Type: DirtRoad
 		AcceptsSmudgeType: SmallCrater, MediumCrater, LargeCrater, SmallScorch, MediumScorch, LargeScorch
 		Color: 745537
-		TargetTypes: Ground
+		TargetTypes: Ground, GroundTerrain
 	TerrainType@Rough:
 		Type: Rough
 		AcceptsSmudgeType: SmallCrater, MediumCrater, LargeCrater, SmallScorch, MediumScorch, LargeScorch
 		Color: 745537
-		TargetTypes: Ground
+		TargetTypes: Ground, GroundTerrain
 	TerrainType@Cliff:
 		Type: Cliff
 		Color: 745537
-		TargetTypes: Ground
+		TargetTypes: Ground, GroundTerrain
 	TerrainType@Tree:
 		Type: Tree
-		TargetTypes: Ground
+		TargetTypes: Ground, GroundTerrain
 		Color: 506428
 	TerrainType@Rock:
 		Type: Rock
-		TargetTypes: Ground
+		TargetTypes: Ground, GroundTerrain
 		Color: 44443C
 	TerrainType@Ore:
 		Type: Ore
 		AcceptsSmudgeType: SmallCrater, MediumCrater, LargeCrater, SmallScorch, MediumScorch, LargeScorch
 		Color: F0C000
-		TargetTypes: Ground
+		TargetTypes: Ground, GroundTerrain
 	TerrainType@Gems:
 		Type: Gems
 		AcceptsSmudgeType: SmallCrater, MediumCrater, LargeCrater, SmallScorch, MediumScorch, LargeScorch
 		Color: 600060
-		TargetTypes: Ground
+		TargetTypes: Ground, GroundTerrain
 
 Templates:
 	Template@0:

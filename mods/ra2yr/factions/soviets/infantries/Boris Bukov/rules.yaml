@@ -3,7 +3,6 @@ boris:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@VETERAN: ^InfantryPromotable
 	Inherits@MC: ^MindControllable
-	Inherits@AirStrike: ^BorisAirStrike
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Soviets
@@ -48,12 +47,6 @@ boris:
 		Weapon: AKME
 		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite
-	NotificationAnnouncement:
-		Notification: BorisHasArrived
-	Voiced:
-		VoiceSet: BorisVoice
-
-^BorisAirStrike:
 	Armament@flare:
 		Name: secondary
 		Weapon: Flare
@@ -81,11 +74,14 @@ boris:
 	GrantConditionOnAttack:
 		Condition: airstrike
 		ArmamentNames: secondary
-		RequiredShotsPerInstance: 50
-		MaximumInstances: 1
-		RevokeDelay: 2
+		RequiredShotsPerInstance: 150
+		RevokeDelay: 0
 		RevokeAll: true
 		RevokeOnNewTarget: true
 	WithInfantryBody:
 		AttackSequences:
 			secondary: shoot-flare
+	NotificationAnnouncement:
+		Notification: BorisHasArrived
+	Voiced:
+		VoiceSet: BorisVoice

@@ -5,7 +5,6 @@ PlaneExplode:
 
 KirovExplode:
 	Inherits: UnitExplode
-	Inherits@1: ^BreakPointDefenseDrones
 	Warhead@2Dam: SpreadDamage
 		Spread: 0c512
 		Damage: 75000 # 25000

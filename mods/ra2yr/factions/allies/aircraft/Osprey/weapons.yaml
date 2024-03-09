@@ -1,11 +1,14 @@
 ASWBomb:
-	Inherits: ^ORCAAP
+	Inherits: ^Missile
+	Inherits@WATEREXPLOSION: MediumWaterExplosion
 	ReloadDelay: 3
 	Range: 3c0
 	Report: vospatta.wav
 	ValidTargets: Underwater
 	Warhead@1Dam: SpreadDamage
 		Damage: 5000
+		Spread: 0c512
+		Falloff: 100, 0
 		Versus:
 			None: 25
 			Flak: 25
@@ -18,4 +21,5 @@ ASWBomb:
 			Concrete: 60
 			Drone: 25
 			Rocket: 100
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, SuppressTerrorDrone, NonTemporal
 		ValidTargets: Underwater

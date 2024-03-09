@@ -13,7 +13,7 @@ camisc01:
 	Targetable@barrel:
 		TargetTypes: Barrel
 	Explodes:
-		Weapon: LargeBarrelExplode
+		Weapon: LargeBarrelExplosion
 
 camisc02:
 	Inherits: camisc01
@@ -22,7 +22,7 @@ camisc02:
 	Tooltip@NoRow:
 		Name: Barrel
 	Explodes:
-		Weapon: SmallBarrelExplode
+		Weapon: SmallBarrelExplosion
 
 camisc03:
 	Inherits: ^Decoration
@@ -82,12 +82,12 @@ camisc06:
 	Tooltip@NoRow:
 		Name: V3 Rack
 	Explodes:
-		Weapon: V3AmmunitionExplode
+		Weapon: MiniNukeExplosion
 	SoundOnDamageTransition:
 		DamagedSounds: bmetdama.wav, bmetdamb.wav, bmetdamc.wav
 
 ammocrat:
-	Inherits: ^Decoration
+	Inherits: camisc01
 	Health:
 		HP: 100
 	Armor:
@@ -96,12 +96,6 @@ ammocrat:
 		Name: Ammo Crates
 	Tooltip@NoRow:
 		Name: Ammo Crates
-	SoundOnDamageTransition:
-		DamagedSounds: bmetdama.wav, bmetdamb.wav, bmetdamc.wav
-	Targetable@barrel:
-		TargetTypes: Barrel
-	Explodes:
-		Weapon: LargeBarrelExplode
 	RenderSprites:
 		Image: ammo01
 

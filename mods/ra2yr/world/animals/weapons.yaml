@@ -18,7 +18,6 @@ ChimpBite:
 	Report: gchiatta.wav, gchiattb.wav, gchiattc.wav
 
 TRexInfBite:
-	Inherits: ^BreakPointDefenseDrones
 	ReloadDelay: 30
 	Range: 1c512
 	Report: grexatta.wav, grexattb.wav, grexattc.wav
@@ -42,7 +41,6 @@ TRexInfBite:
 		ValidTargets: Infantry
 
 TRexBite:
-	Inherits: ^BreakPointDefenseDrones
 	ReloadDelay: 30
 	Range: 1c512
 	Report: grexatta.wav, grexattb.wav, grexattc.wav

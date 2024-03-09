@@ -1,6 +1,5 @@
 v3:
 	Inherits: ^GroundVehicle
-	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@VETERAN: ^ProducibleAsVeteranVehicle
 	Inherits@CHAOS: ^BerserkableVoxel
@@ -42,12 +41,7 @@ v3:
 		PauseOnCondition: chronodisable
 	MissileSpawnerMaster:
 		Actors: v3rocket
-		SpawnOffset: 0,640,300
-	FirepowerMultiplier@RANK-1:
-		RequiresCondition: rank-veteran >= 1 && !rank-elite
-	FirepowerMultiplier@RANK-ELITE:
-		RequiresCondition: rank-elite
-		Modifier: 220
+		SpawnOffset: 0,650,600
 	WithVoxelBody:
 		RequiresCondition: loaded
 	WithVoxelBody@EMPTY:

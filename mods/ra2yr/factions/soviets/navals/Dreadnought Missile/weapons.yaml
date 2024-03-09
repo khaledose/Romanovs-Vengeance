@@ -1,11 +1,33 @@
 DredWeapon:
-	Inherits: V3Weapon
+	Inherits@WATEREXPLOSION: LargeWaterExplosion
 	Warhead@1Dam: SpreadDamage
-		Spread: 1c0
-		Damage: 20000
+		Spread: 1c512
+		Falloff: 100, 0
+		Damage: 30000
+		ValidTargets: Ground, Water
+		Versus:
+			None: 100
+			Flak: 90
+			Plate: 80
+			Light: 100
+			Medium: 80
+			Heavy: 80
+			Wood: 85
+			Steel: 65
+			Concrete: 28
+			Drone: 80
+			Rocket: 0
+		DamageTypes: Prone70Percent, TriggerProne, ExplosionDeath, SuppressTerrorDrone, NonTemporal
+	Warhead@2Eff: CreateEffect
+		Explosions: medium_clsn
+		ImpactSounds: gexp14a.wav
+		ValidTargets: Ground, Air
+	Warhead@3Smu: LeaveSmudge
+		SmudgeType: MediumCrater, MediumScorch
 
 DredWeaponE:
-	Inherits: V3WeaponE
+	Inherits: DredWeapon
+	Inherits@EXPLOSION: MiniNukeExplosion
 	Warhead@1Dam: SpreadDamage
-		Spread: 1c0
-		Damage: 20000
+		Spread: 3c0
+		Damage: 60000

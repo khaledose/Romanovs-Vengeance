@@ -1,9 +1,9 @@
 ElectricBolt:
-	Inherits: ^Shock
+	Inherits: ^TeslaBeam
 	ReloadDelay: 60
 	Range: 3c0
 	Report: itesatta.wav
-	Warhead@1Dam: SpreadDamage
+	Warhead@1Dam: TargetDamage
 		Damage: 5000
 
 ElectricBoltE:

@@ -3,9 +3,10 @@ DoublePistols:
 	ReloadDelay: 5
 	Range: 6c0
 	Report: itanatta.wav, itanattb.wav
-	InvalidTargets: Bridge, Wall, Fence, Tree, Structure, WaterStructure, Vehicle, Ship
-	Warhead@1Dam: SpreadDamage
+	ValidTargets: GroundTerrain, Infantry
+	Warhead@1Dam: TargetDamage
 		Damage: 12500
+		ValidTargets: GroundTerrain, Infantry
 
 DoublePistolsE:
 	Inherits: DoublePistols
@@ -13,34 +14,24 @@ DoublePistolsE:
 	Range: 8c0
 
 C4:
-	Inherits@1: ^BreakPointDefenseDrones
-	Warhead@1Dam: SpreadDamage
-		Spread: 0c32
-		Damage: 10000000
-		Falloff: 100, 75, 50, 25, 0
+	Warhead@1Dam: TargetDamage
+		Spread: 0c64
+		Damage: 250000
+		Versus:
+			None: 0
+			Flak: 0
+			Plate: 0
+			Light: 100
+			Medium: 100
+			Heavy: 100
+			Wood: 0
+			Steel: 0
+			Concrete: 0
+			Drone: 100
+			Rocket: 100
 		ValidTargets: Ground, Water, Air
-		DamageTypes: PsychicDeath, Prone100Percent, SuppressTerrorDrone, NonTemporal
-	Warhead@2Eff: CreateEffect
-		Explosions: c4explosion
-		ExplosionPalette: tseffect
-		ImpactSounds: iseaexpa.wav
-	Warhead@3Smu: LeaveSmudge
-		SmudgeType: MediumCrater, MediumScorch
-
-Sapper:
-	ValidTargets: Structure, Ship, BridgeRepairHut
-	ReloadDelay: 50
-	TargetActorCenter: true
-	Range: 1c512
-	Projectile: InstantHit
-	Report: iseaseta.wav
-	Warhead@1Att: AttachDelayedWeapon
-		Weapon: C4
-		Type: C4
-		TriggerTime: 0
-		Range: 0c128
-	Warhead@2Dam: TargetDamage
+		DamageTypes: ExplosionDeath, NonTemporal
 
 SuperSapper:
-	Inherits@Sapper: Sapper
-	ValidTargets: Structure, Vehicle, Ship, SeaAnimal
+	Inherits: Sapper
+	ValidTargets: Structure, WaterStructure, Vehicle, Ship, SeaAnimal, BridgeRepairHut

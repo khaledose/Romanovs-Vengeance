@@ -32,15 +32,15 @@ dtruck:
 		Name: Demolition Truck
 	Tooltip@NoRow:
 		Name: Demolition Truck
-	Armament@PRIMARY:
-		Weapon: DemoTruckTargeting
+	Armament:
+		Weapon: TriggerAttack
 	AttackFrontal:
 		Voice: Attack
 		FacingTolerance: 512
 		RequiresCondition: !chronodisable
 	Explodes:
-		Weapon: demobomb
-		EmptyWeapon: demobomb
+		Weapon: DemoBomb
+		EmptyWeapon: DemoBomb
 	WithVoxelBody:
 	Voiced:
 		VoiceSet: DemolitionTruckVoice

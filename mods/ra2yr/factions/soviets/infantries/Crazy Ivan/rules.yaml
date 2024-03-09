@@ -27,18 +27,21 @@ ivan:
 		Cursor: bomb
 		OutsideRangeCursor: bomb
 	Armament@primary:
-		Weapon: IvanBombAttacher
+		Weapon: IvanBomber
 		Damage: 600
 		PauseOnCondition: chronodisable
 		RequiresCondition: !rank-elite
 	Armament@elite:
-		Weapon: IvanBombAttacherE
+		Weapon: IvanBomberE
 		Damage: 1500
 		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite
 	Explodes:
-		Weapon: IvanBomber
-		EmptyWeapon: IvanBomber
+		Weapon: IvanBomb
+		RequiresCondition: !rank-elite
+	Explodes@elite:
+		Weapon: IvanBombE
+		RequiresCondition: rank-elite
 	Voiced:
 		VoiceSet: CrazyIvanVoice
 	-Crushable:

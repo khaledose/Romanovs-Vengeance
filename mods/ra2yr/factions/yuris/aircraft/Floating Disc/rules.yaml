@@ -27,25 +27,6 @@ disk:
 	Armament@primary:
 		Weapon: DiskLaser
 		Damage: 75
-		ReloadingCondition: reload-ground
-		PauseOnCondition: reload-air
-		RequiresCondition: !rank-elite
-	Armament@elite:
-		Weapon: DiskLaserE
-		Damage: 100
-		ReloadingCondition: reload-ground
-		PauseOnCondition: reload-air
-		RequiresCondition: rank-elite
-	Armament@primary-aa:
-		Weapon: DiskLaserAA
-		ReloadingCondition: reload-air
-		PauseOnCondition: reload-ground
-		RequiresCondition: !rank-elite
-	Armament@elite-aa:
-		Weapon: DiskLaserAAE
-		ReloadingCondition: reload-air
-		PauseOnCondition: reload-ground
-		RequiresCondition: rank-elite
 	Armament@powerDrain:
 		Name: secondary
 		Weapon: DiskDrain

@@ -3,10 +3,19 @@ MP5:
 	ReloadDelay: 30
 	Range: 6c0
 	Report: iseaatta.wav, iseaattb.wav
-	InvalidTargets: Bridge, Wall, Fence, Tree, Structure, WaterStructure, Ship
-	Warhead@1Dam: SpreadDamage
+	ValidTargets: GroundTerrain, Infantry, Vehicle, SeaAnimal
+	Warhead@1Dam: TargetDamage
 		Damage: 12500
+		ValidTargets: GroundTerrain, Infantry, Vehicle, SeaAnimal
 
 MP5E:
 	Inherits: MP5
 	ReloadDelay: 10
+
+Sapper:
+	Inherits: ^ExplosiveAttachment
+	ValidTargets: Structure, WaterStructure, Ship, BridgeRepairHut
+	Report: icraatta.wav
+	Warhead@1Att: AttachDelayedWeapon
+		Weapon: C4
+		TriggerTime: 0

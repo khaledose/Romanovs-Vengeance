@@ -13,9 +13,5 @@ BoomerTorpedoE:
 
 CruiseLauncher:
 	Inherits: DredLauncher
-	MinRange: 7c0
+	Range: 20c0
 	ValidTargets: Ground
-	InvalidTargets: Ship, SeaAnimal, Underwater, WaterTerrain
-	Warhead@1Dam: TargetDamage
-		ValidTargets: Ground
-		InvalidTargets: Ship, SeaAnimal, Underwater, WaterTerrain

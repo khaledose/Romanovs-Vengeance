@@ -1,35 +1,40 @@
 155mm:
-	Inherits: ^LargeBullet
-	ReloadDelay: 70
-	Range: 6c0
+	Inherits: ^Bullet
+	Inherits@WATEREXPLOSION: MediumWaterExplosion
+	ReloadDelay: 110
+	Range: 8c0
 	Report: vdesatta.wav, vrdesattb.wav
-	InvalidTargets: Underwater
-	Projectile: BulletAS
-		Blockable: true
-		Speed: 682
+	Projectile: Bullet
+		Blockable: false
 	Warhead@1Dam: SpreadDamage
-		Damage: 9000
+		Damage: 6000
+		Spread: 1c0
 		Versus:
-			Heavy: 75
-	Warhead@2Smu: LeaveSmudge
-		SmudgeType: SmallCrater
+			None: 100
+			Flak: 80
+			Plate: 60
+			Light: 100
+			Medium: 60
+			Heavy: 60
+			Wood: 100
+			Steel: 100
+			Concrete: 60
+			Drone: 100
+			Rocket: 100
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, NonTemporal
+	Warhead@2Eff: CreateEffect
+		Explosions: tiny_grey_explosion
+		ImpactSounds: gexp14a.wav, gexp14b.wav, gexp14c.wav, gexp14d.wav
+	Warhead@3Smu: LeaveSmudge
+		SmudgeType: SmallCrater, SmallScorch
 
 155mmE:
 	Inherits: 155mm
 	Burst: 2
 	BurstDelays: 5
-	Warhead@1Dam: SpreadDamage
-		Versus:
-			None: 100
-			Flak: 100
-			Plate: 100
-	Warhead@2Smu: LeaveSmudge
-		SmudgeType: MediumCrater, MediumScorch
 
 ASWLauncher:
 	ReloadDelay: 75
 	Range: 8c0
 	ValidTargets: Underwater
 	Projectile: InstantHit
-	Warhead@1Dam: TargetDamage
-		ValidTargets: Underwater

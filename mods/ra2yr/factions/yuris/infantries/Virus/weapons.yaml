@@ -3,7 +3,7 @@ VirusGun:
 	ReloadDelay: 100
 	Range: 10c0
 	Report: iviratta.wav
-	Warhead@1Dam: SpreadDamage
+	Warhead@1Dam: TargetDamage
 		Damage: 12500
 		Versus:
 			None: 100

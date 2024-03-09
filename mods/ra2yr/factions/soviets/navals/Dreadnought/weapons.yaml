@@ -1,10 +1,8 @@
 DredLauncher:
-	ReloadDelay: 150
-	Burst: 2
-	BurstDelays: 10
+	ReloadDelay: 50
 	Range: 25c0
 	MinRange: 8c0
+	Burst: 2
+	BurstDelays: 10
 	ValidTargets: Ground, Water
 	Projectile: InstantHit
-	Warhead@1Dam: TargetDamage
-		ValidTargets: Ground, Water

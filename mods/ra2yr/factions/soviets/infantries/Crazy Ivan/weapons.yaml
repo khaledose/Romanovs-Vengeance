@@ -1,9 +1,9 @@
-IvanBomber:
-	Inherits@1: ^BreakPointDefenseDrones
+IvanBomb:
+	Inherits: Explosion
 	Warhead@1Dam: SpreadDamage
+		Damage: 45000
 		Spread: 1c512
-		Damage: 40000
-		Falloff: 100, 75, 50, 25, 0
+		Falloff: 100, 0
 		ValidTargets: Ground, Water, Air
 		Versus:
 			None: 100
@@ -17,36 +17,32 @@ IvanBomber:
 			Concrete: 20
 			Drone: 100
 			Rocket: 100
-		DamageTypes: PsychicDeath, Prone100Percent, SuppressTerrorDrone, NonTemporal
+		DamageTypes: PsychicDeath, SuppressTerrorDrone, NonTemporal
 	Warhead@2Eff: CreateEffect
-		Explosions: ivan_explosion
+		Image: ivanexplosion
+		Explosions: normal
 		ImpactSounds: gexpcraa.wav
-		ValidTargets: Ground, Water, Air
 	Warhead@3Smu: LeaveSmudge
 		SmudgeType: MediumCrater, MediumScorch
 
-IvanBomberE:
-	Inherits: IvanBomber
+IvanBombE:
+	Inherits: IvanBomb
 	Warhead@1Dam: SpreadDamage
 		Damage: 60000
 	Warhead@2Eff: CreateEffect
-		Explosions: ivan_explosionE
+		Explosions: elite
+	Warhead@3Smu: LeaveSmudge
+		SmudgeType: LargeCrater, LargeScorch
 
-IvanBombAttacher:
-	ValidTargets: IvanBomb
-	ReloadDelay: 50
-	TargetActorCenter: true
-	Range: 1c512
-	Projectile: InstantHit
+IvanBomber:
+	Inherits: ^ExplosiveAttachment
 	Report: icraatta.wav
+	ValidTargets: IvanBomb
 	Warhead@1Att: AttachDelayedWeapon
-		Weapon: IvanBomber
-		Type: IvanBomb
-		TriggerTime: 125
-		Range: 0c128
-	Warhead@2Dam: TargetDamage
+		Weapon: IvanBomb
+		TriggerTime: 450
 
-IvanBombAttacherE:
-	Inherits: IvanBombAttacher
+IvanBomberE:
+	Inherits: IvanBomber
 	Warhead@1Att: AttachDelayedWeapon
-		Weapon: IvanBomberE
+		Weapon: IvanBombE

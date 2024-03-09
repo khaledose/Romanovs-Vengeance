@@ -30,11 +30,11 @@
 ^StreetProp:
 	Inherits: ^Object
 	Health:
-		HP: 20000
+		HP: 5000
 	Armor:
 		Type: Wood
 	Targetable:
-		TargetTypes: Ground, Tree, DetonateAttack
+		TargetTypes: Ground, Tree
 	Crushable:
 		CrushClasses: tree
 		CrushSound: gsancrua.wav #, gsancrub.wav

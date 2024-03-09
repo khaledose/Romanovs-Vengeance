@@ -1,9 +1,9 @@
 CoilBolt:
-	Inherits: ^Shock
+	Inherits: ^TeslaBeam
 	ReloadDelay: 1
 	Range: 7c0
 	Report: btesat1a.wav
-	Warhead@1Dam: SpreadDamage
+	Warhead@1Dam: TargetDamage
 		Damage: 20000
 
 OPCoilBolt:
@@ -12,5 +12,5 @@ OPCoilBolt:
 	Report: btesat2a.wav
 	Projectile: TeslaZap
 		Image: litningyel
-	Warhead@1Dam: SpreadDamage
+	Warhead@1Dam: TargetDamage
 		Damage: 30000

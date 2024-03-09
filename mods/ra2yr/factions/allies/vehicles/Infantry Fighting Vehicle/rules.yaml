@@ -79,9 +79,9 @@ fv:
 		OutsideRangeCursor: goldwrench
 		TargetRelationships: Ally
 		ForceTargetRelationships: None
-	Armament@demo:
-		Weapon: DemoTruckTargeting
-		RequiresCondition: ifv-demo
+	# Armament@demo:
+	# 	Weapon: DemoTruckTargeting
+	# 	RequiresCondition: ifv-demo
 	GrantConditionOnAttack@demo:
 		Condition: triggered
 		RequiresCondition: ifv-demo
@@ -167,11 +167,9 @@ fv:
 		RequiresCondition: !ifv-demo
 	Explodes@demo:
 		Weapon: CRTerrorBomb
-		EmptyWeapon: CRTerrorBomb
 		RequiresCondition: ifv-demo
 	Explodes@demo-targeted:
-		Weapon: CRTargetedTerrorBomb
-		EmptyWeapon: CRTargetedTerrorBomb
+		Weapon: TerrorBomb
 		RequiresCondition: ifv-demo
 	WithVoxelTurret:
 		Sequence: turret-missile

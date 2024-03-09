@@ -1,15 +1,11 @@
 GrandCannonWeapon:
-	Inherits@1: ^BreakPointDefenseDrones
+	Inherits: ^Bullet
+	Inherits@WATEREXPLOSION: LargeWaterExplosion
 	ReloadDelay: 120
 	Range: 15c0
 	MinRange: 3c0
 	Report: bgraatta.wav
 	Projectile: Bullet
-		Image: 120mm
-		Speed: 1c0
-		Palette: ra
-		Shadow: true
-		LaunchAngle: 62
 		Blockable: false
 	Warhead@1Dam: SpreadDamage
 		Damage: 15000
@@ -29,39 +25,5 @@ GrandCannonWeapon:
 		DamageTypes: Prone30Percent, TriggerProne, ExplosionDeath, SuppressTerrorDrone, NonTemporal
 	Warhead@2Eff: CreateEffect
 		Explosions: large_explosion
-
-
-# GrandCannonWeapon:
-# 	Inherits: ^LargeBullet
-# 	ReloadDelay: 100
-# 	Report: bgraatta.wav
-# 	Range: 15c0
-# 	MinRange: 4c0
-# 	Projectile: BulletAS
-# 		Image: 160mm
-# 		Blockable: false
-# 		Speed: 1024
-# 		ContrailLength: 10
-# 		ContrailStartColor: FFFFFF
-# 		ContrailWidth: 0c48
-# 		ContrailWidthFadeRate: 1
-# 	Warhead@1Dam: SpreadDamage
-# 		Damage: 15000
-# 		Spread: 0c512
-# 		Falloff: 100, 73, 47, 20, 0
-# 		Versus:
-# 			None: 100
-# 			Flak: 100
-# 			Plate: 100
-# 			Light: 100
-# 			Medium: 100
-# 			Heavy: 100
-# 			Wood: 100
-# 			Steel: 100
-# 			Concrete: 90
-# 			Drone: 100
-# 			Rocket: 100
-# 	Warhead@2Eff: CreateEffect
-# 		Explosions: medium_explosion
-# 	Warhead@3Smu: LeaveSmudge
-# 		SmudgeType: MediumCrater, MediumScorch
+	Warhead@3Smu: LeaveSmudge
+		SmudgeType: MediumCrater, MediumScorch

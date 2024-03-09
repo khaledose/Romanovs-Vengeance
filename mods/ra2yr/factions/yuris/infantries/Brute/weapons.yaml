@@ -1,25 +1,43 @@
 Punch:
-	Inherits: ^Battering
+	Inherits: ^LightMelee
 	ReloadDelay: 60
 	Range: 1c103
 	Report: ibruatta.wav, ibruattb.wav, ibruattc.wav, ibruattd.wav, ibruatte.wav, ibruattf.wav
-	ValidTargets: Ground
-	InvalidTargets: Vehicles
-	Warhead@1Dam: SpreadDamage
+	Warhead@1Dam: TargetDamage
 		Damage: 10000
-		ValidTargets: Ground
-		InvalidTargets: Vehicles
+		Versus:
+			None: 100
+			Flak: 100
+			Plate: 100
+			Light: 0
+			Medium: 0
+			Heavy: 0
+			Wood: 30
+			Steel: 30
+			Concrete: 20
+			Drone: 200
+			Rocket: 100
 
 PunchE:
 	Inherits: Punch
 	Range: 1c410
 
 Smash:
-	Inherits: ^Smashing
+	Inherits: ^HeavyMelee
 	ReloadDelay: 60
 	Range: 1c103
 	Report: ibruatta.wav, ibruattb.wav, ibruattc.wav, ibruattd.wav, ibruatte.wav, ibruattf.wav
-	ValidTargets: Vehicle
-	Warhead@1Dam: SpreadDamage
+	Warhead@1Dam: TargetDamage
 		Damage: 10000
-		ValidTargets: Vehicle
+		Versus:
+			None: 0
+			Flak: 0
+			Plate: 0
+			Light: 100
+			Medium: 100
+			Heavy: 100
+			Wood: 0
+			Steel: 0
+			Concrete: 0
+			Drone: 0
+			Rocket: 0

@@ -3,5 +3,5 @@ vulcan:
 	ReloadDelay: 26
 	Range: 5c512
 	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
-	Warhead@1Dam: SpreadDamage
+	Warhead@1Dam: TargetDamage
 		Damage: 5000

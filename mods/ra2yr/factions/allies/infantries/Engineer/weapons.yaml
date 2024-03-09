@@ -6,5 +6,4 @@ DefuseKit:
 	Projectile: InstantHit
 	ValidTargets: IvanBombCleaner, C4Cleaner
 	Warhead@1Det: DetachDelayedWeapon
-		Types: IvanBomb, C4
-	Warhead@2Dam: TargetDamage
+		Types: Bomb

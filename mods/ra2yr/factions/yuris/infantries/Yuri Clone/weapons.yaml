@@ -5,7 +5,7 @@ PsiWave:
 	ValidTargets: Infantry
 	Warhead@1Dam: SpreadDamage
 		Spread: 3c0
-		Falloff: 100, 100
+		Falloff: 100, 0
 		Damage: 25000
 		Versus:
 			None: 100
@@ -21,7 +21,6 @@ PsiWave:
 			Rocket: 0
 		ValidTargets: Infantry
 		InvalidTargets: ImmuneToFriendlyPsiWave
-		ValidRelationships: Ally, Enemy, Neutral
 		DamageTypes: PsychicDeath, NonTemporal
 	Warhead@2Eff: CreateEffect
 		Explosions: psi_wave
@@ -33,8 +32,6 @@ MindControl:
 	ValidTargets: MindControl
 	InvalidTargets: IronCurtained, ForceShielded
 	Projectile: InstantHit
-	Warhead@1Dam: TargetDamage
-		Damage: 0
 
 MindControlE:
 	Inherits: MindControl

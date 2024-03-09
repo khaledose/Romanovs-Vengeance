@@ -39,17 +39,10 @@ robo:
 	Tooltip@NoRow:
 		Name: Robot Tank
 	Armament:
-		Weapon: robogun
+		Weapon: Robogun
 		Damage: 25
 		LocalOffset: 640,0,640
 		MuzzleSequence: muzzle
-		RequiresCondition: !rank-elite
-	Armament@elite:
-		Weapon: robogunE
-		Damage: 30
-		LocalOffset: 640,0,640
-		MuzzleSequence: muzzle
-		RequiresCondition: rank-elite
 	AttackTurreted:
 		Voice: Attack
 		PauseOnCondition: !powered || chronodisable
@@ -76,7 +69,7 @@ robo:
 	Targetable:
 		RequiresCondition: !in_water
 	Targetable@WATER:
-		TargetTypes: Ground, Water, Ship, DetonateAttack
+		TargetTypes: Ground, Water, Ship
 		RequiresCondition: in_water
 	GrantConditionOnTerrain@Water:
 		TerrainTypes: Water, Beach

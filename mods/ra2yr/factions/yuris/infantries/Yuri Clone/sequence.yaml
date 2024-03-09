@@ -26,34 +26,3 @@ yuri:
 	muzzle:
 		Filename: yuricntl.shp
 		Length: *
-
-
-# yuri:
-# 	Inherits: ^ArmedInfantry
-# 	Defaults:
-# 		Filename: conquer|yuri.shp
-# 	deploy:
-# 		Start: 292
-# 		Length: 7
-# 	deployed:
-# 		Start: 299
-# 		Length: 2
-# 	undeploy:
-# 		Start: 301
-# 		Length: 6
-# 	paradrop:
-# 		Start: 307
-# 	cheer:
-# 		Start: 308
-# 	muzzle:
-# 		Filename: yuricntl.shp
-# 		Length: *
-# 	icon:
-# 		Filename: cameo|yuriicon.shp
-
-# yuripsi:
-# 	Defaults:
-# 		Filename: conquer|yuri.shp
-# 	Inherits: yuri
-# 	icon:
-# 		Filename: cameomd|yclnicon.shp

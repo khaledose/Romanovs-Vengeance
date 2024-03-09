@@ -3,11 +3,7 @@ RadBeamWeapon:
 	ReloadDelay: 50
 	Range: 6c0
 	Report: idesat1a.wav
-	ValidTargets: Ground
-	InvalidTargets: Structure, WaterStructure, Barrel, Wall, ImmuneToRadiation
-	Projectile: RadBeam
-		Color: 00FF0080
-	Warhead@1Dam: SpreadDamage
+	Warhead@1Dam: TargetDamage
 		Damage: 12500
 		Versus:
 			None: 100
@@ -22,12 +18,11 @@ RadBeamWeapon:
 			Drone: 100
 			Rocket: 100
 		DamageTypes: Prone100Percent, TriggerProne, RadiationDeath, NonTemporal
-		InvalidTargets: Structure, Barrel, Wall, ImmuneToRadiation
 
 RadBeamWeaponE:
 	Inherits: RadBeamWeapon
 	Range: 8c0
-	Warhead@1Dam: SpreadDamage
+	Warhead@1Dam: TargetDamage
 		Damage: 20000
 
 RadEruptionWeapon:

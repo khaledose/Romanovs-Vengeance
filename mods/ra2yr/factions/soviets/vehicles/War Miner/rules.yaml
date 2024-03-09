@@ -15,7 +15,7 @@ harv:
 	Tooltip@NoRow:
 		Name: War Miner
 	Armament@primary:
-		Weapon: 20mmrapid
+		Weapon: 20mmRapid
 		Damage: 30
 		LocalOffset: 384,0,1024
 		MuzzleSequence: muzzle

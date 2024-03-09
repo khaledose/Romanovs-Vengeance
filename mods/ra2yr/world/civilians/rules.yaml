@@ -213,6 +213,10 @@ mumy:
 
 arnd:
 	Inherits: ^Civilian
+	Buildable:
+		Queue: Infantry.Shared
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 72
 	Health:
 		HP: 20000
 	Armor:
@@ -232,6 +236,10 @@ arnd:
 
 stln:
 	Inherits: ^Civilian
+	Buildable:
+		Queue: Infantry.Shared
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 72
 	Health:
 		HP: 20000
 	Armor:
@@ -293,7 +301,7 @@ lunr.air:
 	Inherits: ^AirInfantry
 	Inherits@SELF: ^Lunr
 	Buildable:
-		Queue: Infantry.Allies
+		Queue: Infantry.Shared
 		BuildAtProductionType: Soldier
 		Description: Airborne soldier.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles
 		BuildPaletteOrder: 72

@@ -1,20 +1,13 @@
 NeutronRifle:
-	Inherits: ^RadBeam
+	Inherits: ^TemporalBeam
 	ReloadDelay: 120
 	Range: 5c0
 	Report: ichratta.wav
-	ValidTargets: ChronoDisable
-	InvalidTargets: Air
-	Projectile: RadBeam
-		Color: 2950A5D5
-	Warhead@Damage: Temporal
+	Warhead@1Dam: Temporal
 		Damage: 800
-		Spread: 1
-		ValidTargets: ChronoDisable
-		InvalidTargets: Air
 		DamageTypes: Temporal
 
 NeutronRifleE:
 	Inherits: NeutronRifle
-	Warhead@Damage: Temporal
+	Warhead@1Dam: Temporal
 		Damage: 1600

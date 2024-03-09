@@ -1,34 +1,61 @@
+^Explosion:
+	Defaults:
+		Length: *
+		ZOffset: 4000
+		IgnoreWorldTint: true
+
+barrelexplosion:
+	Inherits: ^Explosion
+	small:
+		Filename: conquer|brrlexp1.shp
+	large:
+		Filename: conquer|brrlexp2.shp
+
+ivanexplosion:
+	Inherits: ^Explosion
+	normal:
+		Filename: conquer|crivexp.shp
+	elite:
+		Filename: conquer|crivexp2.shp
+
+nukeexplosion:
+	Inherits: ^Explosion
+	large:
+		Filename: conquer|nukeanim.shp
+	ball:
+		Filename: conquer|nukeball.shp
+	small:
+		Filename: conquer|mininuke.shp
+
+radexplosion:
+	Inherits: ^Explosion
+	demo:
+		Filename: conquer|demtexp.shp
+
+waterexplosion:
+	Inherits: ^Explosion
+	small:
+		Filename: conquer|h2o_exp3.shp
+	medium:
+		Filename: conquer|h2o_exp2.shp
+	large:
+		Filename: conquer|h2o_exp1.shp
+
 explosion:
 	Defaults:
 		Length: *
 		ZOffset: 4000
 		IgnoreWorldTint: true
-	huge_watersplash:
-		Filename: conquer|h2o_exp1.shp
-	large_watersplash:
-		Filename: conquer|h2o_exp2.shp
-	small_watersplash:
-		Filename: conquer|h2o_exp3.shp
 	piff:
 		Filename: conquer|piff.shp
 	piffpiff:
 		Filename: conquer|piffpiff.shp
-	piffred:
-		Filename: bits/animations/piffred.shp
-	piffpiffred:
-		Filename: bits/animations/piffpiffred.shp
 	small_explosion:
 		Filename: conquer|explosml.shp
 	medium_explosion:
 		Filename: conquer|explomed.shp
 	large_explosion:
 		Filename: conquer|explolrg.shp
-	small_toxin_explosion:
-		Filename: bits/animations/explosmlgrn.shp
-	medium_toxin_explosion:
-		Filename: bits/animations/explomedgrn.shp
-	large_toxin_explosion:
-		Filename: bits/animations/explolrggrn.shp
 	tiny_bang:
 		Filename: conquer|s_bang16.shp
 	small_bang:
@@ -81,46 +108,18 @@ explosion:
 		Filename: conquer|xgrymed1.shp
 	large_grey_explosion:
 		Filename: conquer|xgrymed2.shp
-	small_barrel_explosion:
-		Filename: conquer|brrlexp1.shp
-	large_barrel_explosion:
-		Filename: conquer|brrlexp2.shp
-	nuke_explosion:
-		Filename: conquer|nukeanim.shp
-	nuke_explosion_small:
-		Filename: conquer|nukeanim.shp
-		Scale: 0.6
-	nuke_ball:
-		Filename: conquer|nukeball.shp
-	demotruck_explosion:
-		Filename: conquer|demtexp.shp
-	demotruck_explosion_orange:
-		Filename: bits/animations/demtexporange.shp
 	elite_explosion:
 		Filename: conquer|vtexplod.shp
-	terrorist_explosion:
-		Filename: conquer|mininuke.shp
 	apoc_explosion:
 		Filename: conquer|apocexp.shp
 	flak_puff:
 		Filename: conquer|htrkpuff.shp
 	flak_puff_AA:
 		Filename: conquer|smkpuff.shp
-	ivan_explosion:
-		Filename: conquer|crivexp.shp
-	ivan_explosionE:
-		Filename: conquer|crivexp2.shp
 	tesla_impact:
 		Filename: conquer|tstimpct.shp
 	tesla_explosion:
 		Filename: conquer|tstlexp.shp
-	prism_explosion:
-		Filename: bits/animations/prismexplo.shp
-		Scale: 0.75
-	laser_explosion:
-		Filename: bits/animations/laserexp.shp
-	laser_explosion_red:
-		Filename: bits/animations/laserexpe.shp
 	powerplant_explosion:
 		Filename: conquer|gtpowexp.shp
 	iron_fx:

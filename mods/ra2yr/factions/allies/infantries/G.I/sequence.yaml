@@ -32,29 +32,3 @@ e1:
 		Start: 364
 	paradrop:
 		Start: 363
-
-# e1:
-# 	Inherits: ^ArmedInfantry
-# 	Defaults:
-# 		Filename: conquer|gi.shp
-# 	dot:
-# 		Filename: dot.shp
-# 		ZOffset: -9999
-# 	run:
-# 		Tick: 120
-# 	deployed:
-# 		Start: 292
-# 		Facings: 8
-# 	deploy:
-# 		Start: 300
-# 		Length: 15
-# 	deployed-shoot:
-# 		Start: 315
-# 		Length: 6
-# 		Facings: 8
-# 	paradrop:
-# 		Start: 363
-# 	cheer:
-# 		Start: 364
-# 	icon:
-# 		Filename: cameo|giicon.shp

@@ -3,7 +3,7 @@ AWP:
 	ReloadDelay: 150
 	Range: 14c0
 	Report: isniatta.wav
-	Warhead@1Dam: SpreadDamage
+	Warhead@1Dam: TargetDamage
 		Damage: 12500
 
 AWPE:

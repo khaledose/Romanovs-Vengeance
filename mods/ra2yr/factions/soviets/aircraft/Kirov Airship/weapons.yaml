@@ -1,5 +1,5 @@
 BlimpBomb:
-	Inherits@1: ^BreakPointDefenseDrones
+	Inherits@WATEREXPLOSION: SmallWaterExplosion
 	ReloadDelay: 50
 	Range: 1c512
 	Report: vkiratta.wav
@@ -32,10 +32,6 @@ BlimpBomb:
 		Explosions: medium_clsn
 		ImpactSounds: gexp14a.wav
 		ValidTargets: Ground
-	Warhead@3EffWater: CreateEffect
-		Explosions: small_watersplash
-		ImpactSounds: gexpwasa.wav
-		ValidTargets: Water
 	Warhead@4Smu: LeaveSmudge
 		SmudgeType: MediumCrater, MediumScorch
 

@@ -24,12 +24,11 @@ terror:
 		Name: Terrorist
 	Tooltip@NoRow:
 		Name: Terrorist
-	Armament@PRIMARY:
-		Weapon: DemoTruckTargeting
+	Armament:
+		Weapon: TriggerAttack
 		PauseOnCondition: chronodisable
 	Explodes:
 		Weapon: TerrorBomb
-		EmptyWeapon: TerrorBomb
 	Voiced:
 		VoiceSet: TerroristVoice
 	-TakeCover:

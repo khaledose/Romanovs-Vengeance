@@ -1,14 +1,15 @@
 dmisl:
 	Inherits: ^ShootableMissile
-	Valued:
-		Cost: 50
-	Tooltip:
-	Tooltip@NoRow:
-		Name: Dreadnought Missile
 	Health:
 		HP: 5000
 	Armor:
 		Type: Rocket
+	Valued:
+		Cost: 50
+	Tooltip:
+		Name: Dreadnought Missile
+	Tooltip@NoRow:
+		Name: Dreadnought Missile
 	BallisticMissile:
 		LaunchAngle: 192
 		Speed: 250
@@ -17,24 +18,7 @@ dmisl:
 		LaunchSounds: vdreatta.wav, vdreattb.wav
 		SoundVolume: 0.6
 		AirborneCondition: airborne
-	LeavesTrails:
-		Image: smokey2
-		MovingInterval: 2
-		SpawnAtLastPosition: false
-		Type: CenterPosition
-	MissileSpawnerSlave:
 	SpawnedExplodes:
 		Weapon: DredWeapon
-		EmptyWeapon: DredWeapon
-		RequiresCondition: !airborne && !rank-elite
 	SpawnedExplodes@Elite:
 		Weapon: DredWeaponE
-		EmptyWeapon: DredWeaponE
-		RequiresCondition: !airborne && rank-elite
-	SpawnedExplodes@Airborne:
-		Weapon: UnitExplode
-		EmptyWeapon: UnitExplode
-		RequiresCondition: airborne
-	WithVoxelBody:
-	ExternalCondition@RANK-ELITE:
-		Condition: rank-elite

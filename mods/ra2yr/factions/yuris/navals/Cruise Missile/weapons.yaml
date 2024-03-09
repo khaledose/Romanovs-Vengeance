@@ -1,11 +1,9 @@
 CruiseWeapon:
 	Inherits: DredWeapon
 	Warhead@1Dam: SpreadDamage
-		Spread: 0c410
-		Damage: 15000
+		Damage: 20000
 
 CruiseWeaponE:
 	Inherits: DredWeaponE
 	Warhead@1Dam: SpreadDamage
-		Spread: 0c410
-		Damage: 15000
+		Damage: 25000

@@ -1,4 +1,4 @@
-^VoxelVehicle:
+^Machine:
 	Inherits@1: ^ExistsInWorld
 	Inherits@2: ^IronCurtainable
 	Inherits@3: ^ChronoDisableDisabledWithIC
@@ -34,25 +34,26 @@
 		CameraPitch: 85
 		UseClassicPerspectiveFudge: false
 	RenderSprites:
+	Explodes:
+		DeathTypes: NonTemporal
+		Weapon: VehicleExplosion
+		RequiresCondition: !airborne
+	Explodes@Sinking:
+		DeathTypes: NonTemporal
+		Weapon: UnitSink
+		RequiresCondition: !airborne
+	Guardable:
+	AppearsOnRadar:
+		UseLocation: true
+
+^VoxelVehicle:
+	Inherits: ^Machine
 	RenderVoxels:
 		Scale: 11.7
 		LightYaw: 800
 		LightPitch: 150
 		LightAmbientColor: -0.5,-0.5,-0.5
 		LightDiffuseColor: 1.3,1.3,1.3
-	Explodes:
-		DeathTypes: NonTemporal
-		Weapon: UnitExplode
-		EmptyWeapon: UnitExplode
-		RequiresCondition: !airborne
-	Explodes@Sinking:
-		DeathTypes: NonTemporal
-		Weapon: UnitSink
-		EmptyWeapon: UnitSink
-		RequiresCondition: !airborne
-	Guardable:
-	AppearsOnRadar:
-		UseLocation: true
 
 ^GroundVehicle:
 	Inherits: ^VoxelVehicle
@@ -72,7 +73,7 @@
 		TerrainOrientationAdjustmentMargin: 256
 		RequiresCondition: !chronodisable && !beingterrordroned
 	Targetable:
-		TargetTypes: Ground, Vehicle, DroneInfection, DetonateAttack
+		TargetTypes: Ground, Vehicle, DroneInfection
 	Guard:
 		Voice: Attack
 
@@ -204,158 +205,3 @@
 		VoiceSet: CarVoice
 	MapEditorData:
 		Categories: Vehicle - Civilian
-
-
-^Vehicle:
-	Inherits@1: ^ExistsInWorld
-	Inherits@2: ^IronCurtainable
-	Inherits@3: ^ChronoDisableDisabledWithIC
-	Inherits@4: ^CrateStatModifiers
-	Inherits@5: ^MachineShopRepair
-	Inherits@6: ^AcceptsIvanBomb
-	Inherits@7: ^AcceptsC4
-	Inherits@8: ^AffectedByIndustrialPlant
-	Inherits@9: ^VehicleParticles
-	Inherits@10: ^ParachutableVehicle
-	Inherits@11: ^TerrorDronable
-	Inherits@12: ^LowHealthSpeedPenalty
-	Inherits@13: ^Tractable
-	Inherits@HANDICAPS: ^PlayerHandicaps
-	Inherits@SELECTION_MODE: ^FlatSelectionMode
-	OwnerLostAction:
-		Action: Kill
-		DeathTypes: BulletDeath, NonTemporal
-	RevealOnFire:
-		ArmamentNames: primary, primary2, elite, elite2, secondary, opentopped, opentopped-secondary, gatling
-		Duration: 50
-	RevealOnDeath:
-		Duration: 125
-	DeliversCash:
-		Voice: Move
-	Mobile:
-		Voice: Move
-		Speed: 90
-		TurnSpeed: 20
-		Locomotor: wheeled
-		TerrainOrientationAdjustmentMargin: 256
-		RequiresCondition: !chronodisable && !beingterrordroned
-	RevealsShroud:
-		Range: 5c0
-		MaxHeightDelta: 3
-	Health:
-		HP: 10000
-	HitShape:
-	SelectionDecorations:
-		MinimumZoom: 0
-	Selectable:
-		Bounds: 772, 1544
-	ActorStatValues:
-		UpgradePrerequisites: global-upgrades
-	Targetable:
-		TargetTypes: Ground, Vehicle, DroneInfection, DetonateAttack
-	Targetable@REPAIR:
-		RequiresCondition: damaged
-		TargetTypes: Repair
-	GrantConditionOnDamageState@DAMAGED:
-		Condition: damaged
-		ValidDamageStates: Light, Medium, Heavy, Critical
-	Repairable:
-		Voice: Move
-		RepairActors: gadept, nadept, nadepb, caoutp, caoutb
-	RepairableNear:
-		Voice: Move
-		CloseEnough: 3c0
-		RepairActors: gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead, gaairc, gaairb, baairf, baairb, naheli, yadisk
-	Passenger:
-		Voice: Move
-		CargoType: Vehicle
-		Weight: 3
-	Crushable:
-		WarnProbability: 0
-		CrushClasses: vehicle
-		RequiresCondition: !invulnerability && !cheater-ai && !vengeful-ai
-	Crushable@Cheater:
-		WarnProbability: 50
-		CrushClasses: vehicle
-		RequiresCondition: !invulnerability && cheater-ai
-	Crushable@Vengeful:
-		WarnProbability: 100
-		CrushClasses: vehicle
-		RequiresCondition: !invulnerability && vengeful-ai
-	GrantConditionOnBotOwner@Cheater:
-		Condition: cheater-ai
-		Bots: cheater
-	GrantConditionOnBotOwner@Vengeful:
-		Condition: vengeful-ai
-		Bots: vengeful
-	CaptureManager:
-		BeingCapturedCondition: being-captured
-	Capturable:
-		Types: vehicle
-		CancelActivity: True
-	CaptureSound:
-		Sound: ihijweaa.wav
-	Sellable:
-		SellSounds: cashturn.aud
-		Cursor: sell2
-		Notification: UnitSold
-		RequiresCondition: unit.sellable
-	ProximityExternalCondition:
-		Condition: unit.docked
-		Range: 1c0
-	ExternalCondition@Sellable:
-		Condition: unit.sellable
-	HiddenUnderFog:
-	WithTextControlGroupDecoration:
-	ActorLostNotification:
-		TextNotification: Unit lost.
-	ProximityCaptor:
-		Types: Vehicle
-	Guard:
-		Voice: Attack
-	Guardable:
-	BodyOrientation:
-		QuantizedFacings: 0
-		CameraPitch: 85
-		UseClassicPerspectiveFudge: false
-	Explodes:
-		DeathTypes: NonTemporal
-		Weapon: UnitExplode
-		EmptyWeapon: UnitExplode
-	Explodes@Sinking:
-		DeathTypes: NonTemporal
-		Weapon: UnitSink
-		EmptyWeapon: UnitSink
-	RenderVoxels:
-		Scale: 11.7
-		LightYaw: 800
-		LightPitch: 150
-		LightAmbientColor: -0.5,-0.5,-0.5
-		LightDiffuseColor: 1.3,1.3,1.3
-	GrantConditionOnPrerequisite@SUDDENDEATH:
-		Condition: suddendeath
-		Prerequisites: global-suddendeath
-	MustBeDestroyed:
-		RequiresCondition: !suddendeath
-	Voiced:
-		VoiceSet: AlliedVehicleVoice
-	Chronoshiftable:
-		ChronoshiftSound: schrmov.wav
-		ReturnToOrigin: false
-		RequiresCondition: !invulnerability
-	Tooltip:
-		Name: Vehicle
-		GenericName: Vehicle
-		RequiresCondition: showownername
-	Tooltip@NoRow:
-		Name: Vehicle
-		GenericName: Vehicle
-		ShowOwnerRow: false
-		RequiresCondition: !showownername
-	GrantConditionOnPrerequisite@SHOWOWNERNAME:
-		Condition: showownername
-		Prerequisites: global-showownername
-	MapEditorData:
-		Categories: Vehicle
-	RangedGpsDot:
-		Sequence: Vehicle

@@ -1,42 +1,20 @@
 160mm:
-	Inherits: ^LargeBullet
+	Inherits: 155mm
+	Inherits@WATEREXPLOSION: LargeWaterExplosion
 	ReloadDelay: 100
 	Range: 12c0
-	MinRange: 2c512
 	Report: vchoat2a.wav
-	Projectile: BulletAS
-		Blockable: false
-		Speed: 682
-		LaunchAngle: 128
-		ContrailLength: 10
-		ContrailStartColor: FFFFFF
-		ContrailWidth: 0c30
 	Warhead@1Dam: SpreadDamage
-		Spread: 0c256
-		Falloff: 100, 75, 50, 25, 0
 		Damage: 9000
 		Versus:
-			None: 50
-			Flak: 50
-			Plate: 45
-			Wood: 100
-			Steel: 85
-			Concrete: 90
-	Warhead@2Smu: LeaveSmudge
-		SmudgeType: SmallCrater
+			Light: 80
+			Medium: 50
+			Heavy: 50
+	Warhead@2Eff: CreateEffect
+		Explosions: medium_grey_explosion
+		ImpactSounds: gexp14a.wav, gexp14b.wav, gexp14c.wav, gexp14d.wav
 
 160mmE:
 	Inherits: 160mm
 	Burst: 2
 	BurstDelays: 5
-	Projectile: BulletAS
-		ContrailStartColor: EA0000
-	Warhead@1Dam: SpreadDamage
-		Spread: 0c256
-		Falloff: 100, 75, 50, 25, 0
-		Versus:
-			None: 100
-			Flak: 100
-			Plate: 100
-	Warhead@2Smu: LeaveSmudge
-		SmudgeType: MediumCrater, MediumScorch

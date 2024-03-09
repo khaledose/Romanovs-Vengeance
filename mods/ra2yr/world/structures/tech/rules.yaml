@@ -31,7 +31,7 @@ caoild:
 		Offset: 1000,0,0
 		PauseOnCondition: chronodisable
 	Explodes:
-		Weapon: DerrickExplode
+		Weapon: OilExplosion
 	UpdatesDerrickCount:
 	GrantConditionOnPrerequisite@orepurifier:
 		Condition: orepurifier

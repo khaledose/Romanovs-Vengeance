@@ -9,40 +9,40 @@ General:
 Terrain:
 	TerrainType@Clear:
 		Type: Clear
-		TargetTypes: Ground
+		TargetTypes: Ground, GroundTerrain
 		AcceptsSmudgeType: SmallCrater, MediumCrater, LargeCrater, SmallScorch, MediumScorch, LargeScorch
 		Color: 000000
 	TerrainType@Sand:
 		Type: Sand
-		TargetTypes: Ground
+		TargetTypes: Ground, GroundTerrain
 		AcceptsSmudgeType: SmallCrater, MediumCrater, LargeCrater, SmallScorch, MediumScorch, LargeScorch
 		Color: 000000
 	TerrainType@Dune:
 		Type: Dune
-		TargetTypes: Ground
+		TargetTypes: Ground, GroundTerrain
 		AcceptsSmudgeType: SmallScorch, MediumScorch, LargeScorch
 		Color: 000000
 	TerrainType@Ice:
 		Type: Ice
-		TargetTypes: Ground
+		TargetTypes: Ground, GroundTerrain
 		Color: 000000
 	TerrainType@Road:
 		Type: Road
-		TargetTypes: Ground
+		TargetTypes: Ground, GroundTerrain
 		AcceptsSmudgeType: SmallScorch, MediumScorch, LargeScorch
 		Color: 000000
 	TerrainType@Bridge:
 		Type: Bridge
 		Color: 000000
-		TargetTypes: Ground
+		TargetTypes: Ground, GroundTerrain
 	TerrainType@Rail:
 		Type: Rail
-		TargetTypes: Ground
+		TargetTypes: Ground, GroundTerrain
 		AcceptsSmudgeType: SmallScorch, MediumScorch, LargeScorch
 		Color: 000000
 	TerrainType@Impassable:
 		Type: Impassable
-		TargetTypes: Ground
+		TargetTypes: Ground, GroundTerrain
 		Color: 000000
 	TerrainType@Water:
 		Type: Water
@@ -54,36 +54,36 @@ Terrain:
 		TargetTypes: Water, WaterTerrain
 	TerrainType@DirtRoad:
 		Type: DirtRoad
-		TargetTypes: Ground
+		TargetTypes: Ground, GroundTerrain
 		AcceptsSmudgeType: SmallCrater, MediumCrater, LargeCrater, SmallScorch, MediumScorch, LargeScorch
 		Color: 000000
 	TerrainType@Rough:
 		Type: Rough
-		TargetTypes: Ground
+		TargetTypes: Ground, GroundTerrain
 		AcceptsSmudgeType: SmallCrater, MediumCrater, LargeCrater, SmallScorch, MediumScorch, LargeScorch
 		Color: 000000
 	TerrainType@Cliff:
 		Type: Cliff
-		TargetTypes: Ground
+		TargetTypes: Ground, GroundTerrain
 		Color: 000000
 	TerrainType@Tree:
 		Type: Tree
-		TargetTypes: Ground
+		TargetTypes: Ground, GroundTerrain
 		Color: 506428
 	TerrainType@Rock:
 		Type: Rock
-		TargetTypes: Ground
+		TargetTypes: Ground, GroundTerrain
 		Color: 745A3F
 	TerrainType@Ore:
 		Type: Ore
 		AcceptsSmudgeType: SmallCrater, MediumCrater, LargeCrater, SmallScorch, MediumScorch, LargeScorch
 		Color: F0C000
-		TargetTypes: Ground
+		TargetTypes: Ground, GroundTerrain
 	TerrainType@Gems:
 		Type: Gems
 		AcceptsSmudgeType: SmallCrater, MediumCrater, LargeCrater, SmallScorch, MediumScorch, LargeScorch
 		Color: 600060
-		TargetTypes: Ground
+		TargetTypes: Ground, GroundTerrain
 
 Templates:
 	Template@0:

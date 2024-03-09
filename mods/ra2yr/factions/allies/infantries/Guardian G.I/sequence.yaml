@@ -37,37 +37,3 @@ ggi:
 		Start: 196
 	paradrop:
 		Start: 371
-
-# ggi:
-# 	Inherits: ^ArmedInfantry
-# 	Defaults:
-# 		Filename: conqmd|ggi.shp
-# 	dot:
-# 		Filename: dot.shp
-# 		ZOffset: -9999
-# 	run:
-# 		Tick: 120
-# 	liedown:
-# 		Start: 164
-# 	standup:
-# 		Start: 182
-# 	shoot:
-# 		Start: 204
-# 	prone-shoot:
-# 		Start: 252
-# 	deployed:
-# 		Start: 315
-# 		Facings: 8
-# 	deploy:
-# 		Start: 300
-# 		Length: 15
-# 	shoot-deployed:
-# 		Start: 323
-# 		Length: 6
-# 		Facings: 8
-# 	paradrop:
-# 		Start: 371
-# 	cheer:
-# 		Start: 196
-# 	icon:
-# 		Filename: cameomd|gdgiicon.shp

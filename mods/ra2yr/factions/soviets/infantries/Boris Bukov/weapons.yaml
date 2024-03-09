@@ -4,7 +4,7 @@ AKM:
 	Range: 7c0
 	Report: iboratta.wav, iborattb.wav
 	InvalidTargets: Bridge, Wall, Fence, Tree, Structure, WaterStructure
-	Warhead@1Dam: SpreadDamage
+	Warhead@1Dam: TargetDamage
 		Damage: 6500
 		Versus:
 			None: 200
@@ -24,14 +24,14 @@ AKM:
 AKME:
 	Inherits: AKM
 	Range: 9c0
-	Warhead@1Dam: SpreadDamage
+	Warhead@1Dam: TargetDamage
 		Damage: 9000
 
 Flare:
 	ReloadDelay: 1
 	Range: 12c0
 	ValidTargets: Structure, WaterStructure
-	InvalidTargets: Barrel, Mine
+	InvalidTargets: Barrel
 	TargetActorCenter: true
 	Projectile: LaserZap
 		Width: 12

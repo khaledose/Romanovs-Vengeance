@@ -1,60 +1,65 @@
 Comet:
-	Inherits@1: ^BreakPointDefenseDrones
-	ValidTargets: Ground, Water
+	Inherits: ^PrismBeam
+	Inherits@EXPLOSION: Explosion
 	ReloadDelay: 100
 	Range: 10c0
 	Report: vpriatta.wav
-	Projectile: LaserZap
-		Width: 50
-		Duration: 15
-		UsePlayerColor: true
-	Warhead@1Dam: SpreadDamage
-		Spread: 0c128
+	ValidTargets: Ground, Water, Wall, Fence, Tree
+	InvalidTargets: Underwater, Bridge
+	Warhead@1Dam: TargetDamage
 		Damage: 10000
 		Versus:
 			None: 100
 			Flak: 100
 			Plate: 100
 			Light: 75
-			Medium: 35
-			Heavy: 35
-			Wood: 100
-			Steel: 100
-			Concrete: 90
+			Medium: 50
+			Heavy: 50
+			Wood: 200
+			Steel: 200
+			Concrete: 200
 			Drone: 100
 			Rocket: 100
-		DamageTypes: Prone50Percent, TriggerProne, ElectroDeath, SuppressTerrorDrone, NonTemporal
+		ValidTargets: Ground, Water, Wall, Fence, Tree
+		InvalidTargets: Underwater, Bridge
 	Warhead@2Shr: FireShrapnel
 		Weapon: CometFragment
 		Amount: 5
 		AimChance: 100
-		AimTargetStances: Enemy, Neutral
 		ValidTargets: Infantry, Vehicle, TerrorDrone, Ship, Tree
 	Warhead@2Eff: CreateEffect
-		Explosions: prism_explosion
-		ExplosionPalette: player
-		UsePlayerPalette: true
-		ImpactActors: false
-		ValidTargets: Ground, Water, Air
-	Warhead@4Smu: LeaveSmudge
-		SmudgeType: SmallScorch
+		Explosions: large_grey_explosion
+		ImpactSounds: gexp14a.wav, gexp14b.wav, gexp14c.wav, gexp14d.wav
 
 CometFragment:
 	Inherits: Comet
+	ReloadDelay: 120
 	Range: 3c0
-	Warhead@1Dam: SpreadDamage
+	Warhead@1Dam: TargetDamage
 		Damage: 3000
-	-Warhead@2Shr:
-
-SuperCometFragment:
-	Inherits: CometFragment
-	Range: 5c0
-	Warhead@1Dam: SpreadDamage
-		Damage: 5000
+	-Warhead@2Shr: FireShrapnel
 
 SuperComet:
 	Inherits: Comet
-	Warhead@1Dam: SpreadDamage
+	Warhead@1Dam: TargetDamage
 		Damage: 15000
 	Warhead@2Shr: FireShrapnel
 		Weapon: SuperCometFragment
+	Warhead@2Eff: CreateEffect
+		Explosions: large_explosion
+	Warhead@3Smu: LeaveSmudge
+		SmudgeType: MediumCrater, MediumScorch
+
+SuperCometFragment:
+	Inherits: CometFragment
+	ReloadDelay: 100
+	Range: 5c0
+	Warhead@1Dam: TargetDamage
+		Damage: 5000
+	Warhead@2Shr: FireShrapnel
+		Weapon: CometFragment
+		Amount: 3
+		AimChance: 100
+		ValidTargets: Infantry, Vehicle, TerrorDrone, Ship, Tree
+	Warhead@3Smu: LeaveSmudge
+		SmudgeType: MediumCrater, MediumScorch

@@ -1,4 +1,5 @@
 ^Debris:
+	Inherits@WATEREXPLOSION: SmallWaterExplosion
 	Range: 3c512
 	Projectile: Bullet
 		Speed: 125, 166
@@ -11,10 +12,6 @@
 		ImpactSounds: gexp07a.wav
 		InvalidTargets: Water
 		ValidTargets: Ground, Air
-	Warhead@3EffWater: CreateEffect
-		Explosions: small_watersplash
-		ImpactSounds: gexpwasa.wav
-		ValidTargets: Water
 
 SmallDebris:
 	Inherits: ^Debris
@@ -31,13 +28,31 @@ RockDebris:
 	Projectile: Bullet
 	Sequences: rock1, rock2, rock3
 
-
 Explosion:
-	Warhead@1Eff: CreateEffect
+	Warhead@2Eff: CreateEffect
 		Explosions: large_twlt, large_bang, large_brnl, verylarge_clsn, large_tumu
 		ImpactSounds: gexp06a.wav, gexp07a.wav
 		ImpactActors: false
 		ValidTargets: Ground, Water, Air
+
+SmallWaterExplosion:
+	Warhead@2EffWater: CreateEffect
+		Image: waterexplosion
+		Explosions: small
+		ImpactSounds: gexpwasa.wav, gexpwasb.wav
+		ValidTargets: Water
+
+MediumWaterExplosion:
+	Inherits: SmallWaterExplosion
+	Warhead@2EffWater: CreateEffect
+		Explosions: medium
+		ImpactSounds: gexpwama.wav, gexpwamb.wav
+
+LargeWaterExplosion:
+	Inherits: SmallWaterExplosion
+	Warhead@2EffWater: CreateEffect
+		Explosions: large
+		ImpactSounds: gexpwala.wav, gexpwalb.wav, gexpwalc.wav
 
 BuildingExplosion:
 	Inherits: Explosion
@@ -48,68 +63,60 @@ BuildingExplosion:
 	Warhead@3Smu: LeaveSmudge
 		SmudgeType: MediumCrater, MediumScorch
 
-PowerPlantExplosion:
-	Inherits: BuildingExplosion
-	Warhead@1Eff: CreateEffect
-		Explosions: powerplant_explosion
-		ImpactSounds: bpowdiea.wav, bpowdieb.wav
-
-TeslaReactorExplosion:
-	Inherits: BuildingExplosion
-	Warhead@1Eff: CreateEffect
-		Explosions: tesla_explosion
-		ImpactSounds: bpowdiea.wav, bpowdieb.wav
-
-NuclearReactorExplosion:
-	Inherits: BuildingExplosion
-	Inherits@NUKE: NukeExplosion
+VehicleExplosion:
+	Inherits: Explosion
+	Warhead@DebrisSpawn: FireShrapnel
+		Weapon: SmallDebris
+		Amount: 2,6
+		AffectsParent: true
+	Warhead@3Smu: LeaveSmudge
+		SmudgeType: SmallCrater, SmallScorch
 
 NukeExplosion:
-	Warhead@1Eff: CreateEffect
-		Explosions: nuke_explosion
-		ImpactSounds: snukexpl.wav
-		ImpactActors: false
-		ValidTargets: Ground, Water, Air
-	Warhead@2Rad: CreateTintedCells
+	Inherits: Explosion
+	Warhead@1Dam: SpreadDamage
 		Spread: 1c0
 		Falloff: 100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 0
-		Level: 1000
-	Warhead@3Smu: LeaveSmudge
+		Versus:
+			None: 100
+			Flak: 100
+			Plate: 100
+			Light: 200
+			Medium: 100
+			Heavy: 100
+			Wood: 60
+			Steel: 100
+			Concrete: 8
+			Drone: 100
+			Rocket: 100
+		AffectsParent: true
+		DamageTypes: RadiationDeath, SuppressTerrorDrone, NonTemporal
+	Warhead@2Eff: CreateEffect
+		Image: nukeexplosion
+		Explosions: large
+		ImpactSounds: snukexpl.wav
+	Warhead@3Rad: CreateTintedCells
+		Spread: 1c0
+		Falloff: 100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 0
+		Level: 500
+	Warhead@4Smu: LeaveSmudge
 		SmudgeType: LargeCrater, LargeScorch
-	Warhead@4Shake: ShakeScreen
+	Warhead@5Shake: ShakeScreen
 		Duration: 20
 		Intensity: 5
 		Multiplier: 1,1
 
 MiniNukeExplosion:
-	Warhead@1Eff: CreateEffect
-		Explosions: terrorist_explosion
+	Inherits: Explosion
+	Warhead@2Eff: CreateEffect
+		Image: nukeexplosion
+		Explosions: small
 		ImpactSounds: gexpapoa.wav
-		ImpactActors: false
-		ValidTargets: Ground, Water, Air
 	Warhead@DebrisSpawn: FireShrapnel
 		Weapon: SmallDebris
 		Amount: 1,4
 		AffectsParent: true
 	Warhead@3Smu: LeaveSmudge
-		SmudgeType: MediumCrater, MediumScorch
-
-SmallBarrelExplosion:
-	Warhead@1Eff: CreateEffect
-		Explosions: small_barrel_explosion
-		ImpactSounds: gexpbara.wav, gexpbarb.wav, gexpbarc.wav
-		ImpactActors: false
-		ValidTargets: Ground, Water, Air
-	Warhead@2Smu: LeaveSmudge
-		SmudgeType: SmallCrater, SmallScorch
-
-LargeBarrelExplosion:
-	Warhead@1Eff: CreateEffect
-		Explosions: large_barrel_explosion
-		ImpactSounds: gexpbara.wav, gexpbarb.wav, gexpbarc.wav
-		ImpactActors: false
-		ValidTargets: Ground, Water, Air
-	Warhead@2Smu: LeaveSmudge
 		SmudgeType: MediumCrater, MediumScorch
 
 InfantryExplosion:
@@ -125,11 +132,3 @@ TemporalExplosion:
 		ImpactSounds: ichrkill.wav
 		ImpactActors: false
 		ValidTargets: Ground, Water, Air
-
-IvanExplosion:
-	Warhead@2Eff: CreateEffect
-		Explosions: ivan_explosion
-		ImpactSounds: gexpcraa.wav
-		ValidTargets: Ground, Water, Air
-	Warhead@3Smu: LeaveSmudge
-		SmudgeType: MediumCrater, MediumScorch

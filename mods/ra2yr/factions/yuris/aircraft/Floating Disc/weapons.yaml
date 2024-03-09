@@ -1,8 +1,8 @@
 DiskLaser:
-	Inherits: Comet
-	ReloadDelay: 40
-	Range: 6c0
+	ReloadDelay: 80
+	Range: 7c0
 	Report: vfloatta.wav
+	ValidTargets: Ground, Water, Air
 	InvalidTargets: DiskDrain, DiskDefenseDrain, DiskSteal
 	Projectile: DiskLaser
 		Width: 0c3
@@ -15,40 +15,22 @@ DiskLaser:
 		ChargeRingRadius: 0c970
 		ChargeRingDuration: 10
 	Warhead@1Dam: SpreadDamage
-		Damage: 7500
-		InvalidTargets: LoadedTankBunker
+		Spread: 42
+		Damage: 9000
+		Versus:
+			None: 100
+			Flak: 100
+			Plate: 100
+			Light: 50
+			Medium: 50
+			Heavy: 50
+			Wood: 100
+			Steel: 100
+			Concrete: 100
+			Drone: 100
+			Rocket: 100
 		DamageTypes: RadiationDeath, SuppressTerrorDrone, NonTemporal
-	-Warhead@2Shr:
-	-Warhead@2Eff: #CreateEffect
-	# 	Explosions: laser_explosion
-	# 	ExplosionPalette: effect
-	# 	UsePlayerPalette: false
-
-DiskLaserE:
-	Inherits: DiskLaser
-	Range: 8c0
-	Projectile: DiskLaser
-		Color: FF000080
-		ChargeRingDuration: 7
-	Warhead@1Dam: SpreadDamage
-		Damage: 10000
-	Warhead@1Gar: OpenToppedDamage
-		Damage: 10000
-	# Warhead@2Eff: CreateEffect
-	# 	Explosions: laser_explosion_red
-	# 	ExplosionPalette: player
-
-DiskLaserAA:
-	Inherits: DiskLaser
-	ValidTargets: Air
-	Warhead@1Dam: SpreadDamage
-		ValidTargets: Air
-
-DiskLaserAAE:
-	Inherits: DiskLaserE
-	ValidTargets: Air
-	Warhead@1Dam: SpreadDamage
-		ValidTargets: Air
+		ValidTargets: Ground, Water, Air
 
 DiskDrain:
 	ReloadDelay: 5

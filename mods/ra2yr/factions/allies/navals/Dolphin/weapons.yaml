@@ -1,5 +1,4 @@
 SonicZap:
-	Inherits@1: ^BreakPointDefenseDrones
 	ReloadDelay: 120
 	Range: 6c0
 	Report: vdolatta.wav

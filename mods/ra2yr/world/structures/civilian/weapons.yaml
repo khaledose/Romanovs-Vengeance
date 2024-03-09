@@ -1,17 +1,15 @@
 EiffelBolt:
-	Inherits: ^Shock
+	Inherits: ^TeslaBeam
 	ReloadDelay: 1
 	Range: 20c0
 	Report: bparatta.wav
-	Warhead@1Dam: SpreadDamage
+	Warhead@1Dam: TargetDamage
 		Damage: 200000
 
 MayanPrism:
-	Inherits: ^Prism
-	ReloadDelay: 1
+	Inherits: PrismShot
 	Range: 12c0
-	Report: bpriat1a.wav
-	Warhead@1Dam: SpreadDamage
+	Warhead@1Dam: TargetDamage
 		Damage: 100000
 
 BustShot:

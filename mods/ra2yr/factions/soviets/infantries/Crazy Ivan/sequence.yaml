@@ -20,23 +20,3 @@ ivan:
 		Start: 259
 	paradrop:
 		Start: 0
-
-# ivan:
-# 	Inherits: ^ArmedInfantry
-# 	Defaults:
-# 		Filename: conquer|ivan.shp
-# 	run:
-# 		Tick: 120
-# 	liedown:
-# 		Start: 212
-# 	standup:
-# 		Start: 228
-# 	prone-shoot:
-# 		Start: 164
-# 	deploy:
-# 		Start: 244
-# 		Length: 15
-# 	cheer:
-# 		Start: 259
-# 	icon:
-# 		Filename: cameo|ivanicon.shp
