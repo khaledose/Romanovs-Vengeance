@@ -1,5 +1,0 @@
-bsub:
-	idle: localmd|bsub
-
-bsubmisl:
-	idle: localmd|bsubmisl

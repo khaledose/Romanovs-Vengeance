@@ -264,15 +264,15 @@ crate:
 	HideMapCrateAction:
 		SelectionShares: 2
 		Sequence: hide-map
-	# ExplodeCrateAction@Barrel:
-	# 	Weapon: SmallBarrelExplode
-	# 	SelectionShares: 5
-	# ExplodeCrateAction@Gas:
-	# 	Weapon: RadCrateExplode
-	# 	SelectionShares: 5
-	# ExplodeCrateAction@Rad:
-	# 	Weapon: GasCrateExplode
-	# 	SelectionShares: 5
+	ExplodeCrateAction@Barrel:
+		Weapon: SmallBarrelExplode
+		SelectionShares: 5
+	ExplodeCrateAction@Gas:
+		Weapon: RadCrateExplode
+		SelectionShares: 5
+	ExplodeCrateAction@Rad:
+		Weapon: GasCrateExplode
+		SelectionShares: 5
 	LevelUpCrateAction:
 		SelectionShares: 100
 		# Sound: gcraprom.wav
@@ -284,9 +284,9 @@ crate:
 		SelectionShares: 1
 		Units: harv
 		Prerequisites: refinery
-	GiveUnitCrateAction@smin:
+	GiveUnitCrateAction@gmin:
 		SelectionShares: 1
-		Units: smin
+		Units: gmin
 		Prerequisites: refinery
 	GiveUnitCrateAction@mtnk:
 		SelectionShares: 5
@@ -333,15 +333,15 @@ crate:
 	GiveUnitCrateAction@brute:
 		SelectionShares: 5
 		Units: brute,brute,brute
-	# GiveUnitCrateAction@gren:
-	# 	SelectionShares: 2
-	# 	Units: gren,gren,gren
+	GiveUnitCrateAction@gren:
+		SelectionShares: 2
+		Units: gren,gren,gren
 	GiveUnitCrateAction@flakt:
 		SelectionShares: 2
 		Units: flakt,flakt,flakt
-	# GiveUnitCrateAction@gtrp:
-	# 	SelectionShares: 2
-	# 	Units: gtrp,gtrp,gtrp
+	GiveUnitCrateAction@gtrp:
+		SelectionShares: 2
+		Units: gtrp,gtrp,gtrp
 	GiveUnitCrateAction@engineer:
 		SelectionShares: 1
 		Units: engineer

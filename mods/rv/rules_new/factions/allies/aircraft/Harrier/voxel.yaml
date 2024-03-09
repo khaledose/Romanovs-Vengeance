@@ -1,5 +1,0 @@
-falc:
-	idle: local|falc
-	idle-a2a: bits/vehicles/upgrades/falcu
-	idle-predator: bits/vehicles/upgrades/falcu2
-	idle-a2a-predator: bits/vehicles/upgrades/falcu3

@@ -1,6 +1,0 @@
-mgtk:
-	Inherits@MUZZLE: ^WithMirageMuzzle
-	idle: # this is required because the WithSpriteBody constructor initializes before the Mirage trait is activated
-		Filename: null.shp
-	icon:
-		Filename: cameo|rtnkicon.shp

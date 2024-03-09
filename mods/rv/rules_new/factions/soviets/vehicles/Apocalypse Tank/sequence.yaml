@@ -1,4 +1,0 @@
-apoc:
-	Inherits@MUZZLE: ^WithApocMuzzle
-	icon:
-		Filename: cameo|mtnkicon.shp

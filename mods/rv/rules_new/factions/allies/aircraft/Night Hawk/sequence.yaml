@@ -1,9 +1,0 @@
-shad:
-	Inherits@MUZZLE: ^WithMachineGunMuzzle
-	shadow:
-		Filename: bits/vehicles/aircraftshadows/shadshadow.shp
-		Facings: 32
-	icon:
-		Filename: cameo|shadicon.shp
-	muzzle:
-		Filename: shad.shp

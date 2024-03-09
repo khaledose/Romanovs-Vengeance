@@ -222,6 +222,7 @@
 
 ^PowerPlant:
 	Inherits: ^BaseBuilding
+	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@DRAIN: ^DiskDrainable
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@POWEROUTAGE: ^DisabledByPowerOutage
@@ -254,7 +255,7 @@
 		Amount: 150
 		RequiresCondition: !chronodisable && !forceshieldnopower && !disabled
 	GrantCondition@IDISABLE:
-		RequiresCondition: power-outage || diskdrain
+		RequiresCondition: emp || power-outage || diskdrain
 	GrantConditionOnPrerequisite@forceshield:
 		Condition: forceshieldnopower
 		Prerequisites: forceshield
@@ -1268,7 +1269,7 @@ refdock:
 		BuildDuration: 1125
 		BuildDurationModifier: 100
 	Valued:
-		Cost: 5000
+		Cost: 4000
 	Building:
 		Footprint: xxx xxx xxx
 		Dimensions: 3, 3

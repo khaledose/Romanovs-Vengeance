@@ -1,9 +1,0 @@
-HornetLauncher:
-	ReloadDelay: 175
-	Burst: 5
-	BurstDelays: 15
-	Range: 25c0
-	ValidTargets: Ground, Water
-	Projectile: InstantHit
-	Warhead@1Dam: TargetDamage
-		ValidTargets: Ground, Water

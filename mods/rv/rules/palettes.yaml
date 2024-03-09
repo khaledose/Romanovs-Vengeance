@@ -685,14 +685,3 @@
 		Filename: jascredalpha.pal
 		Premultiply: true
 		AllowModifiers: false
-	FlashPaletteEffect@NUKE:
-		Type: Nuke
-		Length: 90
-	EnvironmentPaletteEffect@DOMINATOR:
-		Type: Dominator
-		Color: b44747
-		Length: 90
-	EnvironmentPaletteEffect@LIGHTNINGSTORM:
-		Type: LightningStorm
-		Color: 4c4cdc
-		Length: 90

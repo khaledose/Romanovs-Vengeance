@@ -1,4 +1,0 @@
-mtnk:
-	Inherits@MUZZLE: ^WithCannonMuzzle
-	icon:
-		Filename: cameo|gtnkicon.shp

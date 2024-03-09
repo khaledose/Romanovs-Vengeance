@@ -2,7 +2,6 @@
 options-game-speed =
     .slowest = Slowest
     .slower = Slower
-    .slow = Slow
     .normal = Normal
     .fast = Fast
     .faster = Faster

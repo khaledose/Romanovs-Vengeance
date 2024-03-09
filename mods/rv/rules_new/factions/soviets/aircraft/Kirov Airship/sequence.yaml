@@ -1,6 +1,0 @@
-zep:
-	shadow:
-		Filename: bits/vehicles/aircraftshadows/zepshadow.shp
-		Facings: 32
-	icon:
-		Filename: cameo|zepicon.shp

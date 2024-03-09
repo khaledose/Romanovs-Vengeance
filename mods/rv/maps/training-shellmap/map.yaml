@@ -957,9 +957,12 @@ Actors:
 	Actor275: gagap
 		Owner: Allies
 		Location: 51,28
-	Actor276: tnkd
+	Actor276: hwtz
 		Owner: Allies
 		Location: 59,37
 		Facing: 640
+	Actor277: gasilo
+		Owner: Allies
+		Location: 47,37
 
 Rules: rules.yaml

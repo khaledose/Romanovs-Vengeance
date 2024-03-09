@@ -1,7 +1,0 @@
-zep:
-	idle: local|zep
-	idle-propaganda: bits/vehicles/upgrades/zepu
-	idle-rad: bits/vehicles/upgrades/zepu2
-	idle-rad-orange: bits/vehicles/upgrades/zepu2o
-	idle-propaganda-rad: bits/vehicles/upgrades/zepu3
-	idle-propaganda-rad-orange: bits/vehicles/upgrades/zepu3o

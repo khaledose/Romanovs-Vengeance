@@ -1,4 +1,0 @@
-dmisl:
-	idle: local|dmisl
-	idle-rad: bits/vehicles/upgrades/dmislu
-	idle-rad-orange: bits/vehicles/upgrades/dmisluo

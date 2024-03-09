@@ -94,11 +94,11 @@ TickCommandersPowers = function()
 			UserInterface.SetMissionText(CommandersPowerText .. DominationText .. KotHText)
 		end
 
-		-- if Points[player.InternalName] > 0 and not PointActorExists[player.InternalName] then
-		-- 	HasPointsActors[player.InternalName] = Actor.Create("hack.has_points", true, { Owner = player })
+		if Points[player.InternalName] > 0 and not PointActorExists[player.InternalName] then
+			HasPointsActors[player.InternalName] = Actor.Create("hack.has_points", true, { Owner = player })
 
-		-- 	PointActorExists[player.InternalName] = true
-		-- end
+			PointActorExists[player.InternalName] = true
+		end
 
 		if not (Points[player.InternalName] > 0) and PointActorExists[player.InternalName] and HasPointsActors[player.InternalName] ~= nil then
 			HasPointsActors[player.InternalName].Destroy()

@@ -1,4 +1,0 @@
-htk:
-	idle: local|htk
-	turret: local|htktur
-	barrel: local|htkbarl

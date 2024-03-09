@@ -1,4 +1,0 @@
-MasterMindControl:
-	Inherits: MindControl
-	ReloadDelay: 10
-	Range: 6c0

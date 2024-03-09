@@ -1,8 +1,0 @@
-V3Launcher:
-	ReloadDelay: 75
-	Range: 18c0
-	MinRange: 5c0
-	ValidTargets: Ground, Water
-	Projectile: InstantHit
-	Warhead@1Dam: TargetDamage
-		ValidTargets: Ground, Water

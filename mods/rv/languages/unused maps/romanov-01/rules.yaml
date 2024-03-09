@@ -25,7 +25,7 @@ powerproxy.paratroopers:
 		LongDescs:
 			1: A Cargo Planes drops 6 Conscripts, an Attack Dog and a Tesla Trooper\nanywhere on the map.
 		DropItems:
-			1: e2,e2,e2,e2,e2,e2,shk,sdog
+			1: e2,e2,e2,e2,e2,e2,shk,dog
 		QuantizedFacings: 8
 		UnitTypes:
 			1: alplane

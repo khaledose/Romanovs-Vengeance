@@ -1,6 +1,0 @@
-ytnk:
-	Inherits@MUZZLE: ^WithGatlingMuzzle
-	icon:
-		Filename: cameomd|ytnkicon.shp
-	muzzle:
-		Filename: ytnk.shp

@@ -1,6 +1,0 @@
-civan:
-	Inherits: ivan
-	Defaults:
-		Filename: conquer|civan.shp
-	icon:
-		Filename: cameo|ivncicon.shp

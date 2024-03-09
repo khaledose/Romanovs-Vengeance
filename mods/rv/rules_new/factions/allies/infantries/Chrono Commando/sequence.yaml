@@ -1,9 +1,0 @@
-ccomand:
-	Inherits: seal
-	Defaults:
-		Filename: conquer|ccomand.shp
-	cheer:
-		Start: 340
-	-paradrop:
-	icon:
-		Filename: cameo|ccomicon.shp

@@ -1,6 +1,0 @@
-robo:
-	Inherits@MUZZLE: ^WithMachineGunMuzzle
-	icon:
-		Filename: cameomd|roboicon.shp
-	muzzle:
-		Filename: robo.shp

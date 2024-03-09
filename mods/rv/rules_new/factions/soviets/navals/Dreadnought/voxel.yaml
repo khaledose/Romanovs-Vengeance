@@ -1,8 +1,0 @@
-dred:
-	idle: local|dred
-	idle-rad: bits/vehicles/upgrades/dredu
-	idle-rad-orange: bits/vehicles/upgrades/dreduo
-	half: bits/vehicles/dred2
-	half-rad: bits/vehicles/upgrades/dredu2
-	half-rad-orange: bits/vehicles/upgrades/dreduo2
-	empty: local|dredwo

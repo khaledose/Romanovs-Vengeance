@@ -1,4 +1,0 @@
-disk:
-	idle: bits/vehicles/replace/disk
-	turret: bits/vehicles/replace/disktur
-	turret-armored: bits/vehicles/upgrades/diskutur

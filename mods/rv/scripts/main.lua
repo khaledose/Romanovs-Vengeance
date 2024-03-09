@@ -7,16 +7,16 @@
    information, see COPYING.
 ]]
 
--- CommandersPowerText = ""
+CommandersPowerText = ""
 DominationText = ""
 KotHText = ""
 
--- CPModifier = Map.LobbyOption("cpmodifier")
+CPModifier = Map.LobbyOption("cpmodifier")
 
 Tick = function()
-	-- if CPModifier ~= "disabled" then
-	-- 	TickCommandersPowers()
-	-- end
+	if CPModifier ~= "disabled" then
+		TickCommandersPowers()
+	end
 
 	TickDomination()
 	TickKotH()
@@ -24,7 +24,7 @@ Tick = function()
 end
 
 WorldLoaded = function()
-	-- WorldLoadedCommandersPowers()
+	WorldLoadedCommandersPowers()
 	WorldLoadedDomination()
 	WorldLoadedKotH()
 	WorldLoadedRegicide()
