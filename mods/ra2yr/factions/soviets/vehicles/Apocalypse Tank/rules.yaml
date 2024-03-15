@@ -12,8 +12,8 @@ apoc:
 	Inherits@TURRET: ^WithVoxelTurret
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Soviets
-		Prerequisites: ~vehicle.soviets, natech, ~techlevel.4
-		Description: Soviet Advanced Battle Tank with Double Barrel\nand Anti-Aircraft Missile Launcher.\n\n  Strong vs Vehicles, Aircraft\n  Weak vs Infantry\n\nAbilities:\n- Can crush enemy vehicles\n\nUpgradeable with:\n- Nuclear Engines\n- Uranium Shells\n- Advanced Irradiators (Iraq)
+		Prerequisites: ~vehicle.soviets, natech, ~techlevel.7
+		Description: actor-apoc.description
 		BuildDurationModifier: 100
 		BuildPaletteOrder: 120
 	Selectable:
@@ -33,9 +33,9 @@ apoc:
 	RevealsShroud:
 		Range: 6c0
 	Tooltip:
-		Name: Apocalypse Tank
+		Name: actor-apoc.name
 	Tooltip@NoRow:
-		Name: Apocalypse Tank
+		Name: actor-apoc.name
 	Armament@primary:
 		Weapon: 120mmx
 		Damage: 100

@@ -3,8 +3,8 @@ disk:
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Buildable:
 		Queue: Aircraft.Shared, Aircraft.Yuri
-		Prerequisites: ~aircraft.yuri, yatech, ~techlevel.4
-		Description: Floating Disc armed with lasers.\nCan disable Power Plants and powered Defenses.\nCan steal resources from enemy Refineries.\nCan steal technology from enemy Battle Labs.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles\n\nUpgradeable with:\n- Disc Armor (Lunar Eclipse)\n- Laser Capacitors (Lazarus Corps)
+		Prerequisites: ~aircraft.yuri, yatech, ~techlevel.2
+		Description: actor-disk.description
 		BuildPaletteOrder: 40
 	Selectable:
 		Bounds: 1882, 2075, 0, -724
@@ -21,9 +21,9 @@ disk:
 	RevealsShroud@Ground:
 		Range: 9c0
 	Tooltip:
-		Name: Floating Disc
+		Name: actor-disk.name
 	Tooltip@NoRow:
-		Name: Floating Disc
+		Name: actor-disk.name
 	Armament@primary:
 		Weapon: DiskLaser
 		Damage: 75
@@ -52,9 +52,9 @@ disk:
 diskhusk:
 	Inherits: ^HelicopterHusk
 	Tooltip:
-		Name: Floating Disc
+		Name: actor-disk.name
 	Tooltip@NoRow:
-		Name: Floating Disc
+		Name: actor-disk.name
 	Aircraft:
 		TurnSpeed: 40
 		Speed: 165

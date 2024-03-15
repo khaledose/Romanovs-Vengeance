@@ -6,9 +6,8 @@ smin:
 	Inherits@TURRET: ^WithVoxelTurret
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Yuri
-		Description: Gathers and processes ore.\n\nAbilities:\n- Cannot be mind controlled\n\nUpgradeable with:\n- Grinder Treads\n- Chaos Tank Compensators (Yurigrad)
-		Prerequisites: ~vehicle.yuri, power, ~!global-megawealth, ~techlevel.3
-		BuildDurationModifier: 100
+		Prerequisites: ~vehicle.yuri, power, ~!global-megawealth, ~techlevel.1
+		Description: actor-smin.description
 		BuildPaletteOrder: 90
 	Selectable:
 		Priority: 7
@@ -26,9 +25,9 @@ smin:
 	RevealsShroud:
 		Range: 6c0
 	Tooltip:
-		Name: Slave Miner
+		Name: actor-smin.name
 	Tooltip@NoRow:
-		Name: Slave Miner
+		Name: actor-smin.name
 	Armament@primary:
 		Weapon: 20mmrapid
 		Damage: 30

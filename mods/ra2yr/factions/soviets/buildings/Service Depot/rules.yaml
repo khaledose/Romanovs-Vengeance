@@ -1,14 +1,9 @@
 nadept:
-	Inherits: ^BaseStructure
-	Inherits@REPAIR: ^RepairsUnits
-	Inherits@CAPTURE: ^Capturable
-	Inherits@MC: ^MindControllableBuilding
+	Inherits: ^ServiceDepot
 	Inherits@SHAPE: ^4x3Shape
 	Buildable:
 		Queue: Building.Shared, Building.Soviets
-		Prerequisites: ~building.soviets, naweap, ~techlevel.1
-		Description: Repairs vehicles and removes Terror Drones for a price.
-		BuildPaletteOrder: 80
+		Prerequisites: ~building.soviets, naweap, ~techlevel.6
 	Building:
 		Footprint: x+++ x+++ x+++
 	IsometricSelectable:
@@ -23,14 +18,8 @@ nadept:
 		Cost: 800
 	RevealsShroud:
 		Range: 5c0
-	Tooltip:
-		Name: Soviet Service Depot
-	Tooltip@NoRow:
-		Name: Soviet Service Depot
 	RallyPoint:
 		Path: 4,1
-	CommandBarBlacklist:
-		DisableStop: false
 	WithIdleOverlay@bib:
 		Sequence: bib
 		PauseOnCondition: chronodisable

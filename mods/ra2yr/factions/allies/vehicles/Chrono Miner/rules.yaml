@@ -2,15 +2,22 @@ cmin:
 	Inherits: ^MinerVehicle
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Allies
-		Description: Gathers Ore and Gems.\n\n  Unarmed\n\nAbilities:\n- Can move over water\n- Cannot be mind controlled\n- Can teleport back to refineries
+		Description: actor-cmin.description
 		Prerequisites: ~vehicle.allies, garefn, ~!global-megawealth, ~techlevel.1
 	Tooltip:
-		Name: Chrono Miner
+		Name: actor-cmin.name
 	Tooltip@NoRow:
-		Name: Chrono Miner
+		Name: actor-cmin.name
 	Harvester:
 		Capacity: 20
 		DeliverVoice: Deliver
+	ChronoResourceDelivery:
+		WarpInSequence: warpout
+		WarpInSound: vchrtele.wav
+		WarpOutSound: vchrtele.wav
+		SoundVolume: 0.5
+		AudibleThroughFog: false
+		RequiresCondition: !chronodisable
 	Voiced:
 		VoiceSet: ChronoMinerVoice
 

@@ -3,8 +3,8 @@ nanrct:
 	Inherits@SHAPE: ^4x4Shape
 	Buildable:
 		Queue: Building.Shared, Building.Soviets
-		Prerequisites: ~building.soviets, natech, ~techlevel.3
-		Description: Provides a large amount of power for other structures.\n\nUpgradeable with:\n- Advanced Irradiators (Iraq)\n\n  Can be rotated.
+		Prerequisites: ~building.soviets, natech, ~techlevel.9
+		Description: actor-nanrct.description
 		BuildPaletteOrder: 110
 	Building:
 		Footprint: xxxx xxxx xxxx _xx_
@@ -21,9 +21,9 @@ nanrct:
 	RevealsShroud:
 		Range: 5c0
 	Tooltip:
-		Name: Nuclear Reactor
+		Name: actor-nanrct.name
 	Tooltip@NoRow:
-		Name: Nuclear Reactor
+		Name: actor-nanrct.name
 	Explodes:
 		Weapon: NukePayload
 		Type: CenterPosition

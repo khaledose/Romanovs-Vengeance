@@ -43,7 +43,7 @@
 	Inherits@ANNOUNCE: ^AnnounceProduction
 	Buildable:
 		Prerequisites: ~techlevel.1
-		Description: General-purpose naval transport.\nCan carry infantry and vehicles.\n\n  Unarmed
+		Description: meta-amphibioustransport.description
 		BuildDurationModifier: 100
 		BuildPaletteOrder: 45
 	Selectable:
@@ -66,9 +66,9 @@
 	RevealsShroud:
 		Range: 6c0
 	Tooltip:
-		Name: Amphibious Transport
+		Name: meta-amphibioustransport.name
 	Tooltip@NoRow:
-		Name: Amphibious Transport
+		Name: meta-amphibioustransport.name
 	Hovers:
 		Ticks: 10
 		BobDistance: -64

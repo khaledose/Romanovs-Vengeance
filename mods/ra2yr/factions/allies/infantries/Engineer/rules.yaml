@@ -5,7 +5,7 @@
 	Inherits@Repairer: ^BuildingRepairer
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
-		Description: Captures enemy structures, repairs damaged buildings and bridges.\nDisarms explosives.\n\nAbilities:\n- Can swim\n\n  Unarmed
+		Description: actor-engineer.description
 		BuildPaletteOrder: 2
 	Health:
 		HP: 7500
@@ -20,9 +20,9 @@
 	RevealsShroud:
 		Range: 4c0
 	Tooltip:
-		Name: Engineer
+		Name: actor-engineer.name
 	Tooltip@NoRow:
-		Name: Engineer
+		Name: actor-engineer.name
 	Armament:
 		Weapon: DefuseKit
 		Cursor: remove-bomb
@@ -38,9 +38,5 @@ engineer:
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Allies
 		Prerequisites: ~gapile, ~techlevel.1
-	Tooltip:
-		Name: Allied Engineer
-	Tooltip@NoRow:
-		Name: Allied Engineer
 	Voiced:
 		VoiceSet: AlliedEngineerVoice

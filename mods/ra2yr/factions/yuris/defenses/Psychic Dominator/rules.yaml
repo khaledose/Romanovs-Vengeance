@@ -4,8 +4,8 @@ yappet:
 	Inherits@SHAPE: ^3x3Shape
 	Buildable:
 		Queue: Support.Shared, Support.Yuri
-		Prerequisites: ~building.yuri, yatech, !enoughpsydom, ~techlevel.5
-		Description: Release powerful energy that damages structures and mind controls units.\n\n  Requires power to operate.
+		Prerequisites: ~building.yuri, yatech, !enoughpsydom, ~techlevel.10
+		Description: actor-yappet.description
 		BuildPaletteOrder: 990
 	IsometricSelectable:
 		DecorationHeight: 120
@@ -20,14 +20,14 @@ yappet:
 	RevealsShroud:
 		Range: 5c0
 	Tooltip:
-		Name: Yuri Psychic Dominator
+		Name: actor-yappet.name
 	Tooltip@NoRow:
-		Name: Yuri Psychic Dominator
+		Name: actor-yappet.name
 	ProvidesPrerequisite@swlimit:
 		Prerequisite: enoughpsydom
 	NotificationAnnouncement:
 		Notification: PsychicDominatorDetected
-		TextNotification: Warning: Psychic Dominator detected.
+		TextNotification: notification-psychic-dominator-detected
 	WithIdleOverlay@lights:
 		Sequence: idle-lights
 		PauseOnCondition: disabled || chronodisable

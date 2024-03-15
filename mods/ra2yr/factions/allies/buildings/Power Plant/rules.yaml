@@ -4,6 +4,7 @@ gapowr:
 	Buildable:
 		Queue: Building.Shared, Building.Allies
 		Prerequisites: ~building.allies, ~techlevel.1
+		Description: actor-gapowr.description
 	IsometricSelectable:
 		DecorationHeight: 60
 	Power:
@@ -17,9 +18,9 @@ gapowr:
 	RevealsShroud:
 		Range: 4c0
 	Tooltip:
-		Name: Allied Power Plant
+		Name: actor-gapowr.name
 	Tooltip@NoRow:
-		Name: Allied Power Plant
+		Name: actor-gapowr.name
 	Voiced:
 		VoiceSet: PowerPlantVoice
 		Volume: 0.8

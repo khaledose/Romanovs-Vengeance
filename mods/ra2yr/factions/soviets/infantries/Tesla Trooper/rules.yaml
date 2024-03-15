@@ -6,8 +6,8 @@ shk:
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Soviets
-		Prerequisites: ~infantry.soviets, ~techlevel.1
-		Description: Special armored unit using electricity.\n\n  Strong vs Infantry, Tanks\n  Weak vs Aircraft\n\nAbilities:\n- Can charge Tesla Coils\n\nUpgradeable with:\n- Overcharge (Soviet Union)
+		Prerequisites: ~infantry.soviets, ~techlevel.5
+		Description: actor-shk.description
 		BuildPaletteOrder: 5
 	Health:
 		HP: 13000
@@ -22,9 +22,9 @@ shk:
 	RevealsShroud:
 		Range: 6c0
 	Tooltip:
-		Name: Tesla Trooper
+		Name: actor-shk.name
 	Tooltip@NoRow:
-		Name: Tesla Trooper
+		Name: actor-shk.name
 	Armament@primary:
 		Weapon: ElectricBolt
 		LocalOffset: 320,128,1024

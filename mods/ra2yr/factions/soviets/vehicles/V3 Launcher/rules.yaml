@@ -9,11 +9,9 @@ v3:
 	Inherits@ANNOUNCE: ^AnnounceProduction
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Soviets
-		BuildPaletteOrder: 100
 		Prerequisites: ~vehicle.soviets, naradr, ~techlevel.3
-		Description: Long-range rocket artillery.\n\n  Strong vs Buildings, Infantry\n  Weak vs Aircraft\n\nUpgradeable with:\n- Radioactive Warheads\n- Advanced Irradiators (Iraq)\n- High Explosive Bombs (Libya)
-		BuildDuration: 500
-		BuildDurationModifier: 100
+		Description: actor-v3.description
+		BuildPaletteOrder: 100
 	Health:
 		HP: 15000
 	Armor:
@@ -28,9 +26,9 @@ v3:
 	RevealsShroud:
 		Range: 6c0
 	Tooltip:
-		Name: V3 Launcher
+		Name: actor-v3.name
 	Tooltip@NoRow:
-		Name: V3 Launcher
+		Name: actor-v3.name
 	Armament:
 		Weapon: V3Launcher
 	AttackFollowFrontal:

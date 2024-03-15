@@ -1,4 +1,4 @@
-sdog:
+dog:
 	Inherits: ^BasicInfantry
 	Inherits@DEATH: ^AnimalDeathAnimation
 	Inherits@SHOOTER: ^AnimalAttack

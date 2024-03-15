@@ -7,9 +7,9 @@ cmisl:
 	Valued:
 		Cost: 50
 	Tooltip:
-		Name: Cruise Missile
+		Name: actor-cmisl.name
 	Tooltip@NoRow:
-		Name: Cruise Missile
+		Name: actor-cmisl.name
 	BallisticMissile:
 		CreateAngle: 255
 		LaunchAngle: 255
@@ -21,9 +21,9 @@ cmisl:
 		LaunchSounds: vbooat1a.wav
 		SoundVolume: 0.6
 		AirborneCondition: airborne
-	SpawnedExplodes:
+	ExplodesForMaster:
 		Weapon: CruiseWeapon
-	SpawnedExplodes@Elite:
+	ExplodesForMaster@Elite:
 		Weapon: CruiseWeaponE
 	RenderVoxels:
 		Image: bsubmisl

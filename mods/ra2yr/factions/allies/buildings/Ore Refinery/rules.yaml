@@ -19,10 +19,6 @@ garefn:
 		Value: 300
 	RevealsShroud:
 		Range: 6c0
-	Tooltip:
-		Name: Allied Ore Refinery
-	Tooltip@NoRow:
-		Name: Allied Ore Refinery
 	FreeActor:
 		Actor: cmin
 		SpawnOffset: 3,1

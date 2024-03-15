@@ -10,8 +10,8 @@ aegis:
 	Inherits@TURRET: ^WithTurret
 	Buildable:
 		Queue: Ship.Shared, Ship.Allies
-		Prerequisites: ~ship.allies, gaairc, ~techlevel.1
-		Description: Anti-Air naval unit.\n\n  Strong vs Aircraft\n  Weak vs Grounds units, Ships\n\nUpgradeable with:\n- Boost-Gliding Systems (United States)
+		Prerequisites: ~ship.allies, gaairc, ~techlevel.7
+		Description: actor-aegis.description
 		BuildDurationModifier: 100
 		BuildPaletteOrder: 41
 	Selectable:
@@ -28,9 +28,9 @@ aegis:
 	RevealsShroud:
 		Range: 10c0
 	Tooltip:
-		Name: Aegis Cruiser
+		Name: actor-aegis.name
 	Tooltip@NoRow:
-		Name: Aegis Cruiser
+		Name: actor-aegis.name
 	Armament@primary:
 		Weapon: Medusa
 		Damage: 300

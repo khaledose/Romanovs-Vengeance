@@ -10,8 +10,8 @@ dest:
 	Inherits@DETECTCLOAK: ^DetectUnderWater
 	Buildable:
 		Queue: Ship.Shared, Ship.Allies
-		Prerequisites: ~ship.allies, ~techlevel.3
-		Description: Allied Main Battle Ship armed with cannons and\nan Osprey helicopter.\n  Strong vs Naval units\n  Weak vs Ground units, Aircraft\n\nAbilities:\n- Can detect Stealth units
+		Prerequisites: ~ship.allies, ~techlevel.4
+		Description: actor-dest.description
 		BuildDurationModifier: 100
 		BuildPaletteOrder: 80
 	Selectable:
@@ -28,9 +28,9 @@ dest:
 	RevealsShroud:
 		Range: 7c0
 	Tooltip:
-		Name: Destroyer
+		Name: actor-dest.name
 	Tooltip@NoRow:
-		Name: Destroyer
+		Name: actor-dest.name
 	Armament@primary:
 		Weapon: 155mm
 		Damage: 90

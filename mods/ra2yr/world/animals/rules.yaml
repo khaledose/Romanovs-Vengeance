@@ -17,9 +17,9 @@ cow:
 	RevealsShroud:
 		Range: 4c0
 	Tooltip:
-		Name: Cow
+		Name: actor-cow.name
 	Tooltip@NoRow:
-		Name: Cow
+		Name: actor-cow.name
 	Voiced:
 		VoiceSet: CowVoice
 	ScaredyCat:
@@ -46,9 +46,9 @@ all:
 	RevealsShroud:
 		Range: 2c0
 	Tooltip:
-		Name: Alligator
+		Name: actor-all.name
 	Tooltip@NoRow:
-		Name: Alligator
+		Name: actor-all.name
 	Armament:
 		Weapon: AlligatorBite
 	Voiced:
@@ -74,9 +74,9 @@ polarb:
 	RevealsShroud:
 		Range: 2c0
 	Tooltip:
-		Name: Polar Bear
+		Name: actor-polarb.name
 	Tooltip@NoRow:
-		Name: Polar Bear
+		Name: actor-polarb.name
 	Armament:
 		Weapon: BearBite
 	Voiced:
@@ -102,9 +102,9 @@ josh:
 	RevealsShroud:
 		Range: 2c0
 	Tooltip:
-		Name: Monkey
+		Name: actor-josh.name
 	Tooltip@NoRow:
-		Name: Monkey
+		Name: actor-josh.name
 	Armament:
 		Weapon: ChimpBite
 	Voiced:
@@ -131,9 +131,9 @@ caml:
 	RevealsShroud:
 		Range: 2c0
 	Tooltip:
-		Name: Camel
+		Name: actor-caml.name
 	Tooltip@NoRow:
-		Name: Camel
+		Name: actor-caml.name
 	Voiced:
 		VoiceSet: CamelVoice
 	WithInfantryBody:
@@ -158,9 +158,9 @@ dnoa:
 	RevealsShroud:
 		Range: 5c0
 	Tooltip:
-		Name: T-Rex
+		Name: actor-dnoa.name
 	Tooltip@NoRow:
-		Name: T-Rex
+		Name: actor-dnoa.name
 	Armament@primary:
 		Weapon: TRexInfBite
 	Armament@secondary:
@@ -190,9 +190,9 @@ dnob:
 	RevealsShroud:
 		Range: 5c0
 	Tooltip:
-		Name: Animal Bront
+		Name: actor-dnob.name
 	Tooltip@NoRow:
-		Name: Animal Bront
+		Name: actor-dnob.name
 	Armament:
 		Weapon: ChimpBite
 	WithInfantryBody:

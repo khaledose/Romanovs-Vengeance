@@ -7,7 +7,7 @@ gapill:
 	Buildable:
 		Queue: Support.Shared, Support.Allies
 		Prerequisites: ~building.allies, gapile, ~techlevel.1
-		Description: Automated anti-infantry defense.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can detect Steath units\n\nUpgradeable with:\n- Grand Cannon Protocols (France)
+		Description: actor-gapill.description
 		BuildPaletteOrder: 40
 	RequiresBuildableArea:
 		Adjacent: 4
@@ -22,9 +22,9 @@ gapill:
 	RevealsShroud:
 		Range: 7c0
 	Tooltip:
-		Name: Allied Pill Box
+		Name: actor-gapill.name
 	Tooltip@NoRow:
-		Name: Allied Pill Box
+		Name: actor-gapill.name
 	Armament:
 		Weapon: vulcan2
 		LocalOffset: 416,0,416

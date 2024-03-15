@@ -12,8 +12,8 @@ htk:
 	Inherits@TURRET: ^WithVoxelTurret
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Soviets
-		Prerequisites: ~vehicle.soviets, ~techlevel.1
-		Description: Anti-Air and Anti-Infantry vehicle capable of transporting Infantry.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles\n\nAbilities:\n- Can detect Stealth units
+		Prerequisites: ~vehicle.soviets, ~techlevel.3
+		Description: actor-htk.description
 		BuildDurationModifier: 100
 		BuildPaletteOrder: 30
 	Selectable:
@@ -34,9 +34,9 @@ htk:
 	RevealsShroud:
 		Range: 9c0
 	Tooltip:
-		Name: Flak Track
+		Name: actor-htk.name
 	Tooltip@NoRow:
-		Name: Flak Track
+		Name: actor-htk.name
 	Armament@primary:
 		Weapon: FlakTrackGun
 		Damage: 25

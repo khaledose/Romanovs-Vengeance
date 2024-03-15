@@ -14,9 +14,9 @@ SpyPlaneSpecial:
 		Descriptions:
 			1: Reveals an area of the map.\nProvides stealth detection.
 		SelectTargetSpeechNotification: SelectTarget
-		SelectTargetTextNotification: Select target.
+		SelectTargetTextNotification: notification-select-target
 		EndChargeSpeechNotification: SpyPlaneReady
-		EndChargeTextNotification: Spy Plane ready.
+		EndChargeTextNotification: notification-spy-plane-ready
 		UnitTypes:
 			1: spyp
 		SquadSizes:

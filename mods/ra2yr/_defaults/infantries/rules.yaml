@@ -27,7 +27,7 @@
 		Action: Kill
 		DeathTypes: BulletDeath, NonTemporal
 	ActorLostNotification:
-		TextNotification: Unit lost.
+		TextNotification: notification-unit-lost
 	HitShape:
 		Type: Circle
 			Radius: 128
@@ -170,11 +170,9 @@
 	RevealsShroud:
 		Range: 2c0
 	Tooltip:
-		Name: Civilian
-		GenericName: Civilian
+		Name: meta-civilianinfantry.name
 	Tooltip@NoRow:
-		Name: Civilian
-		GenericName: Civilian
+		Name: meta-civilianinfantry.name
 	WithInfantryBody:
 		IdleSequences: idle1
 	MapEditorData:
@@ -318,12 +316,6 @@
 	RevealOnDeath:
 		Radius: 8c0
 		Duration: 125
-	Tooltip:
-		Name: Sea Animal
-		GenericName: Sea Animal
-	Tooltip@NoRow:
-		Name: Sea Animal
-		GenericName: Sea Animal
 	AttackFollowFrontal:
 		Voice: Attack
 		FacingTolerance: 2

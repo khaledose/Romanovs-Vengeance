@@ -5,8 +5,8 @@ shad:
 	Inherits@CARGO: ^TransportInfantries
 	Buildable:
 		Queue: Aircraft.Shared, Aircraft.Allies
-		Prerequisites: ~aircraft.allies, ~techlevel.2
-		Description: Infantry Transport Helicopter.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilties:\n- Can detect Stealth units\n- Invisible on radar
+		Prerequisites: ~aircraft.allies, ~techlevel.7
+		Description: actor-shad.description
 		BuildPaletteOrder: 20
 	Selectable:
 		Bounds: 1689, 2896, 0, -965
@@ -25,9 +25,9 @@ shad:
 	RevealsShroud@Ground:
 		Range: 7c0
 	Tooltip:
-		Name: Night Hawk
+		Name: actor-shad.name
 	Tooltip@NoRow:
-		Name: Night Hawk
+		Name: actor-shad.name
 	Armament@primary:
 		Weapon: BlackHawkCannon
 		Damage: 35
@@ -51,9 +51,9 @@ shad:
 shadhusk:
 	Inherits: ^HelicopterHusk
 	Tooltip:
-		Name: Night Hawk
+		Name: actor-shad.name
 	Tooltip@NoRow:
-		Name: Night Hawk
+		Name: actor-shad.name
 	Aircraft:
 		TurnSpeed: 40
 		Speed: 180

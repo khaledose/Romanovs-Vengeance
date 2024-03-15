@@ -55,8 +55,10 @@ namespace OpenRA.Mods.RA2.Traits
 
 	public class AffectedByTemporal : ConditionalTrait<AffectedByTemporalInfo>, ISync, ITick, ISelectionBar
 	{
-		Actor self;
+		readonly Actor self;
 		Actor attacker;
+		readonly int requiredDamage;
+		int recievedDamage;
 
 		int token = Actor.InvalidConditionToken;
 

@@ -20,11 +20,11 @@
 		CameraRemoveDelay: 375
 		SpawnCameraAtGround: true
 		SelectTargetSpeechNotification: SelectTarget
-		SelectTargetTextNotification: Select target.
+		SelectTargetTextNotification: notification-select-target
 		EndChargeSpeechNotification: GeneticMutatorReady
-		EndChargeTextNotification: Genetic Mutator ready.
+		EndChargeTextNotification: notification-genetic-mutator-ready
 		LaunchSpeechNotification: GeneticMutatorActivated
-		LaunchTextNotification: Warning: Genetic Mutator activated.
+		LaunchTextNotification: notification-genetic-mutator-activated
 		IncomingSpeechNotification: GeneticMutatorDetected
 		IncomingTextNotification: Warning: Genetic Mutator created.
 		PauseOnCondition: disabled || chronodisable

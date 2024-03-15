@@ -4,8 +4,8 @@ gacsph:
 	Inherits@SHAPE: ^4x3Shape
 	Buildable:
 		Queue: Support.Shared, Support.Allies
-		Prerequisites: ~building.allies, gatech, !enoughchrono, ~techlevel.5
-		Description: Allows teleportation of vehicles.\nKills infantry.\n\n  Requires power to operate.\n  Can be rotated.
+		Prerequisites: ~building.allies, gatech, !enoughchrono, ~techlevel.10
+		Description: actor-gacsph.description
 		BuildPaletteOrder: 980
 	IsometricSelectable:
 		DecorationHeight: 45
@@ -20,9 +20,9 @@ gacsph:
 	RevealsShroud:
 		Range: 5c0
 	Tooltip:
-		Name: Allied Chrono Sphere
+		Name: actor-gacsph.name
 	Tooltip@NoRow:
-		Name: Allied Chrono Sphere
+		Name: actor-gacsph.name
 	ProvidesPrerequisite@swlimit:
 		Prerequisite: enoughchrono
 	WithIdleOverlay@dome:
@@ -35,7 +35,7 @@ gacsph:
 		RequiresCondition: !build-incomplete
 	NotificationAnnouncement:
 		Notification: ChronosphereDetected
-		TextNotification: Warning: Chronosphere detected.
+		TextNotification: notification-chronosphere-detected
 	Voiced:
 		VoiceSet: ChronosphereVoice
 		Volume: 0.8

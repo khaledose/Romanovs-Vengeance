@@ -4,8 +4,8 @@ yaclon:
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
 		Queue: Support.Shared, Support.Yuri
-		Prerequisites: ~building.yuri, yatech, ~techlevel.4
-		Description: Clones most trained infantry.\n\n  Cannot be placed on water.\n  Maximum 1 can be built.
+		Prerequisites: ~building.yuri, yatech, ~techlevel.9
+		Description: actor-yaclon.description
 		BuildPaletteOrder: 130
 		BuildLimit: 1
 	IsometricSelectable:
@@ -21,9 +21,9 @@ yaclon:
 	RevealsShroud:
 		Range: 5c0
 	Tooltip:
-		Name: Yuri Cloning Vats
+		Name: actor-yaclon.name
 	Tooltip@NoRow:
-		Name: Yuri Cloning Vats
+		Name: actor-yaclon.name
 	Production:
 		Produces: Clone.Yuri
 		PauseOnCondition: disabled || chronodisable

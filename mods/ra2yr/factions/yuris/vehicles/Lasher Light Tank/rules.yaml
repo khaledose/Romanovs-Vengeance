@@ -11,9 +11,8 @@ ltnk:
 	Inherits@TURRET: ^WithVoxelTurret
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Yuri
-		Description: Yuri Main Battle Tank.\n\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft\n\nUpgradeable with:\n- Grinder Treads\n- Autoloaders\n- Chaos Tank Compensators (Yurigrad)\n- Laser Capacitors (Lazarus Corps)
-		Prerequisites: ~vehicle.yuri, ~techlevel.1
-		BuildDurationModifier: 100
+		Prerequisites: ~vehicle.yuri, ~techlevel.2
+		Description: actor-ltnk.description
 		BuildPaletteOrder: 20
 	Selectable:
 		Bounds: 1544, 2509, 0, -289
@@ -32,9 +31,9 @@ ltnk:
 	RevealsShroud:
 		Range: 6c0
 	Tooltip:
-		Name: Lasher Light Tank
+		Name: actor-ltnk.name
 	Tooltip@NoRow:
-		Name: Lasher Light Tank
+		Name: actor-ltnk.name
 	Armament@primary:
 		Weapon: ATGUN
 		Damage: 65

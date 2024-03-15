@@ -7,8 +7,8 @@ tesla:
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
 		Queue: Support.Shared, Support.Soviets
-		Prerequisites: ~building.soviets, naradr, napowr, ~techlevel.3
-		Description: Advanced base defense.\nCan be buffed or made work during low power by Tesla Troopers.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nAbilities:\n- Can detect Steath units\n\nUpgradeable with:\n- Overcharge (Russia)\n\n  Requires power to operate.
+		Prerequisites: ~building.soviets, naradr, napowr, ~techlevel.5
+		Description: actor-tesla.description
 		BuildPaletteOrder: 60
 	RequiresBuildableArea:
 		Adjacent: 2
@@ -25,9 +25,9 @@ tesla:
 	RevealsShroud:
 		Range: 8c0
 	Tooltip:
-		Name: Soviet Tesla Coil
+		Name: actor-tesla.name
 	Tooltip@NoRow:
-		Name: Soviet Tesla Coil
+		Name: actor-tesla.name
 	Armament:
 		Weapon: CoilBolt
 		Damage: 75

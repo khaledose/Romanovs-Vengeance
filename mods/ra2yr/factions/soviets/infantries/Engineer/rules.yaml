@@ -3,10 +3,6 @@ sengineer:
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Soviets
 		Prerequisites: ~nahand, ~techlevel.1
-	Tooltip:
-		Name: Soviet Engineer
-	Tooltip@NoRow:
-		Name: Soviet Engineer
 	Voiced:
 		VoiceSet: SovietEngineerVoice
 	RenderSprites:

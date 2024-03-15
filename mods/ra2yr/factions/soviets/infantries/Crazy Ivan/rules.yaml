@@ -4,8 +4,8 @@ ivan:
 	Inherits@MC: ^MindControllable
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Soviets
-		Prerequisites: ~infantry.soviets, naradr, ~techlevel.3
-		Description: Specialist for explosives. Can plant a Bomb on anything, even Cows.\n\nUpgradeable with:\n- Targeted Explosives (Cuba)\n- High Explosive Bombs (Libya)
+		Prerequisites: ~infantry.soviets, naradr, ~techlevel.5
+		Description: actor-ivan.description
 		BuildPaletteOrder: 6
 	Health:
 		HP: 12500
@@ -20,9 +20,9 @@ ivan:
 	RevealsShroud:
 		Range: 6c0
 	Tooltip:
-		Name: Crazy Ivan
+		Name: actor-ivan.name
 	Tooltip@NoRow:
-		Name: Crazy Ivan
+		Name: actor-ivan.name
 	AttackFrontal:
 		Cursor: bomb
 		OutsideRangeCursor: bomb

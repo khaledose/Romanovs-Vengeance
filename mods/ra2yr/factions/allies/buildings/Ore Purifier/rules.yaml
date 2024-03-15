@@ -5,8 +5,8 @@ gaorep:
 	Inherits@AICash: ^AICashCheat
 	Buildable:
 		Queue: Building.Shared, Building.Allies
-		Prerequisites: ~building.allies, garefn, gatech, ~techlevel.4
-		Description: Refines income from ores and gems by 25%.\n\n  Maximum 1 can be built.
+		Prerequisites: ~building.allies, garefn, gatech, ~techlevel.10
+		Description: actor-gaorep.description
 		BuildPaletteOrder: 120
 		BuildLimit: 1
 	IsometricSelectable:
@@ -22,9 +22,9 @@ gaorep:
 	RevealsShroud:
 		Range: 5c0
 	Tooltip:
-		Name: Allied Ore Processor
+		Name: actor-gaorep.name
 	Tooltip@NoRow:
-		Name: Allied Ore Processor
+		Name: actor-gaorep.name
 	ResourcePurifier:
 		Modifier: 25
 		RequiresCondition: !chronodisable

@@ -6,8 +6,8 @@ nalasr:
 	Inherits@TURRET: ^WithVoxelTurretBuilding
 	Buildable:
 		Queue: Support.Shared, Support.Soviets
-		Prerequisites: ~building.soviets, nahand, ~techlevel.1
-		Description: Automated anti-infantry defense.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can detect Steath units\n\nUpgradeable with:\n- Armor-Piercing Bullets
+		Prerequisites: ~building.soviets, ~nahand, ~techlevel.1
+		Description: actor-nalasr.description
 		BuildPaletteOrder: 40
 	RequiresBuildableArea:
 		Adjacent: 4
@@ -22,9 +22,9 @@ nalasr:
 	RevealsShroud:
 		Range: 7c0
 	Tooltip:
-		Name: Soviet Sentry Gun
+		Name: actor-nalasr.name
 	Tooltip@NoRow:
-		Name: Soviet Sentry Gun
+		Name: actor-nalasr.name
 	Armament:
 		Weapon: vulcan
 		LocalOffset: 702,128,512, 702,-128,512

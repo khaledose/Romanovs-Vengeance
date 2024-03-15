@@ -9,8 +9,8 @@ mgtk:
 	Inherits@ANNOUNCE: ^AnnounceProduction
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Allies
-		Prerequisites: ~vehicle.allies, gatech, ~techlevel.3
-		Description: Tank that appears as a tree while immobile.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nUpgradeable with:\n- Composite Armor
+		Prerequisites: ~vehicle.allies, gatech, ~techlevel.9
+		Description: actor-mgtk.description
 		BuildDurationModifier: 100
 		BuildPaletteOrder: 110
 	Selectable:
@@ -30,19 +30,19 @@ mgtk:
 	RevealsShroud:
 		Range: 9c0
 	Tooltip:
-		Name: Mirage Tank
+		Name: actor-mgtk.name
 		RequiresCondition: !tree && showownername
 	Tooltip@NoRow:
-		Name: Mirage Tank
+		Name: actor-mgtk.name
 		RequiresCondition: !tree && !showownername
 	MirageTooltip@Tree:
-		Name: Mirage Tank
-		GenericName: Tree
+		Name: actor-mgtk.name
+		GenericName: meta-tree.name
 		GenericVisibility: Enemy, Neutral
 		RequiresCondition: tree && showownername
 	MirageTooltip@TreeNoRow:
-		Name: Mirage Tank
-		GenericName: Tree
+		Name: actor-mgtk.name
+		GenericName: meta-tree.name
 		ShowOwnerRow: false
 		GenericVisibility: Enemy, Neutral
 		RequiresCondition: tree && !showownername

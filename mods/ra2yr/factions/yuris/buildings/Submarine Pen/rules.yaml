@@ -2,13 +2,13 @@ yayard:
 	Inherits: ^Shipyard
 	Buildable:
 		Queue: Building.Shared, Building.Yuri
-		Prerequisites: ~building.yuri, yapowr, yarefn, ~techlevel.1
+		Prerequisites: ~building.yuri, yapowr, yarefn, ~techlevel.4
 	IsometricSelectable:
 		DecorationHeight: 120
 	Tooltip:
-		Name: Submarine Pen
+		Name: actor-yayard.name
 	Tooltip@NoRow:
-		Name: Submarine Pen
+		Name: actor-yayard.name
 	Production:
 		Produces: Ship.Yuri
 	ProductionQueue:

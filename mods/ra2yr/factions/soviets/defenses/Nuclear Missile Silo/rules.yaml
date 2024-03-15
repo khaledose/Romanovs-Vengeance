@@ -4,8 +4,8 @@ namisl:
 	Inherits@SHAPE: ^3x3Shape 
 	Buildable:
 		Queue: Support.Shared, Support.Soviets
-		Prerequisites: ~building.soviets, natech, !enoughnuke, ~techlevel.5
-		Description: Provides an atomic bomb.\n\nUpgradeable with:\n- Advanced Irradiators (Iraq)\n\n  Requires power to operate.
+		Prerequisites: ~building.soviets, natech, !enoughnuke, ~techlevel.10
+		Description: actor-namisl.description
 		BuildPaletteOrder: 990
 	IsometricSelectable:
 		DecorationHeight: 120
@@ -20,9 +20,9 @@ namisl:
 	RevealsShroud:
 		Range: 4c0
 	Tooltip:
-		Name: Soviet Nuclear Missile Silo
+		Name: actor-namisl.name
 	Tooltip@NoRow:
-		Name: Soviet Nuclear Missile Silo
+		Name: actor-namisl.name
 	ProvidesPrerequisite@swlimit:
 		Prerequisite: enoughnuke
 	WithSupportPowerActivationOverlay:
@@ -30,7 +30,7 @@ namisl:
 		Palette: effect75alpha
 	NotificationAnnouncement:
 		Notification: NuclearSiloDetected
-		TextNotification: Warning: Nuclear Silo detected.
+		TextNotification: notification-nuclear-silo-detected
 	Voiced:
 		VoiceSet: NuclearSiloVoice
 		Volume: 0.8

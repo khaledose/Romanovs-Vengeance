@@ -6,8 +6,8 @@ boris:
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Soviets
-		Prerequisites: ~infantry.soviets, natech, ~techlevel.4
-		Description: Elite commando infantry, armed with\nAKM rifle and signal flare.\n\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Aircraft\n\nAbilities:\n- Can call airstrike against Buildings\n- Can move over water\n\nUpgradeable with:\n- Armor-Piercing Bullets\n\n  Maximum 1 can be trained.
+		Prerequisites: ~infantry.soviets, natech, ~techlevel.9
+		Description: actor-boris.description
 		BuildPaletteOrder: 9
 	Health:
 		HP: 20000
@@ -22,9 +22,9 @@ boris:
 	RevealsShroud:
 		Range: 9c0
 	Tooltip:
-		Name: Boris
+		Name: actor-boris.name
 	Tooltip@NoRow:
-		Name: Boris
+		Name: actor-boris.name
 	Armament@primary:
 		Weapon: AKM
 		Damage: 65

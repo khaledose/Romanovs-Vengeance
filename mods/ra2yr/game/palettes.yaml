@@ -634,7 +634,7 @@
 	VoxelNormalsPalette@ts-normals:
 		Name: ts-normals
 		Type: TiberianSun
-	MenuPaletteEffect:
+	MenuPostProcessEffect:
 	PaletteFromPaletteWithAlpha@ra75alpha:
 		Name: ra75alpha
 		BasePalette: ra
@@ -673,7 +673,7 @@
 		Filename: jascredalpha.pal
 		Premultiply: true
 		AllowModifiers: false
-	FlashPaletteEffect@NUKE:
+	FlashPostProcessEffect@NUKE:
 		Type: Nuke
 		Length: 90
 	EnvironmentPaletteEffect@DOMINATOR:

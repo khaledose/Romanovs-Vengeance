@@ -12,7 +12,7 @@ sub:
 	Buildable:
 		Queue: Ship.Shared, Ship.Soviets
 		Prerequisites: ~ship.soviets, ~techlevel.2
-		Description: Submerged anti-ship unit armed with torpedoes.\n\n  Strong vs Ships\n  Weak vs Ground units, Aircraft\n\nAbilities:\n- Can detect Stealth units
+		Description: actor-sub.description
 		BuildDurationModifier: 100
 		BuildPaletteOrder: 80
 	Health:
@@ -27,9 +27,9 @@ sub:
 	RevealsShroud:
 		Range: 4c0
 	Tooltip:
-		Name: Typhoon Attack Submarine
+		Name: actor-sub.name
 	Tooltip@NoRow:
-		Name: Typhoon Attack Submarine
+		Name: actor-sub.name
 	Armament:
 		Weapon: SubTorpedo
 		Damage: 75

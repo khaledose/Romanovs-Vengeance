@@ -21,7 +21,7 @@
 	HiddenUnderFog:
 		Type: CenterPosition
 	ActorLostNotification:
-		TextNotification: Unit lost.
+		TextNotification: notification-unit-lost
 	BodyOrientation:
 		QuantizedFacings: 0
 		CameraPitch: 85

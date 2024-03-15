@@ -8,8 +8,8 @@ dtruck:
 	Inherits@ANNOUNCE: ^AnnounceProduction
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Soviets
-		Prerequisites: ~vehicle.libya, naradr, ~techlevel.3
-		Description: Demolition Truck, actively armed with nuclear explosives.\n\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Aircraft\n\nUpgradeable with:\n- High Explosive Bombs (Libya)
+		Prerequisites: ~vehicle.libya, naradr, ~techlevel.10
+		Description: actor-dtruck.description
 		BuildDurationModifier: 100
 		BuildPaletteOrder: 90
 	Selectable:
@@ -29,9 +29,9 @@ dtruck:
 	RevealsShroud:
 		Range: 6c0
 	Tooltip:
-		Name: Demolition Truck
+		Name: actor-dtruck.name
 	Tooltip@NoRow:
-		Name: Demolition Truck
+		Name: actor-dtruck.name
 	Armament:
 		Weapon: TriggerAttack
 	AttackFrontal:

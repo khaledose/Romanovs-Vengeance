@@ -11,11 +11,9 @@ ytnk:
 	Inherits@TURRET: ^WithVoxelTurret
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Yuri
-		Prerequisites: ~vehicle.yuri, ~techlevel.1
+		Prerequisites: ~vehicle.yuri, ~techlevel.4
+		Description: actor-ytnk.description
 		BuildPaletteOrder: 30
-		Description: Anti-infantry and anti-air vehicle.\nFires faster as it continues to fire.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles\n\nAbilities:\n- Can detect Stealth units\n\nUpgradeable with:\n- Chaos Tank Compensators (Yurigrad)\n- Chainguns
-		BuildDuration: 375
-		BuildDurationModifier: 100
 	Selectable:
 		Bounds: 1254, 1930, 0, -289
 	Health:
@@ -33,9 +31,9 @@ ytnk:
 	RevealsShroud:
 		Range: 9c0
 	Tooltip:
-		Name: Gatling Tank
+		Name: actor-ytnk.name
 	Tooltip@NoRow:
-		Name: Gatling Tank
+		Name: actor-ytnk.name
 	Armament@ag-0:
 		Weapon: AGGatling
 		LocalOffset: 544,100,1024, 544,-100,1024

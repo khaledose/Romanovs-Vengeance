@@ -6,9 +6,8 @@ caos:
 	Inherits@DEPLOY: ^PeriodicExplosionOnDeploy
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Yuri
-		Prerequisites: ~vehicle.yuri, ~techlevel.2
-		Description: Drone capable of releasing gas that causes enemy units to fire random units.\nUnits affected by the gas deal more damage.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nAbilities\n- Can be deployed to release gas continuously\n- Cannot be mind controlled\n\nUpgradeable with:\n- Chaos Tank Compensators (Yurigrad)
-		BuildDurationModifier: 100
+		Prerequisites: ~vehicle.yuri, ~techlevel.4
+		Description: actor-caos.description
 		BuildPaletteOrder: 40
 	Selectable:
 		Bounds: 1254, 2316, 0, -193
@@ -27,9 +26,9 @@ caos:
 	RevealsShroud:
 		Range: 6c0
 	Tooltip:
-		Name: Chaos Drone
+		Name: actor-caos.name
 	Tooltip@NoRow:
-		Name: Chaos Drone
+		Name: actor-caos.name
 	Armament@primary:
 		Weapon: ChaosAttack
 		LocalOffset: 0,0,64

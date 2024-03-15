@@ -7,9 +7,9 @@ v3rocket:
 	Valued:
 		Cost: 50
 	Tooltip:
-		Name: V3 Rocket
+		Name: actor-v3rocket.name
 	Tooltip@NoRow:
-		Name: V3 Rocket
+		Name: actor-v3rocket.name
 	BallisticMissile:
 		CreateAngle: 64
 		PrepareTick: 50
@@ -19,7 +19,7 @@ v3rocket:
 		LaunchSounds: vv3latta.wav, vv3lattb.wav
 		SoundVolume: 0.7
 		AirborneCondition: airborne
-	SpawnedExplodes:
+	ExplodesForMaster:
 		Weapon: V3Weapon
-	SpawnedExplodes@Elite:
+	ExplodesForMaster@Elite:
 		Weapon: V3WeaponE

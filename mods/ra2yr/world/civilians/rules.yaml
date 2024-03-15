@@ -113,9 +113,9 @@ vladimir:
 	DeliversCash:
 		Payload: 200
 	Tooltip:
-		Name: Vladimir
+		Name: actor-vladimir.name
 	Tooltip@NoRow:
-		Name: Vladimir
+		Name: actor-vladimir.name
 	Armament:
 		Weapon: Pistola
 	WithInfantryBody:
@@ -126,9 +126,9 @@ pentgen:
 	DeliversCash:
 		Payload: 200
 	Tooltip:
-		Name: General Pentagon
+		Name: actor-pentgen.name
 	Tooltip@NoRow:
-		Name: General Pentagon
+		Name: actor-pentgen.name
 	Armament:
 		Weapon: Pistola
 	Voiced:
@@ -137,9 +137,9 @@ pentgen:
 ssrv:
 	Inherits: ^Civilian
 	Tooltip:
-		Name: Secret Service
+		Name: actor-ssrv.name
 	Tooltip@NoRow:
-		Name: Secret Service
+		Name: actor-ssrv.name
 	Armament:
 		Weapon: Pistola
 	Voiced:
@@ -151,9 +151,9 @@ pres:
 	DeliversCash:
 		Payload: 2000
 	Tooltip:
-		Name: President
+		Name: actor-pres.name
 	Tooltip@NoRow:
-		Name: President
+		Name: actor-pres.name
 	-TakeCover:
 
 # Yuri's Revenge Civilians
@@ -161,9 +161,9 @@ rmnv:
 	Inherits: ^Civilian
 	Inherits@PANIC: ^Panicker
 	Tooltip:
-		Name: Romanov
+		Name: actor-rmnv.name
 	Tooltip@NoRow:
-		Name: Romanov
+		Name: actor-rmnv.name
 	Voiced:
 		VoiceSet: RomanovVoice
 	-TakeCover:
@@ -174,9 +174,9 @@ eins:
 	DeliversCash:
 		Payload: 200
 	Tooltip:
-		Name: Albert Einstein
+		Name: actor-eins.name
 	Tooltip@NoRow:
-		Name: Albert Einstein
+		Name: actor-eins.name
 	Voiced:
 		VoiceSet: EinsteinVoice
 	-TakeCover:
@@ -198,9 +198,9 @@ mumy:
 	RevealsShroud:
 		Range: 6c0
 	Tooltip:
-		Name: Evil Mummy
+		Name: actor-mumy.name
 	Tooltip@NoRow:
-		Name: Evil Mummy
+		Name: actor-mumy.name
 	Armament@primary:
 		Weapon: MummyPunch
 	Armament@secondary:
@@ -213,10 +213,6 @@ mumy:
 
 arnd:
 	Inherits: ^Civilian
-	Buildable:
-		Queue: Infantry.Shared
-		BuildAtProductionType: Soldier
-		BuildPaletteOrder: 72
 	Health:
 		HP: 20000
 	Armor:
@@ -224,9 +220,9 @@ arnd:
 	Mobile:
 		Speed: 90
 	Tooltip:
-		Name: Arnnie Frankenfurter
+		Name: actor-arnd.name
 	Tooltip@NoRow:
-		Name: Arnnie Frankenfurter
+		Name: actor-arnd.name
 	Armament:
 		Weapon: TermiGun
 	Voiced:
@@ -236,10 +232,6 @@ arnd:
 
 stln:
 	Inherits: ^Civilian
-	Buildable:
-		Queue: Infantry.Shared
-		BuildAtProductionType: Soldier
-		BuildPaletteOrder: 72
 	Health:
 		HP: 20000
 	Armor:
@@ -247,9 +239,9 @@ stln:
 	Mobile:
 		Speed: 90
 	Tooltip:
-		Name: Sammy Stallion
+		Name: actor-stln.name
 	Tooltip@NoRow:
-		Name: Sammy Stallion
+		Name: actor-stln.name
 	Armament@primary:
 		Weapon: StalGun
 	Armament@secondary:
@@ -274,9 +266,9 @@ stln:
 	RevealsShroud:
 		Range: 8c0
 	Tooltip:
-		Name: Cosmonaut
+		Name: actor-lunr.name
 	Tooltip@NoRow:
-		Name: Cosmonaut
+		Name: actor-lunr.name
 	Voiced:
 		VoiceSet: CosmonautVoice
 	Transforms:
@@ -301,9 +293,9 @@ lunr.air:
 	Inherits: ^AirInfantry
 	Inherits@SELF: ^Lunr
 	Buildable:
-		Queue: Infantry.Shared
+		Queue: Infantry.Unused
 		BuildAtProductionType: Soldier
-		Description: Airborne soldier.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles
+		Description: actor-lunr.description
 		BuildPaletteOrder: 72
 	Aircraft:
 		Speed: 135
@@ -327,9 +319,9 @@ lunr.husk:
 		TurnSpeed: 40
 		Speed: 180
 	Tooltip:
-		Name: Cosmonaut
+		Name: actor-lunr.name
 	Tooltip@NoRow:
-		Name: Cosmonaut
+		Name: actor-lunr.name
 
 # Custom Civilians
 # pres.regicide:

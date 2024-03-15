@@ -1,9 +1,9 @@
 cafncb:
 	Inherits: ^Fence
 	Tooltip:
-		Name: Black Fence
+		Name: actor-cafncb.name
 	Tooltip@NoRow:
-		Name: Black Fence
+		Name: actor-cafncb.name
 	LineBuild:
 		NodeTypes: cafncb
 	LineBuildNode:
@@ -14,9 +14,9 @@ cafncb:
 cafncw:
 	Inherits: ^Fence
 	Tooltip:
-		Name: White Fence
+		Name: actor-cafncw.name
 	Tooltip@NoRow:
-		Name: White Fence
+		Name: actor-cafncw.name
 	LineBuild:
 		NodeTypes: cafncw
 	LineBuildNode:
@@ -27,9 +27,9 @@ cafncw:
 cafnck:
 	Inherits: ^Fence
 	Tooltip:
-		Name: Brown Fence
+		Name: actor-cafnck.name
 	Tooltip@NoRow:
-		Name: Brown Fence
+		Name: actor-cafnck.name
 	LineBuild:
 		NodeTypes: cafnck
 	LineBuildNode:
@@ -40,9 +40,9 @@ cafnck:
 cafncy:
 	Inherits: ^Fence
 	Tooltip:
-		Name: Yellow Fence
+		Name: actor-cafncy.name
 	Tooltip@NoRow:
-		Name: Yellow Fence
+		Name: actor-cafncy.name
 	LineBuild:
 		NodeTypes: cafncy
 	LineBuildNode:
@@ -53,9 +53,9 @@ cafncy:
 cafncg:
 	Inherits: ^Fence
 	Tooltip:
-		Name: Green Fence
+		Name: actor-cafncg.name
 	Tooltip@NoRow:
-		Name: Green Fence
+		Name: actor-cafncg.name
 	LineBuild:
 		NodeTypes: cafncg
 	LineBuildNode:
@@ -66,9 +66,9 @@ cafncg:
 cafncm:
 	Inherits: ^Fence
 	Tooltip:
-		Name: Purple Fence
+		Name: actor-cafncm.name
 	Tooltip@NoRow:
-		Name: Purple Fence
+		Name: actor-cafncm.name
 	LineBuild:
 		NodeTypes: cafncm
 	LineBuildNode:
@@ -79,9 +79,9 @@ cafncm:
 cabarb:
 	Inherits: ^Fence
 	Tooltip:
-		Name: Barbed Wire Fence
+		Name: actor-cabarb.name
 	Tooltip@NoRow:
-		Name: Barbed Wire Fence
+		Name: actor-cabarb.name
 	LineBuild:
 		NodeTypes: cabarb
 	LineBuildNode:
@@ -92,9 +92,9 @@ cabarb:
 gasand:
 	Inherits: ^Fence
 	Tooltip:
-		Name: Sandbags
+		Name: actor-gasand.name
 	Tooltip@NoRow:
-		Name: Sandbags
+		Name: actor-gasand.name
 	SoundOnDamageTransition:
 		DamagedSounds: gsancrua.wav, gsancrub.wav
 		DestroyedSounds: gsancrua.wav, gsancrub.wav
@@ -108,9 +108,9 @@ gasand:
 cafncp:
 	Inherits: ^Fence
 	Tooltip:
-		Name: Prison Camp Fence
+		Name: actor-cafncp.name
 	Tooltip@NoRow:
-		Name: Prison Camp Fence
+		Name: actor-cafncp.name
 	BlocksProjectiles:
 	LineBuild:
 		NodeTypes: cafncp

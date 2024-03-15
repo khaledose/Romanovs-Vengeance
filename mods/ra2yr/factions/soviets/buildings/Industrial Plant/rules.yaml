@@ -4,8 +4,8 @@ naindp:
 	Inherits@SHAPE: ^3x3Shape
 	Buildable:
 		Queue: Building.Shared, Building.Soviets
-		Prerequisites: ~building.soviets, natech, ~techlevel.4
-		Description: Decreases vehicle costs by 25%.\n\n  Maximum 1 can be built.
+		Prerequisites: ~building.soviets, natech, ~techlevel.10
+		Description: actor-naindp.description
 		BuildPaletteOrder: 120
 		BuildLimit: 1
 	IsometricSelectable:
@@ -21,9 +21,9 @@ naindp:
 	RevealsShroud:
 		Range: 4c0
 	Tooltip:
-		Name: Soviet Industrial Plant
+		Name: actor-naindp.name
 	Tooltip@NoRow:
-		Name: Soviet Industrial Plant
+		Name: actor-naindp.name
 	WithIdleOverlay@pistons:
 		Sequence: idle-pistons
 		PauseOnCondition: chronodisable

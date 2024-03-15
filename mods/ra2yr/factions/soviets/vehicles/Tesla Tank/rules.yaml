@@ -11,8 +11,8 @@ ttnk:
 	Inherits@TURRET: ^WithVoxelTurret
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Soviets, Vehicle.USSR
-		Prerequisites: ~vehicle.russia, naradr, ~techlevel.3
-		Description: Russian special tank armed with dual small Tesla Coils.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nUpgradeable with:\n- Overcharge (Soviet Union)
+		Prerequisites: ~vehicle.russia, naradr, ~techlevel.10
+		Description: actor-ttnk.description
 		BuildDurationModifier: 100
 		BuildPaletteOrder: 90
 	Selectable:
@@ -32,9 +32,9 @@ ttnk:
 	RevealsShroud:
 		Range: 6c0
 	Tooltip:
-		Name: Tesla Tank
+		Name: actor-ttnk.name
 	Tooltip@NoRow:
-		Name: Tesla Tank
+		Name: actor-ttnk.name
 	Armament@primary:
 		Weapon: TankBolt
 		Damage: 140

@@ -5,8 +5,8 @@ spy:
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Allies
-		Prerequisites: ~infantry.allies, gatech, ~techlevel.3
-		Description: Infiltrates enemy structures for intel or sabotage.\nExact effect depends on the\nbuilding infiltrated.\n\n  Unarmed\n\nAbilities:\n- Can swim\n- Can disguise as an enemy infantry
+		Prerequisites: ~infantry.allies, gatech, ~techlevel.5
+		Description: actor-spy.description
 		BuildPaletteOrder: 7
 	Health:
 		HP: 10000
@@ -20,14 +20,14 @@ spy:
 		Speed: 60
 	RevealsShroud:
 		Range: 9c0
-	Tooltip:
-		Name: Spy
-		RequiresCondition: !disguise && showownername
-	Tooltip@NoRow:
-		Name: Spy
-		RequiresCondition: !disguise && !showownername
+	DisguiseTooltip:
+		Name: actor-spy.name
+	DisguiseTooltip@NoRow:
+		Name: actor-spy.name
 	Voiced:
 		VoiceSet: SpyVoice
 	Infiltrates:
 		Types: SpyInfiltrate
+	-Tooltip:
+	-Tooltip@NoRow:
 	-Guard:

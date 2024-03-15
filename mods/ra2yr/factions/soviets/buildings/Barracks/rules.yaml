@@ -3,15 +3,11 @@ nahand:
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
 		Queue: Building.Shared, Building.Soviets
-		Prerequisites: ~building.soviets, napowr, ~techlevel.1
+		Prerequisites: ~building.soviets, napowr, ~techlevel.2
 	IsometricSelectable:
 		DecorationHeight: 135
 	RevealsShroud:
 		Range: 6c0
-	Tooltip:
-		Name: Soviet Barracks
-	Tooltip@NoRow:
-		Name: Soviet Barracks
 	Production:
 		Produces: Infantry.Soviets
 	ProductionQueue:

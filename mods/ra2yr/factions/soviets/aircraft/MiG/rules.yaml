@@ -13,9 +13,9 @@ bpln:
 	RevealsShroud@Ground:
 		Range: 2c0
 	Tooltip:
-		Name: MiG
+		Name: actor-bpln.name
 	Tooltip@NoRow:
-		Name: MiG
+		Name: actor-bpln.name
 	Armament:
 		Weapon: Maverick3
 		Damage: 300
@@ -41,9 +41,9 @@ bpln:
 bplnhusk:
 	Inherits: ^PlaneHusk
 	Tooltip:
-		Name: MiG
+		Name: actor-bpln.name
 	Tooltip@NoRow:
-		Name: MiG
+		Name: actor-bpln.name
 	Aircraft:
 		TurnSpeed: 20
 		Speed: 240

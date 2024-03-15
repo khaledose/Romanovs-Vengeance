@@ -22,13 +22,13 @@
 		OnFireSound: siroon.wav
 		EndChargeSound: siroread.wav
 		SelectTargetSpeechNotification: SelectTarget
-		SelectTargetTextNotification: Select target.
+		SelectTargetTextNotification: notification-select-target
 		EndChargeSpeechNotification: IronCurtainReady
-		EndChargeTextNotification: Iron Curtain ready.
+		EndChargeTextNotification: notification-iron-curtain-ready
 		LaunchSpeechNotification: IronCurtainActivated
-		LaunchTextNotification: Warning: Iron Curtain activated.
+		LaunchTextNotification: notification-iron-curtain-activated
 		IncomingSpeechNotification: IronCurtainActivated
-		IncomingTextNotification: Warning: Iron Curtain activated.
+		IncomingTextNotification: notification-iron-curtain-activated
 		ValidRelationships: Ally, Neutral, Enemy
 		DisplayTimerRelationships: Ally, Neutral, Enemy
 		EffectImage: explosion

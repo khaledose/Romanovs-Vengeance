@@ -8,7 +8,8 @@ naradr:
 	Inherits@AI: ^AIMicroManagable
 	Buildable:
 		Queue: Building.Shared, Building.Soviets
-		Prerequisites: ~building.soviets, narefn, ~techlevel.2, ~!ai.naradr
+		Prerequisites: ~building.soviets, narefn, ~techlevel.3, ~!ai.naradr
+		Description: actor-naradr.description
 		BuildPaletteOrder: 40
 	Power:
 		Amount: -50
@@ -21,9 +22,9 @@ naradr:
 	RevealsShroud:
 		Range: 10c0
 	Tooltip:
-		Name: Soviet Radar Tower
+		Name: actor-naradr.name
 	Tooltip@NoRow:
-		Name: Soviet Radar Tower
+		Name: actor-naradr.name
 	WithIdleOverlay@dish:
 		Sequence: idle-dish
 		PauseOnCondition: disabled || chronodisable

@@ -2,13 +2,9 @@ gaweap:
 	Inherits: ^WarFactory
 	Buildable:
 		Queue: Building.Shared, Building.Allies
-		Prerequisites: ~building.allies, gapile, garefn, ~techlevel.1
+		Prerequisites: ~building.allies, gapile, garefn, ~techlevel.2
 	IsometricSelectable:
 		DecorationHeight: 60
-	Tooltip:
-		Name: Allied War Factory
-	Tooltip@NoRow:
-		Name: Allied War Factory
 	Production:
 		Produces: Vehicle.Allies, Aircraft.Allies
 	ProductionQueue:

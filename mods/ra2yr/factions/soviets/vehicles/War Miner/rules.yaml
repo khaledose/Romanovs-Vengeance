@@ -6,14 +6,14 @@ harv:
 	Inherits@TURRET: ^WithVoxelTurret
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Soviets
-		Description: Gathers Ore and Gems.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can move over water\n- Cannot be mind controlled\n\nUpgradeable with:\n- Armor-Piercing Bullets
 		Prerequisites: ~vehicle.soviets, narefn, ~!global-megawealth, ~techlevel.1
+		Description: actor-harv.description
 	Harvester:
 		Capacity: 20
 	Tooltip:
-		Name: War Miner
+		Name: actor-harv.name
 	Tooltip@NoRow:
-		Name: War Miner
+		Name: actor-harv.name
 	Armament@primary:
 		Weapon: 20mmRapid
 		Damage: 30

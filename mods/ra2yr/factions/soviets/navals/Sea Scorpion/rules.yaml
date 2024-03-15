@@ -9,8 +9,8 @@ hyd:
 	Inherits@ANNOUNCE: ^AnnounceProduction
 	Buildable:
 		Queue: Ship.Shared, Ship.Soviets
-		Prerequisites: ~ship.soviets, naradr, ~techlevel.1
-		Description: Anti-Air and Anti-Infantry naval unit.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles, Naval units
+		Prerequisites: ~ship.soviets, naradr, ~techlevel.6
+		Description: actor-hyd.description
 		BuildDurationModifier: 100
 		BuildPaletteOrder: 30
 	Selectable:
@@ -27,9 +27,9 @@ hyd:
 	RevealsShroud:
 		Range: 10c0
 	Tooltip:
-		Name: Sea Scorpion
+		Name: actor-hyd.name
 	Tooltip@NoRow:
-		Name: Sea Scorpion
+		Name: actor-hyd.name
 	Armament@primary:
 		Weapon: FlakTrackGun
 		Damage: 25

@@ -19,10 +19,6 @@ narefn:
 		Value: 300
 	RevealsShroud:
 		Range: 6c0
-	Tooltip:
-		Name: Soviet Ore Refinery
-	Tooltip@NoRow:
-		Name: Soviet Ore Refinery
 	FreeActor:
 		Actor: harv
 		SpawnOffset: 3,1

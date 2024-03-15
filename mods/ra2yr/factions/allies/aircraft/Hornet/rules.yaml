@@ -18,9 +18,9 @@ hornet:
 	RevealsShroud@Ground:
 		Range: 2c0
 	Tooltip:
-		Name: Hornet
+		Name: actor-hornet.name
 	Tooltip@NoRow:
-		Name: Hornet
+		Name: actor-hornet.name
 	Armament:
 		Weapon: HornetBomb
 		PauseOnCondition: !ammo
@@ -49,9 +49,9 @@ hornet:
 
 hornethusk:
 	Tooltip:
-		Name: Hornet
+		Name: actor-hornet.name
 	Tooltip@NoRow:
-		Name: Hornet
+		Name: actor-hornet.name
 	Aircraft:
 		TurnSpeed: 20
 		Speed: 210

@@ -7,8 +7,8 @@ brute:
 	Inherits@SELFHEALING: ^SelfHealing
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Yuri
-		Prerequisites: ~infantry.yuri, ~techlevel.1
-		Description: Powerful soldiers.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nAbilities:\n- Cannot be eaten by Attack Dogs\n\nUpgradeable with:\n- DNA Boosters (Transylvania)
+		Prerequisites: ~infantry.yuri, ~techlevel.5
+		Description: actor-brute.description
 		BuildPaletteOrder: 4
 	Health:
 		HP: 20000
@@ -23,9 +23,9 @@ brute:
 	RevealsShroud:
 		Range: 8c0
 	Tooltip:
-		Name: Brute
+		Name: actor-brute.name
 	Tooltip@NoRow:
-		Name: Brute
+		Name: actor-brute.name
 	Armament@primary:
 		Weapon: Punch
 		FireDelay: 5

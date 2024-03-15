@@ -7,9 +7,9 @@ dmisl:
 	Valued:
 		Cost: 50
 	Tooltip:
-		Name: Dreadnought Missile
+		Name: actor-dmisl.name
 	Tooltip@NoRow:
-		Name: Dreadnought Missile
+		Name: actor-dmisl.name
 	BallisticMissile:
 		LaunchAngle: 192
 		Speed: 250
@@ -18,7 +18,7 @@ dmisl:
 		LaunchSounds: vdreatta.wav, vdreattb.wav
 		SoundVolume: 0.6
 		AirborneCondition: airborne
-	SpawnedExplodes:
+	ExplodesForMaster:
 		Weapon: DredWeapon
-	SpawnedExplodes@Elite:
+	ExplodesForMaster@Elite:
 		Weapon: DredWeaponE

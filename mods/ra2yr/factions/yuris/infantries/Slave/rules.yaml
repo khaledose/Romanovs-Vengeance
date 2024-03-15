@@ -5,9 +5,9 @@ slav:
 	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
 	Buildable:
 		Queue: Infantry.Unused
-		BuildPaletteOrder: 60
 		Prerequisites: ~showslave, yarefn, ~techlevel.1
-		Description: Gathers Ore and Gems.
+		Description: actor-slav.description
+		BuildPaletteOrder: 60
 	Health:
 		HP: 12500
 	Armor:
@@ -21,9 +21,9 @@ slav:
 	RevealOnDeath:
 		Radius: 5c0
 	Tooltip:
-		Name: Slave
+		Name: actor-slav.name
 	Tooltip@NoRow:
-		Name: Slave
+		Name: actor-slav.name
 	Armament@primary:
 		Weapon: Shovel
 		Damage: 30

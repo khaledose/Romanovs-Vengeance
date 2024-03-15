@@ -13,9 +13,9 @@
 	RevealsShroud:
 		Range: 8c0
 	Tooltip:
-		Name: Rocketeer
+		Name: actor-jumpjet.name
 	Tooltip@NoRow:
-		Name: Rocketeer
+		Name: actor-jumpjet.name
 	Armament@primary:
 		Weapon: 20mm
 		Damage: 25
@@ -47,8 +47,8 @@ jumpjet.air:
 	Inherits@SELF: ^Jumpjet
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Allies
-		Prerequisites: ~infantry.allies, gaairc, ~techlevel.2
-		Description: Airborne soldier.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles\n\nUpgradeable with:\n- Advanced Training
+		Prerequisites: ~infantry.allies, gaairc, ~techlevel.3
+		Description: actor-jumpjet.description
 		BuildPaletteOrder: 6
 	Aircraft:
 		Speed: 135
@@ -66,6 +66,6 @@ jumpjet.husk:
 		TurnSpeed: 40
 		Speed: 180
 	Tooltip:
-		Name: Rocketeer
+		Name: actor-jumpjet.name
 	Tooltip@NoRow:
-		Name: Rocketeer
+		Name: actor-jumpjet.name

@@ -6,8 +6,8 @@ natbnk:
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
 		Queue: Support.Shared, Support.Yuri
-		Prerequisites: ~building.yuri, ~techlevel.1
-		Description: Static defense with fireports for a vehicle to garrison.\nProvides increased firepower, fire speed and range to the vehicle.
+		Prerequisites: ~building.yuri, ~techlevel.3
+		Description: actor-natbnk.description
 		BuildPaletteOrder: 50
 	IsometricSelectable:
 		DecorationHeight: 45
@@ -20,9 +20,9 @@ natbnk:
 	RevealsShroud:
 		Range: 6c0
 	Tooltip:
-		Name: Yuri Tank Bunker
+		Name: actor-natbnk.name
 	Tooltip@NoRow:
-		Name: Yuri Tank Bunker
+		Name: actor-natbnk.name
 	Targetable@loaded:
 		TargetTypes: LoadedTankBunker
 		RequiresCondition: loaded

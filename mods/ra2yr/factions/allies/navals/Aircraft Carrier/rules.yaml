@@ -8,8 +8,8 @@ carrier:
 	Inherits@ANNOUNCE: ^AnnounceProduction
 	Buildable:
 		Queue: Ship.Shared, Ship.Allies
-		Prerequisites: ~ship.allies, gatech, ~techlevel.4
-		Description: Aircraft carrier ship.\n\n  Strong vs Tanks, Structures\n  Weak vs Infantry
+		Prerequisites: ~ship.allies, gatech, ~techlevel.7
+		Description: actor-carrier.description
 		BuildDurationModifier: 100
 		BuildPaletteOrder: 90
 	Selectable:
@@ -26,9 +26,9 @@ carrier:
 	RevealsShroud:
 		Range: 7c0
 	Tooltip:
-		Name: Aircraft Carrier
+		Name: actor-carrier.name
 	Tooltip@NoRow:
-		Name: Aircraft Carrier
+		Name: actor-carrier.name
 	Armament:
 		Weapon: HornetLauncher
 	AttackFollowFrontal:

@@ -6,7 +6,7 @@ yarefn:
 	Buildable:
 		Queue: Building.Shared, Building.Yuri
 		Prerequisites: ~building.yuri, yapowr, ~!global-megawealth, ~techlevel.1, ~AIantiRush
-		Description: Gathers and processes ore.
+		Description: actor-yarefn.description
 		BuildPaletteOrder: 30
 	Building:
 		Footprint: xx x+
@@ -22,9 +22,9 @@ yarefn:
 	RevealsShroud:
 		Range: 6c0
 	Tooltip:
-		Name: Yuri Slave Miner
+		Name: actor-yarefn.name
 	Tooltip@NoRow:
-		Name: Yuri Slave Miner
+		Name: actor-yarefn.name
 	# Armament@primary:
 	# 	Weapon: 20mmrapid
 	# 	Damage: 30

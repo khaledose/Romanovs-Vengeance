@@ -17,9 +17,9 @@ napowr:
 	RevealsShroud:
 		Range: 4c0
 	Tooltip:
-		Name: Soviet Tesla Reactor
+		Name: actor-napowr.name
 	Tooltip@NoRow:
-		Name: Soviet Tesla Reactor
+		Name: actor-napowr.name
 	Voiced:
 		VoiceSet: PowerPlantVoice
 		Volume: 0.8

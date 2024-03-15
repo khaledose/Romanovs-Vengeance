@@ -2,6 +2,6 @@ yhvr:
 	Inherits: ^AmphibiousTransport
 	Buildable:
 		Queue: Ship.Shared, Ship.Yuri
-		Prerequisites: ~ship.yuri, ~techlevel.1
+		Prerequisites: ~ship.yuri, ~techlevel.2
 	Voiced:
 		VoiceSet: YuriAmphibiousTransportVoice

@@ -24,7 +24,7 @@
 	HiddenUnderFog:
 	WithTextControlGroupDecoration:
 	ActorLostNotification:
-		TextNotification: Unit lost.
+		TextNotification: notification-unit-lost
 	Chronoshiftable:
 		ChronoshiftSound: schrmov.wav
 		ReturnToOrigin: false
@@ -85,7 +85,7 @@
 	Inherits@ANNOUNCE: ^AnnounceProduction
 	Buildable:
 		Prerequisites: refinery, ~!global-megawealth, ~techlevel.1
-		Description: Gathers Ore and Gems.\n\n  Unarmed\n\nAbilities:\n- Can move over water\n- Cannot be mind controlled
+		Description: meta-miner.description
 		BuildDurationModifier: 100
 		BuildPaletteOrder: 10
 	Selectable:
@@ -103,6 +103,10 @@
 		Speed: 60
 	RevealsShroud:
 		Range: 4c0
+	Tooltip:
+		Name: meta-miner.name
+	Tooltip@NoRow:
+		Name: meta-miner.name
 	Harvester:
 		DeliveryBuildings: garefn, narefn
 		Resources: Ore, Gems
@@ -141,7 +145,7 @@
 	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
 	Inherits@ANNOUNCE: ^AnnounceProduction
 	Buildable:
-		Description: Deploys into a Construction Yard.\n\n  Unarmed\n\nAbilities:\n- Can move over water
+		Description: meta-constructionvehicle.description
 		Prerequisites: ~techlevel.2, ~!global-suddendeath, ~!ai.mcv
 		BuildDurationModifier: 100
 		BuildPaletteOrder: 50
@@ -160,6 +164,10 @@
 		Speed: 60
 	RevealsShroud:
 		Range: 6c0
+	Tooltip:
+		Name: meta-constructionvehicle.name
+	Tooltip@NoRow:
+		Name: meta-constructionvehicle.name
 	MustBeDestroyed:
 		RequiredForShortGame: true
 		-RequiresCondition:

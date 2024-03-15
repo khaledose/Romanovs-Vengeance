@@ -3,9 +3,8 @@ dron:
 	Inherits@RAD: ^RadiationImmunity
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Soviets
-		Prerequisites: ~vehicle.soviets, ~techlevel.2
-		Description: Small vehicle that can infect enemy vehicles and slowly kill them.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nAbilities:\n- Immune to Radiation\n- Cannot be mind controlled
-		BuildDurationModifier: 100
+		Prerequisites: ~vehicle.soviets, ~techlevel.4
+		Description: actor-dron.description
 		BuildPaletteOrder: 40
 	Health:
 		HP: 10000
@@ -25,9 +24,9 @@ dron:
 	RevealsShroud:
 		Range: 6c0
 	Tooltip:
-		Name: Terror Drone
+		Name: actor-dron.name
 	Tooltip@NoRow:
-		Name: Terror Drone
+		Name: actor-dron.name
 	Armament@primary:
 		Weapon: DroneJump
 		RequiresCondition: !rank-elite

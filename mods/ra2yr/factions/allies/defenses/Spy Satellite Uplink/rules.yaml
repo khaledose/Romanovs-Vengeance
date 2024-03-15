@@ -5,8 +5,8 @@ gaspysat:
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
 		Queue: Support.Shared, Support.Allies
-		Prerequisites: ~building.allies, gatech, ~techlevel.4
-		Description: Provides Satellite Scan power, which reveals the map for a while.\nProvides Radar.\n\n  Requires power to operate.
+		Prerequisites: ~building.allies, gatech, ~techlevel.9
+		Description: actor-gaspysat.description
 		BuildPaletteOrder: 110
 	IsometricSelectable:
 		DecorationHeight: 75
@@ -21,9 +21,9 @@ gaspysat:
 	RevealsShroud:
 		Range: 5c0
 	Tooltip:
-		Name: Allied SpySat Uplink
+		Name: actor-gaspysat.name
 	Tooltip@NoRow:
-		Name: Allied SpySat Uplink
+		Name: actor-gaspysat.name
 	RevealsMap:
 		RevealGeneratedShroud: false
 		RequiresCondition: !disabled && !chronodisable

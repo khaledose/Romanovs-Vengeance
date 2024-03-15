@@ -1,6 +1,6 @@
 MapFormat: 11
 
-RequiresMod: ra2yr
+RequiresMod: rv
 
 Title: 01: Prison Break (WIP)
 
@@ -4999,6 +4999,6 @@ Actors:
 		Owner: Neutral
 		Location: 84,-6
 
-Rules: ra2yr|rules/campaign-rules.yaml, rules.yaml
+Rules: rv|rules/campaign-rules.yaml, rules.yaml
 
 Translations: ra|languages/lua/en.ftl ra|languages/lua/tr.ftl

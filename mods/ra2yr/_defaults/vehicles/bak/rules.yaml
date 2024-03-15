@@ -101,7 +101,7 @@
 	HiddenUnderFog:
 	WithTextControlGroupDecoration:
 	ActorLostNotification:
-		TextNotification: Unit lost.
+		TextNotification: notification-unit-lost
 	ProximityCaptor:
 		Types: Vehicle
 	Guard:

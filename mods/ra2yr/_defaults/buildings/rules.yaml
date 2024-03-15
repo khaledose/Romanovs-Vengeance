@@ -119,22 +119,22 @@
 	ProductionQueue:
 		LowPowerModifier: 200
 		ReadyAudio: UnitReady
-		ReadyTextNotification: Unit ready.
+		ReadyTextNotification: notification-unit-ready
 		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
+		BlockedTextNotification: notification-unable-to-build-more
 		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
+		LimitedTextNotification: notification-unable-to-comply-building-in-progress
 		QueuedAudio: Training
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
 	ProductionQueue@Shared:
 		LowPowerModifier: 200
 		ReadyAudio: UnitReady
-		ReadyTextNotification: Unit ready.
+		ReadyTextNotification: notification-unit-ready
 		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
+		BlockedTextNotification: notification-unable-to-build-more
 		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
+		LimitedTextNotification: notification-unable-to-comply-building-in-progress
 		QueuedAudio: Training
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -166,9 +166,9 @@
 		RequiresCondition: !invulnerability
 	CaptureNotification:
 		Notification: TechBuildingCaptured
-		TextNotification: Tech building captured.
+		TextNotification: notification-tech-building-captured
 		LoseNotification: TechBuildingLost
-		LoseTextNotification: Tech building lost.
+		LoseTextNotification: notification-tech-building-lost
 	GivesBuildableArea:
 		AreaTypes: building, defense
 		RequiresCondition: techbuild
@@ -181,8 +181,6 @@
 ^CivBuilding:
 	Inherits: ^Building
 	Inherits@SHAPE: ^1x1Shape
-	Buildable:
-		Queue: Building.Civilian
 	Health:
 		HP: 40000
 	Armor:
@@ -190,9 +188,9 @@
 	RevealsShroud:
 		Range: 6c0
 	Tooltip:
-		Name: Civilian Building
+		Name: meta-civbuilding.name
 	Tooltip@NoRow:
-		Name: Civilian Building
+		Name: meta-civbuilding.name
 	InstantlyRepairable:
 		Types: civilian
 	MapEditorData:
@@ -201,14 +199,8 @@
 ^Decoration:
 	Inherits: ^Building
 	Inherits@SHAPE: ^1x1Shape
-	Buildable:
-		Queue: Building.Allies
 	Targetable:
 		TargetTypes: Ground, NoAutoTarget
-	Tooltip:
-		Name: Decoration
-	Tooltip@NoRow:
-		Name: Decoration
 	MapEditorData:
 		Categories: Building - Decoration
 
@@ -216,9 +208,9 @@
 	Inherits: ^Object
 	Inherits@shape: ^1x1Rubble
 	Tooltip:
-		Name: Rubble
+		Name: meta-rubble.name
 	Tooltip@NoRow:
-		Name: Rubble
+		Name: meta-rubble.name
 	RenderSprites:
 		Palette: rubble
 	WithSpriteBody:
@@ -235,7 +227,7 @@
 	Inherits@AI: ^AIMicroManagable
 	Buildable:
 		Queue: Building.Unused
-		Description: Allows construction of base structures.
+		Description: meta-constructionyard.description
 	Health:
 		HP: 100000
 	Armor:
@@ -245,19 +237,19 @@
 	RevealsShroud:
 		Range: 8c0
 	Tooltip:
-		Name: Construction Yard
+		Name: meta-constructionyard.name
 	Tooltip@NoRow:
-		Name: Construction Yard
+		Name: meta-constructionyard.name
 	ProductionQueue@Building:
 		Group: Building
 		DisplayOrder: 1
 		LowPowerModifier: 200
 		ReadyAudio: ConstructionComplete
-		ReadyTextNotification: Construction complete.
+		ReadyTextNotification: notification-construction-complete
 		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
+		BlockedTextNotification: notification-unable-to-build-more
 		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
+		LimitedTextNotification: notification-unable-to-comply-building-in-progress
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -266,11 +258,11 @@
 		DisplayOrder: 5
 		LowPowerModifier: 200
 		ReadyAudio: ConstructionComplete
-		ReadyTextNotification: Construction complete.
+		ReadyTextNotification: notification-construction-complete
 		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
+		BlockedTextNotification: notification-unable-to-build-more
 		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
+		LimitedTextNotification: notification-unable-to-comply-building-in-progress
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -280,11 +272,11 @@
 		DisplayOrder: 1
 		LowPowerModifier: 200
 		ReadyAudio: ConstructionComplete
-		ReadyTextNotification: Construction complete.
+		ReadyTextNotification: notification-construction-complete
 		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
+		BlockedTextNotification: notification-unable-to-build-more
 		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
+		LimitedTextNotification: notification-unable-to-comply-building-in-progress
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -294,11 +286,11 @@
 		DisplayOrder: 5
 		LowPowerModifier: 200
 		ReadyAudio: ConstructionComplete
-		ReadyTextNotification: Construction complete.
+		ReadyTextNotification: notification-construction-complete
 		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
+		BlockedTextNotification: notification-unable-to-build-more
 		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
+		LimitedTextNotification: notification-unable-to-comply-building-in-progress
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -380,7 +372,7 @@
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@SPY: ^Spyable
 	Buildable:
-		Description: Trains infantry.\nCan heal nearby infantry.\n\n  Cannot be placed on water.\n  Can be rotated.
+		Description: meta-barracks.description
 		BuildPaletteOrder: 20
 	Power:
 		Amount: -10
@@ -392,6 +384,10 @@
 		Cost: 500
 	RevealsShroud:
 		Range: 5c0
+	Tooltip:
+		Name: meta-barracks.name
+	Tooltip@NoRow:
+		Name: meta-barracks.name
 	CommandBarBlacklist:
 		DisableStop: false
 	ProductionQueue:
@@ -431,8 +427,12 @@ barracks.infiltrated:
 	Inherits@SPY: ^Spyable
 	Inherits@AICash: ^AICashCheat
 	Buildable:
-		Description: Processes ore into credits.\n\n  Can be rotated.
+		Description: meta-refinery.description
 		BuildPaletteOrder: 30
+	Tooltip:
+		Name: meta-refinery.name
+	Tooltip@NoRow:
+		Name: meta-refinery.name
 	Refinery:
 		ShowTicks: True
 		TickLifetime: 30
@@ -463,7 +463,7 @@ barracks.infiltrated:
 	Inherits@SPY: ^Spyable
 	Inherits@SHAPE: ^NormalFactoryShape
 	Buildable:
-		Description: Produces vehicles.\n\nAbilities:\n- Comes with 3 repair drones.\n\n  Cannot be placed on water.\n  Can be rotated.
+		Description: meta-warfactory.description
 		BuildPaletteOrder: 50
 	Power:
 		Amount: -25
@@ -475,6 +475,10 @@ barracks.infiltrated:
 		Cost: 2000
 	RevealsShroud:
 		Range: 4c0
+	Tooltip:
+		Name: meta-warfactory.name
+	Tooltip@NoRow:
+		Name: meta-warfactory.name
 	ProductionQueue:
 		Group: Vehicle
 		DisplayOrder: 17
@@ -487,11 +491,11 @@ barracks.infiltrated:
 		DisplayOrder: 18
 		LowPowerModifier: 200
 		ReadyAudio: UnitReady
-		ReadyTextNotification: Unit ready.
+		ReadyTextNotification: notification-unit-ready
 		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
+		BlockedTextNotification: notification-unable-to-build-more
 		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
+		LimitedTextNotification: notification-unable-to-comply-building-in-progress
 		QueuedAudio: Training
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -555,7 +559,7 @@ warfactory.infiltrated:
 	Inherits@REPAIR: ^RepairsUnits
 	Inherits@SHAPE: ^4x4Shape
 	Buildable:
-		Description: Produces ships, submarines, and other naval units.\n\nAbilities:\n- Comes with 3 repair drones.\n\n  Can only be placed on water.
+		Description: meta-shipyard.description
 		BuildPaletteOrder: 60
 	Building:
 		Footprint: xxxx xxxx xxxx xxxx
@@ -573,6 +577,10 @@ warfactory.infiltrated:
 		Cost: 1000
 	RevealsShroud:
 		Range: 10c0
+	Tooltip:
+		Name: meta-shipyard.name
+	Tooltip@NoRow:
+		Name: meta-shipyard.name
 	Targetable:
 		TargetTypes: Ground, Water, WaterStructure
 	RallyPoint:
@@ -675,6 +683,21 @@ warfactory.infiltrated:
 	ProvidesPrerequisite@AIantiRush:
 		Prerequisite: AIantiRush ## Hack: AI Building control. AI build refinary only when it has a combat producing line.
 
+^ServiceDepot:
+	Inherits: ^BaseStructure
+	Inherits@REPAIR: ^RepairsUnits
+	Inherits@CAPTURE: ^Capturable
+	Inherits@MC: ^MindControllableBuilding
+	Buildable:
+		Description: meta-servicedepot.description
+		BuildPaletteOrder: 80
+	Tooltip:
+		Name: meta-servicedepot.name
+	Tooltip@NoRow:
+		Name: meta-servicedepot.name
+	CommandBarBlacklist:
+		DisableStop: false
+
 ^BattleLab:
 	Inherits: ^BaseStructure
 	Inherits@CAPTURE: ^Capturable
@@ -682,7 +705,7 @@ warfactory.infiltrated:
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@SPY: ^Spyable
 	Buildable:
-		Description: Allows deployment of advanced units.\n\n  Can be rotated.
+		Description: meta-battlelab.description
 		BuildPaletteOrder: 90
 	Power:
 		Amount: -100
@@ -694,6 +717,10 @@ warfactory.infiltrated:
 		Cost: 2000
 	RevealsShroud:
 		Range: 6c0
+	Tooltip:
+		Name: meta-battlelab.name
+	Tooltip@NoRow:
+		Name: meta-battlelab.name
 	InfiltrateForSupportPower:
 		Types: SpyInfiltrate
 		InfiltratedNotification: TechnologyStolen
@@ -723,13 +750,13 @@ warfactory.infiltrated:
 		PauseOnCondition: chronodisable
 		OnFireSound: sforceon.wav
 		SelectTargetSpeechNotification: SelectTarget
-		SelectTargetTextNotification: Select target.
+		SelectTargetTextNotification: notification-select-target
 		EndChargeSpeechNotification: ForceShieldReady
-		EndChargeTextNotification: Force Shield ready.
+		EndChargeTextNotification: notification-force-shield-ready
 		LaunchSpeechNotification: ForceShieldActivated
-		LaunchTextNotification: Force Shield activated.
+		LaunchTextNotification: notification-force-shield-activated
 		IncomingSpeechNotification: ForceShieldActivated
-		IncomingTextNotification: Force Shield activated.
+		IncomingTextNotification: notification-force-shield-activated
 		EffectImage: explosion
 		EffectSequence: forceshield
 		EffectPalette: effect
@@ -771,9 +798,9 @@ warfactory.infiltrated:
 		Dimensions: 1, 1
 		TerrainTypes: Clear, Rough, Road, DirtRoad, Water
 	Tooltip:
-		Name: Flag
+		Name: meta-flag.name
 	Tooltip@NoRow:
-		Name: Flag
+		Name: meta-flag.name
 	Health:
 		HP: 2000
 	Armor:
@@ -832,6 +859,10 @@ warfactory.infiltrated:
 		Type: Concrete
 	Valued:
 		Cost: 100
+	Tooltip:
+		Name: meta-wall.name
+	Tooltip@NoRow:
+		Name: meta-wall.name
 	CustomSellValue:
 		Value: 0
 	RevealsShroud:
@@ -868,11 +899,9 @@ warfactory.infiltrated:
 	Valued:
 		Cost: 25
 	Tooltip:
-		Name: Fence
-		GenericName: Fence
+		Name: meta-fence.name
 	Tooltip@NoRow:
-		Name: Fence
-		GenericName: Fence
+		Name: meta-fence.name
 	-BlocksProjectiles:
 	Targetable:
 		TargetTypes: Ground, Fence, NoAutoTarget
@@ -904,7 +933,7 @@ warfactory.infiltrated:
 	WithGateSpriteBody:
 		OpenSequence: open
 	Buildable:
-		Description: Automated barrier that opens for allied units.\n\n  Cannot be placed on water.\n  Can be rotated.
+		Description: meta-gate.description
 	HitShape:
 		Type: Rectangle
 			LocalYaw: -128
@@ -925,11 +954,9 @@ warfactory.infiltrated:
 		AreaTypes: building
 		Adjacent: 6
 	Tooltip:
-		Name: Gate
-		GenericName: Gate
+		Name: meta-gate.name
 	Tooltip@NoRow:
-		Name: Gate
-		GenericName: Gate
+		Name: meta-gate.name
 	Voiced:
 		VoiceSet: GateVoice
 		Volume: 0.8

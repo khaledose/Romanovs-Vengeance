@@ -10,11 +10,11 @@ caoild:
 	RevealsShroud:
 		Range: 6c0
 	Tooltip:
-		Name: Tech Oil Derrick
+		Name: actor-caoild.name
 	Tooltip@NoRow:
-		Name: Tech Oil Derrick
+		Name: actor-caoild.name
 	TooltipDescription:
-		Description: Periodically provides cash.
+		Description: actor-caoild.description
 	GivesCashOnCapture:
 		Amount: 500
 	CashTrickler:
@@ -116,11 +116,11 @@ caairp:
 	RevealsShroud:
 		Range: 6c0
 	Tooltip:
-		Name: Tech Airport
+		Name: actor-caairp.name
 	Tooltip@NoRow:
-		Name: Tech Airport
+		Name: actor-caairp.name
 	TooltipDescription:
-		Description: Provides Paradrop support power.
+		Description: actor-caairp.description
 	ProvidesPrerequisite@Allies:
 		Prerequisite: techparadrops.allies
 		Factions: america, germany, england, france, korea
@@ -157,11 +157,11 @@ cahosp:
 	RevealsShroud:
 		Range: 6c0
 	Tooltip:
-		Name: Old Civilian Hospital
+		Name: actor-cahosp.name
 	Tooltip@NoRow:
-		Name: Old Civilian Hospital
+		Name: actor-cahosp.name
 	TooltipDescription:
-		Description: Allows infantry to self-heal.
+		Description: actor-cahosp.description
 	ProvidesPrerequisite@default:
 		RequiresCondition: enabled && !disabled && !chronodisable
 	WithIdleOverlay:
@@ -190,11 +190,11 @@ caoutp:
 	RevealsShroud:
 		Range: 6c0
 	Tooltip:
-		Name: Tech Outpost
+		Name: actor-caoutp.name
 	Tooltip@NoRow:
-		Name: Tech Outpost
+		Name: actor-caoutp.name
 	TooltipDescription:
-		Description: Provides repairing ground for vehicles.\nArmed with missile launcher.
+		Description: actor-caoutp.description
 	Armament:
 		Weapon: HoverMissile
 		LocalOffset: 128,-256,3328, 128,256,3328
@@ -227,11 +227,11 @@ capowr:
 	RevealsShroud:
 		Range: 6c0
 	Tooltip:
-		Name: Tech Civilian Power Plant
+		Name: actor-capowr.name
 	Tooltip@NoRow:
-		Name: Tech Civilian Power Plant
+		Name: actor-capowr.name
 	TooltipDescription:
-		Description: Provides 200 power.
+		Description: actor-capowr.description
 	WithIdleOverlay@flag:
 		Sequence: flag
 		Offset: 1000, 0, 0
@@ -251,11 +251,11 @@ camach:
 	RevealsShroud:
 		Range: 6c0
 	Tooltip:
-		Name: Tech Machine Shop
+		Name: actor-camach.name
 	Tooltip@NoRow:
-		Name: Tech Machine Shop
+		Name: actor-camach.name
 	TooltipDescription:
-		Description: Allows vehicles to self-repair.
+		Description: actor-camach.description
 	ProvidesPrerequisite@default:
 		RequiresCondition: enabled && !chronodisable
 	WithIdleOverlay@flag:
@@ -276,11 +276,11 @@ caslab:
 	RevealsShroud:
 		Range: 6c0
 	Tooltip:
-		Name: Tech Secret Lab
+		Name: actor-caslab.name
 	Tooltip@NoRow:
-		Name: Tech Secret Lab
+		Name: actor-caslab.name
 	TooltipDescription:
-		Description: Allow construction of a new 3rd tier vehicle.
+		Description: actor-caslab.description
 	WithIdleOverlay@flag:
 		Sequence: flag
 		PauseOnCondition: chronodisable

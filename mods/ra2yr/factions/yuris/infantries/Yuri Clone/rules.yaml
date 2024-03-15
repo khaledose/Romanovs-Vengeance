@@ -8,8 +8,8 @@ yuri:
 	Inherits@PSIWAVE: ^WithInfantryPsiWaveOnDeploy
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Yuri
-		Prerequisites: ~infantry.yuri, yapsis, ~techlevel.3
-		Description: Psychic infantry. Can mind control enemy units.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Terror Drones, Aircraft, Buildings\n\nUpgradeable with:\n- Mastery of Mind (Antarctica)
+		Prerequisites: ~infantry.yuri, yapsis, ~techlevel.10
+		Description: actor-yuri.description
 		BuildPaletteOrder: 13
 	Health:
 		HP: 10000
@@ -24,9 +24,9 @@ yuri:
 	RevealsShroud:
 		Range: 12c0
 	Tooltip:
-		Name: Yuri Clone
+		Name: actor-yuri.name
 	Tooltip@NoRow:
-		Name: Yuri Clone
+		Name: actor-yuri.name
 	Armament:
 		Weapon: MindControl
 		MuzzleSequence: muzzle

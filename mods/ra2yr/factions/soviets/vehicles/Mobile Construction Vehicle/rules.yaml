@@ -2,7 +2,7 @@ smcv:
 	Inherits: ^ConstructionVehicle
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Soviets
-		Prerequisites: ~vehicle.soviets, nadept, ~techlevel.2, ~!global-suddendeath, ~!ai.mcv
+		Prerequisites: ~vehicle.soviets, nadept, ~techlevel.10, ~!global-suddendeath, ~!ai.mcv
 	Transforms:
 		IntoActor: nacnst
 	Voiced:

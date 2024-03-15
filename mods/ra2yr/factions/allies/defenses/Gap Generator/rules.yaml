@@ -6,8 +6,8 @@ gagap:
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
 		Queue: Support.Shared, Support.Allies
-		Prerequisites: ~building.allies, gatech, ~techlevel.3
-		Description: Obscures the enemy's view with shroud.\n\n  Requires power to operate.
+		Prerequisites: ~building.allies, gatech, ~techlevel.7
+		Description: actor-gagap.description
 		BuildPaletteOrder: 100
 	IsometricSelectable:
 		DecorationHeight: 90
@@ -22,9 +22,9 @@ gagap:
 	RevealsShroud:
 		Range: 5c0
 	Tooltip:
-		Name: Allied Gap Generator
+		Name: actor-gagap.name
 	Tooltip@NoRow:
-		Name: Allied Gap Generator
+		Name: actor-gagap.name
 	CreatesShroud:
 		Range: 10c0
 		RequiresCondition: !disabled && !chronodisable

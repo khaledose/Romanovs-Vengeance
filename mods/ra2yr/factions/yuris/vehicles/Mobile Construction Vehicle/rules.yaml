@@ -2,7 +2,7 @@ pcv:
 	Inherits: ^ConstructionVehicle
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Yuri
-		Prerequisites: ~vehicle.yuri, yagrnd, ~techlevel.2, ~!global-suddendeath, ~!ai.mcv
+		Prerequisites: ~vehicle.yuri, yagrnd, ~techlevel.10, ~!global-suddendeath, ~!ai.mcv
 	Transforms:
 		IntoActor: yacnst
 	Voiced:

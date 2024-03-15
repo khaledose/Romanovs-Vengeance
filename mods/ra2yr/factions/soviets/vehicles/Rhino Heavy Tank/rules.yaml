@@ -11,9 +11,8 @@ htnk:
 	Inherits@TURRET: ^WithVoxelTurret
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Soviets
-		Description: Soviet Main Battle Tank.\n\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft\n\nUpgradeable with:\n- Nuclear Engines\n- Uranium Shells\n- Advanced Irradiators (Iraq)
-		Prerequisites: ~vehicle.soviets, ~techlevel.1
-		BuildDurationModifier: 100
+		Description: actor-htnk.description
+		Prerequisites: ~vehicle.soviets, ~techlevel.2
 		BuildPaletteOrder: 20
 	Selectable:
 		Bounds: 1544, 2509, 0, -289
@@ -32,9 +31,9 @@ htnk:
 	RevealsShroud:
 		Range: 6c0
 	Tooltip:
-		Name: Rhino Heavy Tank
+		Name: actor-htnk.name
 	Tooltip@NoRow:
-		Name: Rhino Heavy Tank
+		Name: actor-htnk.name
 	Armament@primary:
 		Weapon: 120mm
 		Damage: 90

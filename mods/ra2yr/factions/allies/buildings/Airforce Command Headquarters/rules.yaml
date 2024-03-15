@@ -7,8 +7,8 @@ gaairc:
 	Inherits@SHAPE: ^3x2Shape
 	Buildable:
 		Queue: Building.Shared, Building.Allies
-		Prerequisites: ~building.allies, garefn, ~techlevel.2
-		Description: Provides radar.\nProduces Allied aircraft.\nSupports 4 aircraft.\nResearches basic upgrades.\n\nProvides a different support power depening on the subfaction:\n- Airborne (United States)\n- Carpet Bombing (United Kingdom)\n- Force Shield (France)\n- Chrono Grizzly (Germany)\n- Chronobomb (Korea)\n\nAbilities:\n- Comes with 3 repair drones.
+		Prerequisites: ~building.allies, garefn, ~techlevel.3
+		Description: actor-gaairc.description
 		BuildPaletteOrder: 40
 	IsometricSelectable:
 		DecorationHeight: 105
@@ -25,9 +25,9 @@ gaairc:
 	RevealsShroud:
 		Range: 5c0
 	Tooltip:
-		Name: Allied Airforce Command Headquarters
+		Name: actor-gaairc.name
 	Tooltip@NoRow:
-		Name: Allied Airforce Command Headquarters
+		Name: actor-gaairc.name
 	Production:
 		Produces: Aircraft.Unused
 	Production@Shared:

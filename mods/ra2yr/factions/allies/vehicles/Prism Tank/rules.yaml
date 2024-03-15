@@ -11,8 +11,8 @@ sref:
 	Inherits@TURRET: ^WithVoxelTurret
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Allies
-		Prerequisites: ~vehicle.allies, gatech, ~techlevel.4
-		Description: Fires deadly beams of light.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
+		Prerequisites: ~vehicle.allies, gatech, ~techlevel.8
+		Description: actor-sref.description
 		BuildDurationModifier: 100
 		BuildPaletteOrder: 100
 	Selectable:
@@ -32,9 +32,9 @@ sref:
 	RevealsShroud:
 		Range: 6c0
 	Tooltip:
-		Name: Prism Tank
+		Name: actor-sref.name
 	Tooltip@NoRow:
-		Name: Prism Tank
+		Name: actor-sref.name
 	Armament@primary:
 		Weapon: Comet
 		Damage: 100

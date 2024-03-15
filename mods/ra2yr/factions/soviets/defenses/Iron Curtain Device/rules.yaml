@@ -4,8 +4,8 @@ nairon:
 	Inherits@SHAPE: ^3x3Shape
 	Buildable:
 		Queue: Support.Shared, Support.Soviets
-		Prerequisites: ~building.soviets, natech, !enoughiron, ~techlevel.5
-		Description: Grants invulnerability to vehicles and structures.\nKills infantry.\n\n  Requires power to operate.
+		Prerequisites: ~building.soviets, natech, !enoughiron, ~techlevel.10
+		Description: actor-nairon.description
 		BuildPaletteOrder: 980
 	IsometricSelectable:
 		DecorationHeight: 75
@@ -20,16 +20,16 @@ nairon:
 	RevealsShroud:
 		Range: 4c0
 	Tooltip:
-		Name: Soviet Iron Curtain Device
+		Name: actor-nairon.name
 	Tooltip@NoRow:
-		Name: Soviet Iron Curtain Device
+		Name: actor-nairon.name
 	WithSpriteBody:
 		PauseOnCondition: chronodisable
 	ProvidesPrerequisite@swlimit:
 		Prerequisite: enoughiron
 	NotificationAnnouncement:
 		Notification: IronCurtainDetected
-		TextNotification: Warning: Iron Curtain detected.
+		TextNotification: notification-iron-curtain-detected
 	Voiced:
 		VoiceSet: IronCurtainDeviceVoice
 		Volume: 0.8

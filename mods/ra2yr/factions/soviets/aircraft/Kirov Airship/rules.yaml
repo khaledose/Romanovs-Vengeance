@@ -5,8 +5,8 @@ zep:
 	Inherits@AI: ^AIMicroManagable
 	Buildable:
 		Queue: Aircraft.Shared, Aircraft.Soviets
-		Prerequisites: ~aircraft.soviets, natech, ~techlevel.4
-		Description: Massive zeppelins that are the aerial terror of the Soviet force.\n\n  Strong vs Buildings\n  Weak vs Infantry, Vehicles\n\nUpgradeable with:\n- Radioactive Warheads\n- Advanced Irradiators (Iraq)\n- Aerial Propaganda (Vietnam)
+		Prerequisites: ~aircraft.soviets, natech, ~techlevel.10
+		Description: actor-zep.description
 		BuildPaletteOrder: 50
 	Selectable:
 		Bounds: 2413, 2896, 0, -482
@@ -24,9 +24,9 @@ zep:
 	RevealsShroud@Ground:
 		Range: 8c0
 	Tooltip:
-		Name: Kirov Airship
+		Name: actor-zep.name
 	Tooltip@NoRow:
-		Name: Kirov Airship
+		Name: actor-zep.name
 	Armament:
 		Weapon: BlimpBomb
 		Damage: 750
@@ -52,9 +52,9 @@ zep:
 zephusk:
 	Inherits: ^HelicopterHusk
 	Tooltip:
-		Name: Kirov Airship
+		Name: actor-zep.name
 	Tooltip@NoRow:
-		Name: Kirov Airship
+		Name: actor-zep.name
 	Aircraft:
 		TurnSpeed: 20
 		Speed: 30

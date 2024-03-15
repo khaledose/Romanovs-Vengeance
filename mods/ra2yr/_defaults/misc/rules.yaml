@@ -1,9 +1,9 @@
 ^OreDrill:
 	Inherits: ^Object
 	Tooltip:
-		Name: Ore Drill
+		Name: meta-oredrill.name
 	Tooltip@NoRow:
-		Name: Ore Drill
+		Name: meta-oredrill.name
 	Targetable:
 		TargetTypes: OreDrill
 	SeedsResource:
@@ -47,9 +47,9 @@
 ^Tree:
 	Inherits: ^StreetProp
 	Tooltip:
-		Name: Tree
+		Name: meta-tree.name
 	Tooltip@NoRow:
-		Name: Tree
+		Name: meta-tree.name
 	MirageTarget:
 	RadarColorFromTerrain:
 		Terrain: Tree
@@ -61,37 +61,37 @@
 ^StreetSign:
 	Inherits: ^StreetProp
 	Tooltip:
-		Name: Street Sign
+		Name: meta-streetsign.name
 	Tooltip@NoRow:
-		Name: Street Sign
+		Name: meta-streetsign.name
 
 ^TrafficLight:
 	Inherits: ^StreetProp
 	Tooltip:
-		Name: Traffic Light
+		Name: meta-trafficlight.name
 	Tooltip@NoRow:
-		Name: Traffic Light
+		Name: meta-trafficlight.name
 
 ^StreetLight:
 	Inherits: ^StreetProp
 	Tooltip:
-		Name: Street Light
+		Name: meta-streetlight.name
 	Tooltip@NoRow:
-		Name: Street Light
+		Name: meta-streetlight.name
 
 ^TelephonePole:
 	Inherits: ^StreetProp
 	Tooltip:
-		Name: Utility Pole
+		Name: meta-telephonepole.name
 	Tooltip@NoRow:
-		Name: Utility Pole
+		Name: meta-telephonepole.name
 
 ^Rock:
 	Inherits: ^Object
 	Tooltip:
-		Name: Rock
+		Name: meta-rock.name
 	Tooltip@NoRow:
-		Name: Rock
+		Name: meta-rock.name
 	WithSpriteBody:
 	RenderSprites:
 		Palette: terrain
@@ -108,8 +108,7 @@
 	HiddenUnderFog:
 	Interactable:
 	Tooltip:
-		Name: Crate
-		GenericName: Crate
+		Name: meta-crate.name
 	Crate:
 		TerrainTypes: Clear, Sand, Rough, Dune, Road, DirtRoad, Ore, Gems, Water
 	RenderSprites:

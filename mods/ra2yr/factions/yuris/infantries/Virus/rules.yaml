@@ -6,8 +6,8 @@ virus:
 	Inherits@MC: ^MindControllable
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Yuri
-		Prerequisites: ~infantry.yuri, yapsis, ~techlevel.2
-		Description: Sniper infantry armed with toxic bullets.\nKilled units leave toxin clouds.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can kill garrisoned infantry\n\nUpgradeable with:\n- Camouflage
+		Prerequisites: ~infantry.yuri, yapsis, ~techlevel.1
+		Description: actor-virus.description
 		BuildPaletteOrder: 3
 	Health:
 		HP: 10000
@@ -22,9 +22,9 @@ virus:
 	RevealsShroud:
 		Range: 9c0
 	Tooltip:
-		Name: Virus
+		Name: actor-virus.name
 	Tooltip@NoRow:
-		Name: Virus
+		Name: actor-virus.name
 	Armament@primary:
 		Weapon: VirusGun
 		PauseOnCondition: chronodisable

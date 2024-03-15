@@ -10,9 +10,8 @@ dred:
 	Inherits@MISSILE: ^MissileSpawner
 	Buildable:
 		Queue: Ship.Shared, Ship.Soviets
-		Prerequisites: ~ship.soviets, natech, ~techlevel.4
-		Description: Long-range rocket artillery ship.\n\n  Strong vs Buildings, Infantry\n  Weak vs Ships, Aircraft\n\nUpgradeable with:\n- Radioactive Warheads\n- Advanced Irradiators (Iraq)\n- High Explosive Bombs (Libya)
-		BuildDurationModifier: 100
+		Prerequisites: ~ship.soviets, natech, ~techlevel.6
+		Description: actor-dred.description
 		BuildPaletteOrder: 90
 	Health:
 		HP: 80000
@@ -26,9 +25,9 @@ dred:
 	RevealsShroud:
 		Range: 7c0
 	Tooltip:
-		Name: Dreadnought
+		Name: actor-dred.name
 	Tooltip@NoRow:
-		Name: Dreadnought
+		Name: actor-dred.name
 	Armament:
 		Weapon: DredLauncher
 	AttackFrontal:

@@ -9,8 +9,8 @@ yuripr:
 	Inherits@PSIWAVE: ^WithInfantryPsiWaveOnDeploy
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Yuri
-		Prerequisites: ~infantry.yuri, yatech, ~techlevel.4
-		Description: Psychic infantry. Can mind control enemy units and structures.\nCan be deployed to unleash a powerful psychic wave.\n\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Terror Drones, Aircraft\n\nAbilities:\n- Cannot be eaten by Attack Dogs\n- Can move over water\n\nUpgradeable with:\n- Mastery of Mind (Antarctica)\n\n  Maximum 1 can be trained.
+		Prerequisites: ~infantry.yuri, yatech, ~techlevel.10
+		Description: actor-yuripr.description
 		BuildPaletteOrder: 14
 	Health:
 		HP: 15000
@@ -26,9 +26,9 @@ yuripr:
 	RevealsShroud:
 		Range: 9c0
 	Tooltip:
-		Name: Yuri Prime
+		Name: actor-yuripr.name
 	Tooltip@NoRow:
-		Name: Yuri Prime
+		Name: actor-yuripr.name
 	Armament:
 		Weapon: SuperMindControl
 		MuzzleSequence: muzzle

@@ -3,11 +3,7 @@ yabrck:
 	Inherits@SHAPE: ^2x3Shape
 	Buildable:
 		Queue: Building.Shared, Building.Yuri
-		Prerequisites: ~building.yuri, yapowr, ~techlevel.1
-	Tooltip:
-		Name: Yuri Barracks
-	Tooltip@NoRow:
-		Name: Yuri Barracks
+		Prerequisites: ~building.yuri, yapowr, ~techlevel.2
 	Production:
 		Produces: Infantry.Yuri
 	ProductionQueue:

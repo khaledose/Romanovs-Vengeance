@@ -2,6 +2,6 @@ sapc:
 	Inherits: ^AmphibiousTransport
 	Buildable:
 		Queue: Ship.Shared, Ship.Soviets
-		Prerequisites: ~ship.soviets, ~techlevel.1
+		Prerequisites: ~ship.soviets, ~techlevel.2
 	Voiced:
 		VoiceSet: SovietAmphibiousTransportVoice

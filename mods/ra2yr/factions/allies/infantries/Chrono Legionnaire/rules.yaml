@@ -13,9 +13,9 @@
 	RevealsShroud:
 		Range: 8c0
 	Tooltip:
-		Name: Chrono Legionnaire
+		Name: actor-cleg.name
 	Tooltip@NoRow:
-		Name: Chrono Legionnaire
+		Name: actor-cleg.name
 	Armament@primary:
 		Weapon: NeutronRifle
 		LocalOffset: 512,0,384
@@ -49,8 +49,8 @@ cleg.chrono:
 	Inherits@SELF: ^CLEG
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Allies
-		Prerequisites: ~infantry.allies, gatech, ~techlevel.4
-		Description: High-tech soldier capable of erasing enemy units.\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Aircraft\n\nAbilities:\n- Can teleport anywhere on the map
+		Prerequisites: ~infantry.allies, gatech, ~techlevel.10
+		Description: actor-cleg.description
 		BuildPaletteOrder: 12
 	Transforms:
 		IntoActor: cleg.foot

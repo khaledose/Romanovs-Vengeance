@@ -11,8 +11,8 @@ mtnk:
 	Inherits@TURRET: ^WithVoxelTurret
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Allies
-		Description: Allied Main Battle Tank.\n\n  Strong vs Vehicles, Ships\n  Weak vs Infantry, Aircraft\n\nUpgradeable with:\n- Composite Armor\n- Advanced Gun Systems (Germany)
-		Prerequisites: ~vehicle.allies, ~techlevel.1
+		Description: actor-mtnk.description
+		Prerequisites: ~vehicle.allies, ~techlevel.2
 		BuildDurationModifier: 100
 		BuildPaletteOrder: 20
 	Selectable:
@@ -32,9 +32,9 @@ mtnk:
 	RevealsShroud:
 		Range: 6c0
 	Tooltip:
-		Name: Grizzly Battle Tank
+		Name: actor-mtnk.name
 	Tooltip@NoRow:
-		Name: Grizzly Battle Tank
+		Name: actor-mtnk.name
 	Armament@primary:
 		Weapon: 105mm
 		Damage: 65

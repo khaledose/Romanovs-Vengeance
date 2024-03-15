@@ -4,8 +4,8 @@ yagrnd:
 	Inherits@SHAPE: ^3x3Shape
 	Buildable:
 		Queue: Building.Shared, Building.Yuri
-		Prerequisites: ~building.yuri, yaweap, yapsis, ~techlevel.1
-		Description: Converts Infantry and Vehicles back to credits.
+		Prerequisites: ~building.yuri, yaweap, yapsis, ~techlevel.9
+		Description: actor-yagrnd.description
 		BuildPaletteOrder: 110
 	IsometricSelectable:
 		DecorationHeight: 75
@@ -20,9 +20,9 @@ yagrnd:
 	RevealsShroud:
 		Range: 6c0
 	Tooltip:
-		Name: Yuri Grinder
+		Name: actor-yagrnd.name
 	Tooltip@NoRow:
-		Name: Yuri Grinder
+		Name: actor-yagrnd.name
 	AcceptsDeliveredCash:
 	WithAcceptDeliveredCashAnimation:
 		Sequence: grind

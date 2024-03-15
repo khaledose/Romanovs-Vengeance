@@ -2,13 +2,9 @@ naweap:
 	Inherits: ^WarFactory
 	Buildable:
 		Queue: Building.Shared, Building.Soviets
-		Prerequisites: ~building.soviets, nahand, narefn, ~techlevel.1
+		Prerequisites: ~building.soviets, nahand, narefn, ~techlevel.2
 	IsometricSelectable:
 		DecorationHeight: 90
-	Tooltip:
-		Name: Soviet War Factory
-	Tooltip@NoRow:
-		Name: Soviet War Factory
 	Production:
 		Produces: Vehicle.Soviets, Aircraft.Soviets
 	ProductionQueue:

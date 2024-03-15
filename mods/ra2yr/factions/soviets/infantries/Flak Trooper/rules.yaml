@@ -7,7 +7,7 @@ flakt:
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Soviets
 		Prerequisites: ~infantry.soviets, naradr, ~techlevel.1
-		Description: Anti-Air and anti-Infantry unit.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles\n\nUpgradeable with:\n- Bullet-Proof Coats
+		Description: actor-flakt.description
 		BuildPaletteOrder: 3
 	Health:
 		HP: 10000
@@ -22,9 +22,9 @@ flakt:
 	RevealsShroud:
 		Range: 5c0
 	Tooltip:
-		Name: Flak Trooper
+		Name: actor-flakt.name
 	Tooltip@NoRow:
-		Name: Flak Trooper
+		Name: actor-flakt.name
 	Armament@primary:
 		Weapon: FlakGuyGun
 		Damage: 20

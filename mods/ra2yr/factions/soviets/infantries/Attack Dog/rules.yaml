@@ -1,5 +1,5 @@
-sdog:
+dog:
 	Inherits: ^Dog
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Soviets
-		Prerequisites: ~infantry.soviets, ~techlevel.1
+		Prerequisites: ~infantry.soviets, ~techlevel.2

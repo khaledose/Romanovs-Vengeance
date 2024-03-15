@@ -19,13 +19,13 @@ ChronoSphereSpecial:
 			1: -1
 		AllowMultiple: true
 		SelectTargetSpeechNotification: SelectTarget
-		SelectTargetTextNotification: Select target.
+		SelectTargetTextNotification: notification-select-target
 		EndChargeSpeechNotification: ChronosphereReady
-		EndChargeTextNotification: Chronosphere ready.
+		EndChargeTextNotification: notification-chronosphere-ready
 		LaunchSpeechNotification: ChronosphereActivated
-		LaunchTextNotification: Warning: Chronosphere activated.
+		LaunchTextNotification: notification-chronosphere-activated
 		IncomingSpeechNotification: ChronosphereActivated
-		IncomingTextNotification: Warning: Chronosphere activated.
+		IncomingTextNotification: notification-chronosphere-activated
 		# Those sounds don't work: OpenRA/OpenRA#10540
 		# They also want to be played successive
 		#SelectTargetSound: schrlo1.wav, schrlo2a.wav schrlo2b.wav, schrlo2c.wav, schrlo3.wav

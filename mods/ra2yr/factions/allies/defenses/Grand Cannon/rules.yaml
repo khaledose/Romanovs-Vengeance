@@ -8,8 +8,8 @@ gtgcan:
 	Inherits@TURRET: ^WithVoxelTurretBuildingPowered
 	Buildable:
 		Queue: Support.Shared, Support.Allies, Support.France
-		Prerequisites: ~building.france, gaairc, ~techlevel.3
-		Description: Automated, long ranged anti-ground defense.\n\n  Strong vs Buildings, Vehicles\n  Weak vs Aircraft\n\n  Requires power to operate.
+		Prerequisites: ~building.france, gaairc, ~techlevel.7
+		Description: actor-gtgcan.description
 		BuildPaletteOrder: 90
 	RequiresBuildableArea:
 		Adjacent: 2
@@ -26,9 +26,9 @@ gtgcan:
 	RevealsShroud:
 		Range: 10c0
 	Tooltip:
-		Name: Allied Grand Cannon
+		Name: actor-gtgcan.name
 	Tooltip@NoRow:
-		Name: Allied Grand Cannon
+		Name: actor-gtgcan.name
 	Armament:
 		Weapon: GrandCannonWeapon
 		Damage: 150

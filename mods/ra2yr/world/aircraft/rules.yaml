@@ -9,9 +9,9 @@ pdplane:
 		IdleBehavior: LeaveMap
 		Speed: 225
 	Tooltip:
-		Name: Cargo Plane
+		Name: actor-pdplane.name
 	Tooltip@NoRow:
-		Name: Cargo Plane
+		Name: actor-pdplane.name
 	Cargo:
 		MaxWeight: 1000
 	ParaDrop:
@@ -33,9 +33,9 @@ pdplane:
 pdplanehusk:
 	Inherits: ^PlaneHusk
 	Tooltip:
-		Name: Cargo Plane
+		Name: actor-pdplane.name
 	Tooltip@NoRow:
-		Name: Cargo Plane
+		Name: actor-pdplane.name
 	Aircraft:
 		TurnSpeed: 20
 		Speed: 270

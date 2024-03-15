@@ -11,7 +11,7 @@ e1:
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Allies
 		Prerequisites: ~infantry.allies, ~techlevel.1
-		Description: General-purpose infantry.\nCan deploy to gain more range and damage.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nUpgradeable with:\n- Fiber-Reinforced Fortifications\n- Advanced Training\n- Portable Weaponry (United Kingdom)
+		Description: actor-e1.description
 		BuildPaletteOrder: 1
 	Health:
 		HP: 12500
@@ -26,9 +26,9 @@ e1:
 	RevealsShroud:
 		Range: 5c0
 	Tooltip:
-		Name: G.I.
+		Name: actor-e1.name
 	Tooltip@NoRow:
-		Name: G.I.
+		Name: actor-e1.name
 	Armament@primary:
 		Weapon: M60
 		Damage: 15

@@ -9,9 +9,9 @@ spyp:
 		IdleBehavior: LeaveMap
 		Speed: 225
 	Tooltip:
-		Name: Spy Plane
+		Name: actor-spyp.name
 	Tooltip@NoRow:
-		Name: Spy Plane
+		Name: actor-spyp.name
 	Armament:
 		Weapon: SpyCameraWeapon
 	AttackBomber:
@@ -30,9 +30,9 @@ spyp:
 spyphusk:
 	Inherits: ^PlaneHusk
 	Tooltip:
-		Name: Spy Plane
+		Name: actor-spyp.name
 	Tooltip@NoRow:
-		Name: Spy Plane
+		Name: actor-spyp.name
 	Aircraft:
 		TurnSpeed: 20
 		Speed: 225

@@ -2,6 +2,6 @@ lcrf:
 	Inherits: ^AmphibiousTransport
 	Buildable:
 		Queue: Ship.Shared, Ship.Allies
-		Prerequisites: ~ship.allies, ~techlevel.1
+		Prerequisites: ~ship.allies, ~techlevel.4
 	Voiced:
 		VoiceSet: AlliedAmphibiousTransportVoice

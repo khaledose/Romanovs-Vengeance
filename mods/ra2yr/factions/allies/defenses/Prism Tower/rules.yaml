@@ -7,8 +7,8 @@ atesla:
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
 		Queue: Support.Shared, Support.Allies
-		Prerequisites: ~building.allies, gaairc, ~techlevel.3
-		Description: Advanced base defense.\nCan buff at most 3 other Prism Towers nearby.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nAbilities:\n- Can detect Steath units\n\nUpgradeable with:\n- Grand Cannon Protocols (France)\n\n  Requires power to operate.
+		Prerequisites: ~building.allies, gaairc, ~techlevel.6
+		Description: actor-atesla.description
 		BuildPaletteOrder: 60
 	RequiresBuildableArea:
 		Adjacent: 2
@@ -25,9 +25,9 @@ atesla:
 	RevealsShroud:
 		Range: 8c0
 	Tooltip:
-		Name: Allied Prism Tower
+		Name: actor-atesla.name
 	Tooltip@NoRow:
-		Name: Allied Prism Tower
+		Name: actor-atesla.name
 	Armament:
 		Weapon: PrismShot
 		LocalOffset: 0,0,3584

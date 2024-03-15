@@ -12,8 +12,8 @@ bsub:
 	Inherits@MISSILE: ^MissileSpawner
 	Buildable:
 		Queue: Ship.Shared, Ship.Yuri
-		Prerequisites: ~ship.yuri, yapsis, ~techlevel.3
-		Description: Submerged anti-ship and anti-structure armed with\ndouble torpedo and missile launchers.\n\n  Strong vs Ships, Buildings\n  Weak vs Ground units, Aircraft\n\nAbilities:\n- Can detect Stealth units
+		Prerequisites: ~ship.yuri, yapsis, ~techlevel.2
+		Description: actor-bsub.description
 		BuildDurationModifier: 100
 		BuildPaletteOrder: 80
 	Health:
@@ -28,9 +28,9 @@ bsub:
 	RevealsShroud:
 		Range: 8c0
 	Tooltip:
-		Name: Boomer Submarine
+		Name: actor-bsub.name
 	Tooltip@NoRow:
-		Name: Boomer Submarine
+		Name: actor-bsub.name
 	Armament:
 		Weapon: BoomerTorpedo
 		Damage: 90

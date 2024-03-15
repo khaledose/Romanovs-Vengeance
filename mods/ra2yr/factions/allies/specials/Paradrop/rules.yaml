@@ -23,9 +23,9 @@
 		PauseOnCondition: chronodisable
 		AllowMultiple: true
 		SelectTargetSpeechNotification: SelectTarget
-		SelectTargetTextNotification: Select target.
+		SelectTargetTextNotification: notification-select-target
 		EndChargeSpeechNotification: ParatroopersReady
-		EndChargeTextNotification: Paratroopers ready.
+		EndChargeTextNotification: notification-paratroopers-ready
 		CameraActor: camera
 		DisplayBeacon: True
 		ArrowSequence: arrow

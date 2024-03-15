@@ -2,13 +2,13 @@ nawall:
 	Inherits: ^Wall
 	Buildable:
 		Queue: Support.Shared, Support.Soviets
-		Prerequisites: ~building.soviets, nahand, ~techlevel.1
+		Prerequisites: ~building.soviets, ~nahand, ~techlevel.1
 		BuildPaletteOrder: 10
-		Description: Heavy wall capable of blocking units and projectiles.\n\n  Cannot be placed on water.
+		Description: actor-nawall.description
 	Tooltip:
-		Name: Soviet Wall
+		Name: actor-nawall.name
 	Tooltip@NoRow:
-		Name: Soviet Wall
+		Name: actor-nawall.name
 	LineBuild:
 		NodeTypes: nawall
 	LineBuildNode:

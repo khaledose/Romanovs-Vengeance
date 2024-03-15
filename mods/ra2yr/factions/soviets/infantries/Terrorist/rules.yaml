@@ -5,8 +5,8 @@ terror:
 	Inherits@DEPLOY: ^SuicideOnDeploy
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Soviets, Infantry.Cuba
-		Prerequisites: ~infantry.cuba, naradr, ~techlevel.3
-		Description: Carries C4 charges taped to his body and kamikazes enemies\nblowing them up quickly and efficiently.\n\n  Strong vs Ground units\n  Weak vs Aircraft\n\nUpgradeable with:\n- Targeted Explosives (Cuba)
+		Prerequisites: ~infantry.cuba, naradr, ~techlevel.5
+		Description: actor-terror.description
 		BuildPaletteOrder: 5
 	Health:
 		HP: 7500
@@ -21,9 +21,9 @@ terror:
 	RevealsShroud:
 		Range: 9c0
 	Tooltip:
-		Name: Terrorist
+		Name: actor-terror.name
 	Tooltip@NoRow:
-		Name: Terrorist
+		Name: actor-terror.name
 	Armament:
 		Weapon: TriggerAttack
 		PauseOnCondition: chronodisable

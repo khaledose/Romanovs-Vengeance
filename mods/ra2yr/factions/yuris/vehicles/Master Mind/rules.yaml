@@ -8,9 +8,8 @@ mind:
 	Inherits@TURRET: ^WithTurret
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Yuri
-		Prerequisites: ~vehicle.yuri, yatech, ~techlevel.4
-		Description: Heavy vehicle capable of mind controlling multipile enemy units.\nStarts taking damage if controlling more than 3.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nAbilities:\n- Can crush enemy vehicles\n\nUpgradeable with:\n- Grinder Treads\n- Chaos Tank Compensators (Yurigrad)\n- Mastery of Mind (Antarctica)
-		BuildDurationModifier: 100
+		Prerequisites: ~vehicle.yuri, yatech, ~techlevel.2
+		Description: actor-tele.description
 		BuildPaletteOrder: 130
 	Selectable:
 		Bounds: 1544, 2509, 0, -289
@@ -30,9 +29,9 @@ mind:
 	RevealsShroud:
 		Range: 9c0
 	Tooltip:
-		Name: Master Mind
+		Name: actor-tele.name
 	Tooltip@NoRow:
-		Name: Master Mind
+		Name: actor-tele.name
 	Armament:
 		Weapon: MasterMindControl
 		LocalOffset: 0,0,960

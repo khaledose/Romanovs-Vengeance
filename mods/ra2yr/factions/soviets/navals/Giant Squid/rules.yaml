@@ -5,8 +5,8 @@ sqd:
 	Inherits@SELFHEALING: ^SelfHealing
 	Buildable:
 		Queue: Ship.Shared, Ship.Soviets
-		Prerequisites: ~ship.soviets, natech, ~techlevel.3
-		Description: Large ocean creature capable of grabbing and sinking ships.\n\n  Strong vs Ships\n\nAbilities:\n- Can be deployed to remove other Squids from nearby ships\n- Can detect Stealth units
+		Prerequisites: ~ship.soviets, natech, ~techlevel.9
+		Description: actor-sqd.description
 		BuildPaletteOrder: 20
 	Selectable:
 		Bounds: 1930, 1448
@@ -23,9 +23,9 @@ sqd:
 	RevealsShroud:
 		Range: 5c0
 	Tooltip:
-		Name: Giant Squid
+		Name: actor-sqd.name
 	Tooltip@NoRow:
-		Name: Giant Squid
+		Name: actor-sqd.name
 	Armament@primary:
 		Weapon: SquidPunch
 		RequiresCondition: !rank-elite

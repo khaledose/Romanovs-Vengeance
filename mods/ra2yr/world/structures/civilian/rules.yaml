@@ -164,9 +164,9 @@ cawash01:
 	Armor:
 		Type: Concrete
 	Tooltip:
-		Name: White House
+		Name: actor-cawash01.name
 	Tooltip@NoRow:
-		Name: White House
+		Name: actor-cawash01.name
 	SpawnActorOnDeath@rubble:
 		Actor: cawash01.rubble
 
@@ -316,9 +316,9 @@ cawsh12:
 	Armor:
 		Type: Concrete
 	Tooltip:
-		Name: Washington Monument
+		Name: actor-cawsh12.name
 	Tooltip@NoRow:
-		Name: Washington Monument
+		Name: actor-cawsh12.name
 	SpawnActorOnDeath@rubble:
 		Actor: cawsh12.rubble
 
@@ -348,9 +348,9 @@ cawash14:
 	Armor:
 		Type: Concrete
 	Tooltip:
-		Name: Jefferson Memorial
+		Name: actor-cawash14.name
 	Tooltip@NoRow:
-		Name: Jefferson Memorial
+		Name: actor-cawash14.name
 	SpawnActorOnDeath@rubble:
 		Actor: cawash14.rubble
 
@@ -366,9 +366,9 @@ cawash15:
 	Armor:
 		Type: Concrete
 	Tooltip:
-		Name: Lincoln Memorial
+		Name: actor-cawash15.name
 	Tooltip@NoRow:
-		Name: Lincoln Memorial
+		Name: actor-cawash15.name
 	SpawnActorOnDeath@rubble:
 		Actor: cawash15.rubble
 
@@ -382,9 +382,9 @@ cawash16:
 	Armor:
 		Type: Concrete
 	Tooltip:
-		Name: Smithsonian Castle
+		Name: actor-cawash16.name
 	Tooltip@NoRow:
-		Name: Smithsonian Castle
+		Name: actor-cawash16.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: cawash16.rubble
@@ -401,9 +401,9 @@ cawash17:
 	Armor:
 		Type: Concrete
 	Tooltip:
-		Name: Smithsonian Natural History Museum
+		Name: actor-cawash17.name
 	Tooltip@NoRow:
-		Name: Smithsonian Natural History Museum
+		Name: actor-cawash17.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: cawash17.rubble
@@ -418,9 +418,9 @@ cawash18:
 	Armor:
 		Type: Concrete
 	Tooltip:
-		Name: Fountain
+		Name: actor-cawash18.name
 	Tooltip@NoRow:
-		Name: Fountain
+		Name: actor-cawash18.name
 	WithIdleOverlay@water:
 		Sequence: idle-water
 		PauseOnCondition: chronodisable
@@ -440,9 +440,9 @@ cawash19:
 	Armor:
 		Type: Concrete
 	Tooltip:
-		Name: Iwo Jima Memorial
+		Name: actor-cawash19.name
 	Tooltip@NoRow:
-		Name: Iwo Jima Memorial
+		Name: actor-cawash19.name
 	WithIdleOverlay@flag:
 		Sequence: idle-flag
 		PauseOnCondition: chronodisable
@@ -459,9 +459,9 @@ cawa2a:
 	Armor:
 		Type: Concrete
 	Tooltip:
-		Name: Pentagon
+		Name: actor-cawa2a.name
 	Tooltip@NoRow:
-		Name: Pentagon
+		Name: actor-cawa2a.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: cawa2a.rubble
@@ -475,9 +475,9 @@ cawa2b:
 	Armor:
 		Type: Concrete
 	Tooltip:
-		Name: Pentagon
+		Name: actor-cawa2b.name
 	Tooltip@NoRow:
-		Name: Pentagon
+		Name: actor-cawa2b.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: cawa2b.rubble
@@ -491,9 +491,9 @@ cawa2c:
 	Armor:
 		Type: Concrete
 	Tooltip:
-		Name: Pentagon
+		Name: actor-cawa2c.name
 	Tooltip@NoRow:
-		Name: Pentagon
+		Name: actor-cawa2c.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: cawa2c.rubble
@@ -507,9 +507,9 @@ cawa2d:
 	Armor:
 		Type: Concrete
 	Tooltip:
-		Name: Pentagon
+		Name: actor-cawa2d.name
 	Tooltip@NoRow:
-		Name: Pentagon
+		Name: actor-cawa2d.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: cawa2d.rubble
@@ -546,9 +546,9 @@ canewy04:
 	RevealsShroud:
 		Range: 4c0
 	Tooltip:
-		Name: Statue of Liberty
+		Name: actor-canewy04.name
 	Tooltip@NoRow:
-		Name: Statue of Liberty
+		Name: actor-canewy04.name
 	SpawnActorOnDeath@rubble:
 		Actor: canewy04.rubble
 	RenderSprites:
@@ -569,9 +569,9 @@ canewy05:
 	RevealsShroud:
 		Range: 4c0
 	Tooltip:
-		Name: World Trade Center
+		Name: actor-canewy05.name
 	Tooltip@NoRow:
-		Name: World Trade Center
+		Name: actor-canewy05.name
 	RenderSprites:
 		PlayerPalette:
 		Palette: city
@@ -587,9 +587,9 @@ canewy06:
 	Armor:
 		Type: Steel
 	Tooltip:
-		Name: Wall Street Office
+		Name: actor-canewy06.name
 	Tooltip@NoRow:
-		Name: Wall Street Office
+		Name: actor-canewy06.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: canewy06.rubble
@@ -605,9 +605,9 @@ canewy07:
 	Armor:
 		Type: Steel
 	Tooltip:
-		Name: Wall Street Office 2
+		Name: actor-canewy07.name
 	Tooltip@NoRow:
-		Name: Wall Street Office 2
+		Name: actor-canewy07.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: canewy07.rubble
@@ -623,9 +623,9 @@ canewy08:
 	Armor:
 		Type: Steel
 	Tooltip:
-		Name: Wall Street Office 3
+		Name: actor-canewy08.name
 	Tooltip@NoRow:
-		Name: Wall Street Office 3
+		Name: actor-canewy08.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: canewy08.rubble
@@ -767,9 +767,9 @@ canewy20:
 	Armor:
 		Type: Steel
 	Tooltip:
-		Name: Warehouse
+		Name: actor-canewy20.name
 	Tooltip@NoRow:
-		Name: Warehouse
+		Name: actor-canewy20.name
 	WithIdleOverlay@flag:
 		Sequence: garrisoned-flag
 		PauseOnCondition: chronodisable
@@ -789,9 +789,9 @@ canewy21:
 	Armor:
 		Type: Steel
 	Tooltip:
-		Name: Warehouse
+		Name: actor-canewy21.name
 	Tooltip@NoRow:
-		Name: Warehouse
+		Name: actor-canewy21.name
 	WithIdleOverlay@flag:
 		Sequence: garrisoned-flag
 		PauseOnCondition: chronodisable
@@ -954,9 +954,9 @@ casanf04:
 	Armor:
 		Type: Wood
 	Tooltip:
-		Name: Golden Gate Bridge
+		Name: actor-casanf04.name
 	Tooltip@NoRow:
-		Name: Golden Gate Bridge
+		Name: actor-casanf04.name
 
 casanf05:
 	Inherits: ^CivBuilding
@@ -969,9 +969,9 @@ casanf05:
 	Armor:
 		Type: Wood
 	Tooltip:
-		Name: Alcatraz
+		Name: actor-casanf05.name
 	Tooltip@NoRow:
-		Name: Alcatraz
+		Name: actor-casanf05.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: casanf05.rubble
@@ -1034,9 +1034,9 @@ casanf09:
 	Armor:
 		Type: Wood
 	Tooltip:
-		Name: Golden Gate Bridge
+		Name: actor-casanf09.name
 	Tooltip@NoRow:
-		Name: Golden Gate Bridge
+		Name: actor-casanf09.name
 
 casanf10:
 	Inherits: ^CivBuilding
@@ -1050,9 +1050,9 @@ casanf10:
 	Armor:
 		Type: Wood
 	Tooltip:
-		Name: Golden Gate Bridge
+		Name: actor-casanf10.name
 	Tooltip@NoRow:
-		Name: Golden Gate Bridge
+		Name: actor-casanf10.name
 
 casanf11:
 	Inherits: ^CivBuilding
@@ -1066,9 +1066,9 @@ casanf11:
 	Armor:
 		Type: Wood
 	Tooltip:
-		Name: Golden Gate Bridge
+		Name: actor-casanf11.name
 	Tooltip@NoRow:
-		Name: Golden Gate Bridge
+		Name: actor-casanf11.name
 
 casanf12:
 	Inherits: ^CivBuilding
@@ -1082,9 +1082,9 @@ casanf12:
 	Armor:
 		Type: Wood
 	Tooltip:
-		Name: Golden Gate Bridge
+		Name: actor-casanf12.name
 	Tooltip@NoRow:
-		Name: Golden Gate Bridge
+		Name: actor-casanf12.name
 
 casanf13:
 	Inherits: ^CivBuilding
@@ -1098,9 +1098,9 @@ casanf13:
 	Armor:
 		Type: Wood
 	Tooltip:
-		Name: Golden Gate Bridge
+		Name: actor-casanf13.name
 	Tooltip@NoRow:
-		Name: Golden Gate Bridge
+		Name: actor-casanf13.name
 
 casanf14:
 	Inherits: ^CivBuilding
@@ -1114,9 +1114,9 @@ casanf14:
 	Armor:
 		Type: Wood
 	Tooltip:
-		Name: Golden Gate Bridge
+		Name: actor-casanf14.name
 	Tooltip@NoRow:
-		Name: Golden Gate Bridge
+		Name: actor-casanf14.name
 
 casanf15:
 	Inherits: ^CivBuilding
@@ -1127,9 +1127,9 @@ casanf15:
 	Armor:
 		Type: Wood
 	Tooltip:
-		Name: Alcatraz Water Tower
+		Name: actor-casanf15.name
 	Tooltip@NoRow:
-		Name: Alcatraz Water Tower
+		Name: actor-casanf15.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: casanf15.rubble
@@ -1143,9 +1143,9 @@ casanf16:
 	Armor:
 		Type: Wood
 	Tooltip:
-		Name: Light House
+		Name: actor-casanf16.name
 	Tooltip@NoRow:
-		Name: Light House
+		Name: actor-casanf16.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: casanf16.rubble
@@ -1204,9 +1204,9 @@ cala03:
 	Armor:
 		Type: Wood
 	Tooltip:
-		Name: Hollywood Sign
+		Name: actor-cala03.name
 	Tooltip@NoRow:
-		Name: Hollywood Sign
+		Name: actor-cala03.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: cala03.rubble
@@ -1222,9 +1222,9 @@ cala04:
 	Armor:
 		Type: Wood
 	Tooltip:
-		Name: Hollywood Bowl
+		Name: actor-cala04.name
 	Tooltip@NoRow:
-		Name: Hollywood Bowl
+		Name: actor-cala04.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: cala04.rubble
@@ -1240,9 +1240,9 @@ cala05:
 	Armor:
 		Type: Wood
 	Tooltip:
-		Name: LAX
+		Name: actor-cala05.name
 	Tooltip@NoRow:
-		Name: LAX
+		Name: actor-cala05.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: cala05.rubble
@@ -1260,9 +1260,9 @@ cala06:
 	RevealsShroud:
 		Range: 8c0
 	Tooltip:
-		Name: Control Tower
+		Name: actor-cala06.name
 	Tooltip@NoRow:
-		Name: Control Tower
+		Name: actor-cala06.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: cala06.rubble
@@ -1278,9 +1278,9 @@ cala07:
 	Armor:
 		Type: Wood
 	Tooltip:
-		Name: Movie Theater
+		Name: actor-cala07.name
 	Tooltip@NoRow:
-		Name: Movie Theater
+		Name: actor-cala07.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: cala07.rubble
@@ -1296,9 +1296,9 @@ cala08:
 	Armor:
 		Type: Concrete
 	Tooltip:
-		Name: Car Dealership
+		Name: actor-cala08.name
 	Tooltip@NoRow:
-		Name: Car Dealership
+		Name: actor-cala08.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: cala08.rubble
@@ -1314,9 +1314,9 @@ cala09:
 	Armor:
 		Type: Wood
 	Tooltip:
-		Name: Convenience Store
+		Name: actor-cala09.name
 	Tooltip@NoRow:
-		Name: Convenience Store
+		Name: actor-cala09.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: cala09.rubble
@@ -1333,9 +1333,9 @@ cala10:
 	RevealsShroud:
 		Range: 5c0
 	Tooltip:
-		Name: Billboard
+		Name: actor-cala10.name
 	Tooltip@NoRow:
-		Name: Billboard
+		Name: actor-cala10.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: cala10.rubble
@@ -1350,9 +1350,9 @@ cala11:
 	Armor:
 		Type: Wood
 	Tooltip:
-		Name: Hollywood Bowl
+		Name: actor-cala11.name
 	Tooltip@NoRow:
-		Name: Hollywood Bowl
+		Name: actor-cala11.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: cala11.rubble
@@ -1367,9 +1367,9 @@ cala12:
 	Armor:
 		Type: Wood
 	Tooltip:
-		Name: Hollywood Bowl
+		Name: actor-cala12.name
 	Tooltip@NoRow:
-		Name: Hollywood Bowl
+		Name: actor-cala12.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: cala12.rubble
@@ -1384,9 +1384,9 @@ cala13:
 	Armor:
 		Type: Wood
 	Tooltip:
-		Name: Hollywood Sign
+		Name: actor-cala13.name
 	Tooltip@NoRow:
-		Name: Hollywood Sign
+		Name: actor-cala13.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: cala13.rubble
@@ -1402,9 +1402,9 @@ cala14:
 	Armor:
 		Type: Concrete
 	Tooltip:
-		Name: Mini Mall
+		Name: actor-cala14.name
 	Tooltip@NoRow:
-		Name: Mini Mall
+		Name: actor-cala14.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: cala14.rubble
@@ -1420,9 +1420,9 @@ cala15:
 	Armor:
 		Type: Concrete
 	Tooltip:
-		Name: Mini Mall
+		Name: actor-cala15.name
 	Tooltip@NoRow:
-		Name: Mini Mall
+		Name: actor-cala15.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: cala15.rubble
@@ -1482,9 +1482,9 @@ castl04:
 	Armor:
 		Type: Steel
 	Tooltip:
-		Name: St. Louis Arch
+		Name: actor-castl04.name
 	Tooltip@NoRow:
-		Name: St. Louis Arch
+		Name: actor-castl04.name
 	SpawnActorOnDeath@rubble:
 		Actor: castl04.rubble
 
@@ -1498,9 +1498,9 @@ castl05a:
 	Armor:
 		Type: Concrete
 	Tooltip:
-		Name: Stadium
+		Name: actor-castl05a.name
 	Tooltip@NoRow:
-		Name: Stadium
+		Name: actor-castl05a.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: castl05a.rubble
@@ -1515,9 +1515,9 @@ castl05b:
 	Armor:
 		Type: Concrete
 	Tooltip:
-		Name: Stadium
+		Name: actor-castl05b.name
 	Tooltip@NoRow:
-		Name: Stadium
+		Name: actor-castl05b.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: castl05b.rubble
@@ -1532,9 +1532,9 @@ castl05c:
 	Armor:
 		Type: Concrete
 	Tooltip:
-		Name: Stadium
+		Name: actor-castl05c.name
 	Tooltip@NoRow:
-		Name: Stadium
+		Name: actor-castl05c.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: castl05c.rubble
@@ -1549,9 +1549,9 @@ castl05d:
 	Armor:
 		Type: Concrete
 	Tooltip:
-		Name: Stadium
+		Name: actor-castl05d.name
 	Tooltip@NoRow:
-		Name: Stadium
+		Name: actor-castl05d.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: castl05d.rubble
@@ -1566,9 +1566,9 @@ castl05e:
 	Armor:
 		Type: Concrete
 	Tooltip:
-		Name: Stadium
+		Name: actor-castl05e.name
 	Tooltip@NoRow:
-		Name: Stadium
+		Name: actor-castl05e.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: castl05e.rubble
@@ -1583,9 +1583,9 @@ castl05f:
 	Armor:
 		Type: Concrete
 	Tooltip:
-		Name: Stadium
+		Name: actor-castl05f.name
 	Tooltip@NoRow:
-		Name: Stadium
+		Name: actor-castl05f.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: castl05f.rubble
@@ -1600,9 +1600,9 @@ castl05g:
 	Armor:
 		Type: Concrete
 	Tooltip:
-		Name: Stadium
+		Name: actor-castl05g.name
 	Tooltip@NoRow:
-		Name: Stadium
+		Name: actor-castl05g.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: castl05g.rubble
@@ -1617,9 +1617,9 @@ castl05h:
 	Armor:
 		Type: Concrete
 	Tooltip:
-		Name: Stadium
+		Name: actor-castl05h.name
 	Tooltip@NoRow:
-		Name: Stadium
+		Name: actor-castl05h.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: castl05h.rubble
@@ -1655,9 +1655,9 @@ catexs02:
 	RevealsShroud:
 		Range: 4c0
 	Tooltip:
-		Name: Alamo
+		Name: actor-catexs02.name
 	Tooltip@NoRow:
-		Name: Alamo
+		Name: actor-catexs02.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: catexs02.rubble
@@ -1814,9 +1814,9 @@ camiam04:
 	Garrisonable:
 		MaxWeight: 3
 	Tooltip:
-		Name: Lifeguard Hut
+		Name: actor-camiam04.name
 	Tooltip@NoRow:
-		Name: Lifeguard Hut
+		Name: actor-camiam04.name
 	WithIdleOverlay@flag:
 		Sequence: garrisoned-flag
 		PauseOnCondition: chronodisable
@@ -1877,9 +1877,9 @@ camiam08:
 	Armor:
 		Type: Steel
 	Tooltip:
-		Name: Arizona Memorial
+		Name: actor-camiam08.name
 	Tooltip@NoRow:
-		Name: Arizona Memorial
+		Name: actor-camiam08.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: camiam08.rubble
@@ -1940,9 +1940,9 @@ cachig04:
 	Armor:
 		Type: Concrete
 	Tooltip:
-		Name: Associates Center
+		Name: actor-cachig04.name
 	Tooltip@NoRow:
-		Name: Associates Center
+		Name: actor-cachig04.name
 	SpawnActorOnDeath@rubble:
 		Actor: cachig04.rubble
 
@@ -1957,9 +1957,9 @@ cachig05:
 	Armor:
 		Type: Concrete
 	Tooltip:
-		Name: Sears Tower
+		Name: actor-cachig05.name
 	Tooltip@NoRow:
-		Name: Sears Tower
+		Name: actor-cachig05.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: cachig05.rubble
@@ -1976,9 +1976,9 @@ cachig06:
 	Armor:
 		Type: Steel
 	Tooltip:
-		Name: Water Tower
+		Name: actor-cachig06.name
 	Tooltip@NoRow:
-		Name: Water Tower
+		Name: actor-cachig06.name
 	SpawnActorOnDeath@rubble:
 		Actor: cachig06.rubble
 
@@ -1997,9 +1997,9 @@ caseat01:
 	RevealsShroud:
 		Range: 8c0
 	Tooltip:
-		Name: Space Needle
+		Name: actor-caseat01.name
 	Tooltip@NoRow:
-		Name: Space Needle
+		Name: actor-caseat01.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: caseat01.rubble
@@ -2015,9 +2015,9 @@ caseat02:
 	Armor:
 		Type: Wood
 	Tooltip:
-		Name: MicroSpam Campus
+		Name: actor-caseat02.name
 	Tooltip@NoRow:
-		Name: MicroSpam Campus
+		Name: actor-caseat02.name
 	WithIdleOverlay@globe:
 		Sequence: idle-globe
 		PauseOnCondition: chronodisable
@@ -2038,9 +2038,9 @@ cacolo01:
 	Armor:
 		Type: Concrete
 	Tooltip:
-		Name: Air Force Academy Chapel Colorado
+		Name: actor-cacolo01.name
 	Tooltip@NoRow:
-		Name: Air Force Academy Chapel Colorado
+		Name: actor-cacolo01.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: cacolo01.rubble
@@ -2060,9 +2060,9 @@ camex01:
 	RevealsShroud:
 		Range: 12c0
 	Tooltip:
-		Name: Mayan Prism Pyramid
+		Name: actor-camex01.name
 	Tooltip@NoRow:
-		Name: Mayan Prism Pyramid
+		Name: actor-camex01.name
 	Armament:
 		Weapon: MayanPrism
 		LocalOffset: 0,0,4c864
@@ -2086,9 +2086,9 @@ camex02:
 	Armor:
 		Type: Concrete
 	Tooltip:
-		Name: Mayan Castillo
+		Name: actor-camex02.name
 	Tooltip@NoRow:
-		Name: Mayan Castillo
+		Name: actor-camex02.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: camex02.rubble
@@ -2103,9 +2103,9 @@ camex03:
 	Armor:
 		Type: Concrete
 	Tooltip:
-		Name: Mayan Minor Temple
+		Name: actor-camex03.name
 	Tooltip@NoRow:
-		Name: Mayan Minor Temple
+		Name: actor-camex03.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: camex03.rubble
@@ -2120,9 +2120,9 @@ camex04:
 	Armor:
 		Type: Concrete
 	Tooltip:
-		Name: Mayan Large Temple
+		Name: actor-camex04.name
 	Tooltip@NoRow:
-		Name: Mayan Large Temple
+		Name: actor-camex04.name
 	Armor:
 		Type: Concrete
 	SpawnActorOnDeath@rubble:
@@ -2139,9 +2139,9 @@ camex05:
 	Armor:
 		Type: Concrete
 	Tooltip:
-		Name: Mayan Platfrom
+		Name: actor-camex05.name
 	Tooltip@NoRow:
-		Name: Mayan Platfrom
+		Name: actor-camex05.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: camex05.rubble
@@ -2164,9 +2164,9 @@ caeast01:
 	Armor:
 		Type: Steel
 	Tooltip:
-		Name: Easter Island Statue
+		Name: actor-caeast01.name
 	Tooltip@NoRow:
-		Name: Easter Island Statue
+		Name: actor-caeast01.name
 	Armament:
 		Weapon: PrismShot
 		LocalOffset: 0,0,4c0
@@ -2187,8 +2187,6 @@ caeast02:
 	Inherits@SOUND: ^CollapsingMonumentSound
 	Inherits@SHAPE: ^2x2Shape
 	Inherits@TURRET: ^WithVoxelTurretBuildingPowered
-	Buildable:
-		Queue: Building.Allies
 	IsometricSelectable:
 		DecorationHeight: 135
 	Power:
@@ -2199,9 +2197,9 @@ caeast02:
 	Armor:
 		Type: Steel
 	Tooltip:
-		Name: Yuri Bust
+		Name: actor-caeast02.name
 	Tooltip@NoRow:
-		Name: Yuri Bust
+		Name: actor-caeast02.name
 	Armament:
 		Weapon: BustShot
 		LocalOffset: 512,-256,1024, 512,256,1024
@@ -2238,9 +2236,9 @@ carus01:
 	Armor:
 		Type: Concrete
 	Tooltip:
-		Name: St. Basil's Cathedral
+		Name: actor-carus02a.name
 	Tooltip@NoRow:
-		Name: St. Basil's Cathedral
+		Name: actor-carus02a.name
 	SpawnActorOnDeath@rubble:
 		Actor: carus01.rubble
 
@@ -2253,9 +2251,9 @@ carus02a:
 	Armor:
 		Type: Steel
 	Tooltip:
-		Name: Kremlin Walls
+		Name: actor-carus02a.name
 	Tooltip@NoRow:
-		Name: Kremlin Walls
+		Name: actor-carus02a.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: carus02a.rubble
@@ -2269,9 +2267,9 @@ carus02b:
 	Armor:
 		Type: Steel
 	Tooltip:
-		Name: Kremlin Walls
+		Name: actor-carus02b.name
 	Tooltip@NoRow:
-		Name: Kremlin Walls
+		Name: actor-carus02b.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: carus02b.rubble
@@ -2283,9 +2281,9 @@ carus02c:
 	Armor:
 		Type: Concrete
 	Tooltip:
-		Name: Kremlin Walls
+		Name: actor-carus02c.name
 	Tooltip@NoRow:
-		Name: Kremlin Walls
+		Name: actor-carus02c.name
 	MapEditorData:
 		Categories: Wall
 
@@ -2296,9 +2294,9 @@ carus02d:
 	Armor:
 		Type: Concrete
 	Tooltip:
-		Name: Kremlin Walls
+		Name: actor-carus02d.name
 	Tooltip@NoRow:
-		Name: Kremlin Walls
+		Name: actor-carus02d.name
 	MapEditorData:
 		Categories: Wall
 
@@ -2309,9 +2307,9 @@ carus02e:
 	Armor:
 		Type: Concrete
 	Tooltip:
-		Name: Kremlin Walls
+		Name: actor-carus02e.name
 	Tooltip@NoRow:
-		Name: Kremlin Walls
+		Name: actor-carus02e.name
 	MapEditorData:
 		Categories: Wall
 
@@ -2322,9 +2320,9 @@ carus02f:
 	Armor:
 		Type: Concrete
 	Tooltip:
-		Name: Kremlin Walls
+		Name: actor-carus02f.name
 	Tooltip@NoRow:
-		Name: Kremlin Walls
+		Name: actor-carus02f.name
 	MapEditorData:
 		Categories: Wall
 
@@ -2338,9 +2336,9 @@ carus02g:
 	Armor:
 		Type: Concrete
 	Tooltip:
-		Name: Kremlin Wall Clock Tower
+		Name: actor-carus02g.name
 	Tooltip@NoRow:
-		Name: Kremlin Wall Clock Tower
+		Name: actor-carus02g.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: carus02g.rubble
@@ -2356,9 +2354,9 @@ carus03:
 	Armor:
 		Type: Concrete
 	Tooltip:
-		Name: Kremlin Palace
+		Name: actor-carus03.name
 	Tooltip@NoRow:
-		Name: Kremlin Palace
+		Name: actor-carus03.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: carus03.rubble
@@ -2503,9 +2501,9 @@ caeur1:
 	Garrisonable:
 		MaxWeight: 3
 	Tooltip:
-		Name: Cottage
+		Name: actor-caeur1.name
 	Tooltip@NoRow:
-		Name: Cottage
+		Name: actor-caeur1.name
 	WithIdleOverlay@flag:
 		Sequence: garrisoned-flag
 		PauseOnCondition: chronodisable
@@ -2527,9 +2525,9 @@ caeur2:
 	Garrisonable:
 		MaxWeight: 3
 	Tooltip:
-		Name: Cottage
+		Name: actor-caeur2.name
 	Tooltip@NoRow:
-		Name: Cottage
+		Name: actor-caeur2.name
 	WithIdleOverlay@flag:
 		Sequence: garrisoned-flag
 		PauseOnCondition: chronodisable
@@ -2562,9 +2560,9 @@ caeuro05:
 	Armor:
 		Type: Concrete
 	Tooltip:
-		Name: Statue
+		Name: actor-caeuro05.name
 	Tooltip@NoRow:
-		Name: Statue
+		Name: actor-caeuro05.name
 	MapEditorData:
 		Categories: Building - Decoration
 
@@ -2586,9 +2584,9 @@ capars01:
 	Armor:
 		Type: Steel
 	Tooltip:
-		Name: Eiffel Tower
+		Name: actor-capars01.name
 	Tooltip@NoRow:
-		Name: Eiffel Tower
+		Name: actor-capars01.name
 	Armament:
 		Weapon: EiffelBolt
 		LocalOffset: 0,0,13c512
@@ -2627,9 +2625,9 @@ caprs03:
 	Armor:
 		Type: Concrete
 	Tooltip:
-		Name: Louvre
+		Name: actor-caprs03.name
 	Tooltip@NoRow:
-		Name: Louvre
+		Name: actor-caprs03.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: caprs03.rubble
@@ -2689,9 +2687,9 @@ capars07:
 	Armor:
 		Type: Wood
 	Tooltip:
-		Name: Phone Booth
+		Name: actor-capars07.name
 	Tooltip@NoRow:
-		Name: Phone Booth
+		Name: actor-capars07.name
 	MapEditorData:
 		Categories: Building - Decoration
 
@@ -2734,9 +2732,9 @@ capars10:
 	Armor:
 		Type: Wood
 	Tooltip:
-		Name: Bistro
+		Name: actor-capars10.name
 	Tooltip@NoRow:
-		Name: Bistro
+		Name: actor-capars10.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: capars10.rubble
@@ -2753,9 +2751,9 @@ capars11:
 	Armor:
 		Type: Concrete
 	Tooltip:
-		Name: Arc de Triumphe
+		Name: actor-capars11.name
 	Tooltip@NoRow:
-		Name: Arc de Triumphe
+		Name: actor-capars11.name
 	SpawnActorOnDeath@rubble:
 		Actor: capars11.rubble
 
@@ -2772,9 +2770,9 @@ capars12:
 	Armor:
 		Type: Concrete
 	Tooltip:
-		Name: Notre Dame
+		Name: actor-capars12.name
 	Tooltip@NoRow:
-		Name: Notre Dame
+		Name: actor-capars12.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: capars12.rubble
@@ -2790,9 +2788,9 @@ capars13:
 	Armor:
 		Type: Concrete
 	Tooltip:
-		Name: Bistro
+		Name: actor-capars13.name
 	Tooltip@NoRow:
-		Name: Bistro
+		Name: actor-capars13.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: capars13.rubble
@@ -2808,9 +2806,9 @@ capars14:
 	Armor:
 		Type: Concrete
 	Tooltip:
-		Name: Bistro
+		Name: actor-capars14.name
 	Tooltip@NoRow:
-		Name: Bistro
+		Name: actor-capars14.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: capars14.rubble
@@ -2842,9 +2840,9 @@ calond03:
 	Armor:
 		Type: Wood
 	Tooltip:
-		Name: Pub
+		Name: actor-calond03.name
 	Tooltip@NoRow:
-		Name: Pub
+		Name: actor-calond03.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: calond03.rubble
@@ -2862,9 +2860,9 @@ calond04:
 	RevealsShroud:
 		Range: 8c0
 	Tooltip:
-		Name: British Parlaiment
+		Name: actor-calond04.name
 	Tooltip@NoRow:
-		Name: British Parlaiment
+		Name: actor-calond04.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: calond04.rubble
@@ -2881,9 +2879,9 @@ calond05:
 	RevealsShroud:
 		Range: 10c0
 	Tooltip:
-		Name: Big Ben
+		Name: actor-calond05.name
 	Tooltip@NoRow:
-		Name: Big Ben
+		Name: actor-calond05.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: calond05.rubble
@@ -2899,9 +2897,9 @@ calond06:
 	Armor:
 		Type: Wood
 	Tooltip:
-		Name: Tower of London
+		Name: actor-calond06.name
 	Tooltip@NoRow:
-		Name: Tower of London
+		Name: actor-calond06.name
 	WithIdleOverlay@flag:
 		Sequence: idle-flag
 		PauseOnCondition: chronodisable
@@ -2922,9 +2920,9 @@ catran01:
 	Armor:
 		Type: Concrete
 	Tooltip:
-		Name: Crypt
+		Name: actor-catran01.name
 	Tooltip@NoRow:
-		Name: Crypt
+		Name: actor-catran01.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: catran01.rubble
@@ -2940,9 +2938,9 @@ catran02:
 	Armor:
 		Type: Concrete
 	Tooltip:
-		Name: Crypt
+		Name: actor-catran02.name
 	Tooltip@NoRow:
-		Name: Crypt
+		Name: actor-catran02.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: catran02.rubble
@@ -2958,9 +2956,9 @@ catran03:
 	Armor:
 		Type: Wood
 	Tooltip:
-		Name: Fortress
+		Name: actor-catran03.name
 	Tooltip@NoRow:
-		Name: Fortress
+		Name: actor-catran03.name
 	SpawnActorOnDeath@rubble:
 		Actor: catran03.rubble
 
@@ -3134,9 +3132,9 @@ caegyp01:
 	Armor:
 		Type: Wood
 	Tooltip:
-		Name: Great Pyramid
+		Name: actor-caegyp01.name
 	Tooltip@NoRow:
-		Name: Great Pyramid
+		Name: actor-caegyp01.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: caegyp01.rubble
@@ -3152,9 +3150,9 @@ caegyp02:
 	Armor:
 		Type: Wood
 	Tooltip:
-		Name: Pyramid
+		Name: actor-caegyp02.name
 	Tooltip@NoRow:
-		Name: Pyramid
+		Name: actor-caegyp02.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: caegyp02.rubble
@@ -3169,9 +3167,9 @@ caegyp03:
 	Armor:
 		Type: Wood
 	Tooltip:
-		Name: Sphinx
+		Name: actor-caegyp03.name
 	Tooltip@NoRow:
-		Name: Sphinx
+		Name: actor-caegyp03.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: caegyp02.rubble
@@ -3186,9 +3184,9 @@ caegyp04:
 	Armor:
 		Type: Wood
 	Tooltip:
-		Name: Great Pyramid
+		Name: actor-caegyp04.name
 	Tooltip@NoRow:
-		Name: Great Pyramid
+		Name: actor-caegyp04.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: caegyp04.rubble
@@ -3203,9 +3201,9 @@ caegyp05:
 	Armor:
 		Type: Wood
 	Tooltip:
-		Name: Great Pyramid
+		Name: actor-caegyp05.name
 	Tooltip@NoRow:
-		Name: Great Pyramid
+		Name: actor-caegyp05.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: caegyp05.rubble
@@ -3220,9 +3218,9 @@ caegyp06:
 	Armor:
 		Type: Wood
 	Tooltip:
-		Name: Great Pyramid
+		Name: actor-caegyp06.name
 	Tooltip@NoRow:
-		Name: Great Pyramid
+		Name: actor-caegyp06.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: caegyp06.rubble
@@ -3240,9 +3238,9 @@ casydn02:
 	Armor:
 		Type: Wood
 	Tooltip:
-		Name: McRoo Burger
+		Name: actor-casydn02.name
 	Tooltip@NoRow:
-		Name: McRoo Burger
+		Name: actor-casydn02.name
 	WithIdleOverlay@flag:
 		Sequence: garrisoned-flag
 		PauseOnCondition: chronodisable
@@ -3262,9 +3260,9 @@ casydn03:
 	Armor:
 		Type: Wood
 	Tooltip:
-		Name: Opera House
+		Name: actor-casydn03.name
 	Tooltip@NoRow:
-		Name: Opera House
+		Name: actor-casydn03.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: casydn03.rubble
@@ -3281,9 +3279,9 @@ calunr01:
 	Armor:
 		Type: Wood
 	Tooltip:
-		Name: Lunar Lander
+		Name: actor-calunr01.name
 	Tooltip@NoRow:
-		Name: Lunar Lander
+		Name: actor-calunr01.name
 
 calunr02:
 	Inherits: ^CivBuilding
@@ -3294,9 +3292,9 @@ calunr02:
 	Armor:
 		Type: Wood
 	Tooltip:
-		Name: American Flag
+		Name: actor-calunr02.name
 	Tooltip@NoRow:
-		Name: American Flag
+		Name: actor-calunr02.name
 
 # Army Set
 
@@ -3311,9 +3309,9 @@ caarmy01:
 	Garrisonable:
 		MaxWeight: 8
 	Tooltip:
-		Name: Army Tent
+		Name: actor-caarmy01.name
 	Tooltip@NoRow:
-		Name: Army Tent
+		Name: actor-caarmy01.name
 	WithIdleOverlay@flag:
 		Sequence: garrisoned-flag
 		PauseOnCondition: chronodisable
@@ -3329,9 +3327,9 @@ caarmy02:
 	Garrisonable:
 		MaxWeight: 4
 	Tooltip:
-		Name: Army Tent
+		Name: actor-caarmy02.name
 	Tooltip@NoRow:
-		Name: Army Tent
+		Name: actor-caarmy02.name
 	WithIdleOverlay@flag:
 		Sequence: garrisoned-flag
 		PauseOnCondition: chronodisable
@@ -3347,9 +3345,9 @@ caarmy03:
 	Garrisonable:
 		MaxWeight: 4
 	Tooltip:
-		Name: Army Tent
+		Name: actor-caarmy03.name
 	Tooltip@NoRow:
-		Name: Army Tent
+		Name: actor-caarmy03.name
 	WithIdleOverlay@flag:
 		Sequence: garrisoned-flag
 		PauseOnCondition: chronodisable
@@ -3365,9 +3363,9 @@ caarmy04:
 	Garrisonable:
 		MaxWeight: 4
 	Tooltip:
-		Name: Army Tent
+		Name: actor-caarmy04.name
 	Tooltip@NoRow:
-		Name: Army Tent
+		Name: actor-caarmy04.name
 	WithIdleOverlay@flag:
 		Sequence: garrisoned-flag
 		PauseOnCondition: chronodisable
@@ -3388,9 +3386,9 @@ cabunk01:
 	Garrisonable:
 		MaxWeight: 8
 	Tooltip:
-		Name: Concrete Bunker
+		Name: actor-cabunk01.name
 	Tooltip@NoRow:
-		Name: Concrete Bunker
+		Name: actor-cabunk01.name
 	WithIdleOverlay@flag:
 		Sequence: garrisoned-flag
 		PauseOnCondition: chronodisable
@@ -3412,9 +3410,9 @@ cabunk02:
 	Garrisonable:
 		MaxWeight: 8
 	Tooltip:
-		Name: Concrete Bunker
+		Name: actor-cabunk02.name
 	Tooltip@NoRow:
-		Name: Concrete Bunker
+		Name: actor-cabunk02.name
 	WithIdleOverlay@flag:
 		Sequence: garrisoned-flag
 		PauseOnCondition: chronodisable
@@ -3436,9 +3434,9 @@ cabunk03:
 	Garrisonable:
 		MaxWeight: 8
 	Tooltip:
-		Name: Concrete Bunker
+		Name: actor-cabunk03.name
 	Tooltip@NoRow:
-		Name: Concrete Bunker
+		Name: actor-cabunk03.name
 	WithIdleOverlay@flag:
 		Sequence: garrisoned-flag
 		PauseOnCondition: chronodisable
@@ -3460,9 +3458,9 @@ cabunk04:
 	Garrisonable:
 		MaxWeight: 8
 	Tooltip:
-		Name: Concrete Bunker
+		Name: actor-cabunk04.name
 	Tooltip@NoRow:
-		Name: Concrete Bunker
+		Name: actor-cabunk04.name
 	Armor:
 		Type: Concrete
 	WithIdleOverlay@flag:
@@ -3486,9 +3484,9 @@ calab:
 	Armor:
 		Type: Steel
 	Tooltip:
-		Name: Einstein's Lab
+		Name: actor-calab.name
 	Tooltip@NoRow:
-		Name: Einstein's Lab
+		Name: actor-calab.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: calab.rubble
@@ -3506,9 +3504,9 @@ catech01:
 	RevealsShroud:
 		Range: 4c0
 	Tooltip:
-		Name: Communications Center
+		Name: actor-catech01.name
 	Tooltip@NoRow:
-		Name: Communications Center
+		Name: actor-catech01.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: catech01.rubble
@@ -3523,9 +3521,9 @@ catime01:
 	Armor:
 		Type: Steel
 	Tooltip:
-		Name: Time Machine
+		Name: actor-catime01.name
 	Tooltip@NoRow:
-		Name: Time Machine
+		Name: actor-catime01.name
 
 catime02:
 	Inherits: ^CivBuilding
@@ -3537,9 +3535,9 @@ catime02:
 	Armor:
 		Type: Steel
 	Tooltip:
-		Name: Time Machine
+		Name: actor-catime02.name
 	Tooltip@NoRow:
-		Name: Time Machine
+		Name: actor-catime02.name
 
 yacomd:
 	Inherits: ^CivBuilding
@@ -3556,9 +3554,9 @@ yacomd:
 	RevealsShroud:
 		Range: 8c0
 	Tooltip:
-		Name: Yuri's Command Center
+		Name: actor-yacomd.name
 	Tooltip@NoRow:
-		Name: Yuri's Command Center
+		Name: actor-yacomd.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: yacomd.rubble
@@ -3575,9 +3573,9 @@ yapppt:
 	Armor:
 		Type: Wood
 	Tooltip:
-		Name: Psychic Dominator
+		Name: actor-yapppt.name
 	Tooltip@NoRow:
-		Name: Psychic Dominator
+		Name: actor-yapppt.name
 	-WithIdleOverlay@garrisoned:
 
 yarock:
@@ -3592,7 +3590,7 @@ yarock:
 	Valued:
 		Cost: 600
 	Tooltip:
-		Name: Rocket Launch Pad
+		Name: actor-yarock.name
 	Tooltip@NoRow:
 		Name: Rocket Launch Pad		
 	GrantConditionAfterDelay:
@@ -3621,9 +3619,9 @@ napsyb:
 	RevealsShroud:
 		Range: 10c0
 	Tooltip:
-		Name: Psychic Beacon
+		Name: actor-napsyb.name
 	Tooltip@NoRow:
-		Name: Psychic Beacon
+		Name: actor-napsyb.name
 	WithIdleOverlay@spin:
 		Sequence: idle-spin
 		PauseOnCondition: disabled || chronodisable
@@ -3646,9 +3644,9 @@ cawt01:
 	RevealsShroud:
 		Range: 6c0
 	Tooltip:
-		Name: Water Tower
+		Name: actor-cawt01.name
 	Tooltip@NoRow:
-		Name: Water Tower
+		Name: actor-cawt01.name
 
 cats01:
 	Inherits: ^CivBuilding
@@ -3660,9 +3658,9 @@ cats01:
 	Armor:
 		Type: Steel
 	Tooltip:
-		Name: Twin Silos
+		Name: actor-cats01.name
 	Tooltip@NoRow:
-		Name: Twin Silos
+		Name: actor-cats01.name
 
 cabarn02:
 	Inherits: ^CivBuilding
@@ -3677,9 +3675,9 @@ cabarn02:
 	Garrisonable:
 		MaxWeight: 5
 	Tooltip:
-		Name: Barn
+		Name: actor-cabarn02.name
 	Tooltip@NoRow:
-		Name: Barn
+		Name: actor-cabarn02.name
 	WithIdleOverlay@flag:
 		Sequence: garrisoned-flag
 		PauseOnCondition: chronodisable
@@ -3701,9 +3699,9 @@ cafarm01:
 	Garrisonable:
 		MaxWeight: 6
 	Tooltip:
-		Name: Farm
+		Name: actor-cafarm01.name
 	Tooltip@NoRow:
-		Name: Farm
+		Name: actor-cafarm01.name
 
 cafarm02:
 	Inherits: ^CivBuilding
@@ -3714,9 +3712,9 @@ cafarm02:
 	Armor:
 		Type: Wood
 	Tooltip:
-		Name: Farm Silo
+		Name: actor-cafarm02.name
 	Tooltip@NoRow:
-		Name: Farm Silo
+		Name: actor-cafarm02.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: cafarm02.rubble
@@ -3734,9 +3732,9 @@ cafarm06:
 	Garrisonable:
 		MaxWeight: 5
 	Tooltip:
-		Name: Lighthouse
+		Name: actor-cafarm06.name
 	Tooltip@NoRow:
-		Name: Lighthouse
+		Name: actor-cafarm06.name
 	WithIdleOverlay@flag:
 		Sequence: garrisoned-flag
 		PauseOnCondition: chronodisable
@@ -3756,9 +3754,9 @@ caind01:
 	Armor:
 		Type: Steel
 	Tooltip:
-		Name: Industrial building
+		Name: actor-caind01.name
 	Tooltip@NoRow:
-		Name: Industrial building
+		Name: actor-caind01.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: caind01.rubble
@@ -3774,9 +3772,9 @@ cagas01:
 	Armor:
 		Type: Wood
 	Tooltip:
-		Name: Gas Station
+		Name: actor-cagas01.name
 	Tooltip@NoRow:
-		Name: Gas Station
+		Name: actor-cagas01.name
 	SpawnActorOnDeath@rubble:
 		DeathType: NonTemporal
 		Actor: cagas01.rubble
@@ -3794,9 +3792,9 @@ cafrma:
 	RevealsShroud:
 		Range: 4c0
 	Tooltip:
-		Name: Farm House
+		Name: actor-cafrma.name
 	Tooltip@NoRow:
-		Name: Farm House
+		Name: actor-cafrma.name
 
 cafrmb:
 	Inherits: ^Decoration
@@ -3810,9 +3808,9 @@ cafrmb:
 	Garrisonable:
 		MaxWeight: 1
 	Tooltip:
-		Name: Outhouse
+		Name: actor-cafrmb.name
 	Tooltip@NoRow:
-		Name: Outhouse
+		Name: actor-cafrmb.name
 	MapEditorData:
 		Categories: Building - Decoration
 
@@ -3825,9 +3823,9 @@ cagard01:
 	Armor:
 		Type: Steel
 	Tooltip:
-		Name: Guard Shack
+		Name: actor-cagard01.name
 	Tooltip@NoRow:
-		Name: Guard Shack
+		Name: actor-cagard01.name
 	Armor:
 		Type: Concrete
 	WithIdleOverlay@flag:
@@ -3908,9 +3906,9 @@ city05:
 	Armor:
 		Type: Steel
 	Tooltip:
-		Name: Daily Sun Times
+		Name: actor-city05.name
 	Tooltip@NoRow:
-		Name: Daily Sun Times
+		Name: actor-city05.name
 	RenderSprites:
 		PlayerPalette:
 		Palette: city

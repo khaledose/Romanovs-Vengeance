@@ -22,13 +22,13 @@
 		LaunchSound: snuklaun.wav
 		EndChargeSound: snukread.wav
 		SelectTargetSpeechNotification: SelectTarget
-		SelectTargetTextNotification: Select target.
+		SelectTargetTextNotification: notification-select-target
 		EndChargeSpeechNotification: NuclearMissileReady
-		EndChargeTextNotification: Nuclear Missile ready.
+		EndChargeTextNotification: notification-nuclear-missile-ready
 		LaunchSpeechNotification: NuclearMissileLaunched
-		LaunchTextNotification: Warning: Nuclear Missile launched.
+		LaunchTextNotification: notification-nuclear-missile-launched
 		IncomingSpeechNotification: NuclearMissileLaunched
-		IncomingTextNotification: Warning: Nuclear Missile launched.
+		IncomingTextNotification: notification-nuclear-missile-launched
 		MissileImage: atomic
 		MissilePalette: player
 		SpawnOffset: 0,0,-1c0

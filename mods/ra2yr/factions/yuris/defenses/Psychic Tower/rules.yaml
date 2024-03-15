@@ -8,8 +8,8 @@ yapsyt:
 	Inherits@TURRET: ^WithSpriteTurretBuildingPowered
 	Buildable:
 		Queue: Support.Shared, Support.Yuri
-		Prerequisites: ~building.yuri, yapsis, ~techlevel.3
-		Description: Tower capable of mind controlling up to 3 enemy units.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Buildings, Aircraft\n\nAbilities:\n- Can detect Steath units\n\n  Requires power to operate.
+		Prerequisites: ~building.yuri, yapsis, ~techlevel.7
+		Description: actor-yapsyt.description
 		BuildPaletteOrder: 60
 	IsometricSelectable:
 		DecorationHeight: 120
@@ -24,9 +24,9 @@ yapsyt:
 	RevealsShroud:
 		Range: 5c0
 	Tooltip:
-		Name: Yuri Psychic Tower
+		Name: actor-yapsyt.name
 	Tooltip@NoRow:
-		Name: Yuri Psychic Tower
+		Name: actor-yapsyt.name
 	Armament:
 		Weapon: MultipleMindControlTower
 		MuzzleSequence: muzzle

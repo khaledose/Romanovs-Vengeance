@@ -26,7 +26,7 @@
 ^GainsExperience:
 	GainsExperience:
 		LevelUpNotification: LevelUp
-		LevelUpTextNotification: Unit promoted.
+		LevelUpTextNotification: notification-unit-promoted
 		Conditions:
 			300: rank-veteran
 			600: rank-veteran
@@ -614,9 +614,10 @@
 
 ^Disguisable:
 	DisguiseTooltip:
-		RequiresCondition: disguise && showownername
+		RequiresCondition: showownername
 	DisguiseTooltip@NoRow:
-		RequiresCondition: disguise && !showownername
+		ShowOwnerRow: false
+		RequiresCondition: !showownername
 	Disguise:
 		DisguisedCondition: disguise
 		Cursor: attack
@@ -639,7 +640,7 @@
 		Types: building
 		RequiresCondition: !build-incomplete && !invulnerability && !forceshield
 	CaptureNotification:
-		TextNotification: Building captured.
+		TextNotification: notification-building-captured
 	CapturableProgressBar:
 		RequiresCondition: !instantcapture
 	CapturableProgressBlink:
@@ -822,7 +823,7 @@
 	PrimaryBuilding:
 		PrimaryCondition: primary
 		SelectionNotification: PrimaryBuildingSelected
-		SelectionTextNotification: Primary building selected.
+		SelectionTextNotification: notification-primary-building-selected
 		RequiresCondition: !multiqueue
 	GrantConditionOnPrerequisite@multiqueue:
 		Condition: multiqueue
@@ -848,9 +849,9 @@
 		Interval: 20
 		RepairDamageTypes: KillsDrone
 		StartRepairingNotification: Repairing
-		StartRepairingTextNotification: Repairing.
+		StartRepairingTextNotification: notification-repairing
 		FinishRepairingNotification: UnitRepaired
-		FinishRepairingTextNotification: Unit repaired.
+		FinishRepairingTextNotification: notification-unit-repaired
 	RallyPoint:
 		Palette: mouse
 		IsPlayerPalette: false

@@ -8,8 +8,8 @@ nasam:
 	Inherits@TURRET: ^WithVoxelTurretBuildingPowered
 	Buildable:
 		Queue: Support.Shared, Support.Allies
-		Prerequisites: ~building.allies, gapile, ~techlevel.2
-		Description: Automated anti-aircraft defense.\n\n  Strong vs Aircraft\n  Weak vs Ground units\n\nAbilities:\n- Can detect Steath units\n\nUpgradeable with:\n- Boost-Gliding Systems (United States)\n- Grand Cannon Protocols (France)\n\n  Requires power to operate.
+		Prerequisites: ~building.allies, gapile, ~techlevel.4
+		Description: actor-nasam.description
 		BuildPaletteOrder: 50
 	RequiresBuildableArea:
 		Adjacent: 4
@@ -26,9 +26,9 @@ nasam:
 	RevealsShroud:
 		Range: 10c0
 	Tooltip:
-		Name: Allied Patriot Missile
+		Name: actor-nasam.name
 	Tooltip@NoRow:
-		Name: Allied Patriot Missile
+		Name: actor-nasam.name
 	Armament:
 		Weapon: RedEye2
 		Damage: 60

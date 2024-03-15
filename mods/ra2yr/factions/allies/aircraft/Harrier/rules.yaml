@@ -4,8 +4,7 @@ orca:
 	Buildable:
 		Queue: Aircraft.Shared, Aircraft.Allies
 		Prerequisites: ~aircraft.allies, !prerequisite.enoughair, ~techlevel.3
-		Description: Fast assault fighter.\nCannot be built more than landing pads available.\n\n  Strong vs Buildings, Infantry, Vehicles\n  Weak vs Aircraft\n\nUpgradeable with:\n- Air-to-Air Missile Systems\n- Predator Missiles
-		BuildPaletteOrder: 10
+		Description: actor-orca.description
 	Health:
 		HP: 15000
 	Armor:
@@ -22,9 +21,9 @@ orca:
 	RevealsShroud@Ground:
 		Range: 8c0
 	Tooltip:
-		Name: Harrier
+		Name: actor-orca.name
 	Tooltip@NoRow:
-		Name: Harrier
+		Name: actor-orca.name
 	Armament:
 		Weapon: Maverick
 		Damage: 150
@@ -59,9 +58,9 @@ orca:
 
 orcahusk:
 	Tooltip:
-		Name: Harrier
+		Name: actor-orca.name
 	Tooltip@NoRow:
-		Name: Harrier
+		Name: actor-orca.name
 	Aircraft:
 		TurnSpeed: 20
 		Speed: 210

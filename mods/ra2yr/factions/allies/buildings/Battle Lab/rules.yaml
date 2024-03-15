@@ -3,13 +3,9 @@ gatech:
 	Inherits@SHAPE: ^3x2Shape
 	Buildable:
 		Queue: Building.Shared, Building.Allies
-		Prerequisites: ~building.allies, gaweap, gaairc, ~techlevel.3, ~!ai.gatech
+		Prerequisites: ~building.allies, gaweap, gaairc, ~techlevel.8, ~!ai.gatech
 	IsometricSelectable:
 		DecorationHeight: 180
-	Tooltip:
-		Name: Allied Battle Lab
-	Tooltip@NoRow:
-		Name: Allied Battle Lab
 	InfiltrateForSupportPower:
 		Proxy: allies.tech.infiltrated
 	WithIdleOverlay@lights:

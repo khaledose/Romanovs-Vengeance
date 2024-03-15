@@ -4,11 +4,11 @@ gawall:
 		Queue: Support.Shared, Support.Allies
 		Prerequisites: ~building.allies, gapile, ~techlevel.1
 		BuildPaletteOrder: 10
-		Description: Heavy wall capable of blocking units and projectiles.\n\nUpgradeable with:\n- Grand Cannon Protocols (France)\n\n  Cannot be placed on water.
+		Description: actor-gawall.description
 	Tooltip:
-		Name: Allied Wall
+		Name: actor-gawall.name
 	Tooltip@NoRow:
-		Name: Allied Wall
+		Name: actor-gawall.name
 	LineBuild:
 		NodeTypes: gawall
 	LineBuildNode:

@@ -9,8 +9,8 @@ tnkd:
 	Inherits@ANNOUNCE: ^AnnounceProduction
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Allies
-		Prerequisites: ~vehicle.germany, gaairc, ~techlevel.3
-		Description: Special anti-armor unit.\n\n  Strong vs Vehicles, Ships\n  Weak vs Infantry, Aircraft\n\nUpgradeable with:\n- Composite Armor\n- Advanced Gun Systems (Germany)
+		Prerequisites: ~vehicle.germany, gaairc, ~techlevel.2
+		Description: actor-tnkd.description
 		BuildDurationModifier: 100
 		BuildPaletteOrder: 90
 	Selectable:
@@ -29,9 +29,9 @@ tnkd:
 	RevealsShroud:
 		Range: 7c0
 	Tooltip:
-		Name: Tank Destroyer
+		Name: actor-tnkd.name
 	Tooltip@NoRow:
-		Name: Tank Destroyer
+		Name: actor-tnkd.name
 	Armament@primary:
 		Weapon: sabot
 		Damage: 150

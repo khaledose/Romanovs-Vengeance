@@ -7,8 +7,8 @@ tany:
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Allies
-		Prerequisites: ~infantry.allies, gatech, ~techlevel.4
-		Description: Elite commando infantry, armed with\ndual pistols and C4 charges.\n\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Aircraft\n\nAbilities:\n- Can swim\n- Can place C4 on buildings and vehicles\n\nUpgradeable with:\n- Advanced Training\n\n  Maximum 1 can be trained
+		Prerequisites: ~infantry.allies, gatech, ~techlevel.9
+		Description: actor-tany.description
 		BuildPaletteOrder: 9
 	Health:
 		HP: 20000
@@ -24,9 +24,9 @@ tany:
 	RevealsShroud:
 		Range: 8c0
 	Tooltip:
-		Name: Tanya
+		Name: actor-tany.name
 	Tooltip@NoRow:
-		Name: Tanya
+		Name: actor-tany.name
 	Armament@primary:
 		Weapon: DoublePistols
 		PauseOnCondition: chronodisable

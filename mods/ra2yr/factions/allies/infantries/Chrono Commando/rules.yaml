@@ -13,9 +13,9 @@
 	RevealsShroud:
 		Range: 8c0
 	Tooltip:
-		Name: Chrono Commando
+		Name: actor-ccomand.name
 	Tooltip@NoRow:
-		Name: Chrono Commando
+		Name: actor-ccomand.name
 	Armament@primary:
 		Weapon: MP5E
 		PauseOnCondition: chronodisable
@@ -45,8 +45,8 @@ ccomand.chrono:
 	Inherits@SELF: ^CCOMAND
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Allies, Infantry.Soviets, Infantry.Yuri
-		Prerequisites: ~barracks, ~allies.tech.infiltrated, ~techlevel.4
-		Description: Elite commando infantry, armed with\na sub machine gun and C4 charges.\n\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can place C4 on buildings\n- Can teleport anywhere on the map\n\nUpgradeable with:\n- Advanced Training
+		Prerequisites: ~barracks, ~allies.tech.infiltrated, ~techlevel.9
+		Description: actor-ccomand.description
 		BuildPaletteOrder: 11
 	Transforms:
 		IntoActor: ccomand.foot

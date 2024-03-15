@@ -8,8 +8,8 @@ yaggun:
 	Inherits@TURRET: ^WithVoxelTurretBuildingPowered
 	Buildable:
 		Queue: Support.Shared, Support.Yuri
-		Prerequisites: ~building.yuri, yabrck, ~techlevel.1
-		Description: Automated anti-infantry and anti-air defense.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles\n\nAbilities:\n- Can detect Steath units\n\nUpgradeable with:\n- Chainguns\n\n  Requires power to operate.
+		Prerequisites: ~building.yuri, yabrck, ~techlevel.4
+		Description: actor-yaggun.description
 		BuildPaletteOrder: 40
 	RequiresBuildableArea:
 		Adjacent: 4
@@ -26,9 +26,9 @@ yaggun:
 	RevealsShroud:
 		Range: 10c0
 	Tooltip:
-		Name: Yuri Gattling Cannon
+		Name: actor-yaggun.name
 	Tooltip@NoRow:
-		Name: Yuri Gattling Cannon
+		Name: actor-yaggun.name
 	Armament@ag-0:
 		Weapon: AGGattling
 		LocalOffset: 640,240,1024, 640,-240,1024

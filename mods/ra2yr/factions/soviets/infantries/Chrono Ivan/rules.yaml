@@ -12,9 +12,9 @@
 	RevealsShroud:
 		Range: 8c0
 	Tooltip:
-		Name: Chrono Ivan
+		Name: actor-civan.name
 	Tooltip@NoRow:
-		Name: Chrono Ivan
+		Name: actor-civan.name
 	AttackFrontal:
 		Cursor: bomb
 		OutsideRangeCursor: bomb
@@ -39,8 +39,8 @@ civan.chrono:
 	Inherits@SELF: ^CIVAN
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Allies, Infantry.Soviets, Infantry.Yuri
-		Prerequisites: ~barracks, ~soviets.tech.infiltrated, ~techlevel.4
-		Description: Specialist for explosives. Can plant a Bomb on anything, even Cows.\n\nAbilities:\n- Can teleport anywhere on the map\n\nUpgradeable with:\n- High Explosive Bombs (Libya)
+		Prerequisites: ~barracks, ~soviets.tech.infiltrated, ~techlevel.9
+		Description: actor-civan.description
 		BuildPaletteOrder: 10
 	Transforms:
 		IntoActor: civan.foot

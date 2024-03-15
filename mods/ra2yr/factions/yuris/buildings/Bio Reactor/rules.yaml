@@ -5,7 +5,7 @@ yapowr:
 	Buildable:
 		Queue: Building.Shared, Building.Yuri
 		Prerequisites: ~building.yuri, ~techlevel.1
-		Description: Provides power for other structures.\nCan be occupied with up to 5 infantry for 50 more power each.
+		Description: actor-yapowr.description
 	IsometricSelectable:
 		DecorationHeight: 60
 	Power:
@@ -34,9 +34,9 @@ yapowr:
 	RevealsShroud:
 		Range: 4c0
 	Tooltip:
-		Name: Yuri Bio Reactor
+		Name: actor-yapowr.name
 	Tooltip@NoRow:
-		Name: Yuri Bio Reactor
+		Name: actor-yapowr.name
 	Explodes:
 		Weapon: PowerPlantExplosion
 	WithIdleOverlay@empty:

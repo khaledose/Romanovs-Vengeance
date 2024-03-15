@@ -4,8 +4,8 @@ yagntc:
 	Inherits@SHAPE: ^3x3Shape
 	Buildable:
 		Queue: Support.Shared, Support.Yuri
-		Prerequisites: ~building.yuri, yatech, !enoughgenmutator, ~techlevel.5
-		Description: Makes vehicles invisible.\nKills infantry.\n\n  Requires power to operate.
+		Prerequisites: ~building.yuri, yatech, !enoughgenmutator, ~techlevel.10
+		Description: actor-yagntc.description
 		BuildPaletteOrder: 980
 	IsometricSelectable:
 		DecorationHeight: 120
@@ -20,9 +20,9 @@ yagntc:
 	RevealsShroud:
 		Range: 5c0
 	Tooltip:
-		Name: Yuri Genetic Mutator Device
+		Name: actor-yagntc.name
 	Tooltip@NoRow:
-		Name: Yuri Genetic Mutator Device
+		Name: actor-yagntc.name
 	ProvidesPrerequisite@swlimit:
 		Prerequisite: enoughgenmutator
 	WithIdleOverlay@top:
@@ -31,7 +31,7 @@ yagntc:
 		RequiresCondition: !build-incomplete
 	NotificationAnnouncement:
 		Notification: GeneticMutatorDetected
-		TextNotification: Warning: Genetic Mutator detected.
+		TextNotification: notification-genetic-mutator-detected
 	Voiced:
 		VoiceSet: LazarusGeneratorVoice
 		Volume: 0.8

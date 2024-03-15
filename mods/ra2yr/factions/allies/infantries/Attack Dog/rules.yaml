@@ -6,7 +6,7 @@
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Inherits@LEAP: ^LeapAttack
 	Buildable:
-		Description: Anti-infantry unit.\nCan be deployed to stun nearby infantry for a short while.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can swim\n- Can detect Stealth units\n- Can detect Spies
+		Description: actor-dog.description
 		BuildPaletteOrder: 4
 	Selectable:
 		Bounds: 724, 1158, 0, -241
@@ -23,9 +23,9 @@
 	Mobile:
 		Speed: 105
 	Tooltip:
-		Name: Attack Dog
+		Name: actor-dog.name
 	Tooltip@NoRow:
-		Name: Attack Dog
+		Name: actor-dog.name
 	Armament:
 		Weapon: DogJaw
 		Damage: 1000
@@ -49,6 +49,6 @@ adog:
 	Inherits: ^Dog
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Allies
-		Prerequisites: ~infantry.allies, ~techlevel.1
+		Prerequisites: ~infantry.allies, ~techlevel.2
 
 

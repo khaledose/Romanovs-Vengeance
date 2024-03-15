@@ -8,8 +8,8 @@ ptroop:
 	Inherits@DETECTCLOAKED: ^DetectCloaked
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Allies, Infantry.Soviets, Infantry.Yuri
-		Prerequisites: ~barracks, ~yuri.tech.infiltrated, ~techlevel.4
-		Description: Psychic infantry. Can mind control enemy units.\n\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Dogs, Terror Drones, Aircraft\n\nAbilities:\n- Can place C4 on buildings\n\nUpgradeable with:\n- Mastery of Mind (Antarctica)
+		Prerequisites: ~barracks, ~yuri.tech.infiltrated, ~techlevel.9
+		Description: actor-ptroop.description
 		BuildPaletteOrder: 8
 	Health:
 		HP: 10000
@@ -24,9 +24,9 @@ ptroop:
 	RevealsShroud:
 		Range: 8c0
 	Tooltip:
-		Name: Psi Commando
+		Name: actor-ptroop.name
 	Tooltip@NoRow:
-		Name: Psi Commando
+		Name: actor-ptroop.name
 	Armament:
 		Weapon: MindControl
 		MuzzleSequence: muzzle

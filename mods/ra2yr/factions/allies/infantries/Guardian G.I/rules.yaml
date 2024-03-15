@@ -9,8 +9,8 @@ ggi:
 	Inherits@VOICES: ^WithGGIVoices
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Allies
-		Prerequisites: ~infantry.allies, ~techlevel.1
-		Description: Anti-tank and anti-air infantry.\nCan deploy to gain more range.\n\n  Strong vs Vehicles, Aircraft\n  Weak vs Buildings\n\nUpgradeable with:\n- Fiber-Reinforced Fortifications\n-\n- Advanced Training\n- Boost-Gliding Systems (United States)\n- Portable Weaponry (United Kingdom)
+		Prerequisites: ~infantry.allies, ~techlevel.2
+		Description: actor-ggi.description
 		BuildPaletteOrder: 5
 	Health:
 		HP: 10000
@@ -25,9 +25,9 @@ ggi:
 	RevealsShroud:
 		Range: 6c0
 	Tooltip:
-		Name: Guardian G.I.
+		Name: actor-ggi.name
 	Tooltip@NoRow:
-		Name: Guardian G.I.
+		Name: actor-ggi.name
 	Armament@primary:
 		Weapon: M60
 		Damage: 15

@@ -1,6 +1,5 @@
 cadmfgl:
 	Inherits: ^Flag
-	-Buildable:
 	Tooltip:
 		Name: Flag
 	Tooltip@NoRow:

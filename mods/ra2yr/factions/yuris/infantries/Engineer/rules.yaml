@@ -3,10 +3,6 @@ yengineer:
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Yuri
 		Prerequisites: ~yabrck, ~techlevel.1
-	Tooltip:
-		Name: Yuri Engineer
-	Tooltip@NoRow:
-		Name: Yuri Engineer
 	Voiced:
 		VoiceSet: YuriEngineerVoice
 	RenderSprites:

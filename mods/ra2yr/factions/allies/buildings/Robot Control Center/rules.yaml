@@ -5,8 +5,8 @@ garobo:
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
 		Queue: Building.Shared, Building.Allies
-		Prerequisites: ~building.allies, gaweap, ~techlevel.3,
-		Description: Allows production of Robot Tanks.\nRequired for Robot Tanks to function.
+		Prerequisites: ~building.allies, gaweap, ~techlevel.10
+		Description: actor-garobo.description
 		BuildPaletteOrder: 80
 	IsometricSelectable:
 		DecorationHeight: 60
@@ -21,9 +21,9 @@ garobo:
 	RevealsShroud:
 		Range: 6c0
 	Tooltip:
-		Name: Allied Robot Control Center
+		Name: actor-garobo.name
 	Tooltip@NoRow:
-		Name: Allied Robot Control Center
+		Name: actor-garobo.name
 	ProvidesPrerequisite@powered:
 		Prerequisite: powered_robo
 		RequiresCondition: !disabled && !chronodisable

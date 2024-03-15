@@ -7,8 +7,8 @@ deso:
 	Inherits@DEPLOY: ^DeployableInfantry
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Soviets, Infantry.Iraq
-		Description: Carries a radiation-emitting weapon.\nCan deploy for area-of-effect damage.\n\n  Strong vs Infantry, Light vehicles\n  Weak vs Tanks, Aircraft\n\nAbilities:\n- Immune to Radiation\n\nUpgradeable with:\n- Advanced Irradiators (Iraq)
-		Prerequisites: ~infantry.iraq, naradr, ~techlevel.3
+		Description: actor-deso.description
+		Prerequisites: ~infantry.iraq, naradr, ~techlevel.8
 		BuildPaletteOrder: 7
 	Health:
 		HP: 15000
@@ -23,9 +23,9 @@ deso:
 	RevealsShroud:
 		Range: 6c0
 	Tooltip:
-		Name: Desolator
+		Name: actor-deso.name
 	Tooltip@NoRow:
-		Name: Desolator
+		Name: actor-deso.name
 	Armament@primary:
 		Weapon: RadBeamWeapon
 		Damage: 125

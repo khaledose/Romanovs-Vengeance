@@ -21,13 +21,13 @@
 		CameraRemoveDelay: 100
 		SpawnCameraAtGround: true
 		SelectTargetSpeechNotification: SelectTarget
-		SelectTargetTextNotification: Select target.
+		SelectTargetTextNotification: notification-select-target
 		EndChargeSpeechNotification: PsychicDominatorReady
-		EndChargeTextNotification: Psychic Dominator ready.
+		EndChargeTextNotification: notification-psychic-dominator-ready
 		# LaunchSpeechNotification: PsychicDominatorActivated
-		LaunchTextNotification: Warning: Psychic Dominator activated.
+		LaunchTextNotification: notification-psychic-dominator-activated
 		# IncomingSpeechNotification: PsychicDominatorActivated # doesn't exist
-		IncomingTextNotification: Warning: Psychic Dominator activated.
+		IncomingTextNotification: notification-psychic-dominator-activated
 		EndChargeSound: spsyopen.wav
 		ActivationSequence:
 		DisplayTimerRelationships: Ally, Neutral, Enemy

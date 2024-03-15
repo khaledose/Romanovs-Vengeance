@@ -4,7 +4,7 @@ cabhut:
 	FrozenUnderFog:
 	WithSpriteBody:
 	Tooltip:
-		Name: Bridge Repair Hut
+		Name: actor-cabhut.name
 	Building:
 		Footprint: x
 		Dimensions: 1, 1

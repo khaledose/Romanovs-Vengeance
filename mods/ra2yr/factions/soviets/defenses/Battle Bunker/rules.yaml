@@ -6,7 +6,7 @@ nabnkr:
 	Buildable:
 		Queue: Support.Shared, Support.Soviets
 		Prerequisites: ~building.soviets, ~techlevel.1
-		Description: Static defense with fireports for 6 garrisoned soldiers.\nInfantry inside cannot be killed by garrison killers.\nComes with a Conscript inside.\n\n  Cannot be placed on water.
+		Description: actor-nabnkr.description
 		BuildPaletteOrder: 40
 	IsometricSelectable:
 		DecorationHeight: 45
@@ -19,9 +19,9 @@ nabnkr:
 	RevealsShroud:
 		Range: 6c0
 	Tooltip:
-		Name: Soviet Battle Bunker
+		Name: actor-nabnkr.name
 	Tooltip@NoRow:
-		Name: Soviet Battle Bunker
+		Name: actor-nabnkr.name
 	AttackOpenTopped:
 		PortOffsets: 512,512,1024, -192,704,1024, -704,192,1024, -512,-512,1024, 192,-704,1024
 		PauseOnCondition: build-incomplete || chronodisable

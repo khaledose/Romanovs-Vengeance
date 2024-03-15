@@ -67,22 +67,22 @@
 		StartColorAlpha: 128
 		StartColorUsePlayerColor: false
 		EndColorUsePlayerColor: true
-		TrailWidth: 32
+		StartWidth: 32
 	Contrail@2:
 		Offset: -100,500,100
 		StartColor: 88888880
 		StartColorAlpha: 128
 		StartColorUsePlayerColor: false
 		EndColorUsePlayerColor: true
-		TrailWidth: 32
+		StartWidth: 32
 	Contrail@FlameTrail:
 		Offset: -500,0,50
 		StartColor: FFEA0080
 		StartColorAlpha: 128
 		StartColorUsePlayerColor: false
-		TrailWidth: 96
 		TrailLength: 7
-		WidthFadeRate: 0.8
+		StartWidth: 96
+		EndWidth: 76
 
 ^FighterJet:
 	Inherits: ^Plane
@@ -228,9 +228,9 @@
 		MovingInterval: 0
 		SpawnAtLastPosition: false
 		Type: CenterPosition
-	SpawnedExplodes:
+	ExplodesForMaster:
 		RequiresCondition: !rank-elite
-	SpawnedExplodes@Elite:
+	ExplodesForMaster@Elite:
 		RequiresCondition: rank-elite
 	ExternalCondition@RANK-ELITE:
 		Condition: rank-elite

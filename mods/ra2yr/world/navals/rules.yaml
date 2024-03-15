@@ -2,8 +2,6 @@ tug:
 	Inherits: ^Ship
 	Inherits@MC: ^MindControllable
 	Inherits@SQUID: ^SquidGrabbable
-	Buildable:
-		Queue: Ship.Civilian
 	Selectable:
 		Bounds: 1544, 2509, 0, -289
 	Health:
@@ -18,9 +16,9 @@ tug:
 	RevealsShroud:
 		Range: 8c0
 	Tooltip:
-		Name: Tug Boat
+		Name: actor-tug.name
 	Tooltip@NoRow:
-		Name: Tug Boat
+		Name: actor-tug.name
 	RenderVoxels:
 		NormalsPalette: ts-normals
 	AmbientSound:
@@ -32,8 +30,6 @@ cruise:
 	Inherits: ^Ship
 	Inherits@MC: ^MindControllable
 	Inherits@SQUID: ^SquidGrabbable
-	Buildable:
-		Queue: Ship.Allies
 	Selectable:
 		Bounds: 1544, 2509, 0, -289
 	Health:
@@ -48,41 +44,10 @@ cruise:
 	RevealsShroud:
 		Range: 8c0
 	Tooltip:
-		Name: Cruise Ship
+		Name: actor-cruise.name
 	Tooltip@NoRow:
-		Name: Cruise Ship
+		Name: actor-cruise.name
 	AmbientSound:
 		SoundFiles: gship1a
 		Interval: 500, 1000
 		Volume: 0.40
-
-# cdest:
-# 	Inherits: dest
-# 	Buildable:
-# 		Queue: Ship.Civilian
-# 	Tooltip:
-# 		Name: Coast Guard Boat
-# 	Tooltip@NoRow:
-# 		Name: Coast Guard Boat
-# 	Armor:
-# 		Type: Light
-# 	-Voiced:
-
-# vlad:
-# 	Inherits: dred
-# 	Buildable:
-# 		Queue: Ship.Civilian
-# 	Tooltip:
-# 		Name: Vladamir's Dreadnought
-# 	Tooltip@NoRow:
-# 		Name: Vladamir's Dreadnought
-# 	Health:
-# 		HP: 250000
-# 	Mobile:
-# 		Speed: 120
-# 	RevealsShroud:
-# 		Range: 8c0
-# 	WithVoxelBody@FULL:
-# 		RequiresCondition: loaded >= 2
-# 	WithVoxelBody@HALF:
-# 		RequiresCondition: loaded == 1

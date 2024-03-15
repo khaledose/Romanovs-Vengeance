@@ -3,14 +3,14 @@ beag:
 	Buildable:
 		Queue: Aircraft.Shared, Aircraft.Allies
 		Prerequisites: ~aircraft.korea, !prerequisite.enoughair, ~techlevel.3
-		Description: Aircraft armed with EMP bomb.\nCannot be built more than landing pads available.\n  Strong vs Buildings, Vehicles\n  Weak vs Infantry, Aircraft
+		Description: actor-beag.description
 		BuildPaletteOrder: 30
 	Health:
 		HP: 20000
 	Tooltip:
-		Name: Black Eagle
+		Name: actor-beag.name
 	Tooltip@NoRow:
-		Name: Black Eagle
+		Name: actor-beag.name
 	Armament:
 		Weapon: Maverick2
 		Damage: 200
@@ -34,9 +34,9 @@ beag:
 
 beaghusk:
 	Tooltip:
-		Name: Black Eagle
+		Name: actor-beag.name
 	Tooltip@NoRow:
-		Name: Black Eagle
+		Name: actor-beag.name
 	Aircraft:
 		TurnSpeed: 20
 		Speed: 210

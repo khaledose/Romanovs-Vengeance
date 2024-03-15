@@ -25,13 +25,13 @@
 		SpawnCameraAtGround: true
 		EndChargeSound: swearead.wav
 		SelectTargetSpeechNotification: SelectTarget
-		SelectTargetTextNotification: Select target.
+		SelectTargetTextNotification: notification-select-target
 		EndChargeSpeechNotification: LightningStormReady
-		EndChargeTextNotification: Lightning Storm ready.
+		EndChargeTextNotification: notification-lightning-storm-ready
 		LaunchSpeechNotification: LightningStormCreated
-		LaunchTextNotification: Warning: Lightning Storm created.
+		LaunchTextNotification: notification-lightning-storm-created
 		IncomingSpeechNotification: LightningStormCreated
-		IncomingTextNotification: Warning: Lightning Storm created.
+		IncomingTextNotification: notification-lightning-storm-created
 		DisplayTimerRelationships: Ally, Neutral, Enemy
 		DisplayRadarPing: True
 		TargetCircleUsePlayerColor: true

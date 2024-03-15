@@ -105,7 +105,7 @@
 		CargoType: Garrisoner
 	HiddenUnderFog:
 	ActorLostNotification:
-		TextNotification: Unit lost.
+		TextNotification: notification-unit-lost
 	ProximityCaptor:
 		Types: Infantry
 	Crushable:

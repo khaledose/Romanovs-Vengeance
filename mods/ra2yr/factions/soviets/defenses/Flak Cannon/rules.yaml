@@ -8,8 +8,8 @@ naflak:
 	Inherits@TURRET: ^WithVoxelTurretBuildingPowered
 	Buildable:
 		Queue: Support.Shared, Support.Soviets
-		Prerequisites: ~building.soviets, nahand, ~techlevel.2
-		Description: Automated anti-aircraft defense.\n\n  Strong vs Aircraft\n  Weak vs Ground units\n\nAbilities:\n- Can detect Steath units\n\n  Requires power to operate.
+		Prerequisites: ~building.soviets, nahand, ~techlevel.4
+		Description: actor-naflak.description
 		BuildPaletteOrder: 50
 	RequiresBuildableArea:
 		Adjacent: 2
@@ -26,9 +26,9 @@ naflak:
 	RevealsShroud:
 		Range: 5c0
 	Tooltip:
-		Name: Soviet Flak Cannon
+		Name: actor-naflak.name
 	Tooltip@NoRow:
-		Name: Soviet Flak Cannon
+		Name: actor-naflak.name
 	Armament:
 		Weapon: FlakWeapon
 		LocalOffset: 640,0,1536

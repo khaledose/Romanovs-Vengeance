@@ -12,8 +12,8 @@ fv:
 	Inherits@TURRET: ^WithVoxelTurret
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Allies
-		Prerequisites: ~vehicle.allies, ~techlevel.1
-		Description: Multi-Purpose Vehicle.\n\nWithout passenger:\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles, Ships\n\nAbilities:\n- Armament changes depending on passenger\n- Can detect Stealth units\n\nUpgradeable with:\n- Boost-Gliding Systems (United States)
+		Prerequisites: ~vehicle.allies, ~techlevel.3
+		Description: actor-fv.description
 		BuildDurationModifier: 100
 		BuildPaletteOrder: 30
 	Selectable:
@@ -33,9 +33,9 @@ fv:
 	RevealsShroud:
 		Range: 4c0
 	Tooltip:
-		Name: Infantry Fighting Vehicle
+		Name: actor-fv.name
 	Tooltip@NoRow:
-		Name: Infantry Fighting Vehicle
+		Name: actor-fv.name
 	Armament@primary:
 		Weapon: HoverMissile
 		Damage: 60

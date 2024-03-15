@@ -2,9 +2,9 @@ galite:
 	Inherits: ^CivBuilding
 	Inherits@SHAPE: ^1x1Shape
 	Tooltip:
-		Name: Light Post
+		Name: actor-galite.name
 	Tooltip@NoRow:
-		Name: Light Post
+		Name: actor-galite.name
 	Valued:
 		Cost: 200
 	RevealsShroud:

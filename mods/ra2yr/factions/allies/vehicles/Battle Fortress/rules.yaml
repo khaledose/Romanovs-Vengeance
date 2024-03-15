@@ -10,8 +10,8 @@ bfrt:
 	Inherits@ANNOUNCE: ^AnnounceProduction
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Allies
-		Prerequisites: ~vehicle.allies, gatech, ~techlevel.4
-		Description: Large vehicle with 5 fireports for infantry in to fire.\n\nAbilities:\n- Can crush enemy vehicles\n\nUpgradeable with:\n- Composite Armor
+		Prerequisites: ~vehicle.allies, gatech, ~techlevel.10
+		Description: actor-bfrt.description
 		BuildDurationModifier: 100
 		BuildPaletteOrder: 120
 	Selectable:
@@ -32,9 +32,9 @@ bfrt:
 	RevealsShroud:
 		Range: 6c0
 	Tooltip:
-		Name: Battle Fortress
+		Name: actor-bfrt.name
 	Tooltip@NoRow:
-		Name: Battle Fortress
+		Name: actor-bfrt.name
 	Armament@primary:
 		Weapon: 20mmrapid
 		Damage: 30

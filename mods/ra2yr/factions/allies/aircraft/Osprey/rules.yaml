@@ -14,9 +14,9 @@ asw:
 		TakeoffSounds: vospstaa.wav
 		LandingSounds: vosplana.wav
 	Tooltip:
-		Name: Osprey
+		Name: actor-asw.name
 	Tooltip@NoRow:
-		Name: Osprey
+		Name: actor-asw.name
 	Armament:
 		Weapon: ASWBomb
 		PauseOnCondition: !ammo
@@ -40,9 +40,9 @@ asw:
 
 aswhusk:
 	Tooltip:
-		Name: Osprey
+		Name: actor-asw.name
 	Tooltip@NoRow:
-		Name: Osprey
+		Name: actor-asw.name
 	Aircraft:
 		TurnSpeed: 20
 		Speed: 210

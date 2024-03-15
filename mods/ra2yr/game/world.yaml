@@ -250,7 +250,7 @@
 				Palette: resource
 				Name: Valuable Minerals
 	CliffBackImpassabilityLayer:
-	GlobalLightingPaletteEffect:
+	TintPostProcessEffect:
 		Ambient: 1.0
 		Red: 1.0
 		Green: 1.0
@@ -431,7 +431,7 @@ EditorWorld:
 				AllowedTerrainTypes: Clear, Sand, Rough, Dune, Road, DirtRoad
 				MaxDensity: 12
 	EditorSelectionLayer:
-		Palette: placefootprint
+		AltPixelOffset: 0,1
 	LoadWidgetAtGameStart:
 	EditorActionManager:
 	BuildableTerrainOverlay:

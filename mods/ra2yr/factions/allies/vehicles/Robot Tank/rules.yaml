@@ -10,7 +10,7 @@ robo:
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Allies
 		Prerequisites: ~vehicle.allies, garobo, ~techlevel.2
-		Description: Remote controlled vehicle.\nRequires an Allied War Factory to operate.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can move over water\n- Cannot be mind controlled
+		Description: actor-robo.description
 		BuildDurationModifier: 100
 		BuildPaletteOrder: 40
 	Selectable:
@@ -35,9 +35,9 @@ robo:
 	RevealsShroud:
 		Range: 6c0
 	Tooltip:
-		Name: Robot Tank
+		Name: actor-robo.name
 	Tooltip@NoRow:
-		Name: Robot Tank
+		Name: actor-robo.name
 	Armament:
 		Weapon: Robogun
 		Damage: 25

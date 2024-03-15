@@ -4,8 +4,8 @@ gaweat:
 	Inherits@SHAPE: ^3x3Shape
 	Buildable:
 		Queue: Support.Shared, Support.Allies
-		Prerequisites: ~building.allies, gatech, !enoughweather, ~techlevel.5
-		Description: Play God with deadly weather!\n\n  Requires power to operate.
+		Prerequisites: ~building.allies, gatech, !enoughweather, ~techlevel.10
+		Description: actor-gaweat.description
 		BuildPaletteOrder: 990
 	IsometricSelectable:
 		DecorationHeight: 75
@@ -20,14 +20,14 @@ gaweat:
 	RevealsShroud:
 		Range: 5c0
 	Tooltip:
-		Name: Allied Weather Controller
+		Name: actor-gaweat.name
 	Tooltip@NoRow:
-		Name: Allied Weather Controller
+		Name: actor-gaweat.name
 	ProvidesPrerequisite@swlimit:
 		Prerequisite: enoughweather
 	NotificationAnnouncement:
 		Notification: WeathercontrolDeviceDetected
-		TextNotification: Warning: Weather Control Device detected.
+		TextNotification: notification-weather-control-device-detected
 	Voiced:
 		VoiceSet: WeatherControllerVoice
 		Volume: 0.8

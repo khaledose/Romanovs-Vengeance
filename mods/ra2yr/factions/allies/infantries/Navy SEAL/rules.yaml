@@ -7,8 +7,8 @@ ghost:
 	Inherits@DEMOLITION: ^Demolitionist
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Allies
-		Prerequisites: ~infantry.allies, gaairc, ~techlevel.3
-		Description: Elite commando infantry, armed with a sub machine gun\nand C4 charges.\n\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can swim\n- Can place C4 on buildings\n\nUpgradeable with:\n- Advanced Training
+		Prerequisites: ~infantry.allies, gaairc, ~techlevel.9
+		Description: actor-ghost.description
 		BuildPaletteOrder: 8
 	Health:
 		HP: 12500
@@ -24,9 +24,9 @@ ghost:
 	RevealsShroud:
 		Range: 8c0
 	Tooltip:
-		Name: Navy SEAL
+		Name: actor-ghost.name
 	Tooltip@NoRow:
-		Name: Navy SEAL
+		Name: actor-ghost.name
 	Armament@primary:
 		Weapon: MP5
 		PauseOnCondition: chronodisable
