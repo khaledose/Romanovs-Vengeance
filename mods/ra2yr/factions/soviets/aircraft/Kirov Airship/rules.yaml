@@ -2,7 +2,7 @@ zep:
 	Inherits: ^Helicopter
 	Inherits@SELFHEALING: ^SelfHealing
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@AI: ^AIMicroManagable
+	Inherits@AI: ^AIControl
 	Buildable:
 		Queue: Aircraft.Shared, Aircraft.Soviets
 		Prerequisites: ~aircraft.soviets, natech, ~techlevel.10

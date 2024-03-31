@@ -5,7 +5,7 @@ naradr:
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@SPECIAL: SpyPlaneSpecial
 	Inherits@SHAPE: ^2x2Shape
-	Inherits@AI: ^AIMicroManagable
+	Inherits@AI: ^AIControl
 	Buildable:
 		Queue: Building.Shared, Building.Soviets
 		Prerequisites: ~building.soviets, narefn, ~techlevel.3, ~!ai.naradr

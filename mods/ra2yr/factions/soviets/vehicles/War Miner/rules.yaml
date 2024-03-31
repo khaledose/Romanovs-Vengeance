@@ -8,8 +8,8 @@ harv:
 		Queue: Vehicle.Shared, Vehicle.Soviets
 		Prerequisites: ~vehicle.soviets, narefn, ~!global-megawealth, ~techlevel.1
 		Description: actor-harv.description
-	Harvester:
-		Capacity: 20
+	StoresResources:
+		Capacity: 40
 	Tooltip:
 		Name: actor-harv.name
 	Tooltip@NoRow:
@@ -26,8 +26,6 @@ harv:
 		LocalOffset: 384,0,1024
 		MuzzleSequence: muzzle
 		RequiresCondition: rank-elite
-	AttackTurreted:
-		Voice: Attack
 	Turreted:
 		Offset: 196,0,-24
 	WithMuzzleOverlay:

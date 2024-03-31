@@ -2,6 +2,21 @@ yacnst:
 	Defaults:
 		Offset: 4, -58
 	idle:
+		Filename: ygcnst.shp
+		TilesetFilenames:
+			SNOW: yacnst.shp
+			SIMPLETERRAIN: ytcnst.shp
+		ShadowStart: 3
+		ZOffset: -1024
+	damaged-idle:
+		Filename: ygcnst.shp
+		TilesetFilenames:
+			SNOW: yacnst.shp
+			SIMPLETERRAIN: ytcnst.shp
+		Start: 1
+		ShadowStart: 4
+		ZOffset: -1024
+	idle-crane:
 		Filename: ygcnst_c.shp
 		TilesetFilenames:
 			SNOW: yacnst_c.shp
@@ -9,7 +24,7 @@ yacnst:
 		Length: 1
 		ShadowStart: 2
 		Tick: 150
-	damaged-idle:
+	damaged-idle-crane:
 		Filename: ygcnst_c.shp
 		TilesetFilenames:
 			SNOW: yacnst_c.shp
@@ -42,21 +57,6 @@ yacnst:
 		Length: 3
 		ShadowStart: 9
 		Tick: 150
-	idle-normal:
-		Filename: ygcnst.shp
-		TilesetFilenames:
-			SNOW: yacnst.shp
-			SIMPLETERRAIN: ytcnst.shp
-		ShadowStart: 3
-		ZOffset: -1024
-	damaged-idle-normal:
-		Filename: ygcnst.shp
-		TilesetFilenames:
-			SNOW: yacnst.shp
-			SIMPLETERRAIN: ytcnst.shp
-		Start: 1
-		ShadowStart: 4
-		ZOffset: -1024
 	build:
 		Filename: ygcnst_b.shp
 		TilesetFilenames:

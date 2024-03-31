@@ -1,16 +1,17 @@
 yarefn:
 	Inherits: ^Refinery
 	Inherits@EXPERIENCE: ^GainsExperience
-	# Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@TURRET: ^WithVoxelTurretBuilding
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@DEPLOY: ^UndeployIntoVehicle
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
 		Queue: Building.Shared, Building.Yuri
-		Prerequisites: ~building.yuri, yapowr, ~!global-megawealth, ~techlevel.1, ~AIantiRush
+		Prerequisites: ~building.yuri, yapowr, ~!global-megawealth, ~techlevel.1
 		Description: actor-yarefn.description
-		BuildPaletteOrder: 30
 	Building:
-		Footprint: xx x+
-		TerrainTypes: Clear, Sand, Rough, Dune, Road, DirtRoad
+		Footprint: x+ x+
+		UndeploySounds: vslade2a.wav
 	IsometricSelectable:
 		DecorationHeight: 45
 	Health:
@@ -25,54 +26,45 @@ yarefn:
 		Name: actor-yarefn.name
 	Tooltip@NoRow:
 		Name: actor-yarefn.name
-	# Armament@primary:
-	# 	Weapon: 20mmrapid
-	# 	Damage: 30
-	# 	LocalOffset: 512, 0, 1132
-	# 	MuzzleSequence: muzzle
-	# 	RequiresCondition: !rank-elite
-	# Armament@elite:
-	# 	Weapon: 20mmrapidE
-	# 	Damage: 50
-	# 	LocalOffset: 512, 0, 1132
-	# 	MuzzleSequence: muzzle
-	# 	RequiresCondition: rank-elite
-	ProvidesPrerequisite@showslave:
-		Prerequisite: showslave
-	SlaveMinerMaster:
+	Armament@primary:
+		Weapon: 20mmRapid
+		Damage: 30
+		LocalOffset: 512, 0, 1132
+		MuzzleSequence: muzzle
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: 20mmRapidE
+		Damage: 50
+		LocalOffset: 512, 0, 1132
+		MuzzleSequence: muzzle
+		RequiresCondition: rank-elite
+	Turreted:
+		Offset: -724, -576, 1536
+	WithMuzzleOverlay:
+	RenderVoxels:
+		Image: smin
+	DeployedMasterMiner:
 		Actors: slav,slav,slav,slav,slav
-		Resources: Ore, Gems
+		ScanRadius: 10
+		ScanDelay: 50
+		LinkToParent: true
 		SlaveDisposalOnKill: GiveSlavesToAttacker
-		KickDelay: 5
-		FreeSound: isl1lia.wav
+		SlaveDisposalOnOwnerChange: GiveSlavesToAttacker
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete
 	DockHost:
-		DockOffset: 0c725, 0c725, 0
+		Type: InfantryUnload
+		DockOffset: 724, 1448, 0
 		DockAngle: 120
 		MaxQueueLength: 5
+	DockHost@1:
+		Type: InfantryUnload
+		DockOffset: 1448, 724, 0
+		DockAngle: 120
+		MaxQueueLength: 5
+		RequiresCondition: !chronodisable
 	Transforms:
-		Facing: 896
 		IntoActor: smin
-		DeployCursor: undeploy
-		Voice: Undeploy
-		PauseOnCondition: chronodisable
-		# RequiresCondition: !build-incomplete
-	TransformsIntoMobile:
-		Locomotor: tracked
-		Voice: Move
-		RequiresForceMove: false
-		# RequiresCondition: !build-incomplete && !chronodisable
-	TransformsIntoRepairable:
-		RepairActors: gadept, nadept, nadepb, caoutp, caoutb
-		Voice: Move
-		RequiresForceMove: false
-		# RequiresCondition: !build-incomplete && !chronodisable
-	TransformsIntoPassenger:
-		CargoType: Vehicle
-		Voice: Move
-		RequiresForceMove: false
-		# RequiresCondition: !build-incomplete && !chronodisable
-	TransferTimedExternalConditionOnTransform@INVULNERABILITY:
-		Condition: invulnerability
 	WithIdleOverlay@bib:
 		Sequence: idle-bib
 		PauseOnCondition: chronodisable
@@ -117,25 +109,6 @@ yarefn:
 		Speed: 0, 36
 		Gravity: 100, 150
 		Duration: 20
-	# Turreted:
-	# 	TurnSpeed: 20
-	# 	InitialFacing: 128
-	# 	Offset: 640,0,0
-	# AttackTurreted:
-	# 	Voice: Attack
-	# 	PauseOnCondition: chronodisable
-	# 	RequiresCondition: !build-incomplete
-	# WithVoxelTurret:
-	# 	RequiresCondition: !build-incomplete
-	# WithMuzzleOverlay:
-	# RenderVoxels:
-	# 	Image: smin
-	# 	Scale: 11.7
-	# 	LightYaw: 800
-	# 	LightPitch: 150
-	# 	LightAmbientColor: -0.5,-0.5,-0.5
-	# 	LightDiffuseColor: 1.3,1.3,1.3
-	RangedGpsDot:
-		Sequence: Harvester
 	Voiced:
 		VoiceSet: SlaveMinerVoice
+	-Sellable:

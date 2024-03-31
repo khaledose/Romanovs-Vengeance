@@ -1,11 +1,11 @@
-﻿using OpenRA.Activities;
+﻿using System.Linq;
+using OpenRA;
+using OpenRA.Activities;
 using OpenRA.Mods.Common;
-using OpenRA.Mods.Common.Traits;
-using OpenRA.Mods.RA2.Traits;
+using OpenRA.Mods.RA2.Mechanics.ChronoTeleporting.Traits;
 using OpenRA.Traits;
-using System.Linq;
 
-namespace OpenRA.Mods.RA2.Activities.Move
+namespace OpenRA.Mods.RA2.Mechanics.ChronoTeleporting.Activities
 {
 	public class TeleportAdjacentTo : Activity
 	{

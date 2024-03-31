@@ -20,12 +20,9 @@ napowr:
 		Name: actor-napowr.name
 	Tooltip@NoRow:
 		Name: actor-napowr.name
-	Voiced:
-		VoiceSet: PowerPlantVoice
-		Volume: 0.8
-	Explodes:
-		Weapon: TeslaReactorExplosion
 	WithIdleOverlay@lights:
 		Sequence: idle-lights
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
+	Explodes:
+		Weapon: TeslaReactorExplosion

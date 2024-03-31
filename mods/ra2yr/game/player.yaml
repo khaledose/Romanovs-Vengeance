@@ -112,9 +112,6 @@ Player:
 		CancelledAudio: Cancelled
 		SpeedUp: true
 		BuildTimeSpeedReduction: 100, 91, 82, 73, 64, 55, 50
-	GrantConditionOnPrerequisite@multiqueue:
-		Condition: multiqueue
-		Prerequisites: global-multiqueue
 	PlaceBuilding:
 		ToggleVariantKey: ToggleVariant
 		NewOptionsNotification: NewOptions

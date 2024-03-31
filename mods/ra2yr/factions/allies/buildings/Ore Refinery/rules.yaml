@@ -4,7 +4,7 @@ garefn:
 	Inherits@SHAPE: ^NormalRefineryShape
 	Buildable:
 		Queue: Building.Shared, Building.Allies
-		Prerequisites: ~building.allies, gapowr, ~!global-megawealth, ~techlevel.1, ~AIantiRush
+		Prerequisites: ~building.allies, gapowr, ~!global-megawealth, ~techlevel.1
 	IsometricSelectable:
 		DecorationHeight: 60
 	Power:

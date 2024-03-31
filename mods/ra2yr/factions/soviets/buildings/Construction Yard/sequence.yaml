@@ -2,6 +2,21 @@ nacnst:
 	Defaults:
 		Offset: 4, -58
 	idle:
+		Filename: ngcnst.shp
+		TilesetFilenames:
+			SNOW: nacnst.shp
+			SIMPLETERRAIN: ntcnst.shp
+		ShadowStart: 3
+		ZOffset: -1024
+	damaged-idle:
+		Filename: ngcnst.shp
+		TilesetFilenames:
+			SNOW: nacnst.shp
+			SIMPLETERRAIN: ntcnst.shp
+		Start: 1
+		ShadowStart: 4
+		ZOffset: -1024
+	idle-crane:
 		Filename: ngcnst_c.shp
 		TilesetFilenames:
 			SNOW: nacnst_c.shp
@@ -9,7 +24,7 @@ nacnst:
 		Length: 1
 		ShadowStart: 4
 		Tick: 150
-	damaged-idle:
+	damaged-idle-crane:
 		Filename: ngcnst_c.shp
 		TilesetFilenames:
 			SNOW: nacnst_c.shp
@@ -44,27 +59,13 @@ nacnst:
 		Start: 11
 		Length: 11
 		Tick: 150
-	idle-normal:
-		Filename: ngcnst.shp
-		TilesetFilenames:
-			SNOW: nacnst.shp
-			SIMPLETERRAIN: ntcnst.shp
-		ShadowStart: 3
-		ZOffset: -1024
-	damaged-idle-normal:
-		Filename: ngcnst.shp
-		TilesetFilenames:
-			SNOW: nacnst.shp
-			SIMPLETERRAIN: ntcnst.shp
-		Start: 1
-		ShadowStart: 4
-		ZOffset: -1024
 	build:
 		Filename: ngcnst_b.shp
 		TilesetFilenames:
 			SNOW: nacnst_b.shp
 			SIMPLETERRAIN: ntcnst_b.shp
 		Length: 21
+		ShadowStart: 42
 		Tick: 150
 		ZOffset: 1c0
 	damaged-build:
@@ -74,6 +75,7 @@ nacnst:
 			SIMPLETERRAIN: ntcnst_b.shp
 		Start: 21
 		Length: 21
+		ShadowStart: 63
 		Tick: 150
 		ZOffset: 1c0
 	idle-waves:

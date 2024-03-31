@@ -5,9 +5,11 @@ slav:
 	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
 	Buildable:
 		Queue: Infantry.Unused
-		Prerequisites: ~showslave, yarefn, ~techlevel.1
+		Prerequisites: ~yarefn, ~techlevel.1
 		Description: actor-slav.description
 		BuildPaletteOrder: 60
+	Selectable:
+		Priority: 6
 	Health:
 		HP: 12500
 	Armor:
@@ -28,6 +30,18 @@ slav:
 		Weapon: Shovel
 		Damage: 30
 		PauseOnCondition: chronodisable
+	SlaveMiner:
+		MasterDeadCondition: freeslave
+		FreeSound: isl1lia.wav
+		AllowOwnerChange: true
+	Harvester:
+		RequiresCondition: !freeslave
+	RejectsOrders:
+		RequiresCondition: !freeslave
 	Voiced:
 		VoiceSet: SlaveVoice
+		RequiresCondition: !freeslave
+	Voiced@free:
+		VoiceSet: FreeSlaveVoice
+		RequiresCondition: freeslave
 	-TakeCover:

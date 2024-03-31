@@ -3,6 +3,7 @@
 		TurnSpeed: 1023
 		RealignDelay: -1
 	AttackTurreted:
+		Voice: Attack
 		OutsideRangeRequiresForceFire: True
 		PauseOnCondition: chronodisable
 	BodyOrientation:

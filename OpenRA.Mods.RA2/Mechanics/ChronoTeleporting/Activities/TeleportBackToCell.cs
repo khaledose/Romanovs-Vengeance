@@ -1,9 +1,9 @@
 ﻿using OpenRA.Activities;
 using OpenRA.Mods.Common.Activities;
 using OpenRA.Mods.Common.Traits;
-using OpenRA.Mods.RA2.Traits;
+using OpenRA.Mods.RA2.Mechanics.ChronoTeleporting.Traits;
 
-namespace OpenRA.Mods.RA2.Activities
+namespace OpenRA.Mods.RA2.Mechanics.ChronoTeleporting.Activities
 {
 	public class TeleportBackToCell : Activity
 	{

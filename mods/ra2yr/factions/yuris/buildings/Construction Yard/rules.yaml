@@ -4,16 +4,6 @@ yacnst:
 		DecorationHeight: 60
 	ProvidesPrerequisite@building.yuri:
 		Prerequisite: building.yuri
-	Production:
-		Produces: Building.Yuri, Support.Yuri
-	ProductionQueue@Building:
-		Type: Building.Yuri
-	ProductionQueue@Support:
-		Type: Support.Yuri
-	ProductionBar@Building:
-		ProductionType: Building.Yuri
-	ProductionBar@Support:
-		ProductionType: Support.Yuri
 	Transforms:
 		IntoActor: pcv
 	GrantConditionOnFaction@Psicorps:
@@ -22,13 +12,13 @@ yacnst:
 	WithIdleOverlay@top:
 		Sequence: idle-top
 		RequiresCondition: !build-incomplete
-	WithIdleOverlay@normal:
-		Sequence: idle-normal
-		RequiresCondition: !build-incomplete
 	WithIdleOverlay@Psicorps:
 		Sequence: flag-psicorps
 		RequiresCondition: !build-incomplete && psicorps
-	WithBuildingPlacedAnimation:
+	WithSpriteBody@crane:
+		Sequence: idle-crane
+		Name: crane
 		RequiresCondition: !build-incomplete
-	Voiced:
-		VoiceSet: YuriConstructionYardVoice
+	WithBuildingPlacedAnimation:
+		Body: crane
+		RequiresCondition: !build-incomplete

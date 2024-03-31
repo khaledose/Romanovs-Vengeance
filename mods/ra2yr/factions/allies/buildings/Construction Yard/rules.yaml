@@ -7,16 +7,6 @@ gacnst:
 	ProvidesPrerequisite@building.france:
 		Prerequisite: building.france
 		Factions: france
-	Production:
-		Produces: Building.Allies, Support.Allies
-	ProductionQueue@Building:
-		Type: Building.Allies
-	ProductionQueue@Support:
-		Type: Support.Allies
-	ProductionBar@Building:
-		ProductionType: Building.Allies
-	ProductionBar@Support:
-		ProductionType: Support.Allies
 	Transforms:
 		IntoActor: amcv
 	GrantConditionOnFaction@America:
@@ -60,5 +50,3 @@ gacnst:
 		RequiresCondition: !build-incomplete
 	WithBuildingPlacedOverlay:
 		RequiresCondition: !build-incomplete && !chronodisable
-	Voiced:
-		VoiceSet: AlliedConstructionYardVoice

@@ -257,7 +257,7 @@
 			BottomRight: 2048, 2048
 	Building:
 		Footprint: xxxx xxxx xxxx xxxx
-		Dimensions: 4, 4
+		Dimensions: 4,4
 
 ^4x4Rubble:
 	Inherits: ^4x4Shape

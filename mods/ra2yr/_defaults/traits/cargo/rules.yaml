@@ -47,13 +47,13 @@
 	ChangeOwnerOnGarrison:
 
 ^TransportableInfantry:
-	Passenger@TRANSPORT:
+	Passenger:
 		CargoType: Infantry
 		Weight: 1
 		Voice: Move
 
 ^TransportableVehicle:
-	Passenger@TRANSPORT:
+	Passenger:
 		CargoType: Vehicle
 		Weight: 3
 		Voice: Move

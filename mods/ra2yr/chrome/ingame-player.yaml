@@ -880,15 +880,15 @@ Container@PLAYER_WIDGETS:
 							Background: scrolldown-buttons
 							TooltipText: button-production-types-scroll-down-tooltip
 							TooltipContainer: TOOLTIP_CONTAINER
-		ProductionTabs@PRODUCTION_TABS:
-			Logic: ProductionTabsLogic, AddFactionSuffixLogic
-			PaletteWidget: PRODUCTION_PALETTE
-			TypesContainer: PRODUCTION_TYPES
-			BackgroundContainer: PRODUCTION_BACKGROUND
-			X: WINDOW_RIGHT - 212
-			Y: 275
-			Width: 187
-			Height: 20
+		# ProductionTabs@PRODUCTION_TABS:
+		# 	Logic: ProductionTabsLogic, AddFactionSuffixLogic
+		# 	PaletteWidget: PRODUCTION_PALETTE
+		# 	TypesContainer: PRODUCTION_TYPES
+		# 	BackgroundContainer: PRODUCTION_BACKGROUND
+		# 	X: WINDOW_RIGHT - 212
+		# 	Y: 275
+		# 	Width: 187
+		# 	Height: 20
 		Container@HPF_ROOT:
 			Logic: LoadIngameHierarchicalPathFinderOverlayLogic
 			X: WINDOW_RIGHT - WIDTH - 240

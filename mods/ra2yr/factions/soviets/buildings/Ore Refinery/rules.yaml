@@ -4,7 +4,7 @@ narefn:
 	Inherits@SHAPE: ^NormalRefineryShape
 	Buildable:
 		Queue: Building.Shared, Building.Soviets
-		Prerequisites: ~building.soviets, napowr, ~!global-megawealth, ~techlevel.1, ~AIantiRush
+		Prerequisites: ~building.soviets, napowr, ~!global-megawealth, ~techlevel.1
 	IsometricSelectable:
 		DecorationHeight: 90
 	Power:

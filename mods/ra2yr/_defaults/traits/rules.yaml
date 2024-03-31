@@ -441,11 +441,6 @@
 ^Parachutable:
 	Parachutable:
 		FallRate: 52
-		KilledOnImpassableTerrain: true
-		GroundCorpseSequence:
-		GroundCorpsePalette:
-		WaterCorpseSequence:
-		WaterCorpsePalette:
 		ParachutingCondition: parachute
 	WithParachute:
 		Image: parach
@@ -455,7 +450,7 @@
 		ClosingSequence: close
 		ShadowSequence: shadow
 		RequiresCondition: parachute
-	Passenger@TRANSPORT:
+	Passenger:
 
 ^ParachutableInfantry:
 	Inherits: ^Parachutable
@@ -661,6 +656,13 @@
 		CaptureDelay: 75
 		CaptureTypes: building, tech, husk
 		RequiresCondition: !instantcapture && !chronodisable
+	Captures@INSTANTMCV:
+		CaptureTypes: mcv
+		RequiresCondition: instantcapture && !chronodisable && !suddendeath
+	Captures@TIMEDMCV:
+		CaptureTypes: mcv
+		CaptureDelay: 75
+		RequiresCondition: !instantcapture && !chronodisable && !suddendeath
 	GrantConditionOnPrerequisite@INSTANTCAPTURE:
 		Condition: instantcapture
 		Prerequisites: global-instantcapture

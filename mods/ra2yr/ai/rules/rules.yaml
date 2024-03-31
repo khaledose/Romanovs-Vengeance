@@ -1,0 +1,144 @@
+^EasyAI:
+	ModularBot@easy:
+		Name: Easy AI
+		Type: easy
+	GrantConditionOnBotOwner@easy:
+		Condition: enable-easy-ai
+		Bots: easy
+	BuildingRepairBotModule@easy:
+		RequiresCondition: enable-easy-ai
+	McvManagerBotModule@easy:
+		RequiresCondition: enable-easy-ai && !megawealth
+		McvTypes: amcv, smcv, pcv
+		ConstructionYardTypes: gacnst, nacnst, yacnst
+		MaxBaseRadius: 25
+	HarvesterBotModule:
+		HarvesterTypes: cmin, harv, smin
+		RefineryTypes: garefn, narefn, yarefn
+	BaseBuilderBotModule@easy:
+		RequiresCondition: enable-easy-ai && !megawealth
+		BuildingQueues: Building.Shared
+		DefenseQueues: Support.Shared
+		ConstructionYardTypes: gacnst, nacnst, yacnst
+		PowerTypes: gapowr, napowr, yapowr, yapowr-full
+		RefineryTypes: garefn, narefn, yarefn
+		MinimumExcessPower: 50
+		MaximumExcessPower: 200
+		AdditionalMinimumRefineryCount: 1
+		MaxBaseRadius: 25
+		BuildingLimits:
+			gapowr: 100
+			napowr: 100
+			nanrct: 100
+			yapowr: 100
+			yapowr-full: 100
+			garefn: 100
+			narefn: 100
+			yarefn: 100
+		BuildingFractions:
+			gapowr: 1
+			napowr: 1
+			yapowr: 1
+			yapowr-full: 1
+			garefn: 1
+			narefn: 1
+			yarefn: 1
+
+^HardAI:
+	ModularBot@hard:
+		Name: Hard AI
+		Type: hard
+	GrantConditionOnBotOwner@hard:
+		Condition: enable-hard-ai
+		Bots: hard
+	BuildingRepairBotModule@hard:
+		RequiresCondition: enable-hard-ai
+	McvManagerBotModule@hard:
+		RequiresCondition: enable-hard-ai && !megawealth
+		McvTypes: amcv, smcv, pcv
+		ConstructionYardTypes: gacnst, nacnst, yacnst
+		MaxBaseRadius: 35
+		MinimumConstructionYardCount: 3
+	HarvesterBotModule:
+		HarvesterTypes: cmin, harv, smin
+		RefineryTypes: garefn, narefn, yarefn
+	BaseBuilderBotModule@hard:
+		RequiresCondition: enable-hard-ai && !megawealth
+		BuildingQueues: Building.Shared
+		DefenseQueues: Support.Shared
+		ConstructionYardTypes: gacnst, nacnst, yacnst
+		PowerTypes: gapowr, napowr, yapowr, yapowr-full
+		RefineryTypes: garefn, narefn, yarefn
+		MinimumExcessPower: 100
+		MaximumExcessPower: 500
+		AdditionalMinimumRefineryCount: 2
+		MaxBaseRadius: 35
+		BuildingLimits:
+			gapowr: 100
+			napowr: 100
+			nanrct: 100
+			yapowr: 100
+			yapowr-full: 100
+			garefn: 100
+			narefn: 100
+			yarefn: 100
+		BuildingFractions:
+			gapowr: 1
+			napowr: 1
+			yapowr: 1
+			yapowr-full: 1
+			garefn: 1
+			narefn: 1
+			yarefn: 1
+
+^ImpossibleAI:
+	ModularBot@impossible:
+		Name: Impossible AI
+		Type: impossible
+	GrantConditionOnBotOwner@impossible:
+		Condition: enable-impossible-ai
+		Bots: impossible
+	BuildingRepairBotModule@impossible:
+		RequiresCondition: enable-impossible-ai
+	McvManagerBotModule@impossible:
+		RequiresCondition: enable-impossible-ai #&& !megawealth
+		McvTypes: amcv, smcv, pcv
+		ConstructionYardTypes: gacnst, nacnst, yacnst
+		MaxBaseRadius: 50
+		MinimumConstructionYardCount: 5
+	HarvesterBotModule:
+		HarvesterTypes: cmin, harv, smin
+		RefineryTypes: garefn, narefn, yarefn
+	BaseBuilderBotModule@impossible:
+		RequiresCondition: enable-impossible-ai #&& !megawealth
+		BuildingQueues: Building.Shared
+		DefenseQueues: Support.Shared
+		ConstructionYardTypes: gacnst, nacnst, yacnst
+		PowerTypes: gapowr, napowr, yapowr, yapowr-full
+		RefineryTypes: garefn, narefn, yarefn
+		MinimumExcessPower: 200
+		MaximumExcessPower: 1500
+		AdditionalMinimumRefineryCount: 3
+		MaxBaseRadius: 50
+		BuildingLimits:
+			gapowr: 100
+			napowr: 100
+			nanrct: 100
+			yapowr: 100
+			yapowr-full: 100
+			garefn: 100
+			narefn: 100
+			yarefn: 100
+		BuildingFractions:
+			gapowr: 1
+			napowr: 1
+			yapowr: 1
+			yapowr-full: 1
+			garefn: 1
+			narefn: 1
+			yarefn: 1
+
+Player:
+	Inherits@EASY: ^EasyAI
+	Inherits@HARD: ^HardAI
+	Inherits@IMPOSSIBLE: ^ImpossibleAI

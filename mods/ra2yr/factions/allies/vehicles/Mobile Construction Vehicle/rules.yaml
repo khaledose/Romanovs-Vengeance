@@ -2,7 +2,7 @@ amcv:
 	Inherits: ^ConstructionVehicle
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Allies
-		Prerequisites: ~vehicle.allies, gadept, ~techlevel.10, ~!global-suddendeath, ~!ai.mcv
+		Prerequisites: ~vehicle.allies, gadept, ~techlevel.10, ~!global-suddendeath
 	Transforms:
 		IntoActor: gacnst
 	Voiced:

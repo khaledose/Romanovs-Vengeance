@@ -1,6 +1,6 @@
 ggi:
 	Inherits: ^GroundInfantry
-	Inherits@AI: ^AIMicroManagable
+	Inherits@AI: ^AIControl
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@VETERAN: ^InfantryPromotable
 	Inherits@MC: ^MindControllable

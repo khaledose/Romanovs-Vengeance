@@ -4,16 +4,6 @@ nacnst:
 		DecorationHeight: 90
 	ProvidesPrerequisite@building.soviets:
 		Prerequisite: building.soviets
-	Production:
-		Produces: Building.Soviets, Support.Soviets
-	ProductionQueue@Building:
-		Type: Building.Soviets
-	ProductionQueue@Support:
-		Type: Support.Soviets
-	ProductionBar@Building:
-		ProductionType: Building.Soviets
-	ProductionBar@Support:
-		ProductionType: Support.Soviets
 	Transforms:
 		IntoActor: smcv
 	GrantConditionOnFaction@USSR:
@@ -32,9 +22,12 @@ nacnst:
 		Sequence: idle-top
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
-	WithIdleOverlay@normal:
-		Sequence: idle-normal
-		PauseOnCondition: chronodisable
+	WithSpriteBody@crane:
+		Sequence: idle-crane
+		Name: crane
+		RequiresCondition: !build-incomplete
+	WithBuildingPlacedAnimation:
+		Body: crane
 		RequiresCondition: !build-incomplete
 	WithIdleOverlay@USSR:
 		Sequence: flag-russia
@@ -66,7 +59,3 @@ nacnst:
 		Sequence: idle-hns
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete && (russia || iraq || cuba || libya)
-	WithBuildingPlacedAnimation:
-		RequiresCondition: !build-incomplete
-	Voiced:
-		VoiceSet: SovietConstructionYardVoice

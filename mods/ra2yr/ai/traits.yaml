@@ -1,4 +1,4 @@
-^AIMicroManagable:
+^AIControl:
 	GrantConditionOnBotOwner@ai-control:
 		Condition: ai-control
 		Bots: easy, cheater, vengeful
@@ -30,7 +30,7 @@
 		RequiresCondition: enable-vengeful-ai
 
 # ^AITransportControl: ## For Cargo trait
-# 	Inherits@AI: ^AIMicroManagable
+# 	Inherits@AI: ^AIControl
 # 	Cargo:
 # 		LoadedCondition: loaded
 # 	AutoDeployer@AI:

@@ -1,0 +1,51 @@
+^AIControl:
+	GrantConditionOnBotOwner@easy:
+		Condition: easy-ai
+		Bots: easy
+	GrantConditionOnBotOwner@hard:
+		Condition: hard-ai
+		Bots: hard
+	GrantConditionOnBotOwner@impossible:
+		Condition: impossible-ai
+		Bots: impossible
+
+^AIBuildTimeModifier:
+	Inherits: ^AIControl
+	ProvidesPrerequisite@easy-production-multiplier:
+		Prerequisite: easy-production-multiplier
+		RequiresCondition: easy-ai
+	ProvidesPrerequisite@hard-production-multiplier:
+		Prerequisite: hard-production-multiplier
+		RequiresCondition: hard-ai
+	ProvidesPrerequisite@impossible-production-multiplier:
+		Prerequisite: impossible-production-multiplier
+		RequiresCondition: impossible-ai
+	ProductionTimeMultiplier@easy:
+		Multiplier: 80
+		Prerequisites: easy-production-multiplier
+		Queue: Building.Shared, Support.Shared
+	ProductionTimeMultiplier@hard:
+		Multiplier: 50
+		Prerequisites: hard-production-multiplier
+		Queue: Building.Shared, Support.Shared
+	ProductionTimeMultiplier@impossible:
+		Multiplier: 20
+		Prerequisites: impossible-production-multiplier
+		Queue: Building.Shared, Support.Shared
+
+^AICashCheat:
+	Inherits: ^AIControl
+	CashTrickler@AI:
+		Interval: 1000
+		Amount: 500
+		ShowTicks: false
+		RequiresCondition: easy-ai || hard-ai || impossible-ai
+	CashTricklerMultiplier@easy:
+		Modifier: 100
+		RequiresCondition: easy-ai
+	CashTricklerMultiplier@hard:
+		Modifier: 200
+		RequiresCondition: hard-ai
+	CashTricklerMultiplier@impossible:
+		Modifier: 400
+		RequiresCondition: impossible-ai

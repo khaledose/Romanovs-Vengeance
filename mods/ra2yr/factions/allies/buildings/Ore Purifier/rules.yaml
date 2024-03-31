@@ -2,7 +2,6 @@ gaorep:
 	Inherits: ^BaseStructure
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@SHAPE: ^3x3Shape
-	Inherits@AICash: ^AICashCheat
 	Buildable:
 		Queue: Building.Shared, Building.Allies
 		Prerequisites: ~building.allies, garefn, gatech, ~techlevel.10

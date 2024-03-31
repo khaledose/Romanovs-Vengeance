@@ -237,16 +237,16 @@ ApocalypseVoice:
 		Move: vapomoa, vapomob, vapomoc, vapomod, vapomoe
 		Attack: vapoata, vapoatb, vapoatc, vapoatd, vapoate, vapoatf
 
-SlaveMinerVoice:
-	DefaultVariant: .wav
-	Voices:
-		Build: vslasea
-		Select: vslaseb, vslasec, vslased, vslasee, vslasef, vslaseg
-		Move: vslamoa, vslamoc, vslamoe, vslamof
-		Attack: vslaata, vslaatb, vslaatc, vslaate
-		Harvest: vslahaa, vslahab, vslahac, vslahad, vslamod
-		Deploy: vslahae
-		Undeploy: vslamob
+# SlaveMinerVoice:
+# 	DefaultVariant: .wav
+# 	Voices:
+# 		Build: vslasea
+# 		Select: vslaseb, vslasec, vslased, vslasee, vslasef, vslaseg
+# 		Move: vslamoa, vslamoc, vslamoe, vslamof
+# 		Attack: vslaata, vslaatb, vslaatc, vslaate
+# 		Harvest: vslahaa, vslahab, vslahac, vslahad, vslamod
+# 		Deploy: vslahae
+# 		Undeploy: vslamob
 
 LasherTankVoice:
 	DefaultVariant: .wav
@@ -1136,29 +1136,29 @@ CarVoice:
 # 		Attack: grexatta, grexattb, grexattc
 # 		Die: grexdiea
 
-ConstructionYardVoice:
-	DefaultVariant: .wav
-	Voices:
-		Select: bconsela
-		Move:
+# ConstructionYardVoice:
+# 	DefaultVariant: .wav
+# 	Voices:
+# 		Select: bconsela
+# 		Move:
 
-AlliedConstructionYardVoice:
-	DefaultVariant: .wav
-	Voices:
-		Select: bconsela
-		Move: vmcamoa, vmcamob, vmcamoc, vmcamod, vmcamoe, vmcamof
+# AlliedConstructionYardVoice:
+# 	DefaultVariant: .wav
+# 	Voices:
+# 		Select: bconsela
+# 		Move: vmcamoa, vmcamob, vmcamoc, vmcamod, vmcamoe, vmcamof
 
-SovietConstructionYardVoice:
-	DefaultVariant: .wav
-	Voices:
-		Select: bconsela
-		Move: vmcsmoa, vmcsmob, vmcsmoc, vmcsmod, vmcsmoe
+# SovietConstructionYardVoice:
+# 	DefaultVariant: .wav
+# 	Voices:
+# 		Select: bconsela
+# 		Move: vmcsmoa, vmcsmob, vmcsmoc, vmcsmod, vmcsmoe
 
-YuriConstructionYardVoice:
-	DefaultVariant: .wav
-	Voices:
-		Select: bconsela
-		Move: vmcymoa, vmcymob, vmcymoc, vmcymod, vmcymoe
+# YuriConstructionYardVoice:
+# 	DefaultVariant: .wav
+# 	Voices:
+# 		Select: bconsela
+# 		Move: vmcymoa, vmcymob, vmcymoc, vmcymod, vmcymoe
 
 ExpansionNodeVoice:
 	DefaultVariant: .wav
@@ -1184,11 +1184,11 @@ YuriExpansionNodeVoice:
 		Select: bexpsela
 		Move: vmcymoa, vmcymob, vmcymoc, vmcymod, vmcymoe
 
-PowerPlantVoice:
-	DefaultVariant: .wav
-	Voices:
-		Action:
-		Select: bpwrsela
+# PowerPlantVoice:
+# 	DefaultVariant: .wav
+# 	Voices:
+# 		Action:
+# 		Select: bpwrsela
 
 BarracksVoice:
 	DefaultVariant: .wav

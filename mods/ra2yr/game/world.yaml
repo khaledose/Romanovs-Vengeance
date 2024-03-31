@@ -268,8 +268,8 @@ World:
 	HelpCommand:
 	ScreenShaker:
 	BuildingInfluence:
-	ProductionQueueFromSelection:
-		ProductionTabsWidget: PRODUCTION_TABS
+	# ProductionQueueFromSelection:
+	# 	ProductionTabsWidget: PRODUCTION_TABS
 	SmudgeLayer@smallscorch:
 		Type: SmallScorch
 		Sequence: smallscorches
@@ -342,7 +342,7 @@ World:
 	Inherits@SovietsStartingOptions: ^SovietsStartingOptions
 	Inherits@YurisStartingOptions: ^YurisStartingOptions
 	CrateSpawner:
-		DeliveryAircraft: pdplane
+		# DeliveryAircraft: pdplane
 		Minimum: 1
 		Maximum: 255
 		SpawnInterval: 3000

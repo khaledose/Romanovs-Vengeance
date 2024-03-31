@@ -41,6 +41,15 @@ waterexplosion:
 	large:
 		Filename: conquer|h2o_exp1.shp
 
+chronoexplosion:
+	Inherits: ^Explosion
+	warpin:
+		Filename: conquer|warpin.shp
+	warpout:
+		Filename: conquer|warpout.shp
+	warpaway:
+		Filename: conquer|warpaway.shp
+
 explosion:
 	Defaults:
 		Length: *

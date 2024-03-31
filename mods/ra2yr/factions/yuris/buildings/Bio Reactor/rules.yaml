@@ -37,8 +37,6 @@ yapowr:
 		Name: actor-yapowr.name
 	Tooltip@NoRow:
 		Name: actor-yapowr.name
-	Explodes:
-		Weapon: PowerPlantExplosion
 	WithIdleOverlay@empty:
 		Sequence: empty
 		PauseOnCondition: chronodisable
@@ -51,6 +49,5 @@ yapowr:
 		Sequence: idle-lights
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
-	Voiced:
-		VoiceSet: PowerPlantVoice
-		Volume: 0.8
+	Explodes:
+		Weapon: PowerPlantExplosion

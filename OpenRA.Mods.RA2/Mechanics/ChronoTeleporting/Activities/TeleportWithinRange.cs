@@ -1,11 +1,11 @@
-﻿using OpenRA.Activities;
-using OpenRA.Mods.RA2.Traits;
+﻿using System.Collections.Generic;
+using System.Linq;
+using OpenRA.Activities;
+using OpenRA.Mods.RA2.Mechanics.ChronoTeleporting.Traits;
 using OpenRA.Primitives;
 using OpenRA.Traits;
-using System.Collections.Generic;
-using System.Linq;
 
-namespace OpenRA.Mods.RA2.Activities.Move
+namespace OpenRA.Mods.RA2.Mechanics.ChronoTeleporting.Activities
 {
 	public class TeleportWithinRange : Activity
 	{
@@ -67,10 +67,10 @@ namespace OpenRA.Mods.RA2.Activities.Move
 				return CPos.Zero;
 			}
 
-			CPos nearest = positions.First();
+			var nearest = positions.First();
 			var minDistance = mobile.CalculateDistance(nearest, target);
 
-			foreach (CPos pos in positions)
+			foreach (var pos in positions)
 			{
 				var distance = mobile.CalculateDistance(pos, target);
 				if (distance < minDistance)

@@ -8,10 +8,10 @@ cmin:
 		Name: actor-cmin.name
 	Tooltip@NoRow:
 		Name: actor-cmin.name
-	Harvester:
+	StoresResources:
 		Capacity: 20
-		DeliverVoice: Deliver
 	ChronoResourceDelivery:
+		Image: chronoexplosion
 		WarpInSequence: warpout
 		WarpInSound: vchrtele.wav
 		WarpOutSound: vchrtele.wav

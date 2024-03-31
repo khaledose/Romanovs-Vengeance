@@ -3,6 +3,8 @@ smin:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
+	Inherits@SELFHEALING: ^SelfHealing
+	Inherits@DEPLOY: ^DeployIntoBuilding
 	Inherits@TURRET: ^WithVoxelTurret
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Yuri
@@ -21,7 +23,6 @@ smin:
 	Mobile:
 		Speed: 30
 		TurnSpeed: 20
-		Voice: Move
 	RevealsShroud:
 		Range: 6c0
 	Tooltip:
@@ -40,29 +41,23 @@ smin:
 		LocalOffset: 512,0,1388
 		MuzzleSequence: muzzle
 		RequiresCondition: rank-elite
-	AttackTurreted:
-		Voice: Attack
+	Turreted:
+		Offset: 512, 0, 0
 	WithMuzzleOverlay:
 	WithVoxelBody:
-	Voiced:
-		VoiceSet: SlaveMinerVoice
-	RangedGpsDot:
-		Sequence: Harvester
 	ProvidesPrerequisite@yarefn:
 		Prerequisite: yarefn
-	Transforms:
-		Facing: 896
-		IntoActor: yarefn
-		TransformSounds: uplace.wav
-		NoTransformNotification: BuildingCannotPlaceAudio
-		NoTransformTextNotification: Cannot deploy here.
-		Voice: Deploy
-	TransferTimedExternalConditionOnTransform@INVULNERABILITY:
-		Condition: invulnerability
-	SlaveMinerHarvester:
+	MobileMasterMiner:
 		Actors: slav,slav,slav,slav,slav
-		Resources: Ore, Gems
-		KickDelay: 5
+		ScanRadius: 10
+		ScanDelay: 5
 		SlaveDisposalOnKill: GiveSlavesToAttacker
-		HarvestVoice: Harvest
-
+		SlaveDisposalOnOwnerChange: GiveSlavesToAttacker
+		PauseOnCondition: chronodisable
+	Transforms:
+		IntoActor: yarefn
+		TransformSounds: vsladepa.wav
+	RangedGpsDot:
+		Sequence: Harvester
+	Voiced:
+		VoiceSet: SlaveMinerVoice

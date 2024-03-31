@@ -1,22 +1,22 @@
 ﻿using OpenRA.Activities;
 using OpenRA.Mods.Common.Effects;
-using OpenRA.Mods.RA2.Traits;
+using OpenRA.Mods.RA2.Mechanics.ChronoTeleporting.Traits;
 using OpenRA.Traits;
 
-namespace OpenRA.Mods.RA2.Activities
+namespace OpenRA.Mods.RA2.Mechanics.ChronoTeleporting.Activities
 {
 	public class Teleport : Activity
 	{
-		private readonly Actor self;
-		private readonly ChronoMobile mobile;
-		private readonly ChronoMobileInfo info;
-		private CPos toCell;
-		private SubCell subCell;
-		private CPos position;
-		private WPos centerPosition;
-		private int distance;
-		private bool teleported;
-		private bool retry;
+		readonly Actor self;
+		readonly ChronoMobile mobile;
+		readonly ChronoMobileInfo info;
+		CPos toCell;
+		SubCell subCell;
+		CPos position;
+		WPos centerPosition;
+		int distance;
+		bool teleported;
+		bool retry;
 
 		public Teleport(Actor self, CPos dest, bool retryInvalidCells)
 		{
@@ -36,7 +36,7 @@ namespace OpenRA.Mods.RA2.Activities
 
 			centerPosition = self.CenterPosition;
 			position = self.World.Map.CellContaining(centerPosition);
-			bool isValid = SetDestination(false);
+			var isValid = SetDestination(false);
 
 			if (!isValid && retry)
 			{

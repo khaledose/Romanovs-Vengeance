@@ -55,6 +55,7 @@
 	Inherits: ^Building
 	Inherits@1: ^RepairableBuilding
 	Inherits@2: ^SuddenDeathModifier
+	Inherits@3: ^AIBuildTimeModifier
 	Building:
 		BuildSounds: uplace.wav
 		UndeploySounds: uselbuil.wav
@@ -95,6 +96,8 @@
 		RequiredForShortGame: true
 	ShakeOnDeath:
 		DeathTypes: NonTemporal
+	ActorStatValues:
+		Stats: Armor, Power, Sight
 	MapEditorData:
 		Categories: Building - Base
 
@@ -222,9 +225,9 @@
 	Inherits: ^BaseStructure
 	Inherits@CAPTURE: ^Capturable
 	Inherits@MC: ^MindControllableBuilding
+	Inherits@DEPLOY: ^UndeployIntoVehicleLimited
 	Inherits@SHAPE: ^4x4Shape
 	Inherits@AICash: ^AICashCheat
-	Inherits@AI: ^AIMicroManagable
 	Buildable:
 		Queue: Building.Unused
 		Description: meta-constructionyard.description
@@ -240,115 +243,154 @@
 		Name: meta-constructionyard.name
 	Tooltip@NoRow:
 		Name: meta-constructionyard.name
-	ProductionQueue@Building:
-		Group: Building
-		DisplayOrder: 1
-		LowPowerModifier: 200
-		ReadyAudio: ConstructionComplete
-		ReadyTextNotification: notification-construction-complete
-		BlockedAudio: NoBuild
-		BlockedTextNotification: notification-unable-to-build-more
-		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: notification-unable-to-comply-building-in-progress
-		QueuedAudio: Building
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
-	ProductionQueue@Support:
-		Group: Support
-		DisplayOrder: 5
-		LowPowerModifier: 200
-		ReadyAudio: ConstructionComplete
-		ReadyTextNotification: notification-construction-complete
-		BlockedAudio: NoBuild
-		BlockedTextNotification: notification-unable-to-build-more
-		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: notification-unable-to-comply-building-in-progress
-		QueuedAudio: Building
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
-	ProductionQueue@Building.Shared:
-		Type: Building.Shared
-		Group: Building
-		DisplayOrder: 1
-		LowPowerModifier: 200
-		ReadyAudio: ConstructionComplete
-		ReadyTextNotification: notification-construction-complete
-		BlockedAudio: NoBuild
-		BlockedTextNotification: notification-unable-to-build-more
-		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: notification-unable-to-comply-building-in-progress
-		QueuedAudio: Building
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
-	ProductionQueue@Support.Shared:
-		Type: Support.Shared
-		Group: Support
-		DisplayOrder: 5
-		LowPowerModifier: 200
-		ReadyAudio: ConstructionComplete
-		ReadyTextNotification: notification-construction-complete
-		BlockedAudio: NoBuild
-		BlockedTextNotification: notification-unable-to-build-more
-		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: notification-unable-to-comply-building-in-progress
-		QueuedAudio: Building
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
-	Production:
-		PauseOnCondition: chronodisable
-		RequiresCondition: multiqueue
 	Production@Shared:
 		Produces: Building.Shared, Support.Shared
 		PauseOnCondition: chronodisable
-		RequiresCondition: !multiqueue
-	ProductionBar@Building:
-	ProductionBar@Support:
-		Color: 8A8A8A
 	ProductionBar@Building.Shared:
 		ProductionType: Building.Shared
 	ProductionBar@Support.Shared:
 		ProductionType: Support.Shared
 		Color: 8A8A8A
-	GrantConditionOnPrerequisite@multiqueue:
-		Condition: multiqueue
-		Prerequisites: global-multiqueue
 	BaseBuilding:
 	Transforms:
 		Offset: 1,1
-		Facing: 384
-		Voice: Move
-		DeployCursor: undeploy
-		PauseOnCondition: chronodisable || controlled
-		RequiresCondition: factundeploy && !build-incomplete
-	TransformsIntoMobile:
-		RequiresCondition: factundeploy && !build-incomplete && !chronodisable && !controlled
-		Locomotor: heavytracked
-		Voice: Move
-	TransformsIntoRepairable:
-		RequiresCondition: factundeploy && !build-incomplete && !chronodisable && !controlled
-		RepairActors: gadept, nadept, nadepb, caoutp, caoutb
-		Voice: Move
-		RequiresForceMove: true
-	TransformsIntoPassenger:
-		RequiresCondition: factundeploy && !build-incomplete && !chronodisable && !controlled
-		CargoType: Vehicle
-		Voice: Move
-		RequiresForceMove: true
-	GrantConditionOnPrerequisite@GLOBALFACTUNDEPLOY:
-		Condition: factundeploy
-		Prerequisites: global-factundeploy
 	Capturable:
-		RequiresCondition: !suddendeath
+		Types: mcv
 	Targetable@MC:
 		RequiresCondition: !controlled && !suddendeath
 	MustBeDestroyed:
-		-RequiresCondition:
-	TransferTimedExternalConditionOnTransform@INVULNERABILITY:
-		Condition: invulnerability
-	ProvidesPrerequisite@AIantiRush:
-		RequiresCondition: !ai-control
-		Prerequisite: AIantiRush ## Hack: AI Building control. AI build refinary only when it has a combat producing line.
-	-RequiresBuildableArea:
+
+# ^ConstructionYard:
+# 	Inherits: ^BaseStructure
+# 	Inherits@CAPTURE: ^Capturable
+# 	Inherits@MC: ^MindControllableBuilding
+# 	Inherits@SHAPE: ^4x4Shape
+# 	Inherits@AICash: ^AICashCheat
+# 	Inherits@AI: ^AIControl
+# 	Buildable:
+# 		Queue: Building.Unused
+# 		Description: meta-constructionyard.description
+# 	Health:
+# 		HP: 100000
+# 	Armor:
+# 		Type: Concrete
+# 	Valued:
+# 		Cost: 3000
+# 	RevealsShroud:
+# 		Range: 8c0
+# 	Tooltip:
+# 		Name: meta-constructionyard.name
+# 	Tooltip@NoRow:
+# 		Name: meta-constructionyard.name
+# 	ProductionQueue@Building:
+# 		Group: Building
+# 		DisplayOrder: 1
+# 		LowPowerModifier: 200
+# 		ReadyAudio: ConstructionComplete
+# 		ReadyTextNotification: notification-construction-complete
+# 		BlockedAudio: NoBuild
+# 		BlockedTextNotification: notification-unable-to-build-more
+# 		LimitedAudio: BuildingInProgress
+# 		LimitedTextNotification: notification-unable-to-comply-building-in-progress
+# 		QueuedAudio: Building
+# 		OnHoldAudio: OnHold
+# 		CancelledAudio: Cancelled
+# 	ProductionQueue@Support:
+# 		Group: Support
+# 		DisplayOrder: 5
+# 		LowPowerModifier: 200
+# 		ReadyAudio: ConstructionComplete
+# 		ReadyTextNotification: notification-construction-complete
+# 		BlockedAudio: NoBuild
+# 		BlockedTextNotification: notification-unable-to-build-more
+# 		LimitedAudio: BuildingInProgress
+# 		LimitedTextNotification: notification-unable-to-comply-building-in-progress
+# 		QueuedAudio: Building
+# 		OnHoldAudio: OnHold
+# 		CancelledAudio: Cancelled
+# 	ProductionQueue@Building.Shared:
+# 		Type: Building.Shared
+# 		Group: Building
+# 		DisplayOrder: 1
+# 		LowPowerModifier: 200
+# 		ReadyAudio: ConstructionComplete
+# 		ReadyTextNotification: notification-construction-complete
+# 		BlockedAudio: NoBuild
+# 		BlockedTextNotification: notification-unable-to-build-more
+# 		LimitedAudio: BuildingInProgress
+# 		LimitedTextNotification: notification-unable-to-comply-building-in-progress
+# 		QueuedAudio: Building
+# 		OnHoldAudio: OnHold
+# 		CancelledAudio: Cancelled
+# 	ProductionQueue@Support.Shared:
+# 		Type: Support.Shared
+# 		Group: Support
+# 		DisplayOrder: 5
+# 		LowPowerModifier: 200
+# 		ReadyAudio: ConstructionComplete
+# 		ReadyTextNotification: notification-construction-complete
+# 		BlockedAudio: NoBuild
+# 		BlockedTextNotification: notification-unable-to-build-more
+# 		LimitedAudio: BuildingInProgress
+# 		LimitedTextNotification: notification-unable-to-comply-building-in-progress
+# 		QueuedAudio: Building
+# 		OnHoldAudio: OnHold
+# 		CancelledAudio: Cancelled
+# 	Production:
+# 		PauseOnCondition: chronodisable
+# 		RequiresCondition: multiqueue
+# 	Production@Shared:
+# 		Produces: Building.Shared, Support.Shared
+# 		PauseOnCondition: chronodisable
+# 		RequiresCondition: !multiqueue
+# 	ProductionBar@Building:
+# 	ProductionBar@Support:
+# 		Color: 8A8A8A
+# 	ProductionBar@Building.Shared:
+# 		ProductionType: Building.Shared
+# 	ProductionBar@Support.Shared:
+# 		ProductionType: Support.Shared
+# 		Color: 8A8A8A
+# 	GrantConditionOnPrerequisite@multiqueue:
+# 		Condition: multiqueue
+# 		Prerequisites: global-multiqueue
+# 	BaseBuilding:
+# 	Transforms:
+# 		Offset: 1,1
+# 		Facing: 384
+# 		Voice: Move
+# 		DeployCursor: undeploy
+# 		PauseOnCondition: chronodisable || controlled
+# 		RequiresCondition: factundeploy && !build-incomplete
+# 	TransformsIntoMobile:
+# 		RequiresCondition: factundeploy && !build-incomplete && !chronodisable && !controlled
+# 		Locomotor: heavytracked
+# 		Voice: Move
+# 	TransformsIntoRepairable:
+# 		RequiresCondition: factundeploy && !build-incomplete && !chronodisable && !controlled
+# 		RepairActors: gadept, nadept, nadepb, caoutp, caoutb
+# 		Voice: Move
+# 		RequiresForceMove: true
+# 	TransformsIntoPassenger:
+# 		RequiresCondition: factundeploy && !build-incomplete && !chronodisable && !controlled
+# 		CargoType: Vehicle
+# 		Voice: Move
+# 		RequiresForceMove: true
+# 	GrantConditionOnPrerequisite@GLOBALFACTUNDEPLOY:
+# 		Condition: factundeploy
+# 		Prerequisites: global-factundeploy
+# 	Capturable:
+# 		RequiresCondition: !suddendeath
+# 	Targetable@MC:
+# 		RequiresCondition: !controlled && !suddendeath
+# 	MustBeDestroyed:
+# 		-RequiresCondition:
+# 	TransferTimedExternalConditionOnTransform@INVULNERABILITY:
+# 		Condition: invulnerability
+# 	ProvidesPrerequisite@AIantiRush:
+# 		RequiresCondition: !ai-control
+# 		Prerequisite: AIantiRush ## Hack: AI Building control. AI build refinary only when it has a combat producing line.
+# 	-RequiresBuildableArea:
 
 ^PowerPlant:
 	Inherits: ^BaseStructure
@@ -359,7 +401,6 @@
 	Inherits@DISKPOWEROUTAGE: ^PowerOutageOnDiskDrain
 	Inherits@SPY: ^Spyable
 	Buildable:
-		Description: Provides power for other structures.
 		BuildPaletteOrder: 10
 	PowerTooltip:
 	ScalePowerWithHealth:
@@ -425,7 +466,6 @@ barracks.infiltrated:
 	Inherits@CAPTURE: ^Capturable
 	Inherits@DISK: ^DiskStealable
 	Inherits@SPY: ^Spyable
-	Inherits@AICash: ^AICashCheat
 	Buildable:
 		Description: meta-refinery.description
 		BuildPaletteOrder: 30
@@ -434,15 +474,12 @@ barracks.infiltrated:
 	Tooltip@NoRow:
 		Name: meta-refinery.name
 	Refinery:
-		ShowTicks: True
-		TickLifetime: 30
-		TickVelocity: 1
-		TickRate: 10
 		UseStorage: false
 	DockHost:
 		Type: Unload
 		DockAngle: 640
 		DockOffset: 1c0, 1c0, 0
+		RequiresCondition: !chronodisable
 	InfiltrateForCash:
 		Types: SpyInfiltrate
 		Percentage: 20
@@ -701,7 +738,7 @@ warfactory.infiltrated:
 ^BattleLab:
 	Inherits: ^BaseStructure
 	Inherits@CAPTURE: ^Capturable
-	Inherits@AI: ^AIMicroManagable
+	Inherits@AI: ^AIControl
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@SPY: ^Spyable
 	Buildable:

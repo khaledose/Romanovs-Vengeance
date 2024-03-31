@@ -103,9 +103,9 @@ MapFolders:
 	~^SupportDir|maps/ra2/{DEV_VERSION}: User
 
 Rules:
-	ra2yr|ai/rules.yaml
-	ra2yr|ai/traits.yaml
-	# ra2yr|ai/units.yaml
+	ra2yr|ai/rules/rules.yaml
+	ra2yr|ai/traits/rules.yaml
+	ra2yr|ai/units/rules.yaml
 	ra2yr|factions/allies/rules.yaml
 	ra2yr|factions/allies/aircraft/Black Eagle/rules.yaml
 	ra2yr|factions/allies/aircraft/Harrier/rules.yaml
@@ -714,6 +714,7 @@ Voices:
 	ra2yr|factions/soviets/vehicles/Mobile Construction Vehicle/voices.yaml
 	ra2yr|factions/soviets/vehicles/War Miner/voices.yaml
 	ra2yr|factions/yuris/aircraft/Floating Disc/voices.yaml
+	ra2yr|factions/yuris/buildings/Slave Miner/voices.yaml
 	ra2yr|factions/yuris/infantries/Brute/voices.yaml
 	ra2yr|factions/yuris/infantries/Engineer/voices.yaml
 	ra2yr|factions/yuris/infantries/Initiate/voices.yaml

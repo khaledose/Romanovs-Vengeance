@@ -213,17 +213,13 @@
 
 ^MinerInfantry:
 	Inherits: ^GroundInfantry
-	BaseSpawnerSlave:
 	Harvester:
-		DeliveryBuildings: yarefn
+		Type: InfantryUnload
 		Resources: Ore, Gems
-		MaxUnloadQueue: 9
-		UnloadQueueCostModifier: 4
 		BaleLoadDelay: 24
 		BaleUnloadDelay: 1
 		FullyLoadedSpeed: 100
-		HarvestVoice: Move
-		DeliverVoice: Move
+		HarvestVoice: Harvest
 		EmptyCondition: no-ore
 	StoresResources:
 		Capacity: 4
@@ -241,12 +237,12 @@
 		MoveSequence: full-run
 		DefaultAttackSequence: shoot
 		RequiresCondition: !no-ore && !harvesting && !parachute
-	WithResourceStoragePipsDecoration:
+	WithStoresResourcesPipsDecoration:
 		Margin: 4, 3
 		Palette: ra
 		Position: BottomLeft
 		RequiresSelection: true
-		PipCount: 4
+		PipCount: 1
 		ResourceSequences:
 			Ore: pip-yellow
 			Gems: pip-blue

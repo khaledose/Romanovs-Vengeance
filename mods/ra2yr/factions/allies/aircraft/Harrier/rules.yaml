@@ -1,6 +1,6 @@
 orca:
 	Inherits: ^DockablePlane
-	Inherits@AI: ^AIMicroManagable
+	Inherits@AI: ^AIControl
 	Buildable:
 		Queue: Aircraft.Shared, Aircraft.Allies
 		Prerequisites: ~aircraft.allies, !prerequisite.enoughair, ~techlevel.3

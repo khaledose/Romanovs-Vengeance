@@ -1,15 +1,14 @@
-﻿using OpenRA.Activities;
+﻿using System;
+using System.Linq;
+using OpenRA;
+using OpenRA.Activities;
 using OpenRA.Mods.Common;
-using OpenRA.Mods.Common.Activities;
 using OpenRA.Mods.Common.Traits;
-using OpenRA.Mods.RA2.Activities;
-using OpenRA.Mods.RA2.Activities.Move;
+using OpenRA.Mods.RA2.Mechanics.ChronoTeleporting.Activities;
 using OpenRA.Primitives;
 using OpenRA.Traits;
-using System;
-using System.Linq;
 
-namespace OpenRA.Mods.RA2.Traits
+namespace OpenRA.Mods.RA2.Mechanics.ChronoTeleporting.Traits
 {
 	public class ChronoMobileInfo : MobileInfo
 	{

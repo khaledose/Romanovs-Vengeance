@@ -1,8 +1,8 @@
-﻿using OpenRA.Activities;
-using OpenRA.Mods.RA2.Traits;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using OpenRA.Activities;
+using OpenRA.Mods.RA2.Mechanics.ChronoTeleporting.Traits;
 
-namespace OpenRA.Mods.RA2.Activities.Move
+namespace OpenRA.Mods.RA2.Mechanics.ChronoTeleporting.Activities
 {
 	public class TeleportNudge : Activity
 	{

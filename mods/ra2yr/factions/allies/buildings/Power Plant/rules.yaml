@@ -21,12 +21,9 @@ gapowr:
 		Name: actor-gapowr.name
 	Tooltip@NoRow:
 		Name: actor-gapowr.name
-	Voiced:
-		VoiceSet: PowerPlantVoice
-		Volume: 0.8
-	Explodes:
-		Weapon: PowerPlantExplosion
 	WithIdleOverlay@glow:
 		Sequence: idle-glow
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
+	Explodes:
+		Weapon: PowerPlantExplosion

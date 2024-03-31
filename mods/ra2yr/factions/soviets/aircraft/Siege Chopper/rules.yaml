@@ -2,7 +2,7 @@ schp:
 	Inherits: ^Helicopter
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@MC: ^MindControllable
-	Inherits@AI: ^AIMicroManagable
+	Inherits@AI: ^AIControl
 	Inherits@DEPLOY: ^DeployableAircraft
 	Inherits@TURRET: ^WithVoxelTurretDeployed
 	Buildable:
