@@ -52,22 +52,23 @@ gaairc:
 		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: !build-incomplete
 	SpawnNeighboringActors:
-		ActorTypes: gadock
+		ActorTypes: gaairc.dock
 		Locations: 1,0, 1,1, 2,1, 2,0
 
-gadock:
+gaairc.dock:
 	Inherits: ^Factory
 	Interactable:
 	AlwaysVisible:
 	Reservable:
 	Building:
+	Tooltip:
+		Name: actor-gaairc.name
 	Production:
 		Produces: DockedAircraft
 		RequiresCondition: !reserved
-	GrantConditionOnDockReserved:
-		Condition: reserved
+	RearmDock:
+		DockedCondition: reserved
 	ProvidesPrerequisite:
-		Prerequisite: dock
 		RequiresCondition: !reserved
 	Exit@1:
 		Facing: 896

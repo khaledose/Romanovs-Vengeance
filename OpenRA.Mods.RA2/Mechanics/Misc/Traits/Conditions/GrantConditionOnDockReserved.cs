@@ -15,29 +15,35 @@ using OpenRA.Traits;
 
 namespace OpenRA.Mods.RA2.Mechanics.Misc.Traits.Conditions
 {
-	[Desc("Grants a condition when this actor produces a docked actor.")]
-	public class GrantConditionOnDockReservedInfo : TraitInfo
+	[Desc("Dock is reserved for produced rearmable actor")]
+	public class RearmDockInfo : TraitInfo
 	{
 		[FieldLoader.Require]
 		[GrantedConditionReference]
-		[Desc("The condition to grant")]
-		public readonly string Condition = null;
+		[Desc("The condition to grant when an actor is linked to this dock.")]
+		public readonly string DockedCondition = null;
 
 		[ActorReference]
 		[Desc("The actors to grant condition for. If empty condition will be granted for all actors.")]
 		public readonly HashSet<string> Actors = new();
 
-		public override object Create(ActorInitializer init) { return new GrantConditionOnDockReserved(this); }
+		[Desc("The docked actor will dispose when dock is disposed.")]
+		public readonly bool DisposeOnDockDisposed = true;
+
+		[Desc("The docked actor will change owner when dock owner is changed.")]
+		public readonly bool ChangeOwner = true;
+
+		public override object Create(ActorInitializer init) { return new RearmDock(this); }
 	}
 
-	public class GrantConditionOnDockReserved : INotifyProduction, ITick
+	public class RearmDock : INotifyProduction, INotifyActorDisposing, INotifyOwnerChanged, ITick
 	{
-		readonly GrantConditionOnDockReservedInfo info;
+		readonly RearmDockInfo info;
 
 		Actor dockedActor;
 		int token = Actor.InvalidConditionToken;
 
-		public GrantConditionOnDockReserved(GrantConditionOnDockReservedInfo info)
+		public RearmDock(RearmDockInfo info)
 		{
 			this.info = info;
 		}
@@ -51,9 +57,25 @@ namespace OpenRA.Mods.RA2.Mechanics.Misc.Traits.Conditions
 				return;
 
 			if (token == Actor.InvalidConditionToken)
-				token = self.GrantCondition(info.Condition);
+				token = self.GrantCondition(info.DockedCondition);
 
 			dockedActor = other;
+		}
+
+		void INotifyActorDisposing.Disposing(Actor self)
+		{
+			if (dockedActor is null || !info.DisposeOnDockDisposed)
+				return;
+			
+			dockedActor.Dispose();
+		}
+
+		void INotifyOwnerChanged.OnOwnerChanged(Actor self, Player oldOwner, Player newOwner)
+		{
+			if (dockedActor is null || !info.ChangeOwner)
+				return;
+			
+			dockedActor.ChangeOwnerSync(newOwner);
 		}
 
 		void ITick.Tick(Actor self)

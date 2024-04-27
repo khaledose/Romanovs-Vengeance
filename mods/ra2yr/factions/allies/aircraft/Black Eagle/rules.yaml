@@ -1,7 +1,7 @@
 beag:
 	Inherits: orca
 	Buildable:
-		Prerequisites: ~aircraft.korea.docked, dock, ~techlevel.3
+		Prerequisites: ~aircraft.korea.docked, gaairc.dock, ~techlevel.3
 		Description: actor-beag.description
 		BuildPaletteOrder: 30
 	Health:

@@ -1,7 +1,7 @@
 orca:
 	Inherits: ^DockablePlane
 	Buildable:
-		Prerequisites: ~aircraft.allies.docked, dock, ~techlevel.3
+		Prerequisites: ~aircraft.allies.docked, gaairc.dock, ~techlevel.3
 		Description: actor-orca.description
 	Health:
 		HP: 15000

@@ -107,7 +107,7 @@
 		IdleBehavior: ReturnToBase
 		InitialFacing: 896
 	Rearmable:
-		RearmActors: gadock
+		RearmActors: gaairc.dock
 
 ^Helicopter:
 	Inherits: ^Aircraft
