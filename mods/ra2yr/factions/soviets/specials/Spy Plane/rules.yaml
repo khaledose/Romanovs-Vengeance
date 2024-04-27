@@ -1,9 +1,9 @@
-SpyPlaneSpecial:
+^SpyPlaneSpecial:
 	AirstrikePower@spyplane:
 		OrderName: SovietSpyPlane
 		RequiresCondition: !lost
 		Prerequisites:
-			1: radar
+			1: naradr
 		Icons:
 			1: spyplane
 		Cursor: spyplane

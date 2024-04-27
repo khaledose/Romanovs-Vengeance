@@ -1,13 +1,12 @@
 ^Dog:
 	Inherits: ^GroundAnimal
-	Inherits@AUTOTARGET: ^AutoTargetInfantryAssaultMove
+	Inherits@AUTOTARGET: ^AutoTargetInfantry
 	Inherits@VETERAN: ^InfantryPromotable
 	Inherits@DETECTCLOAKED: ^DetectCloaked
 	Inherits@VOICES: ^WithFeedbackVoicelines
-	Inherits@LEAP: ^LeapAttack
 	Buildable:
 		Description: actor-dog.description
-		BuildPaletteOrder: 4
+		BuildPaletteOrder: 30
 	Selectable:
 		Bounds: 724, 1158, 0, -241
 	Health:
@@ -27,13 +26,9 @@
 	Tooltip@NoRow:
 		Name: actor-dog.name
 	Armament:
-		Weapon: DogJaw
-		Damage: 1000
-	Voiced:
-		VoiceSet: DogVoice
-	-AttackFrontal:
-
-^LeapAttack:
+		Weapon: GoodTeeth
+	AutoTarget:
+		ScanRadius: 9
 	AttackLeap:
 		Voice: Attack
 		Speed: 105
@@ -44,11 +39,12 @@
 		RequiresCondition: attacking
 	WithInfantryBody:
 		RequiresCondition: !parachute && !attacking
+	Voiced:
+		VoiceSet: DogVoice
+	-AttackFrontal:
 
 adog:
 	Inherits: ^Dog
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Allies
 		Prerequisites: ~infantry.allies, ~techlevel.2
-
-

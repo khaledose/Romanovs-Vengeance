@@ -2,7 +2,6 @@ natech:
 	Inherits: ^BattleLab
 	Inherits@SHAPE: ^3x3Shape
 	Buildable:
-		Queue: Building.Shared, Building.Soviets
 		Prerequisites: ~building.soviets, naweap, naradr, ~techlevel.7, ~!ai.natech
 	IsometricSelectable:
 		DecorationHeight: 120

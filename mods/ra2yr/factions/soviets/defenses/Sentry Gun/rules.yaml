@@ -5,12 +5,9 @@ nalasr:
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@TURRET: ^WithVoxelTurretBuilding
 	Buildable:
-		Queue: Support.Shared, Support.Soviets
 		Prerequisites: ~building.soviets, ~nahand, ~techlevel.1
 		Description: actor-nalasr.description
-		BuildPaletteOrder: 40
-	RequiresBuildableArea:
-		Adjacent: 4
+		BuildPaletteOrder: 30
 	IsometricSelectable:
 		DecorationHeight: 30
 	Health:

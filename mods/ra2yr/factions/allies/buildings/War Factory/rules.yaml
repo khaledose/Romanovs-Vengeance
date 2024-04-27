@@ -1,20 +1,9 @@
 gaweap:
 	Inherits: ^WarFactory
 	Buildable:
-		Queue: Building.Shared, Building.Allies
 		Prerequisites: ~building.allies, gapile, garefn, ~techlevel.2
 	IsometricSelectable:
 		DecorationHeight: 60
-	Production:
-		Produces: Vehicle.Allies, Aircraft.Allies
-	ProductionQueue:
-		Type: Vehicle.Allies
-	ProductionQueue@Aircraft:
-		Type: Aircraft.Allies
-	ProductionBar:
-		ProductionType: Vehicle.Allies
-	ProductionBar@Aircraft:
-		ProductionType: Aircraft.Allies
 	ProvidesPrerequisite@vehicle.allies:
 		Prerequisite: vehicle.allies
 	ProvidesPrerequisite@aircraft.allies:

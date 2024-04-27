@@ -1,0 +1,34 @@
+^SmudgeLayers:
+	SmudgeLayer@smallscorch:
+		Type: SmallScorch
+		Sequence: smallscorches
+		SmokeImage: smallfire
+		SmokeSequences: idle
+		SmokeChance: 50
+	SmudgeLayer@mediumscorch:
+		Type: MediumScorch
+		Sequence: mediumscorches
+		SmokeImage: mediumfire
+		SmokeSequences: idle
+		SmokeChance: 75
+	SmudgeLayer@largescorch:
+		Type: LargeScorch
+		Sequence: largescorches
+		SmokeImage: largefire
+		SmokeSequences: idle
+		SmokeChance: 100
+	SmudgeLayer@smallcrater:
+		Type: SmallCrater
+		SmokeImage: smallsmoke
+		SmokeSequences: idle
+		Sequence: smallcraters
+	SmudgeLayer@mediumcrater:
+		Type: MediumCrater
+		SmokeImage: smallsmoke
+		SmokeSequences: idle
+		Sequence: mediumcraters
+	SmudgeLayer@largecrater:
+		Type: LargeCrater
+		SmokeImage: largesmoke
+		SmokeSequences: idle
+		Sequence: largecraters

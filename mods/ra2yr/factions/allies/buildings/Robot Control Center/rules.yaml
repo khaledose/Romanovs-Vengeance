@@ -4,7 +4,6 @@ garobo:
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
-		Queue: Building.Shared, Building.Allies
 		Prerequisites: ~building.allies, gaweap, ~techlevel.10
 		Description: actor-garobo.description
 		BuildPaletteOrder: 80

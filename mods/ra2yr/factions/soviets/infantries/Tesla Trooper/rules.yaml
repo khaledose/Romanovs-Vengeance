@@ -8,7 +8,7 @@ shk:
 		Queue: Infantry.Shared, Infantry.Soviets
 		Prerequisites: ~infantry.soviets, ~techlevel.5
 		Description: actor-shk.description
-		BuildPaletteOrder: 5
+		BuildPaletteOrder: 50
 	Health:
 		HP: 13000
 	Armor:

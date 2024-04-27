@@ -550,6 +550,8 @@ spkr01:
 
 cakrmw:
 	Inherits: ^Wall
+	Buildable:
+		Queue: Support.Civilian.Shared
 	Tooltip:
 		Name: actor-cakrmw.name
 	Tooltip@NoRow:
@@ -569,8 +571,6 @@ gagate_a:
 		Name: Guard Border Crossing
 	Tooltip@NoRow:
 		Name: Guard Border Crossing
-	IsometricSelectable:
-		DecorationHeight: 30
 
 # Yuri's Revenge Props
 cabarr01:

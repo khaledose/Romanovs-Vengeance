@@ -1,0 +1,7 @@
+SovietVehicleVoice:
+	DefaultVariant: .wav
+	Voices:
+		Build: vgrssea
+		Select: vgrsseb, vgrssec
+		Move: vgrsmoa, vgrsmob, vgrsmoc
+		Attack: vgrsata, vgrsatb, vgrsatc, vgrsatd

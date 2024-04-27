@@ -2,7 +2,6 @@ gadept:
 	Inherits: ^ServiceDepot
 	Inherits@SHAPE: ^3x3Shape
 	Buildable:
-		Queue: Building.Shared, Building.Allies
 		Prerequisites: ~building.allies, gaweap, ~techlevel.6
 	Building:
 		Footprint: x++ x++ x++

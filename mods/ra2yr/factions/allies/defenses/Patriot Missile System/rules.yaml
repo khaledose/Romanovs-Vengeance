@@ -7,10 +7,9 @@ nasam:
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@TURRET: ^WithVoxelTurretBuildingPowered
 	Buildable:
-		Queue: Support.Shared, Support.Allies
 		Prerequisites: ~building.allies, gapile, ~techlevel.4
 		Description: actor-nasam.description
-		BuildPaletteOrder: 50
+		BuildPaletteOrder: 30
 	RequiresBuildableArea:
 		Adjacent: 4
 	IsometricSelectable:

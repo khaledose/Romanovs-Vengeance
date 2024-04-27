@@ -88,7 +88,7 @@ namespace OpenRA.Mods.RA2.Mechanics.SlaveMiner.Traits
 
 		Order IIssueOrder.IssueOrder(Actor self, IOrderTargeter order, in Target target, bool queued)
 		{
-			if (order.OrderID == "DeployNearResources")
+			if (order.OrderID == "Harvest")
 			{
 				orderLocation = self.World.Map.CellContaining(target.CenterPosition);
 				return new Order(order.OrderID, self, target, queued);
@@ -99,7 +99,7 @@ namespace OpenRA.Mods.RA2.Mechanics.SlaveMiner.Traits
 
 		void IResolveOrder.ResolveOrder(Actor self, Order order)
 		{
-			if (order.OrderString == "DeployNearResources")
+			if (order.OrderString == "Harvest")
 			{
 				ResolveOrderInner(self, order);
 			}

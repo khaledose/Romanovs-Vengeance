@@ -6,7 +6,6 @@ yarefn:
 	Inherits@DEPLOY: ^UndeployIntoVehicle
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
-		Queue: Building.Shared, Building.Yuri
 		Prerequisites: ~building.yuri, yapowr, ~!global-megawealth, ~techlevel.1
 		Description: actor-yarefn.description
 	Building:
@@ -28,13 +27,11 @@ yarefn:
 		Name: actor-yarefn.name
 	Armament@primary:
 		Weapon: 20mmRapid
-		Damage: 30
 		LocalOffset: 512, 0, 1132
 		MuzzleSequence: muzzle
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: 20mmRapidE
-		Damage: 50
 		LocalOffset: 512, 0, 1132
 		MuzzleSequence: muzzle
 		RequiresCondition: rank-elite
@@ -69,46 +66,50 @@ yarefn:
 		Sequence: idle-bib
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
-	SmokeParticleEmitter@refinerysmoke1:
+	FloatingSpriteEmitter@refinerysmoke1:
 		Offset: -400, -256, 2304
-		RequiresCondition: resource-delivered
 		Image: smallsmoke
 		Sequences: idle
 		Palette: effect75alpha
 		SpawnFrequency: 1
+		Lifetime: 30, 40
 		Speed: 0, 36
 		Gravity: 100, 150
 		Duration: 20
-	SmokeParticleEmitter@refinerysmoke2:
+		RequiresCondition: resource-delivered
+	FloatingSpriteEmitter@refinerysmoke2:
 		Offset: 0, 400, 2304
-		RequiresCondition: resource-delivered
 		Image: smallsmoke
 		Sequences: idle
 		Palette: effect75alpha
 		SpawnFrequency: 1
+		Lifetime: 30, 40
 		Speed: 0, 36
 		Gravity: 100, 150
 		Duration: 20
-	SmokeParticleEmitter@refinerysmoke3:
+		RequiresCondition: resource-delivered
+	FloatingSpriteEmitter@refinerysmoke3:
 		Offset: 32, 192, 2304
-		RequiresCondition: resource-delivered
 		Image: smallsmoke
 		Sequences: idle
 		Palette: effect75alpha
 		SpawnFrequency: 1
+		Lifetime: 30, 40
 		Speed: 0, 36
 		Gravity: 100, 150
 		Duration: 20
-	SmokeParticleEmitter@refinerysmoke4:
+		RequiresCondition: resource-delivered
+	FloatingSpriteEmitter@refinerysmoke4:
 		Offset: 350, -256, 2304
-		RequiresCondition: resource-delivered
 		Image: smallsmoke
 		Sequences: idle
 		Palette: effect75alpha
 		SpawnFrequency: 1
+		Lifetime: 30, 40
 		Speed: 0, 36
 		Gravity: 100, 150
 		Duration: 20
+		RequiresCondition: resource-delivered
 	Voiced:
 		VoiceSet: SlaveMinerVoice
 	-Sellable:

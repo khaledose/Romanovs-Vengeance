@@ -11,10 +11,8 @@ htk:
 	Inherits@ANNOUNCE: ^AnnounceProduction
 	Inherits@TURRET: ^WithVoxelTurret
 	Buildable:
-		Queue: Vehicle.Shared, Vehicle.Soviets
 		Prerequisites: ~vehicle.soviets, ~techlevel.3
 		Description: actor-htk.description
-		BuildDurationModifier: 100
 		BuildPaletteOrder: 30
 	Selectable:
 		Bounds: 1206, 1930, 0, -289

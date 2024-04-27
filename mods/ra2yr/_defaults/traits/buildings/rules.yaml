@@ -1,0 +1,168 @@
+^SelectableBuilding:
+	IsometricSelectable:
+		Priority: 3
+		Height: 0
+		DecorationHeight: 30
+	IsometricSelectionDecorations:
+		MinimumZoom: 0
+	WithTextControlGroupDecoration:
+		Margin: 1, 1
+
+^PrimaryBuilding:
+	WithTextDecoration@primary:
+		RequiresSelection: true
+		Text: PRIMARY
+		Position: Top
+		UsePlayerColor: true
+		RequiresCondition: primary
+	PrimaryBuilding:
+		PrimaryCondition: primary
+		SelectionNotification: PrimaryBuildingSelected
+		SelectionTextNotification: notification-primary-building-selected
+
+^Factory:
+	Production:
+		PauseOnCondition: chronodisable
+	ProductionBar:
+	CommandBarBlacklist:
+		DisableStop: false
+	RallyPoint:
+		Palette: mouse
+		IsPlayerPalette: false
+		Notification: NewRallyPointEstablished
+		TextNotification: notification-new-rally-point-established
+	ExitsDebugOverlay:
+	GrantExternalConditionToProduced:
+		Condition: produced
+
+^LoadsInfantries:
+	Cargo:
+		Types: Infantry, Garrisoner
+		MaxWeight: 5
+		EjectOnDeathDamage: 50
+		OwnerChangedAffectsPassengers: false
+		LoadedCondition: loaded
+	WithCargoPipsDecoration:
+		FullSequence: pip-building-green
+		EmptySequence: pip-building-empty
+		Margin: 8, 2
+		PipStride: 4, 2
+		Palette: ra
+		Position: BottomLeft
+		RequiresSelection: true
+		CustomPipSequences:
+			gray: pip-building-gray
+			yellow: pip-building-yellow
+			blue: pip-building-blue
+			red: pip-building-red
+	WithIdleOverlay@loaded:
+		Sequence: loaded
+		RequiresCondition: loaded && !build-incomplete
+
+^Bunker:
+	Inherits: ^LoadsInfantries
+	Inherits@AUTOTARGET: ^AutoTargetAll
+	Targetable@DEFENSE:
+		TargetTypes: Defense
+		RequiresCondition: loaded
+	AttackGarrisoned:
+		PortOffsets: 768,0,1024, 448,-682,1024, -448,-682,1024, -768,0,1024, -448,682,1024, 448,682,1024
+		PortYaws: 768, 640, 512, 384, 256, 128
+		PortCones: 128, 128, 128, 128, 128, 128
+	Cargo:
+		Types: Garrisoner
+	WithCargoPipsDecoration:
+		EmptySequence: pip-garrison-empty
+		FullSequence: pip-garrison-green
+		CustomPipSequences:
+			gray: pip-garrison-gray
+			yellow: pip-garrison-yellow
+			blue: pip-garrison-blue
+			red: pip-garrison-red
+	WithIdleOverlay@loaded:
+		Sequence: garrisoned
+	WithCargoSounds:
+		PlayOnce: true
+		EnterNotification: StructureGarrisoned
+		ExitNotification: StructureAbandoned
+
+^Garrisonable:
+	# Inherits: ^Bunker
+	# Cargo:
+	# 	MaxWeight: 10
+	# 	RequiresCondition: !dmg_crit
+	# ChangeOwnerOnGarrison:
+
+^RepairsUnits:
+	RepairsUnits:
+		PauseOnCondition: chronodisable
+		HpPerStep: 2000
+		Interval: 20
+		RepairDamageTypes: KillsDrone
+		StartRepairingNotification: Repairing
+		StartRepairingTextNotification: notification-repairing
+		FinishRepairingNotification: UnitRepaired
+		FinishRepairingTextNotification: notification-unit-repaired
+	RallyPoint:
+		Palette: mouse
+		IsPlayerPalette: false
+	Reservable:
+	WithIdleOverlay@crane:
+		Sequence: idle-crane
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete && !producing && !resupplying
+	WithResupplyOverlay:
+		StartSequence: repair-start
+		Sequence: repair
+		EndSequence: repair-end
+		ResupplyCondition: resupplying
+		PauseOnCondition: chronodisable
+
+^Repairable:
+	RepairableBuilding:
+		RepairStep: 700
+		RepairingNotification: Repairing
+	WithBuildingRepairDecoration:
+		Image: allyrepair
+		Sequence: repair
+		Position: Center
+		Palette: mouse
+	InstantlyRepairable:
+		Types: building
+		RequiresCondition: !ivanbomb && !c4 && !superC4 && damaged
+	GrantConditionOnDamageState@DAMAGED:
+		Condition: damaged
+		ValidDamageStates: Light, Medium, Heavy, Critical
+
+^Capturable:
+	Capturable:
+		Types: building
+		RequiresCondition: !build-incomplete && !invulnerability && !forceshield
+	CaptureNotification:
+		TextNotification: notification-building-captured
+	CapturableProgressBar:
+		RequiresCondition: !instantcapture
+	CapturableProgressBlink:
+		Interval: 25
+		Sound: ucapture.aud
+		RequiresCondition: !instantcapture
+	GrantConditionOnPrerequisite@INSTANTCAPTURE:
+		Condition: instantcapture
+		Prerequisites: global-instantcapture
+	CaptureManager:
+
+^CollapsingMonumentSound:
+	DeathSounds:
+		DeathTypes: NonTemporal
+	Voiced:
+		VoiceSet: MonumentVoice
+		Volume: 0.8
+
+^CollapsingMonumentAnimation:
+	Inherits: ^CollapsingMonumentSound
+	WithDeathAnimation:
+		DeathSequence: collapse
+		UseDeathTypeSuffix: false
+		DeathPaletteIsPlayerPalette: false
+	SpawnActorOnDeath@rubble:
+		DeathType: NonTemporal

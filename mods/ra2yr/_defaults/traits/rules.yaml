@@ -4,8 +4,7 @@
 	CombatDebugOverlay:
 	RenderDebugState:
 	DrawLineToTarget:
-	GivesExperience:
-		PlayerExperienceModifier: 10
+	GivesVeterancy:
 	ScriptTriggers:
 	Huntable:
 
@@ -24,84 +23,48 @@
 		LightDiffuseColor: 1.3,1.3,1.3
 
 ^GainsExperience:
-	GainsExperience:
+	GainsVeterancy:
+		ExperiencePerLevel: 300, 600
+		ConditionPerLevel: rank-veteran, rank-elite
 		LevelUpNotification: LevelUp
 		LevelUpTextNotification: notification-unit-promoted
-		Conditions:
-			300: rank-veteran
-			600: rank-veteran
 		LevelUpImage: crate-effects
-	FirepowerMultiplier@RANK-1:
-		RequiresCondition: rank-veteran >= 1
-		Modifier: 110
-	DamageMultiplier@RANK-1:
-		RequiresCondition: rank-veteran >= 1
-		Modifier: 50
-	SpeedMultiplier@RANK-1:
-		RequiresCondition: rank-veteran >= 1
-		Modifier: 120
-	RevealsShroudMultiplier@RANK-1:
-		RequiresCondition: rank-veteran >= 1
-		Modifier: 130
-	ReloadDelayMultiplier@RANK-1:
-		RequiresCondition: rank-veteran >= 1
-		Modifier: 60
-	GrantCondition@RANK-ELITE:
-		RequiresCondition: rank-veteran >= 2
-		Condition: rank-elite
-	ChangesHealth@ELITE:
-		PercentageStep: 2
-		Delay: 75
-		StartIfBelow: 100
-		DamageCooldown: 0
-		RequiresCondition: rank-elite
-	WithDecoration@RANK-1:
+	VeterancyModifier:
+		DamageRates: 110
+		StrengthRates: 50
+		SpeedRates: 120
+		SightRates: 130
+		ReloadRates: 60
+		HealRates: 0, 10
+		ExperienceRates: 200, 300
+	VeterancyDecoration:
 		Image: rank
-		Sequence: rank-veteran-1
+		SequencePerLevel: rank-veteran, rank-elite
 		Palette: pips
 		Position: BottomRight
-		RequiresCondition: rank-veteran == 1
 		ValidRelationships: Ally, Enemy, Neutral
-	WithDecoration@RANK-ELITE:
-		Image: rank
-		Sequence: rank-elite
-		Palette: pips
-		Position: BottomRight
-		RequiresCondition: rank-elite
-		ValidRelationships: Ally, Enemy, Neutral
-	WithStatIconOverlay@RANK-1:
-		Image: cameo-chevron
-		Sequence: veteran
-		Palette: pips
-		RequiresCondition: rank-veteran == 1
-	WithStatIconOverlay@RANK-ELITE:
-		Image: cameo-chevron
-		Sequence: heroic
-		Palette: pips
-		RequiresCondition: rank-elite
-	GainsExperienceMultiplier@ARMORY:
-		Modifier: 150
-		RequiresCondition: armory
-	GrantConditionOnPrerequisite@ARMORY:
-		Prerequisites: caarmr
-		Condition: armory
+	# WithStatIconOverlay@RANK-1:
+	# 	Image: cameo-chevron
+	# 	Sequence: veteran
+	# 	Palette: pips
+	# 	RequiresCondition: rank-veteran
 
 ^InfantryPromotable:
 	Inherits: ^GainsExperience
-	ProducibleWithLevel@1:
-		# InitialLevels: 2
+	VeterancyOnProduction:
+		InitialRank: 1
 		Prerequisites: barracks.infiltrated
-	WithProductionIconOverlay@1:
-		Prerequisites: barracks.infiltrated
+	WithProductionIconOverlay:
 		Types: chevron-veteran
+		Prerequisites: barracks.infiltrated
 
 ^ProducibleAsVeteranVehicle:
-	ProducibleWithLevel@1:
-		# InitialLevels: 2
+	VeterancyOnProduction:
+		InitialRank: 1
 		Prerequisites: warfactory.infiltrated
-	WithProductionIconOverlay@1:
-		Prerequisites: warfactory.infiltrated
+	WithProductionIconOverlay:
 		Types: chevron-veteran
+		Prerequisites: warfactory.infiltrated
 
 ^HospitalHealing:
 	ChangesHealth@HOSPITAL:
@@ -282,19 +245,7 @@
 ^AffectedByIndustrialPlant:
 	ProductionCostMultiplier@1_INDUSTRAL_PLANT:
 		Multiplier: 75
-		Prerequisites: prerequisite.one_naindp
-	ProductionCostMultiplier@2_INDUSTRAL_PLANT:
-		Multiplier: 75
-		Prerequisites: prerequisite.two_naindp
-	ProductionCostMultiplier@3_INDUSTRAL_PLANT:
-		Multiplier: 75
-		Prerequisites: prerequisite.three_naindp
-	ProductionCostMultiplier@4_INDUSTRAL_PLANT:
-		Multiplier: 75
-		Prerequisites: prerequisite.four_naindp
-	ProductionCostMultiplier@5_INDUSTRAL_PLANT:
-		Multiplier: 75
-		Prerequisites: prerequisite.five_naindp
+		Prerequisites: naindp
 
 ^ChronoDisable:
 	AffectedByTemporal:
@@ -418,26 +369,6 @@
 	Selectable:
 		PriorityModifiers: Ctrl, Alt
 
-^WithSubmergeColorOverlay:
-	WithColoredOverlay@SUBMERGE:
-		Color: 12131780
-		RequiresCondition: !surfaced && !squid
-	GrantConditionOnAttack@Surfaced:
-		Condition: surfaced
-		RevokeDelay: 100
-		ArmamentNames: primary, missile
-
-^SelectableBuilding:
-	IsometricSelectable:
-		Priority: 3
-		Height: 0
-		DecorationHeight: 30
-	IsometricSelectionDecorations:
-		MinimumZoom: 0
-	WithTextControlGroupDecoration:
-		Margin: 1, 1
-	ActorStatValues:
-
 ^Parachutable:
 	Parachutable:
 		FallRate: 52
@@ -517,15 +448,17 @@
 		MovingInterval: 2
 
 ^UnitParticles:
-	SmokeParticleEmitter@1:
-		RequiresCondition: enable_unitsmoke
+	FloatingSpriteEmitter@1:
+		Image: particles
 		Sequences: smallsmoke
 		Palette: effect
 		SpawnFrequency: 3, 10
+		Lifetime: 30, 40
 		Speed: 32
 		Gravity: 48
 		Offset: 0,0,192
 		Duration: 38
+		RequiresCondition: enable_unitsmoke
 	GrantConditionOnDamageState@dmg_heavy:
 		Condition: dmg_heavy
 	GrantPeriodicCondition@enable_unitsmoke:
@@ -542,51 +475,61 @@
 		LocalOffset: 0,0,384
 
 ^BuildingParticles:
-	SmokeParticleEmitter@1:
-		RequiresCondition: dmg_heavy
+	FloatingSpriteEmitter@1:
+		Image: particles
 		Sequences: smallsmoke
 		Palette: effect
 		SpawnFrequency: 6, 20
+		Lifetime: 40
 		Speed: 32
 		Gravity: 48
 		Offset: -384,-384,0, 384,384,0
 		Duration: 38
-	SmokeParticleEmitter@2:
 		RequiresCondition: dmg_heavy
+	FloatingSpriteEmitter@2:
+		Image: particles
 		Sequences: fire
 		Palette: effect
 		SpawnFrequency: 96
+		Lifetime: 40
 		Speed: 0
 		Gravity: 0
 		Offset: -384,-384,0, 384,384,0
 		Duration: 80
-	SmokeParticleEmitter@3:
 		RequiresCondition: dmg_heavy
+	FloatingSpriteEmitter@3:
+		Image: particles
 		Sequences: fire
 		Palette: effect
 		SpawnFrequency: 96
+		Lifetime: 40
 		Speed: 0
 		Gravity: 0
 		Offset: -384,-384,0, 384,384,0
 		Duration: 80
-	SmokeParticleEmitter@4:
-		RequiresCondition: dmg_crit
+		RequiresCondition: dmg_heavy
+	FloatingSpriteEmitter@4:
+		Image: particles
 		Sequences: fire
 		Palette: effect
 		SpawnFrequency: 96
+		Lifetime: 40
 		Speed: 0
 		Gravity: 0
 		Offset: -384,-384,0, 384,384,0
 		Duration: 80
-	SmokeParticleEmitter@5:
 		RequiresCondition: dmg_crit
+	FloatingSpriteEmitter@5:
+		Image: particles
 		Sequences: largesmoke
 		Palette: effect
 		SpawnFrequency: 6, 20
+		Lifetime: 40
 		Speed: 48
 		Gravity: 72
 		Offset: -384,-384,0, 384,384,0
 		Duration: 38
+		RequiresCondition: dmg_crit
 	GrantConditionOnDamageState@dmg_heavy:
 		Condition: dmg_heavy
 	GrantConditionOnDamageState@dmg_crit:
@@ -630,23 +573,6 @@
 		Position: TopRight
 		RequiresCondition: disguise
 
-^Capturable:
-	Capturable:
-		Types: building
-		RequiresCondition: !build-incomplete && !invulnerability && !forceshield
-	CaptureNotification:
-		TextNotification: notification-building-captured
-	CapturableProgressBar:
-		RequiresCondition: !instantcapture
-	CapturableProgressBlink:
-		Interval: 25
-		Sound: ucapture.aud
-		RequiresCondition: !instantcapture
-	GrantConditionOnPrerequisite@INSTANTCAPTURE:
-		Condition: instantcapture
-		Prerequisites: global-instantcapture
-	CaptureManager:
-
 ^BuildingCapturer:
 	CaptureManager:
 	Captures@INSTANT:
@@ -666,22 +592,6 @@
 	GrantConditionOnPrerequisite@INSTANTCAPTURE:
 		Condition: instantcapture
 		Prerequisites: global-instantcapture
-
-^RepairableBuilding:
-	RepairableBuilding:
-		RepairStep: 700
-		RepairingNotification: Repairing
-	WithBuildingRepairDecoration:
-		Image: allyrepair
-		Sequence: repair
-		Position: Center
-		Palette: mouse
-	InstantlyRepairable:
-		Types: building
-		RequiresCondition: !ivanbomb && !c4 && !superC4 && damaged
-	GrantConditionOnDamageState@DAMAGED:
-		Condition: damaged
-		ValidDamageStates: Light, Medium, Heavy, Critical
 
 ^BuildingRepairer:
 	InstantlyRepairs:
@@ -783,6 +693,8 @@
 		UncloakOn: Attack, Damage
 		IsPlayerPalette: true
 		Palette: player50alpha
+	LeavesTrails:
+		RequiresCondition: !cloaked
 	Targetable:
 		RequiresCondition: !cloaked
 	Targetable@UNDERWATER:
@@ -806,6 +718,17 @@
 		Condition: suddendeath
 		Prerequisites: global-suddendeath
 
+^KingOfTheHillModifier:
+	GrantConditionOnPrerequisite@koth:
+		Condition: koth
+		Prerequisites: global-koth
+	DamageMultiplier@koth:
+		Modifier: 0
+		RequiresCondition: koth
+	KillsSelf:
+		RemoveInstead: true
+		RequiresCondition: !koth
+
 ^WithTooltip:
 	Tooltip:
 		RequiresCondition: showownername
@@ -815,75 +738,6 @@
 	GrantConditionOnPrerequisite@SHOWOWNERNAME:
 		Condition: showownername
 		Prerequisites: global-showownername
-
-^PrimaryBuilding:
-	WithTextDecoration@primary:
-		RequiresSelection: true
-		Text: PRIMARY
-		Position: Top
-		RequiresCondition: primary && !multiqueue
-	PrimaryBuilding:
-		PrimaryCondition: primary
-		SelectionNotification: PrimaryBuildingSelected
-		SelectionTextNotification: notification-primary-building-selected
-		RequiresCondition: !multiqueue
-	GrantConditionOnPrerequisite@multiqueue:
-		Condition: multiqueue
-		Prerequisites: global-multiqueue
-
-^Radar:
-	Inherits@LOWPOWER: ^DisabledOnLowPowerOrPowerDown
-	Inherits@SPY: ^Spyable
-	ProvidesRadar:
-		RequiresCondition: !chronodisable && !disableradar
-	ExternalCondition@disableradar:
-		Condition: disableradar
-	SupportPowerChargeBar:
-	InfiltrateForExploration:
-		Types: SpyInfiltrate
-		InfiltratedNotification: RadarSabotaged
-		InfiltrationNotification: BuildingInfiltratedRadarSabotaged
-
-^RepairsUnits:
-	RepairsUnits:
-		PauseOnCondition: chronodisable
-		HpPerStep: 2000
-		Interval: 20
-		RepairDamageTypes: KillsDrone
-		StartRepairingNotification: Repairing
-		StartRepairingTextNotification: notification-repairing
-		FinishRepairingNotification: UnitRepaired
-		FinishRepairingTextNotification: notification-unit-repaired
-	RallyPoint:
-		Palette: mouse
-		IsPlayerPalette: false
-	Reservable:
-	WithIdleOverlay@crane:
-		Sequence: idle-crane
-		PauseOnCondition: chronodisable
-		RequiresCondition: !build-incomplete && !producing && !resupplying
-	WithResupplyOverlay:
-		StartSequence: repair-start
-		Sequence: repair
-		EndSequence: repair-end
-		ResupplyCondition: resupplying
-		PauseOnCondition: chronodisable
-
-^CollapsingMonumentSound:
-	DeathSounds:
-		DeathTypes: NonTemporal
-	Voiced:
-		VoiceSet: MonumentVoice
-		Volume: 0.8
-
-^CollapsingMonument:
-	Inherits: ^CollapsingMonumentSound
-	WithDeathAnimation:
-		DeathSequence: collapse
-		UseDeathTypeSuffix: false
-		DeathPaletteIsPlayerPalette: false
-	SpawnActorOnDeath@rubble:
-		DeathType: NonTemporal
 
 ^GiveMoneyCrateOnDeath:
 	SpawnActorOnDeath@crate:
@@ -928,9 +782,9 @@
 	ExternalCondition@PRODUCED:
 		Condition: produced
 	VoiceAnnouncement:
-		RequiresCondition: produced
 		Voice: Build
 		ValidRelationships: None
+		RequiresCondition: produced
 
 ^DetectUnderWater:
 	DetectCloaked@UNDERWATER:

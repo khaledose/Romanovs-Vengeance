@@ -25,24 +25,6 @@
 		PauseOnCondition: chronodisable
 		RequiresCondition: !parachute
 
-^DeployableInfantry:
-	Inherits: ^Deployable
-	Mobile:
-		RequiresCondition: !deployed
-	WithInfantryBody:
-		RequiresCondition: undeployed && !parachute
-	AttackFrontal:
-		RequiresCondition: undeployed && !chronodisable
-	TakeCover:
-		RequiresCondition: undeployed
-	WithSpriteBody@DEPLOYING:
-		Sequence: dot
-		Name: dot
-		RequiresCondition: !undeployed
-	WithMakeAnimation:
-		Sequence: deploy
-		BodyNames: dot
-
 ^TimedDeployableInfantry:
 	Inherits: ^TimedDeployable
 	WithInfantryBody:

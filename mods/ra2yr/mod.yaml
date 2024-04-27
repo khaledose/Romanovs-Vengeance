@@ -109,149 +109,149 @@ Rules:
 	ra2yr|factions/allies/rules.yaml
 	ra2yr|factions/allies/aircraft/Black Eagle/rules.yaml
 	ra2yr|factions/allies/aircraft/Harrier/rules.yaml
-	ra2yr|factions/allies/aircraft/Hornet/rules.yaml
+	# ra2yr|factions/allies/aircraft/Hornet/rules.yaml
 	ra2yr|factions/allies/aircraft/Night Hawk/rules.yaml
-	ra2yr|factions/allies/aircraft/Osprey/rules.yaml
+	# ra2yr|factions/allies/aircraft/Osprey/rules.yaml
 	ra2yr|factions/allies/buildings/Airforce Command Headquarters/rules.yaml
 	ra2yr|factions/allies/buildings/Barracks/rules.yaml
-	ra2yr|factions/allies/buildings/Battle Lab/rules.yaml
+	# ra2yr|factions/allies/buildings/Battle Lab/rules.yaml
 	ra2yr|factions/allies/buildings/Construction Yard/rules.yaml
-	ra2yr|factions/allies/buildings/Naval Shipyard/rules.yaml
-	ra2yr|factions/allies/buildings/Ore Purifier/rules.yaml
+	# ra2yr|factions/allies/buildings/Naval Shipyard/rules.yaml
+	# ra2yr|factions/allies/buildings/Ore Purifier/rules.yaml
 	ra2yr|factions/allies/buildings/Ore Refinery/rules.yaml
 	ra2yr|factions/allies/buildings/Power Plant/rules.yaml
-	ra2yr|factions/allies/buildings/Robot Control Center/rules.yaml
-	ra2yr|factions/allies/buildings/Service Depot/rules.yaml
+	# ra2yr|factions/allies/buildings/Robot Control Center/rules.yaml
+	# ra2yr|factions/allies/buildings/Service Depot/rules.yaml
 	ra2yr|factions/allies/buildings/War Factory/rules.yaml
 	ra2yr|factions/allies/defenses/Allied Wall/rules.yaml
-	ra2yr|factions/allies/defenses/Chronosphere/rules.yaml
-	ra2yr|factions/allies/defenses/Gap Generator/rules.yaml
-	ra2yr|factions/allies/defenses/Grand Cannon/rules.yaml
-	ra2yr|factions/allies/defenses/Patriot Missile System/rules.yaml
+	# ra2yr|factions/allies/defenses/Chronosphere/rules.yaml
+	# ra2yr|factions/allies/defenses/Gap Generator/rules.yaml
+	# ra2yr|factions/allies/defenses/Grand Cannon/rules.yaml
+	# ra2yr|factions/allies/defenses/Patriot Missile System/rules.yaml
 	ra2yr|factions/allies/defenses/Pill Box/rules.yaml
-	ra2yr|factions/allies/defenses/Prism Tower/rules.yaml
-	ra2yr|factions/allies/defenses/Spy Satellite Uplink/rules.yaml
-	ra2yr|factions/allies/defenses/Weather Controller/rules.yaml
+	# ra2yr|factions/allies/defenses/Prism Tower/rules.yaml
+	# ra2yr|factions/allies/defenses/Spy Satellite Uplink/rules.yaml
+	# ra2yr|factions/allies/defenses/Weather Controller/rules.yaml
 	ra2yr|factions/allies/infantries/Attack Dog/rules.yaml
-	ra2yr|factions/allies/infantries/Chrono Commando/rules.yaml
-	ra2yr|factions/allies/infantries/Chrono Legionnaire/rules.yaml
+	# ra2yr|factions/allies/infantries/Chrono Commando/rules.yaml
+	# ra2yr|factions/allies/infantries/Chrono Legionnaire/rules.yaml
 	ra2yr|factions/allies/infantries/Engineer/rules.yaml
 	ra2yr|factions/allies/infantries/G.I/rules.yaml
 	ra2yr|factions/allies/infantries/Guardian G.I/rules.yaml
-	ra2yr|factions/allies/infantries/Navy SEAL/rules.yaml
+	# ra2yr|factions/allies/infantries/Navy SEAL/rules.yaml
 	ra2yr|factions/allies/infantries/Rocketeer/rules.yaml
-	ra2yr|factions/allies/infantries/Sniper/rules.yaml
-	ra2yr|factions/allies/infantries/Spy/rules.yaml
-	ra2yr|factions/allies/infantries/Tanya Adams/rules.yaml
-	ra2yr|factions/allies/navals/Aegis Cruiser/rules.yaml
-	ra2yr|factions/allies/navals/Aircraft Carrier/rules.yaml
-	ra2yr|factions/allies/navals/Amphibious Transport/rules.yaml
-	ra2yr|factions/allies/navals/Destroyer/rules.yaml
-	ra2yr|factions/allies/navals/Dolphin/rules.yaml
+	# ra2yr|factions/allies/infantries/Sniper/rules.yaml
+	# ra2yr|factions/allies/infantries/Spy/rules.yaml
+	# ra2yr|factions/allies/infantries/Tanya Adams/rules.yaml
+	# ra2yr|factions/allies/navals/Aegis Cruiser/rules.yaml
+	# ra2yr|factions/allies/navals/Aircraft Carrier/rules.yaml
+	# ra2yr|factions/allies/navals/Amphibious Transport/rules.yaml
+	# ra2yr|factions/allies/navals/Destroyer/rules.yaml
+	# ra2yr|factions/allies/navals/Dolphin/rules.yaml
 	ra2yr|factions/allies/specials/Airborne/rules.yaml
-	ra2yr|factions/allies/specials/Chronosphere/rules.yaml
-	ra2yr|factions/allies/specials/Lightning Storm/rules.yaml
+	# ra2yr|factions/allies/specials/Chronosphere/rules.yaml
+	# ra2yr|factions/allies/specials/Lightning Storm/rules.yaml
 	ra2yr|factions/allies/specials/Paradrop/rules.yaml
-	ra2yr|factions/allies/vehicles/Battle Fortress/rules.yaml
+	# ra2yr|factions/allies/vehicles/Battle Fortress/rules.yaml
 	ra2yr|factions/allies/vehicles/Chrono Miner/rules.yaml
 	ra2yr|factions/allies/vehicles/Grizzly Battle Tank/rules.yaml
 	ra2yr|factions/allies/vehicles/Infantry Fighting Vehicle/rules.yaml
-	ra2yr|factions/allies/vehicles/Mirage Tank/rules.yaml
+	# ra2yr|factions/allies/vehicles/Mirage Tank/rules.yaml
 	ra2yr|factions/allies/vehicles/Mobile Construction Vehicle/rules.yaml
-	ra2yr|factions/allies/vehicles/Prism Tank/rules.yaml
-	ra2yr|factions/allies/vehicles/Robot Tank/rules.yaml
+	# ra2yr|factions/allies/vehicles/Prism Tank/rules.yaml
+	# ra2yr|factions/allies/vehicles/Robot Tank/rules.yaml
 	ra2yr|factions/allies/vehicles/Tank Destroyer/rules.yaml
 	ra2yr|factions/soviets/rules.yaml
-	ra2yr|factions/soviets/aircraft/Kirov Airship/rules.yaml
-	ra2yr|factions/soviets/aircraft/MiG/rules.yaml
-	ra2yr|factions/soviets/aircraft/Siege Chopper/rules.yaml
+	# ra2yr|factions/soviets/aircraft/Kirov Airship/rules.yaml
+	# ra2yr|factions/soviets/aircraft/MiG/rules.yaml
+	# ra2yr|factions/soviets/aircraft/Siege Chopper/rules.yaml
 	ra2yr|factions/soviets/aircraft/Spy Plane/rules.yaml
 	ra2yr|factions/soviets/buildings/Barracks/rules.yaml
-	ra2yr|factions/soviets/buildings/Battle Lab/rules.yaml
+	# ra2yr|factions/soviets/buildings/Battle Lab/rules.yaml
 	ra2yr|factions/soviets/buildings/Construction Yard/rules.yaml
-	ra2yr|factions/soviets/buildings/Industrial Plant/rules.yaml
+	# ra2yr|factions/soviets/buildings/Industrial Plant/rules.yaml
 	ra2yr|factions/soviets/buildings/Naval Shipyard/rules.yaml
-	ra2yr|factions/soviets/buildings/Nuclear Reactor/rules.yaml
+	# ra2yr|factions/soviets/buildings/Nuclear Reactor/rules.yaml
 	ra2yr|factions/soviets/buildings/Ore Refinery/rules.yaml
 	ra2yr|factions/soviets/buildings/Radar Tower/rules.yaml
-	ra2yr|factions/soviets/buildings/Service Depot/rules.yaml
+	# ra2yr|factions/soviets/buildings/Service Depot/rules.yaml
 	ra2yr|factions/soviets/buildings/Tesla Reactor/rules.yaml
 	ra2yr|factions/soviets/buildings/War Factory/rules.yaml
 	ra2yr|factions/soviets/defenses/Battle Bunker/rules.yaml
-	ra2yr|factions/soviets/defenses/Flak Cannon/rules.yaml
-	ra2yr|factions/soviets/defenses/Iron Curtain Device/rules.yaml
-	ra2yr|factions/soviets/defenses/Nuclear Missile Silo/rules.yaml
+	# ra2yr|factions/soviets/defenses/Flak Cannon/rules.yaml
+	# ra2yr|factions/soviets/defenses/Iron Curtain Device/rules.yaml
+	# ra2yr|factions/soviets/defenses/Nuclear Missile Silo/rules.yaml
 	ra2yr|factions/soviets/defenses/Sentry Gun/rules.yaml
 	ra2yr|factions/soviets/defenses/Soviet Wall/rules.yaml
-	ra2yr|factions/soviets/defenses/Tesla Coil/rules.yaml
+	# ra2yr|factions/soviets/defenses/Tesla Coil/rules.yaml
 	ra2yr|factions/soviets/infantries/Attack Dog/rules.yaml
-	ra2yr|factions/soviets/infantries/Boris Bukov/rules.yaml
-	ra2yr|factions/soviets/infantries/Chrono Ivan/rules.yaml
+	# ra2yr|factions/soviets/infantries/Boris Bukov/rules.yaml
+	# ra2yr|factions/soviets/infantries/Chrono Ivan/rules.yaml
 	ra2yr|factions/soviets/infantries/Conscript/rules.yaml
-	ra2yr|factions/soviets/infantries/Crazy Ivan/rules.yaml
-	ra2yr|factions/soviets/infantries/Desolator/rules.yaml
+	# ra2yr|factions/soviets/infantries/Crazy Ivan/rules.yaml
+	# ra2yr|factions/soviets/infantries/Desolator/rules.yaml
 	ra2yr|factions/soviets/infantries/Engineer/rules.yaml
 	ra2yr|factions/soviets/infantries/Flak Trooper/rules.yaml
-	ra2yr|factions/soviets/infantries/Terrorist/rules.yaml
-	ra2yr|factions/soviets/infantries/Tesla Trooper/rules.yaml
+	# ra2yr|factions/soviets/infantries/Terrorist/rules.yaml
+	# ra2yr|factions/soviets/infantries/Tesla Trooper/rules.yaml
 	ra2yr|factions/soviets/navals/Amphibious Transport/rules.yaml
-	ra2yr|factions/soviets/navals/Dreadnought/rules.yaml
-	ra2yr|factions/soviets/navals/Dreadnought Missile/rules.yaml
-	ra2yr|factions/soviets/navals/Giant Squid/rules.yaml
-	ra2yr|factions/soviets/navals/Sea Scorpion/rules.yaml
+	# ra2yr|factions/soviets/navals/Dreadnought/rules.yaml
+	# ra2yr|factions/soviets/navals/Dreadnought Missile/rules.yaml
+	# ra2yr|factions/soviets/navals/Giant Squid/rules.yaml
+	# ra2yr|factions/soviets/navals/Sea Scorpion/rules.yaml
 	ra2yr|factions/soviets/navals/Typhoon Attack Submarine/rules.yaml
-	ra2yr|factions/soviets/specials/Iron Curtain/rules.yaml
-	ra2yr|factions/soviets/specials/Nuke/rules.yaml
+	# ra2yr|factions/soviets/specials/Iron Curtain/rules.yaml
+	# ra2yr|factions/soviets/specials/Nuke/rules.yaml
 	ra2yr|factions/soviets/specials/Paradrop/rules.yaml
 	ra2yr|factions/soviets/specials/Spy Plane/rules.yaml
-	ra2yr|factions/soviets/vehicles/Apocalypse Tank/rules.yaml
-	ra2yr|factions/soviets/vehicles/Demolition Truck/rules.yaml
+	# ra2yr|factions/soviets/vehicles/Apocalypse Tank/rules.yaml
+	# ra2yr|factions/soviets/vehicles/Demolition Truck/rules.yaml
 	ra2yr|factions/soviets/vehicles/Flak Track/rules.yaml
 	ra2yr|factions/soviets/vehicles/Mobile Construction Vehicle/rules.yaml
 	ra2yr|factions/soviets/vehicles/Rhino Heavy Tank/rules.yaml
-	ra2yr|factions/soviets/vehicles/Terror Drone/rules.yaml
-	ra2yr|factions/soviets/vehicles/Tesla Tank/rules.yaml
+	# ra2yr|factions/soviets/vehicles/Terror Drone/rules.yaml
+	# ra2yr|factions/soviets/vehicles/Tesla Tank/rules.yaml
 	ra2yr|factions/soviets/vehicles/V3 Launcher/rules.yaml
 	ra2yr|factions/soviets/vehicles/V3 Rocket/rules.yaml
 	ra2yr|factions/soviets/vehicles/War Miner/rules.yaml
 	ra2yr|factions/yuris/rules.yaml
-	ra2yr|factions/yuris/aircraft/Floating Disc/rules.yaml
+	# ra2yr|factions/yuris/aircraft/Floating Disc/rules.yaml
 	ra2yr|factions/yuris/buildings/Barracks/rules.yaml
-	ra2yr|factions/yuris/buildings/Battle Lab/rules.yaml
+	# ra2yr|factions/yuris/buildings/Battle Lab/rules.yaml
 	ra2yr|factions/yuris/buildings/Bio Reactor/rules.yaml
 	ra2yr|factions/yuris/buildings/Construction Yard/rules.yaml
-	ra2yr|factions/yuris/buildings/Grinder/rules.yaml
+	# ra2yr|factions/yuris/buildings/Grinder/rules.yaml
 	ra2yr|factions/yuris/buildings/Psychic Radar/rules.yaml
 	ra2yr|factions/yuris/buildings/Slave Miner/rules.yaml
-	ra2yr|factions/yuris/buildings/Submarine Pen/rules.yaml
+	# ra2yr|factions/yuris/buildings/Submarine Pen/rules.yaml
 	ra2yr|factions/yuris/buildings/War Factory/rules.yaml
 	ra2yr|factions/yuris/defenses/Citadel Wall/rules.yaml
-	ra2yr|factions/yuris/defenses/Cloning Vat/rules.yaml
-	ra2yr|factions/yuris/defenses/Gatling Cannon/rules.yaml
-	ra2yr|factions/yuris/defenses/Genetic Mutator/rules.yaml
-	ra2yr|factions/yuris/defenses/Psychic Dominator/rules.yaml
-	ra2yr|factions/yuris/defenses/Psychic Tower/rules.yaml
+	# ra2yr|factions/yuris/defenses/Cloning Vat/rules.yaml
+	# ra2yr|factions/yuris/defenses/Gatling Cannon/rules.yaml
+	# ra2yr|factions/yuris/defenses/Genetic Mutator/rules.yaml
+	# ra2yr|factions/yuris/defenses/Psychic Dominator/rules.yaml
+	# ra2yr|factions/yuris/defenses/Psychic Tower/rules.yaml
 	ra2yr|factions/yuris/defenses/Tank Bunker/rules.yaml
-	ra2yr|factions/yuris/infantries/Brute/rules.yaml
+	# ra2yr|factions/yuris/infantries/Brute/rules.yaml
 	ra2yr|factions/yuris/infantries/Engineer/rules.yaml
 	ra2yr|factions/yuris/infantries/Initiate/rules.yaml
-	ra2yr|factions/yuris/infantries/Psi Commando/rules.yaml
+	# ra2yr|factions/yuris/infantries/Psi Commando/rules.yaml
 	ra2yr|factions/yuris/infantries/Slave/rules.yaml
 	ra2yr|factions/yuris/infantries/Virus/rules.yaml
-	ra2yr|factions/yuris/infantries/Yuri Clone/rules.yaml
-	ra2yr|factions/yuris/infantries/Yuri Prime/rules.yaml
-	ra2yr|factions/yuris/navals/Amphibious Transport/rules.yaml
-	ra2yr|factions/yuris/navals/Boomer Submarine/rules.yaml
-	ra2yr|factions/yuris/navals/Cruise Missile/rules.yaml
-	ra2yr|factions/yuris/specials/Genetic Mutator/rules.yaml
+	# ra2yr|factions/yuris/infantries/Yuri Clone/rules.yaml
+	# ra2yr|factions/yuris/infantries/Yuri Prime/rules.yaml
+	# ra2yr|factions/yuris/navals/Amphibious Transport/rules.yaml
+	# ra2yr|factions/yuris/navals/Boomer Submarine/rules.yaml
+	# ra2yr|factions/yuris/navals/Cruise Missile/rules.yaml
+	# ra2yr|factions/yuris/specials/Genetic Mutator/rules.yaml
 	ra2yr|factions/yuris/specials/Paradrop/rules.yaml
-	ra2yr|factions/yuris/specials/Psychic Dominator/rules.yaml
+	# ra2yr|factions/yuris/specials/Psychic Dominator/rules.yaml
 	ra2yr|factions/yuris/specials/Psychic Reveal/rules.yaml
-	ra2yr|factions/yuris/vehicles/Chaos Drone/rules.yaml
-	ra2yr|factions/yuris/vehicles/Gatling Tank/rules.yaml
+	# ra2yr|factions/yuris/vehicles/Chaos Drone/rules.yaml
+	# ra2yr|factions/yuris/vehicles/Gatling Tank/rules.yaml
 	ra2yr|factions/yuris/vehicles/Lasher Light Tank/rules.yaml
 	ra2yr|factions/yuris/vehicles/Magnetron/rules.yaml
-	ra2yr|factions/yuris/vehicles/Master Mind/rules.yaml
+	# ra2yr|factions/yuris/vehicles/Master Mind/rules.yaml
 	ra2yr|factions/yuris/vehicles/Mobile Construction Vehicle/rules.yaml
 	ra2yr|factions/yuris/vehicles/Slave Miner/rules.yaml
 	ra2yr|world/aircraft/rules.yaml
@@ -280,6 +280,7 @@ Rules:
 	ra2yr|_defaults/navals/rules.yaml
 	ra2yr|_defaults/shapes/rules.yaml
 	ra2yr|_defaults/traits/autotarget/rules.yaml
+	ra2yr|_defaults/traits/buildings/rules.yaml
 	ra2yr|_defaults/traits/rules.yaml
 	ra2yr|_defaults/traits/cargo/rules.yaml
 	ra2yr|_defaults/traits/deployables/rules.yaml
@@ -289,8 +290,10 @@ Rules:
 	ra2yr|_defaults/traits/turrets/rules.yaml
 	ra2yr|_defaults/vehicles/rules.yaml
 	ra2yr|game/lobby/rules.yaml
+	ra2yr|game/locomotor/rules.yaml
+	ra2yr|game/palette/rules.yaml
 	ra2yr|game/skirmish/rules.yaml
-	ra2yr|game/palettes.yaml
+	ra2yr|game/smudgelayer/rules.yaml
 	ra2yr|game/player.yaml
 	ra2yr|game/world.yaml
 
@@ -515,7 +518,7 @@ Assemblies:
 	^BinDir|OpenRA.Mods.AS.dll
 	^BinDir|OpenRA.Mods.Common.dll
 	^BinDir|OpenRA.Mods.Cnc.dll
-	^BinDir|OpenRA.Mods.D2k.dll
+	# ^BinDir|OpenRA.Mods.D2k.dll
 
 ChromeLayout:
 	ra2yr|chrome/assetbrowser.yaml
@@ -695,6 +698,7 @@ Voices:
 	ra2yr|factions/allies/navals/Dolphin/voices.yaml
 	ra2yr|factions/allies/vehicles/Battle Fortress/voices.yaml
 	ra2yr|factions/allies/vehicles/Chrono Miner/voices.yaml
+	ra2yr|factions/allies/vehicles/Grizzly Battle Tank/voices.yaml
 	ra2yr|factions/allies/vehicles/Mobile Construction Vehicle/voices.yaml
 	ra2yr|factions/allies/vehicles/Tank Destroyer/voices.yaml
 	ra2yr|factions/soviets/aircraft/Kirov Airship/voices.yaml
@@ -712,6 +716,7 @@ Voices:
 	ra2yr|factions/soviets/navals/Giant Squid/voices.yaml
 	ra2yr|factions/soviets/vehicles/Demolition Truck/voices.yaml
 	ra2yr|factions/soviets/vehicles/Mobile Construction Vehicle/voices.yaml
+	ra2yr|factions/soviets/vehicles/Rhino Heavy Tank/voices.yaml
 	ra2yr|factions/soviets/vehicles/War Miner/voices.yaml
 	ra2yr|factions/yuris/aircraft/Floating Disc/voices.yaml
 	ra2yr|factions/yuris/buildings/Slave Miner/voices.yaml
@@ -722,6 +727,7 @@ Voices:
 	ra2yr|factions/yuris/infantries/Virus/voices.yaml
 	ra2yr|factions/yuris/infantries/Yuri Clone/voices.yaml
 	ra2yr|factions/yuris/infantries/Yuri Prime/voices.yaml
+	ra2yr|factions/yuris/vehicles/Lasher Light Tank/voices.yaml
 	ra2yr|factions/yuris/vehicles/Mobile Construction Vehicle/voices.yaml
 	ra2yr|world/aircraft/voices.yaml
 	ra2yr|world/animals/voices.yaml
@@ -756,15 +762,15 @@ Music:
 	ra2yr|audio/music.yaml
 
 Hotkeys:
+	common|hotkeys/chat.yaml
+	common|hotkeys/control-groups.yaml
+	common|hotkeys/editor.yaml
 	common|hotkeys/game.yaml
 	common|hotkeys/observer.yaml
 	common|hotkeys/production-common.yaml
 	common|hotkeys/production-peractor.yaml
 	common|hotkeys/supportpowers.yaml
 	common|hotkeys/viewport.yaml
-	common|hotkeys/chat.yaml
-	common|hotkeys/editor.yaml
-	common|hotkeys/control-groups.yaml
 	ra2yr|hotkeys.yaml
 
 LoadScreen: LogoStripeLoadScreen

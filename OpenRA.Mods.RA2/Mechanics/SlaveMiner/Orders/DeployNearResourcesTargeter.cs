@@ -8,7 +8,7 @@ namespace OpenRA.Mods.RA2.Mechanics.SlaveMiner.Orders
 {
 	public class DeployNearResourcesTargeter : IOrderTargeter
 	{
-		public string OrderID => "DeployNearResources";
+		public string OrderID => "Harvest";
 		public int OrderPriority => 10;
 		public bool IsQueued { get; private set; }
 		public bool TargetOverridesSelection(Actor self, in Target target, List<Actor> actorsAt, CPos xy, TargetModifiers modifiers)

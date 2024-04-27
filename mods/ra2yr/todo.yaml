@@ -1,3 +1,31 @@
 TODO:
     1: allow LeaveSumdge to support multiple types
     2: explosion effects like here: https://modenc.renegadeprojects.com/AnimList
+
+
+Move these classes from engine to mod:
+    PeriodicExplosion
+    ChronoResourceDelivery
+    AttackFollowFrontal
+    GrantConditionOnHarvest
+    Garrisonable
+    AttackPrism
+    GrantConditionAfterDelay
+    ClearsResources
+    FireShrapnelWarhead
+    RadBeam
+    DetachDelayedWeaponWarhead
+    AttachDelayedWeaponWarhead
+    InstantExplode
+    SpawnSmokeParticleWarhead
+    FireFragmentWarhead
+    AthenaProjectile
+    SpawnActorWarhead
+    SendAirstrikeWarhead
+    CaptureActorWarhead
+    BulletAS
+    LobbySystemActorConditionCheckbox
+    GlobalLightingPaletteEffect
+    MindControllable
+    WithMindControlArc
+    SpawnSmokeParticleOnDeath

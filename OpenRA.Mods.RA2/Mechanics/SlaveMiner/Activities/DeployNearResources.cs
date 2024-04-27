@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using OpenRA.Activities;
+using OpenRA.Mods.Common;
 using OpenRA.Mods.Common.Activities;
 using OpenRA.Mods.Common.Pathfinder;
 using OpenRA.Mods.Common.Traits;
@@ -130,17 +132,18 @@ namespace OpenRA.Mods.RA2.Mechanics.SlaveMiner.Activities
 				return false;
 			}
 
+			var resourceDensity = masterMiner.GetResourceDensityAtLocation(location);
+			if (resourceDensity < 10 * masterMinerInfo.ScanRadius)
+			{
+				return false;
+			}
+
 			foreach (var buildingCell in buildingInfo.Tiles(location))
 			{
-				for (var i = -1; i < 2; i++)
+				var adj = Util.AdjacentCells(world, Target.FromCell(world, buildingCell));
+				if (adj.Any(c => masterMiner.CanSlavesHarvestCell(c)))
 				{
-					for (var j = -1; j < 2; j++)
-					{
-						if (masterMiner.CanSlavesHarvestCell(buildingCell + new CVec(i, j)))
-						{
-							return true;
-						}
-					}
+					return true;
 				}
 			}
 

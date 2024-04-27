@@ -1,20 +1,11 @@
 apoc:
-	Inherits: ^GroundVehicle
+	Inherits: ^Tank
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
-	Inherits@BUNKER: ^BunkerableVehicle
-	Inherits@EXPERIENCE: ^GainsExperience
-	Inherits@VETERAN: ^ProducibleAsVeteranVehicle
-	Inherits@CHAOS: ^BerserkableVoxel
-	Inherits@MC: ^MindControllable
-	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Inherits@SELFHEALING: ^SelfHealing
 	Inherits@ANNOUNCE: ^AnnounceProduction
-	Inherits@TURRET: ^WithVoxelTurret
 	Buildable:
-		Queue: Vehicle.Shared, Vehicle.Soviets
 		Prerequisites: ~vehicle.soviets, natech, ~techlevel.7
 		Description: actor-apoc.description
-		BuildDurationModifier: 100
 		BuildPaletteOrder: 120
 	Selectable:
 		Bounds: 1544, 2509, 0, -289
@@ -38,28 +29,17 @@ apoc:
 		Name: actor-apoc.name
 	Armament@primary:
 		Weapon: 120mmx
-		Damage: 100
-		Recoil: 87
-		RecoilRecovery: 12
 		MuzzleSequence: muzzle
 		LocalOffset: 1280,-100,768, 1280,100,768
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: 120mmxE
-		Damage: 200
-		Recoil: 87
-		RecoilRecovery: 12
 		MuzzleSequence: muzzle-2
 		LocalOffset: 1280,-100,768, 1280,100,768
 		RequiresCondition: rank-elite
 	Armament@antiair:
 		Weapon: MammothTusk
-		Damage: 160
 		LocalOffset: 80,200,768, 80,-200,768
-	AttackTurreted:
-		Voice: Attack
-	WithMuzzleOverlay:
-	WithVoxelBody:
 	WithVoxelBarrel@1:
 	WithVoxelBarrel@2:
 	Voiced:

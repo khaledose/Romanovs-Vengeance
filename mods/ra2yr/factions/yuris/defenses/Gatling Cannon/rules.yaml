@@ -7,7 +7,6 @@ yaggun:
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@TURRET: ^WithVoxelTurretBuildingPowered
 	Buildable:
-		Queue: Support.Shared, Support.Yuri
 		Prerequisites: ~building.yuri, yabrck, ~techlevel.4
 		Description: actor-yaggun.description
 		BuildPaletteOrder: 40

@@ -5,12 +5,9 @@ gapill:
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@TURRET: ^WithTurret
 	Buildable:
-		Queue: Support.Shared, Support.Allies
 		Prerequisites: ~building.allies, gapile, ~techlevel.1
 		Description: actor-gapill.description
-		BuildPaletteOrder: 40
-	RequiresBuildableArea:
-		Adjacent: 4
+		BuildPaletteOrder: 20
 	IsometricSelectable:
 		DecorationHeight: 15
 	Health:

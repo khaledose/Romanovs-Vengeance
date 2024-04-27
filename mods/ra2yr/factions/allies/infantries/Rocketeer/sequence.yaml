@@ -12,7 +12,7 @@ jumpjet.foot:
 	paradrop:
 		Start: 418
 
-jumpjet.air:
+jumpjet:
 	Inherits: ^AirInfantry
 	Inherits@SHOOTER: ^Shooter
 	Defaults:

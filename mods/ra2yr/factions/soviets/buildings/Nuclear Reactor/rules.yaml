@@ -2,7 +2,6 @@ nanrct:
 	Inherits: ^PowerPlant
 	Inherits@SHAPE: ^4x4Shape
 	Buildable:
-		Queue: Building.Shared, Building.Soviets
 		Prerequisites: ~building.soviets, natech, ~techlevel.9
 		Description: actor-nanrct.description
 		BuildPaletteOrder: 110

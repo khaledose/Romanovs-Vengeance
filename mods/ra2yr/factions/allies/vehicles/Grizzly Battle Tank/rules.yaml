@@ -1,19 +1,10 @@
 mtnk:
-	Inherits: ^GroundVehicle
+	Inherits: ^Tank
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@BUNKER: ^BunkerableVehicle
-	Inherits@CHAOS: ^BerserkableVoxel
-	Inherits@EXPERIENCE: ^GainsExperience
-	Inherits@VETERAN: ^ProducibleAsVeteranVehicle
-	Inherits@MC: ^MindControllable
-	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Inherits@ANNOUNCE: ^AnnounceProduction
-	Inherits@TURRET: ^WithVoxelTurret
 	Buildable:
-		Queue: Vehicle.Shared, Vehicle.Allies
 		Description: actor-mtnk.description
 		Prerequisites: ~vehicle.allies, ~techlevel.2
-		BuildDurationModifier: 100
 		BuildPaletteOrder: 20
 	Selectable:
 		Bounds: 1544, 2509, 0, -289
@@ -37,24 +28,14 @@ mtnk:
 		Name: actor-mtnk.name
 	Armament@primary:
 		Weapon: 105mm
-		Damage: 65
-		Recoil: 87
-		RecoilRecovery: 12
 		LocalOffset: 896,0,512
 		MuzzleSequence: muzzle
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: 105mmE
-		Damage: 130
-		Recoil: 87
-		RecoilRecovery: 12
 		LocalOffset: 896,0,512
 		MuzzleSequence: muzzle-2
 		RequiresCondition: rank-elite
-	AttackTurreted:
-		Voice: Attack
-	WithMuzzleOverlay:
 	WithVoxelBarrel:
-	WithVoxelBody:
 	Voiced:
 		VoiceSet: AlliedVehicleVoice

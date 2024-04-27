@@ -1,15 +1,6 @@
 gayard:
 	Inherits: ^Shipyard
 	Buildable:
-		Queue: Building.Shared, Building.Allies
 		Prerequisites: ~building.allies, gapowr, garefn, ~techlevel.4
-	IsometricSelectable:
-		DecorationHeight: 120
-	Production:
-		Produces: Ship.Allies
-	ProductionQueue:
-		Type: Ship.Allies
-	ProductionBar:
-		ProductionType: Ship.Allies
 	ProvidesPrerequisite@ship.allies:
 		Prerequisite: ship.allies

@@ -2,16 +2,9 @@ gapile:
 	Inherits: ^Barracks
 	Inherits@SHAPE: ^3x2Shape
 	Buildable:
-		Queue: Building.Shared, Building.Allies
 		Prerequisites: ~building.allies, gapowr, ~techlevel.2
 	IsometricSelectable:
 		DecorationHeight: 60
-	Production:
-		Produces: Infantry.Allies
-	ProductionQueue:
-		Type: Infantry.Allies
-	ProductionBar:
-		ProductionType: Infantry.Allies
 	RallyPoint:
 		Path: 2, 3
 	Exit@1:

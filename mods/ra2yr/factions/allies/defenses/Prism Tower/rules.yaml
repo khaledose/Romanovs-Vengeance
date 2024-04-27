@@ -6,7 +6,6 @@ atesla:
 	Inherits@LOWPOWER: ^DisabledOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
-		Queue: Support.Shared, Support.Allies
 		Prerequisites: ~building.allies, gaairc, ~techlevel.6
 		Description: actor-atesla.description
 		BuildPaletteOrder: 60

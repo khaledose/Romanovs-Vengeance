@@ -6,7 +6,7 @@ schp:
 	Inherits@DEPLOY: ^DeployableAircraft
 	Inherits@TURRET: ^WithVoxelTurretDeployed
 	Buildable:
-		Queue: Aircraft.Shared, Aircraft.Soviets
+		Queue: Aircraft, Aircraft.Soviets
 		Prerequisites: ~aircraft.soviets, natech, ~techlevel.7
 		Description: actor-schp.description 
 		BuildPaletteOrder: 10

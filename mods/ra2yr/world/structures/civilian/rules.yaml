@@ -154,7 +154,7 @@ cahse07:
 
 cawash01:
 	Inherits: ^CivBuilding
-	Inherits@COLLAPSE: ^CollapsingMonument
+	Inherits@COLLAPSE: ^CollapsingMonumentAnimation
 	Inherits@CRATE: ^GiveMoneyCrateOnDeath
 	Inherits@shape: ^4x4Shape
 	IsometricSelectable:
@@ -306,7 +306,7 @@ cawash11:
 
 cawsh12:
 	Inherits: ^CivBuilding
-	Inherits@COLLAPSE: ^CollapsingMonument
+	Inherits@COLLAPSE: ^CollapsingMonumentAnimation
 	Inherits@CRATE: ^GiveMoneyCrateOnDeath
 	Inherits@shape: ^3x3Shape
 	IsometricSelectable:
@@ -338,7 +338,7 @@ cawash13:
 
 cawash14:
 	Inherits: ^CivBuilding
-	Inherits@COLLAPSE: ^CollapsingMonument
+	Inherits@COLLAPSE: ^CollapsingMonumentAnimation
 	Inherits@CRATE: ^GiveMoneyCrateOnDeath
 	Inherits@shape: ^3x3Shape
 	IsometricSelectable:
@@ -356,7 +356,7 @@ cawash14:
 
 cawash15:
 	Inherits: ^CivBuilding
-	Inherits@COLLAPSE: ^CollapsingMonument
+	Inherits@COLLAPSE: ^CollapsingMonumentAnimation
 	Inherits@CRATE: ^GiveMoneyCrateOnDeath
 	Inherits@shape: ^3x4Shape
 	IsometricSelectable:
@@ -534,7 +534,7 @@ canewy01:
 
 canewy04:
 	Inherits: ^CivBuilding
-	Inherits@COLLAPSE: ^CollapsingMonument
+	Inherits@COLLAPSE: ^CollapsingMonumentAnimation
 	Inherits@CRATE: ^GiveMoneyCrateOnDeath
 	Inherits@shape: ^3x3Shape
 	IsometricSelectable:
@@ -1473,7 +1473,7 @@ castl03:
 
 castl04:
 	Inherits: ^CivBuilding
-	Inherits@COLLAPSE: ^CollapsingMonument
+	Inherits@COLLAPSE: ^CollapsingMonumentAnimation
 	Inherits@shape: ^2x6Shape
 	IsometricSelectable:
 		DecorationHeight: 240
@@ -1930,7 +1930,7 @@ cachig03:
 
 cachig04:
 	Inherits: ^CivBuilding
-	Inherits@COLLAPSE: ^CollapsingMonument
+	Inherits@COLLAPSE: ^CollapsingMonumentAnimation
 	Inherits@GARRISON: ^Garrisonable
 	Inherits@shape: ^2x2Shape
 	IsometricSelectable:
@@ -1966,7 +1966,7 @@ cachig05:
 
 cachig06:
 	Inherits: ^CivBuilding
-	Inherits@COLLAPSE: ^CollapsingMonument
+	Inherits@COLLAPSE: ^CollapsingMonumentAnimation
 	Inherits@CRATE: ^GiveMoneyCrateOnDeath
 	Inherits@shape: ^2x2Shape
 	IsometricSelectable:
@@ -2150,7 +2150,7 @@ camex05:
 
 caeast01:
 	Inherits: ^CivBuilding
-	Inherits@COLLAPSE: ^CollapsingMonument
+	Inherits@COLLAPSE: ^CollapsingMonumentAnimation
 	Inherits@CAPTURE: ^Capturable
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@shape: ^2x2Shape
@@ -2225,7 +2225,7 @@ caeast02:
 
 carus01:
 	Inherits: ^CivBuilding
-	Inherits@COLLAPSE: ^CollapsingMonument
+	Inherits@COLLAPSE: ^CollapsingMonumentAnimation
 	Inherits@CRATE: ^GiveMoneyCrateOnDeath
 	Inherits@GARRISON: ^Garrisonable
 	Inherits@shape: ^4x4Shape
@@ -2570,7 +2570,7 @@ caeuro05:
 
 capars01:
 	Inherits: ^CivBuilding
-	Inherits@COLLAPSE: ^CollapsingMonument
+	Inherits@COLLAPSE: ^CollapsingMonumentAnimation
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@POWER: ^DisabledOnUncharged
 	Inherits@shape: ^4x4Shape
@@ -2741,7 +2741,7 @@ capars10:
 
 capars11:
 	Inherits: ^CivBuilding
-	Inherits@COLLAPSE: ^CollapsingMonument
+	Inherits@COLLAPSE: ^CollapsingMonumentAnimation
 	Inherits@CRATE: ^GiveMoneyCrateOnDeath
 	Inherits@shape: ^3x4Shape
 	IsometricSelectable:
@@ -2947,7 +2947,7 @@ catran02:
 
 catran03:
 	Inherits: ^CivBuilding
-	Inherits@COLLAPSE: ^CollapsingMonument
+	Inherits@COLLAPSE: ^CollapsingMonumentAnimation
 	Inherits@shape: ^4x4Shape
 	IsometricSelectable:
 		DecorationHeight: 120
@@ -3576,7 +3576,7 @@ yapppt:
 		Name: actor-yapppt.name
 	Tooltip@NoRow:
 		Name: actor-yapppt.name
-	-WithIdleOverlay@garrisoned:
+	# -WithIdleOverlay@garrisoned:
 
 yarock:
 	Inherits: ^CivBuilding

@@ -1,10 +1,9 @@
 deso:
-	Inherits: ^GroundInfantry
+	Inherits: ^DeployableInfantry
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@VETERAN: ^InfantryPromotable
 	Inherits@MC: ^MindControllable
 	Inherits@SELFHEALING: ^SelfHealing
-	Inherits@DEPLOY: ^DeployableInfantry
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Soviets, Infantry.Iraq
 		Description: actor-deso.description

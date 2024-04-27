@@ -2,7 +2,6 @@ yatech:
 	Inherits: ^BattleLab
 	Inherits@SHAPE: ^3x2Shape
 	Buildable:
-		Queue: Building.Shared, Building.Yuri
 		Prerequisites: ~building.yuri, yaweap, yapsis, ~techlevel.8, ~!ai.yatech
 	IsometricSelectable:
 		DecorationHeight: 180

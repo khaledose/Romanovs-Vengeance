@@ -7,10 +7,9 @@ smin:
 	Inherits@DEPLOY: ^DeployIntoBuilding
 	Inherits@TURRET: ^WithVoxelTurret
 	Buildable:
-		Queue: Vehicle.Shared, Vehicle.Yuri
-		Prerequisites: ~vehicle.yuri, power, ~!global-megawealth, ~techlevel.1
+		Prerequisites: ~vehicle.yuri, yapowr, ~!global-megawealth, ~techlevel.1
 		Description: actor-smin.description
-		BuildPaletteOrder: 90
+		BuildPaletteOrder: 10
 	Selectable:
 		Priority: 7
 		Bounds: 1544, 2509, 0, -289
@@ -31,13 +30,11 @@ smin:
 		Name: actor-smin.name
 	Armament@primary:
 		Weapon: 20mmrapid
-		Damage: 30
 		LocalOffset: 512,0,1388
 		MuzzleSequence: muzzle
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: 20mmrapidE
-		Damage: 50
 		LocalOffset: 512,0,1388
 		MuzzleSequence: muzzle
 		RequiresCondition: rank-elite
@@ -57,7 +54,5 @@ smin:
 	Transforms:
 		IntoActor: yarefn
 		TransformSounds: vsladepa.wav
-	RangedGpsDot:
-		Sequence: Harvester
 	Voiced:
 		VoiceSet: SlaveMinerVoice

@@ -1,0 +1,7 @@
+LasherTankVoice:
+	DefaultVariant: .wav
+	Voices:
+		Build: vlassef
+		Select: vlassed, vlasseg, vlasmod
+		Move: vlasmoa, vlasmoc, vlasmof, vlasatd
+		Attack: vlasata, vlasatc, vlasate, vlasatf, vlasatg

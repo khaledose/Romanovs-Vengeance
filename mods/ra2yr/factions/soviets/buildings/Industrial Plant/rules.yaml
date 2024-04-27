@@ -3,7 +3,6 @@ naindp:
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@SHAPE: ^3x3Shape
 	Buildable:
-		Queue: Building.Shared, Building.Soviets
 		Prerequisites: ~building.soviets, natech, ~techlevel.10
 		Description: actor-naindp.description
 		BuildPaletteOrder: 120
@@ -32,9 +31,9 @@ naindp:
 		Sequence: idle-lights
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
-	GrantExternalConditionToOwner:
-		Condition: naindp
-		RequiresCondition: !chronodisable
+	# GrantExternalConditionToOwner:
+	# 	Condition: naindp
+	# 	RequiresCondition: !chronodisable
 	Voiced:
 		VoiceSet: IndustrialPlantVoice
 		Volume: 0.8

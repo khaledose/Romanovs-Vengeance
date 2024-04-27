@@ -6,7 +6,7 @@
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
 		Description: actor-engineer.description
-		BuildPaletteOrder: 2
+		BuildPaletteOrder: 20
 	Health:
 		HP: 7500
 	Armor:
@@ -37,6 +37,6 @@ engineer:
 	Inherits: ^Engineer
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Allies
-		Prerequisites: ~gapile, ~techlevel.1
+		Prerequisites: ~infantry.allies, ~techlevel.1
 	Voiced:
 		VoiceSet: AlliedEngineerVoice

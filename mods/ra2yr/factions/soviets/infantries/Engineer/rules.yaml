@@ -2,7 +2,7 @@ sengineer:
 	Inherits: ^Engineer
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Soviets
-		Prerequisites: ~nahand, ~techlevel.1
+		Prerequisites: ~infantry.soviets, ~techlevel.1
 	Voiced:
 		VoiceSet: SovietEngineerVoice
 	RenderSprites:

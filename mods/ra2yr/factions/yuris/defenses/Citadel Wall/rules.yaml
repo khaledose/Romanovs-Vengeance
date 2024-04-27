@@ -1,10 +1,8 @@
 yawall:
 	Inherits: ^Wall
 	Buildable:
-		Queue: Support.Shared, Support.Yuri
 		Prerequisites: ~building.yuri, yabrck, ~techlevel.2
 		Description: actor-yawall.description
-		BuildPaletteOrder: 10
 	Tooltip:
 		Name: actor-yawall.name
 	Tooltip@NoRow:

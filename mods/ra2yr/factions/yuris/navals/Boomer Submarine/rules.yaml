@@ -57,7 +57,5 @@ bsub:
 		Actors: cmisl, cmisl
 		ArmamentNames: missile
 		SpawnOffset: 280,280,0, -280,280,0
-	LeavesTrails:
-		RequiresCondition: surfaced
 	Voiced:
 		VoiceSet: BoomerVoice

@@ -48,7 +48,6 @@
 		Length: 1
 		Facings: 1
 
-
 ^DeathEffects:
 	die4:
 		Filename: nukedie.shp

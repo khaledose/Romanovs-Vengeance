@@ -3,7 +3,6 @@ gaorep:
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@SHAPE: ^3x3Shape
 	Buildable:
-		Queue: Building.Shared, Building.Allies
 		Prerequisites: ~building.allies, garefn, gatech, ~techlevel.10
 		Description: actor-gaorep.description
 		BuildPaletteOrder: 120
@@ -30,16 +29,17 @@ gaorep:
 	GrantConditionOnResourcePurify:
 		Condition: resource-purify
 		Duration: 3
-	SmokeParticleEmitter@purifiersmoke:
-		RequiresCondition: resource-purify && !chronodisable
+	FloatingSpriteEmitter@purifiersmoke:
 		Image: smallsmoke
 		Sequences: idle
 		Palette: effect50alpha
-		SpawnFrequency: 1,2
+		SpawnFrequency: 1, 2
+		Lifetime: 30, 40
 		Speed: 0, 36
 		Gravity: 27, 54
 		Duration: 39
 		Offset: -128,0,3560
+		RequiresCondition: resource-purify && !chronodisable
 	WithIdleOverlay@glow:
 		Sequence: idle-glow
 		PauseOnCondition: chronodisable

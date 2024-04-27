@@ -5,7 +5,6 @@ natbnk:
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
-		Queue: Support.Shared, Support.Yuri
 		Prerequisites: ~building.yuri, ~techlevel.3
 		Description: actor-natbnk.description
 		BuildPaletteOrder: 50

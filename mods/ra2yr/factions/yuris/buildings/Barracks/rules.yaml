@@ -2,14 +2,9 @@ yabrck:
 	Inherits: ^Barracks
 	Inherits@SHAPE: ^2x3Shape
 	Buildable:
-		Queue: Building.Shared, Building.Yuri
 		Prerequisites: ~building.yuri, yapowr, ~techlevel.2
-	Production:
-		Produces: Infantry.Yuri
-	ProductionQueue:
-		Type: Infantry.Yuri
-	ProductionBar:
-		ProductionType: Infantry.Yuri
+	IsometricSelectable:
+		DecorationHeight: 105
 	RallyPoint:
 		Path: 2,1
 	Exit@1:
@@ -62,10 +57,6 @@ yabrck:
 		RequiresCondition: !build-incomplete
 	ProvidesPrerequisite@infantry.yuri:
 		Prerequisite: infantry.yuri
-	ProvidesPrerequisite@showslave:
-		Prerequisite: showslave
 	ProvidesPrerequisite@mwfacref:
 		Prerequisite: yarefn
 		RequiresCondition: megawealth
-	IsometricSelectable:
-		DecorationHeight: 105

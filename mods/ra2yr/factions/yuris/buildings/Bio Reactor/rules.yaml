@@ -1,9 +1,8 @@
 yapowr:
 	Inherits: ^PowerPlant
 	Inherits@SHAPE: ^2x2Shape
-	Inherits@CARGO: ^CarryInfantries
+	Inherits@CARGO: ^LoadsInfantries
 	Buildable:
-		Queue: Building.Shared, Building.Yuri
 		Prerequisites: ~building.yuri, ~techlevel.1
 		Description: actor-yapowr.description
 	IsometricSelectable:
@@ -42,12 +41,13 @@ yapowr:
 		PauseOnCondition: chronodisable
 		RequiresCondition: !loaded && !build-incomplete
 	WithIdleOverlay@loaded:
-		Sequence: loaded
 		PauseOnCondition: chronodisable
-		RequiresCondition: loaded && !build-incomplete
 	WithIdleOverlay@lights:
 		Sequence: idle-lights
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
+	WithCargoSounds:
+		EnterSounds: bbioenta.wav
+		ExitSounds: bbioenta.wav
 	Explodes:
 		Weapon: PowerPlantExplosion

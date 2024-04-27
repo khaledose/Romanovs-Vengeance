@@ -14,7 +14,6 @@
 	Inherits@13: ^WithTooltip
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
-	ActorStatValues:
 	OwnerLostAction:
 		Action: Kill
 		DeathTypes: BulletDeath, NonTemporal
@@ -25,10 +24,10 @@
 	WithTextControlGroupDecoration:
 	ActorLostNotification:
 		TextNotification: notification-unit-lost
-	Chronoshiftable:
-		ChronoshiftSound: schrmov.wav
-		ReturnToOrigin: false
-		RequiresCondition: !invulnerability && !airborne
+	# Chronoshiftable:
+	# 	ChronoshiftSound: schrmov.wav
+	# 	ReturnToOrigin: false
+	# 	RequiresCondition: !invulnerability && !airborne
 	BodyOrientation:
 		QuantizedFacings: 0
 		CameraPitch: 85
@@ -48,18 +47,17 @@
 
 ^VoxelVehicle:
 	Inherits: ^Machine
-	RenderVoxels:
-		Scale: 11.7
-		LightYaw: 800
-		LightPitch: 150
-		LightAmbientColor: -0.5,-0.5,-0.5
-		LightDiffuseColor: 1.3,1.3,1.3
+	Inherits@VOXEL: ^Voxel
 
 ^GroundVehicle:
 	Inherits: ^VoxelVehicle
 	Inherits@1: ^RepairableVehicle
 	Inherits@2: ^LowHealthSpeedPenalty
 	Inherits@3: ^TransportableVehicle
+	Inherits@4: ^AIVehicleBuildTimeModifier
+	Buildable:
+		Queue: Vehicle.Shared
+		BuildDurationModifier: 100
 	RevealOnFire:
 		ArmamentNames: primary, primary2, elite, elite2, secondary, opentopped, opentopped-secondary, gatling
 		Duration: 50
@@ -77,6 +75,23 @@
 	Guard:
 		Voice: Attack
 
+^Tank:
+	Inherits: ^GroundVehicle
+	Inherits@TURRET: ^WithVoxelTurret
+	Inherits@MC: ^MindControllable
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@VETERAN: ^ProducibleAsVeteranVehicle
+	Inherits@BUNKER: ^BunkerableVehicle
+	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@RADIATON: ^DamagedByRadiation10Percent
+	RevealOnFire:
+		ArmamentNames: primary
+	AttackTurreted:
+		Voice: Attack
+	WithMuzzleOverlay:
+	WithVoxelBody:
+
+
 ^MinerVehicle:
 	Inherits: ^GroundVehicle
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
@@ -85,7 +100,6 @@
 	Buildable:
 		Prerequisites: refinery, ~!global-megawealth, ~techlevel.1
 		Description: meta-miner.description
-		BuildDurationModifier: 100
 		BuildPaletteOrder: 10
 	Selectable:
 		Priority: 7
@@ -131,8 +145,6 @@
 		ResourceSequences:
 			Ore: pip-yellow
 			Gems: pip-blue
-	RangedGpsDot:
-		Sequence: Harvester
 	MapEditorData:
 		Categories: Vehicle - Miner
 
@@ -146,7 +158,6 @@
 	Buildable:
 		Description: meta-constructionvehicle.description
 		Prerequisites: ~techlevel.10, ~!global-suddendeath
-		BuildDurationModifier: 100
 		BuildPaletteOrder: 50
 	Selectable:
 		Priority: 4

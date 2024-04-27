@@ -4,7 +4,6 @@
 		RealignDelay: -1
 	AttackTurreted:
 		Voice: Attack
-		OutsideRangeRequiresForceFire: True
 		PauseOnCondition: chronodisable
 	BodyOrientation:
 		QuantizedFacings: 32
@@ -18,34 +17,6 @@
 	Inherits: ^WithSpriteTurretBuilding
 	AttackTurreted:
 		PauseOnCondition: build-incomplete || disabled || chronodisable
-
-^WithSpriteTurret:
-	Inherits: ^WithTurret
-	WithSpriteTurret:
-	WithTurretAttackAnimation:
-
-^WithSpriteTurretDeployed:
-	Inherits: ^WithSpriteTurret
-	Turreted:
-		Turret: deploy
-		InitialFacing: 368
-		RequiresCondition: deployed
-	AttackTurreted:
-		Turrets: deploy
-		Armaments: deployed
-		Voice: Attack
-		RequiresCondition: deployed
-	WithSpriteTurret:
-		Turret: deploy
-		Sequence: deployed
-		RequiresCondition: deployed
-	WithTurretAttackAnimation:
-		Turret: deploy
-		Armament: deployed
-		Sequence: deployed-shoot
-		RequiresCondition: deployed
-	BodyOrientation:
-		QuantizedFacings: 8
 
 ^WithVoxelTurret:
 	Inherits: ^WithTurret

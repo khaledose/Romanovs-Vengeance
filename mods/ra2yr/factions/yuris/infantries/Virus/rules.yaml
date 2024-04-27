@@ -6,9 +6,9 @@ virus:
 	Inherits@MC: ^MindControllable
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Yuri
-		Prerequisites: ~infantry.yuri, yapsis, ~techlevel.1
+		Prerequisites: ~infantry.yuri, yapsis, ~techlevel.3
 		Description: actor-virus.description
-		BuildPaletteOrder: 3
+		BuildPaletteOrder: 30
 	Health:
 		HP: 10000
 	Armor:

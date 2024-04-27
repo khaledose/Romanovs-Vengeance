@@ -1,13 +1,12 @@
 nabnkr:
 	Inherits: ^DefenseStructure
-	Inherits@GARRISON: ^Garrisonable
+	Inherits@GARRISON: ^Bunker
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
-		Queue: Support.Shared, Support.Soviets
 		Prerequisites: ~building.soviets, ~techlevel.1
 		Description: actor-nabnkr.description
-		BuildPaletteOrder: 40
+		BuildPaletteOrder: 20
 	IsometricSelectable:
 		DecorationHeight: 45
 	Health:
@@ -22,17 +21,10 @@ nabnkr:
 		Name: actor-nabnkr.name
 	Tooltip@NoRow:
 		Name: actor-nabnkr.name
-	AttackOpenTopped:
+	AttackGarrisoned:
 		PortOffsets: 512,512,1024, -192,704,1024, -704,192,1024, -512,-512,1024, 192,-704,1024
-		PauseOnCondition: build-incomplete || chronodisable
-	Garrisonable:
-		MaxWeight: 5
-		-RequiresCondition:
-	WithGarrisonSounds:
-		-EnterNotification:
-		-ExitNotification:
-	-ChangeOwnerOnGarrison:
-	Voiced:
-		VoiceSet: BattleBunkerVoice
-		Volume: 0.8
-
+		PortYaws: 768, 640, 512, 384, 256
+		PortCones: 256, 256, 256, 256, 256
+		RequiresCondition: !build-incomplete
+	WithCargoSounds:
+		EnterSounds: ugarris.wav

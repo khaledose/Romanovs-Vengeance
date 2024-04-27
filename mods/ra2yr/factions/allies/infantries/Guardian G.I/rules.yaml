@@ -1,17 +1,13 @@
 ggi:
-	Inherits: ^GroundInfantry
-	Inherits@AI: ^AIControl
+	Inherits: ^DeployableInfantry
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@VETERAN: ^InfantryPromotable
 	Inherits@MC: ^MindControllable
-	Inherits@DEPLOY: ^DeployableInfantry
-	Inherits@TURRET: ^WithSpriteTurretDeployed
-	Inherits@VOICES: ^WithGGIVoices
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Allies
 		Prerequisites: ~infantry.allies, ~techlevel.2
 		Description: actor-ggi.description
-		BuildPaletteOrder: 5
+		BuildPaletteOrder: 40
 	Health:
 		HP: 10000
 	Armor:
@@ -30,49 +26,32 @@ ggi:
 		Name: actor-ggi.name
 	Armament@primary:
 		Weapon: M60
-		Damage: 15
-		PauseOnCondition: chronodisable
 		RequiresCondition: !rank-elite && !deployed
 	Armament@elite:
 		Weapon: M60E
-		Damage: 20
-		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite && !deployed
 	Armament@deployed:
 		Name: deployed
 		Weapon: MissileLauncher
-		Damage: 40
 		Turret: deploy
 		LocalOffset: 480,63,992
-		ReloadingCondition: reload-ground
-		PauseOnCondition: chronodisable || reload-air
 		RequiresCondition: !rank-elite && deployed
 	Armament@elite-deployed:
 		Name: deployed
 		Weapon: MissileLauncherE
-		Damage: 80
 		Turret: deploy
 		LocalOffset: 480,64,992
-		ReloadingCondition: reload-ground
-		PauseOnCondition: chronodisable || reload-air
 		RequiresCondition: rank-elite && deployed
 	Armament@opentopped:
-		Weapon: MissileLauncher
 		Name: opentopped
+		Weapon: MissileLauncher
 		LocalOffset: 480,63,992
-		ReloadingCondition: reload-ground
-		PauseOnCondition: chronodisable || reload-air
 		RequiresCondition: !rank-elite
 	Armament@elite-opentopped:
-		Weapon: MissileLauncherE
 		Name: opentopped
+		Weapon: MissileLauncherE
 		LocalOffset: 480,64,992
-		ReloadingCondition: reload-ground
-		PauseOnCondition: chronodisable || reload-air
 		RequiresCondition: rank-elite
-
-^WithGGIVoices:
-	Inherits: ^WithFeedbackVoicelines
 	GrantConditionOnDeploy:
 		DeploySounds: iggidepa.wav
 		UndeploySounds: iggidepa.wav

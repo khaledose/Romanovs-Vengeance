@@ -1,18 +1,10 @@
 ltnk:
-	Inherits: ^GroundVehicle
+	Inherits: ^Tank
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@BUNKER: ^BunkerableVehicle
-	Inherits@CHAOS: ^BerserkableVoxel
-	Inherits@EXPERIENCE: ^GainsExperience
-	Inherits@VETERAN: ^ProducibleAsVeteranVehicle
-	Inherits@MC: ^MindControllable
-	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Inherits@ANNOUNCE: ^AnnounceProduction
-	Inherits@TURRET: ^WithVoxelTurret
 	Buildable:
-		Queue: Vehicle.Shared, Vehicle.Yuri
-		Prerequisites: ~vehicle.yuri, ~techlevel.2
 		Description: actor-ltnk.description
+		Prerequisites: ~vehicle.yuri, ~techlevel.2
 		BuildPaletteOrder: 20
 	Selectable:
 		Bounds: 1544, 2509, 0, -289
@@ -36,24 +28,14 @@ ltnk:
 		Name: actor-ltnk.name
 	Armament@primary:
 		Weapon: ATGUN
-		Damage: 65
-		Recoil: 87
-		RecoilRecovery: 12
 		LocalOffset: 800,0,832
 		MuzzleSequence: muzzle
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: ATGUNE
-		Damage: 130
-		Recoil: 87
-		RecoilRecovery: 12
 		LocalOffset: 800,0,832
 		MuzzleSequence: muzzle-2
 		RequiresCondition: rank-elite
-	AttackTurreted:
-		Voice: Attack
-	WithMuzzleOverlay:
-	WithVoxelBody:
 	Voiced:
 		VoiceSet: LasherTankVoice
 

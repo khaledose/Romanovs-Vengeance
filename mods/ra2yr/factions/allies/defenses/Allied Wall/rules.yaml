@@ -1,9 +1,7 @@
 gawall:
 	Inherits: ^Wall
 	Buildable:
-		Queue: Support.Shared, Support.Allies
 		Prerequisites: ~building.allies, gapile, ~techlevel.1
-		BuildPaletteOrder: 10
 		Description: actor-gawall.description
 	Tooltip:
 		Name: actor-gawall.name

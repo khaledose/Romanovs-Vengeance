@@ -4,7 +4,7 @@ zep:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@AI: ^AIControl
 	Buildable:
-		Queue: Aircraft.Shared, Aircraft.Soviets
+		Queue: Aircraft, Aircraft.Soviets
 		Prerequisites: ~aircraft.soviets, natech, ~techlevel.10
 		Description: actor-zep.description
 		BuildPaletteOrder: 50

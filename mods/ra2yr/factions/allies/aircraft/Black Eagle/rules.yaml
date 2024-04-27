@@ -1,8 +1,7 @@
 beag:
 	Inherits: orca
 	Buildable:
-		Queue: Aircraft.Shared, Aircraft.Allies
-		Prerequisites: ~aircraft.korea, !prerequisite.enoughair, ~techlevel.3
+		Prerequisites: ~aircraft.korea.docked, dock, ~techlevel.3
 		Description: actor-beag.description
 		BuildPaletteOrder: 30
 	Health:
@@ -21,6 +20,8 @@ beag:
 		Actor: beaghusk.horizontal
 	SpawnActorOnDeath@VTOL:
 		Actor: beaghusk.vertical
+	RenderVoxels:
+		NormalsPalette: ts-normals
 	Contrail@1:
 		Offset: 0,-500,100
 	Contrail@2:

@@ -1,50 +1,9 @@
 ^Garrisoner:
-	Garrisoner:
+	Passenger:
+		CargoType: Garrisoner
+		Weight: 1
 		Voice: Move
-		GarrisonType: Garrisoner
-
-^Garrisonable:
-	Inherits@AUTOTARGET: ^AutoTargetAll
-	Targetable@DEFENSE:
-		TargetTypes: Defense
-		RequiresCondition: loaded
-	AttackOpenTopped:
-		Armaments: garrisoned
-		PortOffsets: 768,0,1024, 448,-682,1024, -448,-682,1024, -768,0,1024, -448,682,1024, 448,682,1024
-		RandomMuzzleActivations: true
-		MuzzleActivationDelay: 5
-		PauseOnCondition: chronodisable
-	Garrisonable:
-		Types: Garrisoner
-		MaxWeight: 10
-		AfterLoadDelay: 0
-		BeforeUnloadDelay: 0
-		AfterUnloadDelay: 0
-		EjectOnDeath: true
-		OwnerChangedAffectsGarrisoners: false
-		LoadedCondition: loaded
-		RequiresCondition: !dmg_crit
-	WithGarrisonPipsDecoration:
-		EmptySequence: pip-garrison-empty
-		FullSequence: pip-garrison-green
-		Margin: 4, 3
-		PipStride: 4, 2
-		Palette: ra
-		Position: BottomLeft
-		RequiresSelection: true
-		CustomPipSequences:
-			gray: pip-garrison-gray
-			yellow: pip-garrison-yellow
-			blue: pip-garrison-blue
-			red: pip-garrison-red
-	WithIdleOverlay@garrisoned:
-		Sequence: garrisoned
-		RequiresCondition: loaded
-	WithGarrisonSounds:
-		EnterSound: ugarris.wav
-		EnterNotification: StructureGarrisoned
-		ExitNotification: StructureAbandoned
-	ChangeOwnerOnGarrison:
+		CargoCondition: garrisoned
 
 ^TransportableInfantry:
 	Passenger:
@@ -75,7 +34,7 @@
 
 ^TransportVehiclesAndInfantries:
 	Cargo:
-		Types: Infantry, Vehicle
+		Types: Infantry, Garrisoner, Vehicle
 		MaxWeight: 12
 		AfterLoadDelay: 0
 		BeforeUnloadDelay: 0
@@ -103,7 +62,7 @@
 ^TransportInfantries:
 	Inherits: ^TransportVehiclesAndInfantries
 	Cargo:
-		Types: Infantry
+		Types: Infantry, Garrisoner
 		MaxWeight: 5
 
 ^TankBunker:

@@ -8,9 +8,6 @@
 	GrantConditionOnBotOwner@impossible:
 		Condition: impossible-ai
 		Bots: impossible
-
-^AIBuildTimeModifier:
-	Inherits: ^AIControl
 	ProvidesPrerequisite@easy-production-multiplier:
 		Prerequisite: easy-production-multiplier
 		RequiresCondition: easy-ai
@@ -20,6 +17,9 @@
 	ProvidesPrerequisite@impossible-production-multiplier:
 		Prerequisite: impossible-production-multiplier
 		RequiresCondition: impossible-ai
+
+^AIBuildTimeModifier:
+	Inherits: ^AIControl
 	ProductionTimeMultiplier@easy:
 		Multiplier: 80
 		Prerequisites: easy-production-multiplier
@@ -32,6 +32,36 @@
 		Multiplier: 20
 		Prerequisites: impossible-production-multiplier
 		Queue: Building.Shared, Support.Shared
+
+^AIInfantryBuildTimeModifier:
+	Inherits: ^AIControl
+	ProductionTimeMultiplier@easy:
+		Multiplier: 80
+		Prerequisites: easy-production-multiplier
+		Queue: Infantry.Shared
+	ProductionTimeMultiplier@hard:
+		Multiplier: 50
+		Prerequisites: hard-production-multiplier
+		Queue: Infantry.Shared
+	ProductionTimeMultiplier@impossible:
+		Multiplier: 20
+		Prerequisites: impossible-production-multiplier
+		Queue: Infantry.Shared
+
+^AIVehicleBuildTimeModifier:
+	Inherits: ^AIControl
+	ProductionTimeMultiplier@easy:
+		Multiplier: 80
+		Prerequisites: easy-production-multiplier
+		Queue: Vehicle.Shared
+	ProductionTimeMultiplier@hard:
+		Multiplier: 50
+		Prerequisites: hard-production-multiplier
+		Queue: Vehicle.Shared
+	ProductionTimeMultiplier@impossible:
+		Multiplier: 20
+		Prerequisites: impossible-production-multiplier
+		Queue: Vehicle.Shared
 
 ^AICashCheat:
 	Inherits: ^AIControl

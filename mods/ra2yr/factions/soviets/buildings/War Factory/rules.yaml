@@ -1,20 +1,9 @@
 naweap:
 	Inherits: ^WarFactory
 	Buildable:
-		Queue: Building.Shared, Building.Soviets
 		Prerequisites: ~building.soviets, nahand, narefn, ~techlevel.2
 	IsometricSelectable:
 		DecorationHeight: 90
-	Production:
-		Produces: Vehicle.Soviets, Aircraft.Soviets
-	ProductionQueue:
-		Type: Vehicle.Soviets
-	ProductionQueue@Aircraft:
-		Type: Aircraft.Soviets
-	ProductionBar:
-		ProductionType: Vehicle.Soviets
-	ProductionBar@Aircraft:
-		ProductionType: Aircraft.Soviets
 	ProvidesPrerequisite@vehicle.soviets:
 		Prerequisite: vehicle.soviets
 	ProvidesPrerequisite@vehicle.russia:

@@ -1,19 +1,14 @@
 gaairc:
-	Inherits: ^Factory
-	Inherits@RADAR: ^Radar
-	Inherits@CAPTURE: ^Capturable
-	Inherits@MC: ^MindControllableBuilding
+	Inherits: ^Radar
 	Inherits@SPECIAL: AmericanParaDropSpecial
 	Inherits@SHAPE: ^3x2Shape
 	Buildable:
-		Queue: Building.Shared, Building.Allies
 		Prerequisites: ~building.allies, garefn, ~techlevel.3
 		Description: actor-gaairc.description
-		BuildPaletteOrder: 40
+	Building:
+		Footprint: x== x==
 	IsometricSelectable:
 		DecorationHeight: 105
-	Building:
-		Footprint: x=x x==
 	Power:
 		Amount: -50
 	Health:
@@ -29,25 +24,13 @@ gaairc:
 	Tooltip@NoRow:
 		Name: actor-gaairc.name
 	Production:
-		Produces: Aircraft.Unused
-	Production@Shared:
-		Produces: Aircraft.Unused
-	ProductionQueue:
-		Type: Aircraft.Allies
-		Group: Aircraft
-		DisplayOrder: 25
-	ProductionQueue@Shared:
-		Type: Aircraft.Shared
-		Group: Aircraft
-		DisplayOrder: 25
+		Produces: Aircraft
 	ProductionBar:
-		ProductionType: Aircraft.Allies
-	ProductionBar@Shared:
-		ProductionType: Aircraft.Shared
+		ProductionType: Aircraft
 	ProvidesPrerequisite@aircraft.allies:
-		Prerequisite: aircraft.allies
+		Prerequisite: aircraft.allies.docked
 	ProvidesPrerequisite@aircraft.korea:
-		Prerequisite: aircraft.korea
+		Prerequisite: aircraft.korea.docked
 		Factions: korea
 	ProvidesPrerequisite@radar.america:
 		Prerequisite: radar.america
@@ -68,58 +51,25 @@ gaairc:
 		Sequence: idle-dish
 		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: !build-incomplete
-	# Exit@1:
-	# 	Facing: 896
-	# 	SpawnOffset: 1086,362,0
-	# 	ExitCell: 3,-1
-	# Exit@2:
-	# 	Facing: 896
-	# 	SpawnOffset: -362,-1086,0
-	# 	ExitCell: 1,-1
-	# Exit@3:
-	# 	Facing: 896
-	# 	SpawnOffset: -384,512,0
-	# 	ExitCell: 1,2
-	# Exit@4:
-	# 	Facing: 896
-	# 	SpawnOffset: 384,768,0
-	# 	ExitCell: 3,2
-	-ExitsDebugOverlay:
-	# GrantExternalConditionToOwner:
-	# 	Condition: airdock
-	CommandBarBlacklist:
-		DisableStop: false
-	# Reservable:
 	SpawnNeighboringActors:
 		ActorTypes: gadock
 		Locations: 1,0, 1,1, 2,1, 2,0
-	Voiced:
-		VoiceSet: AirfieldVoice
-		Volume: 0.8
-	ProvidesPrerequisite@AIantiRush:
-		Prerequisite: AIantiRush ## Hack: AI Building control. AI build refinary only when it has a combat producing line.
 
 gadock:
+	Inherits: ^Factory
 	Interactable:
 	AlwaysVisible:
 	Reservable:
+	Building:
 	Production:
-		Produces: Aircraft.Allies
+		Produces: DockedAircraft
 		RequiresCondition: !reserved
-	Production@Shared:
-		Produces: Aircraft.Shared
-		RequiresCondition: !reserved
-	GrantConditionOnProduction:
+	GrantConditionOnDockReserved:
 		Condition: reserved
-	GrantExternalConditionToOwner:
-		Condition: airdock
-	GrantCondition:
-		Condition: dontmove
-	Mobile:
-		Speed: 1
-		Locomotor: amphibious
-		PauseOnCondition: dontmove
+	ProvidesPrerequisite:
+		Prerequisite: dock
+		RequiresCondition: !reserved
 	Exit@1:
 		Facing: 896
 		RequiresCondition: !reserved
-	RejectsOrders:
+	-ProductionBar:

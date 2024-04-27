@@ -6,9 +6,9 @@ flakt:
 	Inherits@MC: ^MindControllable
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Soviets
-		Prerequisites: ~infantry.soviets, naradr, ~techlevel.1
+		Prerequisites: ~infantry.soviets, naradr, ~techlevel.3
 		Description: actor-flakt.description
-		BuildPaletteOrder: 3
+		BuildPaletteOrder: 40
 	Health:
 		HP: 10000
 	Armor:
@@ -27,61 +27,43 @@ flakt:
 		Name: actor-flakt.name
 	Armament@primary:
 		Weapon: FlakGuyGun
-		Damage: 20
 		LocalOffset: 256,0,1024
 		MuzzleSequence: muzzle
-		ReloadingCondition: reload-ground
-		PauseOnCondition: chronodisable || reload-air
 		RequiresCondition: !rank-elite
 	Armament@secondary:
 		Weapon: FlakGuyAAGun
 		LocalOffset: 256,0,1024
 		MuzzleSequence: muzzle
-		ReloadingCondition: reload-air
-		PauseOnCondition: chronodisable || reload-ground
 		RequiresCondition: !rank-elite
 	Armament@primary-elite:
 		Weapon: FlakGuyGunE
-		Damage: 40
 		LocalOffset: 256,0,1024
 		MuzzleSequence: muzzle
-		ReloadingCondition: reload-ground
-		PauseOnCondition: chronodisable || reload-air
 		RequiresCondition: rank-elite
 	Armament@secondary-elite:
 		Weapon: FlakGuyAAGunE
 		LocalOffset: 256,0,1024
 		MuzzleSequence: muzzle
-		ReloadingCondition: reload-air
-		PauseOnCondition: chronodisable || reload-ground
 		RequiresCondition: rank-elite
 	Armament@primary-opentopped:
 		Name: opentopped
 		Weapon: FlakGuyGun
 		LocalOffset: 256,0,1024
-		ReloadingCondition: reload-ground
-		PauseOnCondition: chronodisable || reload-air
 		RequiresCondition: !rank-elite
 	Armament@secondary-opentopped:
 		Name: opentopped
 		Weapon: FlakGuyAAGun
 		LocalOffset: 256,0,1024
-		ReloadingCondition: reload-air
-		PauseOnCondition: chronodisable || reload-ground
 		RequiresCondition: !rank-elite
 	Armament@primary-elite-opentopped:
 		Name: opentopped
 		Weapon: FlakGuyGunE
 		LocalOffset: 256,0,1024
-		ReloadingCondition: reload-ground
-		PauseOnCondition: chronodisable || reload-air
 		RequiresCondition: rank-elite
 	Armament@secondary-elite-opentopped:
 		Name: opentopped
 		Weapon: FlakGuyAAGunE
 		LocalOffset: 256,0,1024
-		ReloadingCondition: reload-air
-		PauseOnCondition: chronodisable || reload-ground
 		RequiresCondition: rank-elite
 	Voiced:
 		VoiceSet: FlakTrooperVoice

@@ -9,7 +9,7 @@ e2:
 		Queue: Infantry.Shared, Infantry.Soviets
 		Prerequisites: ~infantry.soviets, ~techlevel.1
 		Description: actor-e2.description
-		BuildPaletteOrder: 1
+		BuildPaletteOrder: 10
 	Health:
 		HP: 12500
 	Armor:
@@ -28,38 +28,28 @@ e2:
 		Name: actor-e2.name
 	Armament@primary:
 		Weapon: M1Carbine
-		Damage: 15
 		LocalOffset: 256,0,768
-		PauseOnCondition: chronodisable
-		RequiresCondition: !rank-elite
+		RequiresCondition: !rank-elite && !garrisoned
 	Armament@elite:
 		Weapon: M1CarbineE
-		Damage: 20
 		LocalOffset: 256,0,768
-		PauseOnCondition: chronodisable
-		RequiresCondition: rank-elite
+		RequiresCondition: rank-elite && !garrisoned
 	Armament@opentopped:
 		Name: opentopped
 		Weapon: M1Carbine
-		PauseOnCondition: chronodisable
-		RequiresCondition: !rank-elite
+		RequiresCondition: !rank-elite && !garrisoned
 	Armament@elite-opentopped:
 		Name: opentopped
 		Weapon: M1CarbineE
-		PauseOnCondition: chronodisable
-		RequiresCondition: rank-elite
+		RequiresCondition: rank-elite && !garrisoned
 	Armament@garrisoned:
-		Name: garrisoned
 		Weapon: UCM1Carbine
 		MuzzleSequence: muzzle
-		PauseOnCondition: chronodisable
-		RequiresCondition: !rank-elite
+		RequiresCondition: !rank-elite && garrisoned
 	Armament@elite-garrisoned:
-		Name: garrisoned
 		Weapon: UCM1CarbineE
 		MuzzleSequence: muzzle
-		PauseOnCondition: chronodisable
-		RequiresCondition: rank-elite
+		RequiresCondition: rank-elite && garrisoned
 	WithMuzzleOverlay:
 	Voiced:
 		VoiceSet: ConscriptVoice

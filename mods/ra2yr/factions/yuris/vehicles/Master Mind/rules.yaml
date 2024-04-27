@@ -8,7 +8,7 @@ mind:
 	Inherits@TURRET: ^WithTurret
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Yuri
-		Prerequisites: ~vehicle.yuri, yatech, ~techlevel.2
+		Prerequisites: ~vehicle.yuri, yatech, ~techlevel.8
 		Description: actor-tele.description
 		BuildPaletteOrder: 130
 	Selectable:

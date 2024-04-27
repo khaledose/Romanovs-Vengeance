@@ -1,23 +1,3 @@
-^YuriFactions:
-	Faction@yuri:
-		Name: Yuri
-		InternalName: psicorps
-		Side: Randoms
-		Description: Yurigrad\nCenter of Operations: Kuban Region\n\n\nSpecial Vehicle: Slave Miner\nSpecial Ability: Psi-Ops Drop\nSpecial Upgrade: Chaos Tank Compensators
-
-^YurisNoBaseModifier:
-	StartingUnits@nobasespsicorps:
-		Class: nobases
-		ClassName: options-starting-units.no-bases
-		Factions: psicorps
-		BaseActor: yurix
-		BaseActorFacing: 640
-		SupportActors: init, init, init, init, brute, brute, brute, engineer, gtrp, gtrp, virus, yuripsi, spct, ltnk, ltnk, ltnk, ytnk, ytnk, caos, kamaz, tele, yhtnk, mind, txdx
-		SupportActorsFacing: 640
-		SupportProxyActors: hack.no_bases
-		InnerSupportRadius: 2
-		OuterSupportRadius: 8
-
 ^YurisStartingOptions:
 	StartingUnits@pcv:
 		Class: none

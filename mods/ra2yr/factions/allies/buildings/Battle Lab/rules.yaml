@@ -2,7 +2,6 @@ gatech:
 	Inherits: ^BattleLab
 	Inherits@SHAPE: ^3x2Shape
 	Buildable:
-		Queue: Building.Shared, Building.Allies
 		Prerequisites: ~building.allies, gaweap, gaairc, ~techlevel.8, ~!ai.gatech
 	IsometricSelectable:
 		DecorationHeight: 180

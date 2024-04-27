@@ -18,15 +18,9 @@
 		Name: actor-jumpjet.name
 	Armament@primary:
 		Weapon: 20mm
-		Damage: 25
-		ReloadingCondition: reload-ground
-		PauseOnCondition: chronodisable || reload-air
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: 20mmE
-		Damage: 50
-		ReloadingCondition: reload-ground
-		PauseOnCondition: chronodisable || reload-air
 		RequiresCondition: rank-elite
 	Voiced:
 		VoiceSet: RocketeerVoice
@@ -40,16 +34,16 @@ jumpjet.foot:
 	Mobile:
 		Speed: 60
 	Transforms:
-		IntoActor: jumpjet.air
+		IntoActor: jumpjet
 
-jumpjet.air:
+jumpjet:
 	Inherits: ^AirInfantry
 	Inherits@SELF: ^Jumpjet
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Allies
 		Prerequisites: ~infantry.allies, gaairc, ~techlevel.3
 		Description: actor-jumpjet.description
-		BuildPaletteOrder: 6
+		BuildPaletteOrder: 50
 	Aircraft:
 		Speed: 135
 	SpawnActorOnDeath:

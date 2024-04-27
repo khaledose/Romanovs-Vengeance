@@ -2,7 +2,6 @@ nadept:
 	Inherits: ^ServiceDepot
 	Inherits@SHAPE: ^4x3Shape
 	Buildable:
-		Queue: Building.Shared, Building.Soviets
 		Prerequisites: ~building.soviets, naweap, ~techlevel.6
 	Building:
 		Footprint: x+++ x+++ x+++

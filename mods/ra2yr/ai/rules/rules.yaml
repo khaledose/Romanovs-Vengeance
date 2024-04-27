@@ -5,23 +5,24 @@
 	GrantConditionOnBotOwner@easy:
 		Condition: enable-easy-ai
 		Bots: easy
-	BuildingRepairBotModule@easy:
-		RequiresCondition: enable-easy-ai
 	McvManagerBotModule@easy:
 		RequiresCondition: enable-easy-ai && !megawealth
 		McvTypes: amcv, smcv, pcv
 		ConstructionYardTypes: gacnst, nacnst, yacnst
+		McvFactoryTypes: gaweap, naweap, yaweap
 		MaxBaseRadius: 25
-	HarvesterBotModule:
-		HarvesterTypes: cmin, harv, smin
-		RefineryTypes: garefn, narefn, yarefn
 	BaseBuilderBotModule@easy:
 		RequiresCondition: enable-easy-ai && !megawealth
 		BuildingQueues: Building.Shared
 		DefenseQueues: Support.Shared
 		ConstructionYardTypes: gacnst, nacnst, yacnst
-		PowerTypes: gapowr, napowr, yapowr, yapowr-full
-		RefineryTypes: garefn, narefn, yarefn
+		DefenseTypes: gapill, nalasr, natbnk
+		PowerTypes: gapowr, napowr, yapowr
+		RefineryTypes: garefn, narefn, yarefn, smin
+		BarracksTypes: gapile, nahand, yabrck
+		VehiclesFactoryTypes: gaweap, naweap, yaweap
+		NavalProductionTypes: gayard, nayard, yayard
+		ProductionTypes: gapile, nahand, yabrck, gaweap, naweap, yaweap, gayard, nayard, yayard
 		MinimumExcessPower: 50
 		MaximumExcessPower: 200
 		AdditionalMinimumRefineryCount: 1
@@ -31,18 +32,62 @@
 			napowr: 100
 			nanrct: 100
 			yapowr: 100
-			yapowr-full: 100
-			garefn: 100
-			narefn: 100
-			yarefn: 100
+			garefn: 2
+			narefn: 2
+			gapile: 1
+			nahand: 1
+			yabrck: 1
+			gaweap: 1
+			naweap: 1
+			yaweap: 1
+			gayard: 1
+			nayard: 1
+			yayard: 1
 		BuildingFractions:
 			gapowr: 1
 			napowr: 1
 			yapowr: 1
-			yapowr-full: 1
 			garefn: 1
 			narefn: 1
 			yarefn: 1
+			gapile: 1
+			nahand: 1
+			yabrck: 1
+			gaweap: 1
+			naweap: 1
+			yaweap: 1
+			gayard: 1
+			nayard: 1
+			yayard: 1
+			gapill: 20
+			nalasr: 20
+			natbnk: 6
+	UnitBuilderBotModule@easy:
+		RequiresCondition: enable-easy-ai && !megawealth
+		UnitQueues: Infantry.Shared, Vehicle.Shared
+		UnitsToBuild:
+			e1: 10
+			e2: 10
+			init: 10
+			ggi: 10
+			mtnk: 10
+			htnk: 10
+			ltnk: 10
+			engineer: 1
+			sengineer: 1
+			yengineer: 1
+			dog: 1
+			adog: 1
+	SquadManagerBotModule@easy:
+		SquadSize: 5
+		SquadSizeRandomBonus: 5
+		ConstructionYardTypes: gacnst, nacnst, yacnst
+		NavalProductionTypes: gayard, nayard, yayard
+		DozerTypes: dog, adog
+		ExcludeFromSquadsTypes: cmin, harv, smin, engineer, sengineer, yengineer, dog, adog
+		ProtectionTypes: gacnst, nacnst, yacnst, gapill, nalasr, natbnk, gapowr, napowr, yapowr, garefn, narefn, yarefn, gapile, nahand, yabrck, gaweap, naweap, yaweap, gayard, nayard, yayard, amcv, smcv, pcv, cmin, harv, smin, slav
+		SuggestedGroundLeaderLocomotor: foot, wheeled, tracked, heavytracked
+		SuggestedNavyLeaderLocomotor: naval
 
 ^HardAI:
 	ModularBot@hard:
@@ -51,24 +96,25 @@
 	GrantConditionOnBotOwner@hard:
 		Condition: enable-hard-ai
 		Bots: hard
-	BuildingRepairBotModule@hard:
-		RequiresCondition: enable-hard-ai
 	McvManagerBotModule@hard:
 		RequiresCondition: enable-hard-ai && !megawealth
 		McvTypes: amcv, smcv, pcv
 		ConstructionYardTypes: gacnst, nacnst, yacnst
-		MaxBaseRadius: 35
+		McvFactoryTypes: gaweap, naweap, yaweap
 		MinimumConstructionYardCount: 3
-	HarvesterBotModule:
-		HarvesterTypes: cmin, harv, smin
-		RefineryTypes: garefn, narefn, yarefn
+		MaxBaseRadius: 35
 	BaseBuilderBotModule@hard:
 		RequiresCondition: enable-hard-ai && !megawealth
 		BuildingQueues: Building.Shared
 		DefenseQueues: Support.Shared
 		ConstructionYardTypes: gacnst, nacnst, yacnst
-		PowerTypes: gapowr, napowr, yapowr, yapowr-full
-		RefineryTypes: garefn, narefn, yarefn
+		DefenseTypes: gapill, nalasr, natbnk
+		PowerTypes: gapowr, napowr, yapowr
+		RefineryTypes: garefn, narefn, yarefn, smin
+		BarracksTypes: gapile, nahand, yabrck
+		VehiclesFactoryTypes: gaweap, naweap, yaweap
+		NavalProductionTypes: gayard, nayard, yayard
+		ProductionTypes: gapile, nahand, yabrck, gaweap, naweap, yaweap, gayard, nayard, yayard
 		MinimumExcessPower: 100
 		MaximumExcessPower: 500
 		AdditionalMinimumRefineryCount: 2
@@ -78,18 +124,62 @@
 			napowr: 100
 			nanrct: 100
 			yapowr: 100
-			yapowr-full: 100
-			garefn: 100
-			narefn: 100
-			yarefn: 100
+			garefn: 3
+			narefn: 3
+			gapile: 2
+			nahand: 2
+			yabrck: 2
+			gaweap: 2
+			naweap: 2
+			yaweap: 2
+			gayard: 2
+			nayard: 2
+			yayard: 2
 		BuildingFractions:
 			gapowr: 1
 			napowr: 1
 			yapowr: 1
-			yapowr-full: 1
 			garefn: 1
 			narefn: 1
 			yarefn: 1
+			gapile: 1
+			nahand: 1
+			yabrck: 1
+			gaweap: 1
+			naweap: 1
+			yaweap: 1
+			gayard: 1
+			nayard: 1
+			yayard: 1
+			gapill: 20
+			nalasr: 20
+			natbnk: 6
+	UnitBuilderBotModule@hard:
+		RequiresCondition: enable-hard-ai && !megawealth
+		UnitQueues: Infantry.Shared, Vehicle.Shared
+		UnitsToBuild:
+			e1: 10
+			e2: 10
+			init: 10
+			ggi: 10
+			mtnk: 10
+			htnk: 10
+			ltnk: 10
+			engineer: 1
+			sengineer: 1
+			yengineer: 1
+			dog: 1
+			adog: 1
+	SquadManagerBotModule@hard:
+		SquadSize: 10
+		SquadSizeRandomBonus: 5
+		ConstructionYardTypes: gacnst, nacnst, yacnst
+		NavalProductionTypes: gayard, nayard, yayard
+		DozerTypes: dog, adog
+		ExcludeFromSquadsTypes: cmin, harv, smin, engineer, sengineer, yengineer, dog, adog
+		ProtectionTypes: gacnst, nacnst, yacnst, gapill, nalasr, natbnk, gapowr, napowr, yapowr, garefn, narefn, yarefn, gapile, nahand, yabrck, gaweap, naweap, yaweap, gayard, nayard, yayard, amcv, smcv, pcv, cmin, harv, smin, slav
+		SuggestedGroundLeaderLocomotor: foot, wheeled, tracked, heavytracked
+		SuggestedNavyLeaderLocomotor: naval
 
 ^ImpossibleAI:
 	ModularBot@impossible:
@@ -98,24 +188,25 @@
 	GrantConditionOnBotOwner@impossible:
 		Condition: enable-impossible-ai
 		Bots: impossible
-	BuildingRepairBotModule@impossible:
-		RequiresCondition: enable-impossible-ai
 	McvManagerBotModule@impossible:
-		RequiresCondition: enable-impossible-ai #&& !megawealth
+		RequiresCondition: enable-impossible-ai && !megawealth
 		McvTypes: amcv, smcv, pcv
 		ConstructionYardTypes: gacnst, nacnst, yacnst
-		MaxBaseRadius: 50
+		McvFactoryTypes: gaweap, naweap, yaweap
 		MinimumConstructionYardCount: 5
-	HarvesterBotModule:
-		HarvesterTypes: cmin, harv, smin
-		RefineryTypes: garefn, narefn, yarefn
+		MaxBaseRadius: 50
 	BaseBuilderBotModule@impossible:
-		RequiresCondition: enable-impossible-ai #&& !megawealth
+		RequiresCondition: enable-impossible-ai && !megawealth
 		BuildingQueues: Building.Shared
 		DefenseQueues: Support.Shared
 		ConstructionYardTypes: gacnst, nacnst, yacnst
-		PowerTypes: gapowr, napowr, yapowr, yapowr-full
-		RefineryTypes: garefn, narefn, yarefn
+		DefenseTypes: gapill, nalasr, natbnk
+		PowerTypes: gapowr, napowr, yapowr
+		RefineryTypes: garefn, narefn, yarefn, smin
+		BarracksTypes: gapile, nahand, yabrck
+		VehiclesFactoryTypes: gaweap, naweap, yaweap
+		NavalProductionTypes: gayard, nayard, yayard
+		ProductionTypes: gapile, nahand, yabrck, gaweap, naweap, yaweap, gayard, nayard, yayard
 		MinimumExcessPower: 200
 		MaximumExcessPower: 1500
 		AdditionalMinimumRefineryCount: 3
@@ -125,20 +216,80 @@
 			napowr: 100
 			nanrct: 100
 			yapowr: 100
-			yapowr-full: 100
-			garefn: 100
-			narefn: 100
-			yarefn: 100
+			garefn: 4
+			narefn: 4
+			gapile: 3
+			nahand: 3
+			yabrck: 3
+			gaweap: 3
+			naweap: 3
+			yaweap: 3
+			gayard: 3
+			nayard: 3
+			yayard: 3
 		BuildingFractions:
 			gapowr: 1
 			napowr: 1
 			yapowr: 1
-			yapowr-full: 1
 			garefn: 1
 			narefn: 1
 			yarefn: 1
+			gapile: 1
+			nahand: 1
+			yabrck: 1
+			gaweap: 1
+			naweap: 1
+			yaweap: 1
+			gayard: 1
+			nayard: 1
+			yayard: 1
+			gapill: 20
+			nalasr: 20
+			natbnk: 6
+	UnitBuilderBotModule@impossible:
+		RequiresCondition: enable-impossible-ai && !megawealth
+		UnitQueues: Infantry.Shared, Vehicle.Shared
+		UnitsToBuild:
+			e1: 10
+			e2: 10
+			init: 10
+			ggi: 10
+			mtnk: 10
+			htnk: 10
+			ltnk: 10
+			engineer: 1
+			sengineer: 1
+			yengineer: 1
+			dog: 1
+			adog: 1
+	SquadManagerBotModule@impossible:
+		SquadSize: 20
+		SquadSizeRandomBonus: 20
+		ConstructionYardTypes: gacnst, nacnst, yacnst
+		NavalProductionTypes: gayard, nayard, yayard
+		DozerTypes: dog, adog
+		ExcludeFromSquadsTypes: cmin, harv, smin, engineer, sengineer, yengineer, dog, adog
+		ProtectionTypes: gacnst, nacnst, yacnst, gapill, nalasr, natbnk, gapowr, napowr, yapowr, garefn, narefn, yarefn, gapile, nahand, yabrck, gaweap, naweap, yaweap, gayard, nayard, yayard, amcv, smcv, pcv, cmin, harv, smin, slav
+		SuggestedGroundLeaderLocomotor: foot, wheeled, tracked, heavytracked
+		SuggestedNavyLeaderLocomotor: naval
 
 Player:
 	Inherits@EASY: ^EasyAI
 	Inherits@HARD: ^HardAI
 	Inherits@IMPOSSIBLE: ^ImpossibleAI
+	GrantConditionOnPrerequisite@megawealth:
+		Condition: megawealth
+		Prerequisites: global-megawealth
+	GrantConditionOnPrerequisite@no_bases:
+		Condition: no_bases
+		Prerequisites: hack.no_bases
+	BuildingRepairBotModule:
+	HarvesterBotModule:
+		HarvesterTypes: cmin, harv, smin
+		RefineryTypes: garefn, narefn, yarefn, smin
+	CaptureManagerBotModule:
+		CapturingActorTypes: engineer, sengineer, yengineer
+		MinimumCaptureDelay: 125
+		MaximumCaptureTargetOptions: 5
+
+

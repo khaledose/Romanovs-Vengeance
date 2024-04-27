@@ -78,13 +78,13 @@
 # 		Feedback: ienyfea, ienyfeb, ienyfec
 # 		Die: ienydia, ienydib, ienydic, ienydid
 
-AlliedVehicleVoice:
-	DefaultVariant: .wav
-	Voices:
-		Build: vgraseb
-		Select: vgrasea, vgrasec, vgrased, vgrasee
-		Move: vgramoa, vgramob, vgramoc, vgramod, vgramoe, vgramof
-		Attack: vgraata, vgraatb, vgraatc, vgraatd, vgraate
+# AlliedVehicleVoice:
+# 	DefaultVariant: .wav
+# 	Voices:
+# 		Build: vgraseb
+# 		Select: vgrasea, vgrasec, vgrased, vgrasee
+# 		Move: vgramoa, vgramob, vgramoc, vgramod, vgramoe, vgramof
+# 		Attack: vgraata, vgraatb, vgraatc, vgraatd, vgraate
 
 # AlliedConstructionVehicleVoice:
 # 	DefaultVariant: .wav
@@ -165,13 +165,13 @@ MirageTankVoice:
 # 		Move: vbatmoa, vbatmob, vbatmoc, vbatmod, vbatmoe
 # 		Attack: vbatatb, vbatatc, vbatatd, vbatate
 
-SovietVehicleVoice:
-	DefaultVariant: .wav
-	Voices:
-		Build: vgrssea
-		Select: vgrsseb, vgrssec
-		Move: vgrsmoa, vgrsmob, vgrsmoc
-		Attack: vgrsata, vgrsatb, vgrsatc, vgrsatd
+# SovietVehicleVoice:
+# 	DefaultVariant: .wav
+# 	Voices:
+# 		Build: vgrssea
+# 		Select: vgrsseb, vgrssec
+# 		Move: vgrsmoa, vgrsmob, vgrsmoc
+# 		Attack: vgrsata, vgrsatb, vgrsatc, vgrsatd
 
 # SovietConstructionVehicleVoice:
 # 	DefaultVariant: .wav
@@ -248,13 +248,13 @@ ApocalypseVoice:
 # 		Deploy: vslahae
 # 		Undeploy: vslamob
 
-LasherTankVoice:
-	DefaultVariant: .wav
-	Voices:
-		Build: vlassef
-		Select: vlassed, vlasseg, vlasmod
-		Move: vlasmoa, vlasmoc, vlasmof, vlasatd
-		Attack: vlasata, vlasatc, vlasate, vlasatf, vlasatg
+# LasherTankVoice:
+# 	DefaultVariant: .wav
+# 	Voices:
+# 		Build: vlassef
+# 		Select: vlassed, vlasseg, vlasmod
+# 		Move: vlasmoa, vlasmoc, vlasmof, vlasatd
+# 		Attack: vlasata, vlasatc, vlasate, vlasatf, vlasatg
 
 GatlingTankVoice:
 	DefaultVariant: .wav

@@ -7,7 +7,6 @@ gtgcan:
 	Inherits@SHAPE: ^2x2Shape
 	Inherits@TURRET: ^WithVoxelTurretBuildingPowered
 	Buildable:
-		Queue: Support.Shared, Support.Allies, Support.France
 		Prerequisites: ~building.france, gaairc, ~techlevel.7
 		Description: actor-gtgcan.description
 		BuildPaletteOrder: 90

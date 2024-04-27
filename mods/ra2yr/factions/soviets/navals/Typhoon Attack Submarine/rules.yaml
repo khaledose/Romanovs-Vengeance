@@ -32,13 +32,11 @@ sub:
 		Name: actor-sub.name
 	Armament:
 		Weapon: SubTorpedo
-		Damage: 75
 		LocalOffset: 768,0,0
 		FireDelay: 2
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: SubTorpedoE
-		Damage: 150
 		LocalOffset: 768,0,0
 		FireDelay: 2
 		RequiresCondition: rank-elite
@@ -47,7 +45,5 @@ sub:
 		FacingTolerance: 2
 		MustFaceTarget: true
 		PauseOnCondition: chronodisable
-	LeavesTrails:
-		RequiresCondition: surfaced
 	Voiced:
 		VoiceSet: TyphoonVoice

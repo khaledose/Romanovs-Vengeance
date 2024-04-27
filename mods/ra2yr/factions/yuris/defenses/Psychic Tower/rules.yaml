@@ -7,7 +7,6 @@ yapsyt:
 	Inherits@DRAIN: ^DisabledOnDiskDrain
 	Inherits@TURRET: ^WithSpriteTurretBuildingPowered
 	Buildable:
-		Queue: Support.Shared, Support.Yuri
 		Prerequisites: ~building.yuri, yapsis, ~techlevel.7
 		Description: actor-yapsyt.description
 		BuildPaletteOrder: 60

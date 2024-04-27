@@ -7,7 +7,6 @@ naflak:
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@TURRET: ^WithVoxelTurretBuildingPowered
 	Buildable:
-		Queue: Support.Shared, Support.Soviets
 		Prerequisites: ~building.soviets, nahand, ~techlevel.4
 		Description: actor-naflak.description
 		BuildPaletteOrder: 50

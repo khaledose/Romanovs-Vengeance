@@ -6,7 +6,6 @@ tesla:
 	Inherits@POWER: ^DisabledOnUncharged
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
-		Queue: Support.Shared, Support.Soviets
 		Prerequisites: ~building.soviets, naradr, napowr, ~techlevel.5
 		Description: actor-tesla.description
 		BuildPaletteOrder: 60

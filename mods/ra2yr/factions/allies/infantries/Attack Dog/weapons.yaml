@@ -1,12 +1,13 @@
-DogJaw:
+GoodTeeth:
 	ValidTargets: Infantry
 	InvalidTargets: DogImmune
 	ReloadDelay: 30
 	Range: 1c512
 	Report: idogatta.wav, idogatca.wav
 	Projectile: InstantHit
+		Blockable: true
 	Warhead@1Dam: TargetDamage
-		Damage: 100000
+		Damage: 300000
 		Spread: 1
 		ValidTargets: Infantry
 		InvalidTargets: DogImmune

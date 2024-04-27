@@ -51,8 +51,6 @@ caoild:
 		SoundFiles: boillo2a.wav, boillo2b.wav, boillo2c.wav
 		Volume: 0.30
 		RequiresCondition: enabled
-	RangedGpsDot:
-		Sequence: Oil
 
 caoild.mwspawner:
 	Inherits@SHAPE: ^2x2Shape
@@ -139,8 +137,6 @@ caairp:
 	WithIdleOverlay@flag:
 		Sequence: flag
 		PauseOnCondition: chronodisable
-	RangedGpsDot:
-		Sequence: Paradrop
 	Voiced:
 		VoiceSet: AirfieldVoice
 		Volume: 0.8
@@ -170,8 +166,6 @@ cahosp:
 		Sequence: flag
 		Offset: 0,-500,2520
 		PauseOnCondition: chronodisable
-	RangedGpsDot:
-		Sequence: Hospital
 
 caoutp:
 	Inherits: ^TechBuilding
@@ -208,8 +202,6 @@ caoutp:
 	WithIdleOverlay@flag:
 		Sequence: flag
 		PauseOnCondition: chronodisable
-	RangedGpsDot:
-		Sequence: Outpost
 
 # Yuri's Revenge Tech Structures
 capowr:
@@ -236,8 +228,6 @@ capowr:
 		Sequence: flag
 		Offset: 1000, 0, 0
 		PauseOnCondition: chronodisable
-	RangedGpsDot:
-		Sequence: Power
 
 camach:
 	Inherits: ^TechBuilding
@@ -261,8 +251,6 @@ camach:
 	WithIdleOverlay@flag:
 		Sequence: flag
 		PauseOnCondition: chronodisable
-	RangedGpsDot:
-		Sequence: MachineShop
 
 caslab:
 	Inherits: ^TechBuilding
@@ -286,5 +274,3 @@ caslab:
 		PauseOnCondition: chronodisable
 	ProvidesPrerequisite@default:
 	# ProvidesRandomPrerequisite:
-	RangedGpsDot:
-		Sequence: SecretLab

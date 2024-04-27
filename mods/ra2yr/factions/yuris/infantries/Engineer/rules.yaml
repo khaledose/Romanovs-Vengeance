@@ -2,7 +2,7 @@ yengineer:
 	Inherits: ^Engineer
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Yuri
-		Prerequisites: ~yabrck, ~techlevel.1
+		Prerequisites: ~infantry.yuri, ~techlevel.1
 	Voiced:
 		VoiceSet: YuriEngineerVoice
 	RenderSprites:

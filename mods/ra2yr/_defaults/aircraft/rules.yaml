@@ -40,8 +40,6 @@
 	AmbientSound:
 		Volume: 0.30
 		RequiresCondition: cruising && airborne
-	RangedGpsDot:
-		Sequence: Plane
 	MapEditorData:
 		Categories: Aircraft
 
@@ -93,6 +91,7 @@
 	AttackAircraft:
 		FacingTolerance: 20
 		TargetFrozenActors: True
+		Voice: Attack
 		PauseOnCondition: chronodisable
 		RequiresCondition: ammo
 	Guard:
@@ -101,13 +100,14 @@
 	Inherits: ^FighterJet
 	Inherits@ANNOUNCE: ^AnnounceProduction
 	Buildable:
+		Queue: Aircraft
+		BuildAtProductionType: DockedAircraft
 		BuildDurationModifier: 100
 	Aircraft:
 		IdleBehavior: ReturnToBase
-	GrantExternalConditionToOwner:
-		Condition: padaircraft
+		InitialFacing: 896
 	Rearmable:
-		RearmActors: gadock, gaairc
+		RearmActors: gadock
 
 ^Helicopter:
 	Inherits: ^Aircraft
@@ -134,8 +134,6 @@
 		RepairActors: gadept, nadept, caoutp
 	WithVoxelHelicopterBody:
 		TickRate: 1
-	RangedGpsDot:
-		Sequence: Helicopter
 
 ^AircraftHusk:
 	Inherits: ^WithTooltip
@@ -176,8 +174,6 @@
 	SpeedMultiplier@HUSK:
 		Modifier: 150
 	WithVoxelBody:
-	RangedGpsDot:
-		Sequence: Plane
 
 ^HelicopterHusk:
 	Inherits: ^AircraftHusk
@@ -190,8 +186,6 @@
 		Velocity: 240
 	WithVoxelHelicopterBody:
 		TickRate: 1
-	RangedGpsDot:
-		Sequence: Helicopter
 
 ^ShootableMissile:
 	Inherits@1: ^ExistsInWorld

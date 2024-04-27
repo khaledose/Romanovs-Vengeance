@@ -38,11 +38,11 @@ dred:
 	MissileSpawnerMaster:
 		Actors: dmisl, dmisl
 		SpawnOffset: 172,-120,368, -172,-120,368
-	FirepowerMultiplier@RANK-1:
-		RequiresCondition: rank-veteran >= 1 && !rank-elite
-	FirepowerMultiplier@RANK-ELITE:
-		RequiresCondition: rank-elite
-		Modifier: 225
+	# FirepowerMultiplier@RANK-1:
+	# 	RequiresCondition: rank-veteran >= 1 && !rank-elite
+	# FirepowerMultiplier@RANK-ELITE:
+	# 	RequiresCondition: rank-elite
+	# 	Modifier: 225
 	WithVoxelBody:
 		RequiresCondition: loaded >= 2
 	WithVoxelBody@HALF:

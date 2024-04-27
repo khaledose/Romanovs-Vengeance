@@ -1,16 +1,12 @@
 naradr:
-	Inherits: ^BaseStructure
-	Inherits@RADAR: ^Radar
-	Inherits@CAPTURE: ^Capturable
-	Inherits@MC: ^MindControllableBuilding
-	Inherits@SPECIAL: SpyPlaneSpecial
+	Inherits: ^Radar
+	Inherits@SPECIAL: ^SpyPlaneSpecial
 	Inherits@SHAPE: ^2x2Shape
-	Inherits@AI: ^AIControl
 	Buildable:
-		Queue: Building.Shared, Building.Soviets
-		Prerequisites: ~building.soviets, narefn, ~techlevel.3, ~!ai.naradr
+		Prerequisites: ~building.soviets, narefn, ~techlevel.3
 		Description: actor-naradr.description
-		BuildPaletteOrder: 40
+	IsometricSelectable:
+		DecorationHeight: 90
 	Power:
 		Amount: -50
 	Health:
@@ -29,13 +25,3 @@ naradr:
 		Sequence: idle-dish
 		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: !build-incomplete
-	ProvidesPrerequisite@AIbuildinglimit:
-		RequiresCondition: ai-control
-		Prerequisite: ai.naradr
-	IsometricSelectable:
-		DecorationHeight: 90
-	Voiced:
-		VoiceSet: RadarVoice
-		Volume: 0.8
-
-

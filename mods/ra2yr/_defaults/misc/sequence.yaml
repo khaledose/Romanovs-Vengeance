@@ -372,116 +372,8 @@ beacon:
 		Filename: cameo|bolticon.shp
 		Length: *
 		Offset: 0,-86
-	tdrpicon:
-		Filename: bits/cameos/tdrpicon.shp
-		Length: *
-		Offset: 0,-86
-	tesdicon:
-		Filename: bits/cameos/tesdicon.shp
-		Length: *
-		Offset: 0,-86
-	radmicon:
-		Filename: bits/cameos/radmicon.shp
-		Length: *
-		Offset: 0,-86
-	parb1icon:
-		Filename: bits/cameos/parb1icon.shp
-		Length: *
-		Offset: 0,-86
-	parb2icon:
-		Filename: bits/cameos/parb2icon.shp
-		Length: *
-		Offset: 0,-86
-	parb3icon:
-		Filename: bits/cameos/parb3icon.shp
-		Length: *
-		Offset: 0,-86
-	empuicon:
-		Filename: bits/cameos/empuicon.shp
-		Length: *
-		Offset: 0,-86
-	mineicon:
-		Filename: bits/cameos/mineicon.shp
-		Length: *
-		Offset: 0,-86
-	nmineicon:
-		Filename: bits/cameos/nmineicon.shp
-		Length: *
-		Offset: 0,-86
-	leaficon:
-		Filename: bits/cameos/leaficon.shp
-		Length: *
-		Offset: 0,-86
-	a101icon:
-		Filename: bits/cameos/a101icon.shp
-		Length: *
-		Offset: 0,-86
-	a102icon:
-		Filename: bits/cameos/a102icon.shp
-		Length: *
-		Offset: 0,-86
-	a103icon:
-		Filename: bits/cameos/a103icon.shp
-		Length: *
-		Offset: 0,-86
-	sdrpicon:
-		Filename: bits/cameos/sdrpicon.shp
-		Length: *
-		Offset: 0,-86
-	dronicon:
-		Filename: cameo|dronicon.shp
-		Length: *
-		Offset: 0,-86
-	txdrop1icon:
-		Filename: bits/cameos/txdrop1icon.png
-		Length: *
-		Offset: 0,-86
-	txdrop2icon:
-		Filename: bits/cameos/txdrop2icon.png
-		Length: *
-		Offset: 0,-86
-	txdrop3icon:
-		Filename: bits/cameos/txdrop3icon.png
-		Length: *
-		Offset: 0,-86
-	buoyicon:
-		Filename: bits/cameos/buoyicon.png
-		Length: *
-		Offset: 0,-86
-	yclnicon:
-		Filename: cameomd|yclnicon.shp
-		Length: *
-		Offset: 0,-86
-	carpicon:
-		Filename: bits/cameos/carpicon.shp
-		Length: *
-		Offset: 0,-86
-	fallouticon:
-		Filename: bits/cameos/fallouticon.png
-		Length: *
-		Offset: 0,-86
-	cmslicon:
-		Filename: bits/cameos/cmslicon.shp
-		Length: *
-		Offset: 0,-86
-	chdpicon:
-		Filename: bits/cameos/chdpicon.png
-		Length: *
-		Offset: 0,-86
 	muteicon:
 		Filename: cameomd|muteicon.shp
-		Length: *
-		Offset: 0,-86
-	fab1icon:
-		Filename: bits/cameos/fab1icon.png
-		Length: *
-		Offset: 0,-86
-	fab2icon:
-		Filename: bits/cameos/fab2icon.png
-		Length: *
-		Offset: 0,-86
-	fab3icon:
-		Filename: bits/cameos/fab3icon.png
 		Length: *
 		Offset: 0,-86
 	xxicon:
@@ -495,67 +387,20 @@ beacon:
 		BlendMode: Multiply
 
 rank:
-	rank-veteran-1:
-		Filename: bits/newpips.shp
-	rank-veteran-2:
-		Filename: bits/newpips.shp
-		Start: 1
+	Defaults:
+		Filename: conqmd|pips.shp
+	rank-veteran:
+		Start: 14
 	rank-elite:
-		Filename: bits/newpips.shp
-		Start: 2
-	rank-veteran-cameo-1:
-		Filename: bits/newpips.shp
-		Offset: 2,2
-	rank-veteran-cameo-2:
-		Filename: bits/newpips.shp
-		Start: 1
-		Offset: 2,2
-	rank-elite-cameo:
-		Filename: bits/newpips.shp
-		Start: 2
-		Offset: 2,2
+		Start: 15
 
 tech:
+	Defaults:
+		Filename: conqmd|pips.shp
 	heal:
-		Filename: bits/newpips.shp
-		Start: 3
-	repair:
-		Filename: bits/newpips.shp
-		Start: 4
-
-leaflet:
-	idle:
-		Filename: bits/projectiles/leaflet.shp
-		Length: *
-		Ticks: 160
-	icon:
-		Filename: bits/newpips.shp
-		Start: 5
-
-holo:
-	icon:
-		Filename: bits/newpips.shp
-		Start: 7
-
-propaganda:
-	icon:
-		Filename: bits/newpips.shp
-		Start: 10
-
-chronoboost:
-	icon:
-		Filename: bits/newpips.shp
-		Start: 11
-
-nogunner:
-	icon:
-		Filename: bits/newpips.shp
-		Start: 12
-
-propaganda-baku:
-	icon:
-		Filename: bits/newpips.shp
 		Start: 13
+	repair:
+		Start: 20
 
 mpspawn:
 	idle:
@@ -595,23 +440,13 @@ parach:
 
 cameo-chevron:
 	Defaults:
+		Filename: conqmd|pips.shp
 		Offset: 2, 2
 	veteran:
-		Filename: bits/cameos/cameo-chevrons.shp
+		Start: 14
 	elite:
-		Filename: bits/cameos/cameo-chevrons.shp
-		Start: 1
-	heroic:
-		Filename: bits/cameos/cameo-chevrons.shp
-		Start: 2
+		Start: 15
 
-cameo-stripe:
-	fake:
-		Filename: bits/cameos/cameo-fake.png
-	upgraded:
-		Filename: bits/cameos/cameo-upgraded.png
-	taken:
-		Filename: bits/cameos/cameo-taken.png
 
 pips:
 	Defaults:

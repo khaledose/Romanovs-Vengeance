@@ -9,7 +9,7 @@ init:
 		Queue: Infantry.Shared, Infantry.Yuri
 		Prerequisites: ~infantry.yuri, ~techlevel.1
 		Description: actor-init.description
-		BuildPaletteOrder: 1
+		BuildPaletteOrder: 10
 	Health:
 		HP: 10000
 	Armor:
@@ -28,36 +28,26 @@ init:
 		Name: actor-init.name
 	Armament@primary:
 		Weapon: PsychicJab
-		Damage: 15
-		PauseOnCondition: chronodisable
-		RequiresCondition: !rank-elite
+		RequiresCondition: !rank-elite && !garrisoned
 	Armament@elite:
 		Weapon: PsychicJabE
-		Damage: 20
-		PauseOnCondition: chronodisable
-		RequiresCondition: rank-elite
+		RequiresCondition: rank-elite && !garrisoned
 	Armament@opentopped:
 		Name: opentopped
 		Weapon: PsychicJab
-		PauseOnCondition: chronodisable
-		RequiresCondition: !rank-elite
+		RequiresCondition: !rank-elite && !garrisoned
 	Armament@elite-opentopped:
 		Name: opentopped
 		Weapon: PsychicJabE
-		PauseOnCondition: chronodisable
-		RequiresCondition: rank-elite
+		RequiresCondition: rank-elite && !garrisoned
 	Armament@garrisoned:
-		Name: garrisoned
 		Weapon: UCPsychicJab
 		MuzzleSequence: muzzle
-		PauseOnCondition: chronodisable
-		RequiresCondition: !rank-elite
+		RequiresCondition: !rank-elite && garrisoned
 	Armament@elite-garrisoned:
-		Name: garrisoned
 		Weapon: UCPsychicJabE
 		MuzzleSequence: muzzle
-		PauseOnCondition: chronodisable
-		RequiresCondition: rank-elite
+		RequiresCondition: rank-elite && garrisoned
 	WithMuzzleOverlay:
 	Voiced:
 		VoiceSet: InitiateVoice

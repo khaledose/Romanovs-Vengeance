@@ -1,15 +1,10 @@
 yapsis:
-	Inherits: ^BaseStructure
-	Inherits@RADAR: ^Radar
-	Inherits@CAPTURE: ^Capturable
-	Inherits@MC: ^MindControllableBuilding
+	Inherits: ^Radar
 	Inherits@SPECIAL: PsychicRevealSpecial
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
-		Queue: Building.Shared, Building.Yuri
 		Prerequisites: ~building.yuri, yarefn, ~techlevel.3
 		Description: actor-yapsis.description
-		BuildPaletteOrder: 40
 	IsometricSelectable:
 		DecorationHeight: 120
 	Power:
@@ -26,11 +21,9 @@ yapsis:
 		Name: actor-yapsis.name
 	Tooltip@NoRow:
 		Name: actor-yapsis.name
-	ProvidesPrerequisite:
-		Prerequisite: radar.yuri
-	RangedGpsProvider:
-		Range: 25c0
-		RequiresCondition: !build-incomplete && !chronodisable
+	# RangedGpsProvider:
+	# 	Range: 25c0
+	# 	RequiresCondition: !build-incomplete && !chronodisable
 	RenderDetectionCircle:
 	WithRangeCircle:
 		Range: 25c0
@@ -42,6 +35,3 @@ yapsis:
 		Sequence: idle-spin
 		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: !build-incomplete
-	Voiced:
-		VoiceSet: PsychicSensorVoice
-		Volume: 0.8

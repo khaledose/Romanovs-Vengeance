@@ -11,9 +11,15 @@ EditorPlayer:
 
 Player:
 	Inherits: ^BasePlayer
-	Inherits@PlayerStartingResources: ^PlayerStartingResources
 	Inherits@LobbyOptions: ^LobbyOptions
 	Inherits@TechLevelOptions: ^TechLevelOptions
+	PlayerResources:
+		DefaultCash: 100000
+		SelectableCash: 5000, 10000, 20000, 50000, 100000
+		CashTickUpNotification: CashTickUp
+		CashTickDownNotification: CashTickDown
+		InsufficientFundsNotification: InsufficientFunds
+		InsufficientFundsTextNotification: notification-insufficient-funds
 	TechTree:
 	ClassicProductionQueue@Building:
 		Type: Building.Shared
@@ -50,7 +56,7 @@ Player:
 	ClassicProductionQueue@Infantry:
 		Type: Infantry.Shared
 		Group: Infantry
-		DisplayOrder: 4
+		DisplayOrder: 3
 		LowPowerModifier: 200
 		ReadyAudio: UnitReady
 		ReadyTextNotification: notification-unit-ready
@@ -66,7 +72,7 @@ Player:
 	ClassicProductionQueue@Vehicle:
 		Type: Vehicle.Shared
 		Group: Vehicle
-		DisplayOrder: 5
+		DisplayOrder: 4
 		BuildDurationModifier: 100
 		LowPowerModifier: 200
 		ReadyAudio: UnitReady
@@ -79,11 +85,11 @@ Player:
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
 		SpeedUp: true
-		BuildTimeSpeedReduction: 100, 80, 65, 50
+		BuildTimeSpeedReduction: 100, 91, 82, 73, 64, 55, 50
 	ClassicProductionQueue@Aircraft:
-		Type: Aircraft.Shared
+		Type: Aircraft
 		Group: Aircraft
-		DisplayOrder: 6
+		DisplayOrder: 5
 		LowPowerModifier: 200
 		ReadyAudio: UnitReady
 		ReadyTextNotification: notification-unit-ready
@@ -99,7 +105,7 @@ Player:
 	ClassicProductionQueue@Ship:
 		Type: Ship.Shared
 		Group: Ship
-		DisplayOrder: 7
+		DisplayOrder: 6
 		LowPowerModifier: 200
 		ReadyAudio: UnitReady
 		ReadyTextNotification: notification-unit-ready
@@ -120,7 +126,6 @@ Player:
 		CannotPlaceTextNotification: notification-cannot-deploy-here
 	SupportPowerManager:
 	ScriptTriggers:
-	CellTriggerOverlay:
 	MissionObjectives:
 		WinNotification: Win
 		LoseNotification: Lose
@@ -130,13 +135,9 @@ Player:
 		SpeechNotification: LowPower
 		TextNotification: notification-low-power
 	AllyRepair:
-	Taunts:
-		CheckboxVisible: false
 	ResourceStorageWarning:
 		Notification: InsufficientSilos
 		TextNotification: notification-insufficient-silos
-	DeveloperMode:
-		CheckboxDisplayOrder: 14
 	GpsWatcher:
 	FrozenActorLayer:
 	BaseAttackNotifier:
@@ -162,39 +163,6 @@ Player:
 		IsPlayerPalette: true
 		Palette: player
 	GrantConditionOnPrerequisiteManager:
-	ExternalCondition@IndustrialPlant:
-		Condition: naindp
-	ProvidesPrerequisite@naindp-1:
-		Prerequisite: prerequisite.one_naindp
-		RequiresCondition: naindp
-	ProvidesPrerequisite@naindp-2:
-		Prerequisite: prerequisite.two_naindp
-		RequiresCondition: naindp > 1
-	ProvidesPrerequisite@naindp-3:
-		Prerequisite: prerequisite.three_naindp
-		RequiresCondition: naindp > 2
-	ProvidesPrerequisite@naindp-4:
-		Prerequisite: prerequisite.four_naindp
-		RequiresCondition: naindp > 3
-	ProvidesPrerequisite@naindp-5:
-		Prerequisite: prerequisite.five_naindp
-		RequiresCondition: naindp > 4
-	ExternalCondition@PadAircraft:
-		Condition: padaircraft
-	ExternalCondition@AirDock:
-		Condition: airdock
-	ProvidesPrerequisite@enoughair:
-		Prerequisite: prerequisite.enoughair
-		RequiresCondition: padaircraft >= airdock
-	ProvidesPrerequisite@aiplayer:
-		Prerequisite: prerequisite.aiplayer
-		RequiresCondition: enable-generic-ai
-	GrantConditionOnTileSet:
-		TileSets: DUNE
-		Condition: dune
-	ProvidesPrerequisite@dune:
-		Prerequisite: on_dune
-		RequiresCondition: dune
 	ProductionIconOverlayManager@chevron-veteran:
 		Type: chevron-veteran
 		Image: cameo-chevron
@@ -205,22 +173,8 @@ Player:
 		Image: cameo-chevron
 		Sequence: elite
 		Palette: pips
-	ProductionIconOverlayManager@chevron-heroic:
-		Type: chevron-heroic
-		Image: cameo-chevron
-		Sequence: heroic
-		Palette: pips
-	ProductionIconOverlayManager@stripe-upgraded:
-		Type: stripe-upgraded
-		Image: cameo-stripe
-		Sequence: upgraded
-	ProductionIconOverlayManager@stripe-taken:
-		Type: stripe-taken
-		Image: cameo-stripe
-		Sequence: taken
 	PlayerExperience:
 	GameSaveViewportManager:
 	EnemyWatcher:
 		NotificationInterval: 125
-	RangedGpsWatcher:
 	PlayerRadarTerrain:

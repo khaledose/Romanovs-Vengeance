@@ -7,7 +7,6 @@ slav:
 		Queue: Infantry.Unused
 		Prerequisites: ~yarefn, ~techlevel.1
 		Description: actor-slav.description
-		BuildPaletteOrder: 60
 	Selectable:
 		Priority: 6
 	Health:
@@ -28,8 +27,6 @@ slav:
 		Name: actor-slav.name
 	Armament@primary:
 		Weapon: Shovel
-		Damage: 30
-		PauseOnCondition: chronodisable
 	SlaveMiner:
 		MasterDeadCondition: freeslave
 		FreeSound: isl1lia.wav

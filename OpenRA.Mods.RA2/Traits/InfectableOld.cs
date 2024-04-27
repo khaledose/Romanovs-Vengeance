@@ -13,6 +13,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using OpenRA.Graphics;
+using OpenRA.Mods.AS.Traits;
 using OpenRA.Mods.Common.Activities;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Primitives;
@@ -28,6 +29,9 @@ namespace OpenRA.Mods.RA2.Traits
 
 		[Desc("Damage types that kills the infector.")]
 		public readonly BitSet<DamageType> KillInfectorDamageTypes = default;
+
+		[Desc("Teleport types that removes the infector.")]
+		public readonly HashSet<string> RemoveInfectorTeleportTypes = default;
 
 		[Desc("Actor types that kills the infector." +
 			"Define service depots here, since Repairable don't deal DamageTypes.")]
@@ -51,9 +55,10 @@ namespace OpenRA.Mods.RA2.Traits
 		public override object Create(ActorInitializer init) { return new InfectableOld(init.Self, this); }
 	}
 
-	public class InfectableOld : ConditionalTrait<InfectableOldInfo>, ISync, ITick, INotifyDamage, INotifyKilled, IRemoveInfector, IRender
+	public class InfectableOld : ConditionalTrait<InfectableOldInfo>, ISync, ITick, INotifyDamage, INotifyKilled, IOnSuccessfulTeleportRA2, IRender
 	{
 		readonly Health health;
+		readonly Actor self;
 
 		public Actor Infector;
 		public InfectorOld InfectorTrait;
@@ -71,8 +76,9 @@ namespace OpenRA.Mods.RA2.Traits
 		public Animation Overlay;
 
 		public InfectableOld(Actor self, InfectableOldInfo info)
-            : base(info)
-        {
+			: base(info)
+		{
+			this.self = self;
 			health = self.Trait<Health>();
 		}
 
@@ -110,11 +116,11 @@ namespace OpenRA.Mods.RA2.Traits
 			}
 		}
 
-		void RemoveInfector(Actor self, bool kill, AttackInfo e)
+		void RemoveInfector(Actor self, WPos spawnLoc, bool kill, AttackInfo e)
 		{
 			if (Infector != null && !Infector.IsDead)
 			{
-				Infector.TraitOrDefault<IPositionable>().SetPosition(Infector, self.CenterPosition);
+				Infector.TraitOrDefault<IPositionable>().SetPosition(Infector, spawnLoc);
 				self.World.AddFrameEndTask(w =>
 				{
 					if (Infector == null || Infector.IsDead)
@@ -158,25 +164,25 @@ namespace OpenRA.Mods.RA2.Traits
 
 				if (e.Damage.DamageTypes.Overlaps(Info.KillInfectorDamageTypes) ||
 					Info.KillInfectorActorTypes.Contains(e.Attacker.Info.Name))
-					RemoveInfector(self, true, e);
+					RemoveInfector(self, self.CenterPosition, true, e);
 				else if (e.Damage.DamageTypes.Overlaps(Info.RemoveInfectorDamageTypes))
-					RemoveInfector(self, false, e);
+					RemoveInfector(self, self.CenterPosition, false, e);
 			}
 		}
 
 		void INotifyKilled.Killed(Actor self, AttackInfo e)
-        {
-            if (InfectorTrait != null)
-            {
-                var kill = dealthDamage >= InfectorTrait.Info.SuppressionAmountThreshold;
-                RemoveInfector(self, kill, e);
-            }
+		{
+			if (InfectorTrait != null)
+			{
+				var kill = dealthDamage >= InfectorTrait.Info.SuppressionAmountThreshold;
+				RemoveInfector(self, self.CenterPosition, kill, e);
+			}
 		}
 
 		void ITick.Tick(Actor self)
-        {
-            if (!IsTraitDisabled && Infector != null)
-            {
+		{
+			if (!IsTraitDisabled && Infector != null)
+			{
 				Overlay?.Tick();
 
 				if (--Ticks < 0)
@@ -203,15 +209,16 @@ namespace OpenRA.Mods.RA2.Traits
 			{
 				foreach (var r in Overlay.Render(self.CenterPosition,
 					wr.Palette(InfectorTrait.Info.IsPlayerPalette ? InfectorTrait.Info.Palette + Infector.Owner.InternalName : InfectorTrait.Info.Palette)))
-						yield return r;
+					yield return r;
 			}
 		}
 
 		IEnumerable<Rectangle> IRender.ScreenBounds(Actor self, WorldRenderer wr) { yield break; }
 
-		void IRemoveInfector.RemoveInfector(Actor self, bool kill, AttackInfo e)
+		void IOnSuccessfulTeleportRA2.OnSuccessfulTeleport(string type, WPos oldPos, WPos newPos)
 		{
-			RemoveInfector(self, kill, e);
+			if (Info.RemoveInfectorTeleportTypes.Contains(type))
+				RemoveInfector(self, oldPos, false, null);
 		}
 	}
 }

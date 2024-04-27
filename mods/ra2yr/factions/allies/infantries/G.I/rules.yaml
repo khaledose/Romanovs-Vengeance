@@ -1,18 +1,14 @@
 e1:
-	Inherits: ^GroundInfantry
-	Inherits@AI: ^AIControl
+	Inherits: ^DeployableInfantry
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@VETERAN: ^InfantryPromotable
 	Inherits@MC: ^MindControllable
-	Inherits@DEPLOY: ^DeployableInfantry
-	Inherits@TURRET: ^WithSpriteTurretDeployed
 	Inherits@GARRISONER: ^Garrisoner
-	Inherits@VOICES: ^WithGIVoices
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Allies
 		Prerequisites: ~infantry.allies, ~techlevel.1
 		Description: actor-e1.description
-		BuildPaletteOrder: 1
+		BuildPaletteOrder: 10
 	Health:
 		HP: 12500
 	Armor:
@@ -31,54 +27,37 @@ e1:
 		Name: actor-e1.name
 	Armament@primary:
 		Weapon: M60
-		Damage: 15
-		PauseOnCondition: chronodisable
-		RequiresCondition: !rank-elite && !deployed
+		RequiresCondition: !rank-elite && !deployed && !garrisoned
 	Armament@elite:
 		Weapon: M60E
-		Damage: 20
-		PauseOnCondition: chronodisable
-		RequiresCondition: rank-elite && !deployed
+		RequiresCondition: rank-elite && !deployed && !garrisoned
 	Armament@deployed:
 		Name: deployed
 		Weapon: para
-		Damage: 20
 		Turret: deploy
-		PauseOnCondition: chronodisable
-		RequiresCondition: !rank-elite && deployed
+		RequiresCondition: !rank-elite && deployed && !garrisoned
 	Armament@elite-deployed:
 		Name: deployed
 		Weapon: paraE
-		Damage: 25
 		Turret: deploy
-		PauseOnCondition: chronodisable
-		RequiresCondition: rank-elite && deployed
+		RequiresCondition: rank-elite && deployed && !garrisoned
 	Armament@opentopped:
 		Name: opentopped
 		Weapon: para
-		PauseOnCondition: chronodisable
-		RequiresCondition: !rank-elite
+		RequiresCondition: !rank-elite && !deployed && !garrisoned
 	Armament@elite-opentopped:
 		Name: opentopped
 		Weapon: paraE
-		PauseOnCondition: chronodisable
-		RequiresCondition: rank-elite
+		RequiresCondition: rank-elite && !deployed && !garrisoned
 	Armament@garrisoned:
 		Weapon: UCpara
-		Name: garrisoned
 		MuzzleSequence: muzzle
-		PauseOnCondition: chronodisable
-		RequiresCondition: !rank-elite
+		RequiresCondition: !rank-elite && !deployed && garrisoned
 	Armament@elite-garrisoned:
 		Weapon: UCparaE
-		Name: garrisoned
 		MuzzleSequence: muzzle
-		PauseOnCondition: chronodisable
-		RequiresCondition: rank-elite
+		RequiresCondition: rank-elite && !deployed && garrisoned
 	WithMuzzleOverlay:
-
-^WithGIVoices:
-	Inherits: ^WithFeedbackVoicelines
 	GrantConditionOnDeploy:
 		DeploySounds: igidepa.wav
 		UndeploySounds: igidepb.wav

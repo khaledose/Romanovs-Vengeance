@@ -90,6 +90,7 @@ notification-construction-complete = Construction complete.
 notification-unit-ready = Unit ready.
 notification-unable-to-build-more = Unable to build more.
 notification-unable-to-comply-building-in-progress = Unable to comply. Building in progress.
+notification-new-rally-point-established = New rally point established.
 notification-repairing = Repairing.
 notification-unit-repaired = Unit repaired.
 notification-select-target = Select target.

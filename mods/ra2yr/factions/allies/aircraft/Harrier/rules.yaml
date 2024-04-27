@@ -1,9 +1,7 @@
 orca:
 	Inherits: ^DockablePlane
-	Inherits@AI: ^AIControl
 	Buildable:
-		Queue: Aircraft.Shared, Aircraft.Allies
-		Prerequisites: ~aircraft.allies, !prerequisite.enoughair, ~techlevel.3
+		Prerequisites: ~aircraft.allies.docked, dock, ~techlevel.3
 		Description: actor-orca.description
 	Health:
 		HP: 15000
@@ -26,16 +24,10 @@ orca:
 		Name: actor-orca.name
 	Armament:
 		Weapon: Maverick
-		Damage: 150
-		PauseOnCondition: !ammo
 		RequiresCondition: !rank-elite
 	Armament@Elite:
 		Weapon: MaverickE
-		Damage: 300
-		PauseOnCondition: !ammo
 		RequiresCondition: rank-elite
-	AttackAircraft:
-		Voice: Attack
 	AmmoPool:
 		Ammo: 1
 	SpawnActorOnDeath:
@@ -52,9 +44,6 @@ orca:
 		SoundFiles: vintlo2a.wav, vintlo2b.wav, vintlo2c.wav
 	Voiced:
 		VoiceSet: HarrierVoice
-	ProductionCostMultiplier@AI:
-		Prerequisites: prerequisite.aiplayer
-		Multiplier: 40
 
 orcahusk:
 	Tooltip:
@@ -68,7 +57,7 @@ orcahusk:
 	RevealOnDeath:
 		Radius: 8c0
 	RenderVoxels:
-		Image: falc
+		Image: orca
 
 orcahusk.horizontal:
 	Inherits: ^PlaneHusk

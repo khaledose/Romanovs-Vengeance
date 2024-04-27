@@ -9,7 +9,7 @@ robo:
 	Inherits@TURRET: ^WithVoxelTurret
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Allies
-		Prerequisites: ~vehicle.allies, garobo, ~techlevel.2
+		Prerequisites: ~vehicle.allies, garobo, ~techlevel.10
 		Description: actor-robo.description
 		BuildDurationModifier: 100
 		BuildPaletteOrder: 40

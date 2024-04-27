@@ -2,7 +2,6 @@ napowr:
 	Inherits: ^PowerPlant
 	Inherits@SHAPE: ^3x2Shape
 	Buildable:
-		Queue: Building.Shared, Building.Soviets
 		Prerequisites: ~building.soviets, ~techlevel.1
 	IsometricSelectable:
 		DecorationHeight: 45

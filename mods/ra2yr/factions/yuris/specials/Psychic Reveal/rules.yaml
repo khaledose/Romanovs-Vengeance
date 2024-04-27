@@ -3,7 +3,7 @@ PsychicRevealSpecial:
 		OrderName: PsiPsychicReveal
 		RequiresCondition: !lost
 		Prerequisites:
-			1: radar.yuri
+			1: yapsis
 		Icons:
 			1: psireveal
 		Cursor: reveal

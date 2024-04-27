@@ -1,0 +1,7 @@
+AlliedVehicleVoice:
+	DefaultVariant: .wav
+	Voices:
+		Build: vgraseb
+		Select: vgrasea, vgrasec, vgrased, vgrasee
+		Move: vgramoa, vgramob, vgramoc, vgramod, vgramoe, vgramof
+		Attack: vgraata, vgraatb, vgraatc, vgraatd, vgraate

@@ -9,7 +9,7 @@ tele:
 	Inherits@TURRET: ^WithVoxelTurret
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Yuri
-		Prerequisites: ~vehicle.yuri, yapsis, ~techlevel.2
+		Prerequisites: ~vehicle.yuri, yapsis, ~techlevel.3
 		Description: actor-tele.description
 		BuildPaletteOrder: 100
 	Selectable:

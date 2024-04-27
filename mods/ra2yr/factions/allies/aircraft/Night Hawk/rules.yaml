@@ -4,7 +4,8 @@ shad:
 	Inherits@MC: ^MindControllable
 	Inherits@CARGO: ^TransportInfantries
 	Buildable:
-		Queue: Aircraft.Shared, Aircraft.Allies
+		Queue: Aircraft
+		BuildAtProductionType: Helicopter
 		Prerequisites: ~aircraft.allies, ~techlevel.7
 		Description: actor-shad.description
 		BuildPaletteOrder: 20

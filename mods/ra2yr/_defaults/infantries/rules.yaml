@@ -9,6 +9,7 @@
 	Inherits@11: ^FlatSelectionMode
 	Inherits@12: ^SuddenDeathModifier
 	Inherits@13: ^WithTooltip
+	Inherits@14: ^AIInfantryBuildTimeModifier
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Selectable:
@@ -38,14 +39,6 @@
 	GrantConditionOnDamageState@DAMAGED:
 		Condition: damaged
 		ValidDamageStates: Light, Medium, Heavy, Critical
-	GrantConditionOnBotOwner@Cheater:
-		Condition: cheater-ai
-		Bots: cheater
-	GrantConditionOnBotOwner@Vengeful:
-		Condition: vengeful-ai
-		Bots: vengeful
-	ActorStatValues:
-		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 ^GroundInfantry:
 	Inherits: ^Infantry
@@ -56,7 +49,6 @@
 	Inherits@5: ^Berserkable
 	Inherits@6: ^TransportableInfantry
 	Buildable:
-		BuildAtProductionType: Soldier
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
@@ -104,10 +96,56 @@
 	MapEditorData:
 		Categories: Infantry - Ground
 
+^DeployableInfantry:
+	Inherits: ^GroundInfantry
+	Inherits@DEPLOY: ^Deployable
+	Mobile:
+		RequiresCondition: undeployed
+	Turreted:
+		Turret: deploy
+		InitialFacing: 368
+		RequiresCondition: deployed
+	AttackFrontal:
+		RequiresCondition: undeployed
+	AttackTurreted:
+		Turrets: deploy
+		Armaments: deployed
+		TurnSpeed: 1023
+		RealignDelay: -1
+		Voice: Attack
+		PauseOnCondition: chronodisable
+		RequiresCondition: deployed
+	TakeCover:
+		RequiresCondition: undeployed
+	WithInfantryBody:
+		RequiresCondition: undeployed && !parachute
+	WithSpriteBody@DEPLOYING:
+		Sequence: dot
+		Name: dot
+		RequiresCondition: !undeployed
+	WithMakeAnimation:
+		Sequence: deploy
+		BodyNames: dot
+	WithSpriteTurret:
+		Turret: deploy
+		Sequence: deployed
+		RequiresCondition: deployed
+	WithTurretAttackAnimation:
+		Turret: deploy
+		Armament: deployed
+		Sequence: deployed-shoot
+		RequiresCondition: deployed
+	BodyOrientation:
+		QuantizedFacings: 8
+	GrantCondition:
+		Condition: editorhack
+	WithInfantryBody@Editor:
+		DefaultAttackSequence: shoot
+		RequiresCondition: !editorhack
+
 ^AirInfantry:
 	Inherits: ^Infantry
 	Buildable:
-		BuildAtProductionType: Soldier
 		BuildDurationModifier: 100
 	Aircraft:
 		CruiseAltitude: 3c852
@@ -155,7 +193,6 @@
 	Inherits@MC: ^MindControllable
 	Buildable:
 		Queue: Infantry.Civilian
-		BuildAtProductionType: Civilian
 		BuildDurationModifier: 100
 	Health:
 		HP: 5000
@@ -259,7 +296,6 @@
 	Inherits@6: ^TransportableInfantry
 	Buildable:
 		Queue: Infantry.Animal
-		BuildAtProductionType: Animal
 		BuildDurationModifier: 100
 	Mobile:
 		Speed: 60
@@ -303,7 +339,6 @@
 	Inherits@ANNOUNCE: ^AnnounceProduction
 	Buildable:
 		Queue: Ship.Civilian
-		BuildAtProductionType: Sea Animal
 		BuildDurationModifier: 100
 	Mobile:
 		TurnSpeed: 1023
@@ -335,6 +370,13 @@
 		IdleSequences: idle
 		StandSequences: stand
 		DefaultAttackSequence: shoot
+	LeavesTrails:
+		Image: wake
+		Palette: effect50alpha
+		TerrainTypes: Water, Beach
+		Type: CenterPosition
+		StationaryInterval: 18
+		MovingInterval: 6
 	WithDeathAnimation:
 		UseDeathTypeSuffix: false
 	MapEditorData:
@@ -369,8 +411,6 @@
 		CameraPitch: 85
 	WithFacingSpriteBody:
 	Interactable:
-	RangedGpsDot:
-		Sequence: Infantry
 
 FLAMEGUY:
 	Inherits: ^HuskInfantry

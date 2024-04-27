@@ -3,7 +3,6 @@ garefn:
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@SHAPE: ^NormalRefineryShape
 	Buildable:
-		Queue: Building.Shared, Building.Allies
 		Prerequisites: ~building.allies, gapowr, ~!global-megawealth, ~techlevel.1
 	IsometricSelectable:
 		DecorationHeight: 60
@@ -34,23 +33,25 @@ garefn:
 		Sequence: idle-drill
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
-	SmokeParticleEmitter@refinerysmoke1:
+	FloatingSpriteEmitter@refinerysmoke1:
 		Offset: -1024,-512,3456
-		RequiresCondition: resource-delivered
 		Image: smallsmoke
 		Sequences: idle
 		Palette: effect50alpha
-		SpawnFrequency: 1,2
+		SpawnFrequency: 1, 2
+		Lifetime: 30, 40
 		Speed: 0, 36
 		Gravity: 27, 54
 		Duration: 39
-	SmokeParticleEmitter@refinerysmoke2:
+		RequiresCondition: resource-delivered
+	FloatingSpriteEmitter@refinerysmoke2:
 		Offset: -64,-1280,3456
-		RequiresCondition: resource-delivered
 		Image: smallsmoke
 		Sequences: idle
 		Palette: effect50alpha
 		SpawnFrequency: 1,2
+		Lifetime: 30, 40
 		Speed: 0, 36
 		Gravity: 27, 54
 		Duration: 39
+		RequiresCondition: resource-delivered

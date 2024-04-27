@@ -1,9 +1,7 @@
 nawall:
 	Inherits: ^Wall
 	Buildable:
-		Queue: Support.Shared, Support.Soviets
 		Prerequisites: ~building.soviets, ~nahand, ~techlevel.1
-		BuildPaletteOrder: 10
 		Description: actor-nawall.description
 	Tooltip:
 		Name: actor-nawall.name

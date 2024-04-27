@@ -2,7 +2,7 @@ disk:
 	Inherits: ^Helicopter
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Buildable:
-		Queue: Aircraft.Shared, Aircraft.Yuri
+		Queue: Aircraft, Aircraft.Yuri
 		Prerequisites: ~aircraft.yuri, yatech, ~techlevel.2
 		Description: actor-disk.description
 		BuildPaletteOrder: 40

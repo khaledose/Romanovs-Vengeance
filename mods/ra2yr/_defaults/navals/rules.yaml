@@ -29,8 +29,6 @@
 	WithVoxelBody:
 	MapEditorData:
 		Categories: Naval
-	RangedGpsDot:
-		Sequence: Ship
 
 ^AmphibiousTransport:
 	Inherits: ^Ship

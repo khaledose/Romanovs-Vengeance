@@ -1,16 +1,8 @@
 htnk:
-	Inherits: ^GroundVehicle
+	Inherits: ^Tank
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@BUNKER: ^BunkerableVehicle
-	Inherits@CHAOS: ^BerserkableVoxel
-	Inherits@EXPERIENCE: ^GainsExperience
-	Inherits@VETERAN: ^ProducibleAsVeteranVehicle
-	Inherits@MC: ^MindControllable
-	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Inherits@ANNOUNCE: ^AnnounceProduction
-	Inherits@TURRET: ^WithVoxelTurret
 	Buildable:
-		Queue: Vehicle.Shared, Vehicle.Soviets
 		Description: actor-htnk.description
 		Prerequisites: ~vehicle.soviets, ~techlevel.2
 		BuildPaletteOrder: 20
@@ -36,26 +28,16 @@ htnk:
 		Name: actor-htnk.name
 	Armament@primary:
 		Weapon: 120mm
-		Damage: 90
-		Recoil: 87
-		RecoilRecovery: 12
 		LocalOffset: 896,0,640
 		MuzzleSequence: muzzle
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: 120mmE
-		Damage: 180
-		Recoil: 87
-		RecoilRecovery: 12
 		LocalOffset: 896,0,640
 		MuzzleSequence: muzzle-2
 		RequiresCondition: rank-elite
-	AttackTurreted:
-		Voice: Attack
-	WithMuzzleOverlay:
 	RenderVoxels:
 		NormalsPalette: ts-normals
-	WithVoxelBody:
 	WithVoxelBarrel:
 	Voiced:
 		VoiceSet: SovietVehicleVoice

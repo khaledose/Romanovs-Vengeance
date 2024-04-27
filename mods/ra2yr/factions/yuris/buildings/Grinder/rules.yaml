@@ -3,7 +3,6 @@ yagrnd:
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@SHAPE: ^3x3Shape
 	Buildable:
-		Queue: Building.Shared, Building.Yuri
 		Prerequisites: ~building.yuri, yaweap, yapsis, ~techlevel.9
 		Description: actor-yagrnd.description
 		BuildPaletteOrder: 110

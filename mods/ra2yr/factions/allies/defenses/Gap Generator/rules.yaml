@@ -5,7 +5,6 @@ gagap:
 	Inherits@LOWPOWER: ^DisabledOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
-		Queue: Support.Shared, Support.Allies
 		Prerequisites: ~building.allies, gatech, ~techlevel.7
 		Description: actor-gagap.description
 		BuildPaletteOrder: 100

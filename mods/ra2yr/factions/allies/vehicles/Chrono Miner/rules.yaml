@@ -1,7 +1,6 @@
 cmin:
 	Inherits: ^MinerVehicle
 	Buildable:
-		Queue: Vehicle.Shared, Vehicle.Allies
 		Description: actor-cmin.description
 		Prerequisites: ~vehicle.allies, garefn, ~!global-megawealth, ~techlevel.1
 	Tooltip:
@@ -11,12 +10,7 @@ cmin:
 	StoresResources:
 		Capacity: 20
 	ChronoResourceDelivery:
-		Image: chronoexplosion
-		WarpInSequence: warpout
-		WarpInSound: vchrtele.wav
-		WarpOutSound: vchrtele.wav
-		SoundVolume: 0.5
-		AudibleThroughFog: false
+		TeleportType: PortableChrono
 		RequiresCondition: !chronodisable
 	Voiced:
 		VoiceSet: ChronoMinerVoice

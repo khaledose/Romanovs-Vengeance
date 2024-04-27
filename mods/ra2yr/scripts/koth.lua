@@ -113,7 +113,7 @@ WorldLoadedKotH = function()
 	beacon_owner = neutral
 
 	if neutral.HasPrerequisites( {"global-koth"} ) then
-		local beacons = neutral.GetActorsByType('capsyb.koth')
+		local beacons = neutral.GetActorsByType('napsyb')
 
 		if #beacons > 0 then
 			beacon = beacons[1]

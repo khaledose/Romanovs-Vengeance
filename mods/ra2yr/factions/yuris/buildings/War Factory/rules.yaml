@@ -1,20 +1,9 @@
 yaweap:
 	Inherits: ^WarFactory
 	Buildable:
-		Queue: Building.Shared, Building.Yuri
 		Prerequisites: ~building.yuri, yabrck, yarefn, ~techlevel.2
 	IsometricSelectable:
 		DecorationHeight: 75
-	Production:
-		Produces: Vehicle.Yuri, Aircraft.Yuri
-	ProductionQueue:
-		Type: Vehicle.Yuri
-	ProductionQueue@Aircraft:
-		Type: Aircraft.Yuri
-	ProductionBar:
-		ProductionType: Vehicle.Yuri
-	ProductionBar@Aircraft:
-		ProductionType: Aircraft.Yuri
 	ProvidesPrerequisite@vehicle.yuri:
 		Prerequisite: vehicle.yuri
 	ProvidesPrerequisite@aircraft.yuri:

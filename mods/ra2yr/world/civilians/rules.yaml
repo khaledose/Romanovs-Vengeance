@@ -294,7 +294,6 @@ lunr.air:
 	Inherits@SELF: ^Lunr
 	Buildable:
 		Queue: Infantry.Unused
-		BuildAtProductionType: Soldier
 		Description: actor-lunr.description
 		BuildPaletteOrder: 72
 	Aircraft:
@@ -322,58 +321,3 @@ lunr.husk:
 		Name: actor-lunr.name
 	Tooltip@NoRow:
 		Name: actor-lunr.name
-
-# Custom Civilians
-# pres.regicide:
-# 	Inherits: ^RegicideLeader
-# 	Tooltip:
-# 		Name: President Michael Dugan
-# 	Tooltip@NoRow:
-# 		Name: President Michael Dugan
-# 	RenderSprites:
-# 		Image: pres
-# 	ActorStatValues:
-# 		Icon: icon
-# 		IconPalette: chrome
-
-# rmnv.regicide:
-# 	Inherits: ^RegicideLeader
-# 	Tooltip:
-# 		Name: Premier Alexander Romanov
-# 	Tooltip@NoRow:
-# 		Name: Premier Alexander Romanov
-# 	Voiced:
-# 		VoiceSet: RomanovVoice
-# 	RenderSprites:
-# 		Image: rmnv
-# 	ActorStatValues:
-# 		Icon: icon
-# 		IconPalette: chrome
-
-# yuripr.regicide:
-# 	Inherits: ^RegicideLeader
-# 	Tooltip:
-# 		Name: Master Yuri
-# 	Tooltip@NoRow:
-# 		Name: Master Yuri
-# 	Voiced:
-# 		VoiceSet: YuriPrimeVoice
-# 	RenderSprites:
-# 		Image: yuripr
-# 	ActorStatValues:
-# 		Icon: icon
-# 		IconPalette: chrome
-
-# myak.regicide:
-# 	Inherits: ^RegicideLeader
-# 	Tooltip:
-# 		Name: Chairman Mustapha Yakubov
-# 	Tooltip@NoRow:
-# 		Name: Chairman Mustapha Yakubov
-# 	Voiced:
-# 		VoiceSet: SecretServiceVoice
-# 	RenderSprites:
-# 		Image: myak
-# 	ActorStatValues:
-# 		Icon: icon
-# 		IconPalette: chrome

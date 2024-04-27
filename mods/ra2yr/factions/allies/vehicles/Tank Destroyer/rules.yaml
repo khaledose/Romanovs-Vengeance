@@ -8,10 +8,8 @@ tnkd:
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Inherits@ANNOUNCE: ^AnnounceProduction
 	Buildable:
-		Queue: Vehicle.Shared, Vehicle.Allies
-		Prerequisites: ~vehicle.germany, gaairc, ~techlevel.2
+		Prerequisites: ~vehicle.germany, gaairc, ~techlevel.3
 		Description: actor-tnkd.description
-		BuildDurationModifier: 100
 		BuildPaletteOrder: 90
 	Selectable:
 		Bounds: 1544, 2509, 0, -289
@@ -34,13 +32,11 @@ tnkd:
 		Name: actor-tnkd.name
 	Armament@primary:
 		Weapon: sabot
-		Damage: 150
 		LocalOffset: 896,0,704
 		MuzzleSequence: muzzle
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: sabotE
-		Damage: 300
 		LocalOffset: 896,0,704
 		MuzzleSequence: muzzle-2
 		RequiresCondition: rank-elite
